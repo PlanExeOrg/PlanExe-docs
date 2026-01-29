@@ -1,0 +1,1380 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for PlanExe - A tool for making plans">
+      
+      
+      
+        <link rel="canonical" href="https://docs.planexe.org/planexe_mcp_interface/">
+      
+      
+        <link rel="prev" href="../plan/">
+      
+      
+        <link rel="next" href="../railway/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Planexe mcp interface - PlanExe Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PlanExe Documentation" class="md-header__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PlanExe Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Planexe mcp interface
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PlanExeOrg/PlanExe" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PlanExeOrg/PlanExe
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../docker/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  PlanExe uses Docker
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting_started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting started with PlanExe
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../install_developer/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Installing PlanExe for developers
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lm_studio/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Using PlanExe with LM Studio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mcp/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  PlanExe MCP Tools - Experimental
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mistral/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Using PlanExe with Mistral
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ollama/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Using PlanExe with Ollama
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../openrouter/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Using PlanExe with OpenRouter
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../plan/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Future plan for PlanExe
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Planexe mcp interface
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../railway/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  PlanExe on Railway - Experimental
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../recent_changes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recent Changes in PlanExe
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../troubleshooting_stuck_pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Troubleshooting a stuck pipeline
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PlanExe Documentation" class="md-nav__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    PlanExe Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PlanExeOrg/PlanExe" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PlanExeOrg/PlanExe
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlanExe uses Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started with PlanExe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing PlanExe for developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lm_studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using PlanExe with LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlanExe MCP Tools - Experimental
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mistral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using PlanExe with Mistral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using PlanExe with Ollama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using PlanExe with OpenRouter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future plan for PlanExe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planexe mcp interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../railway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlanExe on Railway - Experimental
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recent_changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recent Changes in PlanExe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting_stuck_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting a stuck pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Planexe mcp interface</h1>
+
+<p>PlanExe MCP Interface Specification (v1.0)</p>
+<ol>
+<li>Purpose</li>
+</ol>
+<p>1.1 What is PlanExe</p>
+<p>PlanExe is a service that generates <strong>rough-draft project plans</strong> from a natural-language prompt. You describe a large goal (e.g. open a clinic, launch a product, build a moon base)—the kind of project that in reality takes months or years. PlanExe produces a structured draft: steps, documents, and deliverables. The plan is not executable in its current form; it is a draft to refine and act on. Creating a plan is a long-running task (100+ LLM inference calls): create a task with a prompt, poll status, then download the HTML report and zip when done.</p>
+<p>1.2 What kind of plan does it create</p>
+<p>The plan is a <strong>project plan</strong>: a DAG of steps (Luigi tasks) that produce artifacts including a Gantt chart, risk analysis, and other project management deliverables. The main output is a large HTML file (approx 700KB) containing many sections. There is also a zip file containing all intermediary files (md, json, csv). Plan quality depends on prompt quality; use the prompt_examples tool to see the baseline before calling task_create.</p>
+<p>1.2.1 Agent-facing summary (for server instructions / tool descriptions)</p>
+<p>Implementors should expose the following to agents so they understand what PlanExe does:</p>
+<ul>
+<li><strong>What:</strong> PlanExe turns a plain-English goal into a structured strategic-plan draft (executive summary, Gantt, risk register, governance, etc.) in ~15–20 min. The plan is a draft to refine, not an executable or final document.</li>
+<li><strong>Flow:</strong> Call prompt_examples first, then task_create; poll task_status at reasonable intervals (e.g. every 5 min); use task_download or task_file_info when complete.</li>
+<li><strong>Output:</strong> Large HTML report (~700KB) and optional zip of intermediate files (md, json, csv).</li>
+</ul>
+<p>1.3 Scope of this document</p>
+<p>This document specifies a Model Context Protocol (MCP) interface for PlanExe that enables AI agents and client UIs to:
+    1.  Create and run long-running plan generation workflows.
+    2.  Receive real-time progress updates (task status, log output).
+    3.  List, read, and edit artifacts produced in an output directory.
+    4.  Stop and resume execution with Luigi-aware incremental recomputation.</p>
+<p>The interface is designed to support:
+    •   interactive “build systems” behavior (like make / bazel),
+    •   resumable DAG execution (Luigi),
+    •   deterministic artifact management.</p>
+<p>⸻</p>
+<ol>
+<li>Goals</li>
+</ol>
+<p>2.1 Functional goals
+    •   Task-based orchestration: each run is associated with a task ID.
+    •   Long-running execution: starts asynchronously; clients poll or subscribe to events.
+    •   Artifact-first workflow: outputs are exposed as file-like artifacts.
+    •   Stop / Resume with minimal recompute:
+    •   on resume, only invalidated downstream tasks regenerate.
+    •   Progress reporting:
+    •   progress_percentage
+    •   Editable artifacts:
+    •   user edits a generated file
+    •   pipeline continues from that point, producing dependent outputs</p>
+<p>2.2 Non-functional goals
+    •   Idempotency: repeated tool calls should not corrupt state.
+    •   Observability: logs, state transitions, and artifacts must be inspectable.
+    •   Concurrency safety: prevent conflicting writes and illegal resume patterns.
+    •   Extensibility: future versions can add task graph browsing, caching backends, exports.</p>
+<p>⸻</p>
+<ol>
+<li>Non-goals
+    •   Defining PlanExe’s internal plan schema, content format, or prompt strategy.
+    •   Providing remote code execution inside artifacts.
+    •   Implementing a full Luigi UI clone in MCP v1 (optional later).
+    •   Guaranteeing ETA estimates (allowed but must be optional / best-effort).</li>
+</ol>
+<p>3.1 MCP tools vs MCP tasks (“Run as task”)
+    The MCP specification defines two different mechanisms:
+    •   <strong>MCP tools</strong> (e.g. task_create, task_status, task_stop): the server exposes named tools; the client calls them and receives a response. PlanExe’s interface is <strong>tool-based</strong>: the agent calls task_create → receives task_id → polls task_status → uses task_download. This document specifies those tools.
+    •   <strong>MCP tasks protocol</strong> (“Run as task” in some UIs): a separate mechanism where the client can run a tool “as a task” using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.
+    PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable “Run as task” for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. The intended flow is: call task_create, poll task_status, then call task_download when complete.</p>
+<p>⸻</p>
+<ol>
+<li>System Model</li>
+</ol>
+<p>4.1 Core entities</p>
+<p>Task
+A long-lived container for a PlanExe project run.</p>
+<p>Key properties
+    •   task_id: stable unique identifier (UUID, matches TaskItem.id)
+    •   output_dir: artifact root namespace for task
+    •   config: immutable run configuration (models, runtime limits, Luigi params)
+    •   created_at, updated_at</p>
+<p>Run
+A single execution attempt inside a task (e.g., after a resume).</p>
+<p>Key properties
+    •   state: running | stopped | completed | failed
+    •   progress_percentage: computed progress percentage (float)
+    •   started_at, ended_at</p>
+<p>Artifact
+A file-like output managed by PlanExe.</p>
+<p>Key properties
+    •   path: path relative to task output root
+    •   size, updated_at
+    •   content_type: text/markdown, text/html, application/json, etc.
+    •   sha256: content hash for optimistic locking and invalidation</p>
+<p>Event
+A typed message emitted during execution for UI/agent consumption.</p>
+<p>Key properties
+    •   cursor: ordering token
+    •   ts: timestamp
+    •   type: event type
+    •   data: event payload</p>
+<p>⸻</p>
+<ol>
+<li>State Machine</li>
+</ol>
+<p>5.1 Task states</p>
+<p>Tasks may exist independent of active runs.
+    •   created: task initialized, no run started
+    •   active: at least one run exists, may be running or stopped
+    •   archived: optional; immutable, no new runs allowed</p>
+<p>5.2 Run states
+    •   running
+    •   stopping (optional transitional state)
+    •   stopped (user stopped, resumable)
+    •   completed
+    •   failed (resumable depending on failure type)</p>
+<p>5.3 Allowed transitions
+    •   running → stopped via task_stop
+    •   running → completed via normal success
+    •   running → failed via error</p>
+<p>Invalid
+    •   completed → running (new run must be triggered by creating a new task)
+    •   running → running (no concurrent runs in v1)</p>
+<p>⸻</p>
+<ol>
+<li>MCP Tools (v1 Required)</li>
+</ol>
+<p>All tool names below are normative.</p>
+<p>6.1 prompt_examples</p>
+<p>Returns example prompts that define the baseline for a good prompt. Call this tool before task_create and refine your prompt until it matches that quality. If you create a task with a weaker prompt, the resulting plan will be lower quality than it could be.</p>
+<p>Request: no parameters (empty object).</p>
+<p>Response: <code>{ "samples": [ "prompt text 1", "prompt text 2", ... ], "message": "..." }</code>.</p>
+<p>⸻</p>
+<p>6.2 task_create</p>
+<p>Start creating a new plan. speed_vs_detail modes: 'all' runs the full pipeline with all details (slower, higher token usage/cost). 'fast' runs the full pipeline with minimal work per step (faster, fewer details), useful to verify the pipeline is working. 'ping' runs the pipeline entrypoint and makes a single LLM call to verify the worker_plan_database is processing tasks and can reach the LLM.</p>
+<p>Request</p>
+<p>Schema</p>
+<p>{
+  "type": "object",
+  "properties": {
+    "prompt": { "type": "string" },
+    "speed_vs_detail": {
+      "type": "string",
+      "enum": ["ping", "fast", "all"],
+      "default": "ping"
+    }
+  },
+  "required": ["prompt"]
+}</p>
+<p>Example</p>
+<p>{
+  "prompt": "string",
+  "speed_vs_detail": "ping"
+}</p>
+<p>Prompt quality</p>
+<p>The <code>prompt</code> parameter should be a detailed description of what the plan should cover. Good prompts are typically 300–800 words and include:
+    •   Clear context: background, constraints, and goals
+    •   Specific requirements: budget, timeline, location, or technical constraints
+    •   Success criteria: what "done" looks like
+    •   Banned words or approaches (if any)</p>
+<p>Short one-liners (e.g., "Construct a bridge") tend to produce poor output because they lack context for the planning pipeline. Important details are location, budget, time frame.</p>
+<p>Clients can call the MCP tool <strong>prompt_examples</strong> to retrieve example prompts. Use these as examples for task_create; they can also call task_create with any prompt—short prompts produce less detailed plans.</p>
+<p>For the full catalog file:
+    •   <code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code> — JSONL with <code>id</code>, <code>prompt</code>, optional <code>tags</code>, and optional <code>mcp_example</code> (true = curated for MCP).</p>
+<p>Response</p>
+<p>{
+  "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1",
+  "created_at": "2026-01-14T12:34:56Z"
+}</p>
+<p>Behavior
+    •   Must be idempotent only if client supplies an optional client_request_id (optional extension).
+    •   Task config is immutable after creation in v1.</p>
+<p>⸻</p>
+<p>6.3 task_status</p>
+<p>Returns run status and progress. Used for progress bars and UI states. <strong>Polling interval:</strong> call at reasonable intervals only (e.g. every 5 minutes); plan generation takes 15–20+ minutes and frequent polling is unnecessary.</p>
+<p>Request</p>
+<p>{
+  "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1"
+}</p>
+<p>Response</p>
+<p>{
+  "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1",
+  "state": "running",
+  "progress_percentage": 62.0,
+  "timing": {
+    "started_at": "2026-01-14T12:35:10Z",
+    "elapsed_sec": 512
+  },
+  "files": [
+    {
+      "path": "plan.md",
+      "updated_at": "2026-01-14T12:43:11Z"
+    }
+  ]
+}</p>
+<p>Notes
+    •   progress_percentage must be a float within [0,100].</p>
+<p>⸻</p>
+<p>6.4 task_stop</p>
+<p>Stops the active run.</p>
+<p>Request</p>
+<p>{
+  "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1"
+}</p>
+<p>Response</p>
+<p>{
+  "state": "stopped"
+}</p>
+<p>Required semantics
+    •   Must stop workers cleanly where possible.
+    •   Must persist enough Luigi state to resume incrementally.</p>
+<p>⸻</p>
+<p>6.5 Download flow (task_download vs task_file_info)</p>
+<p><strong>If your client exposes task_download</strong> (e.g. mcp_local): use it to save the report or zip locally; it calls task_file_info under the hood, then fetches and writes to the local save path (e.g. PLANEXE_PATH).</p>
+<p><strong>If you only have task_file_info</strong> (e.g. direct connection to mcp_cloud): call it with task_id and artifact ("report" or "zip"); use the returned download_url to fetch the file (e.g. GET with API key if configured).</p>
+<p>⸻</p>
+<ol>
+<li>Targets</li>
+</ol>
+<p>8.1 Standard targets</p>
+<p>The following targets MUST be supported:
+    •   build_plan
+    •   validate_plan
+    •   build_plan_and_validate</p>
+<p>Targets map to Luigi “final tasks”.</p>
+<ol>
+<li>Concurrency &amp; Locking</li>
+</ol>
+<p>10.1 Single active run per task</p>
+<p>In v1, tasks MUST enforce:
+    •   at most one run in running state.</p>
+<p>⸻</p>
+<ol>
+<li>Error Model</li>
+</ol>
+<p>Errors MUST return:
+    •   code: stable machine-readable
+    •   message: human-readable
+    •   details: optional</p>
+<p>Example:</p>
+<p>{
+  "error": {
+    "code": "RUN_ALREADY_ACTIVE",
+    "message": "A run is currently active for this task.",
+    "details": { "run_id": "run_0001" }
+  }
+}</p>
+<p>11.1 Required error codes
+    •   TASK_NOT_FOUND
+    •   RUN_NOT_FOUND
+    •   RUN_ALREADY_ACTIVE
+    •   RUN_NOT_ACTIVE
+    •   INVALID_TARGET
+    •   INVALID_ARTIFACT_URI
+    •   CONFLICT
+    •   PERMISSION_DENIED
+    •   RUNNING_READONLY
+    •   INTERNAL_ERROR</p>
+<p>⸻</p>
+<ol>
+<li>Security &amp; Isolation</li>
+</ol>
+<p>12.1 Sandbox constraints
+    •   All artifacts must live under task-scoped storage.
+    •   Artifact URIs must not permit path traversal.</p>
+<p>12.2 Access control</p>
+<p>At minimum:
+    •   task must be scoped to a user identity (metadata.user_id)
+    •   callers without permission must receive PERMISSION_DENIED</p>
+<p>12.3 Sensitive data handling
+    •   logs may include model prompts/responses → treat logs as sensitive artifacts
+    •   allow a config option to redact prompt content in event streaming</p>
+<p>⸻</p>
+<ol>
+<li>Performance Requirements</li>
+</ol>
+<p>13.1 Responsiveness
+    •   task_status must return within &lt; 250ms under normal load.</p>
+<p>13.2 Large artifacts
+    •   server SHOULD impose max read size per call (e.g., 2–10MB)</p>
+<p>⸻</p>
+<ol>
+<li>Observability Requirements</li>
+</ol>
+<p>The server MUST persist:
+    •   run lifecycle events
+    •   stop reasons
+    •   failure tracebacks as artifacts (e.g., run_error.json)
+    •   luigi execution logs (run.log)</p>
+<p>⸻</p>
+<ol>
+<li>Reference UI Integration Contract</li>
+</ol>
+<p>To match your UI behavior:</p>
+<p>Progress bars</p>
+<p>Use:
+    •   task_status.progress_percentage
+    •   or progress_updated events</p>
+<p>⸻</p>
+<ol>
+<li>Compatibility &amp; Versioning</li>
+</ol>
+<p>16.1 Versioning strategy
+    •   MCP server exposes: planexe.version = "1.0"
+    •   breaking changes require major bump</p>
+<p>16.2 Forward compatibility</p>
+<p>Clients must ignore unknown fields and unknown event types.</p>
+<p>⸻</p>
+<ol>
+<li>Testing Strategy</li>
+</ol>
+<p>17.1 Contract tests (required)
+    •   Start/stop/resume loops
+    •   Invalid transition errors
+    •   Event cursor monotonicity</p>
+<p>17.2 Determinism tests (recommended)
+    •   Given same inputs + same edits, ensure same downstream artifacts unless models are stochastic
+    •   If models are stochastic, test pipeline correctness, not identical bytes</p>
+<p>17.3 Load tests (recommended)
+    •   multiple tasks concurrently, one run each
+    •   event streaming stability under heavy log output</p>
+<p>⸻</p>
+<ol>
+<li>Future Extensions (MCP Resources)</li>
+</ol>
+<p>PlanExe is artifact-first, and MCP already has a native concept for that: resources.
+Today artifacts are exposed via download_url or via proxy download + saved_path.
+Future versions SHOULD expose artifacts as MCP resources so clients can fetch them
+via standard resource reads (and treat PlanExe as a first-class MCP server rather
+than a thin API wrapper).</p>
+<p>Proposed resource identifiers
+    •   planexe://task/<task_id>/report
+    •   planexe://task/<task_id>/zip</p>
+<p>Recommended resource metadata
+    •   mime type (content_type)
+    •   size (bytes)
+    •   sha256 (content hash)
+    •   generated_at (UTC timestamp)</p>
+<p>Notes
+    •   Resources can be backed by existing HTTP endpoints internally; the MCP
+        resource read returns the bytes + metadata.
+    •   This enables richer MCP client UX (preview, caching, validation) without
+        custom tool calls.</p>
+<p>⸻</p>
+<ol>
+<li>Future Tools (High-Leverage, Low-Complexity)</li>
+</ol>
+<p>The following tools remove common UX friction without expanding the core model.</p>
+<p>19.1 task_list (or task_recent)
+Return a short list of recent tasks so agents can recover if they lost a task_id.</p>
+<p>Notes
+    •   Default limit: 5–10 tasks.
+    •   Include task_id, created_at, state, and prompt summary.</p>
+<p>19.2 task_wait
+Blocking helper that polls internally until the task completes or times out.
+Returns the final task_status payload plus suggested next steps.</p>
+<p>Notes
+    •   Inputs: task_id, timeout_sec (optional), poll_interval_sec (optional).
+    •   Outputs: same as task_status + next_steps (string or list).</p>
+<p>19.3 task_get_latest
+Simplest recovery: return the most recently created task for the caller.</p>
+<p>Notes
+    •   Useful for single-user / single-session flows.
+    •   Should be scoped to the caller/user_id when available.</p>
+<p>19.4 task_logs_tail (optional)
+Return the tail of recent log lines for troubleshooting failures.</p>
+<p>Notes
+    •   Inputs: task_id, max_lines (optional), since_cursor (optional).
+    •   Useful when task_status shows failed but no context.</p>
+<p>⸻</p>
+<p>Appendix A — Example End-to-End Flow</p>
+<p>Create task</p>
+<p>task_create({ "prompt": "..." })</p>
+<p>Start run</p>
+<p>task_status({ "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1" })</p>
+<p>Stop</p>
+<p>task_stop({ "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1" })</p>
+<p>⸻</p>
+<p>Appendix B — Optional v1.1 Extensions</p>
+<p>If you want richer Luigi integration later:
+    •   planexe.task.graph (nodes + edges + states)
+    •   planexe.task.invalidate (rerun subtree)
+    •   planexe.export.bundle (zip all artifacts)
+    •   planexe.validate.only (audit without regeneration)
+    •   planexe.task.archive (freeze task)</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 29, 2026 22:46:49 UTC">January 29, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 29, 2026 22:46:49 UTC">January 29, 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 PlanExe
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
