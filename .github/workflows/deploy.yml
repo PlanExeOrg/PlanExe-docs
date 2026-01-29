@@ -1,0 +1,57 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  # Trigger on changes to PlanExe repo (requires repository_dispatch or manual trigger)
+  repository_dispatch:
+    types: [docs-updated]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout PlanExe-docs
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Checkout PlanExe (source)
+        uses: actions/checkout@v4
+        with:
+          repository: PlanExeOrg/PlanExe
+          path: planexe-source
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Build documentation
+        run: |
+          # Copy docs from PlanExe repo
+          # Create docs directory and copy files
+          mkdir -p docs
+          cp -r planexe-source/docs/* docs/
+          
+          # Build with mkdocs
+          mkdocs build --site-dir site
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          cname: docs.planexe.org
