@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/mistral/">
+        <link rel="canonical" href="https://docs.planexe.org/developer/frontend_single_user/">
       
       
-        <link rel="prev" href="../lm_studio/">
+        <link rel="prev" href="../worker_plan/">
       
       
-        <link rel="next" href="../mcp/">
+        <link rel="next" href="../database_postgres/">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.png">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Mistral - PlanExe Documentation</title>
+        <title>frontend_single_user - PlanExe Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-planexe-with-mistral" class="md-skip">
+        <a href="#frontend-single-user" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://planexe.org" title="PlanExe Documentation" class="md-header__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mistral
+              frontend_single_user
             
           </span>
         </div>
@@ -228,7 +228,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -245,11 +245,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../getting_started/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../getting_started/" class="md-tabs__link">
           
   
   
@@ -265,13 +267,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../openrouter/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../openrouter/" class="md-tabs__link">
           
   
   
@@ -291,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../mcp/" class="md-tabs__link">
+        <a href="../../mcp/" class="md-tabs__link">
           
   
   
@@ -311,7 +311,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../railway/" class="md-tabs__link">
+        <a href="../../railway/" class="md-tabs__link">
           
   
   
@@ -331,7 +331,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../troubleshooting_stuck_pipeline/" class="md-tabs__link">
+        <a href="../../troubleshooting_stuck_pipeline/" class="md-tabs__link">
           
   
   
@@ -351,7 +351,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../plan/" class="md-tabs__link">
+        <a href="../../plan/" class="md-tabs__link">
           
   
   
@@ -393,7 +393,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://planexe.org" title="PlanExe Documentation" class="md-nav__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     PlanExe Documentation
@@ -420,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -436,429 +436,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Getting started
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Getting started
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../getting_started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Getting started with PlanExe
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../install_developer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Developer install
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Developer components
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Developer components
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer/open_dir_server/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    open_dir_server
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer/worker_plan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    worker_plan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer/frontend_single_user/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    frontend_single_user
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer/database_postgres/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    database_postgres
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer/worker_plan_database/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    worker_plan_database
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer/frontend_multi_user/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    frontend_multi_user
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer/mcp_local/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    mcp_local
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer/mcp_cloud/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    mcp_cloud
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -886,17 +463,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    AI providers
+    Getting started
   
 
     
@@ -907,12 +484,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    AI providers
+    Getting started
   
 
           </label>
@@ -925,14 +502,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../openrouter/" class="md-nav__link">
+      <a href="../../getting_started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    OpenRouter
+    Getting started with PlanExe
   
 
     
@@ -953,14 +530,94 @@
   
   
     <li class="md-nav__item">
-      <a href="../ollama/" class="md-nav__link">
+      <a href="../../install_developer/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Ollama
+    Developer install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer components
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer components
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open_dir_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    open_dir_server
   
 
     
@@ -981,14 +638,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../lm_studio/" class="md-nav__link">
+      <a href="../worker_plan/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    LM Studio
+    worker_plan
   
 
     
@@ -1025,7 +682,7 @@
   <span class="md-ellipsis">
     
   
-    Mistral
+    frontend_single_user
   
 
     
@@ -1043,7 +700,7 @@
   <span class="md-ellipsis">
     
   
-    Mistral
+    frontend_single_user
   
 
     
@@ -1069,10 +726,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-setup-for-mistral" class="md-nav__link">
+  <a href="#run-locally-with-a-venv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docker setup for Mistral
+        Run locally with a venv
       
     </span>
   </a>
@@ -1080,10 +737,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-use-mistral" class="md-nav__link">
+  <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why use Mistral?
+        Environment variables
       
     </span>
   </a>
@@ -1091,32 +748,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-api-key" class="md-nav__link">
+  <a href="#password" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create API key
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edit-the-llm_configjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Edit the llm_config.json
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-the-mistral-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use the Mistral model
+        Password
       
     </span>
   </a>
@@ -1127,6 +762,351 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database_postgres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    database_postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worker_plan_database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    worker_plan_database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend_multi_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frontend_multi_user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp_local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp_local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp_cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp_cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI providers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI providers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../openrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenRouter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ollama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lm_studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mistral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1196,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/" class="md-nav__link">
+      <a href="../../mcp/" class="md-nav__link">
         
   
   
@@ -1224,7 +1204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../planexe_mcp_interface/" class="md-nav__link">
+      <a href="../../planexe_mcp_interface/" class="md-nav__link">
         
   
   
@@ -1309,7 +1289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../railway/" class="md-nav__link">
+      <a href="../../railway/" class="md-nav__link">
         
   
   
@@ -1394,7 +1374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting_stuck_pipeline/" class="md-nav__link">
+      <a href="../../troubleshooting_stuck_pipeline/" class="md-nav__link">
         
   
   
@@ -1479,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plan/" class="md-nav__link">
+      <a href="../../plan/" class="md-nav__link">
         
   
   
@@ -1507,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recent_changes/" class="md-nav__link">
+      <a href="../../recent_changes/" class="md-nav__link">
         
   
   
@@ -1535,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AGENTS/" class="md-nav__link">
+      <a href="../../AGENTS/" class="md-nav__link">
         
   
   
@@ -1590,10 +1570,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-setup-for-mistral" class="md-nav__link">
+  <a href="#run-locally-with-a-venv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docker setup for Mistral
+        Run locally with a venv
       
     </span>
   </a>
@@ -1601,10 +1581,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-use-mistral" class="md-nav__link">
+  <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why use Mistral?
+        Environment variables
       
     </span>
   </a>
@@ -1612,32 +1592,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-api-key" class="md-nav__link">
+  <a href="#password" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create API key
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edit-the-llm_configjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Edit the llm_config.json
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-the-mistral-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use the Mistral model
+        Password
       
     </span>
   </a>
@@ -1664,69 +1622,75 @@
   
 
 
-<h1 id="using-planexe-with-mistral">Using PlanExe with Mistral</h1>
-<p>This is for <strong>advanced users</strong> that already have PlanExe working.</p>
-<p>If you are getting started with PlanExe, I (the developer of PlanExe) recommend following the <a href="../openrouter/">openrouter.md</a> instructions. Stick with the default settings. </p>
-<p>If you want to use Mistral, then <a href="https://openrouter.ai/models?q=mistral">OpenRouter has several mistral models</a>. </p>
-<h2 id="docker-setup-for-mistral">Docker setup for Mistral</h2>
-<p>Mistral support is not baked into the Docker image by default. You must add the Mistral LlamaIndex extension to the worker, rebuild the image, and supply your API key.</p>
-<p>1) Install Docker (with Docker Compose), then clone the repo and enter it:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/PlanExeOrg/PlanExe.git
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd PlanExe
+<h1 id="frontend-single-user">Frontend Single User</h1>
+<p>This directory contains the PlanExe single-user Gradio frontend.</p>
+<h2 id="run-locally-with-a-venv">Run locally with a venv</h2>
+<p>For a faster edit/run loop without Docker. Work from inside <code>frontend_single_user</code> so its dependencies stay isolated (they may be incompatible with <code>worker_plan</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>frontend_single_user
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PWD</span>/../worker_plan:<span class="nv">$PYTHONPATH</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>python<span class="w"> </span>app.py
 </code></pre></div>
-2) Enable the Mistral client inside the worker image by editing <code>worker_plan/pyproject.toml</code>. Under <code>[project].dependencies</code>, add or uncomment these lines:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;llama-index-llms-mistralai==0.4.0&quot;,
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&quot;mistralai==1.5.2&quot;,
+<p>The app loads environment variables from a <code>.env</code> file (if present). Create one with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># .env</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">PLANEXE_WORKER_PLAN_URL</span><span class="o">=</span>http://localhost:8000
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">PLANEXE_OPEN_DIR_SERVER_URL</span><span class="o">=</span>http://localhost:5100
 </code></pre></div>
-   Without this step, the Docker image will not have the <code>MistralAI</code> class.
-3) Copy <code>.env.docker-example</code> to <code>.env</code> and add your key:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>MISTRAL_API_KEY=&#39;INSERT-YOUR-SECRET-KEY-HERE&#39;
+<p>Then open http://localhost:7860 (or your <code>PLANEXE_GRADIO_SERVER_PORT</code>). Run <code>deactivate</code> when you are done with the venv.</p>
+<p>If you prefer to install the shared API package instead of using <code>PYTHONPATH</code>, run <code>pip install -e ../worker_plan</code> (this will bring the worker dependencies into the same venv).</p>
+<h2 id="environment-variables">Environment variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PLANEXE_WORKER_PLAN_URL</code></td>
+<td><code>http://worker_plan:8000</code></td>
+<td>Base URL for <code>worker_plan</code> service the UI calls.</td>
+</tr>
+<tr>
+<td><code>PLANEXE_WORKER_PLAN_TIMEOUT</code></td>
+<td><code>30</code></td>
+<td>HTTP timeout (seconds) for <code>worker_plan</code> requests.</td>
+</tr>
+<tr>
+<td><code>PLANEXE_GRADIO_SERVER_NAME</code></td>
+<td><code>0.0.0.0</code></td>
+<td>Host/interface Gradio binds to.</td>
+</tr>
+<tr>
+<td><code>PLANEXE_GRADIO_SERVER_PORT</code></td>
+<td><code>7860</code></td>
+<td>Port Gradio listens on.</td>
+</tr>
+<tr>
+<td><code>PLANEXE_PASSWORD</code></td>
+<td><em>(unset)</em></td>
+<td>Optional password to protect the UI (<code>user</code> / <code>&lt;value&gt;</code>). Leave unset for local development without auth.</td>
+</tr>
+<tr>
+<td><code>PLANEXE_OPEN_DIR_SERVER_URL</code></td>
+<td><em>(unset)</em></td>
+<td>URL of the host opener service for “Open Output Dir”; leave unset to hide the button.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="password">Password</h2>
+<p>Leave <code>PLANEXE_PASSWORD</code> unset when running PlanExe on your own computer.</p>
+<p>However when running in the cloud, here you may want password protection.</p>
+<p>Set <code>PLANEXE_PASSWORD</code> to turn on Gradio’s basic auth. Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_PASSWORD</span><span class="o">=</span><span class="m">123</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
 </code></pre></div>
-4) Add (or keep) a Mistral entry in <code>llm_config.json</code> (example below).
-5) Rebuild the images so the new dependencies are baked in:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose build --no-cache worker_plan frontend_single_user
-</code></pre></div>
-6) Start PlanExe:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker compose up worker_plan frontend_single_user
-</code></pre></div>
-7) Open http://localhost:7860, go to <strong>Settings</strong>, and pick your Mistral model (e.g., <code>mistral-paid-large</code>). If you later tweak only <code>llm_config.json</code>, just restart the containers (<code>docker compose restart worker_plan frontend_single_user</code>); rebuilds are only needed when dependencies change.</p>
-<h2 id="why-use-mistral">Why use Mistral?</h2>
-<p>Mistral can have run your own fine tuned model in the cloud. If you have sensitive business data that you don't want to share with the world, then this is one way to do it.</p>
-<p>Create an account on the <a href="https://mistral.ai/">mistral.ai</a> website and buy 10 EUR of credits.</p>
-<p>List of <a href="https://docs.mistral.ai/getting-started/models/models_overview/">available models</a>.</p>
-<p>Using the free models, and the API is rate limited to 1 request per second. PlanExe cannot deal with rate limiting and PlanExe does 70-100 requests, so it's likely going to yield errors.</p>
-<h2 id="create-api-key">Create API key</h2>
-<ol>
-<li>Visit <a href="https://console.mistral.ai/api-keys">api-keys</a>.</li>
-<li>Click <code>Create new key</code> and name the new key <code>PlanExe</code>.</li>
-<li>In the <code>.env</code> file in the root dir of the PlanExe repo, create a row named <code>MISTRAL_API_KEY</code>. Copy/paste the newly created api key into that row.</li>
-</ol>
-<p>The <code>.env</code> file should look something like the following, with your own key inserted.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>MISTRAL_API_KEY=&#39;AWkg3SxFTLWaPJClbASfv9h3VPItroof&#39;
-</code></pre></div></p>
-<h2 id="edit-the-llm_configjson">Edit the <code>llm_config.json</code></h2>
-<p>The JSON should look something like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;mistral-paid-large&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is paid. Possible free to use for a limited time. Check the pricing before use.&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MistralAI&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">            </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mistral-large-latest&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">            </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${MISTRAL_API_KEY}&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">            </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">            </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">60.0</span><span class="p">,</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">            </span><span class="nt">&quot;max_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8192</span><span class="p">,</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">            </span><span class="nt">&quot;max_retries&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="use-the-mistral-model">Use the Mistral model</h2>
-<ol>
-<li>Restart PlanExe</li>
-<li>Go to the <code>Settings</code> tab</li>
-<li>Select the <code>mistral-paid-large</code> model.</li>
-</ol>
+<p>Then open the app and log in with username <code>user</code> and password <code>123</code>.</p>
 
 
 
@@ -1784,10 +1748,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
