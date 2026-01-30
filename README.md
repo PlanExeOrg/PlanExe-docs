@@ -116,12 +116,19 @@ For (3), the [PlanExe repo](https://github.com/PlanExeOrg/PlanExe) has a workflo
 4. **Expiration:** set the maximum (1 year); add a calendar reminder to renew before it expires.
 5. **Resource owner:** your user or the org that owns PlanExe.
 6. **Repository access:** Only select repositories → choose **PlanExeOrg/PlanExe-docs**.
-7. **Permissions → Repository permissions:** set **Actions** to **Read and write** (needed to trigger the deploy workflow).
+7. **Permissions → Repository permissions:** set **Contents** to **Read and write** (required for the `repository_dispatch` API; Actions alone is not enough).
 8. Generate the token, copy it (it is shown only once), then in the **PlanExe** repo update the **`PLANEXE_DOCS_DISPATCH_TOKEN`** secret with this value.
 
 **Alternative:** a [classic PAT](https://github.com/settings/tokens) with **`repo`** scope also works and can have a longer or no expiration.
 
-If the secret is missing or expired, the “Notify docs deploy” job in PlanExe will fail and the site will not rebuild. Check the [PlanExe Actions](https://github.com/PlanExeOrg/PlanExe/actions) tab after pushing docs changes. Until the token is set, use option (2) and manually run “Deploy Documentation” in PlanExe-docs after merging docs changes.
+If the secret is missing or expired, the “Notify docs deploy” job in PlanExe will fail and the site will not rebuild. Until the token is set, use option (2) and manually run “Deploy Documentation” in PlanExe-docs after merging docs changes.
+
+**Troubleshooting deployment**
+
+The main place to check is the **PlanExe-docs Actions** page: **[github.com/PlanExeOrg/PlanExe-docs/actions](https://github.com/PlanExeOrg/PlanExe-docs/actions)**. There you can see all workflow runs: “Deploy Documentation” (builds the site and deploys to GitHub Pages) and “pages build and deployment” (GitHub’s Pages publish). Runs triggered by a docs change in PlanExe show the event **docs-updated** and “Repository dispatch triggered by …”. Use this page to confirm a deploy ran, re-run a failed workflow, or manually start “Deploy Documentation” (Actions → Deploy Documentation → Run workflow).
+
+- **Site didn’t update after pushing to PlanExe/docs?** Open the [PlanExe-docs Actions](https://github.com/PlanExeOrg/PlanExe-docs/actions) page. If there is no “Deploy Documentation” run for your push, the trigger from PlanExe likely failed — check the [PlanExe Actions](https://github.com/PlanExeOrg/PlanExe/actions) tab: a failed “Notify docs deploy” job will show the API error (e.g. token missing **Contents: Read and write**). If “Deploy Documentation” ran but failed, open that run and fix the error shown in the logs. If it succeeded, wait a minute or two for GitHub Pages to update and try a hard refresh (Ctrl+Shift+R / Cmd+Shift+R) or a private window to avoid cache.
+- **“Notify docs deploy” succeeded in PlanExe, but no “Deploy Documentation” run appears in PlanExe-docs?** The dispatch API may have rejected the request (e.g. 403). Fine-grained tokens need **Contents: Read and write** on PlanExe-docs; **Actions** alone is not enough. Update the token with that permission and update **`PLANEXE_DOCS_DISPATCH_TOKEN`** in the PlanExe repo. After the change, the PlanExe workflow fails the job and prints the API response when the dispatch is rejected, so the exact error will appear in [PlanExe Actions](https://github.com/PlanExeOrg/PlanExe/actions).
 
 ## Configuration
 
