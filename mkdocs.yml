@@ -10,6 +10,15 @@ nav:
   - Getting started:
     - Getting started with PlanExe: getting_started.md
     - Developer install: install_developer.md
+    - Developer components:
+      - open_dir_server: developer/open_dir_server.md
+      - worker_plan: developer/worker_plan.md
+      - frontend_single_user: developer/frontend_single_user.md
+      - database_postgres: developer/database_postgres.md
+      - worker_plan_database: developer/worker_plan_database.md
+      - frontend_multi_user: developer/frontend_multi_user.md
+      - mcp_local: developer/mcp_local.md
+      - mcp_cloud: developer/mcp_cloud.md
     - Docker: docker.md
   - AI providers:
     - OpenRouter: openrouter.md

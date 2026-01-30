@@ -41,9 +41,16 @@ jobs:
       - name: Build documentation
         run: |
           # Copy docs from PlanExe repo
-          # Create docs directory and copy files
           mkdir -p docs
           cp -r planexe-source/docs/* docs/
+          
+          # Copy component READMEs into docs/developer/ so they are part of the built docs
+          mkdir -p docs/developer
+          for component in open_dir_server worker_plan frontend_single_user database_postgres worker_plan_database frontend_multi_user mcp_local mcp_cloud; do
+            if [ -f "planexe-source/$component/README.md" ]; then
+              cp "planexe-source/$component/README.md" "docs/developer/${component}.md"
+            fi
+          done
           
           # Build with mkdocs
           mkdocs build --site-dir site

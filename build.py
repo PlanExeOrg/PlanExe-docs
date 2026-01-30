@@ -77,6 +77,30 @@ def main():
         )
         shutil.copytree(docs_source_path, docs_dir, dirs_exist_ok=True)
         
+        # Copy component READMEs into docs/developer/ so they are part of the built docs
+        developer_dir = docs_dir / "developer"
+        developer_dir.mkdir(exist_ok=True)
+        component_readmes = [
+            ("open_dir_server", "README.md"),
+            ("worker_plan", "README.md"),
+            ("frontend_single_user", "README.md"),
+            ("database_postgres", "README.md"),
+            ("worker_plan_database", "README.md"),
+            ("frontend_multi_user", "README.md"),
+            ("mcp_local", "README.md"),
+            ("mcp_cloud", "README.md"),
+        ]
+        for component, readme_name in component_readmes:
+            src = planexe_repo / component / readme_name
+            dst = developer_dir / f"{component}.md"
+            if src.exists():
+                shutil.copy2(src, dst)
+            else:
+                print_colored(
+                    f"Warning: {src} not found, skipping for docs",
+                    YELLOW
+                )
+        
         # Copy mkdocs.yml to temp directory
         shutil.copy2(mkdocs_yml, temp_docs_path / "mkdocs.yml")
         
