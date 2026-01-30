@@ -29,8 +29,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - search.suggest
-    - search.highlight
     - content.code.annotate
     - content.code.copy
 
@@ -52,7 +50,6 @@ markdown_extensions:
   - md_in_html
 
 plugins:
-  - search
   - git-revision-date-localized:
       enable_creation_date: true
       fallback_to_build_date: true
