@@ -55,4 +55,9 @@ plugins:
       enable_creation_date: true
       fallback_to_build_date: true
 
+extra:
+  analytics:
+    provider: google
+    property: G-2F6NE7JWTR
+
 copyright: Copyright &copy; 2026 PlanExe
