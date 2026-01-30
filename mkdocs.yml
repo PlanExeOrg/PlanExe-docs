@@ -27,9 +27,9 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
     - navigation.top
+    - navigation.path
+    - navigation.prune
     - content.code.annotate
     - content.code.copy
 
