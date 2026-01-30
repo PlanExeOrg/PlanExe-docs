@@ -5,6 +5,29 @@ repo_url: https://github.com/PlanExeOrg/PlanExe
 repo_name: PlanExeOrg/PlanExe
 edit_uri: edit/main/docs/
 
+nav:
+  - Home: index.md
+  - Getting started:
+    - Getting started with PlanExe: getting_started.md
+    - Developer install: install_developer.md
+    - Docker: docker.md
+  - AI providers:
+    - OpenRouter: openrouter.md
+    - Ollama: ollama.md
+    - LM Studio: lm_studio.md
+    - Mistral: mistral.md
+  - MCP:
+    - MCP overview: mcp.md
+    - PlanExe MCP interface: planexe_mcp_interface.md
+  - Deployment:
+    - Railway: railway.md
+  - Troubleshooting:
+    - Stuck pipeline: troubleshooting_stuck_pipeline.md
+  - Project:
+    - Future plan: plan.md
+    - Recent changes: recent_changes.md
+    - Contributors (agents): AGENTS.md
+
 theme:
   name: material
   logo: assets/logo.svg
@@ -28,7 +51,6 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
-    - navigation.path
     - content.code.annotate
     - content.code.copy
 
