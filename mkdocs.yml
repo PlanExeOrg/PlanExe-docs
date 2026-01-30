@@ -9,8 +9,16 @@ nav:
   - Home: index.md
   - Getting started:
     - Getting started with PlanExe: getting_started.md
+  - MCP:
+    - MCP overview: mcp.md
+    - PlanExe MCP interface: planexe_mcp_interface.md
+  - Development:
+    - Docker: docker.md
     - Developer install: install_developer.md
-    - Developer components:
+    - Project:
+      - Future plan: plan.md
+      - Recent changes: recent_changes.md
+    - Components:
       - open_dir_server: developer/open_dir_server.md
       - worker_plan: developer/worker_plan.md
       - frontend_single_user: developer/frontend_single_user.md
@@ -19,23 +27,14 @@ nav:
       - frontend_multi_user: developer/frontend_multi_user.md
       - mcp_local: developer/mcp_local.md
       - mcp_cloud: developer/mcp_cloud.md
-    - Docker: docker.md
-  - AI providers:
-    - OpenRouter: openrouter.md
-    - Ollama: ollama.md
-    - LM Studio: lm_studio.md
-    - Mistral: mistral.md
-  - MCP:
-    - MCP overview: mcp.md
-    - PlanExe MCP interface: planexe_mcp_interface.md
-  - Deployment:
+    - AI providers:
+      - OpenRouter: openrouter.md
+      - Ollama: ollama.md
+      - LM Studio: lm_studio.md
+      - Mistral: mistral.md
     - Railway: railway.md
-  - Troubleshooting:
-    - Stuck pipeline: troubleshooting_stuck_pipeline.md
-  - Project:
-    - Future plan: plan.md
-    - Recent changes: recent_changes.md
-    - Contributors (agents): AGENTS.md
+    - Troubleshooting:
+      - Stuck pipeline: troubleshooting_stuck_pipeline.md
 
 theme:
   name: material
