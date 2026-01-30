@@ -89,11 +89,30 @@ Once DNS has propagated:
 - Clear your DNS cache: `sudo dscacheutil -flushcache` (macOS) or `ipconfig /flushdns` (Windows)
 - Try using a different DNS server (e.g., Google's 8.8.8.8)
 
-### SSL Certificate Issues
+### "Certificate not yet issued" / Enforce HTTPS unavailable
+
+If GitHub shows **Enforce HTTPS — Unavailable for your site because a certificate has not yet been issued**, do the following.
+
+1. **Check DNS for the subdomain**  
+   For `docs.planexe.org` you must have **exactly one** CNAME record:
+   - **Name**: `docs` (so the full name is `docs.planexe.org`)
+   - **Value**: `planexeorg.github.io` (no `https://`, no trailing slash)
+   - No A, AAAA, ALIAS, or ANAME records for `docs` — extra records can block certificate issuance. See [GitHub: Verifying the DNS configuration](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https#verifying-the-dns-configuration).
+
+2. **Restart certificate provisioning**  
+   In [PlanExe-docs Pages settings](https://github.com/PlanExeOrg/PlanExe-docs/settings/pages):
+   - Click **Remove** next to the custom domain `docs.planexe.org`.
+   - Enter `docs.planexe.org` again and click **Save**.  
+   This restarts the DNS check and Let's Encrypt certificate request. See [GitHub: Certificate not yet created](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https#troubleshooting-certificate-provisioning-certificate-not-yet-created-error).
+
+3. **Wait**  
+   Provisioning can take from a few minutes up to an hour. When a check mark appears next to your custom domain, **Enforce HTTPS** will become available — turn it on.
+
+### SSL Certificate Issues (general)
 
 - GitHub Pages automatically provisions SSL certificates via Let's Encrypt
 - This can take a few minutes to a few hours after the domain is verified
-- Make sure "Enforce HTTPS" is enabled in GitHub Pages settings
+- Make sure "Enforce HTTPS" is enabled in GitHub Pages settings once the certificate is issued
 
 ### CNAME Already Exists
 
