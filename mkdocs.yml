@@ -29,7 +29,6 @@ theme:
     - navigation.tabs.sticky
     - navigation.top
     - navigation.path
-    - navigation.prune
     - content.code.annotate
     - content.code.copy
 
