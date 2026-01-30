@@ -1425,6 +1425,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#linking-between-documentation-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linking between documentation pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#local-preview" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1546,6 +1557,24 @@
 </tr>
 </tbody>
 </table>
+<h2 id="linking-between-documentation-pages">Linking between documentation pages</h2>
+<p>When adding or editing links from one doc file to another in <code>PlanExe/docs/</code>, use paths that MkDocs (used by PlanExe-docs <code>build.py</code>) can resolve. Otherwise the build will report "unrecognized relative link" and leave the URL as-is on the published site.</p>
+<p><strong>Do:</strong></p>
+<ul>
+<li>Use the <strong><code>.md</code> extension</strong> in relative links to other docs in this directory.</li>
+<li>Same directory: <code>[MCP](mcp.md)</code>, <code>[Getting started](getting_started.md)</code>.</li>
+<li>Subdirectory: <code>[Extra](guides/extra.md)</code> (if you have <code>docs/guides/extra.md</code>).</li>
+</ul>
+<p><strong>Do not:</strong></p>
+<ul>
+<li>Use <strong>trailing slashes</strong> for doc-to-doc links: <code>[MCP](mcp/)</code> is not resolved by MkDocs and will trigger a build warning.</li>
+</ul>
+<p><strong>Examples (in any file under <code>PlanExe/docs/</code>):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[<span class="nt">PlanExe MCP interface</span>](<span class="na">planexe_mcp_interface.md</span>)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[<span class="nt">Docker</span>](<span class="na">docker.md</span>)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[<span class="nt">OpenRouter</span>](<span class="na">openrouter.md</span>)
+</code></pre></div>
+<p>External links (e.g. <code>https://planexe.org/</code>) are unchanged; this applies only to links between documentation <code>.md</code> files in this repo.</p>
 <h2 id="local-preview">Local preview</h2>
 <p>To build and preview the same site locally:</p>
 <ol>
