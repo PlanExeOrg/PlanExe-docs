@@ -96,6 +96,33 @@ PLANEXE_REPO=/path/to/PlanExe DOCS_SOURCE_DIR=docs python build.py
 
 See `.github/workflows/deploy.yml` for GitHub Actions automation.
 
+**Why doesn’t the site rebuild when I push docs changes in PlanExe?**
+
+The docs site is built and deployed from **this** repo (PlanExe-docs). Pushing to the **PlanExe** repo does not run workflows here. Rebuilds happen when:
+
+1. **Someone pushes to `main` on PlanExe-docs** (this repo), or  
+2. **Someone manually runs** the “Deploy Documentation” workflow in PlanExe-docs (Actions → Deploy Documentation → Run workflow), or  
+3. **The PlanExe repo triggers a rebuild** when `docs/` changes on `main`.
+
+For (3), the [PlanExe repo](https://github.com/PlanExeOrg/PlanExe) has a workflow (`.github/workflows/docs-update.yml`) that sends a `repository_dispatch` to this repo when files under `docs/` change. For that to work you must configure a secret in the **PlanExe** repo named **`PLANEXE_DOCS_DISPATCH_TOKEN`** (PlanExe → Settings → Secrets and variables → Actions).
+
+**Token value:** use a GitHub Personal Access Token that can trigger workflows in this repo. A **fine-grained** token is recommended (narrower permissions). Fine-grained tokens have a **maximum expiration of 1 year**, so the secret must be renewed annually.
+
+**Create or renew the fine-grained token:**
+
+1. Go to [GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens](https://github.com/settings/tokens?type=beta).
+2. **Generate new token** (or open an existing one to regenerate/check expiry).
+3. **Token name:** e.g. `PlanExe docs dispatch`.
+4. **Expiration:** set the maximum (1 year); add a calendar reminder to renew before it expires.
+5. **Resource owner:** your user or the org that owns PlanExe.
+6. **Repository access:** Only select repositories → choose **PlanExeOrg/PlanExe-docs**.
+7. **Permissions → Repository permissions:** set **Actions** to **Read and write** (needed to trigger the deploy workflow).
+8. Generate the token, copy it (it is shown only once), then in the **PlanExe** repo update the **`PLANEXE_DOCS_DISPATCH_TOKEN`** secret with this value.
+
+**Alternative:** a [classic PAT](https://github.com/settings/tokens) with **`repo`** scope also works and can have a longer or no expiration.
+
+If the secret is missing or expired, the “Notify docs deploy” job in PlanExe will fail and the site will not rebuild. Check the [PlanExe Actions](https://github.com/PlanExeOrg/PlanExe/actions) tab after pushing docs changes. Until the token is set, use option (2) and manually run “Deploy Documentation” in PlanExe-docs after merging docs changes.
+
 ## Configuration
 
 The MkDocs configuration is in `mkdocs.yml`. Key settings:
