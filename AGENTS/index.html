@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/mistral/">
+        <link rel="canonical" href="https://docs.planexe.org/AGENTS/">
       
       
-        <link rel="prev" href="../mcp/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../ollama/">
+        <link rel="next" href="../docker/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Using PlanExe with Mistral - PlanExe Documentation</title>
+        <title>How PlanExe-docs Builds and Publishes to docs.planexe.org - PlanExe Documentation</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-planexe-with-mistral" class="md-skip">
+        <a href="#how-planexe-docs-builds-and-publishes-to-docsplanexeorg" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using PlanExe with Mistral
+              How PlanExe-docs Builds and Publishes to docs.planexe.org
             
           </span>
         </div>
@@ -242,9 +242,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../AGENTS/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -356,11 +358,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../mistral/" class="md-tabs__link">
         
   
   
@@ -582,10 +582,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../AGENTS/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How PlanExe-docs Builds and Publishes to docs.planexe.org
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -601,6 +628,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline (CI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local preview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-deploy-from-planexe-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-deploy from PlanExe (optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -744,37 +857,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Using PlanExe with Mistral
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../mistral/" class="md-nav__link">
         
   
   
@@ -790,81 +876,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#docker-setup-for-mistral" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Docker setup for Mistral
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-use-mistral" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why use Mistral?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-api-key" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create API key
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#edit-the-llm_configjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Edit the llm_config.json
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-the-mistral-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use the Mistral model
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1085,10 +1096,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker-setup-for-mistral" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docker setup for Mistral
+        Overview
       
     </span>
   </a>
@@ -1096,10 +1107,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-use-mistral" class="md-nav__link">
+  <a href="#pipeline-ci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why use Mistral?
+        Pipeline (CI)
       
     </span>
   </a>
@@ -1107,10 +1118,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-api-key" class="md-nav__link">
+  <a href="#key-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create API key
+        Key files
       
     </span>
   </a>
@@ -1118,10 +1129,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edit-the-llm_configjson" class="md-nav__link">
+  <a href="#local-preview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edit the llm_config.json
+        Local preview
       
     </span>
   </a>
@@ -1129,10 +1140,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-the-mistral-model" class="md-nav__link">
+  <a href="#auto-deploy-from-planexe-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use the Mistral model
+        Auto-deploy from PlanExe (optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
       
     </span>
   </a>
@@ -1159,69 +1181,93 @@
   
 
 
-<h1 id="using-planexe-with-mistral">Using PlanExe with Mistral</h1>
-<p>This is for <strong>advanced users</strong> that already have PlanExe working.</p>
-<p>If you are getting started with PlanExe, I (the developer of PlanExe) recommend following the <a href="../openrouter/">openrouter.md</a> instructions. Stick with the default settings. </p>
-<p>If you want to use Mistral, then <a href="https://openrouter.ai/models?q=mistral">OpenRouter has several mistral models</a>. </p>
-<h2 id="docker-setup-for-mistral">Docker setup for Mistral</h2>
-<p>Mistral support is not baked into the Docker image by default. You must add the Mistral LlamaIndex extension to the worker, rebuild the image, and supply your API key.</p>
-<p>1) Install Docker (with Docker Compose), then clone the repo and enter it:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/PlanExeOrg/PlanExe.git
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd PlanExe
-</code></pre></div>
-2) Enable the Mistral client inside the worker image by editing <code>worker_plan/pyproject.toml</code>. Under <code>[project].dependencies</code>, add or uncomment these lines:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;llama-index-llms-mistralai==0.4.0&quot;,
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&quot;mistralai==1.5.2&quot;,
-</code></pre></div>
-   Without this step, the Docker image will not have the <code>MistralAI</code> class.
-3) Copy <code>.env.docker-example</code> to <code>.env</code> and add your key:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>MISTRAL_API_KEY=&#39;INSERT-YOUR-SECRET-KEY-HERE&#39;
-</code></pre></div>
-4) Add (or keep) a Mistral entry in <code>llm_config.json</code> (example below).
-5) Rebuild the images so the new dependencies are baked in:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose build --no-cache worker_plan frontend_single_user
-</code></pre></div>
-6) Start PlanExe:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker compose up worker_plan frontend_single_user
-</code></pre></div>
-7) Open http://localhost:7860, go to <strong>Settings</strong>, and pick your Mistral model (e.g., <code>mistral-paid-large</code>). If you later tweak only <code>llm_config.json</code>, just restart the containers (<code>docker compose restart worker_plan frontend_single_user</code>); rebuilds are only needed when dependencies change.</p>
-<h2 id="why-use-mistral">Why use Mistral?</h2>
-<p>Mistral can have run your own fine tuned model in the cloud. If you have sensitive business data that you don't want to share with the world, then this is one way to do it.</p>
-<p>Create an account on the <a href="https://mistral.ai/">mistral.ai</a> website and buy 10 EUR of credits.</p>
-<p>List of <a href="https://docs.mistral.ai/getting-started/models/models_overview/">available models</a>.</p>
-<p>Using the free models, and the API is rate limited to 1 request per second. PlanExe cannot deal with rate limiting and PlanExe does 70-100 requests, so it's likely going to yield errors.</p>
-<h2 id="create-api-key">Create API key</h2>
+<h1 id="how-planexe-docs-builds-and-publishes-to-docsplanexeorg">How PlanExe-docs Builds and Publishes to docs.planexe.org</h1>
+<p>This document describes how the <a href="https://github.com/PlanExeOrg/PlanExe-docs">PlanExe-docs</a> repository takes content from <strong>this directory</strong> (<code>PlanExe/docs/</code>) and publishes it to <a href="https://docs.planexe.org">https://docs.planexe.org</a>.</p>
+<h2 id="overview">Overview</h2>
+<ul>
+<li><strong>Content source</strong>: This directory (<code>PlanExe/docs/</code>). All Markdown files, images, and assets here become the published documentation.</li>
+<li><strong>Build &amp; deploy</strong>: The <a href="https://github.com/PlanExeOrg/PlanExe-docs">PlanExe-docs</a> repo. It holds MkDocs config, GitHub Actions workflow, and build scripts.</li>
+<li><strong>Output</strong>: Static site served via <strong>GitHub Pages</strong> at <strong>docs.planexe.org</strong>.</li>
+</ul>
+<h2 id="pipeline-ci">Pipeline (CI)</h2>
 <ol>
-<li>Visit <a href="https://console.mistral.ai/api-keys">api-keys</a>.</li>
-<li>Click <code>Create new key</code> and name the new key <code>PlanExe</code>.</li>
-<li>In the <code>.env</code> file in the root dir of the PlanExe repo, create a row named <code>MISTRAL_API_KEY</code>. Copy/paste the newly created api key into that row.</li>
+<li><strong>Trigger</strong><br />
+   The <a href="https://github.com/PlanExeOrg/PlanExe-docs/blob/main/.github/workflows/deploy.yml">Deploy Documentation</a> workflow runs when:</li>
+<li>There is a <strong>push to <code>main</code></strong> on PlanExe-docs, or</li>
+<li>It is started <strong>manually</strong> (<code>workflow_dispatch</code>), or</li>
+<li>A <strong><code>repository_dispatch</code></strong> event <code>docs-updated</code> is sent (e.g. when PlanExe is updated and you want to redeploy docs).</li>
 </ol>
-<p>The <code>.env</code> file should look something like the following, with your own key inserted.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>MISTRAL_API_KEY=&#39;AWkg3SxFTLWaPJClbASfv9h3VPItroof&#39;
-</code></pre></div></p>
-<h2 id="edit-the-llm_configjson">Edit the <code>llm_config.json</code></h2>
-<p>The JSON should look something like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;mistral-paid-large&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is paid. Possible free to use for a limited time. Check the pricing before use.&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MistralAI&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">            </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mistral-large-latest&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">            </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${MISTRAL_API_KEY}&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">            </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">            </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">60.0</span><span class="p">,</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">            </span><span class="nt">&quot;max_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8192</span><span class="p">,</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">            </span><span class="nt">&quot;max_retries&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="use-the-mistral-model">Use the Mistral model</h2>
+<p><strong>Pushing only to PlanExe does not by itself update docs.planexe.org.</strong> This repo has a workflow (<code>.github/workflows/docs-update.yml</code>) that runs on push to <code>main</code> when <code>docs/</code> changes and sends <code>repository_dispatch</code> to PlanExe-docs. For that to work you must add a secret in <strong>PlanExe</strong> (see below). Otherwise, after editing <code>PlanExe/docs/</code>, either run the Deploy workflow <strong>manually</strong> in PlanExe-docs, or push to PlanExe-docs <code>main</code> (e.g. after syncing content) to deploy.</p>
 <ol>
-<li>Restart PlanExe</li>
-<li>Go to the <code>Settings</code> tab</li>
-<li>Select the <code>mistral-paid-large</code> model.</li>
+<li><strong>Checkout</strong>  </li>
+<li>PlanExe-docs repo (workflow, <code>mkdocs.yml</code>, <code>requirements.txt</code>, etc.).  </li>
+<li>
+<p>PlanExe repo into <code>planexe-source/</code> (so this <code>docs/</code> directory is available).</p>
+</li>
+<li>
+<p><strong>Build</strong>  </p>
+</li>
+<li><code>mkdir -p docs</code> in the PlanExe-docs workspace.  </li>
+<li><code>cp -r planexe-source/docs/* docs/</code> — all content from <strong>this</strong> <code>PlanExe/docs/</code> directory is copied into PlanExe-docs’ <code>docs/</code> folder.  </li>
+<li>
+<p><code>mkdocs build --site-dir site</code> — MkDocs (Material theme, config from <code>mkdocs.yml</code>) builds the site into <code>site/</code>.</p>
+</li>
+<li>
+<p><strong>Deploy</strong>  </p>
+</li>
+<li>The <a href="https://github.com/peaceiris/actions-gh-pages">peaceiris/actions-gh-pages</a> action publishes the <code>site/</code> directory to the <strong>gh-pages</strong> branch of PlanExe-docs.  </li>
+<li>Custom domain <strong>docs.planexe.org</strong> is set via <code>cname: docs.planexe.org</code> in the workflow.  </li>
+<li>GitHub Pages serves the site from that branch, so updates appear at <strong>https://docs.planexe.org</strong>.</li>
 </ol>
+<h2 id="key-files">Key files</h2>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Doc content (you edit here)</td>
+<td><code>PlanExe/docs/</code> (this directory)</td>
+</tr>
+<tr>
+<td>MkDocs config, theme, plugins</td>
+<td>PlanExe-docs <code>mkdocs.yml</code></td>
+</tr>
+<tr>
+<td>Deploy workflow</td>
+<td>PlanExe-docs <code>.github/workflows/deploy.yml</code></td>
+</tr>
+<tr>
+<td>Build dependencies</td>
+<td>PlanExe-docs <code>requirements.txt</code></td>
+</tr>
+<tr>
+<td>Frontpage</td>
+<td><code>PlanExe/docs/index.md</code> (used as site index)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="local-preview">Local preview</h2>
+<p>To build and preview the same site locally:</p>
+<ol>
+<li>Clone both PlanExe and PlanExe-docs.  </li>
+<li>From PlanExe-docs, run <code>python build.py</code> (optionally set <code>PLANEXE_REPO</code> if PlanExe is not at <code>../PlanExe</code>).  </li>
+<li>This copies <code>PlanExe/docs/</code> into a temp <code>docs/</code> dir, runs <code>mkdocs build</code>, and writes output to <code>site/</code>.  </li>
+<li>Run <code>python serve.py</code> to serve <code>site/</code> at <code>http://127.0.0.1:18525/</code>.</li>
+</ol>
+<h2 id="auto-deploy-from-planexe-optional">Auto-deploy from PlanExe (optional)</h2>
+<p>To have the live site update when you push to <strong>PlanExe</strong> <code>main</code> with changes under <code>docs/</code>:</p>
+<ol>
+<li>In <strong>PlanExe</strong> repo: <strong>Settings → Secrets and variables → Actions</strong> → <strong>New repository secret</strong>.</li>
+<li>Name: <code>PLANEXE_DOCS_DISPATCH_TOKEN</code>. Value: a <a href="https://github.com/settings/tokens">Personal Access Token</a> (or fine-grained PAT) with <strong>repo</strong> scope for <strong>PlanExeOrg/PlanExe-docs</strong> (or at least permission to trigger workflows in PlanExe-docs).</li>
+<li>Push to <strong>PlanExe</strong> <code>main</code> with changes under <code>docs/</code>. The workflow <code>.github/workflows/docs-update.yml</code> runs and sends <code>repository_dispatch</code> to PlanExe-docs; PlanExe-docs then checks out PlanExe, copies <code>docs/</code>, builds, and deploys.</li>
+</ol>
+<p>If the secret is not set, the "Notify docs deploy" workflow in PlanExe will fail at the dispatch step. You can still update the live site by running the <strong>Deploy Documentation</strong> workflow manually in PlanExe-docs (Actions → Deploy Documentation → Run workflow), or by pushing to PlanExe-docs <code>main</code>.</p>
+<h2 id="summary">Summary</h2>
+<p>Edits in <strong>PlanExe/docs/</strong> are what get published. PlanExe-docs orchestrates copy → MkDocs build → GitHub Pages deploy to <strong>docs.planexe.org</strong>. Push to PlanExe-docs <code>main</code>, trigger the Deploy workflow manually in PlanExe-docs, or set up <code>PLANEXE_DOCS_DISPATCH_TOKEN</code> in PlanExe so pushes to <code>docs/</code> auto-trigger the deploy.</p>
 
 
 

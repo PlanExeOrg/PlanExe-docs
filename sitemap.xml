@@ -1,55 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+         <loc>https://docs.planexe.org/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/AGENTS/</loc>
+         <lastmod>2026-01-30</lastmod>
+    </url>
+    <url>
          <loc>https://docs.planexe.org/docker/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/getting_started/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/install_developer/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/lm_studio/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/mcp/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/mistral/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/ollama/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/openrouter/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/plan/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/planexe_mcp_interface/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/railway/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/recent_changes/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/troubleshooting_stuck_pipeline/</loc>
-         <lastmod>2026-01-29</lastmod>
+         <lastmod>2026-01-30</lastmod>
     </url>
 </urlset>
