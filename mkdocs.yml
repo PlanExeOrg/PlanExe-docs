@@ -12,6 +12,7 @@ nav:
     - Statistics: statistics.md
   - MCP:
     - Welcome: mcp/mcp_welcome.md
+    - LM Studio: mcp/lm_studio.md
     - Cursor: mcp/cursor.md
     - MCP details: mcp/mcp_details.md
     - PlanExe MCP interface: mcp/planexe_mcp_interface.md
