@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#planexe-mcp-interface-specification-v10" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -556,6 +561,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlanExe MCP interface
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -573,6 +598,737 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-what-is-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 What is PlanExe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-what-kind-of-plan-does-it-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 What kind of plan does it create
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 What kind of plan does it create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-agent-facing-summary-for-server-instructions-tool-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2.1 Agent-facing summary (for server instructions / tool descriptions)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-scope-of-this-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Scope of this document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Goals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-functional-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Functional goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-non-functional-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Non-functional goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Non-goals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Non-goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mcp-tools-vs-mcp-tasks-run-as-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 MCP tools vs MCP tasks ("Run as task")
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-system-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. System Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. System Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-core-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Core entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Core entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. State Machine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. State Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-task-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Task states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-run-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Run states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-allowed-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Allowed transitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mcp-tools-v1-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. MCP Tools (v1 Required)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. MCP Tools (v1 Required)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-prompt_examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 prompt_examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-task_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 task_create
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-task_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 task_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-task_stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 task_stop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-download-flow-task_download-vs-task_file_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Download flow (task_download vs task_file_info)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Targets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-standard-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Standard targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-concurrency-locking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Concurrency &amp; Locking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Concurrency &amp; Locking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-single-active-run-per-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Single active run per task
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-error-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Error Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Error Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-required-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Required error codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-security-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Security &amp; Isolation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Security &amp; Isolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-sandbox-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Sandbox constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Access control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-sensitive-data-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Sensitive data handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-performance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Performance Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Performance Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-responsiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Responsiveness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-large-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Large artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-observability-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Observability Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-reference-ui-integration-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Reference UI Integration Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-compatibility-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Compatibility &amp; Versioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Compatibility &amp; Versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-versioning-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 Versioning strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-forward-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Forward compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Testing Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Testing Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-contract-tests-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 Contract tests (required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-determinism-tests-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Determinism tests (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-load-tests-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 Load tests (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-future-extensions-mcp-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Future Extensions (MCP Resources)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-future-tools-high-leverage-low-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Future Tools (High-Leverage, Low-Complexity)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Future Tools (High-Leverage, Low-Complexity)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-task_list-or-task_recent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.1 task_list (or task_recent)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-task_wait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.2 task_wait
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#173-task_get_latest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3 task_get_latest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#174-task_logs_tail-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.4 task_logs_tail (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-example-end-to-end-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A — Example End-to-End Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-optional-v11-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B — Optional v1.1 Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1396,6 +2152,728 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Purpose
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-what-is-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 What is PlanExe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-what-kind-of-plan-does-it-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 What kind of plan does it create
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 What kind of plan does it create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-agent-facing-summary-for-server-instructions-tool-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2.1 Agent-facing summary (for server instructions / tool descriptions)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-scope-of-this-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Scope of this document
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Goals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-functional-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Functional goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-non-functional-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Non-functional goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Non-goals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Non-goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mcp-tools-vs-mcp-tasks-run-as-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 MCP tools vs MCP tasks ("Run as task")
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-system-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. System Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. System Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-core-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Core entities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Core entities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Artifact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. State Machine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. State Machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-task-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Task states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-run-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Run states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-allowed-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Allowed transitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mcp-tools-v1-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. MCP Tools (v1 Required)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. MCP Tools (v1 Required)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-prompt_examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 prompt_examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-task_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 task_create
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-task_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 task_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-task_stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 task_stop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#65-download-flow-task_download-vs-task_file_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 Download flow (task_download vs task_file_info)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Targets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-standard-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Standard targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-concurrency-locking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Concurrency &amp; Locking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Concurrency &amp; Locking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-single-active-run-per-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Single active run per task
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-error-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Error Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Error Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-required-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Required error codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-security-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Security &amp; Isolation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Security &amp; Isolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-sandbox-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Sandbox constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Access control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-sensitive-data-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Sensitive data handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-performance-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Performance Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Performance Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-responsiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Responsiveness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-large-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Large artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-observability-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Observability Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-reference-ui-integration-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Reference UI Integration Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-compatibility-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Compatibility &amp; Versioning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Compatibility &amp; Versioning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-versioning-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1 Versioning strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-forward-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2 Forward compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Testing Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Testing Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-contract-tests-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 Contract tests (required)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-determinism-tests-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 Determinism tests (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-load-tests-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.3 Load tests (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-future-extensions-mcp-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Future Extensions (MCP Resources)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-future-tools-high-leverage-low-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Future Tools (High-Leverage, Low-Complexity)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Future Tools (High-Leverage, Low-Complexity)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-task_list-or-task_recent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.1 task_list (or task_recent)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-task_wait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.2 task_wait
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#173-task_get_latest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3 task_get_latest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#174-task_logs_tail-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.4 task_logs_tail (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-a-example-end-to-end-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix A — Example End-to-End Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-b-optional-v11-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix B — Optional v1.1 Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1415,382 +2893,440 @@
   
 
 
-  <h1>PlanExe MCP interface</h1>
-
-<p>PlanExe MCP Interface Specification (v1.0)</p>
-<ol>
-<li>Purpose</li>
-</ol>
-<p>1.1 What is PlanExe</p>
+<h1 id="planexe-mcp-interface-specification-v10">PlanExe MCP Interface Specification (v1.0)</h1>
+<h2 id="1-purpose">1. Purpose</h2>
+<h3 id="11-what-is-planexe">1.1 What is PlanExe</h3>
 <p>PlanExe is a service that generates <strong>rough-draft project plans</strong> from a natural-language prompt. You describe a large goal (e.g. open a clinic, launch a product, build a moon base)—the kind of project that in reality takes months or years. PlanExe produces a structured draft: steps, documents, and deliverables. The plan is not executable in its current form; it is a draft to refine and act on. Creating a plan is a long-running task (100+ LLM inference calls): create a task with a prompt, poll status, then download the HTML report and zip when done.</p>
-<p>1.2 What kind of plan does it create</p>
+<h3 id="12-what-kind-of-plan-does-it-create">1.2 What kind of plan does it create</h3>
 <p>The plan is a <strong>project plan</strong>: a DAG of steps (Luigi tasks) that produce artifacts including a Gantt chart, risk analysis, and other project management deliverables. The main output is a large HTML file (approx 700KB) containing many sections. There is also a zip file containing all intermediary files (md, json, csv). Plan quality depends on prompt quality; use the prompt_examples tool to see the baseline before calling task_create.</p>
-<p>1.2.1 Agent-facing summary (for server instructions / tool descriptions)</p>
+<h4 id="121-agent-facing-summary-for-server-instructions-tool-descriptions">1.2.1 Agent-facing summary (for server instructions / tool descriptions)</h4>
 <p>Implementors should expose the following to agents so they understand what PlanExe does:</p>
 <ul>
 <li><strong>What:</strong> PlanExe turns a plain-English goal into a structured strategic-plan draft (executive summary, Gantt, risk register, governance, etc.) in ~15–20 min. The plan is a draft to refine, not an executable or final document.</li>
 <li><strong>Flow:</strong> Call prompt_examples first, then task_create; poll task_status at reasonable intervals (e.g. every 5 min); use task_download or task_file_info when complete.</li>
 <li><strong>Output:</strong> Large HTML report (~700KB) and optional zip of intermediate files (md, json, csv).</li>
 </ul>
-<p>1.3 Scope of this document</p>
-<p>This document specifies a Model Context Protocol (MCP) interface for PlanExe that enables AI agents and client UIs to:
-    1.  Create and run long-running plan generation workflows.
-    2.  Receive real-time progress updates (task status, log output).
-    3.  List, read, and edit artifacts produced in an output directory.
-    4.  Stop and resume execution with Luigi-aware incremental recomputation.</p>
-<p>The interface is designed to support:
-    •   interactive “build systems” behavior (like make / bazel),
-    •   resumable DAG execution (Luigi),
-    •   deterministic artifact management.</p>
-<p>⸻</p>
+<h3 id="13-scope-of-this-document">1.3 Scope of this document</h3>
+<p>This document specifies a Model Context Protocol (MCP) interface for PlanExe that enables AI agents and client UIs to:</p>
 <ol>
-<li>Goals</li>
+<li>Create and run long-running plan generation workflows.</li>
+<li>Receive real-time progress updates (task status, log output).</li>
+<li>List, read, and edit artifacts produced in an output directory.</li>
+<li>Stop and resume execution with Luigi-aware incremental recomputation.</li>
 </ol>
-<p>2.1 Functional goals
-    •   Task-based orchestration: each run is associated with a task ID.
-    •   Long-running execution: starts asynchronously; clients poll or subscribe to events.
-    •   Artifact-first workflow: outputs are exposed as file-like artifacts.
-    •   Stop / Resume with minimal recompute:
-    •   on resume, only invalidated downstream tasks regenerate.
-    •   Progress reporting:
-    •   progress_percentage
-    •   Editable artifacts:
-    •   user edits a generated file
-    •   pipeline continues from that point, producing dependent outputs</p>
-<p>2.2 Non-functional goals
-    •   Idempotency: repeated tool calls should not corrupt state.
-    •   Observability: logs, state transitions, and artifacts must be inspectable.
-    •   Concurrency safety: prevent conflicting writes and illegal resume patterns.
-    •   Extensibility: future versions can add task graph browsing, caching backends, exports.</p>
-<p>⸻</p>
-<ol>
-<li>Non-goals
-    •   Defining PlanExe’s internal plan schema, content format, or prompt strategy.
-    •   Providing remote code execution inside artifacts.
-    •   Implementing a full Luigi UI clone in MCP v1 (optional later).
-    •   Guaranteeing ETA estimates (allowed but must be optional / best-effort).</li>
-</ol>
-<p>3.1 MCP tools vs MCP tasks (“Run as task”)
-    The MCP specification defines two different mechanisms:
-    •   <strong>MCP tools</strong> (e.g. task_create, task_status, task_stop): the server exposes named tools; the client calls them and receives a response. PlanExe’s interface is <strong>tool-based</strong>: the agent calls task_create → receives task_id → polls task_status → uses task_download. This document specifies those tools.
-    •   <strong>MCP tasks protocol</strong> (“Run as task” in some UIs): a separate mechanism where the client can run a tool “as a task” using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.
-    PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable “Run as task” for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. The intended flow is: call task_create, poll task_status, then call task_download when complete.</p>
-<p>⸻</p>
-<ol>
-<li>System Model</li>
-</ol>
-<p>4.1 Core entities</p>
-<p>Task
-A long-lived container for a PlanExe project run.</p>
-<p>Key properties
-    •   task_id: stable unique identifier (UUID, matches TaskItem.id)
-    •   output_dir: artifact root namespace for task
-    •   config: immutable run configuration (models, runtime limits, Luigi params)
-    •   created_at, updated_at</p>
-<p>Run
-A single execution attempt inside a task (e.g., after a resume).</p>
-<p>Key properties
-    •   state: running | stopped | completed | failed
-    •   progress_percentage: computed progress percentage (float)
-    •   started_at, ended_at</p>
-<p>Artifact
-A file-like output managed by PlanExe.</p>
-<p>Key properties
-    •   path: path relative to task output root
-    •   size, updated_at
-    •   content_type: text/markdown, text/html, application/json, etc.
-    •   sha256: content hash for optimistic locking and invalidation</p>
-<p>Event
-A typed message emitted during execution for UI/agent consumption.</p>
-<p>Key properties
-    •   cursor: ordering token
-    •   ts: timestamp
-    •   type: event type
-    •   data: event payload</p>
-<p>⸻</p>
-<ol>
-<li>State Machine</li>
-</ol>
-<p>5.1 Task states</p>
-<p>Tasks may exist independent of active runs.
-    •   created: task initialized, no run started
-    •   active: at least one run exists, may be running or stopped
-    •   archived: optional; immutable, no new runs allowed</p>
-<p>5.2 Run states
-    •   running
-    •   stopping (optional transitional state)
-    •   stopped (user stopped, resumable)
-    •   completed
-    •   failed (resumable depending on failure type)</p>
-<p>5.3 Allowed transitions
-    •   running → stopped via task_stop
-    •   running → completed via normal success
-    •   running → failed via error</p>
-<p>Invalid
-    •   completed → running (new run must be triggered by creating a new task)
-    •   running → running (no concurrent runs in v1)</p>
-<p>⸻</p>
-<ol>
-<li>MCP Tools (v1 Required)</li>
-</ol>
+<p>The interface is designed to support:</p>
+<ul>
+<li>interactive "build systems" behavior (like make / bazel),</li>
+<li>resumable DAG execution (Luigi),</li>
+<li>deterministic artifact management.</li>
+</ul>
+<hr />
+<h2 id="2-goals">2. Goals</h2>
+<h3 id="21-functional-goals">2.1 Functional goals</h3>
+<ul>
+<li>Task-based orchestration: each run is associated with a task ID.</li>
+<li>Long-running execution: starts asynchronously; clients poll or subscribe to events.</li>
+<li>Artifact-first workflow: outputs are exposed as file-like artifacts.</li>
+<li>Stop / Resume with minimal recompute:</li>
+<li>on resume, only invalidated downstream tasks regenerate.</li>
+<li>Progress reporting:</li>
+<li>progress_percentage</li>
+<li>Editable artifacts:</li>
+<li>user edits a generated file</li>
+<li>pipeline continues from that point, producing dependent outputs</li>
+</ul>
+<h3 id="22-non-functional-goals">2.2 Non-functional goals</h3>
+<ul>
+<li>Idempotency: repeated tool calls should not corrupt state.</li>
+<li>Observability: logs, state transitions, and artifacts must be inspectable.</li>
+<li>Concurrency safety: prevent conflicting writes and illegal resume patterns.</li>
+<li>Extensibility: future versions can add task graph browsing, caching backends, exports.</li>
+</ul>
+<hr />
+<h2 id="3-non-goals">3. Non-goals</h2>
+<ul>
+<li>Defining PlanExe's internal plan schema, content format, or prompt strategy.</li>
+<li>Providing remote code execution inside artifacts.</li>
+<li>Implementing a full Luigi UI clone in MCP v1 (optional later).</li>
+<li>Guaranteeing ETA estimates (allowed but must be optional / best-effort).</li>
+</ul>
+<h3 id="31-mcp-tools-vs-mcp-tasks-run-as-task">3.1 MCP tools vs MCP tasks ("Run as task")</h3>
+<p>The MCP specification defines two different mechanisms:</p>
+<ul>
+<li><strong>MCP tools</strong> (e.g. task_create, task_status, task_stop): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls task_create → receives task_id → polls task_status → uses task_download. This document specifies those tools.</li>
+<li><strong>MCP tasks protocol</strong> ("Run as task" in some UIs): a separate mechanism where the client can run a tool "as a task" using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.</li>
+</ul>
+<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. The intended flow is: call task_create, poll task_status, then call task_download when complete.</p>
+<hr />
+<h2 id="4-system-model">4. System Model</h2>
+<h3 id="41-core-entities">4.1 Core entities</h3>
+<h4 id="task">Task</h4>
+<p>A long-lived container for a PlanExe project run.</p>
+<p><strong>Key properties</strong></p>
+<ul>
+<li>task_id: stable unique identifier (UUID, matches TaskItem.id)</li>
+<li>output_dir: artifact root namespace for task</li>
+<li>config: immutable run configuration (models, runtime limits, Luigi params)</li>
+<li>created_at, updated_at</li>
+</ul>
+<h4 id="run">Run</h4>
+<p>A single execution attempt inside a task (e.g., after a resume).</p>
+<p><strong>Key properties</strong></p>
+<ul>
+<li>state: running | stopped | completed | failed</li>
+<li>progress_percentage: computed progress percentage (float)</li>
+<li>started_at, ended_at</li>
+</ul>
+<h4 id="artifact">Artifact</h4>
+<p>A file-like output managed by PlanExe.</p>
+<p><strong>Key properties</strong></p>
+<ul>
+<li>path: path relative to task output root</li>
+<li>size, updated_at</li>
+<li>content_type: text/markdown, text/html, application/json, etc.</li>
+<li>sha256: content hash for optimistic locking and invalidation</li>
+</ul>
+<h4 id="event">Event</h4>
+<p>A typed message emitted during execution for UI/agent consumption.</p>
+<p><strong>Key properties</strong></p>
+<ul>
+<li>cursor: ordering token</li>
+<li>ts: timestamp</li>
+<li>type: event type</li>
+<li>data: event payload</li>
+</ul>
+<hr />
+<h2 id="5-state-machine">5. State Machine</h2>
+<h3 id="51-task-states">5.1 Task states</h3>
+<p>Tasks may exist independent of active runs.</p>
+<ul>
+<li>created: task initialized, no run started</li>
+<li>active: at least one run exists, may be running or stopped</li>
+<li>archived: optional; immutable, no new runs allowed</li>
+</ul>
+<h3 id="52-run-states">5.2 Run states</h3>
+<ul>
+<li>running</li>
+<li>stopping (optional transitional state)</li>
+<li>stopped (user stopped, resumable)</li>
+<li>completed</li>
+<li>failed (resumable depending on failure type)</li>
+</ul>
+<h3 id="53-allowed-transitions">5.3 Allowed transitions</h3>
+<ul>
+<li>running → stopped via task_stop</li>
+<li>running → completed via normal success</li>
+<li>running → failed via error</li>
+</ul>
+<p><strong>Invalid</strong></p>
+<ul>
+<li>completed → running (new run must be triggered by creating a new task)</li>
+<li>running → running (no concurrent runs in v1)</li>
+</ul>
+<hr />
+<h2 id="6-mcp-tools-v1-required">6. MCP Tools (v1 Required)</h2>
 <p>All tool names below are normative.</p>
-<p>6.1 prompt_examples</p>
+<h3 id="61-prompt_examples">6.1 prompt_examples</h3>
 <p>Returns example prompts that define the baseline for a good prompt. Call this tool before task_create and refine your prompt until it matches that quality. If you create a task with a weaker prompt, the resulting plan will be lower quality than it could be.</p>
-<p>Request: no parameters (empty object).</p>
-<p>Response: <code>{ "samples": [ "prompt text 1", "prompt text 2", ... ], "message": "..." }</code>.</p>
-<p>⸻</p>
-<p>6.2 task_create</p>
+<p><strong>Request:</strong> no parameters (empty object).</p>
+<p><strong>Response:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;samples&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;prompt text 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;prompt text 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="62-task_create">6.2 task_create</h3>
 <p>Start creating a new plan. speed_vs_detail modes: 'all' runs the full pipeline with all details (slower, higher token usage/cost). 'fast' runs the full pipeline with minimal work per step (faster, fewer details), useful to verify the pipeline is working. 'ping' runs the pipeline entrypoint and makes a single LLM call to verify the worker_plan_database is processing tasks and can reach the LLM.</p>
-<p>Request</p>
-<p>Schema</p>
-<p>{
-  "type": "object",
-  "properties": {
-    "prompt": { "type": "string" },
-    "speed_vs_detail": {
-      "type": "string",
-      "enum": ["ping", "fast", "all"],
-      "default": "ping"
-    }
-  },
-  "required": ["prompt"]
-}</p>
-<p>Example</p>
-<p>{
-  "prompt": "string",
-  "speed_vs_detail": "ping"
-}</p>
-<p>Prompt quality</p>
-<p>The <code>prompt</code> parameter should be a detailed description of what the plan should cover. Good prompts are typically 300–800 words and include:
-    •   Clear context: background, constraints, and goals
-    •   Specific requirements: budget, timeline, location, or technical constraints
-    •   Success criteria: what "done" looks like
-    •   Banned words or approaches (if any)</p>
+<p><strong>Request</strong></p>
+<p><strong>Schema</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;speed_vs_detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">&quot;enum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ping&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fast&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;all&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;prompt&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;speed_vs_detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Prompt quality</strong></p>
+<p>The <code>prompt</code> parameter should be a detailed description of what the plan should cover. Good prompts are typically 300–800 words and include:</p>
+<ul>
+<li>Clear context: background, constraints, and goals</li>
+<li>Specific requirements: budget, timeline, location, or technical constraints</li>
+<li>Success criteria: what "done" looks like</li>
+<li>Banned words or approaches (if any)</li>
+</ul>
 <p>Short one-liners (e.g., "Construct a bridge") tend to produce poor output because they lack context for the planning pipeline. Important details are location, budget, time frame.</p>
 <p>Clients can call the MCP tool <strong>prompt_examples</strong> to retrieve example prompts. Use these as examples for task_create; they can also call task_create with any prompt—short prompts produce less detailed plans.</p>
-<p>For the full catalog file:
-    •   <code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code> — JSONL with <code>id</code>, <code>prompt</code>, optional <code>tags</code>, and optional <code>mcp_example</code> (true = curated for MCP).</p>
-<p>Response</p>
-<p>{
-  "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1",
-  "created_at": "2026-01-14T12:34:56Z"
-}</p>
-<p>Behavior
-    •   Must be idempotent only if client supplies an optional client_request_id (optional extension).
-    •   Task config is immutable after creation in v1.</p>
-<p>⸻</p>
-<p>6.3 task_status</p>
+<p>For the full catalog file:</p>
+<ul>
+<li><code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code> — JSONL with <code>id</code>, <code>prompt</code>, optional <code>tags</code>, and optional <code>mcp_example</code> (true = curated for MCP).</li>
+</ul>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-14T12:34:56Z&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Behavior</strong></p>
+<ul>
+<li>Must be idempotent only if client supplies an optional client_request_id (optional extension).</li>
+<li>Task config is immutable after creation in v1.</li>
+</ul>
+<hr />
+<h3 id="63-task_status">6.3 task_status</h3>
 <p>Returns run status and progress. Used for progress bars and UI states. <strong>Polling interval:</strong> call at reasonable intervals only (e.g. every 5 minutes); plan generation takes 15–20+ minutes and frequent polling is unnecessary.</p>
-<p>Request</p>
-<p>{
-  "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1"
-}</p>
-<p>Response</p>
-<p>{
-  "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1",
-  "state": "running",
-  "progress_percentage": 62.0,
-  "timing": {
-    "started_at": "2026-01-14T12:35:10Z",
-    "elapsed_sec": 512
-  },
-  "files": [
-    {
-      "path": "plan.md",
-      "updated_at": "2026-01-14T12:43:11Z"
-    }
-  ]
-}</p>
-<p>Notes
-    •   progress_percentage must be a float within [0,100].</p>
-<p>⸻</p>
-<p>6.4 task_stop</p>
+<p><strong>Request</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;running&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;progress_percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">62.0</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;timing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;started_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-14T12:35:10Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&quot;elapsed_sec&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">512</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan.md&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-14T12:43:11Z&quot;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Notes</strong></p>
+<ul>
+<li>progress_percentage must be a float within [0,100].</li>
+</ul>
+<hr />
+<h3 id="64-task_stop">6.4 task_stop</h3>
 <p>Stops the active run.</p>
-<p>Request</p>
-<p>{
-  "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1"
-}</p>
-<p>Response</p>
-<p>{
-  "state": "stopped"
-}</p>
-<p>Required semantics
-    •   Must stop workers cleanly where possible.
-    •   Must persist enough Luigi state to resume incrementally.</p>
-<p>⸻</p>
-<p>6.5 Download flow (task_download vs task_file_info)</p>
+<p><strong>Request</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stopped&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Required semantics</strong></p>
+<ul>
+<li>Must stop workers cleanly where possible.</li>
+<li>Must persist enough Luigi state to resume incrementally.</li>
+</ul>
+<hr />
+<h3 id="65-download-flow-task_download-vs-task_file_info">6.5 Download flow (task_download vs task_file_info)</h3>
 <p><strong>If your client exposes task_download</strong> (e.g. mcp_local): use it to save the report or zip locally; it calls task_file_info under the hood, then fetches and writes to the local save path (e.g. PLANEXE_PATH).</p>
 <p><strong>If you only have task_file_info</strong> (e.g. direct connection to mcp_cloud): call it with task_id and artifact ("report" or "zip"); use the returned download_url to fetch the file (e.g. GET with API key if configured).</p>
-<p>⸻</p>
-<ol>
-<li>Targets</li>
-</ol>
-<p>8.1 Standard targets</p>
-<p>The following targets MUST be supported:
-    •   build_plan
-    •   validate_plan
-    •   build_plan_and_validate</p>
-<p>Targets map to Luigi “final tasks”.</p>
-<ol>
-<li>Concurrency &amp; Locking</li>
-</ol>
-<p>10.1 Single active run per task</p>
-<p>In v1, tasks MUST enforce:
-    •   at most one run in running state.</p>
-<p>⸻</p>
-<ol>
-<li>Error Model</li>
-</ol>
-<p>Errors MUST return:
-    •   code: stable machine-readable
-    •   message: human-readable
-    •   details: optional</p>
-<p>Example:</p>
-<p>{
-  "error": {
-    "code": "RUN_ALREADY_ACTIVE",
-    "message": "A run is currently active for this task.",
-    "details": { "run_id": "run_0001" }
-  }
-}</p>
-<p>11.1 Required error codes
-    •   TASK_NOT_FOUND
-    •   RUN_NOT_FOUND
-    •   RUN_ALREADY_ACTIVE
-    •   RUN_NOT_ACTIVE
-    •   INVALID_TARGET
-    •   INVALID_ARTIFACT_URI
-    •   CONFLICT
-    •   PERMISSION_DENIED
-    •   RUNNING_READONLY
-    •   INTERNAL_ERROR</p>
-<p>⸻</p>
-<ol>
-<li>Security &amp; Isolation</li>
-</ol>
-<p>12.1 Sandbox constraints
-    •   All artifacts must live under task-scoped storage.
-    •   Artifact URIs must not permit path traversal.</p>
-<p>12.2 Access control</p>
-<p>At minimum:
-    •   task must be scoped to a user identity (metadata.user_id)
-    •   callers without permission must receive PERMISSION_DENIED</p>
-<p>12.3 Sensitive data handling
-    •   logs may include model prompts/responses → treat logs as sensitive artifacts
-    •   allow a config option to redact prompt content in event streaming</p>
-<p>⸻</p>
-<ol>
-<li>Performance Requirements</li>
-</ol>
-<p>13.1 Responsiveness
-    •   task_status must return within &lt; 250ms under normal load.</p>
-<p>13.2 Large artifacts
-    •   server SHOULD impose max read size per call (e.g., 2–10MB)</p>
-<p>⸻</p>
-<ol>
-<li>Observability Requirements</li>
-</ol>
-<p>The server MUST persist:
-    •   run lifecycle events
-    •   stop reasons
-    •   failure tracebacks as artifacts (e.g., run_error.json)
-    •   luigi execution logs (run.log)</p>
-<p>⸻</p>
-<ol>
-<li>Reference UI Integration Contract</li>
-</ol>
+<hr />
+<h2 id="7-targets">7. Targets</h2>
+<h3 id="71-standard-targets">7.1 Standard targets</h3>
+<p>The following targets MUST be supported:</p>
+<ul>
+<li>build_plan</li>
+<li>validate_plan</li>
+<li>build_plan_and_validate</li>
+</ul>
+<p>Targets map to Luigi "final tasks".</p>
+<hr />
+<h2 id="8-concurrency-locking">8. Concurrency &amp; Locking</h2>
+<h3 id="81-single-active-run-per-task">8.1 Single active run per task</h3>
+<p>In v1, tasks MUST enforce:</p>
+<ul>
+<li>at most one run in running state.</li>
+</ul>
+<hr />
+<h2 id="9-error-model">9. Error Model</h2>
+<p>Errors MUST return:</p>
+<ul>
+<li>code: stable machine-readable</li>
+<li>message: human-readable</li>
+<li>details: optional</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RUN_ALREADY_ACTIVE&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A run is currently active for this task.&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;run_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;run_0001&quot;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="91-required-error-codes">9.1 Required error codes</h3>
+<ul>
+<li>TASK_NOT_FOUND</li>
+<li>RUN_NOT_FOUND</li>
+<li>RUN_ALREADY_ACTIVE</li>
+<li>RUN_NOT_ACTIVE</li>
+<li>INVALID_TARGET</li>
+<li>INVALID_ARTIFACT_URI</li>
+<li>CONFLICT</li>
+<li>PERMISSION_DENIED</li>
+<li>RUNNING_READONLY</li>
+<li>INTERNAL_ERROR</li>
+</ul>
+<hr />
+<h2 id="10-security-isolation">10. Security &amp; Isolation</h2>
+<h3 id="101-sandbox-constraints">10.1 Sandbox constraints</h3>
+<ul>
+<li>All artifacts must live under task-scoped storage.</li>
+<li>Artifact URIs must not permit path traversal.</li>
+</ul>
+<h3 id="102-access-control">10.2 Access control</h3>
+<p>At minimum:</p>
+<ul>
+<li>task must be scoped to a user identity (metadata.user_id)</li>
+<li>callers without permission must receive PERMISSION_DENIED</li>
+</ul>
+<h3 id="103-sensitive-data-handling">10.3 Sensitive data handling</h3>
+<ul>
+<li>logs may include model prompts/responses → treat logs as sensitive artifacts</li>
+<li>allow a config option to redact prompt content in event streaming</li>
+</ul>
+<hr />
+<h2 id="11-performance-requirements">11. Performance Requirements</h2>
+<h3 id="111-responsiveness">11.1 Responsiveness</h3>
+<ul>
+<li>task_status must return within &lt; 250ms under normal load.</li>
+</ul>
+<h3 id="112-large-artifacts">11.2 Large artifacts</h3>
+<ul>
+<li>server SHOULD impose max read size per call (e.g., 2–10MB)</li>
+</ul>
+<hr />
+<h2 id="12-observability-requirements">12. Observability Requirements</h2>
+<p>The server MUST persist:</p>
+<ul>
+<li>run lifecycle events</li>
+<li>stop reasons</li>
+<li>failure tracebacks as artifacts (e.g., run_error.json)</li>
+<li>luigi execution logs (run.log)</li>
+</ul>
+<hr />
+<h2 id="13-reference-ui-integration-contract">13. Reference UI Integration Contract</h2>
 <p>To match your UI behavior:</p>
-<p>Progress bars</p>
-<p>Use:
-    •   task_status.progress_percentage
-    •   or progress_updated events</p>
-<p>⸻</p>
-<ol>
-<li>Compatibility &amp; Versioning</li>
-</ol>
-<p>16.1 Versioning strategy
-    •   MCP server exposes: planexe.version = "1.0"
-    •   breaking changes require major bump</p>
-<p>16.2 Forward compatibility</p>
+<p><strong>Progress bars</strong></p>
+<p>Use:</p>
+<ul>
+<li>task_status.progress_percentage</li>
+<li>or progress_updated events</li>
+</ul>
+<hr />
+<h2 id="14-compatibility-versioning">14. Compatibility &amp; Versioning</h2>
+<h3 id="141-versioning-strategy">14.1 Versioning strategy</h3>
+<ul>
+<li>MCP server exposes: planexe.version = "1.0"</li>
+<li>breaking changes require major bump</li>
+</ul>
+<h3 id="142-forward-compatibility">14.2 Forward compatibility</h3>
 <p>Clients must ignore unknown fields and unknown event types.</p>
-<p>⸻</p>
-<ol>
-<li>Testing Strategy</li>
-</ol>
-<p>17.1 Contract tests (required)
-    •   Start/stop/resume loops
-    •   Invalid transition errors
-    •   Event cursor monotonicity</p>
-<p>17.2 Determinism tests (recommended)
-    •   Given same inputs + same edits, ensure same downstream artifacts unless models are stochastic
-    •   If models are stochastic, test pipeline correctness, not identical bytes</p>
-<p>17.3 Load tests (recommended)
-    •   multiple tasks concurrently, one run each
-    •   event streaming stability under heavy log output</p>
-<p>⸻</p>
-<ol>
-<li>Future Extensions (MCP Resources)</li>
-</ol>
-<p>PlanExe is artifact-first, and MCP already has a native concept for that: resources.
-Today artifacts are exposed via download_url or via proxy download + saved_path.
-Future versions SHOULD expose artifacts as MCP resources so clients can fetch them
-via standard resource reads (and treat PlanExe as a first-class MCP server rather
-than a thin API wrapper).</p>
-<p>Proposed resource identifiers
-    •   planexe://task/<task_id>/report
-    •   planexe://task/<task_id>/zip</p>
-<p>Recommended resource metadata
-    •   mime type (content_type)
-    •   size (bytes)
-    •   sha256 (content hash)
-    •   generated_at (UTC timestamp)</p>
-<p>Notes
-    •   Resources can be backed by existing HTTP endpoints internally; the MCP
-        resource read returns the bytes + metadata.
-    •   This enables richer MCP client UX (preview, caching, validation) without
-        custom tool calls.</p>
-<p>⸻</p>
-<ol>
-<li>Future Tools (High-Leverage, Low-Complexity)</li>
-</ol>
+<hr />
+<h2 id="15-testing-strategy">15. Testing Strategy</h2>
+<h3 id="151-contract-tests-required">15.1 Contract tests (required)</h3>
+<ul>
+<li>Start/stop/resume loops</li>
+<li>Invalid transition errors</li>
+<li>Event cursor monotonicity</li>
+</ul>
+<h3 id="152-determinism-tests-recommended">15.2 Determinism tests (recommended)</h3>
+<ul>
+<li>Given same inputs + same edits, ensure same downstream artifacts unless models are stochastic</li>
+<li>If models are stochastic, test pipeline correctness, not identical bytes</li>
+</ul>
+<h3 id="153-load-tests-recommended">15.3 Load tests (recommended)</h3>
+<ul>
+<li>multiple tasks concurrently, one run each</li>
+<li>event streaming stability under heavy log output</li>
+</ul>
+<hr />
+<h2 id="16-future-extensions-mcp-resources">16. Future Extensions (MCP Resources)</h2>
+<p>PlanExe is artifact-first, and MCP already has a native concept for that: resources. Today artifacts are exposed via download_url or via proxy download + saved_path. Future versions SHOULD expose artifacts as MCP resources so clients can fetch them via standard resource reads (and treat PlanExe as a first-class MCP server rather than a thin API wrapper).</p>
+<p><strong>Proposed resource identifiers</strong></p>
+<ul>
+<li>planexe://task/<task_id>/report</li>
+<li>planexe://task/<task_id>/zip</li>
+</ul>
+<p><strong>Recommended resource metadata</strong></p>
+<ul>
+<li>mime type (content_type)</li>
+<li>size (bytes)</li>
+<li>sha256 (content hash)</li>
+<li>generated_at (UTC timestamp)</li>
+</ul>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Resources can be backed by existing HTTP endpoints internally; the MCP resource read returns the bytes + metadata.</li>
+<li>This enables richer MCP client UX (preview, caching, validation) without custom tool calls.</li>
+</ul>
+<hr />
+<h2 id="17-future-tools-high-leverage-low-complexity">17. Future Tools (High-Leverage, Low-Complexity)</h2>
 <p>The following tools remove common UX friction without expanding the core model.</p>
-<p>19.1 task_list (or task_recent)
-Return a short list of recent tasks so agents can recover if they lost a task_id.</p>
-<p>Notes
-    •   Default limit: 5–10 tasks.
-    •   Include task_id, created_at, state, and prompt summary.</p>
-<p>19.2 task_wait
-Blocking helper that polls internally until the task completes or times out.
-Returns the final task_status payload plus suggested next steps.</p>
-<p>Notes
-    •   Inputs: task_id, timeout_sec (optional), poll_interval_sec (optional).
-    •   Outputs: same as task_status + next_steps (string or list).</p>
-<p>19.3 task_get_latest
-Simplest recovery: return the most recently created task for the caller.</p>
-<p>Notes
-    •   Useful for single-user / single-session flows.
-    •   Should be scoped to the caller/user_id when available.</p>
-<p>19.4 task_logs_tail (optional)
-Return the tail of recent log lines for troubleshooting failures.</p>
-<p>Notes
-    •   Inputs: task_id, max_lines (optional), since_cursor (optional).
-    •   Useful when task_status shows failed but no context.</p>
-<p>⸻</p>
-<p>Appendix A — Example End-to-End Flow</p>
-<p>Create task</p>
-<p>task_create({ "prompt": "..." })</p>
-<p>Start run</p>
-<p>task_status({ "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1" })</p>
-<p>Stop</p>
-<p>task_stop({ "task_id": "5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1" })</p>
-<p>⸻</p>
-<p>Appendix B — Optional v1.1 Extensions</p>
-<p>If you want richer Luigi integration later:
-    •   planexe.task.graph (nodes + edges + states)
-    •   planexe.task.invalidate (rerun subtree)
-    •   planexe.export.bundle (zip all artifacts)
-    •   planexe.validate.only (audit without regeneration)
-    •   planexe.task.archive (freeze task)</p>
+<h3 id="171-task_list-or-task_recent">17.1 task_list (or task_recent)</h3>
+<p>Return a short list of recent tasks so agents can recover if they lost a task_id.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Default limit: 5–10 tasks.</li>
+<li>Include task_id, created_at, state, and prompt summary.</li>
+</ul>
+<h3 id="172-task_wait">17.2 task_wait</h3>
+<p>Blocking helper that polls internally until the task completes or times out. Returns the final task_status payload plus suggested next steps.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Inputs: task_id, timeout_sec (optional), poll_interval_sec (optional).</li>
+<li>Outputs: same as task_status + next_steps (string or list).</li>
+</ul>
+<h3 id="173-task_get_latest">17.3 task_get_latest</h3>
+<p>Simplest recovery: return the most recently created task for the caller.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Useful for single-user / single-session flows.</li>
+<li>Should be scoped to the caller/user_id when available.</li>
+</ul>
+<h3 id="174-task_logs_tail-optional">17.4 task_logs_tail (optional)</h3>
+<p>Return the tail of recent log lines for troubleshooting failures.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Inputs: task_id, max_lines (optional), since_cursor (optional).</li>
+<li>Useful when task_status shows failed but no context.</li>
+</ul>
+<hr />
+<h2 id="appendix-a-example-end-to-end-flow">Appendix A — Example End-to-End Flow</h2>
+<p><strong>Create task</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><strong>Start run</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><strong>Stop</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="appendix-b-optional-v11-extensions">Appendix B — Optional v1.1 Extensions</h2>
+<p>If you want richer Luigi integration later:</p>
+<ul>
+<li>planexe.task.graph (nodes + edges + states)</li>
+<li>planexe.task.invalidate (rerun subtree)</li>
+<li>planexe.export.bundle (zip all artifacts)</li>
+<li>planexe.validate.only (audit without regeneration)</li>
+<li>planexe.task.archive (freeze task)</li>
+</ul>
 
 
 
