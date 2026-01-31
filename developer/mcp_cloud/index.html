@@ -550,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/" class="md-nav__link">
+      <a href="../../mcp.md" class="md-nav__link">
         
   
   
@@ -578,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planexe_mcp_interface/" class="md-nav__link">
+      <a href="../../planexe_mcp_interface.md" class="md-nav__link">
         
   
   
@@ -1976,7 +1976,7 @@
 
 
 <h1 id="planexe-mcp-cloud-experimental-likely-to-be-changed-a-lot">PlanExe MCP Cloud - Experimental, likely to be changed a lot!</h1>
-<p>Model Context Protocol (MCP) interface for PlanExe. Implements the MCP specification defined in <code>docs/planexe_mcp_interface.md</code>.</p>
+<p>Model Context Protocol (MCP) interface for PlanExe. Implements the MCP specification defined in <code>docs/mcp/planexe_mcp_interface.md</code>.</p>
 <h2 id="overview">Overview</h2>
 <p>mcp_cloud provides a standardized MCP interface for PlanExe's plan generation workflows. It connects to <code>worker_plan_database</code> via the shared Postgres database (<code>database_api</code> models).</p>
 <h2 id="features">Features</h2>
@@ -1986,7 +1986,7 @@
 <li><strong>File Metadata</strong>: Get report/zip metadata and download URLs</li>
 </ul>
 <h2 id="run-as-task-mcp-tasks-protocol">Run as task (MCP tasks protocol)</h2>
-<p>MCP has two ways to run long-running work: <strong>tools</strong> (what we use) and the <strong>tasks</strong> protocol ("Run as task" in some UIs). PlanExe uses <strong>tools only</strong>: <code>task_create</code>, <code>task_status</code>, <code>task_stop</code>, <code>task_download</code>. The agent creates a task, polls status, then downloads; that is the intended flow per <code>docs/planexe_mcp_interface.md</code>. We do not advertise or implement the MCP tasks protocol (tasks/get, tasks/result, etc.). Clients like Cursor do not support it properly—use the tools directly.</p>
+<p>MCP has two ways to run long-running work: <strong>tools</strong> (what we use) and the <strong>tasks</strong> protocol ("Run as task" in some UIs). PlanExe uses <strong>tools only</strong>: <code>task_create</code>, <code>task_status</code>, <code>task_stop</code>, <code>task_download</code>. The agent creates a task, polls status, then downloads; that is the intended flow per <code>docs/mcp/planexe_mcp_interface.md</code>. We do not advertise or implement the MCP tasks protocol (tasks/get, tasks/result, etc.). Clients like Cursor do not support it properly—use the tools directly.</p>
 <h2 id="client-choice-guide">Client Choice Guide</h2>
 <ul>
 <li><strong>Use <code>mcp_cloud</code> directly (HTTP)</strong>: If you are running in the cloud or you do
@@ -2073,7 +2073,7 @@
 <li><code>PLANEXE_WORKER_PLAN_URL</code>: URL of the worker_plan HTTP service (default: <code>http://worker_plan:8000</code>)</li>
 </ul>
 <h2 id="mcp-tools">MCP Tools</h2>
-<p>See <code>docs/planexe_mcp_interface.md</code> for full specification. Available tools:</p>
+<p>See <code>docs/mcp/planexe_mcp_interface.md</code> for full specification. Available tools:</p>
 <ul>
 <li><code>prompt_examples</code> - Return example prompts. Use these as examples for task_create.</li>
 <li><code>task_create</code> - Create a new task</li>

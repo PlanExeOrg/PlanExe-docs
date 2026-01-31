@@ -550,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/" class="md-nav__link">
+      <a href="../../mcp.md" class="md-nav__link">
         
   
   
@@ -578,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../planexe_mcp_interface/" class="md-nav__link">
+      <a href="../../planexe_mcp_interface.md" class="md-nav__link">
         
   
   
@@ -1682,7 +1682,7 @@ remote MCP tool <code>task_file_info</code> to obtain a download URL, then downl
 file locally into <code>PLANEXE_PATH</code>.</p>
 <h2 id="run-as-task-mcp-tasks-protocol">Run as task (MCP tasks protocol)</h2>
 <p>Some MCP clients (e.g. the MCP Inspector) show a <strong>"Run as task"</strong> option for tools. That refers to the MCP <strong>tasks</strong> protocol: a separate mechanism where the client runs a tool in the background using RPC methods like <code>tasks/run</code>, <code>tasks/get</code>, <code>tasks/result</code>, and <code>tasks/cancel</code>, instead of a single blocking tool call.</p>
-<p><strong>PlanExe does not use or advertise the MCP tasks protocol.</strong> Our interface is <strong>tool-based</strong> only: the agent calls <code>task_create</code> → gets a <code>task_id</code> → polls <code>task_status</code> → uses <code>task_download</code>. That flow is defined in <code>docs/planexe_mcp_interface.md</code> and is the intended design.</p>
+<p><strong>PlanExe does not use or advertise the MCP tasks protocol.</strong> Our interface is <strong>tool-based</strong> only: the agent calls <code>task_create</code> → gets a <code>task_id</code> → polls <code>task_status</code> → uses <code>task_download</code>. That flow is defined in <code>docs/mcp/planexe_mcp_interface.md</code> and is the intended design.</p>
 <p>You should <strong>not</strong> enable "Run as task" for PlanExe. The Python MCP SDK and clients like Cursor do not properly support the tasks protocol (method registration and initialization fail). Use the tools directly: create a task, poll status, then download when done.</p>
 <h2 id="how-it-talks-to-mcp_cloud">How it talks to mcp_cloud</h2>
 <ul>
