@@ -6,9 +6,10 @@ repo_name: PlanExeOrg/PlanExe
 edit_uri: edit/main/docs/
 
 nav:
-  - Home: index.md
   - Getting started:
-    - Getting started with PlanExe: getting_started.md
+    - Welcome: index.md
+    - Getting started: getting_started.md
+    - Statistics: statistics.md
   - MCP:
     - Cursor: mcp/cursor.md
     - MCP details: mcp/mcp_details.md
