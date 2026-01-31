@@ -11,6 +11,7 @@ nav:
     - Getting started: getting_started.md
     - Statistics: statistics.md
   - MCP:
+    - Welcome: mcp/mcp_welcome.md
     - Cursor: mcp/cursor.md
     - MCP details: mcp/mcp_details.md
     - PlanExe MCP interface: mcp/planexe_mcp_interface.md
