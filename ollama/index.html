@@ -1614,12 +1614,15 @@
 
 
 <h1 id="using-planexe-with-ollama">Using PlanExe with Ollama</h1>
+<p>This is for <strong>advanced users</strong> that already have PlanExe working. If you're new to PlanExe, start with <a href="../openrouter/">OpenRouter</a> instead.</p>
 <p><a href="https://ollama.com/">Ollama</a> is an open source app for macOS/Windows/Linux for running LLMs on your own computer (or on a remote computer).</p>
 <p>PlanExe processes more text than regular chat. You will need expensive hardware to run a LLM at a reasonable speed.</p>
 <h2 id="quickstart-docker">Quickstart (Docker)</h2>
-<p>1) Install Ollama on your host and pull a small model: <code>ollama run llama3.1</code> (downloads ~4.9 GB and proves the host service works).<br />
-2) Copy <code>.env.docker-example</code> to <code>.env</code> (even if you leave keys empty for Ollama) and pick the Docker entry in <code>llm_config.json</code> (snippet below) so <code>base_url</code> points to <code>http://host.docker.internal:11434</code> (Docker Desktop) or your Linux bridge IP.<br />
-3) Start PlanExe: <code>docker compose up worker_plan frontend_single_user</code>. Open http://localhost:7860, submit a prompt, and watch <code>docker compose logs -f worker_plan</code> for progress.</p>
+<ol>
+<li>Install Ollama on your host and pull a small model: <code>ollama run llama3.1</code> (downloads ~4.9 GB and proves the host service works).  </li>
+<li>Copy <code>.env.docker-example</code> to <code>.env</code> (even if you leave keys empty for Ollama) and pick the Docker entry in <code>llm_config.json</code> (snippet below) so <code>base_url</code> points to <code>http://host.docker.internal:11434</code> (Docker Desktop) or your Linux bridge IP.  </li>
+<li>Start PlanExe: <code>docker compose up worker_plan frontend_single_user</code>. Open http://localhost:7860, submit a prompt, and watch <code>docker compose logs -f worker_plan</code> for progress.</li>
+</ol>
 <h3 id="host-only-no-docker-for-advanced-users">Host-only (no Docker) — for advanced users</h3>
 <ul>
 <li>Use the host entry (e.g., <code>"ollama-llama3.1"</code>) in <code>llm_config.json</code> so <code>base_url</code> stays on <code>http://localhost:11434</code>.</li>

@@ -1502,27 +1502,31 @@
 
 
 <h1 id="using-planexe-with-openrouter">Using PlanExe with OpenRouter</h1>
+<p>For new users, OpenRouter is the recommended starting point. When you have have generated a few plans via OpenRouter, then you can try switch to other AI providers.</p>
 <p><a href="https://openrouter.ai/">OpenRouter</a> provides access to a large number of LLM models, that runs in the cloud.</p>
 <p>Unfortunately there is no <code>free</code> model that works reliable with PlanExe.</p>
-<p>In my experience, the <code>paid</code> models are the most reliable. Models like <a href="https://openrouter.ai/google/gemini-2.0-flash-001">google/gemini-2.0-flash-001</a> and <a href="https://openrouter.ai/openai/gpt-4o-mini">openai/gpt-4o-mini</a> are cheap and faster than running models on my own computer and without risk of it overheating.</p>
+<p>In my experience, the <code>paid</code> models are the most reliable. Models like <a href="https://openrouter.ai/google/gemini-2.0-flash-001">google/gemini-2.0-flash-001</a>. and <a href="https://openrouter.ai/openai/gpt-4o-mini">openai/gpt-4o-mini</a> are cheap and faster than running models on my own computer and without risk of it overheating.</p>
 <p>I haven't been able to find a <code>free</code> model on OpenRouter that works well with PlanExe.</p>
+<p>Avoid pricey <code>paid</code> models. PlanExe does more than 100 LLM inference calls per plan, so each run uses many tokens. With a cheap model, creating a full plan costs less than 0.30 USD; with one of the newest models, the price can exceed 20 USD. To keep PlanExe affordable for as many users as possible, the defaults use older, cheaper models.</p>
 <h2 id="quickstart-docker">Quickstart (Docker)</h2>
-<p>1) Install Docker (with Docker Compose) — no local Python or pip is needed now.
-2) Clone the repo and enter it:
+<ol>
+<li>Install Docker (with Docker Compose) — no local Python or pip is needed now.</li>
+<li>Clone the repo and enter it:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/PlanExeOrg/PlanExe.git
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd PlanExe
-</code></pre></div>
-3) Copy <code>.env.docker-example</code> to <code>.env</code>, then set your API key and pick a default OpenRouter profile so the worker uses the cloud model by default:
+</code></pre></div></li>
+<li>Copy <code>.env.docker-example</code> to <code>.env</code>, then set your API key and pick a default OpenRouter profile so the worker uses the cloud model by default:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>OPENROUTER_API_KEY=&#39;sk-or-v1-...&#39;
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>DEFAULT_LLM=&#39;openrouter-paid-gemini-2.0-flash-001&#39;   # or openrouter-paid-openai-gpt-4o-mini
 </code></pre></div>
-   The containers mount <code>.env</code> and <code>llm_config.json</code> automatically.
-4) Start PlanExe:
+   The containers mount <code>.env</code> and <code>llm_config.json</code> automatically.</li>
+<li>Start PlanExe:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker compose up worker_plan frontend_single_user
-</code></pre></div>
-   - Wait for http://localhost:7860 to come up, submit a prompt, and watch progress with <code>docker compose logs -f worker_plan</code>.
-   - Outputs are written to <code>run/&lt;timestamped-output-dir&gt;</code> on the host (mounted from the containers).
-5) Stop with <code>Ctrl+C</code> (or <code>docker compose down</code>). If you change <code>llm_config.json</code>, restart the containers so they reload it: <code>docker compose restart worker_plan frontend_single_user</code> (or <code>docker compose down &amp;&amp; docker compose up</code>). No rebuild is needed for config-only edits.</p>
+</code></pre></div></li>
+<li>Wait for http://localhost:7860 to come up, submit a prompt, and watch progress with <code>docker compose logs -f worker_plan</code>.</li>
+<li>Outputs are written to <code>run/&lt;timestamped-output-dir&gt;</code> on the host (mounted from the containers).</li>
+<li>Stop with <code>Ctrl+C</code> (or <code>docker compose down</code>). If you change <code>llm_config.json</code>, restart the containers so they reload it: <code>docker compose restart worker_plan frontend_single_user</code> (or <code>docker compose down &amp;&amp; docker compose up</code>). No rebuild is needed for config-only edits.</li>
+</ol>
 <h2 id="configuration">Configuration</h2>
 <p>Visit <a href="https://openrouter.ai/">OpenRouter</a>, create an account, purchase 5 USD in credits (plenty for making a several plans), and generate an API key.</p>
 <p>Copy <code>.env.docker-example</code> to a new file called <code>.env</code> (loaded by Docker at startup).</p>
