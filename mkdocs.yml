@@ -11,14 +11,12 @@ nav:
     - Getting started with PlanExe: getting_started.md
   - MCP:
     - Cursor: mcp/cursor.md
-    - MCP details: mcp.md
-    - PlanExe MCP interface: planexe_mcp_interface.md
+    - MCP details: mcp/mcp_details.md
+    - PlanExe MCP interface: mcp/planexe_mcp_interface.md
   - Development:
+    - Developer plan: plan.md
     - Docker: docker.md
     - Developer install: install_developer.md
-    - Project:
-      - Future plan: plan.md
-      - Recent changes: recent_changes.md
     - Components:
       - open_dir_server: developer/open_dir_server.md
       - worker_plan: developer/worker_plan.md
