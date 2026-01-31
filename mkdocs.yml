@@ -10,7 +10,8 @@ nav:
   - Getting started:
     - Getting started with PlanExe: getting_started.md
   - MCP:
-    - MCP overview: mcp.md
+    - Cursor: mcp/cursor.md
+    - MCP details: mcp.md
     - PlanExe MCP interface: planexe_mcp_interface.md
   - Development:
     - Docker: docker.md
