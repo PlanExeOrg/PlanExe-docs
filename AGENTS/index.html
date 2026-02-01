@@ -1767,6 +1767,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#documentation-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#local-preview" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1906,6 +1917,19 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[<span class="nt">OpenRouter</span>](<span class="na">ai_providers/openrouter.md</span>)
 </code></pre></div>
 <p>External links (e.g. <code>https://planexe.org/</code>) are unchanged; this applies only to links between documentation <code>.md</code> files in this repo.</p>
+<h2 id="documentation-conventions">Documentation conventions</h2>
+<ul>
+<li><strong>Tone</strong>: keep it factual and direct; avoid marketing terms like “quickstart,” “fastest,” or “seamless.”</li>
+<li><strong>Style guide</strong>: follow <code>docs_style_guide.md</code> for structure and terminology.</li>
+<li><strong>Social cards</strong>: if a page needs a specific social card title, add front matter:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>---
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>title: Your page title
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>---
+</code></pre></div></li>
+<li><strong>Links</strong>: prefer Markdown links for URLs in prose, not bare URLs.</li>
+<li><strong>AI providers</strong>: provider docs live under <code>ai_providers/</code> (e.g. <code>ai_providers/openrouter.md</code>).</li>
+<li><strong>MCP setup</strong>: the MCP setup guide is <code>mcp/mcp_setup.md</code> (avoid “quickstart”).</li>
+</ul>
 <h2 id="local-preview">Local preview</h2>
 <p>To build and preview the same site locally:</p>
 <ol>
