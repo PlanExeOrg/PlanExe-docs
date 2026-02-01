@@ -168,3 +168,9 @@ If you're unsure where to start or have questions:
 ---
 
 **Ready to contribute?** Join us on [Discord](https://planexe.org/discord) and let's build better planning tools together!
+
+## Docs conventions (PlanExe-docs)
+
+- **Tone**: keep docs factual and direct; avoid marketing language.
+- **Social cards**: configured in `mkdocs.yml` via the `social` plugin; titles come from page front matter (`title:`) when needed.
+- **Branding**: social cards use the PlanExe logo from `PlanExe/docs/assets/logo.svg` (copied during build).
