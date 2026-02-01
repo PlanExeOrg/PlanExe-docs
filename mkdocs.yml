@@ -8,15 +8,22 @@ edit_uri: edit/main/docs/
 nav:
   - Getting started:
     - Welcome: index.md
+    - Start here: start_here.md
     - Getting started: getting_started.md
+    - Prompt writing guide: prompt_writing_guide.md
+    - Plan output anatomy: plan_output_anatomy.md
+    - Costs and models: costs_and_models.md
+    - FAQ: faq.md
     - Statistics: statistics.md
   - MCP:
     - Welcome: mcp/mcp_welcome.md
+    - MCP setup: mcp/mcp_setup.md
     - LM Studio: mcp/lm_studio.md
     - Cursor: mcp/cursor.md
     - Antigravity: mcp/antigravity.md
     - Codex: mcp/codex.md
     - MCP details: mcp/mcp_details.md
+    - MCP troubleshooting: mcp/mcp_troubleshooting.md
     - PlanExe MCP interface: mcp/planexe_mcp_interface.md
   - Development:
     - Developer plan: plan.md
@@ -37,6 +44,8 @@ nav:
       - LM Studio: ai_providers/lm_studio.md
       - Mistral: ai_providers/mistral.md
     - Railway: railway.md
+    - Deployment and hosting: deployment_hosting.md
+    - Docs style guide: docs_style_guide.md
     - Troubleshooting:
       - Stuck pipeline: troubleshooting_stuck_pipeline.md
 
