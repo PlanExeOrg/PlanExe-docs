@@ -554,6 +554,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting-and-next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1661,6 +1672,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting-and-next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1720,18 +1742,24 @@ It cost around 0.1 USD to generate a plan, when using PlanExe's default settings
 <h2 id="4-start-the-single-user-stack">4. Start the single-user stack</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>worker_plan<span class="w"> </span>frontend_single_user
 </code></pre></div>
-<p>Wait for http://localhost:7860 to become available.</p>
+<p>Wait for <a href="http://localhost:7860">http://localhost:7860</a> to become available.</p>
 <p>Stop with <code>Ctrl+C</code>.</p>
 <h2 id="5-use-the-ui">5. Use the UI</h2>
-<p>Open http://localhost:7860 in your browser. </p>
+<p>Open <a href="http://localhost:7860">http://localhost:7860</a> in your browser. </p>
 <p>You can now submit your prompt.</p>
 <p>The generated plans are written to <code>run/&lt;timestamped-output-dir&gt;</code>.</p>
 <p><img alt="Screenshot of PlanExe" src="../planexe-humanoid-factory.jpg?raw=true" title="Screenshot of PlanExe" /></p>
+<h2 id="verification">Verification</h2>
+<ul>
+<li>You can open the UI at <a href="http://localhost:7860">http://localhost:7860</a>.</li>
+<li>A plan run creates a new folder in <code>run/</code>.</li>
+</ul>
 <h2 id="troubleshooting-and-next-steps">Troubleshooting and next steps</h2>
 <ul>
 <li>For Docker tips, see <a href="../docker/">docker.md</a>.</li>
 <li>For OpenRouter-specific notes, see <a href="../ai_providers/openrouter/">openrouter.md</a>.</li>
 <li>If the UI fails to load or plans don’t start, check worker logs: <code>docker compose logs -f worker_plan</code>.</li>
+<li>Learn how to write better prompts: <a href="../prompt_writing_guide/">Prompt writing guide</a></li>
 </ul>
 <h2 id="community">Community</h2>
 <p>Need help? Join the <a href="https://planexe.org/discord">PlanExe Discord</a>.</p>
