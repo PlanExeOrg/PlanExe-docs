@@ -70,6 +70,7 @@ plugins:
   - social:
       cards_layout_options:
         background_color: "#1f2a37"
+        description: "From a single goal statement to a full strategic plan."
 
 markdown_extensions:
   - pymdownx.highlight:
