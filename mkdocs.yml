@@ -31,10 +31,10 @@ nav:
       - mcp_local: developer/mcp_local.md
       - mcp_cloud: developer/mcp_cloud.md
     - AI providers:
-      - OpenRouter: openrouter.md
-      - Ollama: ollama.md
-      - LM Studio: lm_studio.md
-      - Mistral: mistral.md
+      - OpenRouter: ai_providers/openrouter.md
+      - Ollama: ai_providers/ollama.md
+      - LM Studio: ai_providers/lm_studio.md
+      - Mistral: ai_providers/mistral.md
     - Railway: railway.md
     - Troubleshooting:
       - Stuck pipeline: troubleshooting_stuck_pipeline.md
