@@ -21,22 +21,6 @@
          <lastmod>2026-02-01</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/lm_studio/</loc>
-         <lastmod>2026-02-01</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/mistral/</loc>
-         <lastmod>2026-02-01</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/ollama/</loc>
-         <lastmod>2026-02-01</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/openrouter/</loc>
-         <lastmod>2026-02-01</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/plan/</loc>
          <lastmod>2026-02-01</lastmod>
     </url>
@@ -54,6 +38,22 @@
     </url>
     <url>
          <loc>https://docs.planexe.org/troubleshooting_stuck_pipeline/</loc>
+         <lastmod>2026-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/ai_providers/lm_studio/</loc>
+         <lastmod>2026-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/ai_providers/mistral/</loc>
+         <lastmod>2026-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/ai_providers/ollama/</loc>
+         <lastmod>2026-02-01</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/ai_providers/openrouter/</loc>
          <lastmod>2026-02-01</lastmod>
     </url>
     <url>
