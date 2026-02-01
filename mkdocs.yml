@@ -82,6 +82,12 @@ markdown_extensions:
   - attr_list
   - md_in_html
 
+extra_javascript:
+  - assets/javascripts/copy-all.js
+
+extra_css:
+  - assets/stylesheets/copy-all.css
+
 extra:
   analytics:
     provider: google
