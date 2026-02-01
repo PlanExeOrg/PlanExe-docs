@@ -65,6 +65,10 @@ theme:
     - content.code.annotate
     - content.code.copy
 
+plugins:
+  - search
+  - social
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
