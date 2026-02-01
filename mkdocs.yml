@@ -67,7 +67,9 @@ theme:
 
 plugins:
   - search
-  - social
+  - social:
+      cards_layout_options:
+        background_color: "#1f2a37"
 
 markdown_extensions:
   - pymdownx.highlight:
