@@ -30,6 +30,7 @@ nav:
     - Developer plan: plan.md
     - Docker: docker.md
     - Developer install: install_developer.md
+    - LLM config: llm_config.md
     - Components:
       - open_dir_server: developer/open_dir_server.md
       - worker_plan: developer/worker_plan.md
