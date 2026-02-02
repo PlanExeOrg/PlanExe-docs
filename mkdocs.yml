@@ -19,6 +19,7 @@ nav:
     - Welcome: mcp/mcp_welcome.md
     - MCP setup: mcp/mcp_setup.md
     - LM Studio: mcp/lm_studio.md
+    - Windsurf: mcp/windsurf.md
     - Cursor: mcp/cursor.md
     - Antigravity: mcp/antigravity.md
     - Codex: mcp/codex.md
