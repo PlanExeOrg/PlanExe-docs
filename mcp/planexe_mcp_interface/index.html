@@ -3290,7 +3290,7 @@
 <p>Implementors should expose the following to agents so they understand what PlanExe does:</p>
 <ul>
 <li><strong>What:</strong> PlanExe turns a plain-English goal into a structured strategic-plan draft (executive summary, Gantt, risk register, governance, etc.) in ~15–20 min. The plan is a draft to refine, not an executable or final document.</li>
-<li><strong>Flow:</strong> Call prompt_examples first, then task_create; poll task_status at reasonable intervals (e.g. every 5 min); use task_download or task_file_info when complete.</li>
+<li><strong>Required interaction order:</strong> Step 1 — Call prompt_examples to fetch example prompts. Step 2 — Formulate a good prompt (use examples as a baseline; similar structure; get user approval). Step 3 — Only then call task_create with the approved prompt. Then poll task_status; use task_download or task_file_info when complete. To stop, call task_stop with the task_id from task_create.</li>
 <li><strong>Output:</strong> Large HTML report (~700KB) and optional zip of intermediate files (md, json, csv).</li>
 </ul>
 <h3 id="13-scope-of-this-document">1.3 Scope of this document</h3>
@@ -3343,7 +3343,7 @@
 <li><strong>MCP tools</strong> (e.g. task_create, task_status, task_stop): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls task_create → receives task_id → polls task_status → uses task_download. This document specifies those tools.</li>
 <li><strong>MCP tasks protocol</strong> ("Run as task" in some UIs): a separate mechanism where the client can run a tool "as a task" using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.</li>
 </ul>
-<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. The intended flow is: call task_create, poll task_status, then call task_download when complete.</p>
+<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. The intended flow is: Step 1 — call prompt_examples; Step 2 — formulate a good prompt (user approval); Step 3 — call task_create; then poll task_status and call task_download when complete.</p>
 <hr />
 <h2 id="4-system-model">4. System Model</h2>
 <h3 id="41-core-entities">4.1 Core entities</h3>
@@ -3351,7 +3351,7 @@
 <p>A long-lived container for a PlanExe project run.</p>
 <p><strong>Key properties</strong></p>
 <ul>
-<li>task_id: stable unique identifier (UUID, matches TaskItem.id)</li>
+<li>task_id: UUID returned by task_create for that task. Each task_create returns a new UUID. Use that exact UUID for all MCP calls; do not substitute ids from other services.</li>
 <li>output_dir: artifact root namespace for task</li>
 <li>config: immutable run configuration (models, runtime limits, Luigi params)</li>
 <li>created_at, updated_at</li>
@@ -3414,7 +3414,7 @@
 <h2 id="6-mcp-tools-v1-required">6. MCP Tools (v1 Required)</h2>
 <p>All tool names below are normative.</p>
 <h3 id="61-prompt_examples">6.1 prompt_examples</h3>
-<p>Returns example prompts that define the baseline for a good prompt. Call this tool before task_create and refine your prompt until it matches that quality. If you create a task with a weaker prompt, the resulting plan will be lower quality than it could be.</p>
+<p><strong>Step 1 — Call this first.</strong> Returns example prompts that define the baseline for what a good prompt looks like. Do not call task_create yet. Correct flow: Step 1 — call this tool to fetch examples. Step 2 — Formulate a good prompt (use examples as a baseline; similar structure; get user approval). Step 3 — Only then call task_create with the approved prompt. If you call task_create before formulating and approving a prompt, the resulting plan will be lower quality than it could be.</p>
 <p><strong>Request:</strong> no parameters (empty object).</p>
 <p><strong>Response:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
@@ -3424,7 +3424,7 @@
 </code></pre></div>
 <hr />
 <h3 id="62-task_create">6.2 task_create</h3>
-<p>Start creating a new plan. speed_vs_detail modes: 'all' runs the full pipeline with all details (slower, higher token usage/cost). 'fast' runs the full pipeline with minimal work per step (faster, fewer details), useful to verify the pipeline is working. 'ping' runs the pipeline entrypoint and makes a single LLM call to verify the worker_plan_database is processing tasks and can reach the LLM.</p>
+<p><strong>Step 3 — Call only after prompt_examples (Step 1) and after you have formulated a good prompt and got user approval (Step 2).</strong> Start creating a new plan with the approved prompt. speed_vs_detail modes: 'all' runs the full pipeline with all details (slower, higher token usage/cost). 'fast' runs the full pipeline with minimal work per step (faster, fewer details), useful to verify the pipeline is working. 'ping' runs the pipeline entrypoint and makes a single LLM call to verify the worker_plan_database is processing tasks and can reach the LLM.</p>
 <p><strong>Request</strong></p>
 <p><strong>Schema</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
@@ -3466,6 +3466,10 @@
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-14T12:34:56Z&quot;</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
 </code></pre></div>
+<p><strong>Important</strong></p>
+<ul>
+<li>task_id is a UUID returned by task_create. Use this exact UUID for task_status/task_stop/task_download.</li>
+</ul>
 <p><strong>Behavior</strong></p>
 <ul>
 <li>Must be idempotent only if client supplies an optional client_request_id (optional extension).</li>
@@ -3479,6 +3483,10 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
 </code></pre></div>
+<p><strong>Input</strong></p>
+<ul>
+<li>task_id: UUID returned by task_create. Use it to reference the plan being created.</li>
+</ul>
 <p><strong>Response</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
@@ -3502,12 +3510,16 @@
 </ul>
 <hr />
 <h3 id="64-task_stop">6.4 task_stop</h3>
-<p>Stops the active run.</p>
+<p>Requests the plan generation to stop. Pass the <strong>task_id</strong> (the UUID returned by task_create). This is a normal MCP tool call: call task_stop with that task_id.</p>
 <p><strong>Request</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
 </code></pre></div>
+<p><strong>Input</strong></p>
+<ul>
+<li>task_id: UUID returned by task_create. Use this same UUID when calling task_stop to request the run to stop.</li>
+</ul>
 <p><strong>Response</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stopped&quot;</span>
@@ -3522,6 +3534,11 @@
 <h3 id="65-download-flow-task_download-vs-task_file_info">6.5 Download flow (task_download vs task_file_info)</h3>
 <p><strong>If your client exposes task_download</strong> (e.g. mcp_local): use it to save the report or zip locally; it calls task_file_info under the hood, then fetches and writes to the local save path (e.g. PLANEXE_PATH).</p>
 <p><strong>If you only have task_file_info</strong> (e.g. direct connection to mcp_cloud): call it with task_id and artifact ("report" or "zip"); use the returned download_url to fetch the file (e.g. GET with API key if configured).</p>
+<p><strong>task_file_info input</strong></p>
+<ul>
+<li>task_id: UUID returned by task_create. Use it to download the created plan.</li>
+<li>artifact: "report" or "zip" (default "report").</li>
+</ul>
 <hr />
 <h2 id="7-targets">7. Targets</h2>
 <h3 id="71-standard-targets">7.1 Standard targets</h3>

@@ -1526,6 +1526,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sse-error-or-no-server-sse-stream-from-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "SSE error" or "no Server-SSE stream" from the client
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2154,6 +2165,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sse-error-or-no-server-sse-stream-from-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "SSE error" or "no Server-SSE stream" from the client
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2401,12 +2423,24 @@
 <p>Set <code>PLANEXE_MCP_API_KEY</code> to the same value you use in <code>Authorization: Bearer &lt;key&gt;</code> or <code>X-API-Key</code>.</p>
 <h3 id="available-http-endpoints">Available HTTP Endpoints</h3>
 <ul>
-<li><code>POST /mcp</code> - Main MCP JSON-RPC endpoint (recommended)</li>
-<li><code>POST /mcp/tools/call</code> - Alternative HTTP wrapper for tool calls</li>
-<li><code>GET /mcp/tools</code> - List available tools</li>
+<li><code>POST /mcp</code> - Main MCP JSON-RPC endpoint (Streamable HTTP; may use SSE for streaming)</li>
+<li><code>GET /mcp/tools</code> - <strong>List tools (JSON). No SSE required.</strong> Use this if your client reports "SSE error" when connecting to <code>/mcp</code>.</li>
+<li><code>POST /mcp/tools/call</code> - <strong>Call a tool (JSON). No SSE required.</strong></li>
 <li><code>GET /healthcheck</code> - Health check endpoint</li>
 <li><code>GET /docs</code> - OpenAPI documentation (Swagger UI)</li>
 </ul>
+<h3 id="sse-error-or-no-server-sse-stream-from-the-client">"SSE error" or "no Server-SSE stream" from the client</h3>
+<p>Some MCP clients (e.g. OpenClaw/mcporter) connect by doing a <strong>GET</strong> to the server URL and expect a <strong>Server-Sent Events (SSE)</strong> stream (<code>Content-Type: text/event-stream</code>). That is the <strong>Streamable HTTP</strong> transport. This server mounts FastMCP at <code>/mcp</code>; <strong>GET /mcp</strong> returns a <strong>307 redirect</strong> to <code>/mcp/</code>, and the Streamable HTTP handshake may not match what the client expects, so the client reports "SSE error" or "could not fetch … no SSE stream".</p>
+<p><strong>You do not need SSE for tools.</strong> MCP over HTTP can use plain JSON:</p>
+<ul>
+<li><strong>List tools:</strong> <code>GET http://&lt;host&gt;:8001/mcp/tools</code> → returns <code>{"tools": [...]}</code> (JSON).</li>
+<li><strong>Call a tool:</strong> <code>POST http://&lt;host&gt;:8001/mcp/tools/call</code> with body <code>{"tool": "task_create", "arguments": {"prompt": "…", "speed_vs_detail": "ping"}}</code> → returns JSON.</li>
+</ul>
+<p>If your client only supports Streamable HTTP and fails on <code>/mcp</code>, you have two options:</p>
+<ol>
+<li><strong>Point the client at the JSON API</strong> if it allows a separate "tools list" URL: use <code>GET /mcp/tools</code> for listing and <code>POST /mcp/tools/call</code> for calls (no SSE).</li>
+<li><strong>Use baseUrl with trailing slash</strong> (e.g. <code>http://192.168.1.10:8001/mcp/</code>) so the client does not follow a redirect; whether that fixes SSE depends on how the client and FastMCP do the Streamable HTTP handshake.</li>
+</ol>
 <h2 id="environment-variables">Environment Variables</h2>
 <h3 id="http-server-configuration">HTTP Server Configuration</h3>
 <ul>
@@ -2435,7 +2469,7 @@
 <p>See <code>docs/mcp/planexe_mcp_interface.md</code> for full specification. Available tools:</p>
 <ul>
 <li><code>prompt_examples</code> - Return example prompts. Use these as examples for task_create.</li>
-<li><code>task_create</code> - Create a new task</li>
+<li><code>task_create</code> - Create a new task (returns task_id as UUID)</li>
 <li><code>task_status</code> - Get task status and progress</li>
 <li><code>task_stop</code> - Stop an active task</li>
 <li><code>task_file_info</code> - Get file metadata for report or zip</li>
