@@ -2447,7 +2447,7 @@
 <li><code>PLANEXE_MCP_API_KEY</code>: <strong>Required for production</strong>. API key for authentication. Clients can provide <code>Authorization: Bearer &lt;key&gt;</code> or <code>X-API-Key</code>.</li>
 <li><code>PLANEXE_MCP_HTTP_HOST</code>: HTTP server host (default: <code>127.0.0.1</code>). Use <code>0.0.0.0</code> to bind all interfaces (containers/cloud).</li>
 <li><code>PLANEXE_MCP_HTTP_PORT</code>: HTTP server port (default: <code>8001</code>). Railway will override with <code>PORT</code> env var.</li>
-<li><code>PLANEXE_MCP_PUBLIC_BASE_URL</code>: Public base URL for report download links (default unset; clients can use the connected base URL).</li>
+<li><code>PLANEXE_MCP_PUBLIC_BASE_URL</code>: Public base URL for report/zip download links in <code>task_file_info</code> (e.g. <code>http://192.168.1.40:8001</code>). When unset, the HTTP server uses the request’s host (scheme + authority), so clients connecting at <code>http://192.168.1.40:8001/mcp/</code> get download URLs like <code>http://192.168.1.40:8001/download/...</code> instead of localhost. If clients still see localhost in download URLs (e.g. behind a proxy), uncomment and set this in the repo’s <code>.env.docker-example</code> or <code>.env.developer-example</code> (copy to <code>.env</code> and fill in your public URL).</li>
 <li><code>PORT</code>: Railway-provided port (takes precedence over <code>PLANEXE_MCP_HTTP_PORT</code>)</li>
 <li><code>PLANEXE_MCP_CORS_ORIGINS</code>: Comma-separated list of allowed origins (default: <code>http://localhost,http://127.0.0.1</code>).</li>
 <li><code>PLANEXE_MCP_MAX_BODY_BYTES</code>: Max request size for <code>POST /mcp/tools/call</code> (default: <code>1048576</code>).</li>
