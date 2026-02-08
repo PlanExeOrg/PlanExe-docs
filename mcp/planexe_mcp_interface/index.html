@@ -3443,8 +3443,9 @@
 <p><strong>Example</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;speed_vs_detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;speed_vs_detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;user_api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pex_...&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Prompt quality</strong></p>
 <p>The <code>prompt</code> parameter should be a detailed description of what the plan should cover. Good prompts are typically 300–800 words and include:</p>
@@ -3455,6 +3456,10 @@
 <li>Banned words or approaches (if any)</li>
 </ul>
 <p>Short one-liners (e.g., "Construct a bridge") tend to produce poor output because they lack context for the planning pipeline. Important details are location, budget, time frame.</p>
+<p><strong>Optional</strong></p>
+<ul>
+<li>user_api_key: user API key for credits and attribution (if your deployment requires it).</li>
+</ul>
 <p>Clients can call the MCP tool <strong>prompt_examples</strong> to retrieve example prompts. Use these as examples for task_create; they can also call task_create with any prompt—short prompts produce less detailed plans.</p>
 <p>For the full catalog file:</p>
 <ul>
