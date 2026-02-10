@@ -172,4 +172,24 @@
          <loc>https://docs.planexe.org/mcp/windsurf/</loc>
          <lastmod>2026-02-10</lastmod>
     </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/01-agent-smart-routing/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/02-plans-as-LLM-templates/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/03-distributed-plan-execution/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/04-plan-explain-as-API-service/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/05-semantic-plan-search-graph/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
 </urlset>
