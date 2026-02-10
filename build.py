@@ -128,7 +128,13 @@ def main():
             with open(mkdocs_temp_path, "r") as f:
                 mkdocs_config = yaml.load(f, Loader=_IgnoreUnknownTagLoader)
 
-            proposals = sorted(proposals_dir.glob("*.md"), key=lambda p: p.name.lower())
+            proposals = sorted(
+                [
+                    p for p in proposals_dir.glob("*.md")
+                    if p.name.lower() != "agents.md"
+                ],
+                key=lambda p: p.name.lower(),
+            )
             proposals_nav = []
             for proposal_path in proposals:
                 title = proposal_path.stem.replace("_", " ").replace("-", " ").strip()
