@@ -9,6 +9,8 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
+        <meta name="author" content="Larry the Laptop Lobster">
+      
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/33-cost-breakdown-structure-cbs/">
       
@@ -27,7 +29,7 @@
     
     
       
-        <title>33 cost breakdown structure cbs - PlanExe Documentation</title>
+        <title>Cost Breakdown Structure (CBS) Generation - PlanExe Documentation</title>
       
     
     
@@ -75,7 +77,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="33 cost breakdown structure cbs - PlanExe Documentation" />
+<meta property="og:title" content="Cost Breakdown Structure (CBS) Generation - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/33-cost-breakdown-structure-cbs.png" />
 <meta property="og:image:type" content="image/png" />
@@ -83,7 +85,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/proposals/33-cost-breakdown-structure-cbs/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="33 cost breakdown structure cbs - PlanExe Documentation" />
+<meta property="twitter:title" content="Cost Breakdown Structure (CBS) Generation - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/33-cost-breakdown-structure-cbs.png" />
 </head>
@@ -105,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#33-cost-breakdown-structure-cbs-generation" class="md-skip">
+        <a href="#cost-breakdown-structure-cbs-generation" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +142,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              33 cost breakdown structure cbs
+              Cost Breakdown Structure (CBS) Generation
             
           </span>
         </div>
@@ -2804,6 +2806,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2831,6 +2840,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2869,6 +2885,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2886,6 +2909,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3029,6 +3059,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -3056,6 +3093,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3219,7 +3263,7 @@
   
 
 
-<h1 id="33-cost-breakdown-structure-cbs-generation">33) Cost Breakdown Structure (CBS) Generation</h1>
+<h1 id="cost-breakdown-structure-cbs-generation">Cost Breakdown Structure (CBS) Generation</h1>
 <h2 id="pitch">Pitch</h2>
 <p>Generate a <strong>Cost Breakdown Structure</strong> alongside the WBS so users can see where money goes (labor, materials, vendors, permits, contingency) and tie costs back to tasks.</p>
 <h2 id="why">Why</h2>
@@ -3227,14 +3271,30 @@
 <h2 id="proposal">Proposal</h2>
 <h3 id="1-cbs-tree-aligned-to-wbs">1) CBS tree aligned to WBS</h3>
 <ul>
-<li>Map each WBS node to cost categories:</li>
-<li>labor (role-based)</li>
-<li>materials</li>
-<li>software/services</li>
-<li>subcontractors</li>
-<li>travel</li>
-<li>legal/compliance</li>
-<li>contingency</li>
+<li>
+<p>Map each WBS node to cost categories:</p>
+</li>
+<li>
+<p>labor (role-based)</p>
+</li>
+<li>
+<p>materials</p>
+</li>
+<li>
+<p>software/services</p>
+</li>
+<li>
+<p>subcontractors</p>
+</li>
+<li>
+<p>travel</p>
+</li>
+<li>
+<p>legal/compliance</p>
+</li>
+<li>
+<p>contingency</p>
+</li>
 </ul>
 <h3 id="2-cost-assumptions-registry">2) Cost assumptions registry</h3>
 <ul>
@@ -3242,19 +3302,33 @@
 </ul>
 <h3 id="3-outputs">3) Outputs</h3>
 <ul>
-<li>CBS table (hierarchical)</li>
-<li>CBS ↔ WBS mapping table</li>
-<li>“Top cost drivers” section</li>
+<li>
+<p>CBS table (hierarchical)</p>
+</li>
+<li>
+<p>CBS ↔ WBS mapping table</p>
+</li>
+<li>
+<p>“Top cost drivers” section</p>
+</li>
 </ul>
 <h2 id="data-model-additions">Data model additions</h2>
 <ul>
-<li><code>cost_items</code> (wbs_id, cbs_path, amount_cents, currency, assumption_id)</li>
-<li><code>cost_assumptions</code> (id, description, source, confidence)</li>
+<li>
+<p><code>cost_items</code> (wbs_id, cbs_path, amount_cents, currency, assumption_id)</p>
+</li>
+<li>
+<p><code>cost_assumptions</code> (id, description, source, confidence)</p>
+</li>
 </ul>
 <h2 id="success-metrics">Success metrics</h2>
 <ul>
-<li>% WBS nodes mapped to CBS categories</li>
-<li>User ability to export CBS to spreadsheet/accounting tools</li>
+<li>
+<p>% WBS nodes mapped to CBS categories</p>
+</li>
+<li>
+<p>User ability to export CBS to spreadsheet/accounting tools</p>
+</li>
 </ul>
 
 
@@ -3262,6 +3336,9 @@
 
 
 
+
+  
+  
 
 
 

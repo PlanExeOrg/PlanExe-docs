@@ -9,6 +9,8 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
+        <meta name="author" content="Larry the Laptop Lobster">
+      
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/32-gantt-parallelization-and-fast-tracking/">
       
@@ -27,7 +29,7 @@
     
     
       
-        <title>32 gantt parallelization and fast tracking - PlanExe Documentation</title>
+        <title>Gantt Parallelization + Fast-Tracking (Parallel Work Packs) - PlanExe Documentation</title>
       
     
     
@@ -75,7 +77,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="32 gantt parallelization and fast tracking - PlanExe Documentation" />
+<meta property="og:title" content="Gantt Parallelization + Fast-Tracking (Parallel Work Packs) - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/32-gantt-parallelization-and-fast-tracking.png" />
 <meta property="og:image:type" content="image/png" />
@@ -83,7 +85,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/proposals/32-gantt-parallelization-and-fast-tracking/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="32 gantt parallelization and fast tracking - PlanExe Documentation" />
+<meta property="twitter:title" content="Gantt Parallelization + Fast-Tracking (Parallel Work Packs) - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/32-gantt-parallelization-and-fast-tracking.png" />
 </head>
@@ -105,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#32-gantt-parallelization-fast-tracking-parallel-work-packs" class="md-skip">
+        <a href="#gantt-parallelization-fast-tracking-parallel-work-packs" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +142,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              32 gantt parallelization and fast tracking
+              Gantt Parallelization + Fast-Tracking (Parallel Work Packs)
             
           </span>
         </div>
@@ -2804,6 +2806,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2841,6 +2850,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2858,6 +2874,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3012,6 +3035,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -3040,6 +3070,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -3067,6 +3104,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3241,7 +3285,7 @@
   
 
 
-<h1 id="32-gantt-parallelization-fast-tracking-parallel-work-packs">32) Gantt Parallelization + Fast-Tracking (Parallel Work Packs)</h1>
+<h1 id="gantt-parallelization-fast-tracking-parallel-work-packs">Gantt Parallelization + Fast-Tracking (Parallel Work Packs)</h1>
 <h2 id="pitch">Pitch</h2>
 <p>Reduce plan timeframes by automatically identifying tasks that can run in parallel, splitting tasks into smaller work packs, and introducing controlled redundancy and PM overhead (“fast-tracking”).</p>
 <h2 id="why">Why</h2>
@@ -3249,37 +3293,69 @@
 <h2 id="proposal">Proposal</h2>
 <h3 id="1-dependency-aware-packing">1) Dependency-aware packing</h3>
 <ul>
-<li>Take the WBS + dependencies and compute critical path.</li>
-<li>Identify tasks off the critical path that can be parallelized.</li>
-<li>Recommend a packed schedule with parallel lanes.</li>
+<li>
+<p>Take the WBS + dependencies and compute critical path.</p>
+</li>
+<li>
+<p>Identify tasks off the critical path that can be parallelized.</p>
+</li>
+<li>
+<p>Recommend a packed schedule with parallel lanes.</p>
+</li>
 </ul>
 <h3 id="2-task-splitting">2) Task splitting</h3>
 <ul>
-<li>If a task is long and blocks successors, split it into smaller deliverables:</li>
-<li>e.g., “Design” → “Design v0”, “Design review”, “Design v1”</li>
-<li>Allow overlap: start implementation against v0 with rollback/iteration buffer.</li>
+<li>
+<p>If a task is long and blocks successors, split it into smaller deliverables:</p>
+</li>
+<li>
+<p>e.g., “Design” → “Design v0”, “Design review”, “Design v1”</p>
+</li>
+<li>
+<p>Allow overlap: start implementation against v0 with rollback/iteration buffer.</p>
+</li>
 </ul>
 <h3 id="3-redundancy-where-beneficial">3) Redundancy where beneficial</h3>
 <ul>
-<li>Duplicate discovery/research tasks across subteams to reduce risk of single-threaded delays.</li>
-<li>Add explicit “merge + reconcile” tasks.</li>
+<li>
+<p>Duplicate discovery/research tasks across subteams to reduce risk of single-threaded delays.</p>
+</li>
+<li>
+<p>Add explicit “merge + reconcile” tasks.</p>
+</li>
 </ul>
 <h2 id="output-additions">Output additions</h2>
 <ul>
-<li>“Parallelization Opportunities” section</li>
-<li>“Fast-track schedule” Gantt view (baseline vs accelerated)</li>
-<li>Risk notes: increased coordination + rework probability</li>
+<li>
+<p>“Parallelization Opportunities” section</p>
+</li>
+<li>
+<p>“Fast-track schedule” Gantt view (baseline vs accelerated)</p>
+</li>
+<li>
+<p>Risk notes: increased coordination + rework probability</p>
+</li>
 </ul>
 <h2 id="algorithm-sketch">Algorithm sketch</h2>
 <ul>
-<li>Compute earliest start/latest finish</li>
-<li>Mark critical path</li>
-<li>For non-critical tasks, pack into parallel lanes by resource class</li>
+<li>
+<p>Compute earliest start/latest finish</p>
+</li>
+<li>
+<p>Mark critical path</p>
+</li>
+<li>
+<p>For non-critical tasks, pack into parallel lanes by resource class</p>
+</li>
 </ul>
 <h2 id="success-metrics">Success metrics</h2>
 <ul>
-<li>Median planned duration reduction (baseline vs fast-track)</li>
-<li>Rework rate estimate + mitigation completeness</li>
+<li>
+<p>Median planned duration reduction (baseline vs fast-track)</p>
+</li>
+<li>
+<p>Rework rate estimate + mitigation completeness</p>
+</li>
 </ul>
 
 
@@ -3287,6 +3363,9 @@
 
 
 
+
+  
+  
 
 
 
