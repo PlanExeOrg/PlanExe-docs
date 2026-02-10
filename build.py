@@ -10,6 +10,7 @@ import shutil
 import subprocess
 import tempfile
 from pathlib import Path
+import yaml
 
 # ANSI color codes
 GREEN = '\033[0;32m'
@@ -76,6 +77,14 @@ def main():
             YELLOW
         )
         shutil.copytree(docs_source_path, docs_dir, dirs_exist_ok=True)
+
+        # Ensure custom CSS for nav status icons exists (PlanExe-docs override).
+        nav_css_path = docs_dir / "assets" / "stylesheets" / "nav-status.css"
+        nav_css_path.parent.mkdir(parents=True, exist_ok=True)
+        nav_css_path.write_text(
+            ".md-nav__link .md-status--proposal { display: none; }\n",
+            encoding="utf-8",
+        )
         
         # Copy component READMEs into docs/developer/ so they are part of the built docs
         developer_dir = docs_dir / "developer"
@@ -103,6 +112,43 @@ def main():
         
         # Copy mkdocs.yml to temp directory
         shutil.copy2(mkdocs_yml, temp_docs_path / "mkdocs.yml")
+
+        # Inject proposals into nav (alphabetical) if proposals dir exists.
+        proposals_dir = docs_dir / "proposals"
+        if proposals_dir.exists():
+            class _IgnoreUnknownTagLoader(yaml.SafeLoader):
+                pass
+
+            def _construct_undefined(loader, node):
+                return node.value
+
+            _IgnoreUnknownTagLoader.add_constructor(None, _construct_undefined)
+
+            mkdocs_temp_path = temp_docs_path / "mkdocs.yml"
+            with open(mkdocs_temp_path, "r") as f:
+                mkdocs_config = yaml.load(f, Loader=_IgnoreUnknownTagLoader)
+
+            proposals = sorted(proposals_dir.glob("*.md"), key=lambda p: p.name.lower())
+            proposals_nav = []
+            for proposal_path in proposals:
+                title = proposal_path.stem.replace("_", " ").replace("-", " ").strip()
+                proposals_nav.append({title: f"proposals/{proposal_path.name}"})
+
+            nav = mkdocs_config.get("nav", [])
+            for entry in nav:
+                if isinstance(entry, dict) and "Development" in entry:
+                    dev_items = entry["Development"]
+                    if isinstance(dev_items, list):
+                        dev_items = [
+                            item for item in dev_items
+                            if not (isinstance(item, dict) and "Proposals" in item)
+                        ]
+                        dev_items.append({"Proposals": proposals_nav})
+                        entry["Development"] = dev_items
+                    break
+
+            with open(mkdocs_temp_path, "w") as f:
+                yaml.safe_dump(mkdocs_config, f, sort_keys=False)
         
         # Build the documentation
         print_colored("Building with mkdocs...", YELLOW)
