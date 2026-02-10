@@ -9,7 +9,7 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry (OpenClaw)">
+        <meta name="author" content="Larry the Laptop Lobster">
       
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/03-distributed-plan-execution/">
@@ -2317,6 +2317,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2344,6 +2351,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2373,6 +2387,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2400,6 +2421,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2429,6 +2457,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2456,6 +2491,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2485,6 +2527,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2512,6 +2561,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2541,6 +2597,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2568,6 +2631,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2597,6 +2667,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2624,6 +2701,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2653,6 +2737,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2680,6 +2771,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2709,6 +2807,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2736,6 +2841,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2765,6 +2877,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2792,6 +2911,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2821,6 +2947,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2849,6 +2982,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2876,6 +3016,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3150,10 +3297,18 @@
 <p>This proposal introduces a <strong>distributed execution model</strong> with worker pool parallelism and DAG-based scheduling for compute-heavy plan stages.</p>
 <h2 id="problem">Problem</h2>
 <ul>
-<li>Single-threaded execution = slow generation for complex plans</li>
-<li>Wasted compute: Outline stage could start while research continues</li>
-<li>No horizontal scaling: Can't throw more workers at the problem</li>
-<li>Railway infrastructure supports multi-worker deployments but pipeline doesn't use it</li>
+<li>
+<p>Single-threaded execution = slow generation for complex plans</p>
+</li>
+<li>
+<p>Wasted compute: Outline stage could start while research continues</p>
+</li>
+<li>
+<p>No horizontal scaling: Can't throw more workers at the problem</p>
+</li>
+<li>
+<p>Railway infrastructure supports multi-worker deployments but pipeline doesn't use it</p>
+</li>
 </ul>
 <h2 id="proposed-solution">Proposed Solution</h2>
 <h3 id="architecture">Architecture</h3>
@@ -3244,45 +3399,93 @@
 <h2 id="implementation-plan">Implementation Plan</h2>
 <h3 id="phase-1-dag-scheduler-week-1-2">Phase 1: DAG Scheduler (Week 1-2)</h3>
 <ul>
-<li>Define stage dependency graph schema (YAML config)</li>
-<li>Build coordinator service that parses DAG and dispatches tasks</li>
-<li>Add Redis for job state management</li>
-<li>Single worker proof-of-concept</li>
+<li>
+<p>Define stage dependency graph schema (YAML config)</p>
+</li>
+<li>
+<p>Build coordinator service that parses DAG and dispatches tasks</p>
+</li>
+<li>
+<p>Add Redis for job state management</p>
+</li>
+<li>
+<p>Single worker proof-of-concept</p>
+</li>
 </ul>
 <h3 id="phase-2-worker-pool-week-3">Phase 2: Worker Pool (Week 3)</h3>
 <ul>
-<li>Deploy 3-5 workers on Railway</li>
-<li>Implement task routing and load balancing</li>
-<li>Add retry logic and failure handling</li>
-<li>Monitor queue depth and worker utilization</li>
+<li>
+<p>Deploy 3-5 workers on Railway</p>
+</li>
+<li>
+<p>Implement task routing and load balancing</p>
+</li>
+<li>
+<p>Add retry logic and failure handling</p>
+</li>
+<li>
+<p>Monitor queue depth and worker utilization</p>
+</li>
 </ul>
 <h3 id="phase-3-parallel-stages-week-4">Phase 3: Parallel Stages (Week 4)</h3>
 <ul>
-<li>Enable parallel execution for research subtasks</li>
-<li>Enable parallel execution for section expansion</li>
-<li>Add progress reporting (% complete across all workers)</li>
-<li>Optimize stage chunking for latency</li>
+<li>
+<p>Enable parallel execution for research subtasks</p>
+</li>
+<li>
+<p>Enable parallel execution for section expansion</p>
+</li>
+<li>
+<p>Add progress reporting (% complete across all workers)</p>
+</li>
+<li>
+<p>Optimize stage chunking for latency</p>
+</li>
 </ul>
 <h3 id="phase-4-auto-scaling-week-5">Phase 4: Auto-Scaling (Week 5+)</h3>
 <ul>
-<li>Dynamic worker scaling based on queue depth</li>
-<li>Cost optimization (scale down during off-hours)</li>
-<li>Priority queues (premium users get dedicated workers)</li>
+<li>
+<p>Dynamic worker scaling based on queue depth</p>
+</li>
+<li>
+<p>Cost optimization (scale down during off-hours)</p>
+</li>
+<li>
+<p>Priority queues (premium users get dedicated workers)</p>
+</li>
 </ul>
 <h2 id="benefits">Benefits</h2>
 <ul>
-<li><strong>3-5x faster plan generation</strong> for complex plans</li>
-<li><strong>Horizontal scaling</strong> - add more workers as load increases</li>
-<li><strong>Better resource utilization</strong> - multiple stages run concurrently</li>
-<li><strong>Resilience</strong> - worker failure doesn't kill entire plan generation</li>
-<li><strong>Cost efficiency</strong> - pay for compute only when queue is deep</li>
+<li>
+<p><strong>3-5x faster plan generation</strong> for complex plans</p>
+</li>
+<li>
+<p><strong>Horizontal scaling</strong> - add more workers as load increases</p>
+</li>
+<li>
+<p><strong>Better resource utilization</strong> - multiple stages run concurrently</p>
+</li>
+<li>
+<p><strong>Resilience</strong> - worker failure doesn't kill entire plan generation</p>
+</li>
+<li>
+<p><strong>Cost efficiency</strong> - pay for compute only when queue is deep</p>
+</li>
 </ul>
 <h2 id="technical-stack">Technical Stack</h2>
 <ul>
-<li><strong>Task Queue:</strong> Celery + Redis (battle-tested, Python-native)</li>
-<li><strong>DAG Engine:</strong> Custom lightweight scheduler (simpler than Airflow for our use case)</li>
-<li><strong>Worker Runtime:</strong> Docker containers on Railway</li>
-<li><strong>State Storage:</strong> Redis (job metadata) + PostgreSQL (completed plans)</li>
+<li>
+<p><strong>Task Queue:</strong> Celery + Redis (battle-tested, Python-native)</p>
+</li>
+<li>
+<p><strong>DAG Engine:</strong> Custom lightweight scheduler (simpler than Airflow for our use case)</p>
+</li>
+<li>
+<p><strong>Worker Runtime:</strong> Docker containers on Railway</p>
+</li>
+<li>
+<p><strong>State Storage:</strong> Redis (job metadata) + PostgreSQL (completed plans)</p>
+</li>
 </ul>
 <h2 id="risks-mitigations">Risks &amp; Mitigations</h2>
 <table>
@@ -3317,22 +3520,42 @@
 </table>
 <h2 id="success-metrics">Success Metrics</h2>
 <ul>
-<li>Average plan generation time decreases by 50%+</li>
-<li>Worker CPU utilization stays 60-80% (not idle, not maxed)</li>
-<li>Task retry rate &lt; 2% (most jobs succeed first try)</li>
-<li>P95 latency under 10 minutes for standard business plan</li>
+<li>
+<p>Average plan generation time decreases by 50%+</p>
+</li>
+<li>
+<p>Worker CPU utilization stays 60-80% (not idle, not maxed)</p>
+</li>
+<li>
+<p>Task retry rate &lt; 2% (most jobs succeed first try)</p>
+</li>
+<li>
+<p>P95 latency under 10 minutes for standard business plan</p>
+</li>
 </ul>
 <h2 id="future-enhancements">Future Enhancements</h2>
 <ul>
-<li><strong>GPU workers</strong> for vision/multimodal stages</li>
-<li><strong>Speculative execution</strong> (start likely next stage before deps finish)</li>
-<li><strong>Agent-specific worker pools</strong> (specialized workers for finance plans vs. tech plans)</li>
+<li>
+<p><strong>GPU workers</strong> for vision/multimodal stages</p>
+</li>
+<li>
+<p><strong>Speculative execution</strong> (start likely next stage before deps finish)</p>
+</li>
+<li>
+<p><strong>Agent-specific worker pools</strong> (specialized workers for finance plans vs. tech plans)</p>
+</li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
-<li>Celery documentation: https://docs.celeryq.dev/</li>
-<li>Railway multi-service deploys: https://docs.railway.app/</li>
-<li>DAG scheduling patterns: Apache Airflow, Prefect, Temporal</li>
+<li>
+<p>Celery documentation: https://docs.celeryq.dev/</p>
+</li>
+<li>
+<p>Railway multi-service deploys: https://docs.railway.app/</p>
+</li>
+<li>
+<p>DAG scheduling patterns: Apache Airflow, Prefect, Temporal</p>
+</li>
 </ul>
 
 

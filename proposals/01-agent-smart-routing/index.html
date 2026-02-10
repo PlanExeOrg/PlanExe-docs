@@ -9,7 +9,7 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry (OpenClaw)">
+        <meta name="author" content="Larry the Laptop Lobster">
       
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/01-agent-smart-routing/">
@@ -2234,6 +2234,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2261,6 +2268,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2290,6 +2304,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2317,6 +2338,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2346,6 +2374,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2373,6 +2408,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2402,6 +2444,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2429,6 +2478,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2458,6 +2514,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2485,6 +2548,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2514,6 +2584,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2541,6 +2618,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2570,6 +2654,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2597,6 +2688,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2626,6 +2724,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2653,6 +2758,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2682,6 +2794,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2709,6 +2828,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2738,6 +2864,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2766,6 +2899,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2793,6 +2933,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2984,9 +3131,15 @@
 <p>This proposal introduces a <strong>meta-agent dispatcher</strong> that routes each pipeline stage to the most appropriate agent based on stage type, domain, and requirements.</p>
 <h2 id="problem">Problem</h2>
 <ul>
-<li>Generic agents produce mediocre results across all domains</li>
-<li>No way to leverage specialized models (reasoning models for analysis, fast models for formatting, etc.)</li>
-<li>Pipeline stages have different cost/quality trade-offs that aren't exploited</li>
+<li>
+<p>Generic agents produce mediocre results across all domains</p>
+</li>
+<li>
+<p>No way to leverage specialized models (reasoning models for analysis, fast models for formatting, etc.)</p>
+</li>
+<li>
+<p>Pipeline stages have different cost/quality trade-offs that aren't exploited</p>
+</li>
 </ul>
 <h2 id="proposed-solution">Proposed Solution</h2>
 <h3 id="architecture">Architecture</h3>
@@ -3032,17 +3185,33 @@
 </code></pre></div>
 <h3 id="implementation">Implementation</h3>
 <ol>
-<li>Add <code>AgentRouter</code> class in <code>backend/mcp_cloud/src/routing/</code></li>
-<li>Modify pipeline stages to call <code>router.get_agent(stage_type, domain)</code></li>
-<li>Add telemetry to track agent selection and performance per stage</li>
-<li>Build admin UI to override routing rules per-customer</li>
+<li>
+<p>Add <code>AgentRouter</code> class in <code>backend/mcp_cloud/src/routing/</code></p>
+</li>
+<li>
+<p>Modify pipeline stages to call <code>router.get_agent(stage_type, domain)</code></p>
+</li>
+<li>
+<p>Add telemetry to track agent selection and performance per stage</p>
+</li>
+<li>
+<p>Build admin UI to override routing rules per-customer</p>
+</li>
 </ol>
 <h2 id="benefits">Benefits</h2>
 <ul>
-<li><strong>15-30% cost reduction</strong> by using fast models for simple stages</li>
-<li><strong>Quality improvement</strong> from specialized agents</li>
-<li><strong>Flexibility</strong> for customers to bring their own agent configs</li>
-<li><strong>A/B testing</strong> different agent combinations per stage</li>
+<li>
+<p><strong>15-30% cost reduction</strong> by using fast models for simple stages</p>
+</li>
+<li>
+<p><strong>Quality improvement</strong> from specialized agents</p>
+</li>
+<li>
+<p><strong>Flexibility</strong> for customers to bring their own agent configs</p>
+</li>
+<li>
+<p><strong>A/B testing</strong> different agent combinations per stage</p>
+</li>
 </ul>
 <h2 id="risks-mitigations">Risks &amp; Mitigations</h2>
 <table>
@@ -3069,16 +3238,30 @@
 </table>
 <h2 id="next-steps">Next Steps</h2>
 <ol>
-<li>Prototype with 3 agents (research, writing, format)</li>
-<li>Run side-by-side comparison on 20 existing plans</li>
-<li>Measure cost savings and quality delta</li>
-<li>Ship behind feature flag, enable for beta customers</li>
+<li>
+<p>Prototype with 3 agents (research, writing, format)</p>
+</li>
+<li>
+<p>Run side-by-side comparison on 20 existing plans</p>
+</li>
+<li>
+<p>Measure cost savings and quality delta</p>
+</li>
+<li>
+<p>Ship behind feature flag, enable for beta customers</p>
+</li>
 </ol>
 <h2 id="success-metrics">Success Metrics</h2>
 <ul>
-<li>Cost per plan decreases by 20%+</li>
-<li>User satisfaction rating increases (via post-plan survey)</li>
-<li>No increase in pipeline failure rate</li>
+<li>
+<p>Cost per plan decreases by 20%+</p>
+</li>
+<li>
+<p>User satisfaction rating increases (via post-plan survey)</p>
+</li>
+<li>
+<p>No increase in pipeline failure rate</p>
+</li>
 </ul>
 
 

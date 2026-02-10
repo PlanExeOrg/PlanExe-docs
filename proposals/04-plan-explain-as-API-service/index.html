@@ -9,7 +9,7 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry (OpenClaw)">
+        <meta name="author" content="Larry the Laptop Lobster">
       
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/04-plan-explain-as-API-service/">
@@ -2356,6 +2356,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2383,6 +2390,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2412,6 +2426,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2439,6 +2460,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2468,6 +2496,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2495,6 +2530,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2524,6 +2566,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2551,6 +2600,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2580,6 +2636,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2607,6 +2670,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2636,6 +2706,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2663,6 +2740,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2692,6 +2776,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2719,6 +2810,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2748,6 +2846,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2775,6 +2880,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2804,6 +2916,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2831,6 +2950,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2860,6 +2986,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2888,6 +3021,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2915,6 +3055,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3224,18 +3371,36 @@
 
 <h1 id="plan-explain-api-natural-language-summaries">Plan Explain API - Natural Language Summaries</h1>
 <h2 id="overview">Overview</h2>
-<p>PlanExe generates detailed, comprehensive business plans that can be 50-100 pages long. Users often need quick summaries for:
-- Email updates to stakeholders
-- Dashboard previews
-- Customer support responses
-- Social media posts about plan progress</p>
+<p>PlanExe generates detailed, comprehensive business plans that can be 50-100 pages long. Users often need quick summaries for:</p>
+<ul>
+<li>
+<p>Email updates to stakeholders</p>
+</li>
+<li>
+<p>Dashboard previews</p>
+</li>
+<li>
+<p>Customer support responses</p>
+</li>
+<li>
+<p>Social media posts about plan progress</p>
+</li>
+</ul>
 <p>This proposal introduces a <code>/api/plan/{id}/explain</code> endpoint that returns natural-language summaries of any plan using a fast LLM (Gemini 2.0 Flash).</p>
 <h2 id="problem">Problem</h2>
 <ul>
-<li>Plans are too long to read in full for quick updates</li>
-<li>No programmatic way to get "executive summary" or "elevator pitch" version</li>
-<li>External tools (email automation, dashboards) can't easily consume plan content</li>
-<li>Manual summarization is slow and inconsistent</li>
+<li>
+<p>Plans are too long to read in full for quick updates</p>
+</li>
+<li>
+<p>No programmatic way to get "executive summary" or "elevator pitch" version</p>
+</li>
+<li>
+<p>External tools (email automation, dashboards) can't easily consume plan content</p>
+</li>
+<li>
+<p>Manual summarization is slow and inconsistent</p>
+</li>
 </ul>
 <h2 id="proposed-solution">Proposed Solution</h2>
 <h3 id="api-endpoint">API Endpoint</h3>
@@ -3263,10 +3428,18 @@
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="err">}</span>
 </code></pre></div>
 <h3 id="implementation">Implementation</h3>
-<p><strong>LLM Selection:</strong> Gemini 2.0 Flash
-- Cost: ~$0.02 per summary (2K input tokens, 500 output tokens)
-- Latency: 2-3 seconds
-- Quality: Good enough for summaries, not critical content</p>
+<p><strong>LLM Selection:</strong> Gemini 2.0 Flash</p>
+<ul>
+<li>
+<p>Cost: ~$0.02 per summary (2K input tokens, 500 output tokens)</p>
+</li>
+<li>
+<p>Latency: 2-3 seconds</p>
+</li>
+<li>
+<p>Quality: Good enough for summaries, not critical content</p>
+</li>
+</ul>
 <p><strong>Caching Strategy:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Cache summaries for 12 hours</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">cache_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;plan_explain:</span><span class="si">{</span><span class="n">plan_id</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">audience</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -3345,41 +3518,87 @@
 <h2 id="implementation-plan">Implementation Plan</h2>
 <h3 id="week-1-core-endpoint">Week 1: Core Endpoint</h3>
 <ul>
-<li>Build <code>/api/plan/{id}/explain</code> route</li>
-<li>Integrate Gemini 2.0 Flash API</li>
-<li>Implement basic prompt template</li>
-<li>Add response caching (Redis)</li>
+<li>
+<p>Build <code>/api/plan/{id}/explain</code> route</p>
+</li>
+<li>
+<p>Integrate Gemini 2.0 Flash API</p>
+</li>
+<li>
+<p>Implement basic prompt template</p>
+</li>
+<li>
+<p>Add response caching (Redis)</p>
+</li>
 </ul>
 <h3 id="week-2-length-audience-options">Week 2: Length &amp; Audience Options</h3>
 <ul>
-<li>Add <code>length</code> parameter handling (short/medium/long)</li>
-<li>Add <code>audience</code> parameter (technical/business/general)</li>
-<li>Tune prompts for each combination</li>
-<li>A/B test summary quality</li>
+<li>
+<p>Add <code>length</code> parameter handling (short/medium/long)</p>
+</li>
+<li>
+<p>Add <code>audience</code> parameter (technical/business/general)</p>
+</li>
+<li>
+<p>Tune prompts for each combination</p>
+</li>
+<li>
+<p>A/B test summary quality</p>
+</li>
 </ul>
 <h3 id="week-3-advanced-features">Week 3: Advanced Features</h3>
 <ul>
-<li>Add <code>format</code> parameter (text/markdown/json)</li>
-<li>Extract structured key points (bullets)</li>
-<li>Add confidence score (how well summary captures plan)</li>
-<li>Rate limiting (10 requests/minute per user)</li>
+<li>
+<p>Add <code>format</code> parameter (text/markdown/json)</p>
+</li>
+<li>
+<p>Extract structured key points (bullets)</p>
+</li>
+<li>
+<p>Add confidence score (how well summary captures plan)</p>
+</li>
+<li>
+<p>Rate limiting (10 requests/minute per user)</p>
+</li>
 </ul>
 <h3 id="week-4-integration-polish">Week 4: Integration &amp; Polish</h3>
 <ul>
-<li>Update API docs with examples</li>
-<li>Build SDK helpers for common use cases</li>
-<li>Add to PlanExe web UI (show summary before full plan)</li>
-<li>Monitor cache hit rate and optimize TTL</li>
+<li>
+<p>Update API docs with examples</p>
+</li>
+<li>
+<p>Build SDK helpers for common use cases</p>
+</li>
+<li>
+<p>Add to PlanExe web UI (show summary before full plan)</p>
+</li>
+<li>
+<p>Monitor cache hit rate and optimize TTL</p>
+</li>
 </ul>
 <h2 id="cost-analysis">Cost Analysis</h2>
 <p><strong>Per-request cost:</strong> ~$0.02 (Gemini Flash input + output)
-<strong>With caching (12h TTL):</strong>
-- Cache hit rate: 70-80% (most users view same plan multiple times)
-- Effective cost per unique plan: $0.02 (first request) + $0.00 (cached hits)</p>
-<p><strong>Monthly estimate for 1,000 active plans:</strong>
-- Unique summarizations: 1,000 × $0.02 = $20
-- Cached requests: ~7,000 × $0.00 = $0
-- <strong>Total: ~$20/month</strong></p>
+<strong>With caching (12h TTL):</strong></p>
+<ul>
+<li>
+<p>Cache hit rate: 70-80% (most users view same plan multiple times)</p>
+</li>
+<li>
+<p>Effective cost per unique plan: $0.02 (first request) + $0.00 (cached hits)</p>
+</li>
+</ul>
+<p><strong>Monthly estimate for 1,000 active plans:</strong></p>
+<ul>
+<li>
+<p>Unique summarizations: 1,000 × $0.02 = $20</p>
+</li>
+<li>
+<p>Cached requests: ~7,000 × $0.00 = $0</p>
+</li>
+<li>
+<p><strong>Total: ~$20/month</strong></p>
+</li>
+</ul>
 <h2 id="risks-mitigations">Risks &amp; Mitigations</h2>
 <table>
 <thead>
@@ -3413,23 +3632,45 @@
 </table>
 <h2 id="success-metrics">Success Metrics</h2>
 <ul>
-<li>80%+ of users view summary before full plan</li>
-<li>Cache hit rate &gt; 70%</li>
-<li>Average summary generation time &lt; 3 seconds</li>
-<li>User feedback: "summary accurately represents my plan" &gt; 4/5 stars</li>
+<li>
+<p>80%+ of users view summary before full plan</p>
+</li>
+<li>
+<p>Cache hit rate &gt; 70%</p>
+</li>
+<li>
+<p>Average summary generation time &lt; 3 seconds</p>
+</li>
+<li>
+<p>User feedback: "summary accurately represents my plan" &gt; 4/5 stars</p>
+</li>
 </ul>
 <h2 id="future-enhancements">Future Enhancements</h2>
 <ul>
-<li><strong>Multi-language summaries</strong> (translate to Spanish, French, etc.)</li>
-<li><strong>Voice summaries</strong> (TTS integration for audio version)</li>
-<li><strong>Comparison summaries</strong> ("How does this plan differ from my previous one?")</li>
-<li><strong>Sentiment analysis</strong> (is the plan optimistic, cautious, ambitious?)</li>
+<li>
+<p><strong>Multi-language summaries</strong> (translate to Spanish, French, etc.)</p>
+</li>
+<li>
+<p><strong>Voice summaries</strong> (TTS integration for audio version)</p>
+</li>
+<li>
+<p><strong>Comparison summaries</strong> ("How does this plan differ from my previous one?")</p>
+</li>
+<li>
+<p><strong>Sentiment analysis</strong> (is the plan optimistic, cautious, ambitious?)</p>
+</li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
-<li>Gemini 2.0 Flash pricing: https://ai.google.dev/pricing</li>
-<li>Prompt engineering best practices: Anthropic prompt guide</li>
-<li>Caching strategies: Redis best practices</li>
+<li>
+<p>Gemini 2.0 Flash pricing: https://ai.google.dev/pricing</p>
+</li>
+<li>
+<p>Prompt engineering best practices: Anthropic prompt guide</p>
+</li>
+<li>
+<p>Caching strategies: Redis best practices</p>
+</li>
 </ul>
 
 

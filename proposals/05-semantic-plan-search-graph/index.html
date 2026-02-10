@@ -9,7 +9,7 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry (OpenClaw)">
+        <meta name="author" content="Larry the Laptop Lobster">
       
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/05-semantic-plan-search-graph/">
@@ -2389,6 +2389,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2416,6 +2423,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2445,6 +2459,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2472,6 +2493,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2501,6 +2529,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2528,6 +2563,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2557,6 +2599,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2584,6 +2633,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2613,6 +2669,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2640,6 +2703,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2669,6 +2739,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2696,6 +2773,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2725,6 +2809,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2752,6 +2843,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2781,6 +2879,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2808,6 +2913,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2837,6 +2949,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2864,6 +2983,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2893,6 +3019,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2921,6 +3054,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2948,6 +3088,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3290,17 +3437,33 @@
 
 <h1 id="semantic-plan-search-graph-pgvector-similarity">Semantic Plan Search Graph - pgvector Similarity</h1>
 <h2 id="overview">Overview</h2>
-<p>PlanExe has generated thousands of business plans across diverse domains. This corpus is valuable for:
-- Finding similar plans ("show me plans like this one")
-- Few-shot learning (use similar plans as examples for new generation)
-- Discovery ("I want to open a coffee shop - what plans exist?")</p>
+<p>PlanExe has generated thousands of business plans across diverse domains. This corpus is valuable for:</p>
+<ul>
+<li>
+<p>Finding similar plans ("show me plans like this one")</p>
+</li>
+<li>
+<p>Few-shot learning (use similar plans as examples for new generation)</p>
+</li>
+<li>
+<p>Discovery ("I want to open a coffee shop - what plans exist?")</p>
+</li>
+</ul>
 <p>This proposal adds <strong>semantic search</strong> across the entire plan corpus using pgvector (PostgreSQL extension) and sentence embeddings.</p>
 <h2 id="problem">Problem</h2>
 <ul>
-<li>No way to search plans by meaning/topic (only exact text match)</li>
-<li>Can't find "plans similar to mine" for inspiration</li>
-<li>Agents can't leverage existing plans as few-shot examples</li>
-<li>Plan library feels like a black box instead of a knowledge graph</li>
+<li>
+<p>No way to search plans by meaning/topic (only exact text match)</p>
+</li>
+<li>
+<p>Can't find "plans similar to mine" for inspiration</p>
+</li>
+<li>
+<p>Agents can't leverage existing plans as few-shot examples</p>
+</li>
+<li>
+<p>Plan library feels like a black box instead of a knowledge graph</p>
+</li>
 </ul>
 <h2 id="proposed-solution">Proposed Solution</h2>
 <h3 id="architecture">Architecture</h3>
@@ -3354,11 +3517,21 @@
 <a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="k">WITH</span><span class="w"> </span><span class="p">(</span><span class="n">lists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="embedding-generation">Embedding Generation</h3>
-<p><strong>Model:</strong> <code>sentence-transformers/all-mpnet-base-v2</code>
-- Dimension: 768
-- Speed: ~100 sentences/second on CPU
-- Quality: State-of-the-art for semantic search
-- Cost: Free (run locally or serverless)</p>
+<p><strong>Model:</strong> <code>sentence-transformers/all-mpnet-base-v2</code></p>
+<ul>
+<li>
+<p>Dimension: 768</p>
+</li>
+<li>
+<p>Speed: ~100 sentences/second on CPU</p>
+</li>
+<li>
+<p>Quality: State-of-the-art for semantic search</p>
+</li>
+<li>
+<p>Cost: Free (run locally or serverless)</p>
+</li>
+</ul>
 <p><strong>Embed on Insert:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sentence_transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">SentenceTransformer</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
@@ -3475,37 +3648,77 @@
 <h2 id="implementation-plan">Implementation Plan</h2>
 <h3 id="week-1-core-infrastructure">Week 1: Core Infrastructure</h3>
 <ul>
-<li>Add pgvector extension to PostgreSQL</li>
-<li>Create <code>plan_corpus</code> table with vector column</li>
-<li>Set up sentence-transformers model (serverless or Railway service)</li>
-<li>Build embedding generation pipeline</li>
+<li>
+<p>Add pgvector extension to PostgreSQL</p>
+</li>
+<li>
+<p>Create <code>plan_corpus</code> table with vector column</p>
+</li>
+<li>
+<p>Set up sentence-transformers model (serverless or Railway service)</p>
+</li>
+<li>
+<p>Build embedding generation pipeline</p>
+</li>
 </ul>
 <h3 id="week-2-indexing-existing-plans">Week 2: Indexing Existing Plans</h3>
 <ul>
-<li>Batch process existing plans (embed title + summary)</li>
-<li>Insert into <code>plan_corpus</code> table</li>
-<li>Create similarity search index (ivfflat)</li>
-<li>Benchmark query performance</li>
+<li>
+<p>Batch process existing plans (embed title + summary)</p>
+</li>
+<li>
+<p>Insert into <code>plan_corpus</code> table</p>
+</li>
+<li>
+<p>Create similarity search index (ivfflat)</p>
+</li>
+<li>
+<p>Benchmark query performance</p>
+</li>
 </ul>
 <h3 id="week-3-search-api">Week 3: Search API</h3>
 <ul>
-<li>Build <code>/api/plans/search</code> endpoint</li>
-<li>Add filtering (domain, min_similarity)</li>
-<li>Implement pagination</li>
-<li>Add response caching for common queries</li>
+<li>
+<p>Build <code>/api/plans/search</code> endpoint</p>
+</li>
+<li>
+<p>Add filtering (domain, min_similarity)</p>
+</li>
+<li>
+<p>Implement pagination</p>
+</li>
+<li>
+<p>Add response caching for common queries</p>
+</li>
 </ul>
 <h3 id="week-4-ui-integration">Week 4: UI Integration</h3>
 <ul>
-<li>Add search bar to plan library</li>
-<li>Show "Plans like this" on plan detail page</li>
-<li>Add domain filters to search UI</li>
-<li>Display similarity scores visually</li>
+<li>
+<p>Add search bar to plan library</p>
+</li>
+<li>
+<p>Show "Plans like this" on plan detail page</p>
+</li>
+<li>
+<p>Add domain filters to search UI</p>
+</li>
+<li>
+<p>Display similarity scores visually</p>
+</li>
 </ul>
 <h2 id="performance-optimization">Performance Optimization</h2>
-<p><strong>Indexing Strategy:</strong>
-- Use <code>ivfflat</code> index for sub-linear search time
-- Trade-off: ~95% recall at 10x speed improvement
-- Tune <code>lists</code> parameter based on corpus size (100 lists for 10K plans)</p>
+<p><strong>Indexing Strategy:</strong></p>
+<ul>
+<li>
+<p>Use <code>ivfflat</code> index for sub-linear search time</p>
+</li>
+<li>
+<p>Trade-off: ~95% recall at 10x speed improvement</p>
+</li>
+<li>
+<p>Tune <code>lists</code> parameter based on corpus size (100 lists for 10K plans)</p>
+</li>
+</ul>
 <p><strong>Batch Embedding:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Process 1000 plans at once</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">p</span><span class="o">.</span><span class="n">summary</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">plans</span><span class="p">]</span>
@@ -3522,16 +3735,36 @@
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">redis</span><span class="o">.</span><span class="n">setex</span><span class="p">(</span><span class="n">cache_key</span><span class="p">,</span> <span class="mi">3600</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>  <span class="c1"># 1h TTL</span>
 </code></pre></div></p>
 <h2 id="cost-analysis">Cost Analysis</h2>
-<p><strong>Embedding Model:</strong>
-- Hosting: $20/month (Railway CPU service, always-on)
-- Alternative: AWS Lambda (serverless, pay-per-request)</p>
-<p><strong>pgvector:</strong>
-- Storage: ~1KB per plan (768-dim vector)
-- 10K plans = 10MB (negligible)
-- Index overhead: ~2x storage</p>
-<p><strong>Query Cost:</strong>
-- Compute: Minimal (vector similarity is fast)
-- No external API calls (model runs locally)</p>
+<p><strong>Embedding Model:</strong></p>
+<ul>
+<li>
+<p>Hosting: $20/month (Railway CPU service, always-on)</p>
+</li>
+<li>
+<p>Alternative: AWS Lambda (serverless, pay-per-request)</p>
+</li>
+</ul>
+<p><strong>pgvector:</strong></p>
+<ul>
+<li>
+<p>Storage: ~1KB per plan (768-dim vector)</p>
+</li>
+<li>
+<p>10K plans = 10MB (negligible)</p>
+</li>
+<li>
+<p>Index overhead: ~2x storage</p>
+</li>
+</ul>
+<p><strong>Query Cost:</strong></p>
+<ul>
+<li>
+<p>Compute: Minimal (vector similarity is fast)</p>
+</li>
+<li>
+<p>No external API calls (model runs locally)</p>
+</li>
+</ul>
 <p><strong>Total:</strong> ~$20-30/month for 10K-100K plans</p>
 <h2 id="risks-mitigations">Risks &amp; Mitigations</h2>
 <table>
@@ -3562,23 +3795,45 @@
 </table>
 <h2 id="success-metrics">Success Metrics</h2>
 <ul>
-<li>Search returns relevant results 80%+ of the time (user feedback)</li>
-<li>Average query time &lt; 100ms (p95)</li>
-<li>30%+ of users use "find similar plans" feature</li>
-<li>Few-shot plan generation quality improves (measured by ratings)</li>
+<li>
+<p>Search returns relevant results 80%+ of the time (user feedback)</p>
+</li>
+<li>
+<p>Average query time &lt; 100ms (p95)</p>
+</li>
+<li>
+<p>30%+ of users use "find similar plans" feature</p>
+</li>
+<li>
+<p>Few-shot plan generation quality improves (measured by ratings)</p>
+</li>
 </ul>
 <h2 id="future-enhancements">Future Enhancements</h2>
 <ul>
-<li><strong>Multi-modal embeddings</strong> (include plan images, charts)</li>
-<li><strong>Temporal search</strong> ("plans created in last 6 months")</li>
-<li><strong>User preference learning</strong> (personalize search based on history)</li>
-<li><strong>Graph visualization</strong> (show plan similarity network)</li>
+<li>
+<p><strong>Multi-modal embeddings</strong> (include plan images, charts)</p>
+</li>
+<li>
+<p><strong>Temporal search</strong> ("plans created in last 6 months")</p>
+</li>
+<li>
+<p><strong>User preference learning</strong> (personalize search based on history)</p>
+</li>
+<li>
+<p><strong>Graph visualization</strong> (show plan similarity network)</p>
+</li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
-<li>pgvector documentation: https://github.com/pgvector/pgvector</li>
-<li>sentence-transformers: https://www.sbert.net/</li>
-<li>Semantic search best practices: https://www.pinecone.io/learn/semantic-search/</li>
+<li>
+<p>pgvector documentation: https://github.com/pgvector/pgvector</p>
+</li>
+<li>
+<p>sentence-transformers: https://www.sbert.net/</p>
+</li>
+<li>
+<p>Semantic search best practices: https://www.pinecone.io/learn/semantic-search/</p>
+</li>
 </ul>
 
 

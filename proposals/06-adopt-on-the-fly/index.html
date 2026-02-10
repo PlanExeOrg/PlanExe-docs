@@ -2370,6 +2370,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2397,6 +2404,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2426,6 +2440,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2453,6 +2474,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2482,6 +2510,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2509,6 +2544,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2538,6 +2580,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2565,6 +2614,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2594,6 +2650,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2621,6 +2684,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2650,6 +2720,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2677,6 +2754,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2706,6 +2790,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2733,6 +2824,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2762,6 +2860,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2789,6 +2894,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2818,6 +2930,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2845,6 +2964,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2874,6 +3000,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2902,6 +3035,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2929,6 +3069,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3264,146 +3411,296 @@
 <h2 id="1-current-state-what-this-repo-already-does">1) Current State (What This Repo Already Does)</h2>
 <p>PlanExe already has multiple "early classification" concepts and quality gates that we can build on:</p>
 <ul>
-<li><strong>Purpose classification (business/personal/other)</strong>: <code>worker_plan/worker_plan_internal/assume/identify_purpose.py</code> produces <code>002-6-identify_purpose.md</code> and is already used downstream (e.g., SWOT prompt selection).</li>
-<li><strong>Plan type classification (digital/physical)</strong>: <code>worker_plan/worker_plan_internal/assume/identify_plan_type.py</code> produces <code>002-8-plan_type.md</code>. Note: it intentionally labels most software development as "physical" (because it assumes a physical workspace/devices).</li>
-<li><strong>Levers pipeline</strong>: <code>worker_plan/worker_plan_internal/lever/*</code> produces potential levers -&gt; deduped -&gt; enriched -&gt; "vital few" -&gt; scenarios/strategic decisions.</li>
-<li><strong>Quality gates already exist</strong>:</li>
-<li>Redline gate / premise attack: <code>worker_plan/worker_plan_internal/diagnostics/*</code></li>
-<li>Self-audit checklist includes "Lacks Technical Depth", "Legal Minefield", "External Dependencies", etc.: <code>worker_plan/worker_plan_internal/self_audit/self_audit.py</code></li>
-<li><strong>MCP interface is tools-only</strong> and supports <code>task_create -&gt; task_status -&gt; task_file_info/task_download</code>: <code>mcp_cloud/app.py</code>, <code>mcp_local/planexe_mcp_local.py</code>, and <code>docs/planexe_mcp_interface.md</code>.</li>
-<li><strong>LLM configuration is externalized</strong> (profiles in <code>llm_config.json</code>, default via <code>DEFAULT_LLM</code> env var; keys from <code>.env</code>): <code>worker_plan/worker_plan_internal/llm_factory.py</code>, <code>worker_plan/worker_plan_internal/utils/planexe_llmconfig.py</code>, <code>worker_plan/worker_plan_api/planexe_dotenv.py</code>.</li>
+<li>
+<p><strong>Purpose classification (business/personal/other)</strong>: <code>worker_plan/worker_plan_internal/assume/identify_purpose.py</code> produces <code>002-6-identify_purpose.md</code> and is already used downstream (e.g., SWOT prompt selection).</p>
+</li>
+<li>
+<p><strong>Plan type classification (digital/physical)</strong>: <code>worker_plan/worker_plan_internal/assume/identify_plan_type.py</code> produces <code>002-8-plan_type.md</code>. Note: it intentionally labels most software development as "physical" (because it assumes a physical workspace/devices).</p>
+</li>
+<li>
+<p><strong>Levers pipeline</strong>: <code>worker_plan/worker_plan_internal/lever/*</code> produces potential levers -&gt; deduped -&gt; enriched -&gt; "vital few" -&gt; scenarios/strategic decisions.</p>
+</li>
+<li>
+<p><strong>Quality gates already exist</strong>:</p>
+</li>
+<li>
+<p>Redline gate / premise attack: <code>worker_plan/worker_plan_internal/diagnostics/*</code></p>
+</li>
+<li>
+<p>Self-audit checklist includes "Lacks Technical Depth", "Legal Minefield", "External Dependencies", etc.: <code>worker_plan/worker_plan_internal/self_audit/self_audit.py</code></p>
+</li>
+<li>
+<p><strong>MCP interface is tools-only</strong> and supports <code>task_create -&gt; task_status -&gt; task_file_info/task_download</code>: <code>mcp_cloud/app.py</code>, <code>mcp_local/planexe_mcp_local.py</code>, and <code>docs/planexe_mcp_interface.md</code>.</p>
+</li>
+<li>
+<p><strong>LLM configuration is externalized</strong> (profiles in <code>llm_config.json</code>, default via <code>DEFAULT_LLM</code> env var; keys from <code>.env</code>): <code>worker_plan/worker_plan_internal/llm_factory.py</code>, <code>worker_plan/worker_plan_internal/utils/planexe_llmconfig.py</code>, <code>worker_plan/worker_plan_api/planexe_dotenv.py</code>.</p>
+</li>
 </ul>
 <h3 id="the-gap">The gap</h3>
-<p>We do <strong>not</strong> currently classify "business plan vs software plan" as a first-class routing decision, even though:
-- the downstream artifacts and "what good looks like" differ heavily, and
-- the SelfAudit's "Lacks Technical Depth" (#9) is a strong hint we <em>want</em> deeper software gating when appropriate.</p>
+<p>We do <strong>not</strong> currently classify "business plan vs software plan" as a first-class routing decision, even though:</p>
+<ul>
+<li>
+<p>the downstream artifacts and "what good looks like" differ heavily, and</p>
+</li>
+<li>
+<p>the SelfAudit's "Lacks Technical Depth" (#9) is a strong hint we <em>want</em> deeper software gating when appropriate.</p>
+</li>
+</ul>
 <h2 id="2-target-behavior-what-smart-on-the-fly-means">2) Target Behavior (What "Smart On The Fly" Means)</h2>
 <p>Given a single prompt, PlanExe should:</p>
-<p>1) <strong>Determine focus</strong>: business plan vs software plan (or hybrid).
-2) <strong>Select a planning track</strong>:
-   - Business track: market/GTM/unit economics/ops/legal emphasis
-   - Software track: requirements/architecture/security/testing/deployment/observability emphasis
-   - Hybrid: do both, but explicitly separate them and sequence decisions
-3) <strong>Use different levers + different "gates"</strong>:
-   - Levers = "what knobs can we turn?"
-   - Gates = "what must be true before we proceed / what is a NO-GO?"
-4) <strong>Surface the decision early</strong> so downstream tasks can be shaped accordingly (and so the user can override it).</p>
+<p>1) <strong>Determine focus</strong>: business plan vs software plan (or hybrid).</p>
+<p>2) <strong>Select a planning track</strong>:</p>
+<ul>
+<li>
+<p>Business track: market/GTM/unit economics/ops/legal emphasis</p>
+</li>
+<li>
+<p>Software track: requirements/architecture/security/testing/deployment/observability emphasis</p>
+</li>
+<li>
+<p>Hybrid: do both, but explicitly separate them and sequence decisions</p>
+</li>
+</ul>
+<p>3) <strong>Use different levers + different "gates"</strong>:</p>
+<ul>
+<li>
+<p>Levers = "what knobs can we turn?"</p>
+</li>
+<li>
+<p>Gates = "what must be true before we proceed / what is a NO-GO?"</p>
+</li>
+</ul>
+<p>4) <strong>Surface the decision early</strong> so downstream tasks can be shaped accordingly (and so the user can override it).</p>
 <h2 id="3-proposed-new-classification-plan-focus">3) Proposed New Classification: Plan Focus</h2>
 <h3 id="31-output-schema-conceptual">3.1 Output schema (conceptual)</h3>
 <p>Add a structured classification step that outputs:</p>
 <ul>
-<li><code>plan_focus</code>: <code>business | software | hybrid | unknown</code></li>
-<li><code>confidence</code>: <code>high | medium | low</code></li>
-<li><code>reasons</code>: short bullets grounded in the user prompt</li>
-<li><code>missing_info</code>: short list (used to ask clarifying questions <em>only when needed</em>)</li>
-<li><code>override_hint</code>: a single sentence telling the user how to override (e.g., "Say: 'Treat this as a software plan'")</li>
+<li>
+<p><code>plan_focus</code>: <code>business | software | hybrid | unknown</code></p>
+</li>
+<li>
+<p><code>confidence</code>: <code>high | medium | low</code></p>
+</li>
+<li>
+<p><code>reasons</code>: short bullets grounded in the user prompt</p>
+</li>
+<li>
+<p><code>missing_info</code>: short list (used to ask clarifying questions <em>only when needed</em>)</p>
+</li>
+<li>
+<p><code>override_hint</code>: a single sentence telling the user how to override (e.g., "Say: 'Treat this as a software plan'")</p>
+</li>
 </ul>
 <h3 id="32-inputs">3.2 Inputs</h3>
-<p>Use the user prompt plus existing early outputs:
-- <code>plan.txt</code> (user prompt)
-- <code>purpose.md</code> (business/personal/other)
-- <code>plan_type.md</code> (digital/physical)</p>
+<p>Use the user prompt plus existing early outputs:</p>
+<ul>
+<li>
+<p><code>plan.txt</code> (user prompt)</p>
+</li>
+<li>
+<p><code>purpose.md</code> (business/personal/other)</p>
+</li>
+<li>
+<p><code>plan_type.md</code> (digital/physical)</p>
+</li>
+</ul>
 <h3 id="33-decision-rules-practical">3.3 Decision rules (practical)</h3>
 <p>Use a two-stage approach:</p>
-<p>1) <strong>Cheap deterministic heuristic</strong> (fast, no LLM):
-   - If prompt contains strong software signals (APIs, architecture, codebase, deployment, infra, testing, SLOs, data model, auth, migrations, etc.), mark <code>software</code> unless business signals dominate.
-   - If prompt contains strong business signals (pricing, GTM, CAC/LTV, TAM/SAM/SOM, margins, channel, sales motion, market positioning, competition, fundraising), mark <code>business</code>.
-   - If both are strong, mark <code>hybrid</code>.
-2) <strong>LLM tie-breaker</strong> only when heuristic confidence is low.</p>
+<p>1) <strong>Cheap deterministic heuristic</strong> (fast, no LLM):</p>
+<ul>
+<li>
+<p>If prompt contains strong software signals (APIs, architecture, codebase, deployment, infra, testing, SLOs, data model, auth, migrations, etc.), mark <code>software</code> unless business signals dominate.</p>
+</li>
+<li>
+<p>If prompt contains strong business signals (pricing, GTM, CAC/LTV, TAM/SAM/SOM, margins, channel, sales motion, market positioning, competition, fundraising), mark <code>business</code>.</p>
+</li>
+<li>
+<p>If both are strong, mark <code>hybrid</code>.</p>
+</li>
+</ul>
+<p>2) <strong>LLM tie-breaker</strong> only when heuristic confidence is low.</p>
 <p>This keeps cost and latency down and avoids adding fragility.</p>
 <h2 id="4-track-specific-levers-what-we-generate">4) Track-Specific Levers (What We Generate)</h2>
 <p>The "IdentifyPotentialLevers" stage is the most obvious place to diverge by track.</p>
 <h3 id="41-software-plan-lever-set-examples">4.1 Software plan lever set (examples)</h3>
 <p>Levers that must exist (or be strongly represented) for software-focused prompts:</p>
-<p>1) Product scope slicing &amp; release strategy
-2) Architecture &amp; service boundaries (monolith/modular/services)
-3) Data model &amp; consistency strategy
-4) Integration strategy (3rd parties, protocols, contracts)
-5) Security/privacy posture (authn/authz, secrets, threat model)
-6) Reliability targets (SLOs/SLAs), observability, incident response
-7) Testing strategy (unit/integration/e2e), CI/CD, environments
-8) Deployment strategy (cloud/on-prem), rollout/rollback</p>
+<p>1) Product scope slicing &amp; release strategy</p>
+<p>2) Architecture &amp; service boundaries (monolith/modular/services)</p>
+<p>3) Data model &amp; consistency strategy</p>
+<p>4) Integration strategy (3rd parties, protocols, contracts)</p>
+<p>5) Security/privacy posture (authn/authz, secrets, threat model)</p>
+<p>6) Reliability targets (SLOs/SLAs), observability, incident response</p>
+<p>7) Testing strategy (unit/integration/e2e), CI/CD, environments</p>
+<p>8) Deployment strategy (cloud/on-prem), rollout/rollback</p>
 <h3 id="42-business-plan-lever-set-examples">4.2 Business plan lever set (examples)</h3>
 <p>Levers that must exist (or be strongly represented) for business-focused prompts:</p>
-<p>1) Target segment &amp; positioning
-2) Pricing &amp; packaging
-3) Channel strategy (PLG/sales/partners/marketplaces)
-4) Unit economics &amp; cost structure
-5) Operating model &amp; hiring plan
-6) Regulatory/legal constraints (if applicable)
-7) Customer discovery &amp; validation strategy
-8) Competitive differentiation &amp; moat</p>
+<p>1) Target segment &amp; positioning</p>
+<p>2) Pricing &amp; packaging</p>
+<p>3) Channel strategy (PLG/sales/partners/marketplaces)</p>
+<p>4) Unit economics &amp; cost structure</p>
+<p>5) Operating model &amp; hiring plan</p>
+<p>6) Regulatory/legal constraints (if applicable)</p>
+<p>7) Customer discovery &amp; validation strategy</p>
+<p>8) Competitive differentiation &amp; moat</p>
 <h3 id="43-hybrid">4.3 Hybrid</h3>
-<p>Hybrid plans should <em>explicitly</em> separate:
-- Business model decisions (what to build + why + how to sell)
-- Software execution decisions (how to build + how to ship + how to operate)</p>
+<p>Hybrid plans should <em>explicitly</em> separate:</p>
+<ul>
+<li>
+<p>Business model decisions (what to build + why + how to sell)</p>
+</li>
+<li>
+<p>Software execution decisions (how to build + how to ship + how to operate)</p>
+</li>
+</ul>
 <h2 id="5-track-specific-gates-what-we-must-verify">5) Track-Specific Gates (What We Must Verify)</h2>
 <p>PlanExe already has a strong "gate" concept via SelfAudit + diagnostics. The plan here is to <strong>re-weight and re-frame</strong> the gating based on track, without breaking existing output contracts.</p>
 <h3 id="51-software-gates-no-go-style">5.1 Software gates (NO-GO style)</h3>
 <p>Before committing to "execute":</p>
 <ul>
-<li>Requirements clarity: scoped MVP + non-goals</li>
-<li>Architecture artifacts exist: interfaces/contracts + data model + integration map</li>
-<li>Security: threat model + authn/authz + secrets strategy</li>
-<li>Testability: acceptance criteria + test plan</li>
-<li>Operations: deployment plan + monitoring + incident response</li>
-<li>Dependencies: critical third parties have fallback or mitigation</li>
+<li>
+<p>Requirements clarity: scoped MVP + non-goals</p>
+</li>
+<li>
+<p>Architecture artifacts exist: interfaces/contracts + data model + integration map</p>
+</li>
+<li>
+<p>Security: threat model + authn/authz + secrets strategy</p>
+</li>
+<li>
+<p>Testability: acceptance criteria + test plan</p>
+</li>
+<li>
+<p>Operations: deployment plan + monitoring + incident response</p>
+</li>
+<li>
+<p>Dependencies: critical third parties have fallback or mitigation</p>
+</li>
 </ul>
 <h3 id="52-business-gates-no-go-style">5.2 Business gates (NO-GO style)</h3>
 <ul>
-<li>Clear ICP + buyer/user distinction</li>
-<li>Pricing hypothesis + rough unit economics</li>
-<li>Channel feasibility (how customers actually arrive)</li>
-<li>Validation plan (customer discovery / pilots)</li>
-<li>Legal/regulatory feasibility (as needed)</li>
-<li>Operational capacity (team, hiring, suppliers)</li>
+<li>
+<p>Clear ICP + buyer/user distinction</p>
+</li>
+<li>
+<p>Pricing hypothesis + rough unit economics</p>
+</li>
+<li>
+<p>Channel feasibility (how customers actually arrive)</p>
+</li>
+<li>
+<p>Validation plan (customer discovery / pilots)</p>
+</li>
+<li>
+<p>Legal/regulatory feasibility (as needed)</p>
+</li>
+<li>
+<p>Operational capacity (team, hiring, suppliers)</p>
+</li>
 </ul>
 <h2 id="6-where-this-fits-in-the-pipeline-minimal-disruption">6) Where This Fits in the Pipeline (Minimal Disruption)</h2>
 <p>Do not change the public service contracts (per repo guardrails). Instead:</p>
 <ul>
-<li>Insert the Plan Focus decision <strong>after</strong> <code>IdentifyPurposeTask</code> and <code>PlanTypeTask</code>, and <strong>before</strong> lever generation.</li>
-<li>Feed the Plan Focus markdown into:</li>
-<li>IdentifyPotentialLevers</li>
-<li>Risks/assumptions framing</li>
-<li>ReviewPlan and SelfAudit emphasis (so software plans get stronger #9/#17/#14 behavior)</li>
+<li>
+<p>Insert the Plan Focus decision <strong>after</strong> <code>IdentifyPurposeTask</code> and <code>PlanTypeTask</code>, and <strong>before</strong> lever generation.</p>
+</li>
+<li>
+<p>Feed the Plan Focus markdown into:</p>
+</li>
+<li>
+<p>IdentifyPotentialLevers</p>
+</li>
+<li>
+<p>Risks/assumptions framing</p>
+</li>
+<li>
+<p>ReviewPlan and SelfAudit emphasis (so software plans get stronger #9/#17/#14 behavior)</p>
+</li>
 </ul>
 <p>No MCP interface changes are required: the client still sends one prompt to <code>task_create</code>.</p>
 <h2 id="7-mcpclient-ux-smart-on-the-fly-for-agents">7) MCP/Client UX ("Smart On The Fly" for Agents)</h2>
 <h3 id="71-mcp_cloud-mcp_local">7.1 mcp_cloud / mcp_local</h3>
 <p>Keep tools-only behavior. "Smartness" lives in PlanExe's pipeline and in how prompts are structured.</p>
 <h3 id="72-prompt-examples">7.2 Prompt examples</h3>
-<p>Add/curate prompt examples that clearly represent:
-- a software build (backend + frontend + deployment + requirements)
-- a business plan (GTM + pricing + ops + financial model)
-- a hybrid "build a SaaS" prompt that forces the split</p>
+<p>Add/curate prompt examples that clearly represent:</p>
+<ul>
+<li>
+<p>a software build (backend + frontend + deployment + requirements)</p>
+</li>
+<li>
+<p>a business plan (GTM + pricing + ops + financial model)</p>
+</li>
+<li>
+<p>a hybrid "build a SaaS" prompt that forces the split</p>
+</li>
+</ul>
 <p>This improves agent behavior without requiring new tools.</p>
 <h2 id="8-implementation-phases-deliverables-first">8) Implementation Phases (Deliverables-First)</h2>
-<p>Phase 0 - Doc-only (this file)
-- Document the target behavior, levers, gates, and integration points.</p>
-<p>Phase 1 - Deterministic Plan Focus classifier
-- Add a small, dependency-free classifier (stdlib only) in <code>worker_plan_internal</code> (not <code>worker_plan_api</code>).
-- Unit-test it with a dozen prompts (software/business/hybrid).</p>
-<p>Phase 2 - LLM tie-breaker (optional)
-- Add a structured output model for low-confidence cases only.
-- Ensure it's robust across providers in <code>llm_config.json</code> (structured output required).</p>
-<p>Phase 3 - Track-aware lever and gate prompting
-- Update the lever-generation query to include "Plan Focus" context.
-- Re-weight SelfAudit framing for software vs business (without changing the checklist items or output format).</p>
-<p>Phase 4 - Measure + iterate
-- Add lightweight telemetry in logs: detected focus + confidence + user override (if any).
-- Evaluate false positives/negatives against real prompts.</p>
+<p>Phase 0 - Doc-only (this file)</p>
+<ul>
+<li>Document the target behavior, levers, gates, and integration points.</li>
+</ul>
+<p>Phase 1 - Deterministic Plan Focus classifier</p>
+<ul>
+<li>
+<p>Add a small, dependency-free classifier (stdlib only) in <code>worker_plan_internal</code> (not <code>worker_plan_api</code>).</p>
+</li>
+<li>
+<p>Unit-test it with a dozen prompts (software/business/hybrid).</p>
+</li>
+</ul>
+<p>Phase 2 - LLM tie-breaker (optional)</p>
+<ul>
+<li>
+<p>Add a structured output model for low-confidence cases only.</p>
+</li>
+<li>
+<p>Ensure it's robust across providers in <code>llm_config.json</code> (structured output required).</p>
+</li>
+</ul>
+<p>Phase 3 - Track-aware lever and gate prompting</p>
+<ul>
+<li>
+<p>Update the lever-generation query to include "Plan Focus" context.</p>
+</li>
+<li>
+<p>Re-weight SelfAudit framing for software vs business (without changing the checklist items or output format).</p>
+</li>
+</ul>
+<p>Phase 4 - Measure + iterate</p>
+<ul>
+<li>
+<p>Add lightweight telemetry in logs: detected focus + confidence + user override (if any).</p>
+</li>
+<li>
+<p>Evaluate false positives/negatives against real prompts.</p>
+</li>
+</ul>
 <h2 id="9-validation-strategy">9) Validation Strategy</h2>
 <ul>
-<li>Unit tests for classifier determinism (no LLM required).</li>
-<li>"Golden prompt" fixtures: a small set of prompts whose Plan Focus classification should remain stable.</li>
-<li>Manual smoke runs using <code>speed_vs_detail=ping</code> and <code>speed_vs_detail=fast</code> via MCP tools (keeps cost down).</li>
+<li>
+<p>Unit tests for classifier determinism (no LLM required).</p>
+</li>
+<li>
+<p>"Golden prompt" fixtures: a small set of prompts whose Plan Focus classification should remain stable.</p>
+</li>
+<li>
+<p>Manual smoke runs using <code>speed_vs_detail=ping</code> and <code>speed_vs_detail=fast</code> via MCP tools (keeps cost down).</p>
+</li>
 </ul>
 <h2 id="10-guardrails-must-not-break">10) Guardrails (Must Not Break)</h2>
 <ul>
-<li>Keep <code>worker_plan_api</code> lightweight: no new heavy deps or service imports.</li>
-<li>Keep <code>worker_plan</code> HTTP endpoints backward compatible.</li>
-<li>Do not touch <code>open_dir_server</code> allowlist/path validation unless explicitly asked.</li>
-<li>Do not change MCP to advertise tasks protocol ("Run as task") - tools-only stays.</li>
+<li>
+<p>Keep <code>worker_plan_api</code> lightweight: no new heavy deps or service imports.</p>
+</li>
+<li>
+<p>Keep <code>worker_plan</code> HTTP endpoints backward compatible.</p>
+</li>
+<li>
+<p>Do not touch <code>open_dir_server</code> allowlist/path validation unless explicitly asked.</p>
+</li>
+<li>
+<p>Do not change MCP to advertise tasks protocol ("Run as task") - tools-only stays.</p>
+</li>
 </ul>
 
 

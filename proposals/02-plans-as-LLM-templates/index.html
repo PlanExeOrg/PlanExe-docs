@@ -9,7 +9,7 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry (OpenClaw)">
+        <meta name="author" content="Larry the Laptop Lobster">
       
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/02-plans-as-LLM-templates/">
@@ -2306,6 +2306,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2333,6 +2340,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2362,6 +2376,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2389,6 +2410,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2418,6 +2446,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2445,6 +2480,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2474,6 +2516,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2501,6 +2550,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2530,6 +2586,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2557,6 +2620,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2586,6 +2656,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2613,6 +2690,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2642,6 +2726,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2669,6 +2760,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2698,6 +2796,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2725,6 +2830,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2754,6 +2866,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2781,6 +2900,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -2810,6 +2936,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2838,6 +2971,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
       </a>
     </li>
@@ -2865,6 +3005,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3125,15 +3272,29 @@
 <h1 id="plans-as-llm-templates-parameterized-prompt-export">Plans as LLM Templates - Parameterized Prompt Export</h1>
 <h2 id="overview">Overview</h2>
 <p>PlanExe generates comprehensive business plans, but they're currently opaque artifacts. External agents and automation tools can't easily consume plan logic or adapt plans to new contexts.</p>
-<p>This proposal treats <strong>completed plans as reusable LLM templates</strong> with parameterized sections, enabling:
-- Export as Jinja2-style templates
-- API endpoint for template rendering with custom variables
-- Plan remixing and few-shot learning for downstream agents</p>
+<p>This proposal treats <strong>completed plans as reusable LLM templates</strong> with parameterized sections, enabling:</p>
+<ul>
+<li>
+<p>Export as Jinja2-style templates</p>
+</li>
+<li>
+<p>API endpoint for template rendering with custom variables</p>
+</li>
+<li>
+<p>Plan remixing and few-shot learning for downstream agents</p>
+</li>
+</ul>
 <h2 id="problem">Problem</h2>
 <ul>
-<li>Plans are one-shot artifacts with no reuse mechanism</li>
-<li>Agents can't easily say "give me a plan like X but for industry Y"</li>
-<li>No structured way to extract the prompt logic that created a good plan</li>
+<li>
+<p>Plans are one-shot artifacts with no reuse mechanism</p>
+</li>
+<li>
+<p>Agents can't easily say "give me a plan like X but for industry Y"</p>
+</li>
+<li>
+<p>No structured way to extract the prompt logic that created a good plan</p>
+</li>
 </ul>
 <h2 id="proposed-solution">Proposed Solution</h2>
 <h3 id="plan-template-format">Plan Template Format</h3>
@@ -3202,42 +3363,82 @@
 </code></pre></div>
 <h2 id="use-cases">Use Cases</h2>
 <ol>
-<li><strong>Agent Few-Shot Learning</strong>: "Generate a plan like template X but for domain Y"</li>
-<li><strong>Customer Self-Service</strong>: Browse template library, fill in variables, instant draft</li>
-<li><strong>Plan Remixing</strong>: Combine sections from multiple templates</li>
-<li><strong>API Integration</strong>: External tools can request plans programmatically</li>
+<li>
+<p><strong>Agent Few-Shot Learning</strong>: "Generate a plan like template X but for domain Y"</p>
+</li>
+<li>
+<p><strong>Customer Self-Service</strong>: Browse template library, fill in variables, instant draft</p>
+</li>
+<li>
+<p><strong>Plan Remixing</strong>: Combine sections from multiple templates</p>
+</li>
+<li>
+<p><strong>API Integration</strong>: External tools can request plans programmatically</p>
+</li>
 </ol>
 <h2 id="benefits">Benefits</h2>
 <ul>
-<li><strong>Plan reuse</strong> - Good plans become templates for future work</li>
-<li><strong>Faster generation</strong> - Template rendering is instant (no LLM call for structure)</li>
-<li><strong>Consistency</strong> - Templates enforce proven structures</li>
-<li><strong>Monetization</strong> - Premium template library for subscribers</li>
+<li>
+<p><strong>Plan reuse</strong> - Good plans become templates for future work</p>
+</li>
+<li>
+<p><strong>Faster generation</strong> - Template rendering is instant (no LLM call for structure)</p>
+</li>
+<li>
+<p><strong>Consistency</strong> - Templates enforce proven structures</p>
+</li>
+<li>
+<p><strong>Monetization</strong> - Premium template library for subscribers</p>
+</li>
 </ul>
 <h2 id="implementation-plan">Implementation Plan</h2>
 <h3 id="phase-1-template-export-week-1-2">Phase 1: Template Export (Week 1-2)</h3>
 <ul>
-<li>Add "Export as Template" button in plan UI</li>
-<li>Generate Jinja2 from plan HTML/markdown</li>
-<li>Store in <code>plan_templates</code> table</li>
+<li>
+<p>Add "Export as Template" button in plan UI</p>
+</li>
+<li>
+<p>Generate Jinja2 from plan HTML/markdown</p>
+</li>
+<li>
+<p>Store in <code>plan_templates</code> table</p>
+</li>
 </ul>
 <h3 id="phase-2-rendering-engine-week-3">Phase 2: Rendering Engine (Week 3)</h3>
 <ul>
-<li>Build Jinja2 renderer with variable validation</li>
-<li>Add <code>/api/plan/template/render</code> endpoint</li>
-<li>Rate limit: 10 renders/hour for free tier</li>
+<li>
+<p>Build Jinja2 renderer with variable validation</p>
+</li>
+<li>
+<p>Add <code>/api/plan/template/render</code> endpoint</p>
+</li>
+<li>
+<p>Rate limit: 10 renders/hour for free tier</p>
+</li>
 </ul>
 <h3 id="phase-3-template-library-week-4-5">Phase 3: Template Library (Week 4-5)</h3>
 <ul>
-<li>Public template browse UI</li>
-<li>Search and filter by industry/domain</li>
-<li>User ratings and favorites</li>
+<li>
+<p>Public template browse UI</p>
+</li>
+<li>
+<p>Search and filter by industry/domain</p>
+</li>
+<li>
+<p>User ratings and favorites</p>
+</li>
 </ul>
 <h3 id="phase-4-advanced-features-future">Phase 4: Advanced Features (Future)</h3>
 <ul>
-<li>Template versioning (v1, v2, etc.)</li>
-<li>Diff view between template versions</li>
-<li>Collaborative template editing</li>
+<li>
+<p>Template versioning (v1, v2, etc.)</p>
+</li>
+<li>
+<p>Diff view between template versions</p>
+</li>
+<li>
+<p>Collaborative template editing</p>
+</li>
 </ul>
 <h2 id="risks-mitigations">Risks &amp; Mitigations</h2>
 <table>
@@ -3268,15 +3469,27 @@
 </table>
 <h2 id="success-metrics">Success Metrics</h2>
 <ul>
-<li>50+ templates published in first month</li>
-<li>20% of new plans start from a template</li>
-<li>Template renders account for 15%+ of API usage</li>
-<li>User feedback: "faster than starting from scratch"</li>
+<li>
+<p>50+ templates published in first month</p>
+</li>
+<li>
+<p>20% of new plans start from a template</p>
+</li>
+<li>
+<p>Template renders account for 15%+ of API usage</p>
+</li>
+<li>
+<p>User feedback: "faster than starting from scratch"</p>
+</li>
 </ul>
 <h2 id="references">References</h2>
 <ul>
-<li>Jinja2 documentation: https://jinja.palletsprojects.com/</li>
-<li>Similar pattern: Terraform modules, Helm charts, AWS CloudFormation templates</li>
+<li>
+<p>Jinja2 documentation: https://jinja.palletsprojects.com/</p>
+</li>
+<li>
+<p>Similar pattern: Terraform modules, Helm charts, AWS CloudFormation templates</p>
+</li>
 </ul>
 
 
