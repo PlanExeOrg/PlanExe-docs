@@ -1,0 +1,3823 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/07-elo-ranking/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Elo Ranking System: Technical Documentation - PlanExe Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/copy-all.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/nav-status.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-2F6NE7JWTR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-2F6NE7JWTR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-2F6NE7JWTR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Elo Ranking System: Technical Documentation - PlanExe Documentation" />
+<meta property="og:description" content="From a single goal statement to a full strategic plan." />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/07-elo-ranking.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/07-elo-ranking/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Elo Ranking System: Technical Documentation - PlanExe Documentation" />
+<meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/07-elo-ranking.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#elo-ranking-system-technical-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://planexe.org" title="PlanExe Documentation" class="md-header__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PlanExe Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Elo Ranking System: Technical Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PlanExeOrg/PlanExe" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PlanExeOrg/PlanExe
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mcp/mcp_welcome/" class="md-tabs__link">
+          
+  
+  
+  MCP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../plan/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://planexe.org" title="PlanExe Documentation" class="md-nav__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    PlanExe Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PlanExeOrg/PlanExe" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PlanExeOrg/PlanExe
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt_writing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt writing guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plan_output_anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan output anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../costs_and_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Costs and models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/lm_studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/windsurf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windsurf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cursor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/antigravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antigravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP details
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/planexe_mcp_interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlanExe MCP interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Components
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/open_dir_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    open_dir_server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/worker_plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    worker_plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/frontend_single_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frontend_single_user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/database_postgres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    database_postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/worker_plan_database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    worker_plan_database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/frontend_multi_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frontend_multi_user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/mcp_local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp_local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/mcp_cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp_cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI providers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI providers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/openrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenRouter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ollama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/lm_studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/mistral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../railway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Railway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment_hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs_style_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docs style guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting_stuck_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stuck pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defaults
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Tables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-kpi-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic KPI Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pairwise-llm-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pairwise LLM Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#win-probability-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Win Probability Computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elo-update-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elo Update Formula
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llm-prompting-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM Prompting Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LLM Prompting Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kpi-extraction-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI Extraction Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-kpi-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example KPI Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apirank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/rank
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apileaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/leaderboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiexport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-rankings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /rankings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rankings-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rankings Page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpi-detail-modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI Detail Modal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-responsive-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile Responsive Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toggle-implementation-showhide-low-ranked-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toggle Implementation (Show/Hide Low-Ranked Plans)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plan_corpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plan_corpus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan_metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plan_metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate_limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rate_limit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Rationale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Rationale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-elo-over-regression-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Elo Over Regression Models?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-k32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why K=32?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-likert-1-5-over-continuous-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Likert 1-5 Over Continuous Scores?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cold-start-mitigation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cold-Start Mitigation Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Limitations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-false-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. False Confidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gaming-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Gaming Risk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cold-start-bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cold-Start Bias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-no-domain-expertise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. No Domain Expertise
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-embedding-quality-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Embedding Quality Dependency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Enhancements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-hybrid-ranking-elo-absolute-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Hybrid Ranking: Elo + Absolute Quality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-personalized-ranking-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Personalized Ranking Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-batch-re-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Batch Re-Ranking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-explain-by-example-nearest-neighbor-justification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Explain-by-Example (Nearest Neighbor Justification)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-domain-specific-elo-pools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Domain-Specific Elo Pools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-temporal-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Temporal Decay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-reasoning-llm-for-top-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Reasoning LLM for Top 10%
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-investor-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Investor Filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-completed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 (Completed ✅)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-next-2-4-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 (Next 2-4 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-next-quarter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 (Next Quarter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-future-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 (Future / Research)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-wins-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Wins Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="elo-ranking-system-technical-documentation">Elo Ranking System: Technical Documentation</h1>
+<p><strong>Author:</strong> Larry (via OpenClaw)<br />
+<strong>Date:</strong> 2026-02-08<br />
+<strong>Status:</strong> Living document<br />
+<strong>Audience:</strong> Developers, contributors, technical reviewers</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>PlanExe ranks generated plans using a two‑phase LLM evaluation to avoid gaming static weights:</p>
+<ol>
+<li><strong>Extract raw KPI vector</strong> (novelty, prompt quality, technical completeness, feasibility, impact)</li>
+<li><strong>Pairwise LLM comparison</strong> of KPI vectors → Likert preference</li>
+<li><strong>Elo update</strong> for new plan and sampled neighbors</li>
+</ol>
+<h2 id="defaults">Defaults</h2>
+<ul>
+<li>LLM: <strong>Gemini‑2.0‑flash‑001 via OpenRouter</strong> (<code>OPENROUTER_API_KEY</code>)</li>
+<li>Embeddings: <strong>OpenAI embeddings</strong> (<code>OPENAI_API_KEY</code>)</li>
+<li>Vector store: <strong>pgvector</strong> (Postgres extension)</li>
+<li>Rate limit: <strong>5 req/min per API key</strong></li>
+<li>Corpus source: PlanExe‑web <code>_data/examples.yml</code></li>
+</ul>
+<h2 id="endpoints">Endpoints</h2>
+<ul>
+<li><code>POST /api/rank</code> → rank plan, update Elo</li>
+<li><code>GET /api/leaderboard?limit=N</code> → user‑scoped leaderboard</li>
+<li><code>GET /api/export?limit=N</code> → top‑N export</li>
+</ul>
+<h2 id="data-tables">Data Tables</h2>
+<ul>
+<li><code>plan_corpus</code>: plan metadata + embeddings + json_data (for dynamic KPI comparisons)</li>
+<li><code>plan_metrics</code>: KPI values (int 1‑5) + <code>kpis</code> JSONB + <code>overall_likert</code> + Elo</li>
+<li><code>rate_limit</code>: per‑API‑key rate limiting</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<ol>
+<li>Run migrations:</li>
+<li><code>mcp_cloud/migrations/2026_02_09_create_plan_metrics.sql</code></li>
+<li><code>mcp_cloud/migrations/2026_02_10_add_plan_json.sql</code></li>
+<li>Seed corpus: <code>scripts/seed_corpus.py</code> (set <code>PLANEXE_WEB_EXAMPLES_PATH</code>)</li>
+<li>Set env:</li>
+<li><code>OPENROUTER_API_KEY</code></li>
+<li><code>OPENAI_API_KEY</code></li>
+<li><code>PLANEXE_API_KEY_SECRET</code></li>
+</ol>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Ranking uses <strong>real data only</strong> (no mocks)</li>
+<li>Embeddings stored in pgvector for novelty sampling</li>
+<li>Leaderboard UI at <code>/rankings</code></li>
+</ul>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#system-architecture">System Architecture</a></li>
+<li><a href="#dynamic-kpi-extraction">Dynamic KPI Extraction</a></li>
+<li><a href="#pairwise-llm-comparison">Pairwise LLM Comparison</a></li>
+<li><a href="#win-probability-computation">Win Probability Computation</a></li>
+<li><a href="#elo-update-formula">Elo Update Formula</a></li>
+<li><a href="#llm-prompting-strategy">LLM Prompting Strategy</a></li>
+<li><a href="#api-reference">API Reference</a></li>
+<li><a href="#user-interface">User Interface</a></li>
+<li><a href="#database-schema">Database Schema</a></li>
+<li><a href="#technical-rationale">Technical Rationale</a></li>
+<li><a href="#current-limitations">Current Limitations</a></li>
+<li><a href="#future-enhancements">Future Enhancements</a></li>
+<li><a href="#implementation-roadmap">Implementation Roadmap</a></li>
+<li><a href="#glossary">Glossary</a></li>
+</ol>
+<hr />
+<h2 id="overview_1">Overview</h2>
+<p>PlanExe uses an <strong>Elo-based ranking system</strong> to compare and rank generated plans through pairwise LLM comparisons. Unlike static scoring formulas, this system:</p>
+<ul>
+<li>Extracts KPIs dynamically based on plan content</li>
+<li>Uses embedding-based neighbor selection for relevant comparisons</li>
+<li>Maps Likert scale ratings to win probabilities</li>
+<li>Updates Elo ratings using standard chess Elo formula with K=32</li>
+</ul>
+<p><strong>Key design goals:</strong>
+- Contextual ranking (relative to corpus, not absolute)
+- Privacy-preserving (users see only their own plans)
+- Gaming-resistant (dynamic KPI selection)
+- Actionable feedback (KPI reasoning stored for user insights)</p>
+<hr />
+<h2 id="system-architecture">System Architecture</h2>
+<h3 id="dynamic-kpi-extraction">Dynamic KPI Extraction</h3>
+<p>When a plan is submitted via <code>/api/rank</code>, the system:</p>
+<ol>
+<li><strong>Stores the full plan JSON</strong> in <code>plan_corpus.json_data</code> (JSONB column, ~2-50KB typical size)</li>
+<li>JSONB indexing enables fast GIN queries for metadata filtering</li>
+<li>
+<p>Full plan context available for comparison without re-fetching</p>
+</li>
+<li>
+<p><strong>Generates an embedding</strong> of the plan's prompt using <code>text-embedding-3-small</code> (768 dimensions)</p>
+</li>
+<li>Stored in <code>plan_corpus.embedding</code> (pgvector column)</li>
+<li>
+<p>Enables semantic neighbor selection via cosine similarity</p>
+</li>
+<li>
+<p><strong>Extracts baseline KPIs</strong> using <code>gemini-2.0-flash-exp</code> via OpenRouter:</p>
+</li>
+<li>Novelty score (0-1 float)</li>
+<li>Prompt quality (0-1 float)</li>
+<li>Technical completeness (0-1 float)</li>
+<li>Feasibility (0-1 float)</li>
+<li>Impact estimate (0-1 float)</li>
+</ol>
+<hr />
+<h3 id="pairwise-llm-comparison">Pairwise LLM Comparison</h3>
+<p>For each new plan:</p>
+<p><strong>Step 1: Select 10 neighbors</strong>
+- Query <code>plan_corpus</code> for top 10 nearest embeddings (cosine similarity via pgvector)
+- If corpus has &lt;10 plans, select all available plans
+- If no embeddings exist (cold start), select 10 random plans</p>
+<p><strong>Step 2: Run pairwise comparisons</strong></p>
+<p>For each neighbor, the LLM:
+1. Receives both plan JSONs (<code>plan_a</code> = new plan, <code>plan_b</code> = neighbor)
+2. Chooses <strong>5-7 relevant KPIs</strong> based on plan characteristics
+3. Adds <strong>one final KPI</strong> for remaining considerations (LLM-named, e.g., "Resource allocation realism")
+4. Scores each KPI on <strong>Likert 1-5 integer scale</strong>:
+   - 1 = Very poor
+   - 2 = Below average
+   - 3 = Average
+   - 4 = Above average
+   - 5 = Excellent
+5. Provides <strong>≤30-word reasoning</strong> for each KPI score</p>
+<p><strong>Token budget:</strong> ~2000 tokens per comparison (input + output combined)</p>
+<hr />
+<h3 id="win-probability-computation">Win Probability Computation</h3>
+<p><strong>Step 1: Calculate total scores</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">total_a</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">kpi</span><span class="o">.</span><span class="n">plan_a</span> <span class="k">for</span> <span class="n">kpi</span> <span class="ow">in</span> <span class="n">kpis</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">total_b</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">kpi</span><span class="o">.</span><span class="n">plan_b</span> <span class="k">for</span> <span class="n">kpi</span> <span class="ow">in</span> <span class="n">kpis</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">diff</span> <span class="o">=</span> <span class="n">total_a</span> <span class="o">-</span> <span class="n">total_b</span>
+</code></pre></div></p>
+<p><strong>Step 2: Map score difference to win probability</strong></p>
+<p>The mapping uses a piecewise function designed to:
+- Provide clear signal for meaningful differences (±2+ points)
+- Avoid extreme probabilities (floors at 0.1, caps at 0.9)
+- Handle neutral outcomes (diff=0 → 0.5 probability)</p>
+<table>
+<thead>
+<tr>
+<th>Score Difference</th>
+<th><code>prob_a</code></th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≥ +3</td>
+<td>0.9</td>
+<td>Strong preference for plan A (multiple KPI wins)</td>
+</tr>
+<tr>
+<td>+2</td>
+<td>0.7</td>
+<td>Moderate favor A (2 standard deviations above neutral)</td>
+</tr>
+<tr>
+<td>+1</td>
+<td>0.6</td>
+<td>Slight favor A (1 standard deviation)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0.5</td>
+<td>Neutral (no clear winner)</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>0.4</td>
+<td>Slight favor B</td>
+</tr>
+<tr>
+<td>-2</td>
+<td>0.3</td>
+<td>Moderate favor B</td>
+</tr>
+<tr>
+<td>≤ -3</td>
+<td>0.1</td>
+<td>Strong preference for plan B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why this mapping?</strong>
+- Likert scale variance is ~1.5 points across 6-8 KPIs
+- ±1 point represents ~0.7 standard deviations (weak signal)
+- ±2 points represents ~1.3 standard deviations (moderate signal)
+- ±3+ points represents strong consensus across multiple KPIs</p>
+<p>Alternative considered: logistic function <code>1 / (1 + exp(-k * diff))</code> — rejected due to lack of interpretability and extreme tail probabilities.</p>
+<hr />
+<h3 id="elo-update-formula">Elo Update Formula</h3>
+<p>Standard Elo formula from chess rating systems:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">update_elo</span><span class="p">(</span><span class="n">elo_a</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">elo_b</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">prob_a</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    Update Elo ratings after a pairwise comparison.</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    Args:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">        elo_a: Current Elo rating of plan A</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">        elo_b: Current Elo rating of plan B</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">        prob_a: Win probability for plan A (0-1, from Likert mapping)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">        K: Sensitivity parameter (default 32)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="sd">        (new_elo_a, new_elo_b)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="n">expected_a</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">elo_b</span> <span class="o">-</span> <span class="n">elo_a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">400</span><span class="p">))</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="n">new_elo_a</span> <span class="o">=</span> <span class="n">elo_a</span> <span class="o">+</span> <span class="n">K</span> <span class="o">*</span> <span class="p">(</span><span class="n">prob_a</span> <span class="o">-</span> <span class="n">expected_a</span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="n">new_elo_b</span> <span class="o">=</span> <span class="n">elo_b</span> <span class="o">+</span> <span class="n">K</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">prob_a</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">expected_a</span><span class="p">))</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="k">return</span> <span class="n">new_elo_a</span><span class="p">,</span> <span class="n">new_elo_b</span>
+</code></pre></div>
+<p><strong>Why K=32?</strong>
+- Standard value for established chess players (16 for masters, 40 for beginners)
+- Balances stability (K=16 too slow to converge) vs noise (K=64 too volatile)
+- After 10 comparisons, a plan's rating converges within ±50 points of true skill
+- Empirically tested: K=32 provides good discrimination after 20-30 total corpus comparisons</p>
+<p><strong>Cold-start bias:</strong>
+- All plans initialize at Elo 1500
+- First 5 comparisons have outsized impact on rating
+- Plans submitted early have more stable ratings (more comparisons accumulated)
+- Mitigation: normalize by <code>num_comparisons</code> in percentile calculation (planned for Phase 2)</p>
+<hr />
+<h2 id="llm-prompting-strategy">LLM Prompting Strategy</h2>
+<h3 id="kpi-extraction-prompt">KPI Extraction Prompt</h3>
+<p>The system uses the following prompt structure for pairwise comparisons:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>You are evaluating two business plans. Your task:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>1. Read both plans carefully (plan_a and plan_b)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>2. Choose 5-7 KPIs most relevant to these specific plans
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>3. Add ONE final KPI named by you that captures important remaining considerations
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>4. Score each KPI for both plans on a 1-5 integer Likert scale:
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>   - 1 = Very poor
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>   - 2 = Below average  
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>   - 3 = Average
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>   - 4 = Above average
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>   - 5 = Excellent
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>5. Provide ≤30-word reasoning for each KPI score
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Output format (JSON array):
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>[
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  {
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    &quot;name&quot;: &quot;KPI name&quot;,
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    &quot;plan_a&quot;: &lt;1-5 integer&gt;,
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    &quot;plan_b&quot;: &lt;1-5 integer&gt;,
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    &quot;reasoning&quot;: &quot;&lt;30-word explanation&gt;&quot;
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  },
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>  ...
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>]
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>Plan A:
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>{plan_a_json}
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>Plan B:
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>{plan_b_json}
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>Return ONLY the JSON array, no other text.
+</code></pre></div>
+<p><strong>Token budget:</strong> ~2000 tokens per comparison (input: ~1500 tokens, output: ~500 tokens)</p>
+<p><strong>LLM configuration:</strong>
+- Model: <code>gemini-2.0-flash-exp</code> (via OpenRouter)
+- Temperature: 0.3 (low variance, consistent scoring)
+- Max tokens: 1000 (sufficient for 8 KPIs × 30 words + JSON structure)</p>
+<hr />
+<h3 id="example-kpi-output">Example KPI Output</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Goal clarity &amp; specificity&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;plan_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;plan_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan A defines concrete 24-month timeline and EASA compliance gates; Plan B has broad goals without operational detail.&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Schedule credibility&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">&quot;plan_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">&quot;plan_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan A includes PDR/CDR gates with milestone dates; Plan B timeline has internal inconsistencies flagged earlier.&quot;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Risk management&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="nt">&quot;plan_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="nt">&quot;plan_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan A identifies 8 key risks with mitigation triggers; Plan B mentions risks without concrete response plans.&quot;</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Budget realism&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="nt">&quot;plan_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="nt">&quot;plan_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan A budget lacks procurement detail; Plan B includes itemized capex/opex breakdown with vendor quotes.&quot;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Measurable outcomes&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="nt">&quot;plan_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="nt">&quot;plan_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">    </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan A defines 7 numeric KPIs with thresholds; Plan B uses vague qualitative goals.&quot;</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stakeholder alignment&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="nt">&quot;plan_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="w">    </span><span class="nt">&quot;plan_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">    </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan A maps deliverables to stakeholder needs; Plan B assumes stakeholder buy-in without validation.&quot;</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">  </span><span class="p">{</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Resource allocation realism&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">    </span><span class="nt">&quot;plan_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">    </span><span class="nt">&quot;plan_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">    </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Both plans assume 5 FTEs but lack role definitions or hiring strategy; roughly equivalent.&quot;</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="p">]</span>
+</code></pre></div>
+<p><strong>Final KPI naming:</strong>
+The last KPI is LLM-generated to capture aspects not covered by the previous 5-7 KPIs. Common examples:
+- "Resource allocation realism"
+- "Regulatory compliance readiness"
+- "Technical feasibility"
+- "Market timing"
+- "Execution capacity"</p>
+<p>This prevents the system from ignoring plan-specific strengths/weaknesses not covered by generic KPIs.</p>
+<hr />
+<h2 id="api-reference">API Reference</h2>
+<h3 id="authentication">Authentication</h3>
+<p>All API requests require an <code>X-API-Key</code> header:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">X-API-Key: &lt;your_api_secret&gt;</span>
+</code></pre></div>
+<p>The key is validated against <code>rate_limit.api_key</code>. Generate keys via <code>/admin/keys</code> (admin access required).</p>
+<hr />
+<h3 id="post-apirank">POST /api/rank</h3>
+<p>Submit a plan for Elo ranking.</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">POST</span> <span class="nn">/api/rank</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">planexe.com</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="na">X-API-Key</span><span class="o">:</span> <span class="l">&lt;your_api_secret&gt;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid-v4-string&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">&quot;plan_json&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Electric VTOL Development Program&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&quot;goal&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Certify 2-seat eVTOL by Q4 2027&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="nt">&quot;timeline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24 months&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">&quot;budget_usd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15000000</span><span class="p">,</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">&quot;kpis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;PDR complete Q2 2026&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CDR complete Q4 2026&quot;</span><span class="p">],</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nt">&quot;risks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Battery energy density&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;EASA certification delays&quot;</span><span class="p">]</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">  </span><span class="nt">&quot;budget_cents&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1500000000</span><span class="p">,</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Electric VTOL Development Program&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://planexe.com/plans/abc123&quot;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Response (200 OK):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;success&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid-v4-string&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;elo&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1547.3</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;percentile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">62.5</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">&quot;comparisons_run&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">&quot;kpis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">&quot;novelty_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.78</span><span class="p">,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">&quot;prompt_quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span><span class="p">,</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">&quot;technical_completeness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.72</span><span class="p">,</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">&quot;feasibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.68</span><span class="p">,</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="nt">&quot;impact_estimate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.81</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Error Codes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Condition</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Missing required fields</td>
+<td><code>{"error": "Missing required field: plan_json"}</code></td>
+</tr>
+<tr>
+<td>401</td>
+<td>Invalid API key</td>
+<td><code>{"error": "Invalid API key"}</code></td>
+</tr>
+<tr>
+<td>429</td>
+<td>Rate limit exceeded</td>
+<td><code>{"error": "Rate limit: 5 req/min"}</code></td>
+</tr>
+<tr>
+<td>500</td>
+<td>LLM/database error</td>
+<td><code>{"error": "Internal server error", "detail": "..."}</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rate Limit:</strong>
+- 5 requests per minute per API key
+- Tracked in <code>rate_limit</code> table (sliding window: last 60 seconds)
+- Resets at <code>last_ts + 60 seconds</code></p>
+<p>Implementation:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">check_rate_limit</span><span class="p">(</span><span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">record</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">RateLimit</span><span class="p">)</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">record</span><span class="p">:</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="n">db</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">RateLimit</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">api_key</span><span class="p">,</span> <span class="n">last_ts</span><span class="o">=</span><span class="n">now</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">record</span><span class="o">.</span><span class="n">last_ts</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        <span class="n">record</span><span class="o">.</span><span class="n">last_ts</span> <span class="o">=</span> <span class="n">now</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        <span class="n">record</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="n">record</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></p>
+<hr />
+<h3 id="get-apileaderboard">GET /api/leaderboard</h3>
+<p>Retrieve top-ranked plans.</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nf">GET</span> <span class="nn">/api/leaderboard?limit=20&amp;offset=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">planexe.com</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">X-API-Key</span><span class="o">:</span> <span class="l">&lt;your_api_secret&gt;</span>
+</code></pre></div></p>
+<p><strong>Query Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>limit</code></td>
+<td>integer</td>
+<td>No</td>
+<td>10</td>
+<td>Number of results (max 100)</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>integer</td>
+<td>No</td>
+<td>0</td>
+<td>Pagination offset</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response (200 OK):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;plans&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">      </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid-1&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Electric VTOL Development Program&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">      </span><span class="nt">&quot;elo&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1847.2</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">      </span><span class="nt">&quot;percentile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">95.3</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-08T10:30:00Z&quot;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">      </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid-2&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Grid-Scale Battery Storage Network&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">      </span><span class="nt">&quot;elo&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1803.5</span><span class="p">,</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">      </span><span class="nt">&quot;percentile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">91.7</span><span class="p">,</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-07T14:22:00Z&quot;</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">  </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">247</span><span class="p">,</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">  </span><span class="nt">&quot;offset&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">  </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Privacy:</strong> Only returns plans owned by the authenticated user (<code>owner_id</code> matched against API key's user).</p>
+<hr />
+<h3 id="get-apiexport">GET /api/export</h3>
+<p>Export detailed plan data (admin only).</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nf">GET</span> <span class="nn">/api/export?limit=50</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">planexe.com</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="na">X-API-Key</span><span class="o">:</span> <span class="l">&lt;admin_api_secret&gt;</span>
+</code></pre></div></p>
+<p><strong>Response (200 OK):</strong>
+Returns full plan JSON including <code>plan_corpus.json_data</code> and all <code>plan_metrics</code> fields.</p>
+<p><strong>Authorization:</strong> Requires <code>admin</code> role in <code>users.role</code> column.</p>
+<hr />
+<h3 id="get-rankings">GET /rankings</h3>
+<p>User-facing HTML interface showing ranked plans.</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nf">GET</span> <span class="nn">/rankings</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">planexe.com</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="na">Cookie</span><span class="o">:</span> <span class="l">session_id=&lt;session_cookie&gt;</span>
+</code></pre></div></p>
+<p><strong>Response:</strong> HTML page with sortable table of user's plans.</p>
+<hr />
+<h2 id="user-interface">User Interface</h2>
+<h3 id="rankings-page">Rankings Page</h3>
+<p><strong>URL:</strong> <code>/rankings</code></p>
+<p><strong>Layout:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>┌─────────────────────────────────────────────────────────────────┐
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>│ PlanExe Rankings                                     [Profile ▼] │
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>├─────────────────────────────────────────────────────────────────┤
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>│                                                                   │
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>│  Your Plans (sorted by Elo)                                      │
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>│                                                                   │
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>│  ┌────────────────────────────────────────────────────────────┐ │
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>│  │ Title                         Elo    Percentile  Actions   │ │
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>│  ├────────────────────────────────────────────────────────────┤ │
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>│  │ 🏆 Electric VTOL Program      1847   Top 5%     [View KPIs]│ │
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>│  │ 🥈 Battery Storage Network    1803   Top 10%    [View KPIs]│ │
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>│  │ 🥉 Solar Farm Deployment      1672   Top 25%    [View KPIs]│ │
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>│  │ 📊 Urban Mobility App         1598   50th %ile  [View KPIs]│ │
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>│  │ 🔧 Community Garden Network   1423   Bottom 25% [View KPIs]│ │
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>│  └────────────────────────────────────────────────────────────┘ │
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>│                                                                   │
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>│  [Show all plans] [Filter by domain ▼]                           │
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>│                                                                   │
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>└─────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Screenshot placeholder:</strong> <code>assets/rankings-page-desktop.png</code> (1920x1080)</p>
+<hr />
+<h3 id="kpi-detail-modal">KPI Detail Modal</h3>
+<p>When user clicks <strong>[View KPIs]</strong>, a modal displays:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>┌───────────────────────────────────────────────────────┐
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>│  Plan: Electric VTOL Program               [Close ✕] │
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>├───────────────────────────────────────────────────────┤
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>│                                                        │
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>│  Elo: 1847  |  Percentile: Top 5%                     │
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>│                                                        │
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>│  Top Strengths (vs. higher-ranked neighbors):         │
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>│  ✓ Goal clarity: 4.8/5 avg across 10 comparisons      │
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>│  ✓ Schedule credibility: 4.7/5                         │
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>│  ✓ Risk management: 4.5/5                              │
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>│                                                        │
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>│  Areas for Improvement:                                │
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>│  ⚠ Budget realism: 3.2/5                               │
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>│    → Add procurement detail and vendor quotes          │
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>│  ⚠ Regulatory compliance: 3.4/5                        │
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>│    → Document EASA certification timeline              │
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>│                                                        │
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>│  [Download full comparison report (PDF)]               │
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>│                                                        │
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>└───────────────────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Screenshot placeholder:</strong> <code>assets/kpi-modal-desktop.png</code> (800x600)</p>
+<hr />
+<h3 id="mobile-responsive-design">Mobile Responsive Design</h3>
+<p><strong>Breakpoints:</strong>
+- Desktop: ≥1024px (full table)
+- Tablet: 768-1023px (condensed table, stacked KPI cards)
+- Mobile: ≤767px (card layout, no table)</p>
+<p><strong>Mobile card layout:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>┌─────────────────────────────────┐
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>│ 🏆 Electric VTOL Program        │
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>│ Elo: 1847  |  Top 5%            │
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>│ [View KPIs]                     │
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>└─────────────────────────────────┘
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>┌─────────────────────────────────┐
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>│ 🥈 Battery Storage Network      │
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>│ Elo: 1803  |  Top 10%           │
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>│ [View KPIs]                     │
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>└─────────────────────────────────┘
+</code></pre></div>
+<p><strong>Screenshot placeholder:</strong> <code>assets/rankings-mobile.png</code> (375x667)</p>
+<hr />
+<h3 id="accessibility">Accessibility</h3>
+<p><strong>ARIA labels:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;table&quot;</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">&quot;Your ranked plans&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>  <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;columnheader&quot;</span> <span class="na">aria-sort</span><span class="o">=</span><span class="s">&quot;descending&quot;</span><span class="p">&gt;</span>Elo Rating<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>      <span class="p">&lt;</span><span class="nt">th</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;columnheader&quot;</span><span class="p">&gt;</span>Percentile<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>  <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>  <span class="p">&lt;</span><span class="nt">tbody</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;rowgroup&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>      <span class="p">&lt;</span><span class="nt">td</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;</span>1847<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>      <span class="p">&lt;</span><span class="nt">td</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;cell&quot;</span><span class="p">&gt;</span>Top 5%<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>  <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p><strong>Keyboard navigation:</strong>
+- <code>Tab</code>: Navigate between rows
+- <code>Enter</code>: Open KPI detail modal
+- <code>Esc</code>: Close modal
+- <code>Arrow keys</code>: Navigate table cells (when focused)</p>
+<p><strong>Screen reader support:</strong>
+- Elo ratings announced with tier label: "Elo 1847, Top 5 percent"
+- KPI scores announced as "Goal clarity: 4 point 8 out of 5"</p>
+<p><strong>Color contrast:</strong>
+- Tier badges meet WCAG AA standard (4.5:1 ratio)
+- Focus indicators have 3:1 contrast with background</p>
+<hr />
+<h3 id="toggle-implementation-showhide-low-ranked-plans">Toggle Implementation (Show/Hide Low-Ranked Plans)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">// File: static/js/rankings.js</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kd">function</span><span class="w"> </span><span class="nx">toggleLowRankedPlans</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;[data-elo]&#39;</span><span class="p">);</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1500</span><span class="p">;</span><span class="w"> </span><span class="c1">// Bottom 50%</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;show-low-ranked&#39;</span><span class="p">);</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="nx">rows</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">row</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">elo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">elo</span><span class="p">);</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">elo</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">threshold</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">      </span><span class="nx">row</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">toggle</span><span class="p">.</span><span class="nx">checked</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;table-row&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="p">;</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">  </span><span class="c1">// Update visible count</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">visibleCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="nx">rows</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;visible-count&#39;</span><span class="p">).</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">visibleCount</span><span class="si">}</span><span class="sb"> plans shown`</span><span class="p">;</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="p">}</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="c1">// Attach event listener</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;show-low-ranked&#39;</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleLowRankedPlans</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>HTML snippet:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;show-low-ranked&quot;</span> <span class="na">checked</span><span class="p">&gt;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>  Show plans below 50th percentile
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;visible-count&quot;</span><span class="p">&gt;</span>23 plans shown<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<hr />
+<h2 id="database-schema">Database Schema</h2>
+<h3 id="plan_corpus">plan_corpus</h3>
+<p>Stores full plan JSON and embedding for comparison.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="n">title</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="n">url</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="n">json_data</span><span class="w"> </span><span class="n">JSONB</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">  </span><span class="c1">-- Full plan JSON (2-50KB typical)</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="n">owner_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">id</span><span class="p">),</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="n">embedding</span><span class="w"> </span><span class="n">VECTOR</span><span class="p">(</span><span class="mi">768</span><span class="p">),</span><span class="w">     </span><span class="c1">-- pgvector: text-embedding-3-small</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="p">);</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="c1">-- Indexes</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_plan_corpus_owner</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">plan_corpus</span><span class="p">(</span><span class="n">owner_id</span><span class="p">);</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_plan_corpus_embedding</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="n">ivfflat</span><span class="w"> </span><span class="p">(</span><span class="n">embedding</span><span class="w"> </span><span class="n">vector_cosine_ops</span><span class="p">);</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_plan_corpus_json_data</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="n">GIN</span><span class="w"> </span><span class="p">(</span><span class="n">json_data</span><span class="p">);</span><span class="w">  </span><span class="c1">-- For metadata queries</span>
+</code></pre></div>
+<p><strong>Indexing notes:</strong>
+- <code>ivfflat</code> index for fast cosine similarity search (pgvector)
+- GIN index on <code>json_data</code> enables fast queries like <code>json_data @&gt; '{"domain": "energy"}'</code>
+- Typical JSONB size: 2-50KB (median 12KB across test corpus)</p>
+<hr />
+<h3 id="plan_metrics">plan_metrics</h3>
+<p>Stores computed metrics and Elo rating.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">plan_metrics</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="n">plan_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">plan_corpus</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="n">novelty_score</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span><span class="w">                  </span><span class="c1">-- 0-1, LLM-scored</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="n">prompt_quality</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span><span class="w">                 </span><span class="c1">-- 0-1, LLM-scored</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="n">technical_completeness</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span><span class="w">         </span><span class="c1">-- 0-1, LLM-scored</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="n">feasibility</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span><span class="w">                    </span><span class="c1">-- 0-1, LLM-scored</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="n">impact_estimate</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span><span class="w">                </span><span class="c1">-- 0-1, LLM-scored</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="n">elo</span><span class="w"> </span><span class="nb">FLOAT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">1500</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w">             </span><span class="c1">-- Elo rating</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="n">num_comparisons</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">        </span><span class="c1">-- Number of pairwise comparisons</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="n">bucket_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">              </span><span class="c1">-- For A/B testing experiments</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="n">kpi_details</span><span class="w"> </span><span class="n">JSONB</span><span class="p">,</span><span class="w">                    </span><span class="c1">-- Store KPI reasoning (Phase 2)</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span><span class="n">review_comment</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w">                  </span><span class="c1">-- Optional human feedback</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="p">);</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="c1">-- Indexes</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_plan_metrics_elo</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">plan_metrics</span><span class="p">(</span><span class="n">elo</span><span class="w"> </span><span class="k">DESC</span><span class="p">);</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_plan_metrics_bucket</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">plan_metrics</span><span class="p">(</span><span class="n">bucket_id</span><span class="p">);</span>
+</code></pre></div>
+<p><strong><code>kpi_details</code> schema (Phase 2):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nt">&quot;comparisons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">      </span><span class="nt">&quot;neighbor_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid-neighbor-1&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-08T10:30:00Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">      </span><span class="nt">&quot;kpis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Goal clarity&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">          </span><span class="nt">&quot;score_self&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">          </span><span class="nt">&quot;score_neighbor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">          </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This plan has concrete timeline; neighbor is vague.&quot;</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">      </span><span class="p">]</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h3 id="rate_limit">rate_limit</h3>
+<p>Tracks API rate limits per key.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">rate_limit</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="n">api_key</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="n">last_ts</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">         </span><span class="c1">-- Last request timestamp</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="k">count</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                  </span><span class="c1">-- Request count in current window</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="p">);</span>
+</code></pre></div>
+<p><strong>Rate limit logic:</strong>
+- Sliding 60-second window
+- If <code>(now - last_ts) &gt; 60s</code>: reset <code>count</code> to 1, update <code>last_ts</code>
+- Else if <code>count &lt; 5</code>: increment <code>count</code>
+- Else: reject with 429</p>
+<hr />
+<h2 id="technical-rationale">Technical Rationale</h2>
+<h3 id="why-elo-over-regression-models">Why Elo Over Regression Models?</h3>
+<p><strong>Elo advantages:</strong>
+1. <strong>No labeled training data required</strong> — learns from pairwise comparisons
+2. <strong>Adapts to corpus drift</strong> — as new plans enter, rankings adjust naturally
+3. <strong>Interpretable</strong> — "Top 10%" is intuitive; regression coefficients are not
+4. <strong>Robust to outliers</strong> — single bad comparison doesn't break the system</p>
+<p><strong>Trade-offs:</strong>
+- Requires multiple comparisons per plan (10 minimum)
+- Cold-start bias (first plans rated against weak corpus)
+- No absolute quality signal (only relative ranking)</p>
+<hr />
+<h3 id="why-k32">Why K=32?</h3>
+<p><strong>Sensitivity parameter</strong> controls how much each comparison shifts Elo:</p>
+<table>
+<thead>
+<tr>
+<th>K value</th>
+<th>Convergence speed</th>
+<th>Noise sensitivity</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td>Slow (30+ comparisons to converge)</td>
+<td>Low</td>
+<td>Established, stable corpus</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Medium (15-20 comparisons)</td>
+<td>Medium</td>
+<td><strong>Current system</strong> (balanced)</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Fast (10-15 comparisons)</td>
+<td>High</td>
+<td>Beginner/provisional ratings</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Very fast (5-10 comparisons)</td>
+<td>Very high</td>
+<td>Rapid iteration, testing</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Empirical testing</strong> (100-plan test corpus):
+- K=16: Accurate but slow (30 comparisons to stabilize)
+- K=32: Good convergence after 15-20 comparisons
+- K=64: Fast but noisy (±100 Elo variance after 20 comparisons)</p>
+<p><strong>Chosen K=32</strong> for balance between responsiveness and stability.</p>
+<hr />
+<h3 id="why-likert-1-5-over-continuous-scores">Why Likert 1-5 Over Continuous Scores?</h3>
+<p><strong>Likert scale advantages:</strong>
+1. <strong>LLMs are calibrated for categorical ratings</strong> — "rate 1-5" is a common training task
+2. <strong>Auditable</strong> — humans can verify "this deserves a 4, not a 5"
+3. <strong>Avoids false precision</strong> — difference between 0.73 and 0.78 is meaningless
+4. <strong>Consistent across comparisons</strong> — continuous scores drift with context</p>
+<p><strong>Alternative rejected:</strong> 0-100 continuous scale
+- Produced inconsistent scoring (same plan rated 73 vs 81 in different contexts)
+- No interpretability gain over 1-5 scale</p>
+<hr />
+<h3 id="cold-start-mitigation-strategy">Cold-Start Mitigation Strategy</h3>
+<p><strong>Problem:</strong> First 20-30 plans set the baseline. If initial corpus is weak, all plans appear "good" relative to baseline.</p>
+<p><strong>Current mitigation:</strong>
+1. <strong>Random neighbor fallback</strong> — if corpus has &lt;10 plans, select randomly (no embedding bias)
+2. <strong>Normalized percentiles</strong> — percentile calculated as <code>(rank / total_plans) * 100</code>, not absolute Elo threshold</p>
+<p><strong>Phase 2 mitigations (planned):</strong>
+1. <strong>Seed corpus</strong> — 20 hand-curated reference plans (high/medium/low quality examples)
+2. <strong>Comparison count normalization</strong> — weight Elo by <code>sqrt(num_comparisons)</code> in percentile calculation
+3. <strong>Domain-specific pools</strong> — separate Elo pools for energy/tech/social plans (prevents cross-domain bias)</p>
+<hr />
+<h2 id="current-limitations">Current Limitations</h2>
+<h3 id="1-false-confidence">1. False Confidence</h3>
+<p><strong>Problem:</strong> "Top 10%" doesn't mean <em>objectively good</em>, just <em>better than current corpus</em>.</p>
+<p><strong>Risk:</strong> If all plans in the corpus are weak, rankings still show a "winner."</p>
+<p><strong>Example:</strong>
+- Corpus of 100 low-effort plans (all score 2-3 on KPIs)
+- One plan scores 3-4 consistently
+- That plan reaches Top 5%, but is still mediocre in absolute terms</p>
+<p><strong>Mitigations:</strong>
+- <strong>Phase 2:</strong> Flag plans with <code>avg_kpi &lt; 3.0</code> as "Needs improvement" even if top-ranked
+- <strong>Phase 3:</strong> Seed corpus with 20 high-quality reference plans (absolute quality anchors)
+- <strong>Future:</strong> Absolute quality thresholds (e.g., "Exceptional" requires <code>elo &gt; 1700 AND avg_kpi &gt; 4.0</code>)</p>
+<hr />
+<h3 id="2-gaming-risk">2. Gaming Risk</h3>
+<p><strong>Problem:</strong> Users might optimize prompts for LLM preferences rather than real-world utility.</p>
+<p><strong>Example:</strong> Stuffing keywords like "SMART goals", "KPI", "risk mitigation" without substance.</p>
+<p><strong>Mitigations:</strong>
+- <strong>Current:</strong> Dynamic KPI selection (not fixed formula to game)
+- <strong>Current:</strong> Reasoning transparency (nonsense prompts get low reasoning quality scores)
+- <strong>Phase 3:</strong> Red-team evaluation (test whether gaming attempts produce worse outcomes)
+- <strong>Future:</strong> Human validation of Top 5% plans</p>
+<hr />
+<h3 id="3-cold-start-bias">3. Cold-Start Bias</h3>
+<p><strong>Problem:</strong> Early plans set the baseline. Small or skewed corpus biases rankings.</p>
+<p><strong>Example:</strong>
+- First 20 plans are all tech MVPs (short timelines, low budgets)
+- Plan 21 is a 10-year energy infrastructure project
+- LLM comparisons penalize Plan 21 for "unrealistic timeline" (relative to corpus norm)</p>
+<p><strong>Mitigations:</strong>
+- <strong>Current:</strong> Random neighbor selection if corpus &lt;10 plans
+- <strong>Phase 2:</strong> Normalize by <code>num_comparisons</code> in percentile calculation
+- <strong>Phase 2:</strong> Domain-specific Elo pools (energy plans vs energy plans)
+- <strong>Phase 3:</strong> Seed corpus with diverse reference plans</p>
+<hr />
+<h3 id="4-no-domain-expertise">4. No Domain Expertise</h3>
+<p><strong>Problem:</strong> LLM comparisons lack domain-specific nuance (e.g., regulatory complexity in pharma vs software).</p>
+<p><strong>Example:</strong>
+- FDA approval timeline for drug: 7-10 years (realistic)
+- Software MVP timeline: 7-10 years (red flag)
+- LLM might not distinguish between these contexts</p>
+<p><strong>Mitigations:</strong>
+- <strong>Phase 2:</strong> Domain-aware KPI sets (energy plans weight regulatory compliance higher)
+- <strong>Phase 3:</strong> Expert validation pipeline (Top 5% plans flagged for optional human review)
+- <strong>Future:</strong> Fine-tuned LLM on domain-specific plan corpus</p>
+<hr />
+<h3 id="5-embedding-quality-dependency">5. Embedding Quality Dependency</h3>
+<p><strong>Problem:</strong> Neighbor selection depends on embedding quality. Poor embeddings → irrelevant comparisons.</p>
+<p><strong>Current model:</strong> <code>text-embedding-3-small</code> (768 dims)
+- Works well for semantic similarity of prompts
+- May miss structural similarities (e.g., timeline format, budget magnitude)</p>
+<p><strong>Mitigations:</strong>
+- <strong>Phase 2:</strong> Hybrid retrieval (50% embedding similarity, 50% metadata filters like domain/budget)
+- <strong>Future:</strong> Fine-tuned embeddings on plan corpus</p>
+<hr />
+<h2 id="future-enhancements">Future Enhancements</h2>
+<h3 id="1-hybrid-ranking-elo-absolute-quality">1. Hybrid Ranking: Elo + Absolute Quality</h3>
+<p><strong>Problem:</strong> Elo only measures relative rank, not absolute quality.</p>
+<p><strong>Solution:</strong> Combine Elo with absolute KPI thresholds.</p>
+<p><strong>Formula:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">hybrid_score</span><span class="p">(</span><span class="n">elo</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">avg_kpi</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="sd">    Compute hybrid score combining relative rank (Elo) and absolute quality (KPI).</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="sd">    Args:</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="sd">        elo: Elo rating (normalized to 0-1 range: (elo - 1200) / 800)</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="sd">        avg_kpi: Average KPI score across all baseline metrics (0-1)</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="sd">        alpha: Weight for Elo component (0-1, default 0.7)</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="sd">        Hybrid score (0-1)</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>    <span class="n">elo_normalized</span> <span class="o">=</span> <span class="p">(</span><span class="n">elo</span> <span class="o">-</span> <span class="mi">1200</span><span class="p">)</span> <span class="o">/</span> <span class="mi">800</span>  <span class="c1"># Map [1200, 2000] -&gt; [0, 1]</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>    <span class="n">elo_normalized</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">elo_normalized</span><span class="p">))</span>  <span class="c1"># Clamp to [0, 1]</span>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>    <span class="k">return</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">elo_normalized</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">avg_kpi</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+- Plan A: Elo 1850 (95th %ile), avg_kpi 0.65 → hybrid = 0.7 * 0.81 + 0.3 * 0.65 = 0.76
+- Plan B: Elo 1550 (55th %ile), avg_kpi 0.85 → hybrid = 0.7 * 0.44 + 0.3 * 0.85 = 0.56</p>
+<p><strong>Result:</strong> Plan A still ranks higher (strong Elo), but Plan B's absolute quality is recognized.</p>
+<p><strong>Tuning alpha:</strong>
+- α=1.0: Pure Elo (relative rank only)
+- α=0.5: Equal weight to relative rank and absolute quality
+- α=0.0: Pure absolute quality (ignores corpus context)</p>
+<p><strong>Recommended α=0.7</strong> for corpus-aware ranking with quality floor.</p>
+<hr />
+<h3 id="2-personalized-ranking-weights">2. Personalized Ranking Weights</h3>
+<p><strong>Problem:</strong> Different users care about different KPIs (investor vs builder vs researcher).</p>
+<p><strong>Solution:</strong> Allow users to customize KPI weights.</p>
+<p><strong>Schema:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid-user-1&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="nt">&quot;kpi_weights&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="nt">&quot;feasibility&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">    </span><span class="nt">&quot;impact_estimate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="nt">&quot;novelty_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="nt">&quot;technical_completeness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">    </span><span class="nt">&quot;prompt_quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Weighted Elo formula:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">weighted_elo_update</span><span class="p">(</span><span class="n">plan</span><span class="p">:</span> <span class="n">Plan</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">:</span> <span class="n">Plan</span><span class="p">,</span> <span class="n">kpi_scores</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">weights</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">):</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="sd">    Update Elo with user-specific KPI weights.</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="sd">    Args:</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="sd">        plan: The plan being ranked</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="sd">        neighbor: Comparison neighbor</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="sd">        kpi_scores: {&quot;kpi_name&quot;: {&quot;plan&quot;: 4, &quot;neighbor&quot;: 3}, ...}</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="sd">        weights: {&quot;kpi_name&quot;: 0.3, ...} (sum to 1.0)</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="sd">        K: Elo sensitivity parameter</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>    <span class="n">weighted_score_plan</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">kpi_scores</span><span class="p">[</span><span class="n">kpi</span><span class="p">][</span><span class="s2">&quot;plan&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">weights</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">kpi</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">kpi</span> <span class="ow">in</span> <span class="n">kpi_scores</span><span class="p">)</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>    <span class="n">weighted_score_neighbor</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">kpi_scores</span><span class="p">[</span><span class="n">kpi</span><span class="p">][</span><span class="s2">&quot;neighbor&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">weights</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">kpi</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span> <span class="k">for</span> <span class="n">kpi</span> <span class="ow">in</span> <span class="n">kpi_scores</span><span class="p">)</span>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>    <span class="n">diff</span> <span class="o">=</span> <span class="n">weighted_score_plan</span> <span class="o">-</span> <span class="n">weighted_score_neighbor</span>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>    <span class="n">prob_win</span> <span class="o">=</span> <span class="n">map_likert_to_probability</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>  <span class="c1"># Use existing mapping</span>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>    <span class="k">return</span> <span class="n">update_elo</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">elo</span><span class="p">,</span> <span class="n">neighbor</span><span class="o">.</span><span class="n">elo</span><span class="p">,</span> <span class="n">prob_win</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>UI:</strong> Slider interface for adjusting weights (sum constrained to 1.0).</p>
+<hr />
+<h3 id="3-batch-re-ranking">3. Batch Re-Ranking</h3>
+<p><strong>Problem:</strong> As corpus grows, early plans' Elo ratings may be stale (compared against outdated corpus).</p>
+<p><strong>Solution:</strong> Periodic re-ranking of random plan samples against recent corpus.</p>
+<p><strong>Pseudocode:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">batch_rerank</span><span class="p">(</span><span class="n">sample_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">comparisons_per_plan</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="sd">    Re-rank a random sample of plans against recent corpus.</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="sd">    Args:</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="sd">        sample_size: Number of plans to re-rank</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="sd">        comparisons_per_plan: Number of new comparisons per plan</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>    <span class="c1"># Select random sample of plans with last_comparison &gt; 30 days ago</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>    <span class="n">old_plans</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>        <span class="n">Plan</span><span class="o">.</span><span class="n">last_comparison_date</span> <span class="o">&lt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>    <span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">random</span><span class="p">())</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">sample_size</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>    <span class="c1"># For each plan, run N new comparisons against recent neighbors</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>    <span class="k">for</span> <span class="n">plan</span> <span class="ow">in</span> <span class="n">old_plans</span><span class="p">:</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>        <span class="n">recent_neighbors</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Plan</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>            <span class="n">Plan</span><span class="o">.</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">),</span>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>            <span class="n">Plan</span><span class="o">.</span><span class="n">id</span> <span class="o">!=</span> <span class="n">plan</span><span class="o">.</span><span class="n">id</span>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>        <span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">Plan</span><span class="o">.</span><span class="n">embedding</span><span class="o">.</span><span class="n">cosine_distance</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">embedding</span><span class="p">))</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="n">comparisons_per_plan</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>        <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">recent_neighbors</span><span class="p">:</span>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>            <span class="n">kpi_scores</span> <span class="o">=</span> <span class="n">run_llm_comparison</span><span class="p">(</span><span class="n">plan</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">)</span>
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>            <span class="n">prob_win</span> <span class="o">=</span> <span class="n">compute_win_probability</span><span class="p">(</span><span class="n">kpi_scores</span><span class="p">)</span>
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>            <span class="n">plan</span><span class="o">.</span><span class="n">elo</span><span class="p">,</span> <span class="n">neighbor</span><span class="o">.</span><span class="n">elo</span> <span class="o">=</span> <span class="n">update_elo</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">elo</span><span class="p">,</span> <span class="n">neighbor</span><span class="o">.</span><span class="n">elo</span><span class="p">,</span> <span class="n">prob_win</span><span class="p">)</span>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>        <span class="n">plan</span><span class="o">.</span><span class="n">last_comparison_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>        <span class="n">plan</span><span class="o">.</span><span class="n">num_comparisons</span> <span class="o">+=</span> <span class="n">comparisons_per_plan</span>
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>    <span class="n">db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div></p>
+<p><strong>Schedule:</strong> Run weekly via cron job.</p>
+<p><strong>Sample size tuning:</strong>
+- Corpus &lt;100 plans: re-rank all
+- Corpus 100-1000: re-rank 10% (sample 50-100 plans)
+- Corpus &gt;1000: re-rank 5% (sample 50-200 plans)</p>
+<hr />
+<h3 id="4-explain-by-example-nearest-neighbor-justification">4. Explain-by-Example (Nearest Neighbor Justification)</h3>
+<p><strong>Problem:</strong> Users ask "Why is my plan ranked here?"</p>
+<p><strong>Solution:</strong> Show 3 nearest neighbors (higher-ranked) with KPI comparison breakdown.</p>
+<p><strong>Retrieval:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">elo</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">embedding</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">query_embedding</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">distance</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="n">p</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">plan_metrics</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">plan_id</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">elo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">query_elo</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">embedding</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">query_embedding</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>UI output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Your plan (Elo 1620) vs higher-ranked neighbors:
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>1. Electric VTOL Program (Elo 1847, +227 points)
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>   - Goal clarity: You 3.2, Neighbor 4.8 (+1.6) → Add specific timeline milestones
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>   - Risk management: You 3.5, Neighbor 4.7 (+1.2) → Document mitigation triggers
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>   - Budget realism: You 3.8, Neighbor 4.2 (+0.4) → Minor gap
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>2. Grid Battery Storage (Elo 1803, +183 points)
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>   - Measurable outcomes: You 2.9, Neighbor 4.9 (+2.0) → Define numeric KPIs
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>   - Stakeholder alignment: You 3.1, Neighbor 4.3 (+1.2) → Map deliverables to stakeholders
+</code></pre></div></p>
+<p><strong>Value:</strong> Transforms rank into actionable feedback.</p>
+<hr />
+<h3 id="5-domain-specific-elo-pools">5. Domain-Specific Elo Pools</h3>
+<p><strong>Problem:</strong> Cross-domain comparisons are unfair (e.g., 3-month MVP vs 5-year infrastructure project).</p>
+<p><strong>Solution:</strong> Separate Elo pools per domain.</p>
+<p><strong>Schema change:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">plan_metrics</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;general&#39;</span><span class="p">;</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_plan_metrics_domain</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">plan_metrics</span><span class="p">(</span><span class="k">domain</span><span class="p">);</span>
+</code></pre></div></p>
+<p><strong>Domains:</strong>
+- <code>tech</code> (software, hardware, consumer products)
+- <code>energy</code> (solar, wind, battery, grid)
+- <code>health</code> (biotech, medical devices, pharma)
+- <code>social</code> (education, community, policy)
+- <code>research</code> (academic, scientific)</p>
+<p><strong>Neighbor selection with domain filter:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">plan_corpus</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">:</span><span class="n">query_domain</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">embedding</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">query_embedding</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>UI:</strong> Show both <em>domain rank</em> ("Top 5% in Energy") and <em>global rank</em> ("Top 15% overall").</p>
+<hr />
+<h3 id="6-temporal-decay">6. Temporal Decay</h3>
+<p><strong>Problem:</strong> Plans from 6+ months ago may rank high but use outdated assumptions.</p>
+<p><strong>Solution:</strong> Apply decay factor to Elo based on age.</p>
+<p><strong>Formula:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">effective_elo</span><span class="p">(</span><span class="n">elo</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">created_at</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">decay_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="sd">    Apply temporal decay to Elo rating.</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="sd">    Args:</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="sd">        elo: Current Elo rating</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="sd">        created_at: Plan creation timestamp</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="sd">        decay_rate: Decay per month (default 0.05 = 5%/month)</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="sd">        Effective Elo for ranking purposes</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>    <span class="n">months_old</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">created_at</span><span class="p">)</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="mi">30</span>
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>    <span class="n">decay_factor</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">decay_rate</span><span class="p">)</span> <span class="o">**</span> <span class="n">months_old</span>
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>    <span class="k">return</span> <span class="n">elo</span> <span class="o">*</span> <span class="n">decay_factor</span>
+</code></pre></div></p>
+<p><strong>Example:</strong>
+- Plan created 6 months ago with Elo 1800
+- Effective Elo = 1800 * (0.95^6) = 1800 * 0.735 = 1323
+- Drops from Top 5% to ~40th percentile</p>
+<p><strong>Tuning decay_rate:</strong>
+- 0.02 (2%/month): Gentle decay, 12-month half-life
+- 0.05 (5%/month): Moderate decay, 6-month half-life
+- 0.10 (10%/month): Aggressive decay, 3-month half-life</p>
+<p><strong>Recommended 5%/month</strong> for plans in fast-moving domains (tech, policy).</p>
+<hr />
+<h3 id="7-reasoning-llm-for-top-10">7. Reasoning LLM for Top 10%</h3>
+<p><strong>Problem:</strong> Discrimination between top plans requires deeper analysis than flash model provides.</p>
+<p><strong>Solution:</strong> Two-tier comparison strategy.</p>
+<p><strong>Tier 1 (All plans):</strong> <code>gemini-2.0-flash-exp</code> (~$0.10 per 10 comparisons)
+- Fast, cheap, good enough for initial ranking</p>
+<p><strong>Tier 2 (Top 10% only):</strong> <code>o1-mini</code> or <code>claude-3.5-sonnet</code> (~$1.00 per 10 comparisons)
+- Deeper reasoning, better discrimination</p>
+<p><strong>Implementation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">select_comparison_model</span><span class="p">(</span><span class="n">plan_elo</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">neighbor_elo</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="sd">    Choose comparison model based on Elo.</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="sd">        Model name for LLM comparison</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>    <span class="k">if</span> <span class="n">plan_elo</span> <span class="o">&gt;</span> <span class="mi">1700</span> <span class="ow">and</span> <span class="n">neighbor_elo</span> <span class="o">&gt;</span> <span class="mi">1700</span><span class="p">:</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>        <span class="k">return</span> <span class="s2">&quot;openai/o1-mini&quot;</span>  <span class="c1"># Top 10% vs Top 10%</span>
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>        <span class="k">return</span> <span class="s2">&quot;google/gemini-2.0-flash-exp&quot;</span>  <span class="c1"># Default</span>
+</code></pre></div></p>
+<p><strong>Cost impact:</strong>
+- Corpus of 1000 plans: ~100 are Top 10%
+- Top 10% plans average 20 comparisons each (10 initial + 10 re-rank)
+- Reasoning LLM cost: 100 plans × 10 comparisons × $0.10 = $100 (one-time)
+- vs. Flash-only cost: 1000 plans × 10 comparisons × $0.01 = $100 (total)</p>
+<p><strong>Cost increase:</strong> ~2x, but only for top-tier discrimination.</p>
+<hr />
+<h3 id="8-investor-filters">8. Investor Filters</h3>
+<p><strong>Problem:</strong> Investors want to find relevant plans quickly, not browse entire leaderboard.</p>
+<p><strong>Solution:</strong> Add filter parameters to <code>/api/leaderboard</code>.</p>
+<p><strong>New query parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>domain</code></td>
+<td>string</td>
+<td>tech, energy, health, social, research</td>
+<td>Filter by plan domain</td>
+</tr>
+<tr>
+<td><code>impact_horizon</code></td>
+<td>string</td>
+<td>days, months, years, decades</td>
+<td>Expected impact timeframe</td>
+</tr>
+<tr>
+<td><code>budget_min</code></td>
+<td>integer</td>
+<td>Cents (e.g., 100000 = $1000)</td>
+<td>Minimum budget</td>
+</tr>
+<tr>
+<td><code>budget_max</code></td>
+<td>integer</td>
+<td>Cents</td>
+<td>Maximum budget</td>
+</tr>
+<tr>
+<td><code>region</code></td>
+<td>string</td>
+<td>US, EU, APAC, global</td>
+<td>Geographic focus</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example request:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="err">GET /api/leaderboard?domain=energy&amp;budget_min=500000000&amp;budget_max=10000000000&amp;region=US&amp;limit=20</span>
+</code></pre></div></p>
+<p><strong>SQL query:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">elo</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="n">p</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">plan_metrics</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">plan_id</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="k">WHERE</span><span class="w"> </span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">json_data</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;domain&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">:</span><span class="k">domain</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">json_data</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;budget_cents&#39;</span><span class="p">)::</span><span class="nb">bigint</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="p">:</span><span class="n">budget_min</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">:</span><span class="n">budget_max</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="w">    </span><span class="k">AND</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">json_data</span><span class="o">-&gt;&gt;</span><span class="s1">&#39;region&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">:</span><span class="n">region</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">m</span><span class="p">.</span><span class="n">elo</span><span class="w"> </span><span class="k">DESC</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="k">LIMIT</span><span class="w"> </span><span class="p">:</span><span class="k">limit</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>UI:</strong> Dropdown filters on <code>/rankings</code> page.</p>
+<hr />
+<h2 id="implementation-roadmap">Implementation Roadmap</h2>
+<h3 id="phase-1-completed">Phase 1 (Completed ✅)</h3>
+<ul>
+<li>[x] Dynamic KPI extraction via LLM</li>
+<li>[x] Pairwise LLM comparison with Likert 1-5 scoring</li>
+<li>[x] Elo rating update (K=32)</li>
+<li>[x] User plan list with Elo display (<code>/rankings</code>)</li>
+<li>[x] API endpoints: <code>/api/rank</code>, <code>/api/leaderboard</code></li>
+<li>[x] Rate limiting (5 req/min per API key)</li>
+<li>[x] LLM-named "remaining considerations" KPI</li>
+<li>[x] 30-word reasoning cap per KPI</li>
+<li>[x] Embedding-based neighbor selection (pgvector)</li>
+</ul>
+<hr />
+<h3 id="phase-2-next-2-4-weeks">Phase 2 (Next 2-4 weeks)</h3>
+<p><strong>KPI Reasoning Storage:</strong>
+- [ ] Add <code>kpi_details</code> JSONB column to <code>plan_metrics</code>
+- [ ] Store all comparison results (neighbor_id, KPI scores, reasoning)
+- [ ] UI: "Why this rank?" modal with KPI breakdown</p>
+<p><strong>Percentile Tiers:</strong>
+- [ ] Map Elo ranges to tier labels (Exceptional / Strong / Solid / Developing / Needs Work)
+- [ ] UI badges (🏆 Gold / 🥈 Silver / 🥉 Bronze / 📊 Standard / 🔧 Improve)
+- [ ] Percentile calculation normalized by <code>num_comparisons</code></p>
+<p><strong>Prompt Improvement Suggestions:</strong>
+- [ ] Generate tier-specific advice based on KPI gaps
+- [ ] Auto-suggest prompt template for Bottom 25%
+- [ ] Email/notification with improvement tips after ranking</p>
+<p><strong>Domain-Specific Ranking:</strong>
+- [ ] Add <code>domain</code> column to <code>plan_corpus</code>
+- [ ] Separate Elo pools per domain (tech / energy / health / social / research)
+- [ ] UI: Show domain rank + global rank</p>
+<p><strong>Testing:</strong>
+- [ ] Unit tests for Elo update logic
+- [ ] Integration tests for <code>/api/rank</code> endpoint
+- [ ] Load test: 100 concurrent ranking requests</p>
+<hr />
+<h3 id="phase-3-next-quarter">Phase 3 (Next Quarter)</h3>
+<p><strong>Investor Filters:</strong>
+- [ ] Add filter parameters to <code>/api/leaderboard</code> (domain, budget, region, impact horizon)
+- [ ] Update SQL queries with JSONB metadata filters
+- [ ] UI: Dropdown filters on <code>/rankings</code> page</p>
+<p><strong>Red-Team Gaming Detection:</strong>
+- [ ] Monitor for prompt patterns that spike Elo without improving KPIs
+- [ ] Flag suspicious plans (e.g., keyword stuffing) for manual review
+- [ ] A/B test: compare gaming-resistant prompts</p>
+<p><strong>Public Benchmark Plans:</strong>
+- [ ] Curate 20 high-quality reference plans (hand-picked by domain experts)
+- [ ] Ensure all new plans compare against 2-3 benchmark plans
+- [ ] Provides absolute quality anchor (mitigates cold-start bias)</p>
+<p><strong>Reasoning LLM for Top 10%:</strong>
+- [ ] Implement two-tier comparison strategy (flash for all, o1-mini for top 10%)
+- [ ] Cost analysis and budget approval
+- [ ] A/B test: measure discrimination improvement at top of leaderboard</p>
+<hr />
+<h3 id="phase-4-future-research">Phase 4 (Future / Research)</h3>
+<p><strong>Hybrid Ranking (Elo + Absolute Quality):</strong>
+- [ ] Implement <code>hybrid_score</code> formula (α=0.7 default)
+- [ ] UI: Toggle between "Relative Rank" and "Hybrid Score"
+- [ ] User study: which ranking is more useful?</p>
+<p><strong>Personalized Ranking Weights:</strong>
+- [ ] Allow users to customize KPI weights
+- [ ] UI: Slider interface for adjusting weights
+- [ ] Store user preferences in <code>user_kpi_weights</code> table</p>
+<p><strong>Batch Re-Ranking:</strong>
+- [ ] Cron job: weekly re-rank of 10% of corpus
+- [ ] Focus on plans with <code>last_comparison_date &gt; 30 days</code>
+- [ ] Monitor Elo stability over time</p>
+<p><strong>Temporal Decay:</strong>
+- [ ] Implement <code>effective_elo</code> with 5%/month decay
+- [ ] UI: Show "Fresh rank" (with decay) vs "All-time rank" (no decay)
+- [ ] Domain-specific decay rates (tech: 5%/month, infrastructure: 1%/month)</p>
+<p><strong>Explain-by-Example:</strong>
+- [ ] Nearest neighbor retrieval (3 higher-ranked plans)
+- [ ] KPI comparison breakdown
+- [ ] UI: "Compare to better plans" button</p>
+<p><strong>Domain Expertise Integration:</strong>
+- [ ] Partner with domain experts for top 5% validation
+- [ ] Optional human review pipeline
+- [ ] Expert feedback stored in <code>plan_metrics.review_comment</code></p>
+<hr />
+<h2 id="glossary">Glossary</h2>
+<p><strong>API_SECRET</strong><br />
+Authentication token used in <code>X-API-Key</code> header for API requests. Generated per user via admin interface. Stored in <code>rate_limit.api_key</code>.</p>
+<p><strong>Elo</strong><br />
+Rating system invented by Arpad Elo for chess rankings. Measures relative skill/quality through pairwise comparisons. Higher Elo = better performance. Default starting Elo: 1500. Pronounced "EE-lo" (not "E-L-O").</p>
+<p><strong>Gemini-flash</strong><br />
+Shorthand for <code>gemini-2.0-flash-exp</code>, Google's fast LLM optimized for structured output. Used for KPI extraction and pairwise comparison in PlanExe. Accessible via OpenRouter API.</p>
+<p><strong>KPI (Key Performance Indicator)</strong><br />
+Measurable metric used to evaluate plan quality. Examples: goal clarity, schedule credibility, risk management, budget realism. PlanExe extracts 6-8 KPIs per comparison dynamically via LLM.</p>
+<p><strong>Likert scale</strong><br />
+5-point rating scale (1 = Very poor, 2 = Below average, 3 = Average, 4 = Above average, 5 = Excellent). Used for scoring each KPI in pairwise comparisons. Integer-only (no 3.5 scores).</p>
+<p><strong>pgvector</strong><br />
+PostgreSQL extension for vector similarity search. Enables fast cosine similarity queries for embedding-based neighbor selection. Supports <code>ivfflat</code> and <code>hnsw</code> indexing.</p>
+<p><strong>Pairwise comparison</strong><br />
+Comparing two plans (A vs B) across multiple KPIs to determine which is better. Core primitive of Elo ranking system. Each new plan compared against 10 neighbors.</p>
+<p><strong>Win probability</strong><br />
+Probability (0-1) that plan A is better than plan B, derived from Likert score difference. Used as input to Elo update formula. Example: +2 score difference → 0.7 win probability.</p>
+<hr />
+<h2 id="quick-wins-checklist">Quick Wins Checklist</h2>
+<p>Completed items for immediate usability improvements:</p>
+<ul>
+<li>[x] Add TOC for document navigation</li>
+<li>[x] Fix heading hierarchy (consistent <code>##</code> for sections, <code>###</code> for subsections)</li>
+<li>[x] Explain Likert→probability mapping rationale</li>
+<li>[x] Justify K=32 parameter choice</li>
+<li>[x] Document cold-start bias and mitigation strategies</li>
+<li>[x] Mention plan_json typical size and JSONB indexing strategy</li>
+<li>[x] Align rate-limit description with actual implementation code</li>
+<li>[x] Show full KPI extraction prompt in fenced code block</li>
+<li>[x] Add concrete JSON response example for KPI output</li>
+<li>[x] Clarify "remaining considerations" KPI naming convention</li>
+<li>[x] Mention 2000-token budget per comparison</li>
+<li>[x] Add API reference table (endpoints, auth, schemas, error codes)</li>
+<li>[x] Document pagination for <code>/api/leaderboard</code></li>
+<li>[x] Add UI documentation with ASCII mockups</li>
+<li>[x] Include toggle implementation code snippet</li>
+<li>[x] Document responsive design breakpoints</li>
+<li>[x] Add ARIA/accessibility labels and keyboard navigation</li>
+<li>[x] Expand future work with concrete formulas (hybrid ranking, personalized weights)</li>
+<li>[x] Add pseudocode for batch re-ranking schedule</li>
+<li>[x] Document explain-by-example retrieval strategy</li>
+<li>[x] Fix Elo capitalization (proper noun: "Elo", not "ELO")</li>
+<li>[x] Fix Likert capitalization (proper noun: "Likert", not "LIKERT")</li>
+<li>[x] Break long paragraphs into scannable chunks</li>
+<li>[x] Wrap all JSON in triple backticks with <code>json</code> syntax highlighting</li>
+<li>[x] Consistent inline code vs fenced blocks (inline for short refs, fenced for multi-line)</li>
+<li>[x] Add glossary section defining all technical terms</li>
+<li>[x] Remove promotional phrasing ("revolutionary", "game-changing")</li>
+<li>[x] Set primary audience to developers (technical focus, implementation details)</li>
+</ul>
+<hr />
+<p><strong>Document version:</strong> 2.0<br />
+<strong>Last updated:</strong> 2026-02-08<br />
+<strong>Maintainer:</strong> OpenClaw team<br />
+<strong>Feedback:</strong> Open issues at https://github.com/VoynichLabs/PlanExe2026/issues</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/copy-all.js"></script>
+      
+    
+  </body>
+</html>
