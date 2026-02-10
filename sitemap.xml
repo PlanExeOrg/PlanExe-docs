@@ -224,4 +224,24 @@
          <loc>https://docs.planexe.org/proposals/15-outcome-feedback-and-model-governance/</loc>
          <lastmod>2026-02-10</lastmod>
     </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/16-on-demand-plugin-synthesis-hub/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/17-plugin-adaptation-lifecycle/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/18-plugin-benchmarking-coverage-harness/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/19-plugin-safety-governance-for-runtime-loading/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/20-plugin-hub-discovery-ranking-and-reuse/</loc>
+         <lastmod>2026-02-10</lastmod>
+    </url>
 </urlset>
