@@ -3050,6 +3050,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-selection-funnel-definition-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Selection Funnel Definition (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-ranking-pipeline-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Ranking Pipeline Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-escalation-workflow-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Escalation Workflow (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-outcome-learning-loop-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Outcome Learning Loop (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4125,6 +4208,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-selection-funnel-definition-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Selection Funnel Definition (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-ranking-pipeline-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Ranking Pipeline Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-escalation-workflow-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Escalation Workflow (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-outcome-learning-loop-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Outcome Learning Loop (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4363,6 +4529,45 @@
 <ul>
 <li><strong>Tournament Mode:</strong> Periodically re-rank the top 50 bids against each other to ensure the "King of the Hill" is truly the best.</li>
 <li><strong>Niche Pools:</strong> Separate Elo ladders for different sectors (e.g., "BioTech Elo", "Crypto Elo").</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-selection-funnel-definition-1-week">Phase A — Selection Funnel Definition (1 week)</h3>
+<ol>
+<li>Define funnel cutoffs and policy defaults (20% -&gt; 5% -&gt; 1%).</li>
+<li>Define promotion/demotion rules with override controls.</li>
+<li>Define confidence requirements for borderline candidates.</li>
+</ol>
+<h3 id="phase-b-ranking-pipeline-integration-2-weeks">Phase B — Ranking Pipeline Integration (2 weeks)</h3>
+<ol>
+<li>Pull ELO and percentile outputs from proposal-07 stack.</li>
+<li>Add domain-fit and verification features to ranking vector.</li>
+<li>Compute composite selection score for escalation decisions.</li>
+</ol>
+<h3 id="phase-c-escalation-workflow-2-weeks">Phase C — Escalation Workflow (2 weeks)</h3>
+<ol>
+<li>Route top cohort to expert verification and premium refinement.</li>
+<li>Track escalation outcomes and review costs.</li>
+<li>Add auto-stop for candidates that fail critical post-escalation checks.</li>
+</ol>
+<h3 id="phase-d-outcome-learning-loop-2-weeks">Phase D — Outcome Learning Loop (2 weeks)</h3>
+<ol>
+<li>Ingest real bid outcomes (win/loss/shortlist).</li>
+<li>Recalibrate ranking and threshold policies.</li>
+<li>Add model drift alerts when ranking precision degrades.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>selection_funnel_runs</code></li>
+<li><code>selection_scores</code></li>
+<li><code>escalation_events</code></li>
+<li><code>bid_outcome_feedback</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Precision@top cohorts</li>
+<li>Win-rate lift vs non-ranked baseline</li>
+<li>Cost savings from reduced deep review</li>
+<li>Stability of thresholds across domains</li>
 </ul>
 
 

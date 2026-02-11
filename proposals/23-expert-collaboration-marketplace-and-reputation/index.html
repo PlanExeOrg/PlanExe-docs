@@ -2756,6 +2756,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-profile-verification-marketplace-core-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Profile Verification + Marketplace Core (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-reputation-graph-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Reputation Graph (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-collaboration-workspace-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Collaboration Workspace (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-trust-and-abuse-controls-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Trust and Abuse Controls (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3957,6 +4040,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-profile-verification-marketplace-core-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Profile Verification + Marketplace Core (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-reputation-graph-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Reputation Graph (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-collaboration-workspace-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Collaboration Workspace (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-trust-and-abuse-controls-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Trust and Abuse Controls (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4078,6 +4244,50 @@
 <li>Cross-platform credential verification.</li>
 <li>Expert cohort benchmarking.</li>
 <li>Automated conflict-of-interest detection.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-profile-verification-marketplace-core-23-weeks">Phase A — Profile Verification + Marketplace Core (2–3 weeks)</h3>
+<ol>
+<li>Build verified expert profiles with credential proofs and specialty tags.</li>
+<li>Add request posting flow from plans to expert marketplace.</li>
+<li>Implement matching filters (domain, region, availability, budget).</li>
+</ol>
+<h3 id="phase-b-reputation-graph-2-weeks">Phase B — Reputation Graph (2 weeks)</h3>
+<ol>
+<li>Define reputation signals:</li>
+<li>review quality</li>
+<li>timeliness</li>
+<li>outcome alignment</li>
+<li>conflict disclosures</li>
+<li>Build weighted graph model that resists simple star-rating manipulation.</li>
+<li>Add decay and recency weighting.</li>
+</ol>
+<h3 id="phase-c-collaboration-workspace-2-weeks">Phase C — Collaboration Workspace (2 weeks)</h3>
+<ol>
+<li>Add section-level review threads mapped to plan nodes.</li>
+<li>Add structured recommendation objects (risk, impact, confidence, action).</li>
+<li>Add moderation + dispute handling for contested reviews.</li>
+</ol>
+<h3 id="phase-d-trust-and-abuse-controls-12-weeks">Phase D — Trust and Abuse Controls (1–2 weeks)</h3>
+<ol>
+<li>Add anti-gaming heuristics (reciprocal rating rings, suspicious velocity).</li>
+<li>Add blind secondary review for high-stakes plans.</li>
+<li>Add review audit trails and moderation reports.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>expert_market_requests</code></li>
+<li><code>expert_matches</code></li>
+<li><code>expert_reviews</code></li>
+<li><code>expert_reputation_events</code></li>
+<li><code>expert_disputes</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Match quality vs manual benchmark</li>
+<li>Time-to-match and completion rates</li>
+<li>Reputation stability under adversarial test scenarios</li>
+<li>User trust score improvement over baseline</li>
 </ul>
 
 

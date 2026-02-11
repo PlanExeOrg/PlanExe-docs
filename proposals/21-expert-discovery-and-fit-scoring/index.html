@@ -2725,6 +2725,78 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-expert-ontology-data-connectors-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Expert Ontology + Data Connectors (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-fit-scoring-service-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Fit Scoring Service (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-user-workflow-outreach-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — User Workflow + Outreach (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4035,6 +4107,78 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-expert-ontology-data-connectors-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Expert Ontology + Data Connectors (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-fit-scoring-service-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Fit Scoring Service (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-user-workflow-outreach-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — User Workflow + Outreach (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4155,6 +4299,49 @@
 <li>External credential validation integration.</li>
 <li>Automated discovery from publications and patents.</li>
 <li>Adaptive scoring by project complexity.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-expert-ontology-data-connectors-23-weeks">Phase A — Expert Ontology + Data Connectors (2–3 weeks)</h3>
+<ol>
+<li>Define a normalized expert ontology:</li>
+<li>domains/subdomains</li>
+<li>credential classes</li>
+<li>region/jurisdiction tags</li>
+<li>project-type experience tags</li>
+<li>Build ingestion connectors for curated sources (registries, publications, procurement records, verified profiles).</li>
+<li>Add entity resolution to deduplicate the same expert across sources.</li>
+</ol>
+<h3 id="phase-b-fit-scoring-service-2-weeks">Phase B — Fit Scoring Service (2 weeks)</h3>
+<ol>
+<li>Implement feature extraction:</li>
+<li>domain similarity to plan</li>
+<li>project similarity to past verified work</li>
+<li>jurisdiction compatibility</li>
+<li>credential strength and recency</li>
+<li>availability signals</li>
+<li>Implement weighted scoring with configurable policy weights per domain.</li>
+<li>Emit ranked shortlist with per-expert rationale and confidence.</li>
+</ol>
+<h3 id="phase-c-user-workflow-outreach-2-weeks">Phase C — User Workflow + Outreach (2 weeks)</h3>
+<ol>
+<li>Add expert shortlist panel in plan UI.</li>
+<li>Generate outreach packets from plan context (scope, constraints, expected review role).</li>
+<li>Track responses and status transitions (invited, accepted, declined, completed).</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>experts</code></li>
+<li><code>expert_profiles</code></li>
+<li><code>expert_source_records</code></li>
+<li><code>expert_fit_scores</code></li>
+<li><code>expert_outreach_events</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Dedup precision on merged profiles</li>
+<li>Ranking quality judged by human reviewers</li>
+<li>Time-to-first-accepted-expert</li>
+<li>Coverage of required review domains per plan</li>
 </ul>
 
 

@@ -2732,6 +2732,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-workflow-state-machine-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Workflow State Machine (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-domain-review-packets-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Domain Review Packets (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-integration-conflict-resolution-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Integration + Conflict Resolution (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-final-report-signoff-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Final Report + Signoff (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3979,6 +4062,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-workflow-state-machine-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Workflow State Machine (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-domain-review-packets-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Domain Review Packets (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-integration-conflict-resolution-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Integration + Conflict Resolution (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-final-report-signoff-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Final Report + Signoff (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4101,6 +4267,51 @@
 <li>Reputation scoring for experts.</li>
 <li>Automated dispute resolution for conflicting expert opinions.</li>
 <li>Continuous verification updates as plans evolve.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-workflow-state-machine-12-weeks">Phase A — Workflow State Machine (1–2 weeks)</h3>
+<ol>
+<li>Define verification lifecycle states:</li>
+<li><code>draft</code></li>
+<li><code>triage_review</code></li>
+<li><code>domain_review</code></li>
+<li><code>integration_review</code></li>
+<li><code>final_verification</code></li>
+<li>Add transition guards and role permissions.</li>
+<li>Add SLA timers and escalation triggers.</li>
+</ol>
+<h3 id="phase-b-domain-review-packets-2-weeks">Phase B — Domain Review Packets (2 weeks)</h3>
+<ol>
+<li>Auto-generate review packet templates per domain (engineering, legal, environment, finance).</li>
+<li>Attach structured checklists and evidence requirements.</li>
+<li>Enforce issue severity taxonomy (blocker/major/minor).</li>
+</ol>
+<h3 id="phase-c-integration-conflict-resolution-2-weeks">Phase C — Integration + Conflict Resolution (2 weeks)</h3>
+<ol>
+<li>Build cross-domain conflict register.</li>
+<li>Add mediation workflow for contradictory expert findings.</li>
+<li>Require explicit acceptance/rejection for each blocker before final verification.</li>
+</ol>
+<h3 id="phase-d-final-report-signoff-1-week">Phase D — Final Report + Signoff (1 week)</h3>
+<ol>
+<li>Generate signed verification summary with conditions.</li>
+<li>Produce machine-readable status for downstream bidding gates.</li>
+<li>Archive all review evidence and decision logs.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>verification_runs</code></li>
+<li><code>verification_stages</code></li>
+<li><code>verification_issues</code></li>
+<li><code>verification_signoffs</code></li>
+<li><code>verification_slas</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Stage transition correctness</li>
+<li>Blocker enforcement before completion</li>
+<li>Reviewer SLA compliance</li>
+<li>Reproducible final verification export</li>
 </ul>
 
 

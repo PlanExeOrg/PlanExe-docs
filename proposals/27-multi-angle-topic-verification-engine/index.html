@@ -2914,6 +2914,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-verification-rulebook-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Verification Rulebook (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-triangulation-engine-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Triangulation Engine (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-domain-modules-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Domain Modules (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-decision-and-explainability-layer-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Decision and Explainability Layer (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3993,6 +4076,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-verification-rulebook-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Verification Rulebook (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-triangulation-engine-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Triangulation Engine (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-domain-modules-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Domain Modules (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-decision-and-explainability-layer-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Decision and Explainability Layer (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4148,6 +4314,50 @@
 <li><strong>Lens Marketplace:</strong> Allow third-party experts to plug in as a "Verifier Lens" (e.g., a "Cybersecurity Lens" provided by a security firm).</li>
 <li><strong>Historical Calibration:</strong> "The Legal Lens is too pessimistic; adjust its weight down by 10%."</li>
 </ol>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-verification-rulebook-12-weeks">Phase A — Verification Rulebook (1–2 weeks)</h3>
+<ol>
+<li>Define verification dimensions and pass/fail criteria:</li>
+<li>technical</li>
+<li>legal/regulatory</li>
+<li>financial</li>
+<li>geopolitical</li>
+<li>reputational</li>
+<li>Set evidence minimums per dimension.</li>
+<li>Define final classification rules (<code>verified_strong</code>, etc.).</li>
+</ol>
+<h3 id="phase-b-triangulation-engine-2-weeks">Phase B — Triangulation Engine (2 weeks)</h3>
+<ol>
+<li>Enforce minimum independent source count.</li>
+<li>Compute contradiction score across sources.</li>
+<li>Flag claims requiring manual review when contradiction threshold exceeded.</li>
+</ol>
+<h3 id="phase-c-domain-modules-23-weeks">Phase C — Domain Modules (2–3 weeks)</h3>
+<ol>
+<li>Build pluggable validators per domain.</li>
+<li>Add jurisdiction-aware legal checks where applicable.</li>
+<li>Add counterparty legitimacy checks for issuers/partners.</li>
+</ol>
+<h3 id="phase-d-decision-and-explainability-layer-1-week">Phase D — Decision and Explainability Layer (1 week)</h3>
+<ol>
+<li>Output decision class with rationale and unresolved evidence gaps.</li>
+<li>Attach confidence per dimension.</li>
+<li>Emit machine-readable gate decision for downstream planning queue.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>verification_cases</code></li>
+<li><code>verification_evidence</code></li>
+<li><code>verification_contradictions</code></li>
+<li><code>verification_decisions</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>False-positive reduction</li>
+<li>Reviewer agreement on final classes</li>
+<li>Evidence completeness by dimension</li>
+<li>Throughput at target event volume</li>
+</ul>
 
 
 

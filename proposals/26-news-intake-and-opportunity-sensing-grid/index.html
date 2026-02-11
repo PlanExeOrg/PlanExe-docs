@@ -2933,6 +2933,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-source-registry-and-ingestion-backbone-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Source Registry and Ingestion Backbone (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-classification-enrichment-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Classification + Enrichment (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-opportunity-scoring-prompt-generation-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Opportunity Scoring + Prompt Generation (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-monitoring-qa-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Monitoring + QA (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4101,6 +4184,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-source-registry-and-ingestion-backbone-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Source Registry and Ingestion Backbone (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-classification-enrichment-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Classification + Enrichment (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-opportunity-scoring-prompt-generation-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Opportunity Scoring + Prompt Generation (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-monitoring-qa-1-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Monitoring + QA (1 week)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4320,6 +4486,46 @@
 <li>Human-in-the-loop review interface.</li>
 <li>CRM and bidding workflow dispatch.</li>
 <li>Feedback loop from bid outcomes to scoring.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-source-registry-and-ingestion-backbone-23-weeks">Phase A — Source Registry and Ingestion Backbone (2–3 weeks)</h3>
+<ol>
+<li>Build source registry with trust tiers and refresh cadences.</li>
+<li>Implement ingestion adapters (RSS/API/web-scrape where allowed).</li>
+<li>Normalize raw events into <code>opportunity_event</code> schema.</li>
+</ol>
+<h3 id="phase-b-classification-enrichment-2-weeks">Phase B — Classification + Enrichment (2 weeks)</h3>
+<ol>
+<li>Classify domain, region, and project-type using hybrid rules + LLM.</li>
+<li>Enrich with estimated budget/deadline/issuer confidence signals.</li>
+<li>Deduplicate multi-source events into canonical opportunity records.</li>
+</ol>
+<h3 id="phase-c-opportunity-scoring-prompt-generation-2-weeks">Phase C — Opportunity Scoring + Prompt Generation (2 weeks)</h3>
+<ol>
+<li>Implement scoring model (urgency, bidability, strategic fit).</li>
+<li>Generate planning prompts from top opportunities.</li>
+<li>Add queue policy for daily volume and domain diversity.</li>
+</ol>
+<h3 id="phase-d-monitoring-qa-1-week">Phase D — Monitoring + QA (1 week)</h3>
+<ol>
+<li>Add source health dashboard and ingestion latency alerts.</li>
+<li>Add false-positive feedback loop from downstream verification outcomes.</li>
+<li>Add replay tooling for ingestion incidents.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>news_sources</code></li>
+<li><code>opportunity_events_raw</code></li>
+<li><code>opportunity_events_canonical</code></li>
+<li><code>opportunity_scores</code></li>
+<li><code>opportunity_prompt_queue</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Detection latency vs known announcements</li>
+<li>Dedup precision/recall</li>
+<li>Prompt conversion rate to useful plans</li>
+<li>Source reliability drift monitoring</li>
 </ul>
 
 

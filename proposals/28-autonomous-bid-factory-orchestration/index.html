@@ -2942,6 +2942,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-queue-architecture-and-throughput-controls-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Queue Architecture and Throughput Controls (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-worker-orchestration-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Worker Orchestration (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-quality-and-cost-governance-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Quality and Cost Governance (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-bid-package-assembly-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Bid Package Assembly (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3979,6 +4062,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-queue-architecture-and-throughput-controls-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Queue Architecture and Throughput Controls (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-worker-orchestration-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Worker Orchestration (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-quality-and-cost-governance-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Quality and Cost Governance (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-bid-package-assembly-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Bid Package Assembly (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4099,6 +4265,49 @@
 <li>Adaptive prioritization based on historical win rates.</li>
 <li>Dynamic scaling of worker pools.</li>
 <li>Real-time dashboard of throughput, quality, and outcomes.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-queue-architecture-and-throughput-controls-2-weeks">Phase A — Queue Architecture and Throughput Controls (2 weeks)</h3>
+<ol>
+<li>Define four queue stages:</li>
+<li>intake</li>
+<li>generation</li>
+<li>selection</li>
+<li>packaging</li>
+<li>Add quotas by domain/region and urgency tier.</li>
+<li>Add backpressure and degrade-to-sketch mode under overload.</li>
+</ol>
+<h3 id="phase-b-worker-orchestration-23-weeks">Phase B — Worker Orchestration (2–3 weeks)</h3>
+<ol>
+<li>Build worker pools with stage-specific resource classes.</li>
+<li>Add retry policies and dead-letter queues.</li>
+<li>Add SLA timers by opportunity type.</li>
+</ol>
+<h3 id="phase-c-quality-and-cost-governance-2-weeks">Phase C — Quality and Cost Governance (2 weeks)</h3>
+<ol>
+<li>Add quality gates before promotion between stages.</li>
+<li>Add per-stage cost budgets and run caps.</li>
+<li>Add escalation to deep-review only for shortlisted items.</li>
+</ol>
+<h3 id="phase-d-bid-package-assembly-2-weeks">Phase D — Bid Package Assembly (2 weeks)</h3>
+<ol>
+<li>Generate standardized bid bundle artifacts.</li>
+<li>Add package completeness checks.</li>
+<li>Add handoff integrations for submission systems.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>bid_factory_runs</code></li>
+<li><code>bid_factory_queue_items</code></li>
+<li><code>bid_quality_gates</code></li>
+<li><code>bid_packages</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Sustained plans/day throughput</li>
+<li>Cost per usable package</li>
+<li>Queue latency and starvation checks</li>
+<li>Package completeness pass rate</li>
 </ul>
 
 
