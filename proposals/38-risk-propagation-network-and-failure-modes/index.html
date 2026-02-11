@@ -3259,6 +3259,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-graph-construction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Graph Construction Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-propagation-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Propagation Simulator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-mitigation-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Mitigation Optimizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-algorithmic-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested algorithmic approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3913,6 +4007,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-graph-construction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Graph Construction Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-propagation-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Propagation Simulator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-mitigation-optimizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Mitigation Optimizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-algorithmic-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested algorithmic approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4025,6 +4213,82 @@
 <li>Automated edge discovery from historical plans.</li>
 <li>Dynamic updates as execution data arrives.</li>
 <li>Cross-project risk propagation benchmarking.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-1-graph-construction-layer">Phase 1: Graph Construction Layer</h3>
+<ol>
+<li>Define canonical node types:</li>
+<li>
+<p><code>risk_event</code>, <code>task</code>, <code>milestone</code>, <code>resource_constraint</code></p>
+</li>
+<li>
+<p>Define edge semantics:</p>
+</li>
+<li>causal amplification</li>
+<li>schedule delay transfer</li>
+<li>cost transfer</li>
+<li>
+<p>confidence score per edge</p>
+</li>
+<li>
+<p>Build graph extraction adapters from plan artifacts:</p>
+</li>
+<li>WBS + dependencies</li>
+<li>risk register</li>
+<li>finance assumptions</li>
+</ol>
+<h3 id="phase-2-propagation-simulator">Phase 2: Propagation Simulator</h3>
+<ol>
+<li>At each simulation tick:</li>
+<li>sample active risk events</li>
+<li>propagate effects along outgoing edges</li>
+<li>
+<p>update impacted task states and milestone forecasts</p>
+</li>
+<li>
+<p>Capture cascade traces:</p>
+</li>
+<li>first-trigger node</li>
+<li>propagation chain</li>
+<li>
+<p>terminal failure state</p>
+</li>
+<li>
+<p>Aggregate over 10,000 runs:</p>
+</li>
+<li>pathway frequencies</li>
+<li>expected loss per pathway</li>
+<li>median time-to-failure</li>
+</ol>
+<h3 id="phase-3-mitigation-optimizer">Phase 3: Mitigation Optimizer</h3>
+<ol>
+<li>Score intervention points by marginal risk reduction.</li>
+<li>Recommend top mitigation portfolio under budget constraints.</li>
+<li>Re-simulate with mitigations applied to show deltas.</li>
+</ol>
+<h3 id="suggested-algorithmic-approach">Suggested algorithmic approach</h3>
+<ul>
+<li>Use weighted directed graph with event queue.</li>
+<li>Compute influence centrality to prioritize mitigation.</li>
+<li>Run counterfactual analysis: remove/attenuate edge and measure probability delta.</li>
+</ul>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>risk_graph_nodes</code> (run_id, node_id, node_type, metadata)</li>
+<li><code>risk_graph_edges</code> (run_id, src, dst, edge_type, weight, lag)</li>
+<li><code>risk_cascade_paths</code> (run_id, path_json, probability, expected_loss)</li>
+</ul>
+<h3 id="integration-points_1">Integration points</h3>
+<ul>
+<li>Feed risk pathway penalties into ELO/selection ranking.</li>
+<li>Push high-risk cascade alerts into governance dashboard.</li>
+<li>Link mitigation actions back into planning artifacts.</li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Synthetic graph tests with known cascades.</li>
+<li>Stability tests for edge-weight perturbation.</li>
+<li>Human review of top-10 pathways for interpretability.</li>
 </ul>
 
 

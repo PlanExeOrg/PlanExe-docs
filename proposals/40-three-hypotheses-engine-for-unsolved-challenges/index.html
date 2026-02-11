@@ -3324,6 +3324,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-hypothesis-object-model-and-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Hypothesis object model and state machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-experiment-protocol-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Experiment protocol builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-portfolio-execution-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Portfolio execution strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-bayesian-update-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Bayesian update loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-monte-carlo-and-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Monte Carlo and planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3903,6 +3997,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-hypothesis-object-model-and-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Hypothesis object model and state machine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-experiment-protocol-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Experiment protocol builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-portfolio-execution-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Portfolio execution strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-bayesian-update-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Bayesian update loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-monte-carlo-and-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Monte Carlo and planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4016,6 +4204,78 @@
 <li><strong>Automated Literature Review:</strong> Agents that scan arXiv/Patents to suggest H1/H2/H3.</li>
 <li><strong>Bayesian Updating:</strong> Automatically update $P_{success}$ based on partial experiment results.</li>
 </ol>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-1-hypothesis-object-model-and-state-machine">Phase 1: Hypothesis object model and state machine</h3>
+<ol>
+<li>Define strict schema for each hypothesis:</li>
+<li>assumptions</li>
+<li>required experiments</li>
+<li>expected value of success</li>
+<li>
+<p>kill criteria</p>
+</li>
+<li>
+<p>Implement lifecycle state machine:</p>
+</li>
+<li>proposed</li>
+<li>approved</li>
+<li>testing</li>
+<li>validated</li>
+<li>refuted</li>
+<li>
+<p>archived</p>
+</li>
+<li>
+<p>Add immutable event log for all state transitions.</p>
+</li>
+</ol>
+<h3 id="phase-2-experiment-protocol-builder">Phase 2: Experiment protocol builder</h3>
+<p>For each hypothesis, auto-generate experiment cards:
+- objective metric
+- target threshold
+- sample size / duration
+- budget cap
+- stop-loss condition</p>
+<p>Require explicit owner and due date before launch.</p>
+<h3 id="phase-3-portfolio-execution-strategy">Phase 3: Portfolio execution strategy</h3>
+<ol>
+<li>Compute EVI for H1/H2/H3.</li>
+<li>Choose execution mode:</li>
+<li>serial if one hypothesis dominates</li>
+<li>
+<p>parallel if top two EVIs are close</p>
+</li>
+<li>
+<p>Reallocate budget dynamically when a hypothesis is refuted.</p>
+</li>
+</ol>
+<h3 id="phase-4-bayesian-update-loop">Phase 4: Bayesian update loop</h3>
+<p>After each experiment result:
+1. Update posterior success probability.
+2. Recalculate EVI and ranking.
+3. Trigger recommendation:
+- continue
+- pivot
+- terminate challenge</p>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>challenge_registry</code> (challenge_id, statement, domain, owner, status)</li>
+<li><code>hypothesis_cards</code> (challenge_id, hypothesis_id, p_success, evi, state)</li>
+<li><code>experiment_runs</code> (hypothesis_id, metrics_json, pass_fail, cost)</li>
+<li><code>decision_log</code> (challenge_id, decision, rationale, timestamp)</li>
+</ul>
+<h3 id="integration-with-monte-carlo-and-planning">Integration with Monte Carlo and planning</h3>
+<ul>
+<li>Inject hypothesis success distributions into Monte Carlo plan simulations.</li>
+<li>Update plan success probability after each experiment cycle.</li>
+<li>Surface “research readiness” score in bid/no-bid outputs.</li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Time-to-first-validated-hypothesis trend.</li>
+<li>Reduction in dead-end R&amp;D spend.</li>
+<li>Post-hoc accuracy of EVI-based prioritization.</li>
+</ul>
 
 
 

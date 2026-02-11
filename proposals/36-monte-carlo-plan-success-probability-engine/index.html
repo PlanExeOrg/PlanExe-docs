@@ -3229,6 +3229,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-simulation-foundation-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Simulation Foundation (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-pipeline-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Pipeline Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-calibration-reliability-24-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Calibration + Reliability (2–4 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-and-api-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data and API contracts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational safeguards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3993,6 +4076,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-simulation-foundation-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Simulation Foundation (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-pipeline-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Pipeline Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-calibration-reliability-24-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Calibration + Reliability (2–4 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-and-api-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data and API contracts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational safeguards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4105,6 +4271,91 @@ Get the distribution data.
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;success_prob_deadline&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.42</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="mi">42</span><span class="err">%</span><span class="w"> </span><span class="err">cha</span><span class="kc">n</span><span class="err">ce</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">hi</span><span class="kc">t</span><span class="w"> </span><span class="err">deadli</span><span class="kc">ne</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
 </code></pre></div></p>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-1-simulation-foundation-23-weeks">Phase 1: Simulation Foundation (2–3 weeks)</h3>
+<ol>
+<li>Define normalized simulation input contract:</li>
+<li>task duration distributions (optimistic/most likely/pessimistic)</li>
+<li>cost uncertainty distributions per CBS line item</li>
+<li>
+<p>risk event probabilities and impact models</p>
+</li>
+<li>
+<p>Build Monte Carlo core package:</p>
+</li>
+<li>deterministic seed support for reproducibility</li>
+<li>vectorized simulation runner (NumPy/JAX-compatible)</li>
+<li>
+<p>scenario persistence for post-run diagnostics</p>
+</li>
+<li>
+<p>Add baseline output artifacts:</p>
+</li>
+<li>percentile summaries (P10/P50/P90)</li>
+<li>success probability against target date/cost</li>
+<li>critical-path frequency map</li>
+</ol>
+<h3 id="phase-2-pipeline-integration-2-weeks">Phase 2: Pipeline Integration (2 weeks)</h3>
+<ol>
+<li>Add a post-planning stage in <code>run_plan_pipeline.py</code>:</li>
+<li><code>simulate_plan_success</code></li>
+<li>
+<p>consumes WBS, CBS, risk register</p>
+</li>
+<li>
+<p>Persist results in structured storage:</p>
+</li>
+<li>run-level summary table</li>
+<li>
+<p>optional per-iteration table for top-N scenario replay</p>
+</li>
+<li>
+<p>Expose API and report sections:</p>
+</li>
+<li><code>/api/simulate/plan/{id}</code> trigger endpoint</li>
+<li><code>/api/simulate/results/{id}</code> retrieval endpoint</li>
+<li>markdown report block in generated plan output</li>
+</ol>
+<h3 id="phase-3-calibration-reliability-24-weeks">Phase 3: Calibration + Reliability (2–4 weeks)</h3>
+<ol>
+<li>Backtest against historical completed projects.</li>
+<li>Calibrate distribution parameters by domain.</li>
+<li>Add quality gates:</li>
+<li>minimum input completeness threshold</li>
+<li>
+<p>confidence labels (high/medium/low) by data quality</p>
+</li>
+<li>
+<p>Add drift detection:</p>
+</li>
+<li>trigger re-sim when assumptions or benchmark inputs change.</li>
+</ol>
+<h3 id="data-and-api-contracts">Data and API contracts</h3>
+<p>Suggested summary payload extension:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;simulation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;iterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;success_probability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.42</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&quot;schedule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;p10&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-06-01&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;p50&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-07-15&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;p90&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-09-01&quot;</span><span class="p">},</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&quot;cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;p10&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1200000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;p50&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1500000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;p90&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2100000</span><span class="p">},</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&quot;top_drivers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;foundation_work&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;steel_supply&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;permit_delay&quot;</span><span class="p">]</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="operational-safeguards">Operational safeguards</h3>
+<ul>
+<li>Hard cap on iterations for interactive usage.</li>
+<li>Queue long simulations asynchronously.</li>
+<li>Cache deterministic runs by <code>(plan_hash, assumptions_hash, seed)</code>.</li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Unit tests for distribution samplers.</li>
+<li>Statistical sanity tests (mean/variance bounds).</li>
+<li>Integration tests for API + report rendering.</li>
+<li>Backtest acceptance criteria per domain.</li>
+</ul>
 
 
 

@@ -3246,6 +3246,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-cashflow-model-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Cashflow Model Assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-stress-simulation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Stress Simulation Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-decision-layer-policy-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Decision Layer + Policy Hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uxreporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UX/reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3957,6 +4040,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-cashflow-model-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Cashflow Model Assembly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-stress-simulation-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Stress Simulation Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-decision-layer-policy-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Decision Layer + Policy Hooks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uxreporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UX/reporting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4067,6 +4233,77 @@
 <li>Scenario-specific macro stress models.</li>
 <li>Automated FX hedging analysis.</li>
 <li>Live cashflow tracking during execution.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-1-cashflow-model-assembly">Phase 1: Cashflow Model Assembly</h3>
+<ol>
+<li>Build canonical cashflow timeline object:</li>
+<li>period granularity (weekly/monthly)</li>
+<li>inflow schedule with uncertainty bands</li>
+<li>
+<p>outflow schedule from CBS and staffing plans</p>
+</li>
+<li>
+<p>Add uncertainty injectors:</p>
+</li>
+<li>receivable delay distributions</li>
+<li>procurement inflation shocks</li>
+<li>FX movement models for multi-currency projects</li>
+<li>
+<p>drawdown timing constraints for debt/grants</p>
+</li>
+<li>
+<p>Define insolvency rules:</p>
+</li>
+<li>threshold crossing (<code>cash_balance &lt; 0</code>)</li>
+<li>sustained shortfall windows (<code>n</code> periods below minimum buffer)</li>
+</ol>
+<h3 id="phase-2-stress-simulation-engine">Phase 2: Stress Simulation Engine</h3>
+<ol>
+<li>Run 10,000 stochastic scenarios with deterministic seed option.</li>
+<li>Compute key outputs:</li>
+<li>probability of negative cash by period</li>
+<li>minimum viable reserve buffer</li>
+<li>
+<p>required funding bridge amount and timing</p>
+</li>
+<li>
+<p>Tag scenario archetypes:</p>
+</li>
+<li>delay-driven insolvency</li>
+<li>inflation-driven insolvency</li>
+<li>FX-driven insolvency</li>
+</ol>
+<h3 id="phase-3-decision-layer-policy-hooks">Phase 3: Decision Layer + Policy Hooks</h3>
+<ol>
+<li>Add policy thresholds configurable by domain/risk appetite.</li>
+<li>Emit recommendations automatically:</li>
+<li>resequence payment milestones</li>
+<li>increase contingency reserve</li>
+<li>
+<p>add backup credit facility</p>
+</li>
+<li>
+<p>Integrate with bid/no-bid gate:</p>
+</li>
+<li>block escalation if liquidity failure probability exceeds limit.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>cashflow_scenarios</code> (run_id, period, inflow, outflow, balance, scenario_id)</li>
+<li><code>cashflow_risk_summary</code> (run_id, p_negative_cash, min_buffer, worst_gap)</li>
+<li><code>funding_actions</code> (run_id, action_type, expected_impact)</li>
+</ul>
+<h3 id="uxreporting">UX/reporting</h3>
+<p>Add a dedicated report section:
+- cash-at-risk curve
+- highest-risk periods
+- mitigation playbook with expected probability reduction</p>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Reconcile baseline simulation with deterministic cashflow model.</li>
+<li>Verify multi-currency translation consistency.</li>
+<li>Backtest against historical liquidity incidents where available.</li>
 </ul>
 
 
