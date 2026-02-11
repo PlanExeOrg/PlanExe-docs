@@ -3193,6 +3193,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-execution-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Execution Strategy)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Execution Strategy)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-strategy-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduling Strategy Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-path-compression-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Path Compression Playbook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpi-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4201,6 +4262,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-execution-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Execution Strategy)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Execution Strategy)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scheduling-strategy-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduling Strategy Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-path-compression-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Path Compression Playbook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpi-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4402,6 +4524,34 @@
 <li>Regression tests on common project patterns</li>
 <li>Stress tests for 1k+ task plans</li>
 <li>User acceptance tests on readability of baseline vs accelerated outputs</li>
+</ul>
+<h2 id="detailed-implementation-plan-execution-strategy">Detailed Implementation Plan (Execution Strategy)</h2>
+<h3 id="scheduling-strategy-modes">Scheduling Strategy Modes</h3>
+<ul>
+<li><code>conservative</code>: minimal overlap, low rework risk</li>
+<li><code>balanced</code>: moderate overlap, default mode</li>
+<li><code>aggressive</code>: max overlap with explicit risk acceptance</li>
+</ul>
+<h3 id="critical-path-compression-playbook">Critical Path Compression Playbook</h3>
+<ol>
+<li>Detect top 3 blockers by criticality impact.</li>
+<li>Apply split/overlap operators.</li>
+<li>Recompute with resource constraints.</li>
+<li>Accept plan only if risk-adjusted gain remains positive.</li>
+</ol>
+<h3 id="governance">Governance</h3>
+<ul>
+<li>Require human approval when aggressive mode exceeds rework threshold.</li>
+<li>Log all schedule transformations for audit.</li>
+</ul>
+<h3 id="kpi-targets">KPI Targets</h3>
+<ul>
+<li>
+<blockquote>
+<p>=15% median duration reduction in balanced mode</p>
+</blockquote>
+</li>
+<li>&lt;=10% increase in predicted rework cost</li>
 </ul>
 
 

@@ -3353,6 +3353,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-graph-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Graph Operations)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Graph Operations)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-build-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Build Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation-planner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigation Planner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4101,6 +4162,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-graph-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Graph Operations)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Graph Operations)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph-build-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Build Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mitigation-planner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mitigation Planner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4289,6 +4411,27 @@
 <li>Synthetic graph tests with known cascades.</li>
 <li>Stability tests for edge-weight perturbation.</li>
 <li>Human review of top-10 pathways for interpretability.</li>
+</ul>
+<h2 id="detailed-implementation-plan-graph-operations">Detailed Implementation Plan (Graph Operations)</h2>
+<h3 id="graph-build-pipeline">Graph Build Pipeline</h3>
+<ol>
+<li>Extract nodes from tasks, risks, resources.</li>
+<li>Infer edges from dependencies and causal templates.</li>
+<li>Score edge confidence and impact weight.</li>
+</ol>
+<h3 id="runtime">Runtime</h3>
+<ul>
+<li>Run cascade simulation alongside baseline Monte Carlo.</li>
+<li>Persist top failure chains and intervention candidates.</li>
+</ul>
+<h3 id="mitigation-planner">Mitigation Planner</h3>
+<ul>
+<li>Compute marginal risk reduction for each intervention.</li>
+<li>Recommend portfolio under mitigation budget constraint.</li>
+</ul>
+<h3 id="governance">Governance</h3>
+<ul>
+<li>Require review for interventions with high operational disruption.</li>
 </ul>
 
 

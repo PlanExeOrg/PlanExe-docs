@@ -3303,6 +3303,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-convergence-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Convergence Operations)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Convergence Operations)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convergence-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Prioritization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signoff-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signoff Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4211,6 +4272,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-convergence-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Convergence Operations)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Convergence Operations)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#convergence-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convergence Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Prioritization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signoff-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signoff Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4420,6 +4542,29 @@
 <li>Reproducibility under fixed assumptions</li>
 <li>Reviewer confidence uplift after reconciliation</li>
 <li>Reduced forecast error on executed projects</li>
+</ul>
+<h2 id="detailed-implementation-plan-convergence-operations">Detailed Implementation Plan (Convergence Operations)</h2>
+<h3 id="convergence-workflow">Convergence Workflow</h3>
+<ol>
+<li>Generate bottom-up ledger from WBS/CBS.</li>
+<li>Pull top-down baseline from proposal 34 module.</li>
+<li>Compute variance by category and timeline bucket.</li>
+<li>Trigger correction cycle until convergence status reaches green/yellow threshold.</li>
+</ol>
+<h3 id="action-prioritization">Action Prioritization</h3>
+<ul>
+<li>Rank correction actions by expected variance reduction per effort unit.</li>
+<li>Recommend max 5 actions per cycle to avoid analysis overload.</li>
+</ul>
+<h3 id="signoff-policy">Signoff Policy</h3>
+<ul>
+<li>Red variance blocks investor-ready status.</li>
+<li>Yellow requires explicit financial waiver.</li>
+<li>Green auto-advances to packaging phase.</li>
+</ul>
+<h3 id="learning-loop">Learning Loop</h3>
+<ul>
+<li>Persist convergence trajectories to improve future default assumptions.</li>
 </ul>
 
 

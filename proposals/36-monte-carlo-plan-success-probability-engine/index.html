@@ -3312,6 +3312,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-compute-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Compute + Reliability)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Compute + Reliability)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compute-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compute Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliability-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliability Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explainability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLOs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4159,6 +4220,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-compute-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Compute + Reliability)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Compute + Reliability)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compute-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compute Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliability-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliability Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explainability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explainability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLOs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4355,6 +4477,29 @@ Get the distribution data.
 <li>Statistical sanity tests (mean/variance bounds).</li>
 <li>Integration tests for API + report rendering.</li>
 <li>Backtest acceptance criteria per domain.</li>
+</ul>
+<h2 id="detailed-implementation-plan-compute-reliability">Detailed Implementation Plan (Compute + Reliability)</h2>
+<h3 id="compute-strategy">Compute Strategy</h3>
+<ul>
+<li>Interactive mode: 1,000 runs for quick feedback</li>
+<li>Batch mode: 10,000+ runs for decision-grade outputs</li>
+<li>Queue heavy runs with cancellation support</li>
+</ul>
+<h3 id="reliability-controls">Reliability Controls</h3>
+<ul>
+<li>Seeded reproducibility for audit</li>
+<li>Input validation for distribution parameter sanity</li>
+<li>Guardrails against invalid dependency graphs</li>
+</ul>
+<h3 id="explainability">Explainability</h3>
+<ul>
+<li>Output top driver contributions per percentile shift</li>
+<li>Include “what changed this outcome” narrative snippets</li>
+</ul>
+<h3 id="slos">SLOs</h3>
+<ul>
+<li>P95 interactive response &lt; 8s (1k runs)</li>
+<li>Batch completion &lt; 2 min for standard plan size</li>
 </ul>
 
 

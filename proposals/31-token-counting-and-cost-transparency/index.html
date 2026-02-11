@@ -3119,6 +3119,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-operational-rollout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Operational Rollout)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Operational Rollout)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-reconciliation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Reconciliation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ownership-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ownership Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4123,6 +4184,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-operational-rollout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Operational Rollout)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Operational Rollout)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-reconciliation-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Reconciliation Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ownership-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ownership Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4313,6 +4435,28 @@
 <li>Golden tests with canned raw provider responses</li>
 <li>Billing reconciliation tests against provider invoices</li>
 <li>Backfill script for historical runs where data exists</li>
+</ul>
+<h2 id="detailed-implementation-plan-operational-rollout">Detailed Implementation Plan (Operational Rollout)</h2>
+<h3 id="deployment-path">Deployment Path</h3>
+<ol>
+<li>Ship instrumentation behind <code>TOKEN_ACCOUNTING_ENABLED</code> feature flag.</li>
+<li>Enable in staging first; reconcile with provider dashboards for 1 week.</li>
+<li>Roll out to production with alerting on missing usage payloads.</li>
+</ol>
+<h3 id="cost-reconciliation-workflow">Cost Reconciliation Workflow</h3>
+<ul>
+<li>Daily batch compares internal aggregated cost to provider invoice API.</li>
+<li>If variance &gt;2%, emit finance alert and lock optimization recommendations until corrected.</li>
+</ul>
+<h3 id="observability">Observability</h3>
+<ul>
+<li>Metrics: <code>token_usage_capture_rate</code>, <code>usage_parse_failures</code>, <code>cost_variance_pct</code>.</li>
+<li>Dashboards by provider/model/stage.</li>
+</ul>
+<h3 id="ownership-model">Ownership Model</h3>
+<ul>
+<li>Platform team owns parser + pricing catalog.</li>
+<li>Product team owns user-facing reports and budget controls.</li>
 </ul>
 
 

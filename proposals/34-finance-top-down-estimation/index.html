@@ -3268,6 +3268,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-model-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Model Governance)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Model Governance)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmark Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimation-safety-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estimation Safety Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration KPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4211,6 +4272,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-model-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Model Governance)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Model Governance)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benchmark-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmark Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estimation-safety-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estimation Safety Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calibration-kpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calibration KPI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4424,6 +4546,29 @@
 <li>Stability across reruns with same inputs</li>
 <li>Human reviewer agreement on plausibility</li>
 <li>Delta to bottom-up within target tolerance bands</li>
+</ul>
+<h2 id="detailed-implementation-plan-model-governance">Detailed Implementation Plan (Model Governance)</h2>
+<h3 id="benchmark-lifecycle">Benchmark Lifecycle</h3>
+<ol>
+<li>Ingest benchmark sources weekly.</li>
+<li>Version benchmark snapshots.</li>
+<li>Track drift in benchmark medians and ranges.</li>
+</ol>
+<h3 id="estimation-safety-rules">Estimation Safety Rules</h3>
+<ul>
+<li>Always emit ranges (never single-point only).</li>
+<li>Down-rank confidence when source freshness exceeds SLA.</li>
+<li>Flag plans with assumptions outside benchmark confidence intervals.</li>
+</ul>
+<h3 id="review-loop">Review Loop</h3>
+<ul>
+<li>Finance reviewer can override assumptions with justification.</li>
+<li>Overrides are logged and fed into calibration analytics.</li>
+</ul>
+<h3 id="calibration-kpi">Calibration KPI</h3>
+<ul>
+<li>Mean absolute percentage error vs realized outcomes</li>
+<li>Target: trend down quarter-over-quarter</li>
 </ul>
 
 

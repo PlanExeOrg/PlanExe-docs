@@ -3233,6 +3233,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-finance-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Finance Integration)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Finance Integration)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain-template-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain Template Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4211,6 +4272,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan-finance-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan (Finance Integration)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan (Finance Integration)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#domain-template-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain Template Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4439,6 +4561,29 @@
 <li>Consistency: repeated runs produce stable mappings</li>
 <li>Auditability: every line has source + assumption</li>
 <li>Usability: finance users can edit/approve CBS quickly</li>
+</ul>
+<h2 id="detailed-implementation-plan-finance-integration">Detailed Implementation Plan (Finance Integration)</h2>
+<h3 id="domain-template-strategy">Domain Template Strategy</h3>
+<ul>
+<li>Start with 5 templates: software, infra, manufacturing, nonprofit, public sector.</li>
+<li>Fallback to generic taxonomy when domain confidence &lt; threshold.</li>
+</ul>
+<h3 id="editing-workflow">Editing Workflow</h3>
+<ol>
+<li>Auto-generate CBS draft.</li>
+<li>User reviews low-confidence lines first.</li>
+<li>Finance reviewer signs off final CBS baseline.</li>
+</ol>
+<h3 id="change-control">Change Control</h3>
+<ul>
+<li>Every CBS edit creates a diff record with rationale.</li>
+<li>Lock finalized CBS version for downstream reconciliation.</li>
+</ul>
+<h3 id="export-targets">Export Targets</h3>
+<ul>
+<li>CSV for analysts</li>
+<li>XLSX for procurement/accounting</li>
+<li>JSON for API consumers</li>
 </ul>
 
 
