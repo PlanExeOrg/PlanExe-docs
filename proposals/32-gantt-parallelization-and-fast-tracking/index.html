@@ -2995,6 +2995,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resource-capacity-assessment-user-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Capacity Assessment (User Interaction)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Capacity Assessment (User Interaction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We Need To Ask
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-prompt-snippet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Prompt Snippet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-from-the-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output From The Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#success-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3255,6 +3316,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resource-capacity-assessment-user-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Capacity Assessment (User Interaction)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource Capacity Assessment (User Interaction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-need-to-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What We Need To Ask
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-prompt-snippet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Prompt Snippet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-from-the-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output From The Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#success-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3348,6 +3470,48 @@
 <p>For non-critical tasks, pack into parallel lanes by resource class</p>
 </li>
 </ul>
+<h2 id="resource-capacity-assessment-user-interaction">Resource Capacity Assessment (User Interaction)</h2>
+<p>Parallelization is only credible if the planner understands the team’s real capacity. This requires a structured interaction with the user who created the plan to capture resource limits and constraints before the fast-track schedule is produced.</p>
+<h3 id="what-we-need-to-ask">What We Need To Ask</h3>
+<p>Collect a minimal, structured resource profile:</p>
+<ul>
+<li><strong>Team size by role:</strong> engineering, design, ops, compliance, procurement, field staff.</li>
+<li><strong>Availability windows:</strong> hours/week and key blackout periods.</li>
+<li><strong>Critical shared resources:</strong> single points of failure (e.g., one QA lead).</li>
+<li><strong>Budget limits:</strong> ability to hire contractors or add shifts.</li>
+<li><strong>Coordination overhead tolerance:</strong> willingness to accept rework risk.</li>
+<li><strong>Dependencies on external parties:</strong> vendors, regulators, partners.</li>
+</ul>
+<h3 id="interaction-flow">Interaction Flow</h3>
+<ol>
+<li><strong>Present the baseline schedule</strong> and highlight critical path constraints.</li>
+<li><strong>Ask targeted capacity questions</strong> only for roles on the critical path.</li>
+<li><strong>Quantify parallelization headroom</strong> (e.g., “We can run 2 work packs in parallel for engineering, but only 1 for compliance”).</li>
+<li><strong>Confirm trade-offs</strong> (speed vs rework vs cost).</li>
+<li><strong>Lock a capacity profile</strong> that drives the fast-track algorithm.</li>
+</ol>
+<h3 id="example-prompt-snippet">Example Prompt Snippet</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>We can shorten the schedule by parallelizing tasks. Please confirm:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- Engineering capacity: __ people, __ hrs/week
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- Design capacity: __ people, __ hrs/week
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- Compliance/legal capacity: __ people, __ hrs/week
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- Are you willing to add contractors to speed up? (yes/no)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>- Max acceptable rework risk: low/medium/high
+</code></pre></div>
+<h3 id="output-from-the-assessment">Output From The Assessment</h3>
+<p>The system should produce a normalized resource profile, for example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;engineering&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;fte&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;hours_per_week&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">},</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;design&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;fte&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;hours_per_week&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40</span><span class="p">},</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;compliance&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;fte&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;hours_per_week&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;contractor_budget&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;rework_risk_tolerance&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;external_dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;regulator_review&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;vendor_lead_time&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+</code></pre></div>
+<p>This assessment becomes the constraint set for the parallelization algorithm and is referenced in the final Gantt output.</p>
 <h2 id="success-metrics">Success metrics</h2>
 <ul>
 <li>
