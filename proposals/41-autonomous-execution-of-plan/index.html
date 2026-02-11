@@ -3797,6 +3797,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-execution-core-34-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Execution Core (3–4 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-capability-and-assignment-layer-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Capability and Assignment Layer (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-validation-governance-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Validation + Governance (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-adaptive-re-planning-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Adaptive Re-Planning (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-additions-suggested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API additions (suggested)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollout-safety-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollout safety controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4779,6 +4884,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-execution-core-34-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Execution Core (3–4 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-capability-and-assignment-layer-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Capability and Assignment Layer (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-validation-governance-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Validation + Governance (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-adaptive-re-planning-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Adaptive Re-Planning (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-additions-suggested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API additions (suggested)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollout-safety-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollout safety controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5119,6 +5329,114 @@
 <li>Adaptive re-planning and reporting.</li>
 <li>Pilot on a real plan with human oversight.</li>
 </ol>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-execution-core-34-weeks">Phase A — Execution Core (3–4 weeks)</h3>
+<ol>
+<li>Build canonical execution graph model in code:</li>
+<li>task node</li>
+<li>dependency edge</li>
+<li>execution state machine</li>
+<li>
+<p>risk class and verification requirements</p>
+</li>
+<li>
+<p>Implement orchestrator service with deterministic scheduling:</p>
+</li>
+<li>queueing</li>
+<li>dependency resolution</li>
+<li>retries</li>
+<li>
+<p>timeout + cancellation semantics</p>
+</li>
+<li>
+<p>Add durable event stream:</p>
+</li>
+<li>all state transitions append-only</li>
+<li>idempotent event handlers</li>
+</ol>
+<h3 id="phase-b-capability-and-assignment-layer-23-weeks">Phase B — Capability and Assignment Layer (2–3 weeks)</h3>
+<ol>
+<li>Define capability contract schema for agents/humans:</li>
+<li>capability id</li>
+<li>confidence profile</li>
+<li>availability window</li>
+<li>
+<p>trust tier</p>
+</li>
+<li>
+<p>Implement assignment policy engine:</p>
+</li>
+<li>AI-first for low-risk tasks</li>
+<li>human-first for legal/regulatory/irreversible actions</li>
+<li>
+<p>hybrid path for AI-prep + human decision</p>
+</li>
+<li>
+<p>Add capacity-aware scoring:</p>
+</li>
+<li>minimize queue aging</li>
+<li>avoid overloading constrained human roles</li>
+</ol>
+<h3 id="phase-c-validation-governance-2-weeks">Phase C — Validation + Governance (2 weeks)</h3>
+<ol>
+<li>Add evidence validator gate before task completion.</li>
+<li>Add policy gate before high-impact task execution.</li>
+<li>Implement emergency kill-switch + rollback to last stable milestone snapshot.</li>
+</ol>
+<h3 id="phase-d-adaptive-re-planning-23-weeks">Phase D — Adaptive Re-Planning (2–3 weeks)</h3>
+<ol>
+<li>Detect deviation triggers:</li>
+<li>cost/schedule threshold breach</li>
+<li>failed dependencies</li>
+<li>
+<p>assumption drift from external signals</p>
+</li>
+<li>
+<p>Re-plan workflow:</p>
+</li>
+<li>clone active graph state</li>
+<li>regenerate local schedule around affected subgraph</li>
+<li>
+<p>preserve completed task evidence and audit lineage</p>
+</li>
+<li>
+<p>Publish delta artifacts:</p>
+</li>
+<li>baseline vs current timeline</li>
+<li>budget delta</li>
+<li>decision rationale log</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>execution_tasks</code></li>
+<li><code>execution_events</code></li>
+<li><code>assignment_decisions</code></li>
+<li><code>policy_gate_results</code></li>
+<li><code>replan_snapshots</code></li>
+</ul>
+<p>All tables should be indexed by <code>plan_id</code>, <code>run_id</code>, and <code>task_id</code> for audit and replay.</p>
+<h3 id="api-additions-suggested">API additions (suggested)</h3>
+<ul>
+<li><code>POST /api/execution/start/{plan_id}</code></li>
+<li><code>GET /api/execution/status/{run_id}</code></li>
+<li><code>POST /api/execution/replan/{run_id}</code></li>
+<li><code>POST /api/execution/stop/{run_id}</code></li>
+</ul>
+<h3 id="rollout-safety-controls">Rollout safety controls</h3>
+<ul>
+<li>Start with “coordination-only mode” (humans execute all tasks)</li>
+<li>Enable autonomous execution for Tier 1 tasks only</li>
+<li>Require opt-in per workspace for Tier 2</li>
+<li>Keep Tier 3 permanently human-led unless explicit governance override</li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Event consistency under retries/restarts</li>
+<li>Correct dependency execution ordering</li>
+<li>No policy-gated task executes without approval</li>
+<li>Rollback replay determinism</li>
+<li>Human handoff SLA conformance</li>
+</ul>
 
 
 

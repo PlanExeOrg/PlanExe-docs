@@ -3483,6 +3483,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-claims-pipeline-foundation-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Claims Pipeline Foundation (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-evidence-ingestion-scoring-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Evidence Ingestion + Scoring (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-ledger-integrity-audit-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Ledger Integrity + Audit (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-product-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Product Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-quality-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested quality thresholds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model hardening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational safeguards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4081,6 +4186,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-claims-pipeline-foundation-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Claims Pipeline Foundation (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-evidence-ingestion-scoring-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Evidence Ingestion + Scoring (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-ledger-integrity-audit-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Ledger Integrity + Audit (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-product-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Product Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-quality-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested quality thresholds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model hardening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational safeguards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4348,6 +4558,89 @@
 <li><strong>Automated Crawler:</strong> Agent that periodically re-checks URLs for 404s or content changes.</li>
 <li><strong>Citation Graph:</strong> Visualize how one piece of evidence supports multiple claims across different plans (e.g., a shared market report).</li>
 </ol>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-claims-pipeline-foundation-23-weeks">Phase A — Claims Pipeline Foundation (2–3 weeks)</h3>
+<ol>
+<li>Add section-aware parser for plan markdown/JSON artifacts.</li>
+<li>Implement claim extraction with stable claim IDs:</li>
+<li>hash = normalized claim text + location_ref + plan_version</li>
+<li>Create confidence classifier for extracted claims:</li>
+<li>factual numeric</li>
+<li>factual non-numeric</li>
+<li>normative/opinion (excluded from strict ledger)</li>
+</ol>
+<h3 id="phase-b-evidence-ingestion-scoring-23-weeks">Phase B — Evidence Ingestion + Scoring (2–3 weeks)</h3>
+<ol>
+<li>Build evidence adapters:</li>
+<li>URL fetch + snapshot hash</li>
+<li>document upload + OCR extraction</li>
+<li>
+<p>structured source connectors (registry/DB)</p>
+</li>
+<li>
+<p>Implement verification-level scoring policy:</p>
+</li>
+<li>Level 1: weak/secondary</li>
+<li>Level 2: credible but indirect</li>
+<li>
+<p>Level 3: primary authoritative evidence</p>
+</li>
+<li>
+<p>Introduce freshness profile by evidence type with default half-life values.</p>
+</li>
+</ol>
+<h3 id="phase-c-ledger-integrity-audit-2-weeks">Phase C — Ledger Integrity + Audit (2 weeks)</h3>
+<ol>
+<li>Append-only <code>ledger_entries</code> with immutable versioning.</li>
+<li>Add digital signature of report bundle and ledger digest.</li>
+<li>Implement dispute flow:</li>
+<li>mark <code>disputed</code></li>
+<li>assign reviewer</li>
+<li>record resolution actions</li>
+</ol>
+<h3 id="phase-d-product-integration-2-weeks">Phase D — Product Integration (2 weeks)</h3>
+<ol>
+<li>Add inline plan UI badges per claim:</li>
+<li>verified / stale / missing / disputed</li>
+<li>Add investor audit export endpoint:</li>
+<li>summary + full trace tables + signatures</li>
+<li>Add policy gate:</li>
+<li>block “investor-ready” status if verification coverage below threshold</li>
+</ol>
+<h3 id="suggested-quality-thresholds">Suggested quality thresholds</h3>
+<ul>
+<li>
+<blockquote>
+<p>=80% claims must have evidence link</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>=60% claims must be Level 2+</p>
+</blockquote>
+</li>
+<li>0 critical claims in <code>missing</code> or <code>disputed</code> state</li>
+</ul>
+<h3 id="data-model-hardening">Data model hardening</h3>
+<ul>
+<li>Add <code>plan_version</code> to claims and ledger rows</li>
+<li>Add <code>source_fetch_status</code> and <code>source_http_code</code></li>
+<li>Add <code>evidence_expiry_at</code> for freshness checks</li>
+</ul>
+<h3 id="operational-safeguards">Operational safeguards</h3>
+<ul>
+<li>Cache source snapshots to avoid link rot dependence</li>
+<li>Rate-limit external crawlers</li>
+<li>PII redaction on uploaded documents before indexing</li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Claim extraction precision/recall benchmarks</li>
+<li>Deterministic claim IDs across reruns</li>
+<li>Tamper detection test via signature mismatch</li>
+<li>Freshness state transition tests</li>
+<li>Audit export completeness checks</li>
+</ul>
 
 
 

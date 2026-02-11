@@ -3518,6 +3518,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-assumption-registry-normalization-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Assumption Registry Normalization (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-data-connector-layer-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Data Connector Layer (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-drift-detection-alerting-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Drift Detection + Alerting (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-re-planning-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Re-Planning Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4081,6 +4175,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-assumption-registry-normalization-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Assumption Registry Normalization (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-data-connector-layer-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Data Connector Layer (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-drift-detection-alerting-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Drift Detection + Alerting (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-re-planning-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Re-Planning Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4326,6 +4514,95 @@ If <code>steel_price</code> is up 4% (Green) AND <code>labor_rate</code> is up 4
 <li><strong>Predictive Drift:</strong> Use ML time-series forecasting (Prophet/Arima) to alert <em>before</em> the breach happens.</li>
 <li><strong>News Sentiment:</strong> Ingest news articles to detect "Qualitative Drift" (e.g., "Political instability in supplier region").</li>
 </ol>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-assumption-registry-normalization-2-weeks">Phase A — Assumption Registry Normalization (2 weeks)</h3>
+<ol>
+<li>Parse plan artifacts to extract assumptions into typed schema:</li>
+<li>financial</li>
+<li>schedule</li>
+<li>supply/procurement</li>
+<li>regulatory</li>
+<li>
+<p>operational capacity</p>
+</li>
+<li>
+<p>Require each assumption to define:</p>
+</li>
+<li>baseline value</li>
+<li>tolerance band</li>
+<li>data source mapping</li>
+<li>
+<p>sensitivity factor</p>
+</li>
+<li>
+<p>Add assumption ownership metadata for accountability.</p>
+</li>
+</ol>
+<h3 id="phase-b-data-connector-layer-23-weeks">Phase B — Data Connector Layer (2–3 weeks)</h3>
+<ol>
+<li>Implement connector framework with retry/backoff and health checks.</li>
+<li>Build initial connectors for:</li>
+<li>FX and rates</li>
+<li>commodity prices</li>
+<li>inflation benchmarks</li>
+<li>
+<p>internal project telemetry</p>
+</li>
+<li>
+<p>Persist raw observations and normalized values separately.</p>
+</li>
+</ol>
+<h3 id="phase-c-drift-detection-alerting-2-weeks">Phase C — Drift Detection + Alerting (2 weeks)</h3>
+<ol>
+<li>Compute per-assumption drift:</li>
+<li>absolute drift</li>
+<li>percent drift</li>
+<li>
+<p>trend slope over configurable window</p>
+</li>
+<li>
+<p>Add composite drift index weighted by sensitivity.</p>
+</li>
+<li>Implement escalation policy:</li>
+<li>green/yellow/red</li>
+<li>notification channels</li>
+<li>required action SLA by severity</li>
+</ol>
+<h3 id="phase-d-re-planning-integration-2-weeks">Phase D — Re-Planning Integration (2 weeks)</h3>
+<ol>
+<li>On critical drift breach, trigger re-plan suggestion packet.</li>
+<li>Provide impact estimate:</li>
+<li>expected schedule delta</li>
+<li>expected budget delta</li>
+<li>
+<p>confidence interval</p>
+</li>
+<li>
+<p>Optional auto-replan in simulation mode for preview before approval.</p>
+</li>
+</ol>
+<h3 id="data-model-extensions">Data model extensions</h3>
+<ul>
+<li><code>assumption_sources</code></li>
+<li><code>assumption_observations</code></li>
+<li><code>drift_alerts</code></li>
+<li><code>drift_actions</code></li>
+</ul>
+<p>Include <code>observed_at</code>, <code>ingested_at</code>, and <code>source_latency_ms</code> for diagnostics.</p>
+<h3 id="governance-controls">Governance controls</h3>
+<ul>
+<li>Manual waiver support with expiration date</li>
+<li>Audit trail for waived critical alerts</li>
+<li>Mandatory signoff on persistent red alerts</li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Drift accuracy on synthetic datasets with known shifts</li>
+<li>Connector reliability under API outages</li>
+<li>Alert precision (avoid noisy false positives)</li>
+<li>Correct policy escalation routing</li>
+<li>Replan trigger correctness and reproducibility</li>
+</ul>
 
 
 
