@@ -3014,6 +3014,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instrumentation-in-llmpy-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Instrumentation in llm.py (source of truth)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-token-schema-and-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Token schema and persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cost-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Cost engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-apireport-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) API/report integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-structured-output-handling-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Structured output handling rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-reliability-and-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Reliability and edge cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-rollout-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) Rollout phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3913,6 +4018,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-instrumentation-in-llmpy-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Instrumentation in llm.py (source of truth)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-token-schema-and-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Token schema and persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cost-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Cost engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-apireport-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) API/report integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-structured-output-handling-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Structured output handling rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-reliability-and-edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Reliability and edge cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-rollout-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) Rollout phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4014,6 +4224,95 @@
 <li>Per-user or per-team cost budgeting.</li>
 <li>Predictive cost estimation before plan generation.</li>
 <li>Multi-currency cost reporting.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="1-instrumentation-in-llmpy-source-of-truth">1) Instrumentation in <code>llm.py</code> (source of truth)</h3>
+<p>Implement a provider-normalization layer around every outbound model call:</p>
+<ol>
+<li>Capture request metadata before call:</li>
+<li><code>run_id</code>, <code>stage</code>, <code>provider</code>, <code>model</code>, <code>prompt_variant</code>, <code>started_at</code></li>
+<li>Execute provider call unchanged.</li>
+<li>Read <strong>raw provider response</strong> and parse usage fields:</li>
+<li>OpenAI-style: <code>usage.prompt_tokens</code>, <code>usage.completion_tokens</code>, reasoning fields when present</li>
+<li>Anthropic-style: <code>input_tokens</code>, <code>output_tokens</code>, thinking-token fields when present</li>
+<li>Gemini/OpenRouter: normalized usage from provider envelope</li>
+<li>Persist raw usage payload JSON for audit (<code>raw_usage_json</code>) plus normalized fields.</li>
+</ol>
+<h3 id="2-token-schema-and-persistence">2) Token schema and persistence</h3>
+<p>Create a DB table such as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">llm_call_usage</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="n">run_id</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="n">stage</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="n">provider</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="n">model</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="n">input_tokens</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="n">output_tokens</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="n">reasoning_tokens</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="n">cached_tokens</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="n">cost_usd</span><span class="w"> </span><span class="nb">NUMERIC</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="n">latency_ms</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="n">raw_usage_json</span><span class="w"> </span><span class="n">JSONB</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="n">created_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">);</span>
+</code></pre></div>
+<p>And a summary view/table:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="n">MATERIALIZED</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">llm_run_usage_summary</span><span class="w"> </span><span class="k">AS</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">run_id</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">input_tokens</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">input_tokens</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">output_tokens</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">output_tokens</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">reasoning_tokens</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">reasoning_tokens</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">cost_usd</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total_cost_usd</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">call_count</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">FROM</span><span class="w"> </span><span class="n">llm_call_usage</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">run_id</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="3-cost-engine">3) Cost engine</h3>
+<p>Add a <code>pricing_catalog</code> keyed by provider+model with time-versioned rates:
+- input per 1k tokens
+- output per 1k tokens
+- reasoning per 1k tokens (if billed separately)</p>
+<p>Cost formula per call:</p>
+<p><code>cost = (input_tokens/1000)*rate_in + (output_tokens/1000)*rate_out + (reasoning_tokens/1000)*rate_reason</code></p>
+<p>Store calculated cost and the <code>pricing_version</code> used for reproducibility.</p>
+<h3 id="4-apireport-integration">4) API/report integration</h3>
+<ul>
+<li>Extend run status endpoint with:</li>
+<li>total tokens and cost</li>
+<li>stage-by-stage usage table</li>
+<li>model/provider breakdown</li>
+<li>Add a report section in generated plan artifacts:</li>
+<li>“Cost &amp; Token Accounting”</li>
+<li>includes confidence note when provider usage is partially missing.</li>
+</ul>
+<h3 id="5-structured-output-handling-rule">5) Structured output handling rule</h3>
+<p>Critical implementation detail:
+- Usage is captured from provider raw envelope <strong>before</strong> JSON parsing/validation.
+- Structured-output parse failures should not lose token accounting.</p>
+<h3 id="6-reliability-and-edge-cases">6) Reliability and edge cases</h3>
+<ul>
+<li>If provider usage fields missing:</li>
+<li>mark <code>usage_quality = estimated</code></li>
+<li>optional fallback tokenizer estimate</li>
+<li>For retries:</li>
+<li>log each retry as independent call record</li>
+<li>include <code>attempt_number</code></li>
+<li>For streaming:</li>
+<li>aggregate chunk usage if available; else finalize from closing usage frame.</li>
+</ul>
+<h3 id="7-rollout-phases">7) Rollout phases</h3>
+<ul>
+<li>Phase A: capture + store usage only (no UI)</li>
+<li>Phase B: cost engine + summary endpoint</li>
+<li>Phase C: user-visible report + budget alerts</li>
+<li>Phase D: optimization recommendations (cost hot spots)</li>
+</ul>
+<h3 id="8-validation-checklist">8) Validation checklist</h3>
+<ul>
+<li>Unit tests for provider mapping parsers</li>
+<li>Golden tests with canned raw provider responses</li>
+<li>Billing reconciliation tests against provider invoices</li>
+<li>Backfill script for historical runs where data exists</li>
 </ul>
 
 

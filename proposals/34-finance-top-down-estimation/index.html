@@ -3163,6 +3163,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-build-a-benchmark-intelligence-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Build a benchmark intelligence layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-plan-classification-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Plan classification pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-top-down-estimate-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Top-down estimate engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-confidence-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Confidence computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-guardrail-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Guardrail rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-integration-and-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Integration and outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-rollout-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) Rollout phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4001,6 +4106,111 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-build-a-benchmark-intelligence-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Build a benchmark intelligence layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-plan-classification-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Plan classification pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-top-down-estimate-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Top-down estimate engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-confidence-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Confidence computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-guardrail-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Guardrail rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-integration-and-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Integration and outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-rollout-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) Rollout phases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8) Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4153,6 +4363,67 @@
 <li>Automated sourcing of sector benchmarks.</li>
 <li>Dynamic calibration from historical PlanExe outcomes.</li>
 <li>Integrate sensitivity analysis and scenario shock testing.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="1-build-a-benchmark-intelligence-layer">1) Build a benchmark intelligence layer</h3>
+<p>Create a benchmark catalog service keyed by:
+- domain
+- business model
+- geography
+- project scale
+- maturity stage</p>
+<p>Each benchmark entry includes:
+- value range (P10/P50/P90)
+- source and freshness
+- confidence and applicability notes</p>
+<h3 id="2-plan-classification-pipeline">2) Plan classification pipeline</h3>
+<p>Before estimation:
+1. classify plan domain/model
+2. detect geography and currency context
+3. infer scale band (small/medium/large)</p>
+<p>Classification drives benchmark retrieval and confidence scoring.</p>
+<h3 id="3-top-down-estimate-engine">3) Top-down estimate engine</h3>
+<p>Compute revenue/cost envelopes from benchmark priors:
+- market sizing assumptions (TAM/SAM/SOM)
+- penetration trajectory
+- ratio-driven opex/capex</p>
+<p>Output three scenarios:
+- conservative
+- base
+- aggressive</p>
+<p>and include explicit assumptions per scenario.</p>
+<h3 id="4-confidence-computation">4) Confidence computation</h3>
+<p>Confidence should be model-based, not narrative:
+- data completeness score
+- benchmark relevance score
+- volatility score for domain/region</p>
+<p><code>confidence_index = completeness * relevance * (1 - volatility_penalty)</code></p>
+<h3 id="5-guardrail-rules">5) Guardrail rules</h3>
+<p>Add hard checks:
+- growth rates outside realistic domain ranges
+- gross margins incompatible with business model
+- capex intensity outlier flags</p>
+<p>When violated, annotate with corrective recommendations.</p>
+<h3 id="6-integration-and-outputs">6) Integration and outputs</h3>
+<ul>
+<li>Save top-down artifact as structured JSON</li>
+<li>Generate markdown narrative for plan report</li>
+<li>Feed into reconciliation module (Proposal 35)</li>
+<li>Feed risk engine with high-variance assumptions</li>
+</ul>
+<h3 id="7-rollout-phases">7) Rollout phases</h3>
+<ul>
+<li>Phase A: static benchmark tables + deterministic formulas</li>
+<li>Phase B: dynamic benchmark retrieval + confidence scoring</li>
+<li>Phase C: sensitivity analysis (1-way + multi-factor)</li>
+<li>Phase D: automatic calibration from completed project outcomes</li>
+</ul>
+<h3 id="8-validation-checklist">8) Validation checklist</h3>
+<ul>
+<li>Benchmark coverage by domain/model</li>
+<li>Stability across reruns with same inputs</li>
+<li>Human reviewer agreement on plausibility</li>
+<li>Delta to bottom-up within target tolerance bands</li>
 </ul>
 
 
