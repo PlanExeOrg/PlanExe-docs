@@ -9,8 +9,6 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
-      
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/42-evidence-traceability-ledger/">
       
@@ -29,7 +27,7 @@
     
     
       
-        <title>Evidence Traceability Ledger - PlanExe Documentation</title>
+        <title>42 evidence traceability ledger - PlanExe Documentation</title>
       
     
     
@@ -77,7 +75,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Evidence Traceability Ledger - PlanExe Documentation" />
+<meta property="og:title" content="42 evidence traceability ledger - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/42-evidence-traceability-ledger.png" />
 <meta property="og:image:type" content="image/png" />
@@ -85,7 +83,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/proposals/42-evidence-traceability-ledger/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Evidence Traceability Ledger - PlanExe Documentation" />
+<meta property="twitter:title" content="42 evidence traceability ledger - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/42-evidence-traceability-ledger.png" />
 </head>
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evidence-traceability-ledger" class="md-skip">
+        <a href="#evidence-traceability-ledger-technical-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Evidence Traceability Ledger
+              42 evidence traceability ledger
             
           </span>
         </div>
@@ -2666,13 +2664,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -2735,13 +2726,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -2981,13 +2965,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3121,13 +3098,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3200,13 +3170,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3224,13 +3187,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3251,10 +3207,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Overview
       
     </span>
   </a>
@@ -3262,10 +3218,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Use Cases
       
     </span>
   </a>
@@ -3273,10 +3229,160 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-claim-extraction-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Claim Extraction Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-evidence-mapping-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Evidence Mapping &amp; Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-ledger-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Ledger (Storage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        claims
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ledger_entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ledger_entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiledgerextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/ledger/extract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiledgerlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/ledger/link
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiledgerreportplan_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/ledger/report/{plan_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-freshness-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm: Freshness Scoring
       
     </span>
   </a>
@@ -3284,87 +3390,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#user-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed Solution
+        User Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sidebar-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sidebar Ledger
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#evidence-levels" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#audit-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Evidence Levels
+        Audit View
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
+  <a href="#future-roadmap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
+        Future Roadmap
       
     </span>
   </a>
@@ -3401,13 +3469,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3435,13 +3496,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3471,13 +3525,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3505,13 +3552,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3562,10 +3602,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Overview
       
     </span>
   </a>
@@ -3573,10 +3613,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Use Cases
       
     </span>
   </a>
@@ -3584,10 +3624,160 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-claim-extraction-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Claim Extraction Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-evidence-mapping-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Evidence Mapping &amp; Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-ledger-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Ledger (Storage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        claims
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ledger_entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ledger_entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiledgerextract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/ledger/extract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-apiledgerlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/ledger/link
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiledgerreportplan_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/ledger/report/{plan_id}
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-freshness-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm: Freshness Scoring
       
     </span>
   </a>
@@ -3595,87 +3785,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#user-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed Solution
+        User Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sidebar-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sidebar Ledger
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#evidence-levels" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#audit-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Evidence Levels
+        Audit View
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
+  <a href="#future-roadmap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
+        Future Roadmap
       
     </span>
   </a>
@@ -3702,82 +3854,265 @@
   
 
 
-<h1 id="evidence-traceability-ledger">Evidence Traceability Ledger</h1>
-<h2 id="pitch">Pitch</h2>
-<p>Track every claim in a plan to its source, verification status, and freshness, producing a claim-to-evidence ledger that is auditable and investor-ready.</p>
-<h2 id="why">Why</h2>
-<p>Plans are only as credible as their evidence. Without a traceable map, claims degrade into assumptions and cannot be trusted over time.</p>
-<h2 id="problem">Problem</h2>
+<hr />
+<p>title: Evidence Traceability Ledger: Technical Documentation
+date: 2026-02-11
+status: proposal
+author: PlanExe Team</p>
+<hr />
+<h1 id="evidence-traceability-ledger-technical-documentation">Evidence Traceability Ledger: Technical Documentation</h1>
+<p><strong>Author:</strong> PlanExe Team<br />
+<strong>Date:</strong> 2026-02-11<br />
+<strong>Status:</strong> Proposal<br />
+<strong>Audience:</strong> Developers, Auditors, Investors  </p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The <strong>Evidence Traceability Ledger</strong> is a core component of the PlanExe verification engine. It transforms vague claims into verifiable facts by maintaining a cryptographically-linked ledger of every claim made in a plan and its corresponding evidence.</p>
+<p>Unlike a simple citation list, this ledger systems:
+1.  <strong>Extracts atomic claims</strong> from unstructured plan text.
+2.  <strong>Scores evidence strength</strong> (Level 1-3) using automated heuristics and expert verification.
+3.  <strong>Monitors freshness</strong> of linked data sources.
+4.  <strong>Generates audit trails</strong> for investor due diligence.</p>
+<h2 id="use-cases">Use Cases</h2>
 <ul>
-<li>Claims and sources are scattered or missing.</li>
-<li>Evidence goes stale without visibility.</li>
-<li>Reviewers cannot quickly audit credibility.</li>
+<li><strong>Investor Diligence:</strong> "Show me the source for the $4.2B TAM claim and when it was last verified."</li>
+<li><strong>Living Plans:</strong> "Alert me if the regulatory approval document expires."</li>
+<li><strong>Automated Verification:</strong> "Reject any plan with &gt;20% Level 1 (anecdotal) evidence."</li>
 </ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Build a ledger that:</p>
-<ol>
-<li>Extracts claims from the plan.</li>
-<li>Links each claim to one or more evidence sources.</li>
-<li>Scores evidence strength and freshness.</li>
-<li>Emits a traceable report with gaps and alerts.</li>
-</ol>
-<h2 id="evidence-levels">Evidence Levels</h2>
-<ul>
-<li><strong>Level 1:</strong> anecdotal or unverified</li>
-<li><strong>Level 2:</strong> third-party reports or benchmarks</li>
-<li><strong>Level 3:</strong> audited financials, signed contracts, regulatory approvals</li>
-</ul>
-<h2 id="workflow">Workflow</h2>
-<ol>
-<li>Parse plan into structured claims.</li>
-<li>Attach sources (internal data, public reports, contracts).</li>
-<li>Score evidence strength (Level 1-3) and freshness.</li>
-<li>Surface missing evidence and stale sources.</li>
-</ol>
-<h2 id="output-schema">Output Schema</h2>
+<h2 id="system-architecture">System Architecture</h2>
+<h3 id="1-claim-extraction-pipeline">1. Claim Extraction Pipeline</h3>
+<p>When a plan is submitted or updated:
+1.  <strong>Parsing:</strong> The plan markdown is parsed into semantic blocks.
+2.  <strong>Claim Detection:</strong> An LLM (<code>gemini-2.0-flash</code>) identifies discrete factual claims (e.g., "Market grows at 5% CAGR", "Patent #12345 granted").
+3.  <strong>Fingerprinting:</strong> Each claim is hashed for change detection.</p>
+<h3 id="2-evidence-mapping-scoring">2. Evidence Mapping &amp; Scoring</h3>
+<p>Each extracted claim must be linked to an evidence source.
+-   <strong>Automated Linking:</strong> URL scraping and semantic matching.
+-   <strong>Manual Linking:</strong> User uploads documents (PDFs, contracts).
+-   <strong>Scoring Engine:</strong> Assigns a <code>VerificationLevel</code> (1-3) based on source reliability.</p>
+<h3 id="3-the-ledger-storage">3. The Ledger (Storage)</h3>
+<p>A <code>ledger_entries</code> table tracks the state of every claim-evidence pair over time, creating an immutable history of truth.</p>
+<hr />
+<h2 id="data-tables">Data Tables</h2>
+<h3 id="claims"><code>claims</code></h3>
+<p>Stores atomic assertions extracted from the plan.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">Primary Key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>plan_id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">FK to Plans</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>content</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">The extracted text of the claim</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>location_ref</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">Pointer to section/line in the plan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>created_at</code></td>
+<td style="text-align: left;">TIMESTAMPTZ</td>
+<td style="text-align: left;">Creation timestamp</td>
+</tr>
+</tbody>
+</table>
+<h3 id="evidence"><code>evidence</code></h3>
+<p>Stores the source material data.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">Primary Key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>source_type</code></td>
+<td style="text-align: left;">ENUM</td>
+<td style="text-align: left;"><code>url</code>, <code>document</code>, <code>database_record</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>uri</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">URL or S3 path</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>snapshot_hash</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">SHA-256 of the content at time of capture</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>verification_level</code></td>
+<td style="text-align: left;">INT</td>
+<td style="text-align: left;">1 (Weak) to 3 (Strong)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>last_verified_at</code></td>
+<td style="text-align: left;">TIMESTAMPTZ</td>
+<td style="text-align: left;">Freshness timestamp</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ledger_entries"><code>ledger_entries</code></h3>
+<p>The join table linking claims to evidence with status.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">Primary Key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>claim_id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">FK to Claims</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>evidence_id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">FK to Evidence</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>status</code></td>
+<td style="text-align: left;">ENUM</td>
+<td style="text-align: left;"><code>verified</code>, <code>disputed</code>, <code>stale</code>, <code>missing</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>verifier_id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">FK to User or Agent</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>notes</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">Reviewer comments</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="api-reference">API Reference</h2>
+<h3 id="post-apiledgerextract"><code>POST /api/ledger/extract</code></h3>
+<p>Trigger manual extraction of claims for a plan section.</p>
+<p><strong>Request:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;claim_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c_101&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;claim&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TAM is $4.2B&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;evidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;third_party_report&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Level 2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;as_of&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-11-01&quot;</span><span class="p">}</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;freshness_days&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stale&quot;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid...&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;section_content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The market is projected to reach $50B by 2030...&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;force_refresh&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;claims&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;claim_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c_123&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Market projected to reach $50B by 2030&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;suggested_evidence_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;market_report&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="post-apiledgerlink"><code>POST /api/ledger/link</code></h3>
+<p>Attach evidence to a specific claim.</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;claim_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c_123&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;evidence_uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://doi.org/10.1038/s41586-020-2012-7&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;evidence_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;url&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="get-apiledgerreportplan_id"><code>GET /api/ledger/report/{plan_id}</code></h3>
+<p>Get the full traceability report.</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid...&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;overall_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;claims_total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&quot;claims_verified&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&quot;freshness_concerns&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&quot;entries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">&quot;claim&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patent #12345 granted&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;verified&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USPTO Database&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nt">&quot;last_checked&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10&quot;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="algorithm-freshness-scoring">Algorithm: Freshness Scoring</h2>
+<p>Evidence degrades over time. The system calculates a <code>freshness_score</code> (0.0 - 1.0) daily.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">calculate_freshness</span><span class="p">(</span><span class="n">evidence_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">last_verified</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">age_days</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">last_verified</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="c1"># Decay rates based on type</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">half_life_days</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="s1">&#39;financial_statement&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>  <span class="c1"># Quarterly</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="s1">&#39;market_report&#39;</span><span class="p">:</span> <span class="mi">365</span><span class="p">,</span>       <span class="c1"># Yearly</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="s1">&#39;news_article&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>         <span class="c1"># Fast moving</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="s1">&#39;legal_contract&#39;</span><span class="p">:</span> <span class="mi">1095</span><span class="p">,</span>     <span class="c1"># 3 Years</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="s1">&#39;academic_paper&#39;</span><span class="p">:</span> <span class="mi">1825</span>      <span class="c1"># 5 Years</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">tau</span> <span class="o">=</span> <span class="n">half_life_days</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">evidence_type</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">score</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="p">(</span><span class="n">age_days</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="k">return</span> <span class="n">score</span>
 </code></pre></div>
-<h2 id="integration-points">Integration Points</h2>
-<ul>
-<li>Feeds into verification workflow and FEI.</li>
-<li>Used by investor audit packs.</li>
-<li>Inputs to execution readiness scoring.</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>% of claims with evidence attached.</li>
-<li>Reduction in unverifiable claims.</li>
-<li>Faster audit time per plan.</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>Evidence ingestion gaps.</li>
-<li>False confidence if evidence is low quality.</li>
-<li>Maintenance burden for freshness updates.</li>
-</ul>
-<h2 id="future-enhancements">Future Enhancements</h2>
-<ul>
-<li>Auto-refresh from public data sources.</li>
-<li>Evidence credibility scoring by source reputation.</li>
-<li>Continuous monitoring for conflicting evidence.</li>
-</ul>
+<p>Using this score, the UI flags items as "Stale" (score &lt; 0.5) or "Expired" (score &lt; 0.1).</p>
+<hr />
+<h2 id="user-interface">User Interface</h2>
+<h3 id="sidebar-ledger">Sidebar Ledger</h3>
+<p>A slide-out panel in the plan editor shows the "Evidence Health" of the current section.
+-   <strong>Green checkmarks</strong> for verified Level 3 claims.
+-   <strong>Yellow warnings</strong> for stale evidence.
+-   <strong>Red alerts</strong> for unverified claims &gt; 48 hours old.</p>
+<h3 id="audit-view">Audit View</h3>
+<p>A specialized view for investors that hides the prose and focuses on the <code>Claim -&gt; Evidence</code> graph.
+-   Filters by "Verification Level".
+-   "Challenge" button to requesting updated evidence for specific claims.</p>
+<h2 id="future-roadmap">Future Roadmap</h2>
+<ol>
+<li><strong>Blockchain Anchoring:</strong> Hash ledger entries to a public chain for tamper-proof history.</li>
+<li><strong>Automated Crawler:</strong> Agent that periodically re-checks URLs for 404s or content changes.</li>
+<li><strong>Citation Graph:</strong> Visualize how one piece of evidence supports multiple claims across different plans (e.g., a shared market report).</li>
+</ol>
 
 
 
 
 
 
-
-  
-  
 
 
 

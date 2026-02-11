@@ -9,8 +9,6 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
-      
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/44-investor-grade-audit-pack-generator/">
       
@@ -29,7 +27,7 @@
     
     
       
-        <title>Investor-Grade Audit Pack Generator - PlanExe Documentation</title>
+        <title>44 investor grade audit pack generator - PlanExe Documentation</title>
       
     
     
@@ -77,7 +75,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Investor-Grade Audit Pack Generator - PlanExe Documentation" />
+<meta property="og:title" content="44 investor grade audit pack generator - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/44-investor-grade-audit-pack-generator.png" />
 <meta property="og:image:type" content="image/png" />
@@ -85,7 +83,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/proposals/44-investor-grade-audit-pack-generator/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Investor-Grade Audit Pack Generator - PlanExe Documentation" />
+<meta property="twitter:title" content="44 investor grade audit pack generator - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/44-investor-grade-audit-pack-generator.png" />
 </head>
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Investor-Grade Audit Pack Generator
+              44 investor grade audit pack generator
             
           </span>
         </div>
@@ -2666,13 +2664,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -2735,13 +2726,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -2981,13 +2965,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3121,13 +3098,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3191,13 +3161,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3225,13 +3188,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3270,13 +3226,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3294,13 +3243,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3321,10 +3263,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Overview
       
     </span>
   </a>
@@ -3332,10 +3274,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Key Features
       
     </span>
   </a>
@@ -3343,10 +3285,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Data Aggregation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-redaction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Redaction Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-artifact-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Artifact Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-schema-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Schema (JSON)
       
     </span>
   </a>
@@ -3354,10 +3346,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#redaction-logic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed Solution
+        Redaction Logic
       
     </span>
   </a>
@@ -3365,68 +3357,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pack-contents" class="md-nav__link">
+  <a href="#api-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pack Contents
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiauditgenerate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/audit/generate
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#redaction-and-sensitivity-layer" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiauditverifysignature" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Redaction and Sensitivity Layer
+        GET /api/audit/verify/{signature}
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3471,13 +3436,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3505,13 +3463,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3562,10 +3513,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Overview
       
     </span>
   </a>
@@ -3573,10 +3524,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Key Features
       
     </span>
   </a>
@@ -3584,10 +3535,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Data Aggregation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-redaction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Redaction Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-artifact-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Artifact Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-schema-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Schema (JSON)
       
     </span>
   </a>
@@ -3595,10 +3596,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#redaction-logic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed Solution
+        Redaction Logic
       
     </span>
   </a>
@@ -3606,68 +3607,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pack-contents" class="md-nav__link">
+  <a href="#api-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pack Contents
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post-apiauditgenerate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POST /api/audit/generate
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#redaction-and-sensitivity-layer" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiauditverifysignature" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Redaction and Sensitivity Layer
+        GET /api/audit/verify/{signature}
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3702,85 +3676,155 @@
   
 
 
+<hr />
+<p>title: Investor-Grade Audit Pack Generator: Technical Documentation
+date: 2026-02-11
+status: proposal
+author: PlanExe Team</p>
+<hr />
 <h1 id="investor-grade-audit-pack-generator">Investor-Grade Audit Pack Generator</h1>
-<h2 id="pitch">Pitch</h2>
-<p>Generate a standardized, investor-grade audit pack that bundles evidence, verification logs, risk gates, and financial stress tests into a single reviewable artifact.</p>
-<h2 id="why">Why</h2>
-<p>Investors spend time re-validating plans. A structured audit pack reduces diligence time and increases trust.</p>
-<h2 id="problem">Problem</h2>
-<ul>
-<li>Evidence is scattered across artifacts.</li>
-<li>Review outputs are inconsistent between plans.</li>
-<li>Verification and risk logs are hard to compile.</li>
-<li>Sensitive data is often mixed with public-facing data.</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Create a generator that:</p>
+<p><strong>Author:</strong> PlanExe Team<br />
+<strong>Date:</strong> 2026-02-11<br />
+<strong>Status:</strong> Proposal<br />
+<strong>Audience:</strong> Developers, Investment Analysts  </p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The <strong>Investor-Grade Audit Pack Generator</strong> automates the final mile of deal preparation. It compiles verified evidence, financial models, risk registers, and governance logs into a standardized, cryptographically-signed artifact (PDF/HTML) suitable for institutional due diligence.</p>
+<p>Instead of a scattered collection of Google Docs and Excel sheets, the Audit Pack is a single source of truth.</p>
+<h2 id="key-features">Key Features</h2>
 <ol>
-<li>Pulls verified evidence and claim ledger.</li>
-<li>Summarizes verification outcomes and flags.</li>
-<li>Includes Monte Carlo risk and cashflow stress outputs.</li>
-<li>Exports a standardized PDF/HTML pack with redaction controls.</li>
+<li><strong>Redaction Engine:</strong> Automatically hides sensitive data (e.g., specific salaries, trade secrets) based on the recipient's clearance level.</li>
+<li><strong>Versioning:</strong> "Snapshot" a plan at a specific point in time (e.g., "Series A Pack - v1.0").</li>
+<li><strong>Digital Signature:</strong> Signs the pack to prove it hasn't been tampered with since generation.</li>
 </ol>
-<h2 id="pack-contents">Pack Contents</h2>
+<h2 id="system-architecture">System Architecture</h2>
+<h3 id="1-data-aggregation">1. Data Aggregation</h3>
+<p>The generator pulls data from multiple internal systems:
+-   <strong>Plan Content:</strong> The narrative text.
+-   <strong>Evidence Ledger:</strong> The verification status of claims.
+-   <strong>Financial Engine:</strong> The 5-year pro-forma model.
+-   <strong>Risk Register:</strong> The Monte Carlo simulation results.</p>
+<h3 id="2-redaction-layer">2. Redaction Layer</h3>
+<p>Before generation, the <code>RedactionEngine</code> filters the data.
+-   <strong>Tags:</strong> Fields are tagged as <code>public</code>, <code>investor_only</code>, or <code>internal_confidential</code>.
+-   <strong>Roles:</strong> Recipients are assigned roles (e.g., <code>analyst</code>, <code>partner</code>).
+-   <strong>Logic:</strong> If <code>role.clearance &lt; field.sensitivity</code>, the field is replaced with <code>[REDACTED]</code>.</p>
+<h3 id="3-artifact-generation">3. Artifact Generation</h3>
 <ul>
-<li>Executive summary</li>
-<li>Claim-to-evidence ledger</li>
-<li>Verification grades and expert notes</li>
-<li>Risk and failure propagation analysis</li>
-<li>Financial stress testing outputs</li>
-<li>Governance and approval log</li>
-<li>Redaction summary and data sensitivity notes</li>
+<li><strong>HTML:</strong> Renders a responsive, interactive report using Jinja2 templates.</li>
+<li><strong>PDF:</strong> Converts the HTML to a high-fidelity PDF using <code>WeasyPrint</code> or similar.</li>
+<li><strong>ZIP:</strong> Bundles the PDF with raw data files (CSV, JSON) for analysts who want to run their own models.</li>
 </ul>
-<h2 id="redaction-and-sensitivity-layer">Redaction and Sensitivity Layer</h2>
-<ul>
-<li>Mark data fields as <code>public</code>, <code>investor_only</code>, or <code>confidential</code>.</li>
-<li>Apply automatic redaction for confidential fields.</li>
-<li>Generate a data sensitivity appendix.</li>
-</ul>
-<h2 id="output-schema">Output Schema</h2>
+<hr />
+<h2 id="output-schema-json">Output Schema (JSON)</h2>
+<p>The core data structure passed to the renderer:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;pack_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;audit_091&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan_233&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;sections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;evidence&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;risk&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;finance&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ready_for_investor&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;redaction_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;investor_only&quot;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;pack_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pack_2026_02_11_abc&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan_123&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;generated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-11T16:00:00Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;recipient&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sequoia Capital&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;clearance_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;investor_only&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;sections&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Executive Summary&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Financial Model&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">&quot;revenue_y1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">&quot;revenue_y2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000000</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">&quot;ebitda_margin&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;[REDACTED]&quot;</span><span class="w"> </span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nt">&quot;signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sha256:...&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="integration-points">Integration Points</h2>
-<ul>
-<li>Pulls from evidence ledger and verification workflow.</li>
-<li>Includes outputs from Monte Carlo engines.</li>
-<li>Used in investor matching and escalation.</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>Reduction in diligence time per plan.</li>
-<li>Higher investor confidence scores.</li>
-<li>Increased conversion from review to funding.</li>
-<li>Reduction in data leakage incidents.</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>Pack could be outdated if data is stale.</li>
-<li>Over-standardization may hide nuance.</li>
-<li>Sensitive data exposure without redaction.</li>
-</ul>
+<hr />
+<h2 id="redaction-logic">Redaction Logic</h2>
+<p>We use a simplistic but robust tagging system.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tag</th>
+<th style="text-align: left;">Visibility</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>public</code></td>
+<td style="text-align: left;">Everyone</td>
+<td style="text-align: left;">Product description, Market size</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>investor_only</code></td>
+<td style="text-align: left;">NDA Signed</td>
+<td style="text-align: left;">High-level financials, Roadmap</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>internal_confidential</code></td>
+<td style="text-align: left;">Founders</td>
+<td style="text-align: left;">Cap table details, Employee salaries</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Algorithm:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">redact</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">clearance</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">if</span> <span class="n">clearance</span> <span class="o">==</span> <span class="s1">&#39;internal_confidential&#39;</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="k">return</span> <span class="n">data</span>  <span class="c1"># Show everything</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">sanitized</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">tag</span> <span class="o">=</span> <span class="n">get_tag</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">if</span> <span class="n">can_view</span><span class="p">(</span><span class="n">clearance</span><span class="p">,</span> <span class="n">tag</span><span class="p">):</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            <span class="n">sanitized</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">sanitized</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;[REDACTED]&quot;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="k">return</span> <span class="n">sanitized</span>
+</code></pre></div></p>
+<hr />
+<h2 id="api-reference">API Reference</h2>
+<h3 id="post-apiauditgenerate"><code>POST /api/audit/generate</code></h3>
+<p>Create a new audit pack.</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan_123&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;recipient_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Acme VC&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;clearance_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;investor_only&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pdf&quot;</span><span class="w"> </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;pack_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pack_456&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;download_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://planexe.org/api/audit/download/pack_456.pdf&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;expires_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-18T16:00:00Z&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="get-apiauditverifysignature"><code>GET /api/audit/verify/{signature}</code></h3>
+<p>Verify the integrity of a pack.</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;valid&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;generated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-11&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;plan_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sha256:...&quot;</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
 <h2 id="future-enhancements">Future Enhancements</h2>
-<ul>
-<li>Investor-specific pack customization.</li>
-<li>Continuous updates during execution.</li>
-<li>API access for automated diligence ingestion.</li>
-</ul>
+<ol>
+<li><strong>Watermarking:</strong> Dynamic watermarks with the recipient's email on every page of the PDF.</li>
+<li><strong>Data Room Integration:</strong> Auto-upload to Carta, DocSend, or specialized VDRs.</li>
+<li><strong>Interactive Models:</strong> Embed "Live Excel" components in the HTML version, allowing investors to tweak assumptions (within bounds).</li>
+</ol>
 
 
 
 
 
 
-
-  
-  
 
 
 

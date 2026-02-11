@@ -9,8 +9,6 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
-      
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/36-monte-carlo-plan-success-probability-engine/">
       
@@ -29,7 +27,7 @@
     
     
       
-        <title>Monte Carlo Plan Success Probability Engine (10,000 Runs) - PlanExe Documentation</title>
+        <title>36 monte carlo plan success probability engine - PlanExe Documentation</title>
       
     
     
@@ -77,7 +75,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Monte Carlo Plan Success Probability Engine (10,000 Runs) - PlanExe Documentation" />
+<meta property="og:title" content="36 monte carlo plan success probability engine - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/36-monte-carlo-plan-success-probability-engine.png" />
 <meta property="og:image:type" content="image/png" />
@@ -85,7 +83,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/proposals/36-monte-carlo-plan-success-probability-engine/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Monte Carlo Plan Success Probability Engine (10,000 Runs) - PlanExe Documentation" />
+<meta property="twitter:title" content="36 monte carlo plan success probability engine - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/36-monte-carlo-plan-success-probability-engine.png" />
 </head>
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#monte-carlo-plan-success-probability-engine-10000-runs" class="md-skip">
+        <a href="#monte-carlo-plan-success-probability-engine" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Monte Carlo Plan Success Probability Engine (10,000 Runs)
+              36 monte carlo plan success probability engine
             
           </span>
         </div>
@@ -2666,13 +2664,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -2735,13 +2726,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -2990,13 +2974,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3014,13 +2991,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3041,10 +3011,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Overview
       
     </span>
   </a>
@@ -3052,10 +3022,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#core-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Core Problem
       
     </span>
   </a>
@@ -3063,44 +3033,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        System Architecture
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-inputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Model Inputs
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Model Inputs">
+    <nav class="md-nav" aria-label="System Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uncertain-variables" class="md-nav__link">
+  <a href="#1-distribution-modeler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uncertain Variables
+        1. Distribution Modeler
       
     </span>
   </a>
@@ -3108,10 +3056,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#distributions" class="md-nav__link">
+  <a href="#2-simulation-loop-the-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Distributions
+        2. Simulation Loop (The Engine)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-analytics-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Analytics Service
       
     </span>
   </a>
@@ -3124,79 +3083,119 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulation-workflow" class="md-nav__link">
+  <a href="#technical-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simulation Workflow
+        Technical Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Distributions
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#outputs" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#the-simulation-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Outputs
+        The Simulation Algorithm
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
+  <a href="#output-analysis-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output Schema
+        Output Analysis (Sensitivity)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Analysis (Sensitivity)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tornado-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tornado Charts
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#probabilistic-s-curves" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integration Points
+        Probabilistic S-Curves
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
+  <a href="#integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Success Metrics
+        Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumption-drift-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assumption Drift Monitor
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Risks
+        API Reference
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3335,13 +3334,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3405,13 +3397,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3439,13 +3424,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3475,13 +3453,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3510,13 +3481,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3544,13 +3508,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3601,10 +3558,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Overview
       
     </span>
   </a>
@@ -3612,10 +3569,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#core-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Core Problem
       
     </span>
   </a>
@@ -3623,44 +3580,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        System Architecture
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#model-inputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Model Inputs
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Model Inputs">
+    <nav class="md-nav" aria-label="System Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uncertain-variables" class="md-nav__link">
+  <a href="#1-distribution-modeler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uncertain Variables
+        1. Distribution Modeler
       
     </span>
   </a>
@@ -3668,10 +3603,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#distributions" class="md-nav__link">
+  <a href="#2-simulation-loop-the-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Distributions
+        2. Simulation Loop (The Engine)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-analytics-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Analytics Service
       
     </span>
   </a>
@@ -3684,79 +3630,119 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulation-workflow" class="md-nav__link">
+  <a href="#technical-specifications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simulation Workflow
+        Technical Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input Distributions
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#outputs" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#the-simulation-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Outputs
+        The Simulation Algorithm
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
+  <a href="#output-analysis-sensitivity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output Schema
+        Output Analysis (Sensitivity)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Output Analysis (Sensitivity)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tornado-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tornado Charts
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#probabilistic-s-curves" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integration Points
+        Probabilistic S-Curves
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
+  <a href="#integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Success Metrics
+        Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumption-drift-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assumption Drift Monitor
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Risks
+        API Reference
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3780,101 +3766,110 @@
   
 
 
-<h1 id="monte-carlo-plan-success-probability-engine-10000-runs">Monte Carlo Plan Success Probability Engine (10,000 Runs)</h1>
+<hr />
+<p>title: Monte Carlo Plan Success Engine: Technical Documentation
+date: 2026-02-11
+status: proposal
+author: PlanExe Team</p>
+<hr />
+<h1 id="monte-carlo-plan-success-probability-engine">Monte Carlo Plan Success Probability Engine</h1>
 <p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-10<br />
+<strong>Date:</strong> 2026-02-11<br />
 <strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>monte-carlo</code>, <code>risk</code>, <code>forecasting</code>, <code>planning</code>, <code>simulation</code></p>
-<h2 id="pitch">Pitch</h2>
-<p>Add a Monte Carlo simulation layer that runs 10,000 stochastic scenarios per plan to estimate probability of success/failure, budget overrun risk, and schedule slippage.</p>
-<h2 id="why">Why</h2>
-<p>Single-point estimates hide uncertainty. Decision-makers need distribution-level answers, not only one "expected" outcome.</p>
-<h2 id="problem">Problem</h2>
-<ul>
-<li>Plans are evaluated on deterministic timelines and budgets.</li>
-<li>Dependencies and risk events are not modeled probabilistically.</li>
-<li>Decision-makers lack a quantified view of downside risk.</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Implement a simulation engine that:</p>
-<ol>
-<li>Extracts uncertain variables from the plan.</li>
-<li>Defines distributions for duration, cost, and risk events.</li>
-<li>Runs 10,000 scenarios.</li>
-<li>Outputs probability distributions and risk-adjusted guidance.</li>
-</ol>
-<h2 id="model-inputs">Model Inputs</h2>
-<h3 id="uncertain-variables">Uncertain Variables</h3>
-<ul>
-<li>Task durations</li>
-<li>Cost drivers</li>
-<li>Dependency delay probabilities</li>
-<li>Funding variability</li>
-<li>Regulatory delay risk</li>
-</ul>
-<h3 id="distributions">Distributions</h3>
-<ul>
-<li>Duration: triangular or lognormal per task</li>
-<li>Cost: lognormal or PERT per bucket</li>
-<li>Risk events: Bernoulli with impact distributions</li>
-</ul>
-<h2 id="simulation-workflow">Simulation Workflow</h2>
-<ol>
-<li>Build baseline schedule and budget.</li>
-<li>Sample durations and costs from distributions.</li>
-<li>Propagate delays through dependencies.</li>
-<li>Evaluate success/failure criteria.</li>
-</ol>
-<h2 id="outputs">Outputs</h2>
-<ul>
-<li>Probability of on-time delivery</li>
-<li>Probability of budget overrun</li>
-<li>Probability of failure criteria being triggered</li>
-<li>P10 / P50 / P90 schedule and cost outcomes</li>
-<li>Tornado chart of top uncertainty drivers</li>
-</ul>
-<h2 id="output-schema">Output Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;prob_on_time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.42</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;prob_budget_overrun&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.55</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;p50_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4200000</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;p90_cost&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6100000</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;top_drivers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;regulatory_delay&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;materials_cost_volatility&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+<strong>Audience:</strong> Data Scientists, Project Managers  </p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The <strong>Monte Carlo Plan Success Engine</strong> moves planning from deterministic "best guesses" to probabilistic distributions. By running 10,000 stochastic simulations of the project schedule and budget, it provides a mathematical confidence level for success (e.g., "There is a 12% chance of finishing by Q3").</p>
+<p>It replaces single-point estimates (e.g., "This task takes 5 days") with probability distributions (e.g., "Between 3 and 10 days, most likely 5").</p>
+<h2 id="core-problem">Core Problem</h2>
+<p>"The Flaw of Averages": The average outcome of a project is <em>worse</em> than the plan constructed from average inputs, due to non-linear dependencies (Jensen's Inequality). Deterministic plans systematically underestimate risk.</p>
+<h2 id="system-architecture">System Architecture</h2>
+<h3 id="1-distribution-modeler">1. Distribution Modeler</h3>
+<p>Converts scalar plan inputs into statistical distributions.
+-   <strong>Tasks:</strong> Beta-PERT distribution ($O + 4M + P / 6$) for duration.
+-   <strong>Costs:</strong> Lognormal distribution (skewed right) for budget items.
+-   <strong>Risks:</strong> Bernoulli trials ($p$) with impact distributions ($I$).</p>
+<h3 id="2-simulation-loop-the-engine">2. Simulation Loop (The Engine)</h3>
+<p>Runs $N$ iterations (default 10,000).
+For each iteration $i$:
+1.  Sample duration $d_{i,t}$ for every task $t$.
+2.  Sample cost $c_{i,b}$ for every budget line $b$.
+3.  Trigger risks based on probability.
+4.  Recompute Critical Path ($CP_i$) and Total Cost ($TC_i$).
+5.  Store pair $(CP_i, TC_i)$.</p>
+<h3 id="3-analytics-service">3. Analytics Service</h3>
+<p>Aggregates the simulation results into interpretable metrics (P10, P50, P90).</p>
+<hr />
+<h2 id="technical-specifications">Technical Specifications</h2>
+<h3 id="input-distributions">Input Distributions</h3>
+<p>Most task durations follow a <strong>Beta-PERT</strong> distribution:
+$$E = \frac{Optimistic + 4 \cdot MostLikely + Pessimistic}{6}$$
+$$Var = \left(\frac{Pessimistic - Optimistic}{6}\right)^2$$</p>
+<p>Cost inputs often follow a <strong>Lognormal</strong> distribution:
+$$f(x) = \frac{1}{x \sigma \sqrt{2\pi}} \exp\left(-\frac{(\ln x - \mu)^2}{2\sigma^2}\right)$$
+This reflects the reality that costs can explode (10x overrun) but rarely shrink below a floor.</p>
+<h3 id="the-simulation-algorithm">The Simulation Algorithm</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">run_simulation</span><span class="p">(</span><span class="n">plan</span><span class="p">,</span> <span class="n">n_iterations</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_iterations</span><span class="p">):</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">scenario</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="c1"># 1. Sample Tasks</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">plan</span><span class="o">.</span><span class="n">tasks</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            <span class="n">duration</span> <span class="o">=</span> <span class="n">sample_pert</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="n">scenario</span><span class="p">[</span><span class="n">task</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">duration</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="c1"># 2. Trigger Risks</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="k">for</span> <span class="n">risk</span> <span class="ow">in</span> <span class="n">plan</span><span class="o">.</span><span class="n">risks</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">risk</span><span class="o">.</span><span class="n">probability</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                <span class="c1"># Add delay to linked tasks</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">risk</span><span class="o">.</span><span class="n">impacts</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                     <span class="n">scenario</span><span class="p">[</span><span class="n">target</span><span class="p">]</span> <span class="o">+=</span> <span class="n">risk</span><span class="o">.</span><span class="n">delay_days</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="c1"># 3. Solve Critical Path</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="n">finish_date</span> <span class="o">=</span> <span class="n">solve_cpm</span><span class="p">(</span><span class="n">plan</span><span class="o">.</span><span class="n">dependencies</span><span class="p">,</span> <span class="n">scenario</span><span class="p">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">finish_date</span><span class="p">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="k">return</span> <span class="n">aggregate_stats</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="integration-points">Integration Points</h2>
-<ul>
-<li>Feeds into risk propagation network.</li>
-<li>Used in funding stress Monte Carlo.</li>
-<li>Updates investor matching confidence scores.</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>Calibration against historical project outcomes.</li>
-<li>Reduction in high-confidence but wrong forecasts.</li>
-<li>Improved decision quality for go/no-go gates.</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>Poor distribution assumptions skew outputs.</li>
-<li>Complexity may reduce interpretability.</li>
-<li>Limited data for early-stage plans.</li>
-</ul>
-<h2 id="future-enhancements">Future Enhancements</h2>
-<ul>
-<li>Dynamic updating with real execution data.</li>
-<li>Domain-specific priors for distributions.</li>
-<li>Automated sensitivity and scenario generation.</li>
-</ul>
+<hr />
+<h2 id="output-analysis-sensitivity">Output Analysis (Sensitivity)</h2>
+<h3 id="tornado-charts">Tornado Charts</h3>
+<p>We calculate the <em>correlation coefficient</em> between each task's duration and the total project duration.
+-   <strong>High Correlation:</strong> This task is a "Driver". Focusing on it reduces overall variance.
+-   <strong>Low Correlation:</strong> This task has "Slack". Delays here likely won't hurt the project.</p>
+<h3 id="probabilistic-s-curves">Probabilistic S-Curves</h3>
+<p>A plot of $Cumulative Probability$ vs $Time/Cost$.
+-   <strong>P50 (Median):</strong> The "Coin Flip" outcome.
+-   <strong>P80 (Commitment):</strong> The recommended internal deadline.
+-   <strong>P95 (Safe Bet):</strong> The recommended external promise.</p>
+<hr />
+<h2 id="integration">Integration</h2>
+<h3 id="assumption-drift-monitor"><code>Assumption Drift Monitor</code></h3>
+<p>When drift is detected (e.g., "Steel prices up 10%"), the Monte Carlo engine automatically re-simulates using the new <em>actuals</em> as the baseline, updating the P-values in real-time.</p>
+<h3 id="api-reference">API Reference</h3>
+<p><strong><code>POST /api/simulate/plan/{id}</code></strong>
+Trigger a full 10k run.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;iterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong><code>GET /api/simulate/results/{id}</code></strong>
+Get the distribution data.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;p10_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-06-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;p50_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-07-15&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;p90_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-09-01&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;success_prob_deadline&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.42</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="mi">42</span><span class="err">%</span><span class="w"> </span><span class="err">cha</span><span class="kc">n</span><span class="err">ce</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="err">hi</span><span class="kc">t</span><span class="w"> </span><span class="err">deadli</span><span class="kc">ne</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+</code></pre></div></p>
 
 
 
 
 
 
-
-  
-  
 
 
 

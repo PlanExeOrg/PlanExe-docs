@@ -9,8 +9,6 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
-      
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/43-assumption-drift-monitor/">
       
@@ -29,7 +27,7 @@
     
     
       
-        <title>Assumption Drift Monitor - PlanExe Documentation</title>
+        <title>43 assumption drift monitor - PlanExe Documentation</title>
       
     
     
@@ -77,7 +75,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Assumption Drift Monitor - PlanExe Documentation" />
+<meta property="og:title" content="43 assumption drift monitor - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/43-assumption-drift-monitor.png" />
 <meta property="og:image:type" content="image/png" />
@@ -85,7 +83,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/proposals/43-assumption-drift-monitor/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Assumption Drift Monitor - PlanExe Documentation" />
+<meta property="twitter:title" content="43 assumption drift monitor - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/43-assumption-drift-monitor.png" />
 </head>
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Assumption Drift Monitor
+              43 assumption drift monitor
             
           </span>
         </div>
@@ -2666,13 +2664,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -2735,13 +2726,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -2981,13 +2965,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3121,13 +3098,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3191,13 +3161,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3235,13 +3198,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3259,13 +3215,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3286,10 +3235,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Overview
       
     </span>
   </a>
@@ -3297,10 +3246,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#core-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Core Problem
       
     </span>
   </a>
@@ -3308,10 +3257,121 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-assumption-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Assumption Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-ingestion-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data Ingestion Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-drift-detection-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Drift Detection Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-alerting-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Alerting &amp; Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data_sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data_sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alerting-logic-dsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alerting Logic (DSL)
       
     </span>
   </a>
@@ -3319,101 +3379,80 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#api-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed Solution
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidriftstatusplan_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drift/status/{plan_id}
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#post-apidriftsimulate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        POST /api/drift/simulate
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#drift-categories" class="md-nav__link">
+  <a href="#user-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Drift Categories
+        User Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-watchtower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "The Watchtower"
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#drift-detection-logic" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#re-plan-trigger" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Drift Detection Logic
+        Re-Plan Trigger
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#alerting-and-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alerting and Actions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3458,13 +3497,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3493,13 +3525,6 @@
   </span>
   
   
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
 
       </a>
     </li>
@@ -3527,13 +3552,6 @@
     
   </span>
   
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
   
 
       </a>
@@ -3584,10 +3602,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Overview
       
     </span>
   </a>
@@ -3595,10 +3613,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#core-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Core Problem
       
     </span>
   </a>
@@ -3606,10 +3624,121 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#system-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-assumption-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Assumption Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-ingestion-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Data Ingestion Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-drift-detection-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Drift Detection Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-alerting-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Alerting &amp; Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data_sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        data_sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        observations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alerting-logic-dsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alerting Logic (DSL)
       
     </span>
   </a>
@@ -3617,101 +3746,80 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#api-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed Solution
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apidriftstatusplan_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GET /api/drift/status/{plan_id}
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#post-apidriftsimulate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        POST /api/drift/simulate
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#drift-categories" class="md-nav__link">
+  <a href="#user-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Drift Categories
+        User Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-watchtower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "The Watchtower"
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#drift-detection-logic" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#re-plan-trigger" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Drift Detection Logic
+        Re-Plan Trigger
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#alerting-and-actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alerting and Actions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3746,98 +3854,243 @@
   
 
 
+<hr />
+<p>title: Assumption Drift Monitor: Technical Documentation
+date: 2026-02-11
+status: proposal
+author: PlanExe Team</p>
+<hr />
 <h1 id="assumption-drift-monitor">Assumption Drift Monitor</h1>
-<h2 id="pitch">Pitch</h2>
-<p>Continuously compare live execution data against original plan assumptions to detect drift early and trigger re-planning.</p>
-<h2 id="why">Why</h2>
-<p>Most plan failures start as small deviations. If assumptions drift unnoticed, timelines and budgets collapse.</p>
-<h2 id="problem">Problem</h2>
+<p><strong>Author:</strong> PlanExe Team<br />
+<strong>Date:</strong> 2026-02-11<br />
+<strong>Status:</strong> Proposal<br />
+<strong>Audience:</strong> Engineers, Project Managers  </p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The <strong>Assumption Drift Monitor</strong> is a real-time surveillance system for project plans. It continuously compares the foundational assumptions of a plan (e.g., "Steel costs $800/ton") against live data streams (commodity APIs, labor market reports, competitor pricing).</p>
+<p>When reality deviates from the plan beyond a specific tolerance threshold, the system triggers alerts and suggests re-planning actions.</p>
+<h2 id="core-problem">Core Problem</h2>
+<p>Plans are static snapshots of a dynamic world. A plan created in January is often obsolete by March because key variables have shifted. Humans rarely manually check these variables until a crisis hits.</p>
+<h2 id="system-architecture">System Architecture</h2>
+<h3 id="1-assumption-registry">1. Assumption Registry</h3>
+<p>A structured database of every variable the plan depends on.
+-   <strong>Static Assumptions:</strong> "We need 5 engineers." (Verified internally)
+-   <strong>Dynamic Assumptions:</strong> "EUR/USD exchange rate is 1.10." (Verified externally)</p>
+<h3 id="2-data-ingestion-service">2. Data Ingestion Service</h3>
+<p>Connectors to external APIs:
+-   <strong>Financial:</strong> Bloomberg, Yahoo Finance (FX, Rates)
+-   <strong>Commodities:</strong> Metal/Energy spot prices.
+-   <strong>Macro:</strong> Inflation rates, GDP growth.
+-   <strong>Custom:</strong> Internal BI tools, Jira velocity.</p>
+<h3 id="3-drift-detection-engine">3. Drift Detection Engine</h3>
+<p>Runs hourly/daily jobs to compare <code>Lesson learned</code> vs <code>Current Reality</code>.
+-   <strong>Thresholds:</strong> defined per assumption (e.g., +/- 5%).
+-   <strong>Composite Drift:</strong> aggregated impact of multiple small drifts.</p>
+<h3 id="4-alerting-governance">4. Alerting &amp; Governance</h3>
 <ul>
-<li>Assumptions are rarely tracked after planning.</li>
-<li>Deviations are detected too late.</li>
-<li>Re-planning is manual and reactive.</li>
+<li><strong>Green:</strong> Within tolerance.</li>
+<li><strong>Yellow:</strong> Warning (Approaching limit).</li>
+<li><strong>Red:</strong> Breach (Requires mandatory re-plan or waiver).</li>
 </ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Build a drift monitor that:</p>
-<ol>
-<li>Catalogs critical assumptions from the plan.</li>
-<li>Connects each assumption to live data sources.</li>
-<li>Tracks deviation thresholds.</li>
-<li>Triggers alerts and re-plan workflows.</li>
-</ol>
-<h2 id="architecture">Architecture</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Plan Assumptions
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; Assumption Registry
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -&gt; Data Source Connectors
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -&gt; Drift Detector
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -&gt; Alert + Replan Trigger
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -&gt; Governance Log
+<hr />
+<h2 id="database-schema">Database Schema</h2>
+<h3 id="assumptions"><code>assumptions</code></h3>
+<p>The registry of monitored variables.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">Primary Key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>plan_id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">FK to Plans</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>variable_name</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">e.g., "Steel Price"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>baseline_value</code></td>
+<td style="text-align: left;">DECIMAL</td>
+<td style="text-align: left;">Value at plan approval (e.g., 800.00)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unit</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">e.g., "USD/Ton"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>data_source_id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">FK to Data Sources</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tolerance_pct</code></td>
+<td style="text-align: left;">DECIMAL</td>
+<td style="text-align: left;">+/- % allowed before alert (e.g., 0.05)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data_sources"><code>data_sources</code></h3>
+<p>Configuration for external feeds.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">Primary Key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>name</code></td>
+<td style="text-align: left;">TEXT</td>
+<td style="text-align: left;">e.g., "London Metal Exchange API"</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>adapter_type</code></td>
+<td style="text-align: left;">ENUM</td>
+<td style="text-align: left;"><code>json_api</code>, <code>sql_query</code>, <code>manual_input</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>config</code></td>
+<td style="text-align: left;">JSONB</td>
+<td style="text-align: left;">Auth tokens, endpoints, query paths</td>
+</tr>
+</tbody>
+</table>
+<h3 id="observations"><code>observations</code></h3>
+<p>Time-series log of actual values.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Column</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">Primary Key</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>assumption_id</code></td>
+<td style="text-align: left;">UUID</td>
+<td style="text-align: left;">FK</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>observed_at</code></td>
+<td style="text-align: left;">TIMESTAMPTZ</td>
+<td style="text-align: left;">When the data was captured</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>value</code></td>
+<td style="text-align: left;">DECIMAL</td>
+<td style="text-align: left;">The live value (e.g., 850.00)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>drift_pct</code></td>
+<td style="text-align: left;">DECIMAL</td>
+<td style="text-align: left;"><code>(value - baseline) / baseline</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="alerting-logic-dsl">Alerting Logic (DSL)</h2>
+<p>We use a simple domain-specific language for defining complex alerts.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># rules/steel_price_breach.yml</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">rule_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Steel</span><span class="nv"> </span><span class="s">Price</span><span class="nv"> </span><span class="s">Surge&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">condition</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">assumption</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;steel_price&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">operator</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&gt;&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10%</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">duration</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3</span><span class="nv"> </span><span class="s">days&quot;</span><span class="w"> </span><span class="c1"># Must persist for 3 days to avoid noise</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">action</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;critical&quot;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="nt">notify</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;project_manager&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;procurement_lead&quot;</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nt">trigger_workflow</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;recalculate_budget&quot;</span>
 </code></pre></div>
-<h2 id="drift-categories">Drift Categories</h2>
-<ul>
-<li>Cost drift (unit costs, labor rates)</li>
-<li>Schedule drift (task durations)</li>
-<li>Demand drift (sales, adoption)</li>
-<li>Regulatory drift (policy changes)</li>
-</ul>
-<h2 id="drift-detection-logic">Drift Detection Logic</h2>
-<ul>
-<li>Each assumption has a baseline value and tolerance band.</li>
-<li>Drift is detected when the observed value exceeds the band.</li>
-<li>Severity is ranked by impact on schedule, cost, or success probability.</li>
-</ul>
-<h2 id="alerting-and-actions">Alerting and Actions</h2>
-<ul>
-<li><strong>Warning:</strong> drift is near threshold, monitor closely.</li>
-<li><strong>Breach:</strong> drift exceeds threshold, trigger re-plan.</li>
-<li><strong>Critical:</strong> drift threatens viability, escalate to governance.</li>
-</ul>
-<h2 id="output-schema">Output Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;assumption_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a_33&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;assumption&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Material cost = $120/ton&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;current_value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">165</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;drift_pct&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">37.5</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;breach&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;replan_required&quot;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="integration-points">Integration Points</h2>
-<ul>
-<li>Feeds into adaptive re-planning engine.</li>
-<li>Updates risk propagation and Monte Carlo inputs.</li>
-<li>Alerts execution governance layer.</li>
-<li>Updates execution readiness score.</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>Time-to-drift detection.</li>
-<li>Reduction in unplanned overruns.</li>
-<li>% of plans with active assumption tracking.</li>
-<li>Percentage of drift events resolved within SLA.</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>Noisy data may cause false alarms.</li>
-<li>Data integration gaps.</li>
-<li>Over-alerting reduces trust.</li>
-</ul>
+<p><strong>Composite Drift Example:</strong>
+If <code>steel_price</code> is up 4% (Green) AND <code>labor_rate</code> is up 4% (Green), the combined effect might be &gt; 5%.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">check_composite_drift</span><span class="p">(</span><span class="n">plan_id</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">total_impact</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">for</span> <span class="n">assumption</span> <span class="ow">in</span> <span class="n">get_assumptions</span><span class="p">(</span><span class="n">plan_id</span><span class="p">):</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">impact</span> <span class="o">=</span> <span class="n">assumption</span><span class="o">.</span><span class="n">drift_pct</span> <span class="o">*</span> <span class="n">assumption</span><span class="o">.</span><span class="n">sensitivity_factor</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="n">total_impact</span> <span class="o">+=</span> <span class="n">impact</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">if</span> <span class="n">total_impact</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">trigger_alert</span><span class="p">(</span><span class="s2">&quot;Combined budget impact exceeds 5%&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<hr />
+<h2 id="api-reference">API Reference</h2>
+<h3 id="get-apidriftstatusplan_id"><code>GET /api/drift/status/{plan_id}</code></h3>
+<p>Dashboard view of current health.</p>
+<p><strong>Response:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid...&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;warning&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;drift_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="mi">12</span><span class="err">%</span><span class="w"> </span><span class="err">dri</span><span class="kc">ft</span><span class="w"> </span><span class="err">aggrega</span><span class="kc">te</span><span class="err">d</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;breaches&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fuel_cost&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="nt">&quot;baseline&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.50</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">      </span><span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.10</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">&quot;drift&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+17%&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;critical&quot;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="post-apidriftsimulate"><code>POST /api/drift/simulate</code></h3>
+<p>"What-if" analysis for manual scenario testing.</p>
+<p><strong>Request:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;assumptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exchange_rate&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.20</span><span class="p">}</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="user-interface">User Interface</h2>
+<h3 id="the-watchtower">"The Watchtower"</h3>
+<p>A dashboard widget showing a "Health Bar" for the plan.
+-   <strong>Drift Chart:</strong> Sparklines showing the trend of key variables over time.
+-   <strong>Impact Analysis:</strong> "If this trend continues, you will be over budget by Nov 15th."</p>
+<h3 id="re-plan-trigger">Re-Plan Trigger</h3>
+<p>When a <code>Red</code> alert fires, a "Re-Plan" button appears.
+1.  Clones the current plan.
+2.  Updates the baselines to current actuals.
+3.  Re-runs the critical path and budget estimation.
+4.  Presents the "Delta" for approval.</p>
 <h2 id="future-enhancements">Future Enhancements</h2>
-<ul>
-<li>Automatic re-baselining suggestions.</li>
-<li>Trend forecasting for early warning.</li>
-<li>Domain-specific drift thresholds.</li>
-<li>Causal attribution between drift sources and outcomes.</li>
-</ul>
+<ol>
+<li><strong>Predictive Drift:</strong> Use ML time-series forecasting (Prophet/Arima) to alert <em>before</em> the breach happens.</li>
+<li><strong>News Sentiment:</strong> Ingest news articles to detect "Qualitative Drift" (e.g., "Political instability in supplier region").</li>
+</ol>
 
 
 
 
 
 
-
-  
-  
 
 
 
