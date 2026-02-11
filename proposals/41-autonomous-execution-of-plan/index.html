@@ -9,6 +9,8 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
+        <meta name="author" content="EgonBot on Raspberry Pi 4">
+      
       
         <link rel="canonical" href="https://docs.planexe.org/proposals/41-autonomous-execution-of-plan/">
       
@@ -25,7 +27,7 @@
     
     
       
-        <title>41 autonomous execution of plan - PlanExe Documentation</title>
+        <title>Autonomous Execution of a Plan (AI + Human Delegation) - PlanExe Documentation</title>
       
     
     
@@ -73,7 +75,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="41 autonomous execution of plan - PlanExe Documentation" />
+<meta property="og:title" content="Autonomous Execution of a Plan (AI + Human Delegation) - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/41-autonomous-execution-of-plan.png" />
 <meta property="og:image:type" content="image/png" />
@@ -81,7 +83,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/proposals/41-autonomous-execution-of-plan/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="41 autonomous execution of plan - PlanExe Documentation" />
+<meta property="twitter:title" content="Autonomous Execution of a Plan (AI + Human Delegation) - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/41-autonomous-execution-of-plan.png" />
 </head>
@@ -103,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#autonomous-execution-of-a-plan-by-a-team-of-ai-agents" class="md-skip">
+        <a href="#autonomous-execution-of-a-plan-ai-human-delegation" class="md-skip">
           Skip to content
         </a>
       
@@ -138,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              41 autonomous execution of plan
+              Autonomous Execution of a Plan (AI + Human Delegation)
             
           </span>
         </div>
@@ -3161,6 +3163,13 @@
   </span>
   
   
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
 
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -3178,6 +3187,13 @@
     
   </span>
   
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
   
 
       </a>
@@ -3198,10 +3214,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#pitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Pitch
       
     </span>
   </a>
@@ -3209,10 +3225,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-execution-engine" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Execution Engine
+        Why
       
     </span>
   </a>
@@ -3220,10 +3236,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-highlevel-architecture" class="md-nav__link">
+  <a href="#problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. High‑level Architecture
+        Problem
       
     </span>
   </a>
@@ -3231,10 +3247,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-delegation-flow" class="md-nav__link">
+  <a href="#proposed-solution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Delegation Flow
+        Proposed Solution
       
     </span>
   </a>
@@ -3242,10 +3258,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-required-extensions" class="md-nav__link">
+  <a href="#execution-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Required Extensions
+        Execution Architecture
       
     </span>
   </a>
@@ -3253,10 +3269,249 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-reporting-what-the-pipeline-will-emit" class="md-nav__link">
+  <a href="#core-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Reporting – What the Pipeline Will Emit
+        Core Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-task-graph-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Task Graph Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-capability-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Capability Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-orchestrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Orchestrator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-human-task-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Human Task Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-evidence-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Evidence Validator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-risk-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Risk Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delegation Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delegation Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capability-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-re-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive Re-Planning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive Re-Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#re-planning-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-Planning Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-plan-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-Plan Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-and-capacity-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource and Capacity Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource and Capacity Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capacity-profile-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capacity Profile Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Contracts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Contracts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-event-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution Event Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting Outputs
       
     </span>
   </a>
@@ -3264,10 +3519,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-safety-risk-mitigation" class="md-nav__link">
+  <a href="#example-execution-timeline-with-change-events" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Safety &amp; Risk Mitigation
+        Example Execution Timeline (With Change Events)
       
     </span>
   </a>
@@ -3275,10 +3530,265 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-roadmap" class="md-nav__link">
+  <a href="#failure-handling-and-rollback" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Roadmap
+        Failure Handling and Rollback
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failure Handling and Rollback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failure-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failure Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollback Mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-to-human-handoff-contract-sla-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI-to-Human Handoff Contract (SLA + Requirements)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI-to-Human Handoff Contract (SLA + Requirements)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sla-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLA Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Requirement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-and-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety and Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feasibility-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feasibility Tiers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feasibility-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feasibility Adjustments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staged-rollout-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Staged Rollout Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Staged Rollout Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-autonomous-coordination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Autonomous Coordination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-low-risk-autonomous-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Low-Risk Autonomous Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-selective-autonomous-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Selective Autonomous Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-checklist-tier-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope Checklist (Tier Classification)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scope Checklist (Tier Classification)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-ai-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1 (AI-Executable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-ai-with-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 (AI-With-Approval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-human-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3 (Human-Led)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roadmap
       
     </span>
   </a>
@@ -3336,10 +3846,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#pitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Pitch
       
     </span>
   </a>
@@ -3347,10 +3857,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-execution-engine" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Execution Engine
+        Why
       
     </span>
   </a>
@@ -3358,10 +3868,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-highlevel-architecture" class="md-nav__link">
+  <a href="#problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. High‑level Architecture
+        Problem
       
     </span>
   </a>
@@ -3369,10 +3879,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-delegation-flow" class="md-nav__link">
+  <a href="#proposed-solution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Delegation Flow
+        Proposed Solution
       
     </span>
   </a>
@@ -3380,10 +3890,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-required-extensions" class="md-nav__link">
+  <a href="#execution-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Required Extensions
+        Execution Architecture
       
     </span>
   </a>
@@ -3391,10 +3901,249 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-reporting-what-the-pipeline-will-emit" class="md-nav__link">
+  <a href="#core-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Reporting – What the Pipeline Will Emit
+        Core Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-task-graph-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Task Graph Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-capability-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Capability Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-orchestrator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Orchestrator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-human-task-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Human Task Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-evidence-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Evidence Validator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-risk-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) Risk Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delegation Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delegation Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capability-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-re-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive Re-Planning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive Re-Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#re-planning-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-Planning Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#re-plan-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Re-Plan Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-and-capacity-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource and Capacity Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resource and Capacity Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capacity-profile-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capacity Profile Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Contracts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Contracts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execution-event-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execution Event Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reporting Outputs
       
     </span>
   </a>
@@ -3402,10 +4151,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-safety-risk-mitigation" class="md-nav__link">
+  <a href="#example-execution-timeline-with-change-events" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Safety &amp; Risk Mitigation
+        Example Execution Timeline (With Change Events)
       
     </span>
   </a>
@@ -3413,10 +4162,265 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-roadmap" class="md-nav__link">
+  <a href="#failure-handling-and-rollback" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Roadmap
+        Failure Handling and Rollback
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Failure Handling and Rollback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failure-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failure Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recovery-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recovery Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rollback Mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-to-human-handoff-contract-sla-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI-to-Human Handoff Contract (SLA + Requirements)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI-to-Human Handoff Contract (SLA + Requirements)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sla-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLA Targets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Requirement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-and-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety and Governance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feasibility-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feasibility Tiers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feasibility-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feasibility Adjustments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#staged-rollout-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Staged Rollout Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Staged Rollout Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-autonomous-coordination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Autonomous Coordination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-low-risk-autonomous-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Low-Risk Autonomous Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-selective-autonomous-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Selective Autonomous Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-checklist-tier-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope Checklist (Tier Classification)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scope Checklist (Tier Classification)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-ai-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1 (AI-Executable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-ai-with-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2 (AI-With-Approval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-human-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3 (Human-Led)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roadmap
       
     </span>
   </a>
@@ -3443,68 +4447,325 @@
   
 
 
-<h1 id="autonomous-execution-of-a-plan-by-a-team-of-ai-agents">Autonomous Execution of a Plan by a Team of AI Agents</h1>
-<h2 id="overview">Overview</h2>
-<p>This proposal describes how a PlanExe‑generated strategic plan can be executed autonomously by a coordinated team of AI agents, while delegating any tasks that fall outside the agents’ capabilities to human operators.</p>
-<h2 id="1-execution-engine">1. Execution Engine</h2>
+<h1 id="autonomous-execution-of-a-plan-ai-human-delegation">Autonomous Execution of a Plan (AI + Human Delegation)</h1>
+<h2 id="pitch">Pitch</h2>
+<p>Turn a PlanExe plan into a living execution program that runs autonomously where possible, delegates to humans where necessary, and continuously re-plans as reality changes.</p>
+<h2 id="why">Why</h2>
+<p>A static plan is not enough. Real execution requires:</p>
 <ul>
-<li><strong>Orchestrator</strong> – a lightweight service that reads the PlanExe JSON output, builds a task graph, and schedules work across agents.</li>
-<li><strong>Agent Types</strong> – specialized micro‑services (e.g., data‑gathering, analysis, reporting) each exposing a standard RPC/REST interface.</li>
-<li><strong>Human‑in‑the‑Loop</strong> – tasks marked <code>human_required</code> are routed to a task‑queue watched by human workers via the existing PlanExe UI.</li>
+<li>resource-aware scheduling</li>
+<li>continuous evidence checks</li>
+<li>delegation to humans when AI capability is insufficient</li>
+<li>iterative re-planning based on new data and outcomes</li>
 </ul>
-<h2 id="2-highlevel-architecture">2. High‑level Architecture</h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>+----------------+      +----------------+      +----------------+
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>|   Planner      | ---&gt; | Orchestrator   | ---&gt; |   Agents       |
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>+----------------+      +----------------+      +----------------+
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        |                         |                     |
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        v                         v                     v
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   Plan JSON                Task Graph          Execution Results
+<p>This proposal extends plan generation into <strong>plan execution</strong>, with orchestration, governance, and adaptive control.</p>
+<h2 id="problem">Problem</h2>
+<ul>
+<li>Plans often assume ideal conditions and static timelines.</li>
+<li>AI agents can execute some tasks, but not all (legal, physical, negotiation).</li>
+<li>Human resources are limited and unevenly available.</li>
+<li>Without re-planning, early deviations compound into failure.</li>
+</ul>
+<h2 id="proposed-solution">Proposed Solution</h2>
+<p>Build an <strong>Execution Engine</strong> that:</p>
+<ol>
+<li>Converts plan JSON into an executable task graph.</li>
+<li>Assigns tasks to AI agents or humans based on capability and risk.</li>
+<li>Tracks progress, evidence, and constraints in real time.</li>
+<li>Re-plans dynamically as facts change.</li>
+<li>Produces audit-ready reports and governance checkpoints.</li>
+</ol>
+<h2 id="execution-architecture">Execution Architecture</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PlanExe JSON
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; Task Graph Builder
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -&gt; Orchestrator
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>     -&gt; Agent Pool (AI)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>     -&gt; Human Queue
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>     -&gt; Evidence Validator
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>     -&gt; Risk Gates
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  -&gt; Progress + Metrics
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  -&gt; Adaptive Re-Plan
 </code></pre></div>
-- The <strong>Planner</strong> (PlanExe) produces a JSON plan.
-- The <strong>Orchestrator</strong> parses the plan, constructs a DAG of tasks, and assigns each task to an appropriate agent.
-- <strong>Agents</strong> are independent services (LLM‑driven, data‑fetching, computation) that expose a uniform <code>run(task)</code> API.
-- Human‑only tasks are sent to a <strong>Human Queue</strong> visible in the UI.</p>
-<h2 id="3-delegation-flow">3. Delegation Flow</h2>
+<h2 id="core-components">Core Components</h2>
+<h3 id="1-task-graph-builder">1) Task Graph Builder</h3>
+<ul>
+<li>Parse PlanExe outputs into a DAG of tasks with:</li>
+<li>dependencies</li>
+<li>required inputs/outputs</li>
+<li>estimated duration and cost</li>
+<li>risk class and verification level</li>
+</ul>
+<h3 id="2-capability-registry">2) Capability Registry</h3>
+<ul>
+<li>Agents and humans register their capabilities as schemas.</li>
+<li>Each task specifies the capability required.</li>
+<li>Orchestrator performs matching based on skills, availability, and cost.</li>
+</ul>
+<h3 id="3-orchestrator">3) Orchestrator</h3>
+<ul>
+<li>Dispatches tasks to agents or humans.</li>
+<li>Manages retries, fallbacks, and escalation.</li>
+<li>Tracks state transitions (queued, running, blocked, done).</li>
+</ul>
+<h3 id="4-human-task-queue">4) Human Task Queue</h3>
+<ul>
+<li>Dedicated UI showing:</li>
+<li>task description</li>
+<li>required evidence</li>
+<li>urgency and deadline</li>
+<li>instructions and context</li>
+<li>Human actions logged with rationale.</li>
+</ul>
+<h3 id="5-evidence-validator">5) Evidence Validator</h3>
+<ul>
+<li>Every task output must pass a schema and evidence check.</li>
+<li>Outputs are tagged with confidence.</li>
+<li>Low-confidence or high-impact results trigger human review.</li>
+</ul>
+<h3 id="6-risk-gates">6) Risk Gates</h3>
+<ul>
+<li>High-impact tasks require approval before execution.</li>
+<li>Risk gates enforce compliance, safety, and budget limits.</li>
+</ul>
+<h2 id="delegation-model">Delegation Model</h2>
+<h3 id="capability-matching">Capability Matching</h3>
+<ul>
+<li>Match task requirements to agent or human skill profiles.</li>
+<li>Consider risk class, data sensitivity, and cost.</li>
+</ul>
+<h3 id="decision-rules">Decision Rules</h3>
+<ul>
+<li><strong>AI-first</strong> for low-risk, repeatable tasks.</li>
+<li><strong>Human-first</strong> for legal, regulatory, and negotiation tasks.</li>
+<li><strong>Hybrid</strong> for tasks requiring AI prep plus human judgment.</li>
+</ul>
+<h3 id="escalation">Escalation</h3>
+<ul>
+<li>If AI confidence falls below threshold, reroute to human.</li>
+<li>If humans reject, re-plan or adjust scope.</li>
+</ul>
+<h2 id="adaptive-re-planning">Adaptive Re-Planning</h2>
+<p>Execution is not linear. The system must re-plan when:</p>
+<ul>
+<li>task outputs contradict assumptions</li>
+<li>dependencies are delayed</li>
+<li>budgets exceed thresholds</li>
+<li>external factors change (regulation, market, supplier)</li>
+</ul>
+<h3 id="re-planning-loop">Re-Planning Loop</h3>
 <ol>
-<li><strong>Capability Matching</strong> – each agent registers a schema of actions it can perform. The orchestrator matches plan steps to agents based on these schemas.</li>
-<li><strong>Task Assignment</strong> – the orchestrator sends the task payload to the chosen agent via RPC.</li>
-<li><strong>Result Collection</strong> – agents return JSON results plus a confidence score.</li>
-<li><strong>Fallback</strong> – if no agent matches, a human ticket is created; if an agent rejects, the orchestrator retries with an alternative or escalates.</li>
-<li><strong>Human Review</strong> – low‑confidence or high‑impact results trigger a human approval step before continuation.</li>
+<li>Detect deviation vs baseline.</li>
+<li>Update plan assumptions and constraints.</li>
+<li>Recompute schedule and resource allocation.</li>
+<li>Issue new tasks or adjust milestones.</li>
 </ol>
-<h2 id="4-required-extensions">4. Required Extensions</h2>
+<h3 id="re-plan-outputs">Re-Plan Outputs</h3>
 <ul>
-<li><strong>Capability Registry Service</strong> – a tiny HTTP service where agents POST their <code>schema.json</code> and the orchestrator queries it.</li>
-<li><strong>Human Ticket Queue</strong> – extend the existing PlanExe UI with a task list (<code>/tasks</code>) that shows pending human‑required steps.</li>
-<li><strong>Result Validator</strong> – a shared library that checks confidence thresholds and flags anomalies for review.</li>
-<li><strong>Audit Logger</strong> – immutable log (e.g., append‑only file or simple DB) recording every task dispatch, result, and reviewer decision.</li>
+<li>Updated Gantt (baseline vs current)</li>
+<li>Revised risk register</li>
+<li>Decision log with rationale</li>
 </ul>
-<h2 id="5-reporting-what-the-pipeline-will-emit">5. Reporting – What the Pipeline Will Emit</h2>
+<h2 id="resource-and-capacity-management">Resource and Capacity Management</h2>
 <ul>
-<li><strong>Progress Dashboard</strong> – real‑time status (queued, running, completed, failed) displayed in the PlanExe front‑end.</li>
-<li><strong>Intermediate Reports</strong> – after each major milestone the orchestrator invokes <code>run_plan_pipeline.py</code> to generate updated Gantt charts, risk registers, and executive summaries.</li>
-<li><strong>Final Execution Report</strong> – a consolidated PDF/HTML document containing:</li>
-<li>Execution timeline</li>
-<li>Deviations from the original plan</li>
-<li>Human decisions and rationale</li>
-<li>Confidence metrics per task</li>
-<li>Audit log reference</li>
+<li>Track available AI resources and human availability.</li>
+<li>Enforce concurrency limits.</li>
+<li>Prioritize high-impact work when capacity is constrained.</li>
 </ul>
-<h2 id="6-safety-risk-mitigation">6. Safety &amp; Risk Mitigation</h2>
+<h3 id="capacity-profile-example">Capacity Profile Example</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;ai_agents&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;human_fte&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;legal&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;engineering&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;procurement&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;max_parallel_tasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="data-contracts">Data Contracts</h2>
+<h3 id="task-schema">Task Schema</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;t_001&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Obtain environmental permit&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;capability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;regulatory_filing&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;high&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&quot;risk_class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;critical&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">&quot;inputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;site_plan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;impact_assessment&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">&quot;outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;permit_document&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;queued&quot;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="execution-event-log">Execution Event Log</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;event_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e_445&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;t_001&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;actor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;human:legal_01&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;approved&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-11T10:22:00Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Permit submitted&quot;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="reporting-outputs">Reporting Outputs</h2>
 <ul>
-<li><strong>Explicit Risk Gates</strong> – before any high‑impact step (budget allocation, regulatory filing) the orchestrator requires explicit human approval.</li>
-<li><strong>Audit Trail</strong> – every action is signed with the agent’s identity and timestamped, enabling full traceability.</li>
-<li><strong>Existential‑Risk Checks</strong> – a dedicated “risk‑assessment” agent runs scenario analysis on critical milestones and flags any existential‑risk concerns for senior review.</li>
-<li><strong>Rollback Capability</strong> – because each milestone produces a snapshot, the plan can be rolled back to a safe state if a downstream failure is detected.</li>
+<li>Progress dashboard: status by milestone.</li>
+<li>Risk dashboard: unresolved risks and blockers.</li>
+<li>Evidence coverage: which claims are verified.</li>
+<li>Final execution report:</li>
+<li>timeline vs baseline</li>
+<li>deviations and corrective actions</li>
+<li>decision log</li>
+<li>confidence profile</li>
 </ul>
-<h2 id="7-roadmap">7. Roadmap</h2>
+<h2 id="example-execution-timeline-with-change-events">Example Execution Timeline (With Change Events)</h2>
+<p><strong>Baseline (Day 0):</strong></p>
+<ul>
+<li>Week 1-2: feasibility + regulatory scoping</li>
+<li>Week 3-4: procurement + vendor selection</li>
+<li>Week 5-8: build + integration</li>
+<li>Week 9: compliance review</li>
+<li>Week 10: launch</li>
+</ul>
+<p><strong>Execution Events:</strong></p>
+<ul>
+<li>Day 9: Regulator requests additional environmental study.</li>
+<li>Day 10: Task graph updated, compliance lane becomes critical.</li>
+<li>Day 11: Human legal capacity bottleneck detected.</li>
+<li>Day 12: Orchestrator proposes contractor augmentation and re-baselines timeline.</li>
+<li>Day 14: Updated plan published with new dependencies and budget deltas.</li>
+</ul>
+<p><strong>Output:</strong> Updated Gantt, risk register, and decision log entry that explains the change and its impact.</p>
+<h2 id="failure-handling-and-rollback">Failure Handling and Rollback</h2>
+<p>Autonomous execution must assume failure cases and encode recovery:</p>
+<h3 id="failure-types">Failure Types</h3>
+<ul>
+<li><strong>Data failure:</strong> missing or invalid inputs.</li>
+<li><strong>Task failure:</strong> agent returns low-confidence or incorrect output.</li>
+<li><strong>External failure:</strong> third-party dependency delays or rejects.</li>
+<li><strong>Policy failure:</strong> execution violates budget, compliance, or ethics constraints.</li>
+</ul>
+<h3 id="recovery-actions">Recovery Actions</h3>
+<ul>
+<li><strong>Retry with alternative agent</strong> (for data and task failures).</li>
+<li><strong>Escalate to human</strong> for high-risk or repeated failures.</li>
+<li><strong>Re-plan</strong> to adjust dependencies and milestones.</li>
+<li><strong>Rollback</strong> to last stable snapshot if downstream impacts are unsafe.</li>
+</ul>
+<h3 id="rollback-mechanism">Rollback Mechanism</h3>
+<ul>
+<li>Every milestone creates a snapshot of plan state and evidence.</li>
+<li>Rollback reverts to the last validated snapshot.</li>
+<li>All downstream tasks are invalidated and re-queued with updated inputs.</li>
+</ul>
+<h2 id="ai-to-human-handoff-contract-sla-requirements">AI-to-Human Handoff Contract (SLA + Requirements)</h2>
+<p>For tasks that require human intervention, define a strict handoff contract:</p>
+<h3 id="required-fields">Required Fields</h3>
+<ul>
+<li>Task purpose and required outcome.</li>
+<li>Evidence needed and acceptance criteria.</li>
+<li>Deadline and urgency.</li>
+<li>Context pack (inputs, dependencies, prior decisions).</li>
+<li>Suggested next steps and contact references.</li>
+</ul>
+<h3 id="sla-targets">SLA Targets</h3>
+<ul>
+<li><strong>Acknowledgement:</strong> within 24 hours.</li>
+<li><strong>Completion:</strong> within task-defined window (default 5 business days).</li>
+<li><strong>Escalation:</strong> if no response within SLA, route to alternate human or reduce scope.</li>
+</ul>
+<h3 id="audit-requirement">Audit Requirement</h3>
+<p>Every handoff must record:</p>
+<ul>
+<li>human assignee</li>
+<li>response timestamp</li>
+<li>decision rationale</li>
+<li>evidence provided</li>
+</ul>
+<h2 id="safety-and-governance">Safety and Governance</h2>
+<ul>
+<li>Immutable audit log for all actions and outputs.</li>
+<li>Explicit sign-offs on high-impact tasks.</li>
+<li>Budget and compliance thresholds enforced by policy.</li>
+<li>Kill-switch to halt execution in emergencies.</li>
+</ul>
+<h2 id="success-metrics">Success Metrics</h2>
+<ul>
+<li>% tasks executed without manual intervention</li>
+<li>Median deviation vs baseline schedule</li>
+<li>% high-risk tasks with evidence verified</li>
+<li>Time saved vs manual execution coordination</li>
+</ul>
+<h2 id="risks">Risks</h2>
+<ul>
+<li>Over-automation may hide human context.</li>
+<li>Insufficient human capacity causes bottlenecks.</li>
+<li>False confidence from AI outputs.</li>
+</ul>
+<h2 id="feasibility-tiers">Feasibility Tiers</h2>
+<p>Autonomous execution is feasible only with clear boundaries. Define tiers by risk and controllability:</p>
+<ul>
+<li><strong>Tier 1 (Feasible Now):</strong> low-risk, repeatable tasks (data gathering, summarization, formatting, internal reporting).</li>
+<li><strong>Tier 2 (Partially Feasible):</strong> tasks that can be AI-driven but require human approval (procurement drafts, compliance checklists, vendor shortlists).</li>
+<li><strong>Tier 3 (Not Feasible Without Human Lead):</strong> legal filings, negotiations, physical execution, regulatory approvals, and high-stakes financial commitments.</li>
+</ul>
+<h2 id="feasibility-adjustments">Feasibility Adjustments</h2>
+<p>To make autonomous execution practical, enforce the following adjustments:</p>
+<ul>
+<li><strong>Scope limits:</strong> constrain execution to well-defined domains and task types.</li>
+<li><strong>Hard policy gates:</strong> require explicit human approval for high-impact steps.</li>
+<li><strong>Evidence sufficiency checks:</strong> block execution when inputs are unverified.</li>
+<li><strong>Capacity-aware scheduling:</strong> align execution with real human availability.</li>
+<li><strong>Rollback readiness:</strong> snapshot after each milestone and auto-revert on critical deviation.</li>
+</ul>
+<h2 id="staged-rollout-plan">Staged Rollout Plan</h2>
+<h3 id="phase-1-autonomous-coordination">Phase 1: Autonomous Coordination</h3>
+<ul>
+<li>Task graphing, scheduling, and progress tracking.</li>
+<li>Human execution for all tasks.</li>
+<li>Evidence collection and audit logging only.</li>
+</ul>
+<h3 id="phase-2-low-risk-autonomous-execution">Phase 2: Low-Risk Autonomous Execution</h3>
+<ul>
+<li>AI executes low-risk tasks under strict validation.</li>
+<li>Human approval for all medium and high risk tasks.</li>
+<li>Adaptive re-planning enabled.</li>
+</ul>
+<h3 id="phase-3-selective-autonomous-execution">Phase 3: Selective Autonomous Execution</h3>
+<ul>
+<li>AI executes a broader set of tasks with confidence thresholds.</li>
+<li>High-risk steps remain human-led.</li>
+<li>Continuous monitoring and rollback enforced.</li>
+</ul>
+<h2 id="scope-checklist-tier-classification">Scope Checklist (Tier Classification)</h2>
+<p>Use this checklist to classify each task into Tier 1/2/3. If any Tier 3 condition is true, the task is human-led.</p>
+<h3 id="tier-1-ai-executable">Tier 1 (AI-Executable)</h3>
+<ul>
+<li>Internal analysis or data aggregation only.</li>
+<li>No external commitments or legal exposure.</li>
+<li>Outputs are reversible and low-cost to redo.</li>
+<li>Evidence inputs are verified and structured.</li>
+</ul>
+<h3 id="tier-2-ai-with-approval">Tier 2 (AI-With-Approval)</h3>
+<ul>
+<li>External communication or procurement drafts.</li>
+<li>Moderate budget impact but reversible.</li>
+<li>Requires validation by a human reviewer.</li>
+<li>Evidence is strong but not fully audited.</li>
+</ul>
+<h3 id="tier-3-human-led">Tier 3 (Human-Led)</h3>
+<ul>
+<li>Legal filings, regulatory submissions, or compliance sign-offs.</li>
+<li>Negotiations, contracts, or financial commitments.</li>
+<li>Physical execution or safety-critical actions.</li>
+<li>High budget impact or irreversible decisions.</li>
+</ul>
+<h2 id="roadmap">Roadmap</h2>
 <ol>
-<li><strong>Prototype Orchestrator</strong> – FastAPI service with a simple DAG scheduler (MVP in 2 weeks).</li>
-<li><strong>Define Agent Schema</strong> – publish a JSON‑Schema for task capabilities; implement two example agents (data fetcher, LLM summarizer).</li>
-<li><strong>Integrate Human Queue</strong> – UI extension to show pending human tasks and allow approval/rejection.</li>
-<li><strong>Implement Reporting Hooks</strong> – call <code>run_plan_pipeline.py</code> after each milestone.</li>
-<li><strong>Safety Review Layer</strong> – add risk‑gate middleware and audit logger.</li>
-<li><strong>Beta Test</strong> – run on a real PlanExe generated plan, collect feedback, iterate.</li>
+<li>MVP orchestrator with basic DAG execution.</li>
+<li>Capability registry and task schema.</li>
+<li>Human task queue integration.</li>
+<li>Evidence validator and risk gate layer.</li>
+<li>Adaptive re-planning and reporting.</li>
+<li>Pilot on a real plan with human oversight.</li>
 </ol>
 
 
@@ -3512,6 +4773,9 @@
 
 
 
+
+  
+  
 
 
 
