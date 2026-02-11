@@ -3529,10 +3529,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#pitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Pitch
       
     </span>
   </a>
@@ -3540,10 +3540,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-problem" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Problem
+        Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposed-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposed Solution
       
     </span>
   </a>
@@ -3574,10 +3596,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-transaction-flow" class="md-nav__link">
+  <a href="#transaction-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Transaction Flow
+        Transaction Flow
       
     </span>
   </a>
@@ -3602,10 +3624,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-header-exchange" class="md-nav__link">
+  <a href="#header-exchange" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Header Exchange
+        Header Exchange
       
     </span>
   </a>
@@ -3633,6 +3655,28 @@
     <span class="md-ellipsis">
       
         Success Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Enhancements
       
     </span>
   </a>
@@ -3690,10 +3734,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#pitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Pitch
       
     </span>
   </a>
@@ -3701,10 +3745,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-problem" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Problem
+        Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposed-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposed Solution
       
     </span>
   </a>
@@ -3735,10 +3801,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-transaction-flow" class="md-nav__link">
+  <a href="#transaction-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Transaction Flow
+        Transaction Flow
       
     </span>
   </a>
@@ -3763,10 +3829,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-header-exchange" class="md-nav__link">
+  <a href="#header-exchange" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Header Exchange
+        Header Exchange
       
     </span>
   </a>
@@ -3800,6 +3866,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Enhancements
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3824,72 +3912,76 @@
 <p><strong>Author:</strong> PlanExe Team<br />
 <strong>Date:</strong> 2026-02-11<br />
 <strong>Status:</strong> Proposal<br />
-<strong>Audience:</strong> Financial Architects, OpenClaw Developers  </p>
+<strong>Audience:</strong> Financial Architects, OpenClaw Developers</p>
 <hr />
-<h2 id="overview">Overview</h2>
-<p>This proposal defines the "Economic Interface" for PlanExe. It allows autonomous agents to purchase Cloud Credits (for plan generation) using standardized machine-readable protocols, removing the need for a human to manually enter a credit card on a website.</p>
-<p>We support a <strong>Dual-Protocol Strategy</strong>:
-1.  <strong>AP2 (Agent Payments Protocol):</strong> For high-value, auditable corporate spend (authorized by Humans).
-2.  <strong>x402 (HTTP 402):</strong> For low-value, instant micropayments (authorized by Wallets).</p>
-<h2 id="core-problem">Core Problem</h2>
-<p>Agents like OpenClaw run headless. They cannot solve CAPTCHAs or navigate Stripe Checkout flows. If MyAgent runs out of credits at 3 AM, it gets stuck.</p>
-<h2 id="architecture-1-the-corporate-route-ap2">Architecture 1: The Corporate Route (AP2)</h2>
-<p>Best for Enterprise agents with a budget.</p>
-<h3 id="the-mandate">The Mandate</h3>
-<p>The Human Manager signs a digital "Spend Mandate" authorizing the bot.
-*   <strong>Issuer:</strong> <code>corp-finance@acme.com</code>
-*   <strong>Subject:</strong> <code>did:molt:my-agent</code>
-*   <strong>Limit:</strong> $500/month
-*   <strong>Scope:</strong> <code>planexe.org/*</code></p>
-<h3 id="the-transaction-flow">The Transaction Flow</h3>
-<ol>
-<li><strong>Agent:</strong> Calls <code>POST /api/purchase-credits</code> with <code>{ amount: 100, mandate: &lt;Signed_JWT&gt; }</code>.</li>
-<li><strong>PlanExe:</strong> Verifies the Mandate signature against the Corporate Public Key.</li>
-<li><strong>PlanExe:</strong> Charges the Corporate Card on file (via Stripe).</li>
-<li><strong>PlanExe:</strong> Issues 100 Credits to the Agent.</li>
-</ol>
-<hr />
-<h2 id="architecture-2-the-crypto-route-x402">Architecture 2: The Crypto Route (x402)</h2>
-<p>Best for Independent agents using stablecoins or Lightning.</p>
-<h3 id="the-header-exchange">The Header Exchange</h3>
-<p>Standard HTTP logic for paying per-request.</p>
-<ol>
-<li><strong>Agent:</strong> Calls <code>POST /api/generate-plan</code>.</li>
-<li><strong>PlanExe:</strong> Returns <code>402 Payment Required</code>.<ul>
-<li><code>WWW-Authenticate: x402 token="...", invoice="lnbc1...", amount="5.00 USDC"</code></li>
-</ul>
-</li>
-<li><strong>Agent:</strong> Pays the invoice via its local wallet.</li>
-<li><strong>Agent:</strong> Retries the request with <code>Authorization: x402 &lt;proof_of_payment&gt;</code>.</li>
-<li><strong>PlanExe:</strong> Returns <code>200 OK</code>.</li>
-</ol>
-<hr />
-<h2 id="integration-with-openclaw">Integration with OpenClaw</h2>
-<p>We will release an <code>OpenClaw:Wallet</code> skill that manages both protocols.</p>
+<h2 id="pitch">Pitch</h2>
+<p>Enable headless agents to pay for PlanExe services using standardized protocols for corporate spend and micropayments.</p>
+<h2 id="why">Why</h2>
+<p>Agents operate without browsers or CAPTCHAs. Payments must be machine-native, auditable, and reliable at scale.</p>
+<h2 id="problem">Problem</h2>
 <ul>
-<li>
-<p><strong>Config:</strong>
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<li>Headless agents cannot use standard checkout flows.</li>
+<li>Corporate payments require audit trails and limits.</li>
+<li>Micropayments must be instant and low-friction.</li>
+</ul>
+<h2 id="proposed-solution">Proposed Solution</h2>
+<p>Implement a dual-protocol payment gateway:</p>
+<ol>
+<li><strong>AP2 (Agent Payments Protocol):</strong> corporate spend with signed mandates.</li>
+<li><strong>x402 (HTTP 402):</strong> instant micropayments for per-request charging.</li>
+</ol>
+<h2 id="architecture-1-the-corporate-route-ap2">Architecture 1: The Corporate Route (AP2)</h2>
+<h3 id="the-mandate">The Mandate</h3>
+<p>A human manager signs a digital spend mandate authorizing the bot.</p>
+<ul>
+<li>Issuer: <code>corp-finance@acme.com</code></li>
+<li>Subject: <code>did:molt:my-agent</code></li>
+<li>Limit: $500/month</li>
+<li>Scope: <code>planexe.org/*</code></li>
+</ul>
+<h3 id="transaction-flow">Transaction Flow</h3>
+<ol>
+<li>Agent calls <code>POST /api/purchase-credits</code> with <code>{ amount: 100, mandate: &lt;Signed_JWT&gt; }</code>.</li>
+<li>PlanExe verifies mandate signature.</li>
+<li>PlanExe charges corporate card on file.</li>
+<li>PlanExe issues credits to the agent.</li>
+</ol>
+<h2 id="architecture-2-the-crypto-route-x402">Architecture 2: The Crypto Route (x402)</h2>
+<h3 id="header-exchange">Header Exchange</h3>
+<ol>
+<li>Agent calls <code>POST /api/generate-plan</code>.</li>
+<li>PlanExe returns <code>402 Payment Required</code> with invoice header.</li>
+<li>Agent pays via wallet.</li>
+<li>Agent retries with <code>Authorization: x402 &lt;proof_of_payment&gt;</code>.</li>
+<li>PlanExe returns <code>200 OK</code>.</li>
+</ol>
+<h2 id="integration-with-openclaw">Integration with OpenClaw</h2>
+<p>Release an <code>OpenClaw:Wallet</code> skill that handles both protocols.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;wallet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;ap2_mandate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/mandate.jwt&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;x402_private_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Make sure this is secure!&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;x402_private_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;secure-me&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;auto_top_up&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p><strong>Behavior:</strong></p>
-<ul>
-<li>If the request is &lt; $0.10, try x402 (Instant).</li>
-<li>If the request is &gt; $10.00, use AP2 (Audited).</li>
-</ul>
-</li>
-</ul>
+</code></pre></div>
 <h2 id="success-metrics">Success Metrics</h2>
 <ul>
-<li><strong>Headless Revenue:</strong> % of revenue coming from API calls with no browser session.</li>
-<li><strong>Friction:</strong> Error rate on x402 payments (target &lt; 1%).</li>
+<li>Headless revenue share (% of revenue from agent payments).</li>
+<li>Error rate on x402 (&lt; 1%).</li>
+<li>Time-to-top-up for AP2 mandates.</li>
+</ul>
+<h2 id="risks">Risks</h2>
+<ul>
+<li>Mandate key compromise.</li>
+<li>Payment replay attacks.</li>
+<li>Wallet integration failures on edge devices.</li>
+</ul>
+<h2 id="future-enhancements">Future Enhancements</h2>
+<ul>
+<li>Multi-currency pricing and FX handling.</li>
+<li>Per-agent spending dashboards.</li>
+<li>Payment routing by risk tier.</li>
 </ul>
 
 

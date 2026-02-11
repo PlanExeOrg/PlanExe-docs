@@ -3901,11 +3901,13 @@
 <p>Plans are often approved based on <em>optimism</em> rather than <em>evidence</em>. Teams commit to dates without having the underlying resources or regulatory approvals secured, leading to immediate delays.</p>
 <h2 id="system-architecture">System Architecture</h2>
 <h3 id="1-scoring-engine">1. Scoring Engine</h3>
-<p>The core service. It aggregates data from multiple "Validator Agents":
--   <strong>Evidence Validator:</strong> Checks if all critical claims are backed by Level 3 evidence.
--   <strong>Resource Validator:</strong> Cross-checks "Roles Needed" vs "Staff Available".
--   <strong>Dependency Validator:</strong> Ensures upstream constraints (e.g., "Seed funding secured") are met.
--   <strong>Risk Validator:</strong> Verifies that all "Critical" risks have mitigation plans.</p>
+<p>The core service. It aggregates data from multiple "Validator Agents":</p>
+<ul>
+<li><strong>Evidence Validator:</strong> Checks if all critical claims are backed by Level 3 evidence.</li>
+<li><strong>Resource Validator:</strong> Cross-checks "Roles Needed" vs "Staff Available".</li>
+<li><strong>Dependency Validator:</strong> Ensures upstream constraints (e.g., "Seed funding secured") are met.</li>
+<li><strong>Risk Validator:</strong> Verifies that all "Critical" risks have mitigation plans.</li>
+</ul>
 <h3 id="2-the-scorecard-0-100">2. The Scorecard (0-100)</h3>
 <p>A weighted sum of the validator outputs.</p>
 <p>$$Score = (0.3 \times Evidence) + (0.3 \times Capacity) + (0.2 \times Risk) + (0.1 \times Dependencies) + (0.1 \times Financials)$$</p>
