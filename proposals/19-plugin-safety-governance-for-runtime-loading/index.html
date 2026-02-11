@@ -2588,6 +2588,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-policy-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Policy Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-runtime-gatekeeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Runtime Gatekeeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-incident-and-lifecycle-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Incident and Lifecycle Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3901,6 +3962,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-policy-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Policy Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-runtime-gatekeeper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Runtime Gatekeeper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-incident-and-lifecycle-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Incident and Lifecycle Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4006,6 +4128,31 @@
 <li>Automated static and dynamic code analysis.</li>
 <li>Third-party certification authority.</li>
 <li>Differential permissioning by plan sensitivity.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-policy-engine">Phase A — Policy Engine</h3>
+<ol>
+<li>Define trust tiers and stage-level allow policies.</li>
+<li>Enforce signature/checksum/provenance validation.</li>
+<li>Add resource limits and execution sandbox constraints.</li>
+</ol>
+<h3 id="phase-b-runtime-gatekeeper">Phase B — Runtime Gatekeeper</h3>
+<ol>
+<li>Insert pre-execution gate in plugin load path.</li>
+<li>Deny execution when policy mismatch detected.</li>
+<li>Log all deny/allow decisions with reasons.</li>
+</ol>
+<h3 id="phase-c-incident-and-lifecycle-controls">Phase C — Incident and Lifecycle Controls</h3>
+<ol>
+<li>Implement kill switch per plugin/version.</li>
+<li>Add quarantine mode for newly synthesized plugins.</li>
+<li>Add security revalidation triggers on dependency updates.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Unsafe plugin load block rate</li>
+<li>Incident containment response time</li>
+<li>Provenance completeness in audit logs</li>
 </ul>
 
 

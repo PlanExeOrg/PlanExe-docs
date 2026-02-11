@@ -2546,6 +2546,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-near-match-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Near-Match Retrieval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-adaptation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Adaptation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-promotion-and-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Promotion and Rollback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3957,6 +4018,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-near-match-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Near-Match Retrieval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-adaptation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Adaptation Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-promotion-and-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Promotion and Rollback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4061,6 +4183,31 @@
 <li>Automated adaptation suggestions.</li>
 <li>Cross-plugin dependency mapping.</li>
 <li>Adaptation impact scoring.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-near-match-retrieval">Phase A — Near-Match Retrieval</h3>
+<ol>
+<li>Retrieve top-k plugins by capability similarity.</li>
+<li>Compute fit score against target contract.</li>
+<li>Select adaptation candidate above threshold.</li>
+</ol>
+<h3 id="phase-b-adaptation-pipeline">Phase B — Adaptation Pipeline</h3>
+<ol>
+<li>Branch plugin version for adaptation.</li>
+<li>Apply scoped modifications with test inheritance.</li>
+<li>Validate backward compatibility and performance.</li>
+</ol>
+<h3 id="phase-c-promotion-and-rollback">Phase C — Promotion and Rollback</h3>
+<ol>
+<li>Canary adapted versions in limited traffic.</li>
+<li>Auto-promote on success criteria.</li>
+<li>Auto-rollback on regression signals.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Adaptation success vs full re-synthesis</li>
+<li>Regression incidence after promotion</li>
+<li>Rollback mean time to recovery</li>
 </ul>
 
 

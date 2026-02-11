@@ -2161,6 +2161,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-distributed-runtime-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Distributed Runtime Topology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-queue-and-retry-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Queue and Retry Semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-consistency-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Consistency and Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4013,6 +4074,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-distributed-runtime-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Distributed Runtime Topology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-queue-and-retry-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Queue and Retry Semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-consistency-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Consistency and Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4298,6 +4420,31 @@
 <li>
 <p>DAG scheduling patterns: Apache Airflow, Prefect, Temporal</p>
 </li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-distributed-runtime-topology">Phase A — Distributed Runtime Topology</h3>
+<ol>
+<li>Define coordinator + worker architecture.</li>
+<li>Partition execution graph into shardable task groups.</li>
+<li>Add worker heartbeat and lease ownership semantics.</li>
+</ol>
+<h3 id="phase-b-queue-and-retry-semantics">Phase B — Queue and Retry Semantics</h3>
+<ol>
+<li>Introduce queue topics by task class and priority.</li>
+<li>Implement idempotent workers with attempt counters.</li>
+<li>Add dead-letter queues and replay tooling.</li>
+</ol>
+<h3 id="phase-c-consistency-and-recovery">Phase C — Consistency and Recovery</h3>
+<ol>
+<li>Persist checkpoint snapshots per milestone.</li>
+<li>Implement coordinator failover strategy.</li>
+<li>Add exactly-once/at-least-once mode selection by task type.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Throughput scaling under worker expansion</li>
+<li>Recovery time after worker/node failure</li>
+<li>No duplicate side effects for idempotent tasks</li>
 </ul>
 
 

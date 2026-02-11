@@ -2403,6 +2403,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-thesis-schema-and-intake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Thesis Schema and Intake
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-matching-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Matching Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Feedback Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4091,6 +4152,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-thesis-schema-and-intake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Thesis Schema and Intake
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-matching-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Matching Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Feedback Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4346,6 +4468,31 @@
 </ul>
 <h2 id="why-this-matters">Why This Matters</h2>
 <p>This proposal shifts fundraising from persuasion-first to evidence-first. It helps credible, high-upside plans get surfaced even when founders are not exceptional marketers, improving capital allocation efficiency for everyone.</p>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-thesis-schema-and-intake">Phase A — Thesis Schema and Intake</h3>
+<ol>
+<li>Define investor thesis schema (sector, ticket size, geography, stage, constraints).</li>
+<li>Ingest and normalize investor profile records.</li>
+<li>Add confidence labels for inferred thesis signals.</li>
+</ol>
+<h3 id="phase-b-matching-engine">Phase B — Matching Engine</h3>
+<ol>
+<li>Compute thesis-plan alignment with weighted feature scoring.</li>
+<li>Add exclusion filters (hard constraints).</li>
+<li>Produce explainable match reasons and mismatch flags.</li>
+</ol>
+<h3 id="phase-c-feedback-loop">Phase C — Feedback Loop</h3>
+<ol>
+<li>Capture investor response outcomes.</li>
+<li>Tune matching weights with outcome data.</li>
+<li>Add cold-start defaults by investor archetype.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Precision of top matches</li>
+<li>Response-rate uplift vs baseline outreach</li>
+<li>Explainability quality review</li>
+</ul>
 
 
 

@@ -2008,6 +2008,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-routing-contract-and-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Routing Contract and Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-dynamic-selection-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Dynamic Selection Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-observability-and-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Observability and Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3847,6 +3908,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-routing-contract-and-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Routing Contract and Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-dynamic-selection-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Dynamic Selection Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-observability-and-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Observability and Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4004,6 +4126,38 @@
 <li>
 <p>No increase in pipeline failure rate</p>
 </li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-routing-contract-and-registry">Phase A — Routing Contract and Registry</h3>
+<ol>
+<li>Define an explicit routing contract in <code>run_plan_pipeline.py</code> with:</li>
+<li>stage name</li>
+<li>routing signal inputs</li>
+<li>selected agent class</li>
+<li>fallback class</li>
+<li>Build an agent registry file (YAML/JSON) mapping capabilities to stages.</li>
+<li>Add deterministic routing mode for reproducible runs.</li>
+</ol>
+<h3 id="phase-b-dynamic-selection-engine">Phase B — Dynamic Selection Engine</h3>
+<ol>
+<li>Implement router scoring using:</li>
+<li>stage complexity</li>
+<li>domain type</li>
+<li>latency/cost budget</li>
+<li>Add weighted scoring for each candidate agent and choose top-ranked.</li>
+<li>Add confidence threshold to trigger fallback routing when uncertain.</li>
+</ol>
+<h3 id="phase-c-observability-and-controls">Phase C — Observability and Controls</h3>
+<ol>
+<li>Emit route decisions as structured events.</li>
+<li>Track route success/failure by stage.</li>
+<li>Add policy overrides for forced agent selection in sensitive flows.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Deterministic routing under fixed seeds</li>
+<li>Correct fallback activation under low confidence</li>
+<li>Route-quality lift vs static baseline</li>
 </ul>
 
 

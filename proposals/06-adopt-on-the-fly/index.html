@@ -2312,6 +2312,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-focus-classification-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Focus Classification Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-track-specific-prompting-and-levers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Track-Specific Prompting and Levers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-track-specific-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Track-Specific Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4128,6 +4189,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-focus-classification-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Focus Classification Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-track-specific-prompting-and-levers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Track-Specific Prompting and Levers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-track-specific-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Track-Specific Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4443,6 +4565,31 @@
 <li>
 <p>Do not change MCP to advertise tasks protocol ("Run as task") - tools-only stays.</p>
 </li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-focus-classification-runtime">Phase A — Focus Classification Runtime</h3>
+<ol>
+<li>Add pre-planning classifier stage for business/software/hybrid focus.</li>
+<li>Emit confidence and missing-info flags.</li>
+<li>Support explicit user override with trace logging.</li>
+</ol>
+<h3 id="phase-b-track-specific-prompting-and-levers">Phase B — Track-Specific Prompting and Levers</h3>
+<ol>
+<li>Build track prompt packs for business and software tracks.</li>
+<li>Route lever generation using track-aware templates.</li>
+<li>Enforce mandatory lever coverage per selected track.</li>
+</ol>
+<h3 id="phase-c-track-specific-gates">Phase C — Track-Specific Gates</h3>
+<ol>
+<li>Define no-go gate sets by track.</li>
+<li>Add auto-fail conditions for missing critical artifacts.</li>
+<li>Add hybrid sequencing logic for mixed plans.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Classification accuracy benchmark</li>
+<li>Gate relevance by plan type</li>
+<li>User override frequency and satisfaction</li>
 </ul>
 
 

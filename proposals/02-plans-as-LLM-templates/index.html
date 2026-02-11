@@ -2115,6 +2115,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-template-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Template Spec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-render-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Render Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3991,6 +4052,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-template-spec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Template Spec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-render-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Render Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4232,6 +4354,34 @@
 <li>
 <p>Similar pattern: Terraform modules, Helm charts, AWS CloudFormation templates</p>
 </li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-template-spec">Phase A — Template Spec</h3>
+<ol>
+<li>Define template schema with:</li>
+<li>variables</li>
+<li>defaults</li>
+<li>required constraints</li>
+<li>output contract</li>
+<li>Add validation to reject unresolved variables at render time.</li>
+</ol>
+<h3 id="phase-b-render-pipeline">Phase B — Render Pipeline</h3>
+<ol>
+<li>Convert plan sections into parameterized templates.</li>
+<li>Support profile-specific render presets (investor, technical, compliance).</li>
+<li>Add preview endpoint to inspect rendered output before execution.</li>
+</ol>
+<h3 id="phase-c-governance">Phase C — Governance</h3>
+<ol>
+<li>Version templates and freeze approved revisions.</li>
+<li>Add compatibility checker between template versions and old plans.</li>
+<li>Log rendered parameter values for auditability.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>No unresolved placeholders in final render</li>
+<li>Backward compatibility checks pass</li>
+<li>Render latency within interactive SLA</li>
 </ul>
 
 

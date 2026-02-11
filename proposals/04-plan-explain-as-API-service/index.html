@@ -2235,6 +2235,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-explainability-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Explainability Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-api-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — API + Caching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-quality-and-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Quality and Safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4091,6 +4152,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-explainability-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Explainability Contract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-api-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — API + Caching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-quality-and-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Quality and Safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4413,6 +4535,34 @@
 <li>
 <p>Caching strategies: Redis best practices</p>
 </li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-explainability-contract">Phase A — Explainability Contract</h3>
+<ol>
+<li>Define explanation schema:</li>
+<li>summary</li>
+<li>rationale</li>
+<li>assumptions</li>
+<li>caveats</li>
+<li>Add response styles (executive, technical, regulator).</li>
+</ol>
+<h3 id="phase-b-api-caching">Phase B — API + Caching</h3>
+<ol>
+<li>Implement explanation endpoint with plan version hash keying.</li>
+<li>Add cache layer with invalidation on plan updates.</li>
+<li>Add token/cost controls for explanation generation.</li>
+</ol>
+<h3 id="phase-c-quality-and-safety">Phase C — Quality and Safety</h3>
+<ol>
+<li>Add hallucination guards using evidence references.</li>
+<li>Add sensitivity filters for confidential sections.</li>
+<li>Include confidence labels and uncertainty notes.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Explanation consistency across reruns</li>
+<li>Evidence reference coverage thresholds</li>
+<li>Low hallucination rate in review samples</li>
 </ul>
 
 

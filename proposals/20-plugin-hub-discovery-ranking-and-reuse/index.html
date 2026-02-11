@@ -2651,6 +2651,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-retrieval-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Retrieval Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-ranking-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Ranking Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-feedback-and-economy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Feedback and Economy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3957,6 +4018,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-retrieval-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Retrieval Stack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-ranking-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Ranking Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-feedback-and-economy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Feedback and Economy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4068,6 +4190,31 @@
 <li>Revenue sharing models.</li>
 <li>Federated plugin registries.</li>
 <li>Automated dependency compatibility checks.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-retrieval-stack">Phase A — Retrieval Stack</h3>
+<ol>
+<li>Build semantic capability index for plugins.</li>
+<li>Add feature store for rank signals (fit, reliability, recency, reuse).</li>
+<li>Implement top-k retrieval with configurable cutoffs.</li>
+</ol>
+<h3 id="phase-b-ranking-model">Phase B — Ranking Model</h3>
+<ol>
+<li>Compute blended ranking score with policy-tunable weights.</li>
+<li>Add duplicate detection and merge recommendations.</li>
+<li>Add exploration mode for discovering undervalued plugins.</li>
+</ol>
+<h3 id="phase-c-feedback-and-economy">Phase C — Feedback and Economy</h3>
+<ol>
+<li>Capture runtime success feedback per plugin use.</li>
+<li>Adjust ranking via online updates with decay.</li>
+<li>Reward stable high-performing plugins via visibility boosts.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Top-1 retrieval success rate</li>
+<li>Duplicate plugin creation reduction</li>
+<li>Reuse rate growth over time</li>
 </ul>
 
 

@@ -2303,6 +2303,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-index-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Index Foundation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-graph-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Graph Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-ranking-and-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Ranking and Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4157,6 +4218,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-index-foundation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Index Foundation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-graph-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Graph Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-ranking-and-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Ranking and Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4576,6 +4698,31 @@
 <li>
 <p>Semantic search best practices: https://www.pinecone.io/learn/semantic-search/</p>
 </li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-index-foundation">Phase A — Index Foundation</h3>
+<ol>
+<li>Build embedding pipeline for plan sections and metadata.</li>
+<li>Store vectors in pgvector with namespace partitioning.</li>
+<li>Define hybrid retrieval (semantic + keyword + metadata filters).</li>
+</ol>
+<h3 id="phase-b-graph-layer">Phase B — Graph Layer</h3>
+<ol>
+<li>Create plan similarity edges with confidence scores.</li>
+<li>Add relation types (similar-risk, similar-finance, similar-domain).</li>
+<li>Expose neighborhood exploration APIs.</li>
+</ol>
+<h3 id="phase-c-ranking-and-feedback">Phase C — Ranking and Feedback</h3>
+<ol>
+<li>Rank results with blended score (similarity + quality + freshness).</li>
+<li>Capture click/selection feedback to tune ranking.</li>
+<li>Add dedup and near-duplicate suppression.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Retrieval precision@k</li>
+<li>Latency under index growth</li>
+<li>Duplicate suppression effectiveness</li>
 </ul>
 
 

@@ -2263,6 +2263,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-editor-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Editor Data Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-collaboration-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Collaboration UX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-workflow-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Workflow Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3881,6 +3942,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-editor-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Editor Data Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-collaboration-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Collaboration UX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-workflow-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Workflow Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3997,6 +4119,31 @@
 <li>
 <p>Maintain topological ordering so downstream parts update correctly.</p>
 </li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-editor-data-model">Phase A — Editor Data Model</h3>
+<ol>
+<li>Define editable plan document schema and version nodes.</li>
+<li>Add section-level locking and optimistic concurrency controls.</li>
+<li>Persist edit history with reversible diffs.</li>
+</ol>
+<h3 id="phase-b-collaboration-ux">Phase B — Collaboration UX</h3>
+<ol>
+<li>Build section editor with structured side panels (assumptions, risks, costs).</li>
+<li>Add inline validation and warning badges.</li>
+<li>Add comparison view for baseline vs edited variants.</li>
+</ol>
+<h3 id="phase-c-workflow-integration">Phase C — Workflow Integration</h3>
+<ol>
+<li>Trigger downstream recalculations on critical edits.</li>
+<li>Add approval flow for high-impact changes.</li>
+<li>Sync edits to audit pack and evidence ledger references.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Conflict resolution correctness</li>
+<li>Edit-to-recompute latency</li>
+<li>Usability score in editor sessions</li>
 </ul>
 
 

@@ -2373,6 +2373,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-portfolio-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Portfolio Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-allocation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Allocation Solver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-monitoring-and-rebalancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Monitoring and Rebalancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3891,6 +3952,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-portfolio-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Portfolio Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-allocation-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Allocation Solver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-monitoring-and-rebalancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Monitoring and Rebalancing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4064,6 +4186,31 @@
 </ul>
 <h2 id="why-this-matters">Why This Matters</h2>
 <p>Investors care about total portfolio outcomes, not isolated deal quality. Portfolio-aware matching improves capital allocation quality and makes ROI predictions more actionable.</p>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-portfolio-model">Phase A — Portfolio Model</h3>
+<ol>
+<li>Define portfolio objective functions (return, risk, diversification).</li>
+<li>Add constraint model (sector caps, stage caps, geographic limits).</li>
+<li>Ingest candidate plan opportunities as allocatable units.</li>
+</ol>
+<h3 id="phase-b-allocation-solver">Phase B — Allocation Solver</h3>
+<ol>
+<li>Implement optimizer (heuristic + optional convex optimization mode).</li>
+<li>Support scenario-based allocation stress tests.</li>
+<li>Output recommended allocations with rationale and alternatives.</li>
+</ol>
+<h3 id="phase-c-monitoring-and-rebalancing">Phase C — Monitoring and Rebalancing</h3>
+<ol>
+<li>Track realized vs expected performance.</li>
+<li>Trigger rebalance suggestions on drift.</li>
+<li>Log decision history for governance review.</li>
+</ol>
+<h3 id="validation-checklist">Validation Checklist</h3>
+<ul>
+<li>Constraint satisfaction rate</li>
+<li>Risk-adjusted return vs baseline policy</li>
+<li>Rebalance action quality over time</li>
+</ul>
 
 
 
