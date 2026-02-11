@@ -3609,6 +3609,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-identity-linkage-and-proof-model-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Identity Linkage and Proof Model (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-reputation-credential-issuance-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Reputation Credential Issuance (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-bridge-api-caching-layer-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Bridge API + Caching Layer (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-abuse-resistance-governance-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Abuse Resistance + Governance (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3913,6 +3996,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-identity-linkage-and-proof-model-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Identity Linkage and Proof Model (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-reputation-credential-issuance-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Reputation Credential Issuance (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-bridge-api-caching-layer-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Bridge API + Caching Layer (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-abuse-resistance-governance-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Abuse Resistance + Governance (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4019,6 +4185,60 @@
 <li>Multi-oracle verification.</li>
 <li>Badge decay over time without recent wins.</li>
 <li>Cross-platform reputation portability.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-identity-linkage-and-proof-model-2-weeks">Phase A — Identity Linkage and Proof Model (2 weeks)</h3>
+<ol>
+<li>Define DID ↔ PlanExe identity binding protocol.</li>
+<li>Add signed linkage challenge flow (prove control of both identities).</li>
+<li>Store revocable linkage records with timestamps.</li>
+</ol>
+<h3 id="phase-b-reputation-credential-issuance-23-weeks">Phase B — Reputation Credential Issuance (2–3 weeks)</h3>
+<ol>
+<li>Define credential schema:</li>
+<li>score components</li>
+<li>badge tier</li>
+<li>issue date</li>
+<li>expiry date</li>
+<li>
+<p>signature metadata</p>
+</li>
+<li>
+<p>Build issuer service with rotating signing keys.</p>
+</li>
+<li>Implement verification endpoint and SDK helper.</li>
+</ol>
+<h3 id="phase-c-bridge-api-caching-layer-2-weeks">Phase C — Bridge API + Caching Layer (2 weeks)</h3>
+<ol>
+<li><code>GET /api/reputation/{did}</code> should return signed payload + cache headers.</li>
+<li>Add stale-while-revalidate strategy for high-traffic profile loads.</li>
+<li>Add audit logs for issuance and revocation events.</li>
+</ol>
+<h3 id="phase-d-abuse-resistance-governance-2-weeks">Phase D — Abuse Resistance + Governance (2 weeks)</h3>
+<ol>
+<li>Add anti-inflation controls:</li>
+<li>minimum evidence threshold for badge upgrades</li>
+<li>
+<p>downgrade rules after poor outcomes</p>
+</li>
+<li>
+<p>Add conflict and fraud review workflow.</p>
+</li>
+<li>Add optional privacy modes (public percentile, private raw metrics).</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>identity_links</code></li>
+<li><code>reputation_credentials</code></li>
+<li><code>reputation_events</code></li>
+<li><code>credential_revocations</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Signature verification interoperability tests</li>
+<li>Revocation propagation latency checks</li>
+<li>Badge progression correctness under simulated outcomes</li>
+<li>Privacy mode access-control tests</li>
 </ul>
 
 

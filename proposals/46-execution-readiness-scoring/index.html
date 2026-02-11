@@ -3534,6 +3534,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-score-contract-and-baseline-rules-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Score Contract and Baseline Rules (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-validator-adapters-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Validator Adapters (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-gap-report-and-action-engine-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Gap Report and Action Engine (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-gating-and-workflow-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Gating and Workflow Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3903,6 +3986,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-score-contract-and-baseline-rules-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Score Contract and Baseline Rules (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-validator-adapters-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Validator Adapters (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-gap-report-and-action-engine-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Gap Report and Action Engine (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-gating-and-workflow-integration-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Gating and Workflow Integration (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4033,6 +4199,77 @@
 <li><strong>AI Gap Filling:</strong> "You are missing a GDPR policy. Here is a draft based on similar plans."</li>
 <li><strong>Sector Benchmarks:</strong> Compare readiness against industry averages (e.g., "Your hiring plan is 20% slower than peer startups").</li>
 </ol>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-score-contract-and-baseline-rules-12-weeks">Phase A — Score Contract and Baseline Rules (1–2 weeks)</h3>
+<ol>
+<li>Define immutable score schema:</li>
+<li>overall score</li>
+<li>dimension scores</li>
+<li>evidence references</li>
+<li>
+<p>gating decision</p>
+</li>
+<li>
+<p>Lock scoring weights in a versioned config file.</p>
+</li>
+<li>Add deterministic fallback behavior when validator data is missing.</li>
+</ol>
+<h3 id="phase-b-validator-adapters-23-weeks">Phase B — Validator Adapters (2–3 weeks)</h3>
+<ol>
+<li>Build adapters for each readiness dimension:</li>
+<li>evidence coverage</li>
+<li>resource capacity</li>
+<li>risk mitigation completeness</li>
+<li>dependency maturity</li>
+<li>
+<p>financial viability</p>
+</li>
+<li>
+<p>Normalize all outputs into a common scoring input envelope.</p>
+</li>
+<li>Add confidence score per validator result.</li>
+</ol>
+<h3 id="phase-c-gap-report-and-action-engine-2-weeks">Phase C — Gap Report and Action Engine (2 weeks)</h3>
+<ol>
+<li>Generate machine-readable blockers/warnings:</li>
+<li>severity</li>
+<li>owner</li>
+<li>due date</li>
+<li>
+<p>recommended remediation actions</p>
+</li>
+<li>
+<p>Add remediation templates by gap type.</p>
+</li>
+<li>Attach each gap to source artifacts for auditability.</li>
+</ol>
+<h3 id="phase-d-gating-and-workflow-integration-2-weeks">Phase D — Gating and Workflow Integration (2 weeks)</h3>
+<ol>
+<li>Add readiness gates in pipeline state transitions:</li>
+<li><code>not_ready</code> blocks launch</li>
+<li><code>conditional</code> requires explicit waiver</li>
+<li>
+<p><code>ready</code> allows progression</p>
+</li>
+<li>
+<p>Log override decisions with rationale and expiration.</p>
+</li>
+<li>Feed readiness score into ranking and investor outputs.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>readiness_scores</code></li>
+<li><code>readiness_dimension_scores</code></li>
+<li><code>readiness_gaps</code></li>
+<li><code>readiness_overrides</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>Deterministic score recomputation for same inputs</li>
+<li>Weight/version traceability in audit logs</li>
+<li>No launch transition when blocking gaps exist</li>
+<li>Reviewer agreement on top blockers vs generated blockers</li>
+</ul>
 
 
 

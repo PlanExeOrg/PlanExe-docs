@@ -3616,6 +3616,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-protocol-and-security-foundations-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Protocol and Security Foundations (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-dispatcher-and-transport-layer-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Dispatcher and Transport Layer (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-proof-of-physical-work-popw-verification-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Proof of Physical Work (PoPW) Verification (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-reliability-and-operations-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Reliability and Operations (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3857,6 +3940,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-protocol-and-security-foundations-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Protocol and Security Foundations (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-dispatcher-and-transport-layer-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — Dispatcher and Transport Layer (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-proof-of-physical-work-popw-verification-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Proof of Physical Work (PoPW) Verification (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-reliability-and-operations-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Reliability and Operations (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3950,6 +4116,70 @@
 <li>Hardware attestation support.</li>
 <li>Offline task caching and delayed sync.</li>
 <li>Automated anomaly detection on PoPW.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-protocol-and-security-foundations-2-weeks">Phase A — Protocol and Security Foundations (2 weeks)</h3>
+<ol>
+<li>Define <code>TaskManifest</code> schema versioning.</li>
+<li>Add mutual-auth model for edge agents:</li>
+<li>client certs or hardware keys</li>
+<li>
+<p>short-lived dispatch tokens</p>
+</li>
+<li>
+<p>Add replay protection and nonce strategy.</p>
+</li>
+</ol>
+<h3 id="phase-b-dispatcher-and-transport-layer-23-weeks">Phase B — Dispatcher and Transport Layer (2–3 weeks)</h3>
+<ol>
+<li>Implement cloud dispatcher with QoS guarantees.</li>
+<li>Support MQTT/WebSocket transports behind common abstraction.</li>
+<li>Add delivery semantics:</li>
+<li>accepted</li>
+<li>in_progress</li>
+<li>completed</li>
+<li>failed</li>
+</ol>
+<h3 id="phase-c-proof-of-physical-work-popw-verification-2-weeks">Phase C — Proof of Physical Work (PoPW) Verification (2 weeks)</h3>
+<ol>
+<li>Define PoPW artifact schema:</li>
+<li>timestamp</li>
+<li>geo/location</li>
+<li>sensor payload</li>
+<li>
+<p>media hash</p>
+</li>
+<li>
+<p>Build verifier pipeline:</p>
+</li>
+<li>integrity checks</li>
+<li>anti-spoof heuristics</li>
+<li>
+<p>confidence scoring</p>
+</li>
+<li>
+<p>Attach PoPW confidence to task completion status.</p>
+</li>
+</ol>
+<h3 id="phase-d-reliability-and-operations-2-weeks">Phase D — Reliability and Operations (2 weeks)</h3>
+<ol>
+<li>Add offline task cache with deferred sync.</li>
+<li>Add dead-letter queue for failed dispatches.</li>
+<li>Add anomaly detection for suspicious execution proofs.</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>physical_task_dispatch</code></li>
+<li><code>edge_delivery_events</code></li>
+<li><code>popw_artifacts</code></li>
+<li><code>popw_verification_results</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>End-to-end dispatch latency targets</li>
+<li>Exactly-once/at-least-once behavior verification</li>
+<li>PoPW spoofing simulation tests</li>
+<li>Offline replay consistency checks</li>
 </ul>
 
 

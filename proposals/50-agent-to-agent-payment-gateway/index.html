@@ -3685,6 +3685,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-payment-abstraction-layer-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Payment Abstraction Layer (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-ap2-corporate-spend-path-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — AP2 Corporate Spend Path (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-x402-micropayment-path-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — x402 Micropayment Path (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-risk-compliance-and-observability-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Risk, Compliance, and Observability (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3925,6 +4008,89 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-payment-abstraction-layer-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Payment Abstraction Layer (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-ap2-corporate-spend-path-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — AP2 Corporate Spend Path (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-x402-micropayment-path-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — x402 Micropayment Path (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-risk-compliance-and-observability-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Risk, Compliance, and Observability (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-model-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model additions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4019,6 +4185,72 @@
 <li>Multi-currency pricing and FX handling.</li>
 <li>Per-agent spending dashboards.</li>
 <li>Payment routing by risk tier.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-payment-abstraction-layer-2-weeks">Phase A — Payment Abstraction Layer (2 weeks)</h3>
+<ol>
+<li>Define unified payment request schema for AP2 and x402.</li>
+<li>Implement protocol adapter interface:</li>
+<li>authorize</li>
+<li>capture</li>
+<li>verify</li>
+<li>
+<p>refund/reverse</p>
+</li>
+<li>
+<p>Add signed transaction envelope for audit trail integrity.</p>
+</li>
+</ol>
+<h3 id="phase-b-ap2-corporate-spend-path-23-weeks">Phase B — AP2 Corporate Spend Path (2–3 weeks)</h3>
+<ol>
+<li>Implement mandate verification service:</li>
+<li>signature validation</li>
+<li>scope checks</li>
+<li>spend limit checks</li>
+<li>
+<p>expiry checks</p>
+</li>
+<li>
+<p>Add policy controls:</p>
+</li>
+<li>per-agent monthly limits</li>
+<li>category restrictions</li>
+<li>
+<p>emergency stop on anomaly</p>
+</li>
+<li>
+<p>Integrate corporate settlement provider.</p>
+</li>
+</ol>
+<h3 id="phase-c-x402-micropayment-path-2-weeks">Phase C — x402 Micropayment Path (2 weeks)</h3>
+<ol>
+<li>Implement 402 challenge-response flow.</li>
+<li>Add payment proof verification and replay protection.</li>
+<li>Support low-latency settlement cache for repeated calls.</li>
+</ol>
+<h3 id="phase-d-risk-compliance-and-observability-2-weeks">Phase D — Risk, Compliance, and Observability (2 weeks)</h3>
+<ol>
+<li>Add fraud scoring on transaction patterns.</li>
+<li>Add AML/KYC policy hooks where required.</li>
+<li>Add full observability:</li>
+<li>success/failure rates</li>
+<li>latency by protocol</li>
+<li>dispute and reversal metrics</li>
+</ol>
+<h3 id="data-model-additions">Data model additions</h3>
+<ul>
+<li><code>agent_wallets</code></li>
+<li><code>payment_mandates</code></li>
+<li><code>payment_transactions</code></li>
+<li><code>payment_proofs</code></li>
+<li><code>payment_alerts</code></li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>mandate scope enforcement tests</li>
+<li>replay and double-spend protection tests</li>
+<li>protocol fallback behavior under partial outages</li>
+<li>settlement reconciliation tests against provider statements</li>
 </ul>
 
 

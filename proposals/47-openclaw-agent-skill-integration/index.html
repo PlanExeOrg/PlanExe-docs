@@ -3602,6 +3602,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-skill-packaging-and-contracts-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Skill Packaging and Contracts (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-mcp-bridge-and-runtime-adapter-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — MCP Bridge and Runtime Adapter (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-execution-loop-and-state-sync-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Execution Loop and State Sync (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-safety-budgets-and-governance-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Safety, Budgets, and Governance (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational safeguards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3969,6 +4063,100 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#detailed-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-skill-packaging-and-contracts-12-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A — Skill Packaging and Contracts (1–2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-mcp-bridge-and-runtime-adapter-23-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B — MCP Bridge and Runtime Adapter (2–3 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-execution-loop-and-state-sync-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C — Execution Loop and State Sync (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-safety-budgets-and-governance-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D — Safety, Budgets, and Governance (2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational safeguards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4082,6 +4270,65 @@
 <li>Offline plan caching for intermittent connectivity.</li>
 <li>Capability-aware task routing across multiple agents.</li>
 <li>Automatic escalation to humans for high-risk tasks.</li>
+</ul>
+<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
+<h3 id="phase-a-skill-packaging-and-contracts-12-weeks">Phase A — Skill Packaging and Contracts (1–2 weeks)</h3>
+<ol>
+<li>Define skill manifest and tool contracts:</li>
+<li><code>create_plan</code></li>
+<li><code>check_plan_status</code></li>
+<li><code>get_next_action_item</code></li>
+<li>
+<p><code>report_result</code></p>
+</li>
+<li>
+<p>Add JSON schema validation for tool inputs/outputs.</p>
+</li>
+<li>Version the skill API separately from PlanExe core API.</li>
+</ol>
+<h3 id="phase-b-mcp-bridge-and-runtime-adapter-23-weeks">Phase B — MCP Bridge and Runtime Adapter (2–3 weeks)</h3>
+<ol>
+<li>Implement MCP client wrapper inside skill runtime.</li>
+<li>Add retry/backoff and circuit-breaker handling for cloud calls.</li>
+<li>Normalize errors into agent-friendly remediation messages.</li>
+</ol>
+<h3 id="phase-c-execution-loop-and-state-sync-2-weeks">Phase C — Execution Loop and State Sync (2 weeks)</h3>
+<ol>
+<li>Build local task executor abstraction for edge environments.</li>
+<li>Add plan-state sync protocol:</li>
+<li>pull next action</li>
+<li>execute/report</li>
+<li>
+<p>reconcile conflicts</p>
+</li>
+<li>
+<p>Support partial completion and blocked states.</p>
+</li>
+</ol>
+<h3 id="phase-d-safety-budgets-and-governance-2-weeks">Phase D — Safety, Budgets, and Governance (2 weeks)</h3>
+<ol>
+<li>Add execution policy profiles by risk tier.</li>
+<li>Add per-run budget controls and token/cost caps.</li>
+<li>Add human escalation hooks for high-impact tasks.</li>
+</ol>
+<h3 id="integration-points_1">Integration points</h3>
+<ul>
+<li>OpenClaw skill registry</li>
+<li>PlanExe MCP cloud endpoints</li>
+<li>Execution readiness and evidence ledger modules</li>
+</ul>
+<h3 id="operational-safeguards">Operational safeguards</h3>
+<ul>
+<li>Offline queue with replay upon reconnect</li>
+<li>Idempotency keys for duplicate submissions</li>
+<li>Signed task receipts for non-repudiation</li>
+</ul>
+<h3 id="validation-checklist">Validation checklist</h3>
+<ul>
+<li>End-to-end tool contract tests</li>
+<li>Network partition resilience tests</li>
+<li>Duplicate event/retry safety tests</li>
+<li>Human escalation path latency and success tests</li>
 </ul>
 
 
