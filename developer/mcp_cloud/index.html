@@ -4312,7 +4312,10 @@
 <p>Build and run mcp_cloud with HTTP endpoints:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span>mcp_cloud
 </code></pre></div>
-<p>mcp_cloud exposes HTTP endpoints on port <code>8001</code> (or <code>${PLANEXE_MCP_HTTP_PORT}</code>). <strong>Authentication is always required</strong>: provide a valid <code>X-API-Key</code> or <code>Authorization: Bearer &lt;key&gt;</code>. Accepted keys are (1) UserApiKey from home.planexe.org (<code>pex_...</code>), or (2) <code>PLANEXE_MCP_API_KEY</code> if set (for dev or shared secret).</p>
+<p>mcp_cloud exposes HTTP endpoints on port <code>8001</code> (or <code>${PLANEXE_MCP_HTTP_PORT}</code>). Authentication is controlled by <code>PLANEXE_MCP_REQUIRE_AUTH</code>:
+- <code>false</code>: no API key needed (local docker default).
+- <code>true</code>: provide a valid <code>X-API-Key</code> or <code>Authorization: Bearer &lt;key&gt;</code>.
+Accepted keys are (1) UserApiKey from home.planexe.org (<code>pex_...</code>), or (2) <code>PLANEXE_MCP_API_KEY</code> if set (for dev or shared secret).</p>
 <h3 id="connecting-via-httpurl">Connecting via HTTP/URL</h3>
 <p>After starting with Docker, configure your MCP client (e.g., LM Studio) to connect via HTTP:</p>
 <p><strong>Local Docker (development):</strong></p>
@@ -4375,7 +4378,8 @@
 <h2 id="environment-variables">Environment Variables</h2>
 <h3 id="http-server-configuration">HTTP Server Configuration</h3>
 <ul>
-<li><code>PLANEXE_MCP_API_KEY</code>: Optional shared secret for auth. When set, clients can use this key instead of a UserApiKey. For production with user accounts, keys from home.planexe.org (UserApiKey) are validated against the database. For local dev without DB users, set <code>PLANEXE_MCP_API_KEY</code> to a known value.</li>
+<li><code>PLANEXE_MCP_REQUIRE_AUTH</code>: Require API keys for <code>/mcp</code> and <code>/download</code> (server default: <code>true</code>; <code>docker-compose.yml</code> overrides to <code>false</code> for local docker convenience).</li>
+<li><code>PLANEXE_MCP_API_KEY</code>: Optional shared secret for auth. When auth is enabled, clients can use this key instead of a UserApiKey. For production with user accounts, keys from home.planexe.org (UserApiKey) are validated against the database.</li>
 <li><code>PLANEXE_MCP_HTTP_HOST</code>: HTTP server host (default: <code>127.0.0.1</code>). Use <code>0.0.0.0</code> to bind all interfaces (containers/cloud).</li>
 <li><code>PLANEXE_MCP_HTTP_PORT</code>: HTTP server port (default: <code>8001</code>). Railway will override with <code>PORT</code> env var.</li>
 <li><code>PLANEXE_MCP_PUBLIC_BASE_URL</code>: Public base URL for report/zip download links in <code>task_file_info</code> (e.g. <code>http://192.168.1.40:8001</code>). When unset, the HTTP server uses the request’s host (scheme + authority), so clients connecting at <code>http://192.168.1.40:8001/mcp/</code> get download URLs like <code>http://192.168.1.40:8001/download/...</code> instead of localhost. If clients still see localhost in download URLs (e.g. behind a proxy), uncomment and set this in the repo’s <code>.env.docker-example</code> or <code>.env.developer-example</code> (copy to <code>.env</code> and fill in your public URL).</li>
@@ -4424,7 +4428,7 @@ that crashes <code>node-fetch</code> in older inspector versions.</p>
 - Click "Tools"
 - Click "List Tools"</p>
 <h3 id="production-with-api-key-authentication">Production (with API key authentication)</h3>
-<p>Authentication is always required. The inspector must send the key
+<p>When auth is enabled, the inspector must send the key
 with every request. The inspector proxy forwards the <code>Authorization</code> header to
 the remote server.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>https://mcp.planexe.org/mcp/
@@ -4455,7 +4459,7 @@ local development:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">DANGEROUSLY_OMIT_AUTH</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>https://mcp.planexe.org/mcp/
 </code></pre></div>
 <p>This only disables the local inspector-proxy token check. The remote server still
-still requires API key authentication (UserApiKey or PLANEXE_MCP_API_KEY).</p>
+still requires API key authentication when <code>PLANEXE_MCP_REQUIRE_AUTH=true</code> (UserApiKey or PLANEXE_MCP_API_KEY).</p>
 <h3 id="everything-reference-stdio">Everything reference (stdio)</h3>
 <p>Sanity-check the inspector itself against the reference server:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>@modelcontextprotocol/server-everything
@@ -4602,7 +4606,7 @@ recommended flow is Docker (server) + <code>mcp_local</code> (client).</p>
 <li>Artifact writes are not yet supported via HTTP (would require a write endpoint in <code>worker_plan</code>).</li>
 <li>Artifact writes are rejected while a run is active (strict policy per spec).</li>
 <li>Task IDs use the TaskItem UUID (e.g., <code>5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1</code>).</li>
-<li><strong>Security</strong>: Authentication is always required. Production deployments use UserApiKey from the database; for local dev without users, set <code>PLANEXE_MCP_API_KEY</code>.</li>
+<li><strong>Security</strong>: Authentication is configurable. For production, set <code>PLANEXE_MCP_REQUIRE_AUTH=true</code> and use UserApiKey validation (optionally with <code>PLANEXE_MCP_API_KEY</code> as a shared secret).</li>
 </ul>
 
 
