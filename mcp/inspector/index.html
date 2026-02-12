@@ -3911,9 +3911,28 @@
 <li>The MCP server should respond with a list of list of example prompts.</li>
 </ol>
 <h2 id="approach-2-mcp-server-inside-docker">Approach 2. MCP server inside docker</h2>
-<p>TODO: write me</p>
+<p>PlanExe's docker stack exposes the MCP endpoint on your loopback interface (default <code>127.0.0.1:8001/mcp/</code>). Start whatever services you need (<code>docker compose up worker_plan frontend_single_user</code> is the common subset) and wait until <code>worker_plan</code> reports healthy; <code>docker compose logs -f worker_plan</code> and <code>curl http://localhost:8001/healthcheck</code> are quick sanity checks.</p>
+<p>The inspector still authenticates via the <code>X-API-Key</code> custom header. Grab the value from <code>PLANEXE_MCP_API_KEY</code> inside <code>.env</code> (replace the placeholder <code>your-api-key-here</code> with a real key and restart the containers if you change it). Then launch the inspector with the local URL:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>http://localhost:8001/mcp/
+</code></pre></div>
+<p>Once the GUI opens, expand Authentication, add <code>X-API-Key</code>, and paste in the key. Click Connect, open the Tools tab, click List Tools, and invoke <code>prompt_examples</code> the same way you did in Approach 1. If you customized <code>PLANEXE_MCP_HTTP_HOST</code> / <code>PLANEXE_MCP_HTTP_PORT</code> in <code>.env</code>, point the inspector at that address instead of <code>localhost:8001</code> so the HTTP transport reaches the service running inside docker.</p>
 <h2 id="approach-3-mcp-server-as-a-python-program">Approach 3. MCP server as a python program</h2>
-<p>TODO: write me</p>
+<p>The <code>mcp_local/planexe_mcp_local.py</code> proxy runs a tiny Python MCP server that forwards tool calls to the remote <code>mcp_cloud</code> while downloading reports into a local directory. It is handy when you want Inspector to speak to MCP over stdio or need the downloads saved directly on your workstation.</p>
+<p>Set these environment variables before running the inspector:</p>
+<ul>
+<li><code>PLANEXE_URL</code>: where the proxy should forward the tool calls, usually <code>http://localhost:8001/mcp</code> if you are running the docker stack locally.</li>
+<li><code>PLANEXE_MCP_API_KEY</code>: the same API key used by Approach 2.</li>
+<li><code>PLANEXE_PATH</code>: an absolute directory that PlanExe is allowed to write to (downloads land here).</li>
+</ul>
+<p>Then launch Inspector like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;PLANEXE_URL=http://localhost:8001/mcp&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;PLANEXE_MCP_API_KEY=insert-your-api-key-here&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;PLANEXE_PATH=/absolute/path/for/downloads&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>--transport<span class="w"> </span>stdio<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>mcp<span class="w"> </span>/absolute/path/to/PlanExe/mcp_local/planexe_mcp_local.py
+</code></pre></div>
+<p>The <code>uv run --with mcp</code> invocation starts the proxy via the uvicorn entry point that ships with the repo. Because the script injects the API key for you, you normally do not need to add another <code>X-API-Key</code> header in the Authentication tab. After connecting, the Tools list now includes the synthetic <code>task_download</code> helper in addition to <code>prompt_examples</code>, <code>task_create</code>, <code>task_status</code>, and friends; the rest of the workflow is identical to Approach 1. Do <strong>not</strong> enable "Run as task"—PlanExe uses the tool-based flow (<code>create</code> → <code>status</code> → <code>download</code>) exclusively.</p>
 
 
 
