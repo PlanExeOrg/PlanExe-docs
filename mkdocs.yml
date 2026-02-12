@@ -18,6 +18,7 @@ nav:
   - MCP:
     - Welcome: mcp/mcp_welcome.md
     - MCP setup: mcp/mcp_setup.md
+    - Inspector: mcp/inspector.md
     - LM Studio: mcp/lm_studio.md
     - Windsurf: mcp/windsurf.md
     - Cursor: mcp/cursor.md
