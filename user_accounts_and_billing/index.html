@@ -3830,7 +3830,7 @@
 - <code>locale</code>, <code>avatar_url</code>
 - <code>is_admin</code> (bool)
 - <code>free_plan_used</code> (bool)
-- <code>credits_balance</code> (int)
+- <code>credits_balance</code> (numeric, fractional credits supported)
 - <code>last_login_at</code>, <code>created_at</code>, <code>updated_at</code></p>
 <hr />
 <h2 id="userprovider">UserProvider</h2>
@@ -3860,7 +3860,7 @@
 <p>Fields:
 - <code>id</code> (UUID, primary key)
 - <code>user_id</code> (UUID, foreign key)
-- <code>delta</code> (int, positive or negative)
+- <code>delta</code> (numeric, positive or negative)
 - <code>reason</code> (string)
 - <code>source</code> (string, e.g. stripe/telegram/mcp/web)
 - <code>external_id</code> (string)
@@ -3873,7 +3873,7 @@
 - <code>user_id</code> (UUID, foreign key)
 - <code>provider</code> (string, stripe/telegram)
 - <code>provider_payment_id</code> (string)
-- <code>credits</code> (int)
+- <code>credits</code> (numeric)
 - <code>amount</code> (int, minor units)
 - <code>currency</code> (string)
 - <code>status</code> (string)
@@ -3898,8 +3898,8 @@
 <h3 id="spend-credits-create-a-plan">Spend credits (create a plan)</h3>
 <ol>
 <li>User submits a plan.</li>
-<li>App deducts 1 credit.</li>
-<li>A <strong>CreditHistory</strong> entry is created (delta = -1, reason = plan_created).</li>
+<li>App deducts fractional credits based on token usage and pricing.</li>
+<li>A <strong>CreditHistory</strong> entry is created with the exact delta.</li>
 </ol>
 <h3 id="close-account-user-wants-money-back">Close account (user wants money back)</h3>
 <p>Typical approach:

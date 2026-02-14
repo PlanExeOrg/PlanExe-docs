@@ -3874,6 +3874,7 @@
 <ul>
 <li>If plan succeeds: <code>charge_usd = inference_cost_usd + success_fee_usd</code></li>
 <li>If plan fails: <code>charge_usd = inference_cost_usd</code></li>
+<li>Exception for <code>speed_vs_detail=ping_llm</code>: <code>charge_usd = inference_cost_usd</code> (no success fee)</li>
 </ul>
 <p>This means failed plans still pay for consumed tokens, but do not pay the success fee.</p>
 <hr />
@@ -3885,18 +3886,19 @@
 </ul>
 <hr />
 <h2 id="credit-conversion">Credit conversion</h2>
-<p>Internal billing deducts integer credits from <code>UserAccount.credits_balance</code>.</p>
+<p>Internal billing deducts <strong>fractional</strong> credits from <code>UserAccount.credits_balance</code>.</p>
 <ul>
 <li><code>PLANEXE_CREDIT_PRICE_CENTS</code> defines the value of one credit.</li>
-<li>USD charge is converted to credits by ceiling to cents and then ceiling to credits.</li>
+<li>USD charge is converted by exact division:</li>
+<li><code>charge_credits = charge_usd / (PLANEXE_CREDIT_PRICE_CENTS / 100)</code></li>
+<li>Credits are stored with decimal precision (<code>NUMERIC(18,9)</code>), so tiny token costs are preserved.</li>
 </ul>
 <p>Example with <code>PLANEXE_CREDIT_PRICE_CENTS=100</code>:</p>
 <ul>
-<li><code>$1.00</code> -&gt; <code>1</code> credit</li>
-<li><code>$1.31</code> -&gt; <code>2</code> credits</li>
-<li><code>$0.31</code> -&gt; <code>1</code> credit</li>
+<li><code>$1.00</code> -&gt; <code>1.0</code> credits</li>
+<li><code>$1.31</code> -&gt; <code>1.31</code> credits</li>
+<li><code>$0.0000068</code> -&gt; <code>0.0000068</code> credits</li>
 </ul>
-<p>For finer granularity, set <code>PLANEXE_CREDIT_PRICE_CENTS=1</code> (1 credit = $0.01).</p>
 <hr />
 <h2 id="billing-timing">Billing timing</h2>
 <p>Billing is applied at <strong>task completion time</strong> in <code>worker_plan_database</code>, not at task creation time.</p>
@@ -3909,6 +3911,12 @@
 <li>field: <code>total_cost</code></li>
 </ul>
 <p><code>total_cost</code> is produced by the token/cost tracking pipeline and reflects aggregated provider-side inference cost.</p>
+<p>Operationally, per-call diagnostics are available in <code>token_metrics</code>:</p>
+<ul>
+<li><code>task_id</code> and <code>user_id</code> for support and billing triage</li>
+<li>routed provider/model (<code>upstream_provider</code>, <code>upstream_model</code>) for cost-variance analysis</li>
+<li>per-call token counts, duration, and <code>cost_usd</code> when present</li>
+</ul>
 <hr />
 <h2 id="hosted-flow-high-level">Hosted flow (high level)</h2>
 <ol>
@@ -3949,6 +3957,7 @@
 <ul>
 <li>Billing is idempotent per task: usage charge is applied once.</li>
 <li>Billing records should be traceable to task id and run output.</li>
+<li>Payment/support investigations should join <code>CreditHistory</code> with <code>token_metrics</code> via task context and <code>user_id</code>.</li>
 <li>If pricing policy changes, update this document and relevant env defaults together.</li>
 </ul>
 <hr />

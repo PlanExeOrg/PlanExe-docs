@@ -1454,6 +1454,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#unknown-rows-in-token-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unknown rows in token metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-duration-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No duration values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#database-lock-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4215,6 +4237,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#unknown-rows-in-token-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unknown rows in token metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-duration-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No duration values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#database-lock-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4273,7 +4317,7 @@
 
 
 <h1 id="token-counting-implementation">Token counting implementation</h1>
-<p>This document describes the token counting feature that tracks LLM usage for each plan run. It includes architecture, API usage, migration behavior, and implementation status.</p>
+<p>This document describes the token counting feature that tracks LLM usage for each task execution. It includes architecture, API usage, migration behavior, and implementation status.</p>
 <hr />
 <h2 id="implementation-summary">Implementation summary</h2>
 <p>Token counting and per-call metrics are implemented and integrated into plan execution.</p>
@@ -4294,10 +4338,13 @@
 <h3 id="features-delivered">Features delivered</h3>
 <ul>
 <li>Automatic token tracking across LLM calls</li>
-<li>Aggregated and detailed run-level metrics endpoints</li>
+<li>Aggregated and detailed task-level metrics endpoints</li>
 <li>Database-backed persistence with indexed queries</li>
 <li>Graceful degradation when database access is unavailable</li>
 <li>Provider-aware extraction for OpenAI-compatible, Anthropic, and LLamaIndex response shapes</li>
+<li>Routed-provider visibility (<code>upstream_provider</code>, <code>upstream_model</code>)</li>
+<li>Per-call USD cost when provider reports usage cost</li>
+<li>User attribution (<code>user_id</code>) for billing/support investigations</li>
 </ul>
 <hr />
 <h2 id="overview">Overview</h2>
@@ -4306,8 +4353,16 @@
 <li><strong>Input tokens</strong>: Tokens in prompt/query content</li>
 <li><strong>Output tokens</strong>: Tokens in model responses</li>
 <li><strong>Thinking tokens</strong>: Reasoning/internal tokens (when provided by provider)</li>
+<li><strong>Cost USD</strong>: Per-call provider cost (when provided by provider usage payload)</li>
 <li><strong>Call duration</strong>: Time per invocation</li>
 <li><strong>Success/failure</strong>: Call outcome and optional error message</li>
+<li><strong>Routed provider/model</strong>: Upstream provider route for gateway backends (for example OpenRouter routing)</li>
+<li><strong>User attribution</strong>: <code>user_id</code> for operator support and payment triage</li>
+<li>Current runtime behavior:<ul>
+<li>Local admin flow may emit <code>user_id = "admin"</code></li>
+<li>OAuth/MCP flows emit <code>user_id = &lt;uuid&gt;</code></li>
+</ul>
+</li>
 </ul>
 <hr />
 <h2 id="architecture">Architecture</h2>
@@ -4316,7 +4371,7 @@
 <li><strong>Database model</strong> (<code>database_api/model_token_metrics.py</code>)</li>
 <li><code>TokenMetrics</code>: Stores per-call metrics</li>
 <li>
-<p><code>TokenMetricsSummary</code>: Aggregated run statistics</p>
+<p><code>TokenMetricsSummary</code>: Aggregated task statistics</p>
 </li>
 <li>
 <p><strong>Token extraction</strong> (<code>worker_plan/worker_plan_internal/llm_util/token_counter.py</code>)</p>
@@ -4335,16 +4390,25 @@
 <li>
 <p><strong>Pipeline integration</strong> (<code>worker_plan/worker_plan_internal/llm_util/token_instrumentation.py</code>)</p>
 </li>
-<li><code>set_current_run_id()</code></li>
+<li><code>set_current_task_id()</code></li>
+<li><code>set_current_user_id()</code></li>
 <li><code>record_llm_tokens()</code></li>
 <li>
 <p><code>record_attempt_tokens()</code></p>
 </li>
 <li>
+<p><strong>Event-level usage source</strong> (<code>worker_plan/worker_plan_internal/llm_util/track_activity.py</code>)</p>
+</li>
+<li>Captures <code>LLM*EndEvent</code> payloads where provider usage metadata is available</li>
+<li>Persists token/cost/provider rows from event payloads</li>
+<li>
+<p>Computes duration by correlating <code>LLM*StartEvent</code> and <code>LLM*EndEvent</code></p>
+</li>
+<li>
 <p><strong>API endpoints</strong> (<code>worker_plan/app.py</code>)</p>
 </li>
-<li><code>GET /runs/{run_id}/token-metrics</code></li>
-<li><code>GET /runs/{run_id}/token-metrics/detailed</code></li>
+<li><code>GET /token-metrics/{task_id}</code></li>
+<li><code>GET /token-metrics/{task_id}/detailed</code></li>
 </ol>
 <hr />
 <h2 id="database-schema">Database schema</h2>
@@ -4352,25 +4416,34 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">token_metrics</span><span class="w"> </span><span class="p">(</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">timestamp</span><span class="w"> </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">run_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">llm_model</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">task_name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">input_tokens</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">output_tokens</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">thinking_tokens</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">duration_seconds</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">success</span><span class="w"> </span><span class="nb">BOOLEAN</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">FALSE</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="n">error_message</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">raw_usage_data</span><span class="w"> </span><span class="n">JSON</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_run_id</span><span class="w"> </span><span class="p">(</span><span class="n">run_id</span><span class="p">),</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_llm_model</span><span class="w"> </span><span class="p">(</span><span class="n">llm_model</span><span class="p">),</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_task_name</span><span class="w"> </span><span class="p">(</span><span class="n">task_name</span><span class="p">),</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_timestamp</span><span class="w"> </span><span class="p">(</span><span class="k">timestamp</span><span class="p">)</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">llm_model</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">task_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">upstream_provider</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">upstream_model</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="n">input_tokens</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">output_tokens</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">thinking_tokens</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="n">cost_usd</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="n">duration_seconds</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="n">success</span><span class="w"> </span><span class="nb">BOOLEAN</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">FALSE</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="n">error_message</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">raw_usage_data</span><span class="w"> </span><span class="n">JSON</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_llm_model</span><span class="w"> </span><span class="p">(</span><span class="n">llm_model</span><span class="p">),</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_task_id</span><span class="w"> </span><span class="p">(</span><span class="n">task_id</span><span class="p">),</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_user_id</span><span class="w"> </span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_timestamp</span><span class="w"> </span><span class="p">(</span><span class="k">timestamp</span><span class="p">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">);</span>
 </code></pre></div>
 <hr />
 <h2 id="migration-behavior">Migration behavior</h2>
-<p>For existing installations, the table is created automatically on Flask startup via <code>db.create_all()</code>. Manual migration is typically not required.</p>
+<p>For existing installations, schema normalization runs automatically on startup in worker and frontend services.</p>
+<p>Normalization rules:</p>
+<ul>
+<li>Ensure <code>task_id</code>, <code>user_id</code>, <code>upstream_provider</code>, <code>upstream_model</code>, and <code>cost_usd</code> exist</li>
+<li>Drop legacy <code>run_id</code> and <code>task_name</code> columns if present</li>
+</ul>
+<p>This avoids runtime mismatches where old schemas block new writes.</p>
 <p>If needed:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">database_api.planexe_db_singleton</span><span class="w"> </span><span class="kn">import</span> <span class="n">db</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">database_api.model_token_metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenMetrics</span>
@@ -4380,11 +4453,11 @@
 <hr />
 <h2 id="api-usage">API usage</h2>
 <h3 id="aggregated-metrics">Aggregated metrics</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>http://localhost:8000/runs/PlanExe_20250210_120000/token-metrics
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>http://localhost:8000/token-metrics/de305d54-75b4-431b-adb2-eb6b9e546014
 </code></pre></div>
 <p>Example response:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;run_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PlanExe_20250210_120000&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;de305d54-75b4-431b-adb2-eb6b9e546014&quot;</span><span class="p">,</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;total_input_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45231</span><span class="p">,</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;total_output_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12450</span><span class="p">,</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&quot;total_thinking_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
@@ -4397,28 +4470,32 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="detailed-metrics">Detailed metrics</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>http://localhost:8000/runs/PlanExe_20250210_120000/token-metrics/detailed
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>http://localhost:8000/token-metrics/de305d54-75b4-431b-adb2-eb6b9e546014/detailed
 </code></pre></div>
 <p>Example response:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;run_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PlanExe_20250210_120000&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;de305d54-75b4-431b-adb2-eb6b9e546014&quot;</span><span class="p">,</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="p">{</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-02-10T12:00:15.123456&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1984-02-10T12:00:15.123456&quot;</span><span class="p">,</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="nt">&quot;llm_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gpt-4-turbo&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="nt">&quot;task_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IdentifyPurpose&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="nt">&quot;input_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">&quot;output_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">567</span><span class="p">,</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">&quot;thinking_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="nt">&quot;total_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1801</span><span class="p">,</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="nt">&quot;duration_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.2</span><span class="p">,</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">      </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="nt">&quot;error_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p">}</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;de305d54-75b4-431b-adb2-eb6b9e546014&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">      </span><span class="nt">&quot;user_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">      </span><span class="nt">&quot;upstream_provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Google&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="nt">&quot;upstream_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;google/gemini-2.0-flash-001&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">      </span><span class="nt">&quot;input_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="nt">&quot;output_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">567</span><span class="p">,</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">      </span><span class="nt">&quot;thinking_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">      </span><span class="nt">&quot;total_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1801</span><span class="p">,</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">      </span><span class="nt">&quot;cost_usd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">      </span><span class="nt">&quot;duration_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.2</span><span class="p">,</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">      </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">      </span><span class="nt">&quot;error_message&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="provider-support">Provider support</h2>
@@ -4432,27 +4509,29 @@
 <p>The extractor accepts partial usage payloads and records <code>None</code> where fields are missing.</p>
 <hr />
 <h2 id="manual-instrumentation">Manual instrumentation</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.llm_util.token_instrumentation</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_current_run_id</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.llm_util.token_metrics_store</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_token_metrics_store</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">set_current_run_id</span><span class="p">(</span><span class="s2">&quot;PlanExe_20250210_120000&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">store</span> <span class="o">=</span> <span class="n">get_token_metrics_store</span><span class="p">()</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">store</span><span class="o">.</span><span class="n">record_token_usage</span><span class="p">(</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">run_id</span><span class="o">=</span><span class="s2">&quot;PlanExe_20250210_120000&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">llm_model</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">input_tokens</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">output_tokens</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">duration_seconds</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">task_name</span><span class="o">=</span><span class="s2">&quot;MyTask&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="n">success</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.llm_util.token_instrumentation</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_current_task_id</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.llm_util.token_instrumentation</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_current_user_id</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.llm_util.token_metrics_store</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_token_metrics_store</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">set_current_task_id</span><span class="p">(</span><span class="s2">&quot;de305d54-75b4-431b-adb2-eb6b9e546014&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">set_current_user_id</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">store</span> <span class="o">=</span> <span class="n">get_token_metrics_store</span><span class="p">()</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">store</span><span class="o">.</span><span class="n">record_token_usage</span><span class="p">(</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">task_id</span><span class="o">=</span><span class="s2">&quot;de305d54-75b4-431b-adb2-eb6b9e546014&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">llm_model</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">input_tokens</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="n">output_tokens</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="n">duration_seconds</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="n">success</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="p">)</span>
 </code></pre></div>
 <hr />
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="metrics-not-recorded">Metrics not recorded</h3>
 <ol>
-<li>Confirm <code>RUN_ID_DIR</code> is set.</li>
+<li>Confirm <code>PLANEXE_TASK_ID</code> is set when running through task-backed services.</li>
 <li>Confirm database connectivity.</li>
 <li>Check logs for token instrumentation warnings/errors.</li>
 </ol>
@@ -4463,6 +4542,12 @@
 <li>Response shape differs from expected parser inputs.</li>
 <li>Wrapper strips usage before returning response.</li>
 </ol>
+<h3 id="unknown-rows-in-token-metrics"><code>unknown</code> rows in token metrics</h3>
+<p>If unknown rows appear with no usage/cost, they are instrumentation noise and should be filtered out by current code.
+New rows should prefer provider-attributed entries only.</p>
+<h3 id="no-duration-values">No duration values</h3>
+<p>Duration is measured via <code>LLM*StartEvent</code>/<code>LLM*EndEvent</code> correlation in TrackActivity.
+If duration is missing, confirm the same service build contains the current TrackActivity implementation.</p>
 <p>Debug extraction directly:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.llm_util.token_counter</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_token_count</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
@@ -4484,7 +4569,7 @@
 <hr />
 <h2 id="future-enhancements">Future enhancements</h2>
 <ol>
-<li>Cost calculation from token usage and model pricing</li>
+<li>Reconciliation dashboard drill-down by user and task</li>
 <li>Budget guardrails and rate limiting</li>
 <li>Usage dashboards and trend analysis</li>
 <li>Provider/model optimization recommendations</li>
