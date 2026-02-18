@@ -2334,6 +2334,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bizarre-adversarial-plan-stress-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bizarre / Adversarial Plan Stress Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4786,6 +4797,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bizarre-adversarial-plan-stress-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bizarre / Adversarial Plan Stress Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5603,7 +5625,19 @@
 <p>Technical completeness (0-1 float)</p>
 </li>
 <li>
-<p>Feasibility (0-1 float)</p>
+<p><strong>Internal consistency</strong> (0-1 float): timelines, budgets, dependencies, and claims do not contradict each other</p>
+</li>
+<li>
+<p><strong>Feasibility (technical &amp; operational)</strong> (0-1 float): can it be built/executed with known methods and resources</p>
+</li>
+<li>
+<p><strong>Legality / regulatory pathway clarity</strong> (0-1 float): named regulators, plausible approval route, required permits/approvals, compliance gates</p>
+</li>
+<li>
+<p><strong>Ethics / social license</strong> (0-1 float): consent, harms, perverse incentives, reputational risk, public legitimacy</p>
+</li>
+<li>
+<p>Budget realism (0-1 float)</p>
 </li>
 <li>
 <p>Impact estimate (0-1 float)</p>
@@ -5796,37 +5830,53 @@
 <h2 id="llm-prompting-strategy">LLM Prompting Strategy</h2>
 <h3 id="kpi-extraction-prompt">KPI Extraction Prompt</h3>
 <p>The system uses the following prompt structure for pairwise comparisons:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>You are evaluating two business plans. Your task:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>You are evaluating two plans. Your task:
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>1. Read both plans carefully (plan_a and plan_b)
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>2. Choose 5-7 KPIs most relevant to these specific plans
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>3. Add ONE final KPI named by you that captures important remaining considerations
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>4. Score each KPI for both plans on a 1-5 integer Likert scale:
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>   - 1 = Very poor
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>   - 2 = Below average  
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>   - 3 = Average
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>   - 4 = Above average
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>   - 5 = Excellent
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>5. Provide ≤30-word reasoning for each KPI score
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Output format (JSON array):
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>[
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  {
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    &quot;name&quot;: &quot;KPI name&quot;,
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    &quot;plan_a&quot;: &lt;1-5 integer&gt;,
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    &quot;plan_b&quot;: &lt;1-5 integer&gt;,
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    &quot;reasoning&quot;: &quot;&lt;30-word explanation&gt;&quot;
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  },
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>  ...
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>]
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>0. Safety: You are only scoring the quality of the plans. Do NOT provide operational instructions that would enable wrongdoing. If a plan involves harm/abuse, score it accordingly and keep reasoning high-level.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>1. Read both plans carefully (plan_a and plan_b).
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>2. Choose 5–7 KPIs most relevant to THESE specific plans.
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>   - You MUST include:
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>     a) one KPI about internal consistency (dates, budgets, dependencies, contradictions)
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>     b) one KPI about legality/regulatory pathway OR ethics/social license if either is materially relevant
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>   - If the plans are &quot;bizarre&quot; or norm-breaking, explicitly separate:
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>     - technical feasibility (can it be built?)
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>     - permissibility/legitimacy (would regulators/public/partners accept it?)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>3. Add ONE final KPI named by you that captures the primary failure mode you believe will kill the weaker plan first
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>   (e.g., donor supply bottleneck, sovereignty/legitimacy, public backlash, missing permits, unrealistic schedule).
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>4. Score each KPI for both plans on a 1–5 integer Likert scale:
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>   - 1 = Very poor
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>   - 2 = Below average
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>   - 3 = Average
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>   - 4 = Above average
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>   - 5 = Excellent
 <a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>Plan A:
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>{plan_a_json}
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>Plan B:
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>{plan_b_json}
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>Return ONLY the JSON array, no other text.
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>5. Provide ≤30-word reasoning for each KPI score.
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>   - Penalize &quot;template boilerplate&quot; (generic stakeholder/compliance language) when it is not backed by concrete mechanisms, gates, owners, or numbers.
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>   - Penalize category-level impossibilities (e.g., &quot;mandatory global adoption by 2026&quot;) even if the task list looks polished.
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>   - Reward concrete go/no-go gates, accountable governance, and realistic timelines/budgets.
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>Output format (JSON array):
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>[
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>  {
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    &quot;name&quot;: &quot;KPI name&quot;,
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>    &quot;plan_a&quot;: &lt;1-5 integer&gt;,
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    &quot;plan_b&quot;: &lt;1-5 integer&gt;,
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    &quot;reasoning&quot;: &quot;&lt;30-word explanation&gt;&quot;
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>  },
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>  ...
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>]
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>Plan A:
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>{plan_a_json}
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>Plan B:
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>{plan_b_json}
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>Return ONLY the JSON array, no other text.
 </code></pre></div>
 <p><strong>Token budget:</strong> ~2000 tokens per comparison (input: ~1500 tokens, output: ~500 tokens)</p>
 <p><strong>LLM configuration:</strong></p>
@@ -5909,6 +5959,43 @@ The last KPI is LLM-generated to capture aspects not covered by the previous 5-7
 </ul>
 <p>This prevents the system from ignoring plan-specific strengths/weaknesses not covered by generic KPIs.</p>
 <hr />
+<h3 id="bizarre-adversarial-plan-stress-testing">Bizarre / Adversarial Plan Stress Testing</h3>
+<p>Some submitted plans will be intentionally extreme (e.g., "subscription face swapping", "mandatory flat-earth education", unusual post-mortem requests).
+These are valuable because they surface failure modes that <em>normal</em> business plans hide behind polished boilerplate.</p>
+<p><strong>How the evaluator should treat bizarre plans</strong></p>
+<ul>
+<li>
+<p><strong>Do not normalize the premise.</strong> If the core objective is category-level impossible (politically, ethically, or legally), score it down even if the Gantt chart is detailed.</p>
+</li>
+<li>
+<p><strong>Split feasibility into two questions:</strong>
+  1) <em>Technical/operational feasibility:</em> can a competent team build/run it?
+  2) <em>Permissibility/legitimacy:</em> would regulators, donors/partners, and the public accept it?</p>
+</li>
+<li>
+<p><strong>Prefer "primary failure mode" reasoning</strong> over laundry-list risks:</p>
+</li>
+<li>
+<p><em>What kills it first?</em> (e.g., donor supply, sovereignty, permits, social backlash, liability/insurance)</p>
+</li>
+<li>
+<p><strong>Penalize template language</strong> unless it is backed by:</p>
+</li>
+<li>named decision-makers/owners</li>
+<li>explicit go/no-go gates</li>
+<li>realistic budgets with line items and contingencies</li>
+<li>jurisdiction-specific regulatory steps</li>
+</ul>
+<p><strong>Recommended always-on KPIs for robustness</strong></p>
+<p>Even when the LLM selects KPIs dynamically, these dimensions should remain highly weighted across most plan pairs:</p>
+<ul>
+<li>Internal consistency (dates/budgets/dependencies)</li>
+<li>Legal/regulatory pathway clarity</li>
+<li>Ethics/social license &amp; incentive hazards</li>
+<li>Budget realism</li>
+<li>Execution operating model (owners, cadence, change control, incident response)</li>
+</ul>
+<p><strong>Dataset note:</strong> include a small "bizarre plans" suite in evaluation fixtures to ensure the system does not reward confident prose over real-world constraints.</p>
 <h2 id="api-reference">API Reference</h2>
 <h3 id="authentication">Authentication</h3>
 <p>All API requests require an <code>X-API-Key</code> header:</p>
