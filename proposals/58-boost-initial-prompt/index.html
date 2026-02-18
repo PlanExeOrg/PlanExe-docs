@@ -9,14 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-      
-        <link rel="canonical" href="https://docs.planexe.org/ai_providers/openrouter/">
-      
-      
-        <link rel="prev" href="../../developer/mcp_cloud/">
+        <meta name="author" content="Simon Strandgaard">
       
       
-        <link rel="next" href="../ollama/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/58-boost-initial-prompt/">
+      
+      
+        <link rel="prev" href="../57-banned-words-and-lever-realism-guardrails/">
+      
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>OpenRouter - AI provider - PlanExe Documentation</title>
+        <title>Boost Initial Prompt - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="OpenRouter - AI provider - PlanExe Documentation" />
+<meta property="og:title" content="Boost Initial Prompt - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/ai_providers/openrouter.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/58-boost-initial-prompt.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/ai_providers/openrouter/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/58-boost-initial-prompt/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="OpenRouter - AI provider - PlanExe Documentation" />
+<meta property="twitter:title" content="Boost Initial Prompt - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/ai_providers/openrouter.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/58-boost-initial-prompt.png" />
 </head>
   
   
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-planexe-with-openrouter" class="md-skip">
+        <a href="#boost-initial-prompt" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenRouter - AI provider
+              Boost Initial Prompt
             
           </span>
         </div>
@@ -1478,8 +1478,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1490,11 +1488,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
@@ -1515,7 +1513,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1530,37 +1528,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OpenRouter
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ai_providers/openrouter/" class="md-nav__link">
         
   
   
@@ -1576,81 +1547,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quickstart-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quickstart (Docker)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-add-a-new-openrouter-model-to-llm_configjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to add a new OpenRouter model to llm_config.json
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1663,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ollama/" class="md-nav__link">
+      <a href="../../ai_providers/ollama/" class="md-nav__link">
         
   
   
@@ -1691,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lm_studio/" class="md-nav__link">
+      <a href="../../ai_providers/lm_studio/" class="md-nav__link">
         
   
   
@@ -1719,7 +1615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mistral/" class="md-nav__link">
+      <a href="../../ai_providers/mistral/" class="md-nav__link">
         
   
   
@@ -1922,6 +1818,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1932,11 +1830,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" checked>
         
           
           <label class="md-nav__link" for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
@@ -1957,7 +1855,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_12">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1975,7 +1873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/01-agent-smart-routing/" class="md-nav__link">
+      <a href="../01-agent-smart-routing/" class="md-nav__link">
         
   
   
@@ -2010,7 +1908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/02-plans-as-LLM-templates/" class="md-nav__link">
+      <a href="../02-plans-as-LLM-templates/" class="md-nav__link">
         
   
   
@@ -2045,7 +1943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/03-distributed-plan-execution/" class="md-nav__link">
+      <a href="../03-distributed-plan-execution/" class="md-nav__link">
         
   
   
@@ -2080,7 +1978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/04-plan-explain-as-API-service/" class="md-nav__link">
+      <a href="../04-plan-explain-as-API-service/" class="md-nav__link">
         
   
   
@@ -2115,7 +2013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/05-semantic-plan-search-graph/" class="md-nav__link">
+      <a href="../05-semantic-plan-search-graph/" class="md-nav__link">
         
   
   
@@ -2150,7 +2048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/06-adopt-on-the-fly/" class="md-nav__link">
+      <a href="../06-adopt-on-the-fly/" class="md-nav__link">
         
   
   
@@ -2178,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/07-elo-ranking/" class="md-nav__link">
+      <a href="../07-elo-ranking/" class="md-nav__link">
         
   
   
@@ -2213,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/08-ui-for-editing-plan/" class="md-nav__link">
+      <a href="../08-ui-for-editing-plan/" class="md-nav__link">
         
   
   
@@ -2248,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/11-investor-thesis-matching-engine/" class="md-nav__link">
+      <a href="../11-investor-thesis-matching-engine/" class="md-nav__link">
         
   
   
@@ -2283,7 +2181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/12-evidence-based-founder-execution-index/" class="md-nav__link">
+      <a href="../12-evidence-based-founder-execution-index/" class="md-nav__link">
         
   
   
@@ -2318,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/13-portfolio-aware-capital-allocation/" class="md-nav__link">
+      <a href="../13-portfolio-aware-capital-allocation/" class="md-nav__link">
         
   
   
@@ -2353,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/14-confidence-weighted-funding-auctions/" class="md-nav__link">
+      <a href="../14-confidence-weighted-funding-auctions/" class="md-nav__link">
         
   
   
@@ -2388,7 +2286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/15-outcome-feedback-and-model-governance/" class="md-nav__link">
+      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
         
   
   
@@ -2423,7 +2321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
+      <a href="../16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
         
   
   
@@ -2458,7 +2356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/17-plugin-adaptation-lifecycle/" class="md-nav__link">
+      <a href="../17-plugin-adaptation-lifecycle/" class="md-nav__link">
         
   
   
@@ -2493,7 +2391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
+      <a href="../18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
         
   
   
@@ -2528,7 +2426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
+      <a href="../19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
         
   
   
@@ -2563,7 +2461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
+      <a href="../20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
         
   
   
@@ -2598,7 +2496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/21-expert-discovery-and-fit-scoring/" class="md-nav__link">
+      <a href="../21-expert-discovery-and-fit-scoring/" class="md-nav__link">
         
   
   
@@ -2633,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/22-multi-stage-verification-workflow/" class="md-nav__link">
+      <a href="../22-multi-stage-verification-workflow/" class="md-nav__link">
         
   
   
@@ -2668,7 +2566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
+      <a href="../23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
         
   
   
@@ -2703,7 +2601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/24-cross-border-project-verification-framework/" class="md-nav__link">
+      <a href="../24-cross-border-project-verification-framework/" class="md-nav__link">
         
   
   
@@ -2738,7 +2636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/25-verification-incentives-governance-and-liability/" class="md-nav__link">
+      <a href="../25-verification-incentives-governance-and-liability/" class="md-nav__link">
         
   
   
@@ -2773,7 +2671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
+      <a href="../26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
         
   
   
@@ -2808,7 +2706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/27-multi-angle-topic-verification-engine/" class="md-nav__link">
+      <a href="../27-multi-angle-topic-verification-engine/" class="md-nav__link">
         
   
   
@@ -2843,7 +2741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/28-autonomous-bid-factory-orchestration/" class="md-nav__link">
+      <a href="../28-autonomous-bid-factory-orchestration/" class="md-nav__link">
         
   
   
@@ -2878,7 +2776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
+      <a href="../29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
         
   
   
@@ -2913,7 +2811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
+      <a href="../30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
         
   
   
@@ -2948,7 +2846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/31-token-counting-and-cost-transparency/" class="md-nav__link">
+      <a href="../31-token-counting-and-cost-transparency/" class="md-nav__link">
         
   
   
@@ -2983,7 +2881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
+      <a href="../32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
         
   
   
@@ -3018,7 +2916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/33-cost-breakdown-structure-cbs/" class="md-nav__link">
+      <a href="../33-cost-breakdown-structure-cbs/" class="md-nav__link">
         
   
   
@@ -3053,7 +2951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/34-finance-top-down-estimation/" class="md-nav__link">
+      <a href="../34-finance-top-down-estimation/" class="md-nav__link">
         
   
   
@@ -3088,7 +2986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
+      <a href="../35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
         
   
   
@@ -3123,7 +3021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
+      <a href="../36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
         
   
   
@@ -3158,7 +3056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
+      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
         
   
   
@@ -3193,7 +3091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
+      <a href="../38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
         
   
   
@@ -3228,7 +3126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
+      <a href="../39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
         
   
   
@@ -3263,7 +3161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
+      <a href="../40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
         
   
   
@@ -3298,7 +3196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/41-autonomous-execution-of-plan/" class="md-nav__link">
+      <a href="../41-autonomous-execution-of-plan/" class="md-nav__link">
         
   
   
@@ -3333,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/42-evidence-traceability-ledger/" class="md-nav__link">
+      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
         
   
   
@@ -3368,7 +3266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/43-assumption-drift-monitor/" class="md-nav__link">
+      <a href="../43-assumption-drift-monitor/" class="md-nav__link">
         
   
   
@@ -3403,7 +3301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/44-investor-grade-audit-pack-generator/" class="md-nav__link">
+      <a href="../44-investor-grade-audit-pack-generator/" class="md-nav__link">
         
   
   
@@ -3438,7 +3336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/45-counterfactual-scenario-explorer/" class="md-nav__link">
+      <a href="../45-counterfactual-scenario-explorer/" class="md-nav__link">
         
   
   
@@ -3473,7 +3371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/46-execution-readiness-scoring/" class="md-nav__link">
+      <a href="../46-execution-readiness-scoring/" class="md-nav__link">
         
   
   
@@ -3508,7 +3406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/47-openclaw-agent-skill-integration/" class="md-nav__link">
+      <a href="../47-openclaw-agent-skill-integration/" class="md-nav__link">
         
   
   
@@ -3543,7 +3441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/48-moltbook-reputation-bridge/" class="md-nav__link">
+      <a href="../48-moltbook-reputation-bridge/" class="md-nav__link">
         
   
   
@@ -3578,7 +3476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
+      <a href="../49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
         
   
   
@@ -3613,7 +3511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/50-agent-to-agent-payment-gateway/" class="md-nav__link">
+      <a href="../50-agent-to-agent-payment-gateway/" class="md-nav__link">
         
   
   
@@ -3648,7 +3546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/51-decentralized-planexe-survivability/" class="md-nav__link">
+      <a href="../51-decentralized-planexe-survivability/" class="md-nav__link">
         
   
   
@@ -3683,7 +3581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/52-mcp-oauth/" class="md-nav__link">
+      <a href="../52-mcp-oauth/" class="md-nav__link">
         
   
   
@@ -3718,7 +3616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/53-uuid-only-task-id/" class="md-nav__link">
+      <a href="../53-uuid-only-task-id/" class="md-nav__link">
         
   
   
@@ -3753,7 +3651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/54-agent-safety-trusted-information/" class="md-nav__link">
+      <a href="../54-agent-safety-trusted-information/" class="md-nav__link">
         
   
   
@@ -3781,7 +3679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
+      <a href="../55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
         
   
   
@@ -3816,7 +3714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
+      <a href="../56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
         
   
   
@@ -3851,7 +3749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
+      <a href="../57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
         
   
   
@@ -3883,10 +3781,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../proposals/58-boost-initial-prompt/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    58 boost initial prompt
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3909,6 +3841,280 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feasibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feasibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Extract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Repair
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rewrite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Rewrite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-prompt-boost-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI Prompt Boost Loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critique-and-ranking-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critique and Ranking Mechanism
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Quality Score
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-baseline-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Baseline Alignment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phased-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phased Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phased Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-baseline-booster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A: Baseline Booster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-realism-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B: Realism Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-ui-optimization-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C: UI Optimization Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-adaptive-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D: Adaptive Improvement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3956,10 +4162,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quickstart-docker" class="md-nav__link">
+  <a href="#pitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quickstart (Docker)
+        Pitch
       
     </span>
   </a>
@@ -3967,10 +4173,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Problem
       
     </span>
   </a>
@@ -3978,10 +4184,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#feasibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        Feasibility
       
     </span>
   </a>
@@ -3989,10 +4195,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-add-a-new-openrouter-model-to-llm_configjson" class="md-nav__link">
+  <a href="#proposal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to add a new OpenRouter model to llm_config.json
+        Proposal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Extract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-repair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Repair
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rewrite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Rewrite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-prompt-boost-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI Prompt Boost Loop
       
     </span>
   </a>
@@ -4000,10 +4256,159 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#critique-and-ranking-mechanism" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next steps
+        Critique and Ranking Mechanism
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-quality-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Quality Score
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-baseline-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Baseline Alignment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phased-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phased Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phased Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-a-baseline-booster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase A: Baseline Booster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-b-realism-guardrails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase B: Realism Guardrails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-c-ui-optimization-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase C: UI Optimization Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-d-adaptive-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase D: Adaptive Improvement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
       
     </span>
   </a>
@@ -4030,65 +4435,247 @@
   
 
 
-<h1 id="using-planexe-with-openrouter">Using PlanExe with OpenRouter</h1>
-<p>For new users, OpenRouter is the recommended starting point. When you have have generated a few plans via OpenRouter, then you can try switch to other AI providers.</p>
-<p><a href="https://openrouter.ai/">OpenRouter</a> provides access to a large number of LLM models, that runs in the cloud.</p>
-<p>Unfortunately there is no <code>free</code> model that works reliable with PlanExe.</p>
-<p>In my experience, the <code>paid</code> models are the most reliable. Models like <a href="https://openrouter.ai/google/gemini-2.0-flash-001">google/gemini-2.0-flash-001</a>. and <a href="https://openrouter.ai/openai/gpt-4o-mini">openai/gpt-4o-mini</a> are cheap and faster than running models on my own computer and without risk of it overheating.</p>
-<p>I haven't been able to find a <code>free</code> model on OpenRouter that works well with PlanExe.</p>
-<p>Avoid pricey <code>paid</code> models. PlanExe does more than 100 LLM inference calls per plan, so each run uses many tokens. With a cheap model, creating a full plan costs less than 0.30 USD; with one of the newest models, the price can exceed 20 USD. To keep PlanExe affordable for as many users as possible, the defaults use older, cheaper models.</p>
-<h2 id="quickstart-docker">Quickstart (Docker)</h2>
-<ol>
-<li>Install Docker (with Docker Compose) — no local Python or pip is needed now.</li>
-<li>Clone the repo and enter it:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/PlanExeOrg/PlanExe.git
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd PlanExe
-</code></pre></div></li>
-<li>Copy <code>.env.docker-example</code> to <code>.env</code>, then set your API key and pick a default OpenRouter profile so the worker uses the cloud model by default:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>OPENROUTER_API_KEY=&#39;sk-or-v1-...&#39;
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>DEFAULT_LLM=&#39;openrouter-paid-gemini-2.0-flash-001&#39;   # or openrouter-paid-openai-gpt-4o-mini
-</code></pre></div>
-   The containers mount <code>.env</code> and <code>llm_config.json</code> automatically.</li>
-<li>Start PlanExe:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker compose up worker_plan frontend_single_user
-</code></pre></div></li>
-<li>Wait for http://localhost:7860 to come up, submit a prompt, and watch progress with <code>docker compose logs -f worker_plan</code>.</li>
-<li>Outputs are written to <code>run/&lt;timestamped-output-dir&gt;</code> on the host (mounted from the containers).</li>
-<li>Stop with <code>Ctrl+C</code> (or <code>docker compose down</code>). If you change <code>llm_config.json</code>, restart the containers so they reload it: <code>docker compose restart worker_plan frontend_single_user</code> (or <code>docker compose down &amp;&amp; docker compose up</code>). No rebuild is needed for config-only edits.</li>
-</ol>
-<h2 id="configuration">Configuration</h2>
-<p>Visit <a href="https://openrouter.ai/">OpenRouter</a>, create an account, purchase 5 USD in credits (plenty for making a several plans), and generate an API key.</p>
-<p>Copy <code>.env.docker-example</code> to a new file called <code>.env</code> (loaded by Docker at startup).</p>
-<p>Open the <code>.env</code> file in a text editor and insert your OpenRouter API key. Like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>OPENROUTER_API_KEY=&#39;INSERT YOUR KEY HERE&#39;
-</code></pre></div>
-<p>If you edit <code>llm_config.json</code> later, restart the worker/frontend containers to pick up the changes: <code>docker compose restart worker_plan frontend_single_user</code> (or stop/start). Rebuilds are only needed when dependencies change.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<p>Inside PlanExe, when clicking <code>Submit</code>, a new <code>Output Dir</code> should be created containing a <code>log.txt</code>. Open that file and scroll to the bottom, see if there are any error messages about what is wrong.</p>
-<p>When running in Docker, also check the worker logs for 401/429 or connectivity errors:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker compose logs -f worker_plan
-</code></pre></div>
-<p>Report your issue on <a href="https://planexe.org/discord">Discord</a>. Please include info about your system, such as: "I'm on macOS with M1 Max with 64 GB.".</p>
-<h2 id="how-to-add-a-new-openrouter-model-to-llm_configjson">How to add a new OpenRouter model to <code>llm_config.json</code></h2>
-<p>The <a href="https://openrouter.ai/rankings">OpenRouter/rankings</a> page shows an overview of the most popular models. New models are added frequently</p>
-<p>For a model to work with PlanExe, it must meet the following criteria:</p>
-<ul>
-<li>Minimum 8192 output tokens.</li>
-<li>Support structured output.</li>
-<li>Reliable. Avoid fragile setups where it works one day, but not the next day. If it's a beta version, be aware that it may stop working.</li>
-<li>Low latency.</li>
-</ul>
-<p>Steps to add a model:</p>
-<ol>
-<li>Copy the model id from the openrouter website.</li>
-<li>Paste the model id into the <code>llm_config.json</code>.</li>
-<li>Restart PlanExe to apply the changes.</li>
-</ol>
+<h1 id="boost-initial-prompt">Boost Initial Prompt</h1>
+<p><strong>Author:</strong> Simon Strandgaard<br />
+<strong>Date:</strong> 2026-02-18<br />
+<strong>Status:</strong> Proposal<br />
+<strong>Tags:</strong> <code>prompting</code>, <code>quality</code>, <code>normalization</code>, <code>assumptions</code>, <code>guardrails</code></p>
 <hr />
-<h2 id="next-steps">Next steps</h2>
+<h2 id="pitch">Pitch</h2>
+<p>Add a pre-planning stage that rewrites weak user input into a stronger, concise, execution-ready initial prompt before the normal PlanExe pipeline starts.</p>
+<p>The goal is not to overwrite user intent, but to preserve intent while repairing missing constraints, unrealistic parameters, and ambiguous wording.</p>
+<p>This should be a first-class UX in plan creation UI, not only a backend/MCP behavior.</p>
+<h2 id="problem">Problem</h2>
+<p>The initial prompt has disproportionate impact on downstream output quality.</p>
+<p>Current failure patterns:</p>
 <ul>
-<li>Learn prompt quality: <a href="../../prompt_writing_guide/">Prompt writing guide</a></li>
-<li>Understand output sections: <a href="../../plan_output_anatomy/">Plan output anatomy</a></li>
+<li>Missing key fields (location, budget range, timeline realism, resource constraints).</li>
+<li>Unrealistic values (for example near-zero budget for multi-month, multi-person execution).</li>
+<li>Vague or noisy language that produces weak assumptions and low-quality levers.</li>
+<li>Overly specific or contradictory details that anchor the plan in non-critical noise.</li>
+</ul>
+<p>When this happens, later stages can look polished but still be impractical because the seed prompt is weak.</p>
+<p>There is already a quality gap between two prompt sources:</p>
+<ul>
+<li>MCP tool-driven prompt assembly that follows <code>prompt_examples</code> (high structure, better constraints).</li>
+<li>Direct human input that is often shorter, incomplete, or inconsistent.</li>
+</ul>
+<p>This proposal targets that gap by lifting weak human prompts toward the same baseline used in MCP flows.</p>
+<h2 id="feasibility">Feasibility</h2>
+<p>This is feasible as an additive step before <code>find_plan_prompt</code> and early assumption tasks.</p>
+<p>Why now:</p>
+<ul>
+<li>We already have high-quality prompt examples in <code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code>.</li>
+<li>We already document strong prompt shape in <code>docs/prompt_writing_guide.md</code>.</li>
+<li>MCP usage already enforces prompt-quality workflow via <code>docs/mcp/planexe_mcp_interface.md</code> (<code>prompt_examples</code> -&gt; formulate -&gt; <code>task_create</code>).</li>
+<li>PlanExe already contains assumption-oriented components (<code>assume/*</code>) that can consume cleaner input.</li>
+<li>The rewrite stage can be bounded, deterministic in structure, and audited with artifacts.</li>
+</ul>
+<p>Constraints:</p>
+<ul>
+<li>Must preserve user intent and avoid silent scope changes.</li>
+<li>Must clearly label inferred fields versus user-provided fields.</li>
+<li>Must cap rewrite iterations to avoid latency/cost blowout.</li>
+</ul>
+<h2 id="proposal">Proposal</h2>
+<p>Introduce a <strong>Boost Initial Prompt</strong> module with three steps.</p>
+<h3 id="1-extract">1) Extract</h3>
+<p>Parse user input into a structured draft.</p>
+<ul>
+<li>sector</li>
+<li>goal/outcome</li>
+<li>location(s)</li>
+<li>budget + currency</li>
+<li>timeline</li>
+<li>audience/stakeholders</li>
+<li>user role + experience</li>
+<li>hard constraints</li>
+</ul>
+<h3 id="2-repair">2) Repair</h3>
+<p>Apply bounded transformations.</p>
+<ul>
+<li>Fill missing high-impact fields via explicit assumptions.</li>
+<li>Normalize units/currency and clarify timeframe granularity.</li>
+<li>Detect unrealistic budget-time-scope combinations and propose realistic alternatives.</li>
+<li>Remove low-signal verbosity while preserving domain details that affect execution.</li>
+</ul>
+<h3 id="3-rewrite">3) Rewrite</h3>
+<p>Produce normalized prompt artifacts.</p>
+<ul>
+<li><code>boosted_prompt</code>: concise, execution-ready initial prompt.</li>
+<li><code>change_log</code>: what changed and why.</li>
+<li><code>assumption_flags</code>: inferred values requiring user confirmation or low-confidence handling.</li>
+</ul>
+<h2 id="ui-prompt-boost-loop">UI Prompt Boost Loop</h2>
+<p>Add a dedicated step in the create-plan flow: <strong>Optimize Prompt</strong>.</p>
+<p>Flow:</p>
+<ol>
+<li>User enters initial prompt.</li>
+<li>System runs critique and scoring.</li>
+<li>System generates exactly 3 improved prompt proposals.</li>
+<li>System ranks the 3 proposals plus the original prompt.</li>
+<li>User picks one candidate (or edits manually), then starts plan generation.</li>
+</ol>
+<p>This gives a controlled back-and-forth loop before <code>task_create</code>/plan execution.</p>
+<h2 id="critique-and-ranking-mechanism">Critique and Ranking Mechanism</h2>
+<p>For each candidate (including original), produce a compact scorecard:</p>
+<ul>
+<li>completeness</li>
+<li>realism</li>
+<li>clarity</li>
+<li>constraint coverage (budget, timeline, location, scope)</li>
+<li>risk of contradiction</li>
+</ul>
+<p>Return:</p>
+<ul>
+<li><code>overall_score</code> (0-100)</li>
+<li><code>strengths</code> (short bullets)</li>
+<li><code>weaknesses</code> (short bullets)</li>
+<li><code>highest_risk_gap</code> (single biggest issue)</li>
+</ul>
+<p>Generation policy for 3 proposals:</p>
+<ul>
+<li><strong>Proposal A (Conservative):</strong> minimal edits, preserve original phrasing style.</li>
+<li><strong>Proposal B (Balanced):</strong> strongest overall quality with moderate rewrites.</li>
+<li><strong>Proposal C (Aggressive):</strong> larger structural rewrite for maximum clarity/feasibility.</li>
+</ul>
+<p>Selection default:</p>
+<ul>
+<li>Preselect top-ranked candidate.</li>
+<li>Always show why it ranked highest.</li>
+<li>Keep original prompt selectable to preserve user control.</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<p>Suggested flow:</p>
+<ol>
+<li>Receive raw user prompt.</li>
+<li>Run structure extraction.</li>
+<li>Score prompt quality (completeness + realism + clarity).</li>
+<li>If score below threshold, run repair + rewrite once.</li>
+<li>Re-score; if still below threshold, run one final constrained rewrite.</li>
+<li>Pass <code>boosted_prompt</code> into existing planning pipeline.</li>
+<li>Persist artifacts for debugging and A/B testing.</li>
+</ol>
+<p>UI variant:</p>
+<ol>
+<li>User submits initial prompt in UI.</li>
+<li>Run critique + generate 3 candidate improvements.</li>
+<li>Rank original + 3 candidates.</li>
+<li>User chooses one and confirms.</li>
+<li>Send selected prompt into normal pipeline.</li>
+</ol>
+<h2 id="prompt-quality-score">Prompt Quality Score</h2>
+<p>Use a transparent score to gate rewrites:</p>
+<ul>
+<li><strong>Completeness (0-40):</strong> key fields present and parseable.</li>
+<li><strong>Realism (0-35):</strong> budget/timeline/scope coherence.</li>
+<li><strong>Clarity (0-25):</strong> concise, non-contradictory, actionable wording.</li>
+</ul>
+<p>Decision rule:</p>
+<ul>
+<li><code>score &gt;= 75</code>: use original (or minimal normalization only).</li>
+<li><code>score &lt; 75</code>: trigger boost stage.</li>
+</ul>
+<h2 id="integration-points">Integration Points</h2>
+<ul>
+<li>Entry point before <code>worker_plan_internal/plan/find_plan_prompt.py</code>.</li>
+<li>Shared assumptions path with <code>worker_plan_internal/assume/make_assumptions.py</code>.</li>
+<li>Optional report section in plan output: “Initial Prompt Boost Summary”.</li>
+<li>Prompt catalog logging for A/B comparisons.</li>
+<li>Prompt-shape alignment with:</li>
+<li><code>docs/prompt_writing_guide.md</code></li>
+<li><code>docs/mcp/planexe_mcp_interface.md</code></li>
+<li><code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code> (including MCP-curated examples)</li>
+</ul>
+<h2 id="mcp-baseline-alignment">MCP Baseline Alignment</h2>
+<p>Use MCP <code>prompt_examples</code> as the reference quality target for rewritten human prompts.</p>
+<p>Concretely:</p>
+<ul>
+<li>Extract structural patterns from MCP examples (scope, budget, timeline, location, success criteria).</li>
+<li>Rewrite weak human prompts to match that structure without changing core intent.</li>
+<li>Track “distance-to-baseline” before and after rewrite for A/B analysis.</li>
+</ul>
+<h2 id="data-artifacts">Data Artifacts</h2>
+<p>Add run artifacts:</p>
+<ul>
+<li><code>prompt/raw_prompt.txt</code></li>
+<li><code>prompt/boosted_prompt.txt</code></li>
+<li><code>prompt/boost_change_log.json</code></li>
+<li><code>prompt/boost_quality_score.json</code></li>
+<li><code>prompt/boost_candidates.json</code></li>
+<li><code>prompt/boost_ranking.json</code></li>
+</ul>
+<p>Recommended fields in <code>boost_change_log.json</code>:</p>
+<ul>
+<li><code>field</code></li>
+<li><code>original_value</code></li>
+<li><code>new_value</code></li>
+<li><code>reason</code></li>
+<li><code>confidence</code></li>
+<li><code>requires_user_confirmation</code></li>
+</ul>
+<p>Recommended fields in <code>boost_candidates.json</code>:</p>
+<ul>
+<li><code>candidate_id</code> (<code>original</code>, <code>A</code>, <code>B</code>, <code>C</code>)</li>
+<li><code>strategy</code> (<code>conservative</code>, <code>balanced</code>, <code>aggressive</code>)</li>
+<li><code>prompt_text</code></li>
+<li><code>scorecard</code></li>
+</ul>
+<p>Recommended fields in <code>boost_ranking.json</code>:</p>
+<ul>
+<li>ordered candidate list</li>
+<li>score deltas</li>
+<li>top-choice rationale</li>
+</ul>
+<h2 id="phased-implementation">Phased Implementation</h2>
+<h3 id="phase-a-baseline-booster">Phase A: Baseline Booster</h3>
+<ul>
+<li>Implement extraction, single-pass rewrite, and quality scoring.</li>
+<li>Log artifacts and route boosted prompt into pipeline.</li>
+</ul>
+<h3 id="phase-b-realism-guardrails">Phase B: Realism Guardrails</h3>
+<ul>
+<li>Add budget-time-scope plausibility checks with bounded alternatives.</li>
+<li>Add low-confidence flags for missing critical context.</li>
+</ul>
+<h3 id="phase-c-ui-optimization-loop">Phase C: UI Optimization Loop</h3>
+<ul>
+<li>Add create-plan UI step for critique, 3 proposals, and ranking.</li>
+<li>Allow user selection and final manual edits before generation.</li>
+</ul>
+<h3 id="phase-d-adaptive-improvement">Phase D: Adaptive Improvement</h3>
+<ul>
+<li>Run A/B tests: raw prompt vs boosted prompt on identical tasks.</li>
+<li>Promote rewrite patterns that improve objective quality metrics.</li>
+</ul>
+<h2 id="success-metrics">Success Metrics</h2>
+<ul>
+<li>Higher average plan quality rating for low-quality user inputs.</li>
+<li>Reduced rate of plans with obvious feasibility mismatches.</li>
+<li>Reduced manual prompt rewriting done by humans before run.</li>
+<li>Improved downstream stability (fewer contradiction flags in assumptions/review).</li>
+<li>Controlled overhead: boost stage adds limited latency and token cost.</li>
+<li>Percentage of UI users selecting one of the 3 boosted proposals.</li>
+<li>Win rate of top-ranked candidate versus original in downstream plan-quality evaluation.</li>
+</ul>
+<h2 id="risks">Risks</h2>
+<ul>
+<li>Over-normalization may remove useful nuance.</li>
+<li>Rewrite model may inject incorrect assumptions.</li>
+<li>Extra stage may increase cost/latency without sufficient quality gain.</li>
+</ul>
+<p>Mitigations:</p>
+<ul>
+<li>Preserve intent constraints as highest priority.</li>
+<li>Require explicit marking of inferred values.</li>
+<li>Bound rewrite iterations to max 2 passes.</li>
+<li>Keep rollback option: run pipeline on original prompt when confidence is low.</li>
+</ul>
+<h2 id="open-questions">Open Questions</h2>
+<ul>
+<li>Should low-confidence inferred fields block execution or continue with warnings?</li>
+<li>Should users see and approve boosted prompts in UI before plan generation?</li>
+<li>Which quality metric should be canonical for A/B promotion decisions?</li>
 </ul>
 
 
