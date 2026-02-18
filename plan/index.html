@@ -4077,27 +4077,23 @@ For a team with several people it's possible to do tasks in parallel.
 Obtain info about what resources the user has available, and if they are willing to do tasks in parallel.</p>
 <hr />
 <h1 id="secondary-issues">Secondary issues</h1>
-<h2 id="luigi-can-run-tasks-in-parallel">Luigi can run tasks in parallel</h2>
-<p>I'm not making use of it. </p>
-<p>Until 2026-jan-01 I had this limitation: The PythonAnywhere doesn't like long running child processes/threads, anything longer than 5 minutes gets killed. There are always-on workers, but these must not spawn long running processes/threads. I'm considering finding another provider.
-Starting from 2026-jan-01 I’m using Docker and no longer using pythonanywhere, I can start looking into running parallel tasks within Luigi.</p>
-<h2 id="mcp-on-railway">MCP on Railway</h2>
+<h2 id="polishing-of-mcp-flow-via-planexeorg">Polishing of MCP flow via planexe.org</h2>
+<p>As of 2026-feb-18, I'm focusing on improving MCP.
+PlanExe is already working with OpenClaw.
+But it's not as smooth as I would like.</p>
+<p>The user adds credits here. Start with 5 USD, so you can create around 3 plans.
+https://home.planexe.org/</p>
+<p>The agents use the api here. When AI agents connect to the MCP interface, the credits are consumed. Between 1-2 USD per plan creation.
+https://mcp.planexe.org/mcp</p>
+<h2 id="mcp-with-byok">MCP with BYOK</h2>
 <p>Doing inference in the cloud cost money.
-If users are to use MCP in the cloud, they will have to pay for it.</p>
-<ul>
-<li>Scenario A: Users can buy credit via <code>PLANEXE_MCP_API_KEY</code>.</li>
-<li>Scenario B: Users can BYOK (Bring your own key).</li>
-</ul>
-<p>Both scenarios will need user management with login.</p>
+Users can BYOK (Bring your own key), and choose what models they want to use.</p>
 <hr />
 <h1 id="tertiary-issues">Tertiary issues</h1>
 <h2 id="capture-reasoning-response">Capture reasoning response</h2>
 <p>Currently I only capture the final response, without any reasoning.
 I want to capture the reasoning, since it may be helpful for troubleshooting.
 Or for other AIs to assess the reasoning steps leading up to the response.</p>
-<h2 id="token-counting">Token counting</h2>
-<p>So that I can see how much does it cost to generate a plan.
-Reasoning models. How many tokens are spent on reasoning vs generating the final response.</p>
 <h2 id="debugging">Debugging</h2>
 <p>Get step-by-step debugging working again.
 Now that I have switched to Docker, I have multiple python projects in the same repo, that use different incompatible packages.</p>
