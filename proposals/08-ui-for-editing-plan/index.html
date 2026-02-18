@@ -2139,7 +2139,7 @@
     
   
   
-    <span class="md-status md-status--proposal"></span>
+    <span class="md-status md-status--in-progress"></span>
   
 
   
@@ -2164,7 +2164,7 @@
     
   
   
-    <span class="md-status md-status--proposal"></span>
+    <span class="md-status md-status--in-progress"></span>
   
 
   
@@ -2377,6 +2377,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-and-why-it-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changed and Why It Matters
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4192,6 +4203,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-changed-and-why-it-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changed and Why It Matters
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4214,10 +4236,19 @@
 
 <h1 id="ui-for-editing-plans">UI for Editing Plans</h1>
 <h2 id="status">Status</h2>
-<p>Draft</p>
+<p>In progress</p>
+<p>Implementation update (2026-02-18):</p>
+<ul>
+<li><code>frontend_multi_user</code> (deployed at <a href="https://home.planexe.org/">home.planexe.org</a>) now has a user-facing <strong>Generate Plan</strong> flow.</li>
+<li>Users can now use <code>/plan</code> to:</li>
+<li>list their plans</li>
+<li>inspect an individual plan</li>
+<li>download report/zip artifacts</li>
+<li>End users no longer need to navigate Flask-Admin for normal plan creation and viewing.</li>
+</ul>
 <h2 id="context">Context</h2>
-<p>The production site at <a href="https://home.planexe.org/">home.planexe.org</a> currently does not provide a user-facing UI for creating plans. Users can sign in and manage accounts, but there is no end-user workflow for creating, revisiting, or editing plans in the browser.</p>
-<p>Today there are two ways to create plans, but neither is suitable as the long-term end-user experience.</p>
+<p>The production site at <a href="https://home.planexe.org/">home.planexe.org</a> now provides a user-facing UI for creating and viewing plans in the browser.</p>
+<p>Before this update, plan creation and inspection required either MCP usage or Flask-Admin. That limitation has been removed for the core create/view flow.</p>
 <h3 id="mcp-interface">MCP Interface</h3>
 <p>The MCP interface can create plans and store them in the database. It also uses <code>example_prompts</code>, which helps users land on a reasonable starting prompt instead of a blank textarea.</p>
 <p>Limitations:</p>
@@ -4250,13 +4281,16 @@
 <h2 id="goals">Goals</h2>
 <ul>
 <li>
-<p>Provide a user-facing plan creation UI on <a href="https://home.planexe.org/">home.planexe.org</a> and when running locally via docker.</p>
+<p>Keep the existing user-facing plan creation and browsing UI stable on <a href="https://home.planexe.org/">home.planexe.org</a> and in local docker deployments.</p>
 </li>
 <li>
 <p>Ensure plans are persisted and can be revisited.</p>
 </li>
 <li>
 <p>Enforce credit checks before plan creation.</p>
+</li>
+<li>
+<p>Add a true browser-based <strong>editing</strong> workflow for existing plans.</p>
 </li>
 <li>
 <p>Keep the frontend implementation simple and fully under our control.</p>
@@ -4291,6 +4325,7 @@
 <p>Persist created plans and allow users to browse past plans.</p>
 </li>
 </ul>
+<p>Status: Completed.</p>
 <h3 id="phase-2-ui-for-editing-plans">Phase 2: UI for Editing Plans</h3>
 <ul>
 <li>
@@ -4333,6 +4368,12 @@
 <li>Conflict resolution correctness</li>
 <li>Edit-to-recompute latency</li>
 <li>Usability score in editor sessions</li>
+</ul>
+<h2 id="what-changed-and-why-it-matters">What Changed and Why It Matters</h2>
+<ul>
+<li>Users can now generate and inspect plans without Flask-Admin, reducing operational friction and support burden.</li>
+<li><code>/plan</code> is now the canonical user entry point for plan history and detail views.</li>
+<li>This proposal is now focused on the remaining gap: safe, structured editing of existing plans and downstream recomputation.</li>
 </ul>
 
 
