@@ -3705,7 +3705,7 @@
     
   
   
-    <span class="md-status md-status--proposal"></span>
+    <span class="md-status md-status--completed"></span>
   
 
   
@@ -3730,7 +3730,7 @@
     
   
   
-    <span class="md-status md-status--proposal"></span>
+    <span class="md-status md-status--completed"></span>
   
 
   
@@ -3906,6 +3906,39 @@
     <span class="md-ellipsis">
       
         Implementation Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completed-implementation-2026-02-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed Implementation (2026-02-18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues-encountered-and-resolutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues Encountered and Resolutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remaining-work-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remaining Work (Optional)
       
     </span>
   </a>
@@ -4122,6 +4155,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#completed-implementation-2026-02-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed Implementation (2026-02-18)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues-encountered-and-resolutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues Encountered and Resolutions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remaining-work-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remaining Work (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4145,7 +4211,7 @@
 <h1 id="taskitem-activity-log-decomposition-and-secure-downloads">TaskItem Activity Log Decomposition and Secure Downloads</h1>
 <p><strong>Author:</strong> PlanExe Team<br />
 <strong>Date:</strong> 2026-02-18<br />
-<strong>Status:</strong> Proposal<br />
+<strong>Status:</strong> Completed (implemented on 2026-02-18)<br />
 <strong>Tags:</strong> <code>taskitem</code>, <code>security</code>, <code>performance</code>, <code>mcp</code>, <code>cost-visibility</code></p>
 <hr />
 <h2 id="pitch">Pitch</h2>
@@ -4252,6 +4318,48 @@ Add explicit serializer denylist to prevent accidental exposure in generic <code
 <li>Treat <code>track_activity.jsonl</code> as sensitive by default and never include it in user-export bundles.</li>
 <li>Keep <code>activity_overview</code> as the canonical user-facing cost source.</li>
 <li>Add automated regression test: unzip any downloadable snapshot and assert <code>track_activity.jsonl</code> is absent.</li>
+</ul>
+<h2 id="completed-implementation-2026-02-18">Completed Implementation (2026-02-18)</h2>
+<p>Implemented code paths:</p>
+<ul>
+<li>New <code>TaskItem</code> fields added and wired:</li>
+<li><code>run_track_activity_jsonl</code></li>
+<li><code>run_track_activity_bytes</code></li>
+<li><code>run_activity_overview_json</code></li>
+<li><code>run_artifact_layout_version</code></li>
+<li>Worker finalization now writes split activity fields and builds <code>run_zip_snapshot</code> without <code>track_activity.jsonl</code>.</li>
+<li><code>frontend_multi_user</code> and <code>mcp_cloud</code> download paths now serve new-layout zips directly and only sanitize legacy snapshots.</li>
+<li><code>worker_plan</code> zip endpoint now excludes <code>track_activity.jsonl</code>.</li>
+<li>UI telemetry/cost views now read <code>run_activity_overview_json</code> first, with legacy zip fallback.</li>
+<li>Admin tooling exposes internal track-activity download in an admin-only endpoint.</li>
+</ul>
+<p>This completes the operational objective of removing unzip/recompress work for new runs while preserving backward compatibility for legacy runs.</p>
+<h2 id="issues-encountered-and-resolutions">Issues Encountered and Resolutions</h2>
+<ol>
+<li>Retry path kept stale artifact fields</li>
+<li>Issue: <code>/plan/retry</code> cleared <code>generated_report_html</code> and <code>run_zip_snapshot</code> but initially left new split fields populated.</li>
+<li>Impact: stale telemetry/cost/internal activity metadata could appear until rerun completion.</li>
+<li>
+<p>Resolution: updated retry reset to also clear <code>run_track_activity_jsonl</code>, <code>run_track_activity_bytes</code>, <code>run_activity_overview_json</code>, and <code>run_artifact_layout_version</code>.</p>
+</li>
+<li>
+<p>Existing AGENTS guidance conflicted with new design</p>
+</li>
+<li>Issue: root guidance still mandated runtime sanitization of <code>run_zip_snapshot</code> for all downloads.</li>
+<li>Impact: this contradicted the completed split-artifact model where new snapshots are already safe.</li>
+<li>
+<p>Resolution: updated AGENTS guidance to enforce: never include <code>track_activity.jsonl</code> when creating downloadable zips; sanitize legacy snapshots only.</p>
+</li>
+<li>
+<p>Security invariant lacked explicit regression coverage</p>
+</li>
+<li>Issue: tests covered metadata/download flow but did not explicitly assert stripping of <code>track_activity.jsonl</code>.</li>
+<li>Resolution: added regression tests for both frontend legacy-zip sanitization and MCP legacy-zip sanitization to ensure <code>track_activity.jsonl</code> is absent from downloadable artifacts.</li>
+</ol>
+<h2 id="remaining-work-optional">Remaining Work (Optional)</h2>
+<ul>
+<li>Phase B backfill job is still optional operational work: historical tasks can be migrated from zip-only storage into split fields to reduce fallback usage.</li>
+<li>Phase C hard cutover (removing fallback sanitization entirely) can be done after backfill confidence is high.</li>
 </ul>
 
 
