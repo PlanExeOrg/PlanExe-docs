@@ -1225,6 +1225,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#credential-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#production-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1240,7 +1251,18 @@
   <a href="#google-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Google (production)
+        Google - production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google - localhost
       
     </span>
   </a>
@@ -1251,7 +1273,18 @@
   <a href="#github-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitHub (production)
+        GitHub - production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub - localhost
       
     </span>
   </a>
@@ -1262,7 +1295,18 @@
   <a href="#discord-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discord (production)
+        Discord - production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discord-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discord - localhost
       
     </span>
   </a>
@@ -1282,45 +1326,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Localhost setup (development)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#google-localhost" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Google (localhost)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#github-localhost" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GitHub (localhost)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#discord-localhost" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discord (localhost)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4117,6 +4122,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#credential-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential storage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#production-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4132,7 +4148,18 @@
   <a href="#google-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Google (production)
+        Google - production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google - localhost
       
     </span>
   </a>
@@ -4143,7 +4170,18 @@
   <a href="#github-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitHub (production)
+        GitHub - production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub - localhost
       
     </span>
   </a>
@@ -4154,7 +4192,18 @@
   <a href="#discord-production" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discord (production)
+        Discord - production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discord-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discord - localhost
       
     </span>
   </a>
@@ -4174,45 +4223,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Localhost setup (development)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#google-localhost" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Google (localhost)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#github-localhost" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GitHub (localhost)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#discord-localhost" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discord (localhost)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4292,22 +4302,48 @@
 <li>Keep <code>PLANEXE_FRONTEND_MULTIUSER_SECRET_KEY</code> stable across deploys, otherwise login sessions break.</li>
 <li>If <code>PLANEXE_AUTH_REQUIRED=true</code> and no OAuth provider is configured, startup fails by design.</li>
 </ul>
+<h2 id="credential-storage">Credential storage</h2>
+<p>Track OAuth credentials in a password manager, for example 1Password.</p>
+<ul>
+<li>Store each provider's values (production and localhost) as separate entries.</li>
+<li>Also store the direct settings URL for each OAuth app/client in the same entry.
+  Example: <code>https://discord.com/developers/applications/123456789012345/information</code></li>
+<li>Never commit client secrets to git, docs, screenshots, or chat logs.</li>
+</ul>
+<p>Provider naming is mostly the same:</p>
+<ul>
+<li>GitHub: <code>Client ID</code> and <code>Client Secret</code></li>
+<li>Google: <code>Client ID</code> and <code>Client Secret</code> (OAuth 2.0 Client)</li>
+<li>Discord: <code>Client ID</code> and <code>Client Secret</code> (OAuth2 section)</li>
+</ul>
 <h2 id="production-setup">Production setup</h2>
 <p>Use your real public domain, for example <code>https://home.planexe.org</code>.</p>
-<h3 id="google-production">Google (production)</h3>
-<ol>
-<li>In Google Cloud Console, create OAuth client type <code>Web application</code>.</li>
-<li>Add authorized redirect URI:
-   <code>https://home.planexe.org/auth/google/callback</code></li>
-<li>Set client ID/secret in:
-   <code>PLANEXE_OAUTH_GOOGLE_CLIENT_ID</code> and <code>PLANEXE_OAUTH_GOOGLE_CLIENT_SECRET</code>.</li>
-</ol>
+<h3 id="google-production">Google - production</h3>
+<p>In Google OAuth client (<code>Web application</code>), add:</p>
+<ul>
+<li><code>https://home.planexe.org/auth/google/callback</code></li>
+</ul>
+<p>Set:</p>
+<ul>
+<li><code>PLANEXE_OAUTH_GOOGLE_CLIENT_ID</code></li>
+<li><code>PLANEXE_OAUTH_GOOGLE_CLIENT_SECRET</code></li>
+</ul>
 <p>Verify what the app is using:</p>
 <ul>
 <li>Open <code>https://home.planexe.org/api/oauth-redirect-uri</code></li>
 <li>Confirm <code>redirect_uri=</code> matches the URI in Google exactly.</li>
 </ul>
-<h3 id="github-production">GitHub (production)</h3>
+<h3 id="google-localhost">Google - localhost</h3>
+<p>In Google OAuth client (<code>Web application</code>), add:</p>
+<ul>
+<li><code>http://localhost:5001/auth/google/callback</code></li>
+</ul>
+<p>Set:</p>
+<ul>
+<li><code>PLANEXE_OAUTH_GOOGLE_CLIENT_ID</code></li>
+<li><code>PLANEXE_OAUTH_GOOGLE_CLIENT_SECRET</code></li>
+</ul>
+<h3 id="github-production">GitHub - production</h3>
 <p>Create OAuth App at <a href="https://github.com/settings/developers">github.com/settings/developers</a>:</p>
 <ul>
 <li>Application name: <code>PlanExe</code></li>
@@ -4320,10 +4356,26 @@
 <li><code>PLANEXE_OAUTH_GITHUB_CLIENT_ID</code></li>
 <li><code>PLANEXE_OAUTH_GITHUB_CLIENT_SECRET</code></li>
 </ul>
-<h3 id="discord-production">Discord (production)</h3>
+<h3 id="github-localhost">GitHub - localhost</h3>
+<p>Create OAuth App at <a href="https://github.com/settings/developers">github.com/settings/developers</a>:</p>
+<ul>
+<li>Application name: <code>PlanExe Localhost</code></li>
+<li>Homepage URL: <code>http://localhost:5001/</code></li>
+<li>Authorization callback URL: <code>http://localhost:5001/auth/github/callback</code></li>
+<li>Device Flow: off</li>
+</ul>
+<p>Set credentials in:</p>
+<ul>
+<li><code>PLANEXE_OAUTH_GITHUB_CLIENT_ID</code></li>
+<li><code>PLANEXE_OAUTH_GITHUB_CLIENT_SECRET</code></li>
+</ul>
+<h3 id="discord-production">Discord - production</h3>
 <p>Create an application in the Discord developer portal:
 <a href="https://discord.com/developers/applications">discord.com/developers/applications</a></p>
-<p>Under OAuth2 settings, add redirect URI:</p>
+<p>Name it <code>PlanExe</code>.</p>
+<p>Open the OAuth2 page for your app (example):
+<code>https://discord.com/developers/applications/1473810102153773206/oauth2</code></p>
+<p>Under OAuth2 settings, add this redirect:</p>
 <ul>
 <li><code>https://home.planexe.org/auth/discord/callback</code></li>
 </ul>
@@ -4332,36 +4384,43 @@
 <li><code>PLANEXE_OAUTH_DISCORD_CLIENT_ID</code></li>
 <li><code>PLANEXE_OAUTH_DISCORD_CLIENT_SECRET</code></li>
 </ul>
-<h2 id="localhost-setup-development">Localhost setup (development)</h2>
-<p>Use <code>http://localhost:5001</code> as public URL.</p>
-<h3 id="google-localhost">Google (localhost)</h3>
-<p>In Google OAuth client (<code>Web application</code>), add:</p>
-<ul>
-<li><code>http://localhost:5001/auth/google/callback</code></li>
-</ul>
-<p>Set:</p>
-<ul>
-<li><code>PLANEXE_FRONTEND_MULTIUSER_PUBLIC_URL=http://localhost:5001</code></li>
-<li>Google client ID/secret env vars.</li>
-</ul>
-<h3 id="github-localhost">GitHub (localhost)</h3>
-<p>In <a href="https://github.com/settings/developers">github.com/settings/developers</a>, create a local OAuth app:</p>
-<ul>
-<li>Application name: <code>PlanExe Localhost</code></li>
-<li>Homepage URL: <code>http://localhost:5001/</code></li>
-<li>Authorization callback URL: <code>http://localhost:5001/auth/github/callback</code></li>
-<li>Device Flow: off</li>
-</ul>
-<p>Set GitHub client ID/secret env vars.</p>
-<h3 id="discord-localhost">Discord (localhost)</h3>
-<p>In Discord application OAuth2 settings, add:</p>
+<p>Discord flow:</p>
+<ol>
+<li>Open your app's OAuth2 page.</li>
+<li>Copy <code>Client ID</code>.</li>
+<li>Reset and copy <code>Client Secret</code>.</li>
+<li>Under Redirects, add:
+   <code>https://home.planexe.org/auth/discord/callback</code></li>
+</ol>
+<h3 id="discord-localhost">Discord - localhost</h3>
+<p>Create an application in the Discord developer portal:
+<a href="https://discord.com/developers/applications">discord.com/developers/applications</a></p>
+<p>Name it <code>PlanExe Localhost</code>.</p>
+<p>Open the OAuth2 page for your app (example):
+<code>https://discord.com/developers/applications/1473810102153773206/oauth2</code></p>
+<p>Under OAuth2 settings, add this redirect:</p>
 <ul>
 <li><code>http://localhost:5001/auth/discord/callback</code></li>
 </ul>
-<p>Set Discord client ID/secret env vars.</p>
+<p>Set credentials in:</p>
+<ul>
+<li><code>PLANEXE_OAUTH_DISCORD_CLIENT_ID</code></li>
+<li><code>PLANEXE_OAUTH_DISCORD_CLIENT_SECRET</code></li>
+</ul>
+<p>Discord flow:</p>
+<ol>
+<li>Open your app's OAuth2 page.</li>
+<li>Copy <code>Client ID</code>.</li>
+<li>Reset and copy <code>Client Secret</code>.</li>
+<li>Under Redirects, add:
+   <code>http://localhost:5001/auth/discord/callback</code></li>
+</ol>
+<h2 id="localhost-setup-development">Localhost setup (development)</h2>
+<p>Use <code>http://localhost:5001</code> as public URL.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <ul>
-<li><code>404</code> on <code>/login/&lt;provider&gt;</code>: provider env vars are missing (client ID/secret).</li>
+<li><code>404</code> on <code>/login/&lt;provider&gt;</code>: provider env vars are missing.
+  Required pairs: <code>PLANEXE_OAUTH_GOOGLE_CLIENT_ID</code>/<code>PLANEXE_OAUTH_GOOGLE_CLIENT_SECRET</code>, <code>PLANEXE_OAUTH_GITHUB_CLIENT_ID</code>/<code>PLANEXE_OAUTH_GITHUB_CLIENT_SECRET</code>, <code>PLANEXE_OAUTH_DISCORD_CLIENT_ID</code>/<code>PLANEXE_OAUTH_DISCORD_CLIENT_SECRET</code>.</li>
 <li>Redirect mismatch errors: callback URI in provider console does not exactly match PlanExe callback.</li>
 <li>Login does not persist after redirect: <code>PLANEXE_FRONTEND_MULTIUSER_SECRET_KEY</code> is missing or changed.</li>
 <li>Browser says insecure cookie on localhost over HTTP: expected in local dev; production should use HTTPS.</li>
