@@ -27,7 +27,7 @@
     
     
       
-        <title>LLM config (llm_config.json) - PlanExe Documentation</title>
+        <title>LLM config profiles - PlanExe Documentation</title>
       
     
     
@@ -75,7 +75,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="LLM config (llm_config.json) - PlanExe Documentation" />
+<meta property="og:title" content="LLM config profiles - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/llm_config.png" />
 <meta property="og:image:type" content="image/png" />
@@ -83,7 +83,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/llm_config/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="LLM config (llm_config.json) - PlanExe Documentation" />
+<meta property="twitter:title" content="LLM config profiles - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/llm_config.png" />
 </head>
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#llm-config-llm_configjson" class="md-skip">
+        <a href="#llm-config-profiles" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LLM config (llm_config.json)
+              LLM config profiles
             
           </span>
         </div>
@@ -1231,10 +1231,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-structure" class="md-nav__link">
+  <a href="#how-profile-selection-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        File structure
+        How profile selection works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How profile selection works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-env-var" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime env var
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesttask-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request/task parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strict-filename-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strict filename validation
       
     </span>
   </a>
@@ -1242,10 +1281,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-level-fields" class="md-nav__link">
+  <a href="#provider-priority-ordering-per-profile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Top-level fields
+        Provider-priority ordering per profile
       
     </span>
   </a>
@@ -1253,10 +1292,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-arguments" class="md-nav__link">
+  <a href="#file-format-same-for-all-profile-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common arguments
+        File format (same for all profile files)
       
     </span>
   </a>
@@ -1264,21 +1303,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choosing-values" class="md-nav__link">
+  <a href="#backward-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choosing values
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
+        Backward compatibility
       
     </span>
   </a>
@@ -4017,10 +4045,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#file-structure" class="md-nav__link">
+  <a href="#how-profile-selection-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        File structure
+        How profile selection works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How profile selection works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runtime-env-var" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime env var
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requesttask-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request/task parameter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strict-filename-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strict filename validation
       
     </span>
   </a>
@@ -4028,10 +4095,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-level-fields" class="md-nav__link">
+  <a href="#provider-priority-ordering-per-profile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Top-level fields
+        Provider-priority ordering per profile
       
     </span>
   </a>
@@ -4039,10 +4106,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-arguments" class="md-nav__link">
+  <a href="#file-format-same-for-all-profile-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common arguments
+        File format (same for all profile files)
       
     </span>
   </a>
@@ -4050,21 +4117,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choosing-values" class="md-nav__link">
+  <a href="#backward-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choosing values
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
+        Backward compatibility
       
     </span>
   </a>
@@ -4091,11 +4147,55 @@
   
 
 
-<h1 id="llm-config-llm_configjson">LLM config (llm_config.json)</h1>
-<p>This file defines which LLM providers and models PlanExe can use. Each top‑level key is a model id used in the UI and pipeline.</p>
-<p><code>llm_config.json</code> lives in the PlanExe repo root and is read at runtime. Environment variables are substituted from <code>.env</code>.</p>
+<h1 id="llm-config-profiles">LLM config profiles</h1>
+<p>PlanExe supports <strong>4 model profiles</strong>:</p>
+<ul>
+<li><code>baseline</code></li>
+<li><code>premium</code></li>
+<li><code>frontier</code></li>
+<li><code>custom</code></li>
+</ul>
+<p>Each profile maps to a separate config file:</p>
+<ul>
+<li><code>baseline</code> → <code>llm_config.json</code></li>
+<li><code>premium</code> → <code>llm_config.premium.json</code></li>
+<li><code>frontier</code> → <code>llm_config.frontier.json</code></li>
+<li><code>custom</code> → <code>llm_config.custom.json</code> (or <code>PLANEXE_LLM_CONFIG_CUSTOM_FILENAME</code>)</li>
+</ul>
+<p>If the selected profile file is missing or invalid, PlanExe safely falls back to <code>llm_config.json</code>.</p>
 <hr />
-<h2 id="file-structure">File structure</h2>
+<h2 id="how-profile-selection-works">How profile selection works</h2>
+<h3 id="runtime-env-var">Runtime env var</h3>
+<p>Set:</p>
+<ul>
+<li><code>PLANEXE_MODEL_PROFILE=baseline|premium|frontier|custom</code></li>
+</ul>
+<p>This is passed end-to-end in worker execution paths (frontend/API/task parameters → worker pipeline).</p>
+<h3 id="requesttask-parameter">Request/task parameter</h3>
+<p>Task producers (web frontend, MCP) can include:</p>
+<ul>
+<li><code>model_profile</code></li>
+</ul>
+<p>Invalid values are normalized to <code>baseline</code>.</p>
+<hr />
+<h2 id="strict-filename-validation">Strict filename validation</h2>
+<p>Config filenames are strictly validated:</p>
+<ul>
+<li>must be a <strong>filename only</strong> (no <code>/</code>, <code>\\</code>, absolute path)</li>
+<li>must match: <code>llm_config*.json</code></li>
+</ul>
+<p>This prevents path traversal and unsafe file selection.</p>
+<p>Legacy override <code>PLANEXE_LLM_CONFIG_NAME</code> is still supported for backward compatibility, but profile-based selection is preferred.</p>
+<hr />
+<h2 id="provider-priority-ordering-per-profile">Provider-priority ordering per profile</h2>
+<p>Within each profile config file, priority is defined per model entry:</p>
+<ul>
+<li>lower <code>priority</code> value = tried first</li>
+<li>higher <code>priority</code> value = fallback order</li>
+</ul>
+<p><code>auto</code> mode uses this profile-specific priority ordering.</p>
+<hr />
+<h2 id="file-format-same-for-all-profile-files">File format (same for all profile files)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;model-id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Human description&quot;</span><span class="p">,</span>
@@ -4107,50 +4207,20 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${OPENROUTER_API_KEY}&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">60.0</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">&quot;is_function_calling_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">&quot;is_chat_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">&quot;max_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8192</span><span class="p">,</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="nt">&quot;max_retries&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">&quot;max_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8192</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">&quot;max_retries&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="top-level-fields">Top-level fields</h2>
+<h2 id="backward-compatibility">Backward compatibility</h2>
+<p>When no profile is provided, PlanExe defaults to:</p>
 <ul>
-<li><strong>comment</strong>: Plain‑text description for humans. Optional.</li>
-<li><strong>priority</strong>: Lower number = higher priority when <code>auto</code> is selected. Optional.</li>
-<li><strong>luigi_workers</strong>: Number of Luigi workers used for this model. Use <code>1</code> for local models (Ollama/LM Studio).</li>
-<li><strong>class</strong>: Provider class name (e.g., <code>OpenRouter</code>, <code>OpenAI</code>, <code>Ollama</code>, <code>LMStudio</code>, <code>OpenAILike</code>).</li>
-<li><strong>arguments</strong>: Provider‑specific settings passed to the LLM client.</li>
+<li><code>baseline</code></li>
+<li><code>llm_config.json</code></li>
 </ul>
-<hr />
-<h2 id="common-arguments">Common arguments</h2>
-<p>These keys are common across most providers:</p>
-<ul>
-<li><strong>model</strong> / <strong>model_name</strong>: Provider model identifier.</li>
-<li><strong>api_key</strong>: API key reference (usually <code>${ENV_VAR}</code>).</li>
-<li><strong>base_url</strong> / <strong>api_base</strong>: Override the provider base URL.</li>
-<li><strong>temperature</strong>: Controls randomness. Lower is more deterministic.</li>
-<li><strong>timeout</strong> / <strong>request_timeout</strong>: Max time per request in seconds.</li>
-<li><strong>max_tokens</strong> / <strong>max_completion_tokens</strong>: Output token limit (provider specific).</li>
-<li><strong>max_retries</strong>: Retry count on transient errors.</li>
-<li><strong>is_function_calling_model</strong>: Whether the model supports structured/tool output.</li>
-<li><strong>is_chat_model</strong>: Whether the model uses chat format.</li>
-</ul>
-<hr />
-<h2 id="choosing-values">Choosing values</h2>
-<ul>
-<li>Use <strong>luigi_workers = 1</strong> for local models (Ollama / LM Studio).</li>
-<li>Use <strong>luigi_workers &gt; 1</strong> for cloud models if you want parallel tasks.</li>
-<li>Keep <strong>timeout</strong> higher for slower models.</li>
-</ul>
-<hr />
-<h2 id="notes">Notes</h2>
-<ul>
-<li>If <code>llm_config.json</code> is missing, PlanExe logs a warning and proceeds with defaults.</li>
-<li>Changes to <code>llm_config.json</code> require a container restart (or rebuild if baked into the image).</li>
-</ul>
+<p>So existing deployments continue to work without changes.</p>
 
 
 

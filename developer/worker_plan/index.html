@@ -4111,6 +4111,16 @@
 <td>Only purge runs whose IDs start with this prefix.</td>
 </tr>
 <tr>
+<td><code>PLANEXE_MODEL_PROFILE</code></td>
+<td><code>baseline</code></td>
+<td>Selects which LLM profile config to load (<code>baseline</code>, <code>premium</code>, <code>frontier</code>, <code>custom</code>).</td>
+</tr>
+<tr>
+<td><code>PLANEXE_LLM_CONFIG_CUSTOM_FILENAME</code></td>
+<td><code>llm_config.custom.json</code></td>
+<td>Filename used when <code>PLANEXE_MODEL_PROFILE=custom</code> (strict filename validation; invalid names fallback safely to baseline).</td>
+</tr>
+<tr>
 <td><code>PLANEXE_LOG_LEVEL</code></td>
 <td><code>INFO</code></td>
 <td>Sets the console log level for the worker API and the pipeline process. Accepted values are the standard logging levels (e.g., <code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>).</td>
