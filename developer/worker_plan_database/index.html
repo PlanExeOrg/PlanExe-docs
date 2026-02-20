@@ -4043,7 +4043,7 @@
 <li><code>PLANEXE_POSTGRES_HOST|PORT|DB|USER|PASSWORD</code></li>
 <li>falls back to the <code>database_postgres</code> service defaults (<code>planexe/planexe</code> on port 5432)</li>
 <li>Logs stream to stdout with <a href="https://12factor.net/logs">12-factor style logging</a>. Configure with <code>PLANEXE_LOG_LEVEL</code> (defaults to <code>INFO</code>).</li>
-<li>Volumes mounted in compose: <code>./run</code> (pipeline output), <code>.env</code>, <code>llm_config.json</code></li>
+<li>Volumes mounted in compose: <code>./run</code> (pipeline output), <code>.env</code>, <code>./llm_config/</code></li>
 <li>Entrypoint: <code>python -m worker_plan_database.app</code></li>
 </ul>
 <h2 id="run-locally-with-a-venv">Run locally with a venv</h2>

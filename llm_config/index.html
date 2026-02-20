@@ -4157,12 +4157,12 @@
 </ul>
 <p>Each profile maps to a separate config file:</p>
 <ul>
-<li><code>baseline</code> → <code>llm_config.json</code></li>
-<li><code>premium</code> → <code>llm_config.premium.json</code></li>
-<li><code>frontier</code> → <code>llm_config.frontier.json</code></li>
-<li><code>custom</code> → <code>llm_config.custom.json</code> (or <code>PLANEXE_LLM_CONFIG_CUSTOM_FILENAME</code>)</li>
+<li><code>baseline</code> → <code>llm_config/baseline.json</code></li>
+<li><code>premium</code> → <code>llm_config/premium.json</code></li>
+<li><code>frontier</code> → <code>llm_config/frontier.json</code></li>
+<li><code>custom</code> → <code>llm_config/custom.json</code> (or <code>PLANEXE_LLM_CONFIG_CUSTOM_FILENAME</code>)</li>
 </ul>
-<p>If the selected profile file is missing or invalid, PlanExe safely falls back to <code>llm_config.json</code>.</p>
+<p>If the selected profile file is missing or invalid, PlanExe safely falls back to <code>llm_config/baseline.json</code>.</p>
 <hr />
 <h2 id="how-profile-selection-works">How profile selection works</h2>
 <h3 id="runtime-env-var">Runtime env var</h3>
@@ -4182,10 +4182,10 @@
 <p>Config filenames are strictly validated:</p>
 <ul>
 <li>must be a <strong>filename only</strong> (no <code>/</code>, <code>\\</code>, absolute path)</li>
-<li>must match: <code>llm_config*.json</code></li>
+<li>must match: <code>&lt;profile&gt;.json</code> where <code>&lt;profile&gt;</code> is <code>[a-z0-9_]</code> and at least 3 chars</li>
 </ul>
 <p>This prevents path traversal and unsafe file selection.</p>
-<p>Legacy override <code>PLANEXE_LLM_CONFIG_NAME</code> is still supported for backward compatibility, but profile-based selection is preferred.</p>
+<p><code>PLANEXE_LLM_CONFIG_NAME</code> is no longer used; select profiles via <code>PLANEXE_MODEL_PROFILE</code>.</p>
 <hr />
 <h2 id="provider-priority-ordering-per-profile">Provider-priority ordering per profile</h2>
 <p>Within each profile config file, priority is defined per model entry:</p>
@@ -4218,7 +4218,7 @@
 <p>When no profile is provided, PlanExe defaults to:</p>
 <ul>
 <li><code>baseline</code></li>
-<li><code>llm_config.json</code></li>
+<li><code>llm_config/baseline.json</code></li>
 </ul>
 <p>So existing deployments continue to work without changes.</p>
 

@@ -1654,10 +1654,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-add-a-new-openrouter-model-to-llm_configjson" class="md-nav__link">
+  <a href="#how-to-add-a-new-openrouter-model-to-llm_configprofilejson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to add a new OpenRouter model to llm_config.json
+        How to add a new OpenRouter model to llm_config/&lt;profile&gt;.json
       
     </span>
   </a>
@@ -4052,10 +4052,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-add-a-new-openrouter-model-to-llm_configjson" class="md-nav__link">
+  <a href="#how-to-add-a-new-openrouter-model-to-llm_configprofilejson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to add a new OpenRouter model to llm_config.json
+        How to add a new OpenRouter model to llm_config/&lt;profile&gt;.json
       
     </span>
   </a>
@@ -4111,13 +4111,13 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>OPENROUTER_API_KEY=&#39;sk-or-v1-...&#39;
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>DEFAULT_LLM=&#39;openrouter-paid-gemini-2.0-flash-001&#39;   # or openrouter-paid-openai-gpt-4o-mini
 </code></pre></div>
-   The containers mount <code>.env</code> and <code>llm_config.json</code> automatically.</li>
+   The containers mount <code>.env</code> and <code>llm_config/&lt;profile&gt;.json</code> automatically.</li>
 <li>Start PlanExe:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker compose up worker_plan frontend_single_user
 </code></pre></div></li>
 <li>Wait for http://localhost:7860 to come up, submit a prompt, and watch progress with <code>docker compose logs -f worker_plan</code>.</li>
 <li>Outputs are written to <code>run/&lt;timestamped-output-dir&gt;</code> on the host (mounted from the containers).</li>
-<li>Stop with <code>Ctrl+C</code> (or <code>docker compose down</code>). If you change <code>llm_config.json</code>, restart the containers so they reload it: <code>docker compose restart worker_plan frontend_single_user</code> (or <code>docker compose down &amp;&amp; docker compose up</code>). No rebuild is needed for config-only edits.</li>
+<li>Stop with <code>Ctrl+C</code> (or <code>docker compose down</code>). If you change <code>llm_config/&lt;profile&gt;.json</code>, restart the containers so they reload it: <code>docker compose restart worker_plan frontend_single_user</code> (or <code>docker compose down &amp;&amp; docker compose up</code>). No rebuild is needed for config-only edits.</li>
 </ol>
 <h2 id="configuration">Configuration</h2>
 <p>Visit <a href="https://openrouter.ai/">OpenRouter</a>, create an account, purchase 5 USD in credits (plenty for making a several plans), and generate an API key.</p>
@@ -4125,14 +4125,14 @@
 <p>Open the <code>.env</code> file in a text editor and insert your OpenRouter API key. Like this:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>OPENROUTER_API_KEY=&#39;INSERT YOUR KEY HERE&#39;
 </code></pre></div>
-<p>If you edit <code>llm_config.json</code> later, restart the worker/frontend containers to pick up the changes: <code>docker compose restart worker_plan frontend_single_user</code> (or stop/start). Rebuilds are only needed when dependencies change.</p>
+<p>If you edit <code>llm_config/&lt;profile&gt;.json</code> later, restart the worker/frontend containers to pick up the changes: <code>docker compose restart worker_plan frontend_single_user</code> (or stop/start). Rebuilds are only needed when dependencies change.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>Inside PlanExe, when clicking <code>Submit</code>, a new <code>Output Dir</code> should be created containing a <code>log.txt</code>. Open that file and scroll to the bottom, see if there are any error messages about what is wrong.</p>
 <p>When running in Docker, also check the worker logs for 401/429 or connectivity errors:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker compose logs -f worker_plan
 </code></pre></div>
 <p>Report your issue on <a href="https://planexe.org/discord">Discord</a>. Please include info about your system, such as: "I'm on macOS with M1 Max with 64 GB.".</p>
-<h2 id="how-to-add-a-new-openrouter-model-to-llm_configjson">How to add a new OpenRouter model to <code>llm_config.json</code></h2>
+<h2 id="how-to-add-a-new-openrouter-model-to-llm_configprofilejson">How to add a new OpenRouter model to <code>llm_config/&lt;profile&gt;.json</code></h2>
 <p>The <a href="https://openrouter.ai/rankings">OpenRouter/rankings</a> page shows an overview of the most popular models. New models are added frequently</p>
 <p>For a model to work with PlanExe, it must meet the following criteria:</p>
 <ul>
@@ -4144,7 +4144,7 @@
 <p>Steps to add a model:</p>
 <ol>
 <li>Copy the model id from the openrouter website.</li>
-<li>Paste the model id into the <code>llm_config.json</code>.</li>
+<li>Paste the model id into the <code>llm_config/&lt;profile&gt;.json</code>.</li>
 <li>Restart PlanExe to apply the changes.</li>
 </ol>
 <hr />

@@ -1738,10 +1738,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edit-the-llm_configjson" class="md-nav__link">
+  <a href="#edit-the-llm_configprofilejson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edit the llm_config.json
+        Edit the llm_config/&lt;profile&gt;.json
       
     </span>
   </a>
@@ -4063,10 +4063,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#edit-the-llm_configjson" class="md-nav__link">
+  <a href="#edit-the-llm_configprofilejson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edit the llm_config.json
+        Edit the llm_config/&lt;profile&gt;.json
       
     </span>
   </a>
@@ -4133,14 +4133,14 @@
 <li>Copy <code>.env.docker-example</code> to <code>.env</code> and add your key:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>MISTRAL_API_KEY=&#39;INSERT-YOUR-SECRET-KEY-HERE&#39;
 </code></pre></div></li>
-<li>Add (or keep) a Mistral entry in <code>llm_config.json</code> (example below).</li>
+<li>Add (or keep) a Mistral entry in <code>llm_config/&lt;profile&gt;.json</code> (example below).</li>
 <li>Rebuild the images so the new dependencies are baked in:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose build --no-cache worker_plan frontend_single_user
 </code></pre></div></li>
 <li>Start PlanExe:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker compose up worker_plan frontend_single_user
 </code></pre></div>
-7) Open http://localhost:7860, go to <strong>Settings</strong>, and pick your Mistral model (e.g., <code>mistral-paid-large</code>). If you later tweak only <code>llm_config.json</code>, just restart the containers (<code>docker compose restart worker_plan frontend_single_user</code>); rebuilds are only needed when dependencies change.</li>
+7) Open http://localhost:7860, go to <strong>Settings</strong>, and pick your Mistral model (e.g., <code>mistral-paid-large</code>). If you later tweak only <code>llm_config/&lt;profile&gt;.json</code>, just restart the containers (<code>docker compose restart worker_plan frontend_single_user</code>); rebuilds are only needed when dependencies change.</li>
 </ol>
 <h2 id="why-use-mistral">Why use Mistral?</h2>
 <p>Mistral can have run your own fine tuned model in the cloud. If you have sensitive business data that you don't want to share with the world, then this is one way to do it.</p>
@@ -4156,7 +4156,7 @@
 <p>The <code>.env</code> file should look something like the following, with your own key inserted.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>MISTRAL_API_KEY=&#39;AWkg3SxFTLWaPJClbASfv9h3VPItroof&#39;
 </code></pre></div></p>
-<h2 id="edit-the-llm_configjson">Edit the <code>llm_config.json</code></h2>
+<h2 id="edit-the-llm_configprofilejson">Edit the <code>llm_config/&lt;profile&gt;.json</code></h2>
 <p>The JSON should look something like this:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;mistral-paid-large&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

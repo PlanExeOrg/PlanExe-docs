@@ -1727,10 +1727,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-add-a-new-ollama-model-to-llm_configjson" class="md-nav__link">
+  <a href="#how-to-add-a-new-ollama-model-to-llm_configprofilejson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to add a new Ollama model to llm_config.json
+        How to add a new Ollama model to llm_config/&lt;profile&gt;.json
       
     </span>
   </a>
@@ -4153,10 +4153,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-add-a-new-ollama-model-to-llm_configjson" class="md-nav__link">
+  <a href="#how-to-add-a-new-ollama-model-to-llm_configprofilejson" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to add a new Ollama model to llm_config.json
+        How to add a new Ollama model to llm_config/&lt;profile&gt;.json
       
     </span>
   </a>
@@ -4212,16 +4212,16 @@
 <h2 id="quickstart-docker">Quickstart (Docker)</h2>
 <ol>
 <li>Install Ollama on your host and pull a small model: <code>ollama run llama3.1</code> (downloads ~4.9 GB and proves the host service works).  </li>
-<li>Copy <code>.env.docker-example</code> to <code>.env</code> (even if you leave keys empty for Ollama) and pick the Docker entry in <code>llm_config.json</code> (snippet below) so <code>base_url</code> points to <code>http://host.docker.internal:11434</code> (Docker Desktop) or your Linux bridge IP.  </li>
+<li>Copy <code>.env.docker-example</code> to <code>.env</code> (even if you leave keys empty for Ollama) and pick the Docker entry in <code>llm_config/&lt;profile&gt;.json</code> (snippet below) so <code>base_url</code> points to <code>http://host.docker.internal:11434</code> (Docker Desktop) or your Linux bridge IP.  </li>
 <li>Start PlanExe: <code>docker compose up worker_plan frontend_single_user</code>. Open http://localhost:7860, submit a prompt, and watch <code>docker compose logs -f worker_plan</code> for progress.</li>
 </ol>
 <h3 id="host-only-no-docker-for-advanced-users">Host-only (no Docker) — for advanced users</h3>
 <ul>
-<li>Use the host entry (e.g., <code>"ollama-llama3.1"</code>) in <code>llm_config.json</code> so <code>base_url</code> stays on <code>http://localhost:11434</code>.</li>
+<li>Use the host entry (e.g., <code>"ollama-llama3.1"</code>) in <code>llm_config/&lt;profile&gt;.json</code> so <code>base_url</code> stays on <code>http://localhost:11434</code>.</li>
 <li>Start your preferred PlanExe runner (e.g., a local Python environment) and ensure Ollama is already running on the host before you submit jobs.</li>
 </ul>
 <h2 id="configuration">Configuration</h2>
-<p>In the <code>llm_config.json</code> find a config that starts with <code>ollama-</code> such as <code>"ollama-llama3.1"</code> (host) or <code>"docker-ollama-llama3.1"</code> (Docker). Use the <code>docker-</code> entry when PlanExe runs in Docker so requests reach the host.</p>
+<p>In the <code>llm_config/&lt;profile&gt;.json</code> find a config that starts with <code>ollama-</code> such as <code>"ollama-llama3.1"</code> (host) or <code>"docker-ollama-llama3.1"</code> (Docker). Use the <code>docker-</code> entry when PlanExe runs in Docker so requests reach the host.</p>
 <p>On the <a href="https://ollama.com/search">Ollama Search Models</a> website. Find the corresponding model. Go to the info page for the model:
 <a href="https://ollama.com/library/llama3.1">ollama/library/llama3.1</a>. The info page shows how to install the model on your computer, in this case <code>ollama run llama3.1</code>. To get started, go for a <code>8b</code> model that is <code>4.9GB</code>.</p>
 <h3 id="minimum-viable-setup">Minimum viable setup</h3>
@@ -4231,7 +4231,7 @@
 </ul>
 <h3 id="run-ollama-locally-with-docker">Run Ollama locally with Docker</h3>
 <ul>
-<li>Make sure the container can reach Ollama on the host. On macOS/Windows (Docker Desktop) use the preconfigured entry in <code>llm_config.json</code> (snippet below) with <code>base_url</code> pointing to <code>http://host.docker.internal:11434</code>. On Linux, use your Docker bridge IP (often <code>http://172.17.0.1:11434</code>) and, if needed, add <code>extra_hosts: ["host.docker.internal:host-gateway"]</code> under <code>worker_plan</code> in <code>docker-compose.yml</code>.</li>
+<li>Make sure the container can reach Ollama on the host. On macOS/Windows (Docker Desktop) use the preconfigured entry in <code>llm_config/&lt;profile&gt;.json</code> (snippet below) with <code>base_url</code> pointing to <code>http://host.docker.internal:11434</code>. On Linux, use your Docker bridge IP (often <code>http://172.17.0.1:11434</code>) and, if needed, add <code>extra_hosts: ["host.docker.internal:host-gateway"]</code> under <code>worker_plan</code> in <code>docker-compose.yml</code>.</li>
 <li>Find your bridge IP on Linux:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>docker0<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/inet /{print $2}&#39;</span>
@@ -4242,7 +4242,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>bridge<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="s1">&#39;&quot;&#39;</span><span class="w"> </span><span class="s1">&#39;/Gateway/{print $4}&#39;</span>
 </code></pre></div>
 <ul>
-<li>Example <code>llm_config.json</code> entry:</li>
+<li>Example <code>llm_config/&lt;profile&gt;.json</code> entry:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;docker-ollama-llama3.1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This runs on your own computer. It&#39;s free. Requires Ollama to be installed. PlanExe runs in a Docker container, and ollama is installed on the host the computer.&quot;</span><span class="p">,</span>
@@ -4257,10 +4257,10 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>Restart or rebuild the worker/frontends after updating <code>llm_config.json</code>: <code>docker compose up worker_plan frontend_single_user</code> (add <code>--build</code> or run <code>docker compose build worker_plan frontend_single_user</code> if the image needs the new config baked in).</li>
+<li>Restart or rebuild the worker/frontends after updating <code>llm_config/&lt;profile&gt;.json</code>: <code>docker compose up worker_plan frontend_single_user</code> (add <code>--build</code> or run <code>docker compose build worker_plan frontend_single_user</code> if the image needs the new config baked in).</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting</h2>
-<p>Use the command line to compare Ollama's list of installed models with the configurations in your <code>llm_config.json</code> file. Run:</p>
+<p>Use the command line to compare Ollama's list of installed models with the configurations in your <code>llm_config/&lt;profile&gt;.json</code> file. Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>PROMPT&gt;<span class="w"> </span>ollama<span class="w"> </span>list
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>NAME<span class="w">                                             </span>ID<span class="w">              </span>SIZE<span class="w">      </span>MODIFIED<span class="w">       </span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>hf.co/unsloth/Llama-3.1-Tulu-3-8B-GGUF:Q4_K_M<span class="w">    </span>08fe35cc5878<span class="w">    </span><span class="m">4</span>.9<span class="w"> </span>GB<span class="w">    </span><span class="m">19</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">    </span>
@@ -4274,7 +4274,7 @@
 - Host filesystem: <code>run/&lt;timestamped-output-dir&gt;/log.txt</code> (mounted from the container).
 - Container logs: <code>docker compose logs -f worker_plan</code> (watch for connection errors to Ollama).
 - Structured-output failures: if you see JSON/parse errors or malformed outputs in <code>log.txt</code>, try a different Ollama model or quantization; not all models return structured output cleanly.</p>
-<h2 id="how-to-add-a-new-ollama-model-to-llm_configjson">How to add a new Ollama model to <code>llm_config.json</code></h2>
+<h2 id="how-to-add-a-new-ollama-model-to-llm_configprofilejson">How to add a new Ollama model to <code>llm_config/&lt;profile&gt;.json</code></h2>
 <p>You can find models and installation instructions here:
 - <a href="https://ollama.com/search">Ollama</a> – Overview of popular models, curated by the Ollama team.
 - <a href="https://huggingface.co/docs/hub/ollama">Hugging Face</a> – A vast collection of GGUF models.</p>
@@ -4289,11 +4289,11 @@
 <ol>
 <li>Follow the instructions on Ollama or Hugging Face to install the model.</li>
 <li>Copy the model id from the <code>ollama list</code> command, such as <code>llama3.1:latest</code></li>
-<li>Paste the model id into the <code>llm_config.json</code>.</li>
+<li>Paste the model id into the <code>llm_config/&lt;profile&gt;.json</code>.</li>
 <li>Restart PlanExe to apply the changes.</li>
 </ol>
 <h2 id="run-ollama-on-a-remote-computer">Run Ollama on a remote computer</h2>
-<p>In <code>llm_config.json</code>, insert <code>base_url</code> with the url to run on. Prefer a secure tunnel (example below) or a firewall-restricted host—avoid exposing Ollama publicly.</p>
+<p>In <code>llm_config/&lt;profile&gt;.json</code>, insert <code>base_url</code> with the url to run on. Prefer a secure tunnel (example below) or a firewall-restricted host—avoid exposing Ollama publicly.</p>
 <p>SSH tunnel example from your local machine:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">11434</span>:localhost:11434<span class="w"> </span>user@remote-host
 </code></pre></div>

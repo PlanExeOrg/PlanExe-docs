@@ -3904,6 +3904,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2026-feb-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-feb-20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2025-dec-31" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3935,6 +3946,19 @@
 
 
 <h1 id="recent-changes-in-planexe">Recent Changes in PlanExe</h1>
+<h2 id="2026-feb-20">2026-feb-20</h2>
+<p>The user can choose what model profile (<code>baseline</code>, <code>premium</code>, <code>frontier</code>, <code>custom</code>) to use when creating a plan.
+The <code>baseline</code> is focused on being cheap/fast and are low quality. 
+The <code>premium</code> and <code>frontier</code> takes longer time, cost more, and yields higher quality.</p>
+<p>The <code>llm_config.json</code> file has been moved to <code>llm_config/baseline.json</code>.</p>
+<p>If you have tweaked your <code>llm_config.json</code>, then move it into the <code>llm_config/baseline.json</code> file.</p>
+<p>Old layout:
+- <code>repo/llm_config.json</code></p>
+<p>New layout:
+- <code>repo/llm_config/baseline.json</code>  # This was the old <code>repo/llm_config.json</code> file.
+- <code>repo/llm_config/premium.json</code>
+- <code>repo/llm_config/frontier.json</code>
+- <code>repo/llm_config/custom.json</code></p>
 <h2 id="2025-dec-31">2025-dec-31</h2>
 <p>PlanExe is now using Docker.</p>
 <p>So you no longer have to be python developer to install it on your own computer.</p>

@@ -4054,7 +4054,7 @@
 <p>Flask-based multi-user UI for PlanExe. Runs in Docker, uses Postgres (defaults to the <code>database_postgres</code> service), and only needs the lightweight <code>worker_plan_api</code> helpers (no full <code>worker_plan</code> install).</p>
 <h2 id="quickstart-with-docker">Quickstart with Docker</h2>
 <ul>
-<li>Ensure <code>.env</code> and <code>llm_config.json</code> exist in the repo root (they are mounted into the container).</li>
+<li>Ensure <code>.env</code> and the <code>llm_config/</code> directory exist in the repo root (they are mounted into the container).</li>
 <li><code>docker compose up frontend_multi_user</code></li>
 <li>Open http://localhost:${PLANEXE_FRONTEND_MULTIUSER_PORT:-5001}/ (container listens on 5000). Health endpoint: <code>/healthcheck</code>.</li>
 </ul>
@@ -4065,7 +4065,7 @@
 <li><code>PLANEXE_FRONTEND_MULTIUSER_HOST</code>: bind address inside the container (default 0.0.0.0).</li>
 <li><code>PLANEXE_FRONTEND_MULTIUSER_PORT</code>: Flask port inside the container (default 5000).</li>
 <li><code>PLANEXE_FRONTEND_MULTIUSER_DEBUG</code>: set <code>true</code> to enable Flask debug.</li>
-<li><code>PLANEXE_CONFIG_PATH</code>: defaults to <code>/app</code> so PlanExe picks up <code>.env</code> + <code>llm_config.json</code> that compose mounts.</li>
+<li><code>PLANEXE_CONFIG_PATH</code>: defaults to <code>/app</code> so PlanExe picks up <code>.env</code> + <code>llm_config/</code> that compose mounts.</li>
 </ul>
 <h2 id="run-locally-with-a-venv">Run locally with a venv</h2>
 <p>For a faster edit/run loop without Docker. Work from inside <code>frontend_multi_user</code> so its dependencies stay isolated:</p>

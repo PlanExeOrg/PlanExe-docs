@@ -4190,13 +4190,13 @@
 <h2 id="quickstart-docker">Quickstart (Docker)</h2>
 <ol>
 <li>Install LM Studio on your host and download a small model inside LM Studio (e.g. <code>Qwen2.5-7B-Instruct-1M</code>, ~4.5 GB).</li>
-<li>Copy <code>.env.docker-example</code> to <code>.env</code> (even if you leave keys empty for LM Studio) and use the <code>lmstudio-...</code> entry in <code>llm_config.json</code>, setting <code>base_url</code> to <code>http://host.docker.internal:1234</code> (Docker Desktop) or your Linux bridge IP.</li>
+<li>Copy <code>.env.docker-example</code> to <code>.env</code> (even if you leave keys empty for LM Studio) and use the <code>lmstudio-...</code> entry in <code>llm_config/&lt;profile&gt;.json</code>, setting <code>base_url</code> to <code>http://host.docker.internal:1234</code> (Docker Desktop) or your Linux bridge IP.</li>
 <li>Start PlanExe: <code>docker compose up worker_plan frontend_single_user</code>. Open http://localhost:7860, submit a prompt, and watch <code>docker compose logs -f worker_plan</code> for progress.</li>
 </ol>
 <h3 id="host-only-no-docker">Host-only (no Docker)</h3>
-<p>For advanced users: use the host entry (e.g. <code>"lmstudio-qwen2.5-7b-instruct-1m"</code>) in <code>llm_config.json</code> so <code>base_url</code> stays on <code>http://127.0.0.1:1234</code>. Start your preferred PlanExe runner (e.g. a local Python environment) and ensure the LM Studio server is running before you submit jobs.</p>
+<p>For advanced users: use the host entry (e.g. <code>"lmstudio-qwen2.5-7b-instruct-1m"</code>) in <code>llm_config/&lt;profile&gt;.json</code> so <code>base_url</code> stays on <code>http://127.0.0.1:1234</code>. Start your preferred PlanExe runner (e.g. a local Python environment) and ensure the LM Studio server is running before you submit jobs.</p>
 <h2 id="configuration">Configuration</h2>
-<p>In <code>llm_config.json</code>, find a config that starts with <code>lmstudio-</code> (e.g. <code>"lmstudio-qwen2.5-7b-instruct-1m"</code>). In LM Studio, find the model with that exact id and download it. The Qwen model is on <a href="https://huggingface.co/lmstudio-community/Qwen2.5-7B-Instruct-1M-GGUF">Hugging Face</a> (~4.5 GB).</p>
+<p>In <code>llm_config/&lt;profile&gt;.json</code>, find a config that starts with <code>lmstudio-</code> (e.g. <code>"lmstudio-qwen2.5-7b-instruct-1m"</code>). In LM Studio, find the model with that exact id and download it. The Qwen model is on <a href="https://huggingface.co/lmstudio-community/Qwen2.5-7B-Instruct-1M-GGUF">Hugging Face</a> (~4.5 GB).</p>
 <p>In LM Studio, go to the <strong>Developer</strong> page (Cmd+2 / Ctrl+2 / Windows+2), start the server, and confirm the UI shows <strong>Status: Running</strong> and <strong>Reachable at: http://127.0.0.1:1234</strong>.</p>
 <h3 id="minimum-viable-setup">Minimum viable setup</h3>
 <ul>
@@ -4204,14 +4204,14 @@
 <li>Structured output matters: not all models return clean structured output. If you see malformed or JSON errors, try a nearby model or quantization.</li>
 </ul>
 <h3 id="run-lm-studio-locally-with-docker">Run LM Studio locally with Docker</h3>
-<p>Containers cannot reach <code>127.0.0.1</code> on your host. Set <code>base_url</code> in <code>llm_config.json</code> to <code>http://host.docker.internal:1234</code> (Docker Desktop) or your Docker bridge IP on Linux (often <code>http://172.17.0.1:1234</code>). On Linux, add <code>extra_hosts: ["host.docker.internal:host-gateway"]</code> under <code>worker_plan</code> in <code>docker-compose.yml</code> if that hostname is missing.</p>
+<p>Containers cannot reach <code>127.0.0.1</code> on your host. Set <code>base_url</code> in <code>llm_config/&lt;profile&gt;.json</code> to <code>http://host.docker.internal:1234</code> (Docker Desktop) or your Docker bridge IP on Linux (often <code>http://172.17.0.1:1234</code>). On Linux, add <code>extra_hosts: ["host.docker.internal:host-gateway"]</code> under <code>worker_plan</code> in <code>docker-compose.yml</code> if that hostname is missing.</p>
 <p>To find your bridge IP on Linux:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>docker0<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/inet /{print $2}&#39;</span>
 </code></pre></div>
 <p>If <code>docker0</code> is missing (e.g. with Podman or alternate bridge names), inspect the default bridge gateway:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>bridge<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="s1">&#39;&quot;&#39;</span><span class="w"> </span><span class="s1">&#39;/Gateway/{print $4}&#39;</span>
 </code></pre></div>
-<p>Example <code>llm_config.json</code> entry (add <code>base_url</code> when using Docker):</p>
+<p>Example <code>llm_config/&lt;profile&gt;.json</code> entry (add <code>base_url</code> when using Docker):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;lmstudio-qwen2.5-7b-instruct-1m&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Runs via LM Studio on the host; PlanExe in Docker points to the host LM Studio server.&quot;</span><span class="p">,</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LMStudio&quot;</span><span class="p">,</span>
@@ -4224,7 +4224,7 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
 </code></pre></div>
-<p>After editing <code>llm_config.json</code>, rebuild or restart the worker and frontends: <code>docker compose up worker_plan frontend_single_user</code> (add <code>--build</code> or run <code>docker compose build worker_plan frontend_single_user</code> if the image needs the new config).</p>
+<p>After editing <code>llm_config/&lt;profile&gt;.json</code>, rebuild or restart the worker and frontends: <code>docker compose up worker_plan frontend_single_user</code> (add <code>--build</code> or run <code>docker compose build worker_plan frontend_single_user</code> if the image needs the new config).</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>When you click <strong>Submit</strong> in PlanExe, a new output directory is created containing <code>log.txt</code>. Open that file and scroll to the bottom for error messages.</p>
 <p>Report issues on <a href="https://planexe.org/discord">Discord</a>. Include system info (e.g. “I’m on macOS with M1 Max, 64 GB”).</p>

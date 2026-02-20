@@ -4172,7 +4172,7 @@ This page covers common Docker workflows and troubleshooting.</p>
 <li>Rebuild the worker image when code or data files change: <code>docker compose build --no-cache worker_plan</code>.</li>
 <li>Run a one-off module inside the worker image (same deps/env as the API):<br />
 <code>docker compose run --rm worker_plan python -m worker_plan_internal.fiction.fiction_writer</code> (swap the module path as needed). If containers are already up, use <code>docker compose exec worker_plan python -m ...</code> instead.</li>
-<li>For host Ollama access, set <code>base_url</code> in <code>llm_config.json</code> to <code>http://host.docker.internal:11434</code> (default Ollama port). On Linux, add <code>extra_hosts: ["host.docker.internal:host-gateway"]</code> under <code>worker_plan</code> if that hostname is missing, or use your bridge IP.</li>
+<li>For host Ollama access, set <code>base_url</code> in <code>llm_config/&lt;profile&gt;.json</code> to <code>http://host.docker.internal:11434</code> (default Ollama port). On Linux, add <code>extra_hosts: ["host.docker.internal:host-gateway"]</code> under <code>worker_plan</code> if that hostname is missing, or use your bridge IP.</li>
 <li>Ensure required env vars (e.g., <code>DEFAULT_LLM</code>) are available via <code>.env</code> or your shell before running the command.</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting</h2>
@@ -4208,7 +4208,7 @@ This page covers common Docker workflows and troubleshooting.</p>
 <h2 id="environment-notes">Environment notes</h2>
 <ul>
 <li>The worker exports logs to stdout when <code>PLANEXE_WORKER_RELAY_PROCESS_OUTPUT=true</code> (set in <code>docker-compose.yml</code>).</li>
-<li>Shared volumes: <code>./run</code> is mounted into both services; <code>.env</code> and <code>llm_config.json</code> are mounted read-only. Ensure they exist on the host before starting.***</li>
+<li>Shared volumes: <code>./run</code> is mounted into both services; <code>.env</code> and <code>./llm_config/</code> are mounted read-only. Ensure they exist on the host before starting.***</li>
 <li>Database: Postgres runs in <code>database_postgres</code> and listens on host <code>${PLANEXE_POSTGRES_PORT:-5432}</code> mapped to container <code>5432</code>; data is persisted in the named volume <code>database_postgres_data</code>.</li>
 <li>Multiuser UI: binds to container port <code>5000</code>, exposed on host <code>${PLANEXE_FRONTEND_MULTIUSER_PORT:-5001}</code>.</li>
 <li>MCP server downloads: set <code>PLANEXE_MCP_PUBLIC_BASE_URL</code> so clients receive a reachable <code>/download/...</code> URL (defaults to <code>http://localhost:8001</code> in compose).</li>

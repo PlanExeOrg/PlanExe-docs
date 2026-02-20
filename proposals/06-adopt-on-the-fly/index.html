@@ -4654,7 +4654,7 @@
 <p><strong>MCP interface is tools-only</strong> and supports <code>task_create -&gt; task_status -&gt; task_file_info/task_download</code>: <code>mcp_cloud/app.py</code>, <code>mcp_local/planexe_mcp_local.py</code>, and <code>docs/planexe_mcp_interface.md</code>.</p>
 </li>
 <li>
-<p><strong>LLM configuration is externalized</strong> (profiles in <code>llm_config.json</code>, default via <code>DEFAULT_LLM</code> env var; keys from <code>.env</code>): <code>worker_plan/worker_plan_internal/llm_factory.py</code>, <code>worker_plan/worker_plan_internal/utils/planexe_llmconfig.py</code>, <code>worker_plan/worker_plan_api/planexe_dotenv.py</code>.</p>
+<p><strong>LLM configuration is externalized</strong> (profiles in <code>llm_config/&lt;profile&gt;.json</code>, default via <code>DEFAULT_LLM</code> env var; keys from <code>.env</code>): <code>worker_plan/worker_plan_internal/llm_factory.py</code>, <code>worker_plan/worker_plan_internal/utils/planexe_llmconfig.py</code>, <code>worker_plan/worker_plan_api/planexe_dotenv.py</code>.</p>
 </li>
 </ul>
 <h3 id="the-gap">The gap</h3>
@@ -4875,7 +4875,7 @@
 <p>Add a structured output model for low-confidence cases only.</p>
 </li>
 <li>
-<p>Ensure it's robust across providers in <code>llm_config.json</code> (structured output required).</p>
+<p>Ensure it's robust across providers in <code>llm_config/&lt;profile&gt;.json</code> (structured output required).</p>
 </li>
 </ul>
 <p>Phase 3 - Track-aware lever and gate prompting</p>
