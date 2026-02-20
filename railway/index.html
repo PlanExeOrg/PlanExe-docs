@@ -4113,14 +4113,22 @@
 - <code>staging</code></p>
 <h3 id="shared-variables-production">Shared variables - production</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PLANEXE_POSTGRES_PASSWORD=unique random text, different than staging
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>OPENROUTER_API_KEY=&quot;SECRET-KEY-HERE&quot;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>PLANEXE_LLM_CONFIG_WHITELISTED_CLASSES=OpenRouter
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>PLANEXE_IFRAME_GENERATOR_CONFIRMATION_PRODUCTION_URL=&quot;https://example.com/iframe_confirm_production&quot;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>PLANEXE_IFRAME_GENERATOR_CONFIRMATION_DEVELOPMENT_URL=&quot;https://example.com/iframe_confirm_development&quot;
 </code></pre></div>
 <h3 id="shared-variables-staging">Shared variables - staging</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PLANEXE_POSTGRES_PASSWORD=unique random text, different than production
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>OPENROUTER_API_KEY=&quot;SECRET-KEY-HERE&quot;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>PLANEXE_LLM_CONFIG_WHITELISTED_CLASSES=OpenRouter
 </code></pre></div>
 <h2 id="using-shared-variables-in-services">Using Shared Variables in Services</h2>
 <p>Each service that connects to the database must reference the shared password variable in its own environment variables.</p>
 <p>In Railway, go to each service → <strong>Variables</strong> and add:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PLANEXE_POSTGRES_PASSWORD=&quot;${{shared.PLANEXE_POSTGRES_PASSWORD}}&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>OPENROUTER_API_KEY=&quot;${{shared.OPENROUTER_API_KEY}}&quot;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>PLANEXE_LLM_CONFIG_WHITELISTED_CLASSES=&quot;${{shared.PLANEXE_LLM_CONFIG_WHITELISTED_CLASSES}}&quot;
 </code></pre></div>
 <p>Services that need this variable:
 - <code>database_postgres</code>
