@@ -3944,6 +3944,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/plan-to-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    plan to repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4037,8 +4065,11 @@
 </ul>
 <h2 id="docker-usage">Docker usage</h2>
 <ul>
-<li>Build/run single worker: <code>docker compose up --build worker_plan_database</code></li>
+<li>Build/run single worker: <code>docker compose --profile manual up --build worker_plan_database</code></li>
 <li>Run three workers (each with <code>PLANEXE_WORKER_ID=1/2/3</code>): <code>docker compose up -d worker_plan_database_1 worker_plan_database_2 worker_plan_database_3</code></li>
+<li>Worker identity is required. Set <code>PLANEXE_WORKER_ID</code>, or on Railway provide both
+  <code>RAILWAY_REPLICA_REGION</code> and <code>RAILWAY_REPLICA_ID</code> so the worker uses
+  <code>PLANEXE_WORKER_ID="&lt;region&gt;_&lt;replica-id&gt;"</code>.</li>
 <li>Reads <code>SQLALCHEMY_DATABASE_URI</code> when provided, otherwise builds one from:</li>
 <li><code>PLANEXE_POSTGRES_HOST|PORT|DB|USER|PASSWORD</code></li>
 <li>falls back to the <code>database_postgres</code> service defaults (<code>planexe/planexe</code> on port 5432)</li>

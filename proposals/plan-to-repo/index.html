@@ -9,16 +9,12 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/plan-to-repo/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/42-evidence-traceability-ledger/">
+        <link rel="prev" href="../59-prompt-optimizing-with-ab-testing/">
       
-      
-        <link rel="prev" href="../41-autonomous-execution-of-plan/">
-      
-      
-        <link rel="next" href="../43-assumption-drift-monitor/">
       
       
         
@@ -29,7 +25,7 @@
     
     
       
-        <title>Evidence Traceability Ledger: Technical Documentation - PlanExe Documentation</title>
+        <title>plan to repo - PlanExe Documentation</title>
       
     
     
@@ -77,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Evidence Traceability Ledger: Technical Documentation - PlanExe Documentation" />
+<meta property="og:title" content="plan to repo - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/42-evidence-traceability-ledger.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/plan-to-repo.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/42-evidence-traceability-ledger/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/plan-to-repo/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Evidence Traceability Ledger: Technical Documentation - PlanExe Documentation" />
+<meta property="twitter:title" content="plan to repo - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/42-evidence-traceability-ledger.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/plan-to-repo.png" />
 </head>
   
   
@@ -107,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evidence-traceability-ledger-technical-documentation" class="md-skip">
+        <a href="#plan-to-repo-proposal-revised" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Evidence Traceability Ledger: Technical Documentation
+              plan to repo
             
           </span>
         </div>
@@ -3258,44 +3254,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    42 evidence traceability ledger
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
         
   
   
@@ -3318,364 +3280,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use Cases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Architecture
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="System Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-claim-extraction-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Claim Extraction Pipeline
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-evidence-mapping-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Evidence Mapping &amp; Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-the-ledger-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. The Ledger (Storage)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-tables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Tables
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Tables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#claims" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        claims
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evidence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ledger_entries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ledger_entries
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#post-apiledgerextract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/ledger/extract
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-apiledgerlink" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/ledger/link
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-apiledgerreportplan_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /api/ledger/report/{plan_id}
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-freshness-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm: Freshness Scoring
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Interface
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Interface">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sidebar-ledger" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sidebar Ledger
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#audit-view" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Audit View
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-roadmap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Roadmap
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-claims-pipeline-foundation-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Claims Pipeline Foundation (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-evidence-ingestion-scoring-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Evidence Ingestion + Scoring (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-ledger-integrity-audit-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Ledger Integrity + Audit (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-product-integration-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Product Integration (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#suggested-quality-thresholds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Suggested quality thresholds
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-hardening" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model hardening
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-safeguards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational safeguards
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4273,10 +3877,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../plan-to-repo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    plan to repo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4292,6 +3923,247 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-lands-in-the-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Lands in the Repo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-flow-no-token-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Flow (No Token Required)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-flow-user-token-repo-created-directly-in-users-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Flow: User Token (Repo Created Directly in User's Account)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monetization-repo-transfer-premium-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monetization: Repo Transfer (Premium Feature)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-design-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Design Sketch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Design Sketch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-1-create-repo-on-plan-completion-default-planexe-org" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint 1: Create Repo on Plan Completion (Default - PlanExe Org)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-2-create-repo-in-users-account-optional-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint 2: Create Repo in User's Account (Optional Token)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-3-transfer-repo-to-users-account-credit-purchase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint 3: Transfer Repo to User's Account (Credit Purchase)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auth-token-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth &amp; Token Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-quick-plan-free-repo-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 1: Quick Plan + Free Repo (Default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-plan-immediate-user-ownership-optional-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 2: Plan + Immediate User Ownership (Optional Token)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-plan-free-repo-paid-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario 3: Plan → Free Repo → Paid Transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-agent-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future: Agent Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4339,10 +4211,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Summary
       
     </span>
   </a>
@@ -4350,10 +4222,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use Cases
+        Why
       
     </span>
   </a>
@@ -4361,22 +4233,66 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
+  <a href="#what-lands-in-the-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        System Architecture
+        What Lands in the Repo
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="System Architecture">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-flow-no-token-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Flow (No Token Required)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-flow-user-token-repo-created-directly-in-users-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Flow: User Token (Repo Created Directly in User's Account)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monetization-repo-transfer-premium-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monetization: Repo Transfer (Premium Feature)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-design-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Design Sketch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Design Sketch">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-claim-extraction-pipeline" class="md-nav__link">
+  <a href="#endpoint-1-create-repo-on-plan-completion-default-planexe-org" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Claim Extraction Pipeline
+        Endpoint 1: Create Repo on Plan Completion (Default - PlanExe Org)
       
     </span>
   </a>
@@ -4384,10 +4300,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-evidence-mapping-scoring" class="md-nav__link">
+  <a href="#endpoint-2-create-repo-in-users-account-optional-token" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Evidence Mapping &amp; Scoring
+        Endpoint 2: Create Repo in User's Account (Optional Token)
       
     </span>
   </a>
@@ -4395,10 +4311,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-the-ledger-storage" class="md-nav__link">
+  <a href="#endpoint-3-transfer-repo-to-users-account-credit-purchase" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. The Ledger (Storage)
+        Endpoint 3: Transfer Repo to User's Account (Credit Purchase)
       
     </span>
   </a>
@@ -4411,22 +4327,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-tables" class="md-nav__link">
+  <a href="#auth-token-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Tables
+        Auth &amp; Token Management
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Data Tables">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scenarios">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#claims" class="md-nav__link">
+  <a href="#scenario-1-quick-plan-free-repo-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        claims
+        Scenario 1: Quick Plan + Free Repo (Default)
       
     </span>
   </a>
@@ -4434,10 +4361,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#evidence" class="md-nav__link">
+  <a href="#scenario-2-plan-immediate-user-ownership-optional-token" class="md-nav__link">
     <span class="md-ellipsis">
       
-        evidence
+        Scenario 2: Plan + Immediate User Ownership (Optional Token)
       
     </span>
   </a>
@@ -4445,10 +4372,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ledger_entries" class="md-nav__link">
+  <a href="#scenario-3-plan-free-repo-paid-transfer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ledger_entries
+        Scenario 3: Plan → Free Repo → Paid Transfer
       
     </span>
   </a>
@@ -4461,60 +4388,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
+  <a href="#future-agent-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#post-apiledgerextract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/ledger/extract
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-apiledgerlink" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/ledger/link
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-apiledgerreportplan_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /api/ledger/report/{plan_id}
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-freshness-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm: Freshness Scoring
+        Future: Agent Workflow
       
     </span>
   </a>
@@ -4522,49 +4399,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
+  <a href="#implementation-considerations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        User Interface
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Interface">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sidebar-ledger" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sidebar Ledger
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#audit-view" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Audit View
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-roadmap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Roadmap
+        Implementation Considerations
       
     </span>
   </a>
@@ -4572,107 +4410,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
+  <a href="#success-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-claims-pipeline-foundation-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Claims Pipeline Foundation (2–3 weeks)
+        Success Criteria
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-evidence-ingestion-scoring-23-weeks" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase B — Evidence Ingestion + Scoring (2–3 weeks)
+        Open Questions
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-ledger-integrity-audit-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Ledger Integrity + Audit (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-product-integration-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Product Integration (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#suggested-quality-thresholds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Suggested quality thresholds
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-hardening" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model hardening
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-safeguards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational safeguards
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4696,345 +4451,297 @@
   
 
 
-<h1 id="evidence-traceability-ledger-technical-documentation">Evidence Traceability Ledger: Technical Documentation</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-11<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Audience:</strong> Developers, Auditors, Investors  </p>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>The <strong>Evidence Traceability Ledger</strong> is a core component of the PlanExe verification engine. It transforms vague claims into verifiable facts by maintaining a cryptographically-linked ledger of every claim made in a plan and its corresponding evidence.</p>
-<p>Unlike a simple citation list, this ledger systems:
-1.  <strong>Extracts atomic claims</strong> from unstructured plan text.
-2.  <strong>Scores evidence strength</strong> (Level 1-3) using automated heuristics and expert verification.
-3.  <strong>Monitors freshness</strong> of linked data sources.
-4.  <strong>Generates audit trails</strong> for investor due diligence.</p>
-<h2 id="use-cases">Use Cases</h2>
-<ul>
-<li><strong>Investor Diligence:</strong> "Show me the source for the $4.2B TAM claim and when it was last verified."</li>
-<li><strong>Living Plans:</strong> "Alert me if the regulatory approval document expires."</li>
-<li><strong>Automated Verification:</strong> "Reject any plan with &gt;20% Level 1 (anecdotal) evidence."</li>
-</ul>
-<h2 id="system-architecture">System Architecture</h2>
-<h3 id="1-claim-extraction-pipeline">1. Claim Extraction Pipeline</h3>
-<p>When a plan is submitted or updated:
-1.  <strong>Parsing:</strong> The plan markdown is parsed into semantic blocks.
-2.  <strong>Claim Detection:</strong> An LLM (<code>gemini-2.0-flash</code>) identifies discrete factual claims (e.g., "Market grows at 5% CAGR", "Patent #12345 granted").
-3.  <strong>Fingerprinting:</strong> Each claim is hashed for change detection.</p>
-<h3 id="2-evidence-mapping-scoring">2. Evidence Mapping &amp; Scoring</h3>
-<p>Each extracted claim must be linked to an evidence source.
--   <strong>Automated Linking:</strong> URL scraping and semantic matching.
--   <strong>Manual Linking:</strong> User uploads documents (PDFs, contracts).
--   <strong>Scoring Engine:</strong> Assigns a <code>VerificationLevel</code> (1-3) based on source reliability.</p>
-<h3 id="3-the-ledger-storage">3. The Ledger (Storage)</h3>
-<p>A <code>ledger_entries</code> table tracks the state of every claim-evidence pair over time, creating an immutable history of truth.</p>
-<hr />
-<h2 id="data-tables">Data Tables</h2>
-<h3 id="claims"><code>claims</code></h3>
-<p>Stores atomic assertions extracted from the plan.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>plan_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Plans</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>content</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">The extracted text of the claim</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>location_ref</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">Pointer to section/line in the plan</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>created_at</code></td>
-<td style="text-align: left;">TIMESTAMPTZ</td>
-<td style="text-align: left;">Creation timestamp</td>
-</tr>
-</tbody>
-</table>
-<h3 id="evidence"><code>evidence</code></h3>
-<p>Stores the source material data.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>source_type</code></td>
-<td style="text-align: left;">ENUM</td>
-<td style="text-align: left;"><code>url</code>, <code>document</code>, <code>database_record</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>uri</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">URL or S3 path</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>snapshot_hash</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">SHA-256 of the content at time of capture</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>verification_level</code></td>
-<td style="text-align: left;">INT</td>
-<td style="text-align: left;">1 (Weak) to 3 (Strong)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>last_verified_at</code></td>
-<td style="text-align: left;">TIMESTAMPTZ</td>
-<td style="text-align: left;">Freshness timestamp</td>
-</tr>
-</tbody>
-</table>
-<h3 id="ledger_entries"><code>ledger_entries</code></h3>
-<p>The join table linking claims to evidence with status.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>claim_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Claims</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>evidence_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Evidence</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>status</code></td>
-<td style="text-align: left;">ENUM</td>
-<td style="text-align: left;"><code>verified</code>, <code>disputed</code>, <code>stale</code>, <code>missing</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>verifier_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to User or Agent</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>notes</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">Reviewer comments</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="api-reference">API Reference</h2>
-<h3 id="post-apiledgerextract"><code>POST /api/ledger/extract</code></h3>
-<p>Trigger manual extraction of claims for a plan section.</p>
-<p><strong>Request:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid...&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;section_content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The market is projected to reach $50B by 2030...&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;force_refresh&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
-</code></pre></div></p>
-<p><strong>Response:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;claims&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;claim_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c_123&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Market projected to reach $50B by 2030&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;suggested_evidence_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;market_report&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
-</code></pre></div></p>
-<h3 id="post-apiledgerlink"><code>POST /api/ledger/link</code></h3>
-<p>Attach evidence to a specific claim.</p>
-<p><strong>Request:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;claim_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c_123&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;evidence_uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://doi.org/10.1038/s41586-020-2012-7&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;evidence_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;url&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
-</code></pre></div></p>
-<h3 id="get-apiledgerreportplan_id"><code>GET /api/ledger/report/{plan_id}</code></h3>
-<p>Get the full traceability report.</p>
-<p><strong>Response:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid...&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;overall_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;claims_total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&quot;claims_verified&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&quot;freshness_concerns&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&quot;entries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">&quot;claim&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patent #12345 granted&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;verified&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USPTO Database&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nt">&quot;last_checked&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10&quot;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">}</span>
-</code></pre></div></p>
-<hr />
-<h2 id="algorithm-freshness-scoring">Algorithm: Freshness Scoring</h2>
-<p>Evidence degrades over time. The system calculates a <code>freshness_score</code> (0.0 - 1.0) daily.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">calculate_freshness</span><span class="p">(</span><span class="n">evidence_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">last_verified</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">age_days</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">last_verified</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="c1"># Decay rates based on type</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">half_life_days</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="s1">&#39;financial_statement&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>  <span class="c1"># Quarterly</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="s1">&#39;market_report&#39;</span><span class="p">:</span> <span class="mi">365</span><span class="p">,</span>       <span class="c1"># Yearly</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="s1">&#39;news_article&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>         <span class="c1"># Fast moving</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="s1">&#39;legal_contract&#39;</span><span class="p">:</span> <span class="mi">1095</span><span class="p">,</span>     <span class="c1"># 3 Years</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="s1">&#39;academic_paper&#39;</span><span class="p">:</span> <span class="mi">1825</span>      <span class="c1"># 5 Years</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="p">}</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">tau</span> <span class="o">=</span> <span class="n">half_life_days</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">evidence_type</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">score</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="p">(</span><span class="n">age_days</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="k">return</span> <span class="n">score</span>
+<h1 id="plan-to-repo-proposal-revised">Plan-to-Repo Proposal (Revised)</h1>
+<h2 id="summary">Summary</h2>
+<p>Every plan that PlanExe generates automatically provisions a GitHub repository under PlanExe's own organization. No user token required. Users who want the repo in their own GitHub account can either provide a token upfront, or pay credits to trigger a native GitHub repo transfer.</p>
+<p>This creates a frictionless experience: <strong>generate a plan, immediately get a repo, optionally pay to own it.</strong></p>
+<h2 id="why">Why</h2>
+<p><strong>Persistent Starting Point:</strong> AI agents (and humans) need a structured, version-controlled home for each plan. Without a repo, agents have no shared baseline to fork from, improve, or build upon.</p>
+<p><strong>Zero Friction:</strong> By default, PlanExe creates the repo under its own org. No user needs to provide a GitHub token—plan generation completes instantly with a public repo link.</p>
+<p><strong>Natural Monetization:</strong> Plan generation is the hook (free). Repo ownership is the upsell (pay credits). This is clean and native—GitHub's repo transfer feature preserves full history, issues, and stars.</p>
+<p><strong>Execution Continuity:</strong> The plan repo IS the plan's home. Future agents can fork it, submit PRs with improvements, execution results, or modifications. It creates a natural workflow:
+- Agent A generates plan → PlanExe creates repo (under PlanExe org)
+- User gets link, can fork or request transfer to own account (paid)
+- Agent B picks up the repo → builds website → PRs changes
+- Agent C picks up the updated repo → executes plan → PRs execution results
+- Humans review and merge improvements</p>
+<p><strong>Traceability:</strong> Every modification to the plan is version-controlled, auditable, and reversible.</p>
+<h2 id="what-lands-in-the-repo">What Lands in the Repo</h2>
+<ol>
+<li><strong>Plan Artifact</strong></li>
+<li>Generated plan in Markdown or JSON format</li>
+<li>
+<p>Timestamped and signed by the generating agent</p>
+</li>
+<li>
+<p><strong>README</strong></p>
+</li>
+<li>Summary of the plan's purpose and goals</li>
+<li>Next steps and immediate actions</li>
+<li>
+<p>Links to related documents or repos</p>
+</li>
+<li>
+<p><strong>Folder Structure</strong></p>
+</li>
+<li><code>/website</code> — for web-based presentation, design, or deployment files</li>
+<li><code>/execution</code> — for execution scripts, logs, and progress tracking</li>
+<li>
+<p><code>/docs</code> — for detailed specifications, requirements, and notes</p>
+</li>
+<li>
+<p><strong>Metadata</strong></p>
+</li>
+<li><code>.planexe.yml</code> or similar config: plan ID, generator, creation timestamp, owner</li>
+</ol>
+<h2 id="default-flow-no-token-required">Default Flow (No Token Required)</h2>
+<ol>
+<li>User generates a plan in PlanExe</li>
+<li>PlanExe immediately creates a public GitHub repo under its own org (<code>github.com/PlanExeOrg/plan-{slug}-{timestamp}</code>)</li>
+<li>Plan artifact, README, and folder scaffold pushed to the repo in an initial commit</li>
+<li>User receives a link to the repo (view, fork, or clone)</li>
+<li><strong>Plan generation complete</strong> — no GitHub account required</li>
+</ol>
+<h2 id="optional-flow-user-token-repo-created-directly-in-users-account">Optional Flow: User Token (Repo Created Directly in User's Account)</h2>
+<p>For users who want the repo in their own GitHub account from the start:</p>
+<ol>
+<li>User provides their GitHub token during or after plan generation</li>
+<li>PlanExe creates the repo directly under the user's account</li>
+<li>Same artifact, README, and scaffold pushed</li>
+<li>User owns the repo immediately—no transfer needed</li>
+</ol>
+<p><strong>Trade-off:</strong> Slightly slower (requires token + GitHub API call), but immediate ownership.</p>
+<h2 id="monetization-repo-transfer-premium-feature">Monetization: Repo Transfer (Premium Feature)</h2>
+<p>Users who started with a PlanExe-owned repo can <strong>pay credits to trigger a transfer</strong>:</p>
+<ol>
+<li>User selects plan repo from their PlanExe dashboard</li>
+<li>Chooses "Transfer to my GitHub account"</li>
+<li>Pays X credits (tiered: basic, pro, enterprise)</li>
+<li>PlanExe triggers GitHub's native repo transfer API</li>
+<li>Repo moves from <code>PlanExeOrg/{repo}</code> → <code>{UserOrg}/{repo}</code></li>
+<li><strong>Full history, stars, issues, and collaborators preserved</strong></li>
+<li>Transfer completes in seconds</li>
+</ol>
+<p><strong>Why This Works:</strong>
+- <strong>GitHub native:</strong> Repo transfers are built-in; they preserve everything
+- <strong>Instant:</strong> No data migration, no API polling
+- <strong>Clean upsell:</strong> Free plan → free repo → paid ownership
+- <strong>No friction:</strong> User doesn't need a token upfront
+- <strong>Trust builder:</strong> User sees the plan works before paying to own it</p>
+<h2 id="api-design-sketch">API Design Sketch</h2>
+<h3 id="endpoint-1-create-repo-on-plan-completion-default-planexe-org">Endpoint 1: Create Repo on Plan Completion (Default - PlanExe Org)</h3>
+<p>When a plan is generated, PlanExe triggers:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>POST /api/v1/plans/:planId/create-repo
 </code></pre></div>
-<p>Using this score, the UI flags items as "Stale" (score &lt; 0.5) or "Expired" (score &lt; 0.1).</p>
+<p><strong>Payload:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;planId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan-uuid&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;planTitle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Website Redesign Q1 2026&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;planContent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;planFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;markdown&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;repoName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan-website-redesign-q1-2026&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;repoDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto-generated plan repo&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;isPrivate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;githubToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;ownerOrg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PlanExeOrg&quot;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Actions:</strong>
+1. Call GitHub API (<code>POST /orgs/PlanExeOrg/repos</code>) using PlanExe service account token
+2. Initialize repo with plan files (plan artifact, README, folder scaffold)
+3. Create initial commit with plan content
+4. Return repo URL and clone instructions
+5. Store repo URL in PlanExe database (linked to <code>planId</code>, flag as "PlanExe-owned")</p>
 <hr />
-<h2 id="user-interface">User Interface</h2>
-<h3 id="sidebar-ledger">Sidebar Ledger</h3>
-<p>A slide-out panel in the plan editor shows the "Evidence Health" of the current section.
--   <strong>Green checkmarks</strong> for verified Level 3 claims.
--   <strong>Yellow warnings</strong> for stale evidence.
--   <strong>Red alerts</strong> for unverified claims &gt; 48 hours old.</p>
-<h3 id="audit-view">Audit View</h3>
-<p>A specialized view for investors that hides the prose and focuses on the <code>Claim -&gt; Evidence</code> graph.
--   Filters by "Verification Level".
--   "Challenge" button to requesting updated evidence for specific claims.</p>
-<h2 id="future-roadmap">Future Roadmap</h2>
+<h3 id="endpoint-2-create-repo-in-users-account-optional-token">Endpoint 2: Create Repo in User's Account (Optional Token)</h3>
+<p>If user provides a GitHub token:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>POST /api/v1/plans/:planId/create-repo
+</code></pre></div>
+<p><strong>Payload:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;planId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan-uuid&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;planTitle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Website Redesign Q1 2026&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;planContent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&quot;planFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;markdown&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&quot;repoName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan-website-redesign-q1-2026&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&quot;repoDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Auto-generated plan repo&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">&quot;isPrivate&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">&quot;githubToken&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ghp_...&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">&quot;ownerOrg&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Actions:</strong>
+1. Validate token (ensure <code>public_repo</code> or <code>repo</code> scope)
+2. Call GitHub API (<code>POST /user/repos</code> or <code>/orgs/{org}/repos</code> depending on token scope)
+3. Initialize repo with same plan files and commit
+4. Return repo URL and clone instructions
+5. Store repo URL in PlanExe database (linked to <code>planId</code>, flag as "user-owned")</p>
+<hr />
+<h3 id="endpoint-3-transfer-repo-to-users-account-credit-purchase">Endpoint 3: Transfer Repo to User's Account (Credit Purchase)</h3>
+<p>When user wants to take ownership of a PlanExe-owned repo:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>POST /api/v1/plans/:planId/transfer-repo
+</code></pre></div>
+<p><strong>Payload:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;planId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan-uuid&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;targetGitHubOrg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user-org-or-username&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;creditsToDeduct&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;transferReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User purchased repo ownership&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Actions:</strong>
+1. Verify user has sufficient credits (deduct before transfer to avoid partial state)
+2. Retrieve current repo details from PlanExe database
+3. Call GitHub API (<code>POST /repos/PlanExeOrg/{repo}/transfer</code>) with target owner
+4. Wait for transfer completion (typically instant)
+5. Update PlanExe database: mark repo as "transferred to user", store new URL
+6. Return success response with new repo URL
+7. Send user notification: "Repo successfully transferred!"</p>
+<hr />
+<h2 id="auth-token-management">Auth &amp; Token Management</h2>
+<p><strong>Default Case (No Token):</strong>
+- PlanExe uses its own service account GitHub token (stored securely)
+- User provides zero credentials
+- Fastest, most frictionless experience</p>
+<p><strong>User Token Case (Optional):</strong>
+- User supplies personal GitHub token in settings or per-request
+- Token scoped to <code>public_repo</code> or <code>repo</code> (validate before use)
+- Store token securely (encrypted, with user consent)
+- Delete token after repo creation (no need to retain it for default flow)</p>
+<p><strong>Repo Transfer Case:</strong>
+- No new token needed (PlanExe owns the repo, so it has transfer rights)
+- User pays credits; transfer is authenticated via PlanExe account
+- GitHub API handles the transfer; no user token required</p>
+<h2 id="scenarios">Scenarios</h2>
+<h3 id="scenario-1-quick-plan-free-repo-default">Scenario 1: Quick Plan + Free Repo (Default)</h3>
 <ol>
-<li><strong>Blockchain Anchoring:</strong> Hash ledger entries to a public chain for tamper-proof history.</li>
-<li><strong>Automated Crawler:</strong> Agent that periodically re-checks URLs for 404s or content changes.</li>
-<li><strong>Citation Graph:</strong> Visualize how one piece of evidence supports multiple claims across different plans (e.g., a shared market report).</li>
+<li>User generates a plan</li>
+<li>PlanExe repo created instantly under <code>PlanExeOrg</code></li>
+<li>User forks it to their own account (free, native GitHub fork)</li>
+<li>Starts working immediately</li>
+<li>Later, can pay credits to officially transfer the original repo to their account</li>
 </ol>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-claims-pipeline-foundation-23-weeks">Phase A — Claims Pipeline Foundation (2–3 weeks)</h3>
+<h3 id="scenario-2-plan-immediate-user-ownership-optional-token">Scenario 2: Plan + Immediate User Ownership (Optional Token)</h3>
 <ol>
-<li>Add section-aware parser for plan markdown/JSON artifacts.</li>
-<li>Implement claim extraction with stable claim IDs:</li>
-<li>hash = normalized claim text + location_ref + plan_version</li>
-<li>Create confidence classifier for extracted claims:</li>
-<li>factual numeric</li>
-<li>factual non-numeric</li>
-<li>normative/opinion (excluded from strict ledger)</li>
+<li>User provides GitHub token during plan generation</li>
+<li>Repo created directly in user's account</li>
+<li>User owns it immediately</li>
+<li>No transfer needed</li>
+<li>No credits required</li>
 </ol>
-<h3 id="phase-b-evidence-ingestion-scoring-23-weeks">Phase B — Evidence Ingestion + Scoring (2–3 weeks)</h3>
+<h3 id="scenario-3-plan-free-repo-paid-transfer">Scenario 3: Plan → Free Repo → Paid Transfer</h3>
 <ol>
-<li>Build evidence adapters:</li>
-<li>URL fetch + snapshot hash</li>
-<li>document upload + OCR extraction</li>
+<li>User generates plan</li>
+<li>PlanExe creates repo under <code>PlanExeOrg</code> (free)</li>
+<li>User forks it and starts work</li>
+<li>Repo gains stars, issues, PRs, collaborators</li>
+<li>User pays credits to transfer the original repo to their account</li>
+<li>GitHub's native transfer preserves all history and metadata</li>
+<li>User now officially owns the repo</li>
+</ol>
+<h2 id="future-agent-workflow">Future: Agent Workflow</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>┌─────────────────┐
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>│ PlanExe         │ Generates plan
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>│ generates plan  │ → creates repo under PlanExeOrg
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>└────────┬────────┘
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>         │
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>         v
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    [plan repo on GitHub (PlanExeOrg)]
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>         │
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    ┌────┴────┬──────────┬─────────┐
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    │          │          │         │
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    v          v          v         v
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>  [Agent A]  [Agent B]  [Agent C]  [User]
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>  (fork)     (fork)     (fork)     (owns)
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    │          │          │         │
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    │          │          │    Transfer to own account?
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    │          │          │         │ (pay credits)
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    │          v          v         v
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    │       Build      Execute   [user-org/plan-repo]
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    │       website    plan
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    │         &amp; PR     &amp; PR
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    │         │         │
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    └─────────┴─────────┬──────────┘
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>                        v
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>              [Updated Plan Repo]
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>              (versioned, auditable,
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>               improvement history)
+</code></pre></div>
+<h2 id="implementation-considerations">Implementation Considerations</h2>
+<ol>
+<li><strong>Error Handling</strong></li>
+<li>If GitHub API fails, gracefully degrade (log error, notify user, allow manual repo creation)</li>
 <li>
-<p>structured source connectors (registry/DB)</p>
+<p>For transfers, ensure credits are not deducted if transfer fails</p>
 </li>
 <li>
-<p>Implement verification-level scoring policy:</p>
+<p><strong>Rate Limiting</strong></p>
 </li>
-<li>Level 1: weak/secondary</li>
-<li>Level 2: credible but indirect</li>
+<li>GitHub API has rate limits; queue or batch repo creation if needed</li>
 <li>
-<p>Level 3: primary authoritative evidence</p>
+<p>Provide feedback on quota status to user</p>
 </li>
 <li>
-<p>Introduce freshness profile by evidence type with default half-life values.</p>
+<p><strong>Naming Strategy</strong></p>
 </li>
+<li>Repo name: <code>plan-{slugified-title}-{timestamp}</code> or similar</li>
+<li>Ensure uniqueness (check for existing repos under PlanExeOrg)</li>
+<li>
+<p>User can override repo name if desired</p>
+</li>
+<li>
+<p><strong>Initial Commit Message</strong></p>
+</li>
+<li><code>Initial commit: Auto-generated plan by PlanExe</code></li>
+<li>Include plan metadata and generation timestamp</li>
+<li>
+<p>Sign commit with PlanExe service account</p>
+</li>
+<li>
+<p><strong>UI/UX</strong></p>
+</li>
+<li>Add "Transfer to Your Account" button on plan view (if PlanExe-owned)</li>
+<li>Show credit cost before confirming transfer</li>
+<li>Provide clear status: "Owned by PlanExeOrg" vs "Your account"</li>
+<li>
+<p>Link to transferred repo once complete</p>
+</li>
+<li>
+<p><strong>Future Integrations</strong></p>
+</li>
+<li>Link to PlanExe UI: clickable "View Repo" button on generated plans</li>
+<li>Webhooks: sync plan updates back to PlanExe if repo is modified</li>
+<li>Agent SDK: provide helper function for agents to fork and submit PRs</li>
 </ol>
-<h3 id="phase-c-ledger-integrity-audit-2-weeks">Phase C — Ledger Integrity + Audit (2 weeks)</h3>
-<ol>
-<li>Append-only <code>ledger_entries</code> with immutable versioning.</li>
-<li>Add digital signature of report bundle and ledger digest.</li>
-<li>Implement dispute flow:</li>
-<li>mark <code>disputed</code></li>
-<li>assign reviewer</li>
-<li>record resolution actions</li>
-</ol>
-<h3 id="phase-d-product-integration-2-weeks">Phase D — Product Integration (2 weeks)</h3>
-<ol>
-<li>Add inline plan UI badges per claim:</li>
-<li>verified / stale / missing / disputed</li>
-<li>Add investor audit export endpoint:</li>
-<li>summary + full trace tables + signatures</li>
-<li>Add policy gate:</li>
-<li>block “investor-ready” status if verification coverage below threshold</li>
-</ol>
-<h3 id="suggested-quality-thresholds">Suggested quality thresholds</h3>
+<h2 id="success-criteria">Success Criteria</h2>
 <ul>
-<li>
-<blockquote>
-<p>=80% claims must have evidence link</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>=60% claims must be Level 2+</p>
-</blockquote>
-</li>
-<li>0 critical claims in <code>missing</code> or <code>disputed</code> state</li>
+<li>[x] Plan generation automatically creates repo under PlanExeOrg (no user token required)</li>
+<li>[x] Repo contains plan artifact, README, and scaffold folders</li>
+<li>[x] User can optionally provide GitHub token for direct user-account ownership</li>
+<li>[x] Repo is public and discoverable</li>
+<li>[x] User can fork repo to their own account (free, native GitHub)</li>
+<li>[x] User can pay credits to transfer original repo to their account</li>
+<li>[x] GitHub repo transfer API preserves history, stars, issues</li>
+<li>[x] Agents can fork, branch, and submit PRs to plan repo</li>
+<li>[x] Plan repo URL is accessible and linked in PlanExe UI</li>
+<li>[x] Version history is preserved and auditable</li>
+<li>[x] Transfer UI shows cost and confirmation before charging credits</li>
 </ul>
-<h3 id="data-model-hardening">Data model hardening</h3>
-<ul>
-<li>Add <code>plan_version</code> to claims and ledger rows</li>
-<li>Add <code>source_fetch_status</code> and <code>source_http_code</code></li>
-<li>Add <code>evidence_expiry_at</code> for freshness checks</li>
-</ul>
-<h3 id="operational-safeguards">Operational safeguards</h3>
-<ul>
-<li>Cache source snapshots to avoid link rot dependence</li>
-<li>Rate-limit external crawlers</li>
-<li>PII redaction on uploaded documents before indexing</li>
-</ul>
-<h3 id="validation-checklist">Validation checklist</h3>
-<ul>
-<li>Claim extraction precision/recall benchmarks</li>
-<li>Deterministic claim IDs across reruns</li>
-<li>Tamper detection test via signature mismatch</li>
-<li>Freshness state transition tests</li>
-<li>Audit export completeness checks</li>
-</ul>
+<h2 id="open-questions">Open Questions</h2>
+<ol>
+<li>What credit tier for repo transfer? (Basic: 10 credits, Pro: 50 credits, Enterprise: custom?)</li>
+<li>Should users be able to transfer repos they created with their own token back to PlanExeOrg? (Unlikely, but possible resale/donation flow)</li>
+<li>Should we auto-create issues/labels for tracking plan execution?</li>
+<li>Should plan updates trigger repo commits/tags?</li>
+<li>How do we handle plan deletion (repo archival or full deletion)?</li>
+<li>Should we support GitLab, Gitea, or other Git hosting platforms in the future?</li>
+</ol>
 
 
 
 
 
 
-
-  
-  
 
 
 
