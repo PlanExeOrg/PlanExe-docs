@@ -3582,22 +3582,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#skill-capabilities-tools" class="md-nav__link">
+  <a href="#skill-capabilities-mcp-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Skill Capabilities (Tools)
+        Skill Capabilities (MCP Tools)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Skill Capabilities (Tools)">
+    <nav class="md-nav" aria-label="Skill Capabilities (MCP Tools)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create_plangoal-str-constraints-list" class="md-nav__link">
+  <a href="#prompt_examples-get-example-prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        create_plan(goal: str, constraints: list)
+        prompt_examples() — Get example prompts
       
     </span>
   </a>
@@ -3605,10 +3605,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_next_action_itemplan_id-str" class="md-nav__link">
+  <a href="#task_createprompt-speed_vs_detail-model_profile-user_api_key-start-a-planning-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        get_next_action_item(plan_id: str)
+        task_create(prompt, speed_vs_detail, model_profile, user_api_key?) — Start a planning task
       
     </span>
   </a>
@@ -3616,10 +3616,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#report_resultplan_id-str-task_id-str-output-str" class="md-nav__link">
+  <a href="#task_statustask_id-poll-planning-progress" class="md-nav__link">
     <span class="md-ellipsis">
       
-        report_result(plan_id: str, task_id: str, output: str)
+        task_status(task_id) — Poll planning progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task_stoptask_id-cancel-a-running-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        task_stop(task_id) — Cancel a running task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task_file_infotask_id-artifact-get-download-link-for-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        task_file_info(task_id, artifact) — Get download link for results
       
     </span>
   </a>
@@ -4491,22 +4513,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#skill-capabilities-tools" class="md-nav__link">
+  <a href="#skill-capabilities-mcp-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Skill Capabilities (Tools)
+        Skill Capabilities (MCP Tools)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Skill Capabilities (Tools)">
+    <nav class="md-nav" aria-label="Skill Capabilities (MCP Tools)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create_plangoal-str-constraints-list" class="md-nav__link">
+  <a href="#prompt_examples-get-example-prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        create_plan(goal: str, constraints: list)
+        prompt_examples() — Get example prompts
       
     </span>
   </a>
@@ -4514,10 +4536,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_next_action_itemplan_id-str" class="md-nav__link">
+  <a href="#task_createprompt-speed_vs_detail-model_profile-user_api_key-start-a-planning-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        get_next_action_item(plan_id: str)
+        task_create(prompt, speed_vs_detail, model_profile, user_api_key?) — Start a planning task
       
     </span>
   </a>
@@ -4525,10 +4547,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#report_resultplan_id-str-task_id-str-output-str" class="md-nav__link">
+  <a href="#task_statustask_id-poll-planning-progress" class="md-nav__link">
     <span class="md-ellipsis">
       
-        report_result(plan_id: str, task_id: str, output: str)
+        task_status(task_id) — Poll planning progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task_stoptask_id-cancel-a-running-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        task_stop(task_id) — Cancel a running task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task_file_infotask_id-artifact-get-download-link-for-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        task_file_info(task_id, artifact) — Get download link for results
       
     </span>
   </a>
@@ -4748,36 +4792,62 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gives the agent the ability to plan, budget, and track complex projects via the PlanExe Cloud.&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;network_access&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="s2">&quot;create_plan&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="s2">&quot;check_plan_status&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="s2">&quot;get_next_action_item&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="s2">&quot;report_result&quot;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;mcp_tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="s2">&quot;prompt_examples&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="s2">&quot;task_create&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="s2">&quot;task_status&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="s2">&quot;task_stop&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="s2">&quot;task_file_info&quot;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="skill-capabilities-tools">Skill Capabilities (Tools)</h2>
-<h3 id="create_plangoal-str-constraints-list"><code>create_plan(goal: str, constraints: list)</code></h3>
+<h2 id="skill-capabilities-mcp-tools">Skill Capabilities (MCP Tools)</h2>
+<p>The PlanExe MCP exposes the following real tools via <code>https://mcp.planexe.org/mcp</code>:</p>
+<h3 id="prompt_examples-get-example-prompts"><code>prompt_examples()</code> — Get example prompts</h3>
 <ul>
-<li>Input: goal + constraints</li>
-<li>Output: <code>plan_id</code> + plan summary</li>
+<li>Input: none</li>
+<li>Output: List of example planning prompts</li>
+<li>Used in: Skill initialization and user guidance</li>
 </ul>
-<h3 id="get_next_action_itemplan_id-str"><code>get_next_action_item(plan_id: str)</code></h3>
+<h3 id="task_createprompt-speed_vs_detail-model_profile-user_api_key-start-a-planning-task"><code>task_create(prompt, speed_vs_detail, model_profile, user_api_key?)</code> — Start a planning task</h3>
 <ul>
-<li>Input: plan ID</li>
-<li>Output: atomic next task</li>
+<li>Input:</li>
+<li><code>prompt</code> (string): Natural language planning request</li>
+<li><code>speed_vs_detail</code> (enum): <code>"ping"</code> | <code>"fast"</code> | <code>"all"</code></li>
+<li><code>model_profile</code> (enum): <code>"baseline"</code> | <code>"premium"</code> | <code>"frontier"</code> | <code>"custom"</code></li>
+<li><code>user_api_key</code> (optional string): Override environment API key</li>
+<li>Output: <code>task_id</code> for polling and result retrieval</li>
+<li>Used in: Step 1 of planning workflow</li>
 </ul>
-<h3 id="report_resultplan_id-str-task_id-str-output-str"><code>report_result(plan_id: str, task_id: str, output: str)</code></h3>
+<h3 id="task_statustask_id-poll-planning-progress"><code>task_status(task_id)</code> — Poll planning progress</h3>
 <ul>
-<li>Input: task output</li>
-<li>Output: plan updated, progress logged</li>
+<li>Input: <code>task_id</code> (string)</li>
+<li>Output: status (queued|running|completed|failed), progress %, estimated time remaining</li>
+<li>Used in: Polling loop every 5+ minutes (plans take 15-20+ min)</li>
+</ul>
+<h3 id="task_stoptask_id-cancel-a-running-task"><code>task_stop(task_id)</code> — Cancel a running task</h3>
+<ul>
+<li>Input: <code>task_id</code> (string)</li>
+<li>Output: Confirmation of cancellation</li>
+<li>Used in: Early termination / user interruption</li>
+</ul>
+<h3 id="task_file_infotask_id-artifact-get-download-link-for-results"><code>task_file_info(task_id, artifact)</code> — Get download link for results</h3>
+<ul>
+<li>Input:</li>
+<li><code>task_id</code> (string)</li>
+<li><code>artifact</code> (enum): <code>"report"</code> | <code>"zip"</code></li>
+<li>Output: <code>download_url</code></li>
+<li>Used in: Retrieving completed plans after task finishes</li>
 </ul>
 <h2 id="agent-to-agent-protocol">Agent-to-Agent Protocol</h2>
 <ul>
 <li><strong>EdgeBot</strong> detects a local issue (low water).</li>
 <li><strong>EdgeBot</strong> requests a plan from <strong>CloudBot</strong>.</li>
-<li><strong>CloudBot</strong> generates the plan and sends <code>plan_id</code>.</li>
-<li><strong>EdgeBot</strong> executes local steps and reports back.</li>
+<li><strong>CloudBot</strong> calls <code>task_create()</code> via PlanExe MCP and receives <code>task_id</code>.</li>
+<li><strong>CloudBot</strong> polls <code>task_status(task_id)</code> every 5+ minutes.</li>
+<li><strong>CloudBot</strong> calls <code>task_file_info(task_id, "report")</code> to get download URL when complete.</li>
+<li><strong>EdgeBot</strong> executes local steps from the plan and reports back.</li>
+<li><strong>CloudBot</strong> can call <code>task_stop(task_id)</code> if execution is cancelled.</li>
 </ul>
 <h2 id="integration-points">Integration Points</h2>
 <ul>
@@ -4806,12 +4876,13 @@
 <h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
 <h3 id="phase-a-skill-packaging-and-contracts-12-weeks">Phase A — Skill Packaging and Contracts (1–2 weeks)</h3>
 <ol>
-<li>Define skill manifest and tool contracts:</li>
-<li><code>create_plan</code></li>
-<li><code>check_plan_status</code></li>
-<li><code>get_next_action_item</code></li>
+<li>Define skill manifest and MCP tool bindings:</li>
+<li><code>prompt_examples</code> — Provide example planning prompts</li>
+<li><code>task_create</code> — Initiate planning task with goal and parameters</li>
+<li><code>task_status</code> — Poll task progress (required for async workflows)</li>
+<li><code>task_stop</code> — Cancel long-running tasks</li>
 <li>
-<p><code>report_result</code></p>
+<p><code>task_file_info</code> — Retrieve generated plan artifacts</p>
 </li>
 <li>
 <p>Add JSON schema validation for tool inputs/outputs.</p>
