@@ -4818,8 +4818,9 @@
 </code></pre></div>
 <p>mcp_cloud exposes HTTP endpoints on port <code>8001</code> (or <code>${PLANEXE_MCP_HTTP_PORT}</code>). Authentication is controlled by <code>PLANEXE_MCP_REQUIRE_AUTH</code>:
 - <code>false</code>: no API key needed (local docker default).
-- <code>true</code>: provide a valid <code>X-API-Key</code> or <code>Authorization: Bearer &lt;key&gt;</code>.
-Accepted keys are (1) UserApiKey from home.planexe.org (<code>pex_...</code>), or (2) <code>PLANEXE_MCP_API_KEY</code> if set (for dev or shared secret).</p>
+- <code>true</code>: provide a valid <code>X-API-Key</code>.
+Accepted keys are (1) UserApiKey from home.planexe.org (<code>pex_...</code>), or (2) <code>PLANEXE_MCP_API_KEY</code> if set (for dev or shared secret).
+OAuth is not supported for the MCP API.</p>
 <h3 id="connecting-via-httpurl">Connecting via HTTP/URL</h3>
 <p>After starting with Docker, configure your MCP client (e.g., LM Studio) to connect via HTTP:</p>
 <p><strong>Local Docker (development):</strong></p>
@@ -4845,18 +4846,6 @@ Accepted keys are (1) UserApiKey from home.planexe.org (<code>pex_...</code>), o
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
-</code></pre></div>
-<p><strong>Alternative header format</strong> (also supported):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://your-app.up.railway.app/mcp&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">&quot;API_KEY&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your-api-key-here&quot;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
 </code></pre></div>
 <p>Use a UserApiKey from home.planexe.org, or set <code>PLANEXE_MCP_API_KEY</code> to a shared secret for local/dev use.</p>
 <h3 id="available-http-endpoints">Available HTTP Endpoints</h3>
@@ -4925,28 +4914,24 @@ Always use <code>/mcp/</code> (with trailing slash) in the inspector URL to avoi
 that crashes <code>node-fetch</code> in older inspector versions.</p>
 </blockquote>
 <h3 id="local-no-authentication">Local (no authentication)</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>http://localhost:8001/mcp/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>http://localhost:8001/mcp/
 </code></pre></div>
 <p>Steps:
 - Click "Connect"
 - Click "Tools"
 - Click "List Tools"</p>
 <h3 id="production-with-api-key-authentication">Production (with API key authentication)</h3>
-<p>When auth is enabled, the inspector must send the key
-with every request. The inspector proxy forwards the <code>Authorization</code> header to
-the remote server.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>https://mcp.planexe.org/mcp/
+<p>When auth is enabled, the inspector must send the key with every request.
+Do not use the inspector OAuth flow for PlanExe MCP.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>https://mcp.planexe.org/mcp/
 </code></pre></div>
 <p>Steps:
 1. In the inspector UI, expand <strong>"Authentication"</strong> in the left sidebar
 2. Select <strong>Custom Headers</strong>
-3. Add a header. Either:
-   - <strong>X-API-Key</strong> → your API key (e.g. <code>pex_...</code>)
-   - or <strong>Authorization</strong> → <code>Bearer pex_...</code> (include the word <code>Bearer</code> and a space)
+3. Add header <strong>X-API-Key</strong> with your API key value (e.g. <code>pex_...</code>)
 4. Click <strong>"Connect"</strong>
 5. Click <strong>"Tools"</strong> then <strong>"List Tools"</strong> to verify</p>
-<p>The inspector forwards these headers to the remote server, which accepts
-<code>Authorization: Bearer &lt;key&gt;</code>, <code>X-API-Key</code>, or <code>API_KEY</code>.</p>
+<p>The inspector forwards this custom header to the remote server.</p>
 <p><strong>CORS errors:</strong> If you see "CORS preflight response did not succeed" or "status
 code: 400" in the browser console when connecting to a deployed MCP server:
 1. Redeploy mcp_cloud with the latest changes (OPTIONS preflight is exempt from
@@ -4960,13 +4945,13 @@ code: 400" in the browser console when connecting to a deployed MCP server:
 <h3 id="skipping-proxy-authentication-development-only">Skipping proxy authentication (development only)</h3>
 <p>The inspector proxy itself also requires a session token. To disable that during
 local development:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">DANGEROUSLY_OMIT_AUTH</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>https://mcp.planexe.org/mcp/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">DANGEROUSLY_OMIT_AUTH</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>https://mcp.planexe.org/mcp/
 </code></pre></div>
 <p>This only disables the local inspector-proxy token check. The remote server still
 still requires API key authentication when <code>PLANEXE_MCP_REQUIRE_AUTH=true</code> (UserApiKey or PLANEXE_MCP_API_KEY).</p>
 <h3 id="everything-reference-stdio">Everything reference (stdio)</h3>
 <p>Sanity-check the inspector itself against the reference server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>@modelcontextprotocol/server-everything
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>@modelcontextprotocol/server-everything
 </code></pre></div>
 <p>Steps:
 - Click "Connect"
@@ -4988,30 +4973,52 @@ recommended flow is Docker (server) + <code>mcp_local</code> (client).</p>
 <ol>
 <li>Install dependencies in a virtual environment:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span><span class="w"> </span>mcp_cloud
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>python3.13<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># On Windows: .venv\Scripts\activate</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>mcp_cloud
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>python3.13<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># On Windows: .venv\Scripts\activate</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
 <ol>
 <li>Ensure the database is accessible. If using Docker for the database:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># From repo root, ensure database_postgres is running</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>database_postgres
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># From repo root, ensure database_postgres is running</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>database_postgres
 </code></pre></div>
 <ol>
 <li>Set environment variables (create a <code>.env</code> file in the repo root or export them):</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_HOST</span><span class="o">=</span>localhost
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_PORT</span><span class="o">=</span><span class="m">5432</span><span class="w">  </span><span class="c1"># Or your mapped port (e.g., 5433 if you set PLANEXE_POSTGRES_PORT)</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_DB</span><span class="o">=</span>planexe
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_USER</span><span class="o">=</span>planexe
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_PASSWORD</span><span class="o">=</span>planexe
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_HOST</span><span class="o">=</span>localhost
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_PORT</span><span class="o">=</span><span class="m">5432</span><span class="w">  </span><span class="c1"># Or your mapped port (e.g., 5433 if you set PLANEXE_POSTGRES_PORT)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_DB</span><span class="o">=</span>planexe
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_USER</span><span class="o">=</span>planexe
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_PASSWORD</span><span class="o">=</span>planexe
 </code></pre></div>
 <p><strong>Note</strong>: The <code>PYTHONPATH</code> environment variable in the LM Studio config (see below) ensures that the <code>database_api</code> module can be imported. Make sure the path points to the PlanExe repository root (where <code>database_api/</code> is located).</p>
 <h3 id="lm-studio-configuration">LM Studio Configuration</h3>
 <p>Add the following to your LM Studio MCP servers configuration file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/absolute/path/to/PlanExe/mcp_cloud/.venv/bin/python&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="s2">&quot;mcp_cloud.app&quot;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">      </span><span class="p">],</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/absolute/path/to/PlanExe&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_HOST&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_PORT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5432&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_DB&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_USER&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_PASSWORD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe&quot;</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Important</strong>: Replace <code>/absolute/path/to/PlanExe</code> with the actual absolute path to your PlanExe repository on your system.</p>
+<p><strong>Example</strong> (if PlanExe is at <code>/absolute/path/to/PlanExe</code>):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -5032,48 +5039,26 @@ recommended flow is Docker (server) + <code>mcp_local</code> (client).</p>
 <a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="p">}</span>
 </code></pre></div>
-<p><strong>Important</strong>: Replace <code>/absolute/path/to/PlanExe</code> with the actual absolute path to your PlanExe repository on your system.</p>
-<p><strong>Example</strong> (if PlanExe is at <code>/absolute/path/to/PlanExe</code>):</p>
+<p><strong>Using Docker</strong> (more complex, but keeps dependencies isolated):</p>
+<p>You can use <code>docker compose exec</code> to run mcp_cloud:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/absolute/path/to/PlanExe/mcp_cloud/.venv/bin/python&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker&quot;</span><span class="p">,</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="s2">&quot;mcp_cloud.app&quot;</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">      </span><span class="p">],</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">        </span><span class="nt">&quot;PYTHONPATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/absolute/path/to/PlanExe&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_HOST&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_PORT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5432&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_DB&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_USER&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_POSTGRES_PASSWORD&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe&quot;</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="p">}</span>
-</code></pre></div>
-<p><strong>Using Docker</strong> (more complex, but keeps dependencies isolated):</p>
-<p>You can use <code>docker compose exec</code> to run mcp_cloud:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;docker&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">        </span><span class="s2">&quot;compose&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">        </span><span class="s2">&quot;/absolute/path/to/PlanExe/docker-compose.yml&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span><span class="s2">&quot;exec&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span><span class="s2">&quot;-T&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">        </span><span class="s2">&quot;mcp_cloud&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">        </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">        </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">        </span><span class="s2">&quot;mcp_cloud.app&quot;</span>
-<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">      </span><span class="p">]</span>
-<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="p">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="s2">&quot;compose&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">        </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">        </span><span class="s2">&quot;/absolute/path/to/PlanExe/docker-compose.yml&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">        </span><span class="s2">&quot;exec&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">        </span><span class="s2">&quot;-T&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">        </span><span class="s2">&quot;mcp_cloud&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">        </span><span class="s2">&quot;mcp_cloud.app&quot;</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">      </span><span class="p">]</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="p">}</span>
 </code></pre></div>
 <p>Note: This requires the <code>mcp_cloud</code> container to be running (<code>docker compose up -d mcp_cloud</code>).</p>
 <h3 id="troubleshooting">Troubleshooting</h3>
@@ -5093,10 +5078,10 @@ recommended flow is Docker (server) + <code>mcp_local</code> (client).</p>
 - On Windows, use forward slashes in the config JSON (e.g., <code>C:/Users/...</code>) or escaped backslashes</p>
 <h2 id="development">Development</h2>
 <p>Run locally for testing:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span><span class="w"> </span>mcp_cloud
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># If not already activated</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PWD</span>/..:<span class="nv">$PYTHONPATH</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>python<span class="w"> </span>-m<span class="w"> </span>mcp_cloud.app
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span>mcp_cloud
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># If not already activated</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PWD</span>/..:<span class="nv">$PYTHONPATH</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>python<span class="w"> </span>-m<span class="w"> </span>mcp_cloud.app
 </code></pre></div>
 <h2 id="railway-deployment">Railway Deployment</h2>
 <p>See <code>railway.md</code> for Railway-specific deployment instructions. The server automatically detects Railway's <code>PORT</code> environment variable and binds to it.</p>
