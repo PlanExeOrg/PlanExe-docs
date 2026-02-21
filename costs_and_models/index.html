@@ -635,6 +635,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#billing-policy-hosted-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Billing policy (hosted PlanExe)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-hosted-cost-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosted cost model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#speed-and-iteration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4119,6 +4141,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#billing-policy-hosted-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Billing policy (hosted PlanExe)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-hosted-cost-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-hosted cost model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#speed-and-iteration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4173,6 +4217,25 @@
 <hr />
 <h2 id="typical-costs">Typical costs</h2>
 <p>Costs vary by model and prompt size. PlanExe can use 100+ calls per plan, so avoid expensive models unless you need the highest quality.</p>
+<h2 id="billing-policy-hosted-planexe">Billing policy (hosted PlanExe)</h2>
+<ul>
+<li>PlanExe charges a <strong>1 USD platform fee</strong> when a plan completes successfully.</li>
+<li>If PlanExe is unable to complete plan creation, the <strong>1 USD platform fee is not charged</strong>.</li>
+<li>The account must have sufficient balance to start creating a plan.</li>
+<li>If the account has less than <strong>2 USD</strong>, plan creation is likely to fail before starting.</li>
+<li>If a very expensive model is selected, the account may need higher upfront balance.</li>
+<li>If an account runs out of funds during processing, the plan can be resumed after topping up the balance.</li>
+</ul>
+<h2 id="self-hosted-cost-model">Self-hosted cost model</h2>
+<p>In self-hosted deployments, there is no platform fee paid to PlanExe.</p>
+<ul>
+<li>You run PlanExe on your own environment (local machine, private server, or your own cloud account).</li>
+<li>Cost shifts to your chosen model runtime:</li>
+<li>pay-per-token providers such as OpenRouter (or other compatible hosted APIs)</li>
+<li>local inference on your own hardware (GPU/CPU, power, and maintenance costs)</li>
+<li>If you use local models, you avoid provider token billing but may need significant hardware investment for speed and quality.</li>
+<li>If you use hosted model APIs from self-hosted PlanExe, provider charges still apply based on token usage.</li>
+</ul>
 <h2 id="speed-and-iteration">Speed and iteration</h2>
 <p>Fast models can complete a plan in roughly 10–20 minutes. Slow models may take hours. In practice, it is often better to iterate quickly and generate several candidate plans than to wait for one slow run.</p>
 <hr />
