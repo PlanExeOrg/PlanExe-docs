@@ -9,14 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-      
-        <link rel="canonical" href="https://docs.planexe.org/ai_providers/lm_studio/">
-      
-      
-        <link rel="prev" href="../ollama/">
+        <meta name="author" content="Larry the Laptop Lobster">
       
       
-        <link rel="next" href="../mistral/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/68-domain-aware-plan-ranking-engine/">
+      
+      
+        <link rel="prev" href="../67-buildinpublic-twitter-automation/">
+      
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>LM Studio - AI provider - PlanExe Documentation</title>
+        <title>Domain-Aware Plan Ranking Engine with Relative Comparison - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="LM Studio - AI provider - PlanExe Documentation" />
+<meta property="og:title" content="Domain-Aware Plan Ranking Engine with Relative Comparison - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/ai_providers/lm_studio.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/68-domain-aware-plan-ranking-engine.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/ai_providers/lm_studio/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/68-domain-aware-plan-ranking-engine/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="LM Studio - AI provider - PlanExe Documentation" />
+<meta property="twitter:title" content="Domain-Aware Plan Ranking Engine with Relative Comparison - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/ai_providers/lm_studio.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/68-domain-aware-plan-ranking-engine.png" />
 </head>
   
   
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-planexe-with-lm-studio" class="md-skip">
+        <a href="#domain-aware-plan-ranking-engine-with-relative-comparison" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LM Studio - AI provider
+              Domain-Aware Plan Ranking Engine with Relative Comparison
             
           </span>
         </div>
@@ -1534,8 +1534,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1546,11 +1544,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
         
           
           <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
@@ -1571,7 +1569,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1589,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../openrouter/" class="md-nav__link">
+      <a href="../../ai_providers/openrouter/" class="md-nav__link">
         
   
   
@@ -1617,7 +1615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ollama/" class="md-nav__link">
+      <a href="../../ai_providers/ollama/" class="md-nav__link">
         
   
   
@@ -1642,37 +1640,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    LM Studio
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../ai_providers/lm_studio/" class="md-nav__link">
         
   
   
@@ -1688,126 +1659,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#quickstart-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quickstart (Docker)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quickstart (Docker)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#host-only-no-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Host-only (no Docker)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#minimum-viable-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Minimum viable setup
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-lm-studio-locally-with-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run LM Studio locally with Docker
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-lm-studio-on-a-remote-computer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run LM Studio on a remote computer
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1820,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mistral/" class="md-nav__link">
+      <a href="../../ai_providers/mistral/" class="md-nav__link">
         
   
   
@@ -2023,6 +1874,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2033,11 +1886,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" checked>
         
           
           <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
@@ -2058,7 +1911,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_13">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2076,7 +1929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/01-agent-smart-routing/" class="md-nav__link">
+      <a href="../01-agent-smart-routing/" class="md-nav__link">
         
   
   
@@ -2111,7 +1964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/02-plans-as-LLM-templates/" class="md-nav__link">
+      <a href="../02-plans-as-LLM-templates/" class="md-nav__link">
         
   
   
@@ -2146,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/03-distributed-plan-execution/" class="md-nav__link">
+      <a href="../03-distributed-plan-execution/" class="md-nav__link">
         
   
   
@@ -2181,7 +2034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/04-plan-explain-as-API-service/" class="md-nav__link">
+      <a href="../04-plan-explain-as-API-service/" class="md-nav__link">
         
   
   
@@ -2216,7 +2069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/05-semantic-plan-search-graph/" class="md-nav__link">
+      <a href="../05-semantic-plan-search-graph/" class="md-nav__link">
         
   
   
@@ -2251,7 +2104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/06-adopt-on-the-fly/" class="md-nav__link">
+      <a href="../06-adopt-on-the-fly/" class="md-nav__link">
         
   
   
@@ -2279,7 +2132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/07-elo-ranking/" class="md-nav__link">
+      <a href="../07-elo-ranking/" class="md-nav__link">
         
   
   
@@ -2314,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/08-ui-for-editing-plan/" class="md-nav__link">
+      <a href="../08-ui-for-editing-plan/" class="md-nav__link">
         
   
   
@@ -2349,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/11-investor-thesis-matching-engine/" class="md-nav__link">
+      <a href="../11-investor-thesis-matching-engine/" class="md-nav__link">
         
   
   
@@ -2384,7 +2237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/12-evidence-based-founder-execution-index/" class="md-nav__link">
+      <a href="../12-evidence-based-founder-execution-index/" class="md-nav__link">
         
   
   
@@ -2419,7 +2272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/13-portfolio-aware-capital-allocation/" class="md-nav__link">
+      <a href="../13-portfolio-aware-capital-allocation/" class="md-nav__link">
         
   
   
@@ -2454,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/14-confidence-weighted-funding-auctions/" class="md-nav__link">
+      <a href="../14-confidence-weighted-funding-auctions/" class="md-nav__link">
         
   
   
@@ -2489,7 +2342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/15-outcome-feedback-and-model-governance/" class="md-nav__link">
+      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
         
   
   
@@ -2524,7 +2377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
+      <a href="../16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
         
   
   
@@ -2559,7 +2412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/17-plugin-adaptation-lifecycle/" class="md-nav__link">
+      <a href="../17-plugin-adaptation-lifecycle/" class="md-nav__link">
         
   
   
@@ -2594,7 +2447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
+      <a href="../18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
         
   
   
@@ -2629,7 +2482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
+      <a href="../19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
         
   
   
@@ -2664,7 +2517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
+      <a href="../20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
         
   
   
@@ -2699,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/21-expert-discovery-and-fit-scoring/" class="md-nav__link">
+      <a href="../21-expert-discovery-and-fit-scoring/" class="md-nav__link">
         
   
   
@@ -2734,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/22-multi-stage-verification-workflow/" class="md-nav__link">
+      <a href="../22-multi-stage-verification-workflow/" class="md-nav__link">
         
   
   
@@ -2769,7 +2622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
+      <a href="../23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
         
   
   
@@ -2804,7 +2657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/24-cross-border-project-verification-framework/" class="md-nav__link">
+      <a href="../24-cross-border-project-verification-framework/" class="md-nav__link">
         
   
   
@@ -2839,7 +2692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/25-verification-incentives-governance-and-liability/" class="md-nav__link">
+      <a href="../25-verification-incentives-governance-and-liability/" class="md-nav__link">
         
   
   
@@ -2874,7 +2727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
+      <a href="../26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
         
   
   
@@ -2909,7 +2762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/27-multi-angle-topic-verification-engine/" class="md-nav__link">
+      <a href="../27-multi-angle-topic-verification-engine/" class="md-nav__link">
         
   
   
@@ -2944,7 +2797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/28-autonomous-bid-factory-orchestration/" class="md-nav__link">
+      <a href="../28-autonomous-bid-factory-orchestration/" class="md-nav__link">
         
   
   
@@ -2979,7 +2832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
+      <a href="../29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
         
   
   
@@ -3014,7 +2867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
+      <a href="../30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
         
   
   
@@ -3049,7 +2902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/31-token-counting-and-cost-transparency/" class="md-nav__link">
+      <a href="../31-token-counting-and-cost-transparency/" class="md-nav__link">
         
   
   
@@ -3084,7 +2937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
+      <a href="../32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
         
   
   
@@ -3119,7 +2972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/33-cost-breakdown-structure-cbs/" class="md-nav__link">
+      <a href="../33-cost-breakdown-structure-cbs/" class="md-nav__link">
         
   
   
@@ -3154,7 +3007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/34-finance-top-down-estimation/" class="md-nav__link">
+      <a href="../34-finance-top-down-estimation/" class="md-nav__link">
         
   
   
@@ -3189,7 +3042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
+      <a href="../35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
         
   
   
@@ -3224,7 +3077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
+      <a href="../36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
         
   
   
@@ -3259,7 +3112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
+      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
         
   
   
@@ -3294,7 +3147,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
+      <a href="../38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
         
   
   
@@ -3329,7 +3182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
+      <a href="../39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
         
   
   
@@ -3364,7 +3217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
+      <a href="../40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
         
   
   
@@ -3399,7 +3252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/41-autonomous-execution-of-plan/" class="md-nav__link">
+      <a href="../41-autonomous-execution-of-plan/" class="md-nav__link">
         
   
   
@@ -3434,7 +3287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/42-evidence-traceability-ledger/" class="md-nav__link">
+      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
         
   
   
@@ -3469,7 +3322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/43-assumption-drift-monitor/" class="md-nav__link">
+      <a href="../43-assumption-drift-monitor/" class="md-nav__link">
         
   
   
@@ -3504,7 +3357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/44-investor-grade-audit-pack-generator/" class="md-nav__link">
+      <a href="../44-investor-grade-audit-pack-generator/" class="md-nav__link">
         
   
   
@@ -3539,7 +3392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/45-counterfactual-scenario-explorer/" class="md-nav__link">
+      <a href="../45-counterfactual-scenario-explorer/" class="md-nav__link">
         
   
   
@@ -3574,7 +3427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/46-execution-readiness-scoring/" class="md-nav__link">
+      <a href="../46-execution-readiness-scoring/" class="md-nav__link">
         
   
   
@@ -3609,7 +3462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/47-openclaw-agent-skill-integration/" class="md-nav__link">
+      <a href="../47-openclaw-agent-skill-integration/" class="md-nav__link">
         
   
   
@@ -3644,7 +3497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/48-moltbook-reputation-bridge/" class="md-nav__link">
+      <a href="../48-moltbook-reputation-bridge/" class="md-nav__link">
         
   
   
@@ -3679,7 +3532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
+      <a href="../49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
         
   
   
@@ -3714,7 +3567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/50-agent-to-agent-payment-gateway/" class="md-nav__link">
+      <a href="../50-agent-to-agent-payment-gateway/" class="md-nav__link">
         
   
   
@@ -3749,7 +3602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/51-decentralized-planexe-survivability/" class="md-nav__link">
+      <a href="../51-decentralized-planexe-survivability/" class="md-nav__link">
         
   
   
@@ -3784,7 +3637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/52-mcp-oauth/" class="md-nav__link">
+      <a href="../52-mcp-oauth/" class="md-nav__link">
         
   
   
@@ -3819,7 +3672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/53-uuid-only-task-id/" class="md-nav__link">
+      <a href="../53-uuid-only-task-id/" class="md-nav__link">
         
   
   
@@ -3854,7 +3707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/54-agent-safety-trusted-information/" class="md-nav__link">
+      <a href="../54-agent-safety-trusted-information/" class="md-nav__link">
         
   
   
@@ -3882,7 +3735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
+      <a href="../55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
         
   
   
@@ -3917,7 +3770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
+      <a href="../56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
         
   
   
@@ -3952,7 +3805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
+      <a href="../57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
         
   
   
@@ -3987,7 +3840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/58-boost-initial-prompt/" class="md-nav__link">
+      <a href="../58-boost-initial-prompt/" class="md-nav__link">
         
   
   
@@ -4022,7 +3875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
+      <a href="../59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
         
   
   
@@ -4057,7 +3910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/60-plan-to-repo/" class="md-nav__link">
+      <a href="../60-plan-to-repo/" class="md-nav__link">
         
   
   
@@ -4092,7 +3945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/61-post-plan-agent-swarm/" class="md-nav__link">
+      <a href="../61-post-plan-agent-swarm/" class="md-nav__link">
         
   
   
@@ -4120,7 +3973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/62-agent-first-frontend-discoverability/" class="md-nav__link">
+      <a href="../62-agent-first-frontend-discoverability/" class="md-nav__link">
         
   
   
@@ -4148,7 +4001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/63-luigi-agent-integration/" class="md-nav__link">
+      <a href="../63-luigi-agent-integration/" class="md-nav__link">
         
   
   
@@ -4176,7 +4029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/64-post-plan-orchestration-layer/" class="md-nav__link">
+      <a href="../64-post-plan-orchestration-layer/" class="md-nav__link">
         
   
   
@@ -4204,7 +4057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/65-git-state-machine-enrichment/" class="md-nav__link">
+      <a href="../65-git-state-machine-enrichment/" class="md-nav__link">
         
   
   
@@ -4232,7 +4085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/66-post-plan-enrichment-swarm/" class="md-nav__link">
+      <a href="../66-post-plan-enrichment-swarm/" class="md-nav__link">
         
   
   
@@ -4267,7 +4120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/67-buildinpublic-twitter-automation/" class="md-nav__link">
+      <a href="../67-buildinpublic-twitter-automation/" class="md-nav__link">
         
   
   
@@ -4292,10 +4145,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../proposals/68-domain-aware-plan-ranking-engine/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    68 domain aware plan ranking engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4318,6 +4205,291 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-domain-aware-relative-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution: Domain-Aware Relative Ranking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-domain-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Domain Classification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-domain-specific-signal-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Domain-Specific Signal Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-corpus-bucketing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Corpus Bucketing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-relative-elo-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Relative ELO Ranking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-actionability-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Actionability Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. API Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Phases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Phases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-minimal-domain-classifier-2-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Minimal Domain Classifier (2 days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-domain-specific-extractors-3-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Domain-Specific Extractors (3 days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-elo-ranking-engine-4-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: ELO Ranking Engine (4 days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-actionability-api-2-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Actionability &amp; API (2 days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks &amp; Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4365,22 +4537,110 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quickstart-docker" class="md-nav__link">
+  <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quickstart (Docker)
+        Problem Statement
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Quickstart (Docker)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-domain-aware-relative-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution: Domain-Aware Relative Ranking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Details
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#host-only-no-docker" class="md-nav__link">
+  <a href="#1-domain-classification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Host-only (no Docker)
+        1. Domain Classification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-domain-specific-signal-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Domain-Specific Signal Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-corpus-bucketing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Corpus Bucketing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-relative-elo-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Relative ELO Ranking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-actionability-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Actionability Scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. API Endpoints
       
     </span>
   </a>
@@ -4393,22 +4653,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#data-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Data Model
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Configuration">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Phases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Phases">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#minimum-viable-setup" class="md-nav__link">
+  <a href="#phase-1-minimal-domain-classifier-2-days" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimum viable setup
+        Phase 1: Minimal Domain Classifier (2 days)
       
     </span>
   </a>
@@ -4416,10 +4687,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#run-lm-studio-locally-with-docker" class="md-nav__link">
+  <a href="#phase-2-domain-specific-extractors-3-days" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run LM Studio locally with Docker
+        Phase 2: Domain-Specific Extractors (3 days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-elo-ranking-engine-4-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: ELO Ranking Engine (4 days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-actionability-api-2-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Actionability &amp; API (2 days)
       
     </span>
   </a>
@@ -4432,10 +4725,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#testing-strategy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        Testing Strategy
       
     </span>
   </a>
@@ -4443,10 +4736,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-lm-studio-on-a-remote-computer" class="md-nav__link">
+  <a href="#success-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run LM Studio on a remote computer
+        Success Criteria
       
     </span>
   </a>
@@ -4454,10 +4747,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#open-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next steps
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks &amp; Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changelog
       
     </span>
   </a>
@@ -4484,67 +4821,271 @@
   
 
 
-<h1 id="using-planexe-with-lm-studio">Using PlanExe with LM Studio</h1>
-<p>This is for <strong>advanced users</strong> that already have PlanExe working. If you're new to PlanExe, start with <a href="../openrouter/">OpenRouter</a> instead.</p>
-<p><a href="https://lmstudio.ai/">LM Studio</a> is an open source app for macOS, Windows, and Linux for running LLMs on your own computer. It is useful for local troubleshooting.</p>
-<p>PlanExe processes more text than regular chat. You will need capable hardware to run an LLM at a reasonable speed.</p>
-<h2 id="quickstart-docker">Quickstart (Docker)</h2>
-<ol>
-<li>Install LM Studio on your host and download a small model inside LM Studio (e.g. <code>Qwen2.5-7B-Instruct-1M</code>, ~4.5 GB).</li>
-<li>Copy <code>.env.docker-example</code> to <code>.env</code> (even if you leave keys empty for LM Studio) and use the <code>lmstudio-...</code> entry in <code>llm_config/&lt;profile&gt;.json</code>, setting <code>base_url</code> to <code>http://host.docker.internal:1234</code> (Docker Desktop) or your Linux bridge IP.</li>
-<li>Start PlanExe: <code>docker compose up worker_plan frontend_single_user</code>. Open http://localhost:7860, submit a prompt, and watch <code>docker compose logs -f worker_plan</code> for progress.</li>
-</ol>
-<h3 id="host-only-no-docker">Host-only (no Docker)</h3>
-<p>For advanced users: use the host entry (e.g. <code>"lmstudio-qwen2.5-7b-instruct-1m"</code>) in <code>llm_config/&lt;profile&gt;.json</code> so <code>base_url</code> stays on <code>http://127.0.0.1:1234</code>. Start your preferred PlanExe runner (e.g. a local Python environment) and ensure the LM Studio server is running before you submit jobs.</p>
-<h2 id="configuration">Configuration</h2>
-<p>In <code>llm_config/&lt;profile&gt;.json</code>, find a config that starts with <code>lmstudio-</code> (e.g. <code>"lmstudio-qwen2.5-7b-instruct-1m"</code>). In LM Studio, find the model with that exact id and download it. The Qwen model is on <a href="https://huggingface.co/lmstudio-community/Qwen2.5-7B-Instruct-1M-GGUF">Hugging Face</a> (~4.5 GB).</p>
-<p>In LM Studio, go to the <strong>Developer</strong> page (Cmd+2 / Ctrl+2 / Windows+2), start the server, and confirm the UI shows <strong>Status: Running</strong> and <strong>Reachable at: http://127.0.0.1:1234</strong>.</p>
-<h3 id="minimum-viable-setup">Minimum viable setup</h3>
-<ul>
-<li>Start with a ~7B model (≈5 GB download). Expect workable speeds on a 16 GB RAM laptop or a GPU with ≥8 GB VRAM; larger models slow sharply without more hardware.</li>
-<li>Structured output matters: not all models return clean structured output. If you see malformed or JSON errors, try a nearby model or quantization.</li>
-</ul>
-<h3 id="run-lm-studio-locally-with-docker">Run LM Studio locally with Docker</h3>
-<p>Containers cannot reach <code>127.0.0.1</code> on your host. Set <code>base_url</code> in <code>llm_config/&lt;profile&gt;.json</code> to <code>http://host.docker.internal:1234</code> (Docker Desktop) or your Docker bridge IP on Linux (often <code>http://172.17.0.1:1234</code>). On Linux, add <code>extra_hosts: ["host.docker.internal:host-gateway"]</code> under <code>worker_plan</code> in <code>docker-compose.yml</code> if that hostname is missing.</p>
-<p>To find your bridge IP on Linux:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>docker0<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;/inet /{print $2}&#39;</span>
-</code></pre></div>
-<p>If <code>docker0</code> is missing (e.g. with Podman or alternate bridge names), inspect the default bridge gateway:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>bridge<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="s1">&#39;&quot;&#39;</span><span class="w"> </span><span class="s1">&#39;/Gateway/{print $4}&#39;</span>
-</code></pre></div>
-<p>Example <code>llm_config/&lt;profile&gt;.json</code> entry (add <code>base_url</code> when using Docker):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;lmstudio-qwen2.5-7b-instruct-1m&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Runs via LM Studio on the host; PlanExe in Docker points to the host LM Studio server.&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LMStudio&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nt">&quot;model_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qwen2.5-7b-instruct-1m&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">&quot;base_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://host.docker.internal:1234/v1&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="nt">&quot;request_timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">120.0</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">&quot;is_function_calling_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
-</code></pre></div>
-<p>After editing <code>llm_config/&lt;profile&gt;.json</code>, rebuild or restart the worker and frontends: <code>docker compose up worker_plan frontend_single_user</code> (add <code>--build</code> or run <code>docker compose build worker_plan frontend_single_user</code> if the image needs the new config).</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<p>When you click <strong>Submit</strong> in PlanExe, a new output directory is created containing <code>log.txt</code>. Open that file and scroll to the bottom for error messages.</p>
-<p>Report issues on <a href="https://planexe.org/discord">Discord</a>. Include system info (e.g. “I’m on macOS with M1 Max, 64 GB”).</p>
-<p><strong>Where to look for logs:</strong></p>
-<ul>
-<li><strong>Host filesystem:</strong> <code>run/&lt;timestamped-output-dir&gt;/log.txt</code> (mounted from the container).</li>
-<li><strong>Container logs:</strong> <code>docker compose logs -f worker_plan</code> (watch for connection errors to LM Studio).</li>
-<li><strong>Structured-output failures:</strong> If you see JSON/parse errors or malformed output in <code>log.txt</code>, try a different model or quantization; not all models return structured output cleanly.</li>
-</ul>
-<h2 id="run-lm-studio-on-a-remote-computer">Run LM Studio on a remote computer</h2>
-<p>Use a secure tunnel instead of exposing the server directly. From your local machine:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">1234</span>:localhost:1234<span class="w"> </span>user@remote-host
-</code></pre></div>
-<p>Then set <code>base_url</code> to <code>http://localhost:1234</code> while the tunnel is running.</p>
+<h1 id="domain-aware-plan-ranking-engine-with-relative-comparison">Domain-Aware Plan Ranking Engine with Relative Comparison</h1>
+<p><strong>Author:</strong> Larry (via OpenClaw)<br />
+<strong>Date:</strong> 2026-02-22<br />
+<strong>Status:</strong> Proposal<br />
+<strong>Audience:</strong> Technical reviewers, engineers, stakeholders  </p>
 <hr />
-<h2 id="next-steps">Next steps</h2>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Current plan evaluation assumes a universal rubric (concreteness, executability, success criteria) with fixed weights. This breaks down when comparing plans from different domains:</p>
 <ul>
-<li>Learn prompt quality: <a href="../../prompt_writing_guide/">Prompt writing guide</a></li>
-<li>Understand output sections: <a href="../../plan_output_anatomy/">Plan output anatomy</a></li>
+<li>A road construction plan has different success signals than a software project</li>
+<li>Domain-specific KPIs (e.g., budget contingency in construction vs. MVP launch timing in software) matter more than generic signals</li>
+<li>Absolute scoring ("this plan is a 6/10") doesn't tell us whether it's in the top 10% of <em>similar plans</em> or mediocre compared to its peers</li>
+</ul>
+<h2 id="solution-domain-aware-relative-ranking">Solution: Domain-Aware Relative Ranking</h2>
+<p>Instead of absolute scores, rank plans <strong>within their domain context</strong> using:</p>
+<ol>
+<li><strong>Domain Classification</strong> — detect plan type (construction, software, marketing, operations, etc.)</li>
+<li><strong>Domain-Specific Signal Extraction</strong> — pull KPIs relevant to that domain</li>
+<li><strong>Corpus Bucketing</strong> — group plans by type for fair comparison</li>
+<li><strong>Relative ELO Ranking</strong> — score each plan against similar plans, not in a vacuum</li>
+<li><strong>Actionability</strong> — surface top-performing plans (&gt;90th percentile) as refinement candidates, flag major-rewrite situations</li>
+</ol>
+<h2 id="architecture">Architecture</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Plan Input
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>[Domain Classifier] → Detect plan type (construction, software, marketing, ops, etc.)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    ↓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>[Domain-Specific Extractor] → Pull KPIs: timeline clarity, resource estimates, risk mitigations, owner assignment, etc.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    ↓
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[Corpus Bucketer] → Find all similar-type plans in database
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    ↓
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>[ELO Ranker] → Compare new plan against sampled corpus neighbors
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ↓
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>[Actionability Scorer] → Is this top 10%? Fixable? Rewrite candidate?
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    ↓
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Output: Rank percentile, actionability flag, refinement recommendations
+</code></pre></div>
+<h2 id="implementation-details">Implementation Details</h2>
+<h3 id="1-domain-classification">1. Domain Classification</h3>
+<p><strong>Input:</strong> Plan text + metadata (e.g., project title, goals, phases)</p>
+<p><strong>Output:</strong> Domain label (one of: construction, software, marketing, operations, research, business-development, other)</p>
+<p><strong>Method:</strong> 
+- LLM-based classification (zero-shot with 1-2 examples per domain)
+- Fallback: keyword matching on phase names, deliverables, team roles
+- Confidence threshold: if &lt;0.7, flag as "cross-domain" or "unclear"</p>
+<p><strong>Example prompts:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;Read this plan and classify it as one of: construction, software, marketing, operations, research, business-development, other. Explain your reasoning in 1 sentence.&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Plan text here...
+</code></pre></div></p>
+<h3 id="2-domain-specific-signal-extraction">2. Domain-Specific Signal Extraction</h3>
+<p>Each domain extracts different KPIs:</p>
+<p><strong>Construction:</strong>
+- Budget vs. estimate variance tolerance
+- Schedule float/slack (days available for delays)
+- Risk contingency % of budget
+- Owner accountability (named PM, not "TBD")
+- Inspection/approval checkpoints</p>
+<p><strong>Software:</strong>
+- MVP vs. full feature clarity (what's launch, what's post-launch)
+- Tech debt acknowledgment (testing, documentation standards)
+- Team skill-market fit (do we have the right people?)
+- Dependency clarity (external APIs, third-party risks)
+- Launch/staging milestones</p>
+<p><strong>Marketing/Growth:</strong>
+- Channel diversification (not all eggs in one basket)
+- CAC payback period or LTV:CAC ratio (are we thinking about unit economics?)
+- Audience targeting specificity (who exactly, not "millennials")
+- Content calendar or cadence clarity
+- Success metric definition (viral coeff, NPS, growth rate?)</p>
+<p><strong>Operations:</strong>
+- Process automation KPI (% manual vs. automated workflows)
+- SLA definition (response time, uptime targets)
+- Escalation clarity (who handles edge cases?)
+- Monitoring/alerting (do we know if something breaks?)</p>
+<p><strong>All domains:</strong>
+- Concreteness: timeline specificity, named owner, measurable KPIs (0–10)
+- Executability: phase sequencing, dependencies clear (0–10)
+- Success criteria: explicit win conditions, not vibes (0–10)</p>
+<p><strong>Output:</strong> JSON with domain + extracted signals (each 0–10)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;software&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;concreteness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;executability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;success_criteria&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&quot;domain_specific&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;mvp_clarity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">&quot;tech_debt_acknowledged&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nt">&quot;team_fit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&quot;dependency_clarity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&quot;launch_milestones&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.92</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="3-corpus-bucketing">3. Corpus Bucketing</h3>
+<p><strong>Storage:</strong>
+- <code>plan_corpus</code> table extended with <code>domain</code> column
+- Index on <code>domain</code> for fast filtering
+- pgvector embeddings per domain (optional, for semantic search within domain)</p>
+<p><strong>Query:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;software&#39;</span><span class="w"> </span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">created_at</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+</code></pre></div></p>
+<p><strong>Bucketing strategy:</strong>
+- Exact domain match (software vs. software)
+- Fuzzy fallback: if bucket size &lt;20, blend adjacent domains (e.g., "software" + "research" for AI projects)</p>
+<h3 id="4-relative-elo-ranking">4. Relative ELO Ranking</h3>
+<p><strong>Algorithm:</strong></p>
+<ol>
+<li>Extract new plan's signals → <code>new_plan_vector</code></li>
+<li>Sample 5–10 existing plans from same domain (random + stratified by existing Elo)</li>
+<li>For each sampled plan, LLM pairwise comparison:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;Plan A: [concreteness, executability, success clarity]
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> Plan B: [concreteness, executability, success clarity]
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a> Which plan is more likely to succeed? Why?
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a> (Likert: strongly A, slightly A, neutral, slightly B, strongly B)&quot;
+</code></pre></div></li>
+<li>Use Likert output to compute win/loss, then update Elo:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>new_elo = old_elo + K * (expected_win - actual_win)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>where K = 32 (standard), expected_win based on current Elos
+</code></pre></div></li>
+</ol>
+<p><strong>Result:</strong> Each plan has an Elo score <em>within its domain</em>, comparable across similar plans.</p>
+<h3 id="5-actionability-scoring">5. Actionability Scoring</h3>
+<p><strong>Output:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;software&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;elo_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1650</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;percentile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.87</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">&quot;actionability&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nt">&quot;is_candidate_for_refinement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;87th percentile; fixable with clarity on tech debt and team roles&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="nt">&quot;needs_major_rewrite&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">&quot;top_gaps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tech_debt_acknowledged&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;team_fit&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.92</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Decision rules:</strong>
+- <strong>&gt;90th percentile</strong>: "High-performing; consider as template for other plans"
+- <strong>70–90th percentile</strong>: "Good candidate for refinement; address top gaps"
+- <strong>50–70th percentile</strong>: "Mid-tier; incremental improvements or focused refinement"
+- <strong>&lt;50th percentile &amp; low concreteness</strong>: "Major rewrite recommended; start over with domain-specific template"
+- <strong>&lt;50th percentile &amp; high concreteness</strong>: "Execution challenges; may be doable despite lower score"</p>
+<h3 id="6-api-endpoints">6. API Endpoints</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>POST /api/rank/domain-aware
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  Input: { plan_text, plan_metadata }
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  Output: { domain, signals, elo, percentile, actionability }
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>GET /api/leaderboard/by-domain?domain=software&amp;limit=20
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  Output: [ { rank, plan_id, elo, percentile }, ... ]
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>GET /api/corpus-stats?domain=software
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  Output: { domain, count, avg_elo, elo_stdev, domain_signals_info }
+</code></pre></div>
+<h2 id="data-model">Data Model</h2>
+<p><strong>New columns in <code>plan_corpus</code>:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">signals</span><span class="w"> </span><span class="n">JSONB</span><span class="p">;</span><span class="w"> </span><span class="c1">-- domain-agnostic + domain-specific</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">elo_score</span><span class="w"> </span><span class="nb">FLOAT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">1600</span><span class="p">;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">percentile</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">;</span><span class="w"> </span><span class="c1">-- recomputed periodically</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">plan_corpus</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">actionability_notes</span><span class="w"> </span><span class="n">JSONB</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_plan_corpus_domain</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">plan_corpus</span><span class="p">(</span><span class="k">domain</span><span class="p">);</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_plan_corpus_elo</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">plan_corpus</span><span class="p">(</span><span class="n">elo_score</span><span class="w"> </span><span class="k">DESC</span><span class="p">);</span>
+</code></pre></div></p>
+<h2 id="implementation-phases">Implementation Phases</h2>
+<h3 id="phase-1-minimal-domain-classifier-2-days">Phase 1: Minimal Domain Classifier (2 days)</h3>
+<ul>
+<li>LLM-based domain detection (zero-shot)</li>
+<li>Fallback to keyword matching</li>
+<li>No ELO yet; just label &amp; store domain</li>
+</ul>
+<h3 id="phase-2-domain-specific-extractors-3-days">Phase 2: Domain-Specific Extractors (3 days)</h3>
+<ul>
+<li>Build 3–4 domain-specific signal extractors (software, construction, ops, marketing)</li>
+<li>Normalize all to 0–10 scale</li>
+<li>Store signals in <code>plan_corpus</code></li>
+</ul>
+<h3 id="phase-3-elo-ranking-engine-4-days">Phase 3: ELO Ranking Engine (4 days)</h3>
+<ul>
+<li>Implement pairwise LLM comparison</li>
+<li>Elo update logic</li>
+<li>Corpus bucketing &amp; sampling</li>
+<li>Percentile calculation</li>
+</ul>
+<h3 id="phase-4-actionability-api-2-days">Phase 4: Actionability &amp; API (2 days)</h3>
+<ul>
+<li>Actionability scoring rules</li>
+<li><code>/api/rank/domain-aware</code> endpoint</li>
+<li><code>/api/leaderboard/by-domain</code> endpoint</li>
+<li>Test against real PlanExe corpus</li>
+</ul>
+<p><strong>Total estimate:</strong> 10 days</p>
+<h2 id="testing-strategy">Testing Strategy</h2>
+<ol>
+<li><strong>Unit tests:</strong> Domain classifier (accuracy on known plans)</li>
+<li><strong>Integration tests:</strong> Full ranking pipeline (new plan → elo score → percentile)</li>
+<li><strong>Corpus validation:</strong> Run against existing 100+ plans, verify percentile distribution is sensible</li>
+<li><strong>Domain coverage:</strong> Ensure top domains (software, construction, marketing) have &gt;50 plans in corpus for ranking</li>
+</ol>
+<h2 id="success-criteria">Success Criteria</h2>
+<ul>
+<li>✅ Domain classifier achieves &gt;85% accuracy on test set</li>
+<li>✅ Elo scores converge within 10 iterations (stability)</li>
+<li>✅ Top 10% plans are consistently high-clarity and actionable</li>
+<li>✅ Cross-domain comparison is avoided (software vs. construction ranked separately)</li>
+<li>✅ API latency &lt;2 seconds for new plan ranking</li>
+</ul>
+<h2 id="open-questions">Open Questions</h2>
+<ol>
+<li><strong>Domain list finality:</strong> Should we start with 5 domains or leave it extensible? (Proposal: 5 initial, extensible)</li>
+<li><strong>Sampling strategy:</strong> Random 5–10 neighbors or stratified by existing Elo? (Proposal: stratified)</li>
+<li><strong>Elo K-factor:</strong> 32 (soft), 16 (hard), 64 (volatile)? (Proposal: 32, adaptive if needed)</li>
+<li><strong>Corpus size threshold:</strong> When do we stop ranking due to insufficient peers? (Proposal: &lt;20 → merge adjacent domains)</li>
+<li><strong>Actionability UI:</strong> Does PlanExe web show percentile badges, heat maps, or refinement prompts? (Proposal: all three)</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><strong>LLM:</strong> Gemini 2.0 Flash (for domain classification and pairwise comparison)</li>
+<li><strong>Embeddings:</strong> OpenAI embeddings (optional, for semantic bucketing within domain)</li>
+<li><strong>Database:</strong> PostgreSQL with pgvector (for corpus storage and fast domain filtering)</li>
+<li><strong>Rate limiting:</strong> Respect API quotas (5 req/min per key)</li>
+</ul>
+<h2 id="risks-mitigation">Risks &amp; Mitigation</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain classifier misclassifies plan</td>
+<td>Confidence threshold; manual override option; log misclassifications</td>
+</tr>
+<tr>
+<td>Elo ranking is slow with large corpus</td>
+<td>Cache pairwise comparisons; use stratified sampling (not random)</td>
+</tr>
+<tr>
+<td>Cross-domain contamination</td>
+<td>Strict bucketing; log when fallback to adjacent domain</td>
+</tr>
+<tr>
+<td>Signal extraction is too generic</td>
+<td>Domain-specific extractors with explicit KPI lists; tune per domain</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="../07-elo-ranking/">ELO Ranking Proposal</a></li>
+<li><a href="../05-semantic-plan-search-graph/">Semantic Plan Search</a></li>
+</ul>
+<hr />
+<h2 id="changelog">Changelog</h2>
+<ul>
+<li><strong>2026-02-22:</strong> Initial proposal by Larry</li>
 </ul>
 
 

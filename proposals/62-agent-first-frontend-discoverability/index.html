@@ -4503,6 +4503,41 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../68-domain-aware-plan-ranking-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    68 domain aware plan ranking engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4907,7 +4942,7 @@
 <li>MCP auth uses <code>X-API-Key</code></li>
 <li>Tool names match current MCP tools (<code>prompt_examples</code>, <code>task_create</code>, <code>task_status</code>, <code>task_stop</code>, <code>task_file_info</code>)</li>
 <li>Pricing/cost docs point to <code>https://docs.planexe.org/costs_and_models/</code></li>
-<li>Support contact includes Discord: <code>https://planexe.org/discord</code></li>
+<li>Support contact includes Discord: <code>https://home.planexe.org/discord</code></li>
 <li>Current positioning is documented:</li>
 <li><code>home.planexe.org</code> is human-facing (account/billing/docs links)</li>
 <li><code>mcp.planexe.org</code> is the AI-facing API surface</li>
@@ -4984,7 +5019,7 @@
 <a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>
 <a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>- Docs: https://docs.planexe.org
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>- GitHub issues: https://github.com/PlanExeOrg/PlanExe/issues
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>- Discord: https://planexe.org/discord
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>- Discord: https://home.planexe.org/discord
 </code></pre></div>
 <p><strong>Implementation:</strong>
 - Add <code>public/llms.txt</code> to repo (example above)
@@ -4994,6 +5029,7 @@
 <p><strong>Reference:</strong> Orchestrator patterns gist notes that <code>llms.txt</code> is how agents discover available skills and MCP servers without manual integration.</p>
 <hr />
 <h3 id="2-openapi-llm-optimized-tool-schema">2. OpenAPI / LLM-Optimized Tool Schema</h3>
+<p><strong>STATUS: NOT YET IMPLEMENTED</strong> — This recommendation is aspirational. The <code>/openapi.json</code> endpoint does not currently exist on either domain.</p>
 <p><strong>What:</strong> Expose machine-readable schemas for PlanExe's AI-facing interfaces (MCP-first), and optionally OpenAPI for any public REST surfaces.</p>
 <p><strong>Why:</strong> OpenAI's function-calling guide and Responses API expect structured function schemas. LLMs perform better with:
 - Clear, detailed descriptions (not just docstring summaries)
@@ -5125,6 +5161,7 @@
 <p><strong>Reference:</strong> OpenAI function-calling guide emphasizes that detailed descriptions help models understand when and how to use tools. The Responses API docs recommend OpenAPI 3.1 as the source of truth for function schemas.</p>
 <hr />
 <h3 id="3-mcp-well-known-endpoint-well-knownmcpjson">3. MCP Well-Known Endpoint (<code>.well-known/mcp.json</code>)</h3>
+<p><strong>STATUS: NOT YET IMPLEMENTED</strong> — This endpoint does not currently exist at <code>mcp.planexe.org/.well-known/mcp.json</code>. This is a future enhancement.</p>
 <p><strong>What:</strong> Add <code>/.well-known/mcp.json</code> describing PlanExe as an MCP server, compatible with OpenAI's MCP connector and orchestrators.</p>
 <p><strong>Why:</strong> OpenAI's tools-connectors-mcp guide and orchestrator patterns show that MCP servers need a discoverable manifest listing available tools, auth requirements, and rate limits.</p>
 <p><strong>Content (sample):</strong></p>
