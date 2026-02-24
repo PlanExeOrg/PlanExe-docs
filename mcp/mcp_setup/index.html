@@ -4376,25 +4376,38 @@
 <h2 id="1-understand-the-flow">1. Understand the flow</h2>
 <ol>
 <li>Ask for prompt examples.</li>
-<li>Expand the user idea into a high‑quality prompt.</li>
+<li>Inspect <code>model_profile</code> options and available models.</li>
+<li>Expand the user idea into a high-quality prompt (typically ~300-800 words) and get user approval.
+   Use this compact shape: objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria.</li>
 <li>Create the plan task.</li>
-<li>Poll for status.</li>
-<li>Download the report (HTML or zip).</li>
+<li>Poll for status (about every 5 minutes).</li>
+<li>Download artifacts via <code>task_file_info</code> (cloud) or <code>task_download</code> (mcp_local helper).</li>
 </ol>
 <hr />
 <h2 id="2-minimal-tool-usage">2. Minimal tool usage</h2>
 <ol>
 <li><code>prompt_examples</code></li>
+<li><code>model_profiles</code></li>
 <li><code>task_create</code></li>
 <li><code>task_status</code></li>
-<li><code>task_download</code></li>
+<li><code>task_file_info</code></li>
 </ol>
+<p>Optional local helper:
+- <code>task_download</code> (provided by <code>mcp_local</code>, not <code>mcp_cloud</code>)</p>
+<p>For <code>task_create</code>:</p>
+<ul>
+<li>Visible arguments: <code>prompt</code> (required), <code>model_profile</code> (optional).</li>
+<li>Hidden developer metadata: <code>speed_vs_detail</code> (<code>ping</code> | <code>fast</code> | <code>all</code>).</li>
+<li>Reference: <a href="../planexe_mcp_interface/#62-task_create">PlanExe MCP interface</a></li>
+</ul>
 <hr />
 <h2 id="3-success-criteria">3. Success criteria</h2>
 <ul>
 <li>You can fetch example prompts.</li>
 <li>You can create a plan task.</li>
-<li>You can download the report artifact.</li>
+<li>You can fetch artifact metadata/URLs with <code>task_file_info</code> (and optionally save locally via <code>task_download</code> when using <code>mcp_local</code>).</li>
+<li>Your client can parse <code>error.code</code> and <code>error.message</code> and handle <code>{}</code> from <code>task_file_info</code> as "not ready yet".</li>
+<li>If running parallel work, your client tracks multiple <code>task_id</code>s explicitly (server-side global cap is not enforced).</li>
 </ul>
 <hr />
 <h2 id="next-steps">Next steps</h2>
