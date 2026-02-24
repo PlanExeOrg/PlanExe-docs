@@ -4381,6 +4381,7 @@
    Use this compact shape: objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria.</li>
 <li>Create the plan task.</li>
 <li>Poll for status (about every 5 minutes).</li>
+<li>If status is <code>failed</code>, optionally call <code>task_retry</code> (defaults to <code>model_profile=baseline</code>).</li>
 <li>Download artifacts via <code>task_file_info</code> (cloud) or <code>task_download</code> (mcp_local helper).</li>
 </ol>
 <hr />
@@ -4390,6 +4391,7 @@
 <li><code>model_profiles</code></li>
 <li><code>task_create</code></li>
 <li><code>task_status</code></li>
+<li><code>task_retry</code> (optional, only for failed tasks)</li>
 <li><code>task_file_info</code></li>
 </ol>
 <p>Optional local helper:

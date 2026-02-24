@@ -853,6 +853,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-claim-on-glama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Claim on Glama
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4350,6 +4361,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#5-claim-on-glama" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Claim on Glama
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4407,6 +4429,24 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span><span class="s2">&quot;https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.PlanExeOrg/planexe&quot;</span>
 </code></pre></div>
 <p>If found in registry search, it should become discoverable in the GitHub MCP Registry UI at <a href="https://github.com/mcp">https://github.com/mcp</a>.</p>
+<h2 id="5-claim-on-glama">5) Claim on Glama</h2>
+<p>Glama connector claim verification expects a public well-known file:</p>
+<ul>
+<li><code>https://mcp.planexe.org/.well-known/glama.json</code></li>
+</ul>
+<p>PlanExe serves this from <code>mcp_cloud/http_server.py</code> with the schema:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://glama.ai/mcp/schemas/connector.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;maintainers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;neoneye@gmail.com&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>If needed, override the email via environment variable:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">PLANEXE_MCP_GLAMA_MAINTAINER_EMAIL</span><span class="o">=</span>neoneye@gmail.com
+</code></pre></div>
 
 
 

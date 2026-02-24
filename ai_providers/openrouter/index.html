@@ -4397,13 +4397,12 @@
 <h1 id="using-planexe-with-openrouter">Using PlanExe with OpenRouter</h1>
 <p>For new users, OpenRouter is the recommended starting point. When you have have generated a few plans via OpenRouter, then you can try switch to other AI providers.</p>
 <p><a href="https://openrouter.ai/">OpenRouter</a> provides access to a large number of LLM models, that runs in the cloud.</p>
-<p>Unfortunately there is no <code>free</code> model that works reliable with PlanExe.</p>
+<p>Unfortunately there is no <code>free</code> model that works reliable with PlanExe. When I use a <code>free</code> model on OpenRouter, then most of the times PlanExe fails to create a plan. My impression is that the <code>free</code> models are unreliable and slow, I guess the AI providers doesn't treat <code>free</code> models as high priority.</p>
 <p>In my experience, the <code>paid</code> models are the most reliable. Models like <a href="https://openrouter.ai/google/gemini-2.0-flash-001">google/gemini-2.0-flash-001</a>. and <a href="https://openrouter.ai/openai/gpt-4o-mini">openai/gpt-4o-mini</a> are cheap and faster than running models on my own computer and without risk of it overheating.</p>
-<p>I haven't been able to find a <code>free</code> model on OpenRouter that works well with PlanExe.</p>
-<p>Avoid pricey <code>paid</code> models. PlanExe does more than 100 LLM inference calls per plan, so each run uses many tokens. With a cheap model, creating a full plan costs less than 0.30 USD; with one of the newest models, the price can exceed 20 USD. To keep PlanExe affordable for as many users as possible, the defaults use older, cheaper models.</p>
+<p>Avoid pricey <code>paid</code> models. PlanExe does more than 100 LLM inference calls per plan, so each run uses many tokens. With a cheap model, creating a full plan costs less than 0.50 USD; with one of the newest models, the price can exceed 20 USD. To keep PlanExe affordable for as many users as possible, the defaults use older, cheaper models.</p>
 <h2 id="quickstart-docker">Quickstart (Docker)</h2>
 <ol>
-<li>Install Docker (with Docker Compose) — no local Python or pip is needed now.</li>
+<li>Install Docker (with Docker Compose) — no local Python or pip is needed.</li>
 <li>Clone the repo and enter it:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/PlanExeOrg/PlanExe.git
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cd PlanExe

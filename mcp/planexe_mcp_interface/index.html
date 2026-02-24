@@ -1391,10 +1391,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#65-download-flow-task_download-vs-task_file_info" class="md-nav__link">
+  <a href="#65-task_retry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.5 Download flow (task_download vs task_file_info)
+        6.5 task_retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-download-flow-task_download-vs-task_file_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Download flow (task_download vs task_file_info)
       
     </span>
   </a>
@@ -5359,10 +5370,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#65-download-flow-task_download-vs-task_file_info" class="md-nav__link">
+  <a href="#65-task_retry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.5 Download flow (task_download vs task_file_info)
+        6.5 task_retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#66-download-flow-task_download-vs-task_file_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 Download flow (task_download vs task_file_info)
       
     </span>
   </a>
@@ -5826,7 +5848,7 @@
 <p>Implementors should expose the following to agents so they understand what PlanExe does:</p>
 <ul>
 <li><strong>What:</strong> PlanExe turns a plain-English goal into a strategic project-plan draft (20+ sections) in ~10–20 min. Sections include executive summary, interactive Gantt charts, investor pitch, SWOT, governance, team profiles, work breakdown, scenario comparison, expert criticism, and adversarial sections (premortem, self-audit, premise attacks) that stress-test the plan. The output is a draft to refine, not an executable or final document — but it surfaces hard questions the prompter may not have considered.</li>
-<li><strong>Required interaction order:</strong> Call <code>prompt_examples</code> first. Optional before <code>task_create</code>: call <code>model_profiles</code> to inspect profile guidance and available models in each profile. Then complete a non-tool step: formulate a detailed prompt as flowing prose (not structured markdown), typically ~300-800 words, using the examples as a baseline; include objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria; get user approval. Only after approval, call <code>task_create</code>. Then poll <code>task_status</code> (about every 5 minutes); use <code>task_download</code> (mcp_local helper) or <code>task_file_info</code> (mcp_cloud tool) when complete (<code>pending</code>/<code>processing</code> = keep polling, <code>completed</code> = download now, <code>failed</code> = terminal). To stop, call <code>task_stop</code> with the <code>task_id</code> from <code>task_create</code>.</li>
+<li><strong>Required interaction order:</strong> Call <code>prompt_examples</code> first. Optional before <code>task_create</code>: call <code>model_profiles</code> to inspect profile guidance and available models in each profile. Then complete a non-tool step: formulate a detailed prompt as flowing prose (not structured markdown), typically ~300-800 words, using the examples as a baseline; include objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria; get user approval. Only after approval, call <code>task_create</code>. Then poll <code>task_status</code> (about every 5 minutes); use <code>task_download</code> (mcp_local helper) or <code>task_file_info</code> (mcp_cloud tool) when complete (<code>pending</code>/<code>processing</code> = keep polling, <code>completed</code> = download now, <code>failed</code> = terminal). If a task fails and the caller wants another attempt for the same <code>task_id</code>, call <code>task_retry</code> (optional <code>model_profile</code>, default <code>baseline</code>). To stop, call <code>task_stop</code> with the <code>task_id</code> from <code>task_create</code>.</li>
 <li><strong>Output:</strong> Self-contained interactive HTML report (~700KB) with collapsible sections and interactive Gantt charts — open in a browser. The zip contains the intermediary pipeline files (md, json, csv) that fed the report.</li>
 </ul>
 <h3 id="13-scope-of-this-document">1.3 Scope of this document</h3>
@@ -5876,10 +5898,10 @@
 <h3 id="31-mcp-tools-vs-mcp-tasks-run-as-task">3.1 MCP tools vs MCP tasks ("Run as task")</h3>
 <p>The MCP specification defines two different mechanisms:</p>
 <ul>
-<li><strong>MCP tools</strong> (e.g. task_create, task_status, task_stop): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls task_create → receives task_id → polls task_status → uses task_file_info (and optionally task_download via mcp_local). This document specifies those tools.</li>
+<li><strong>MCP tools</strong> (e.g. task_create, task_status, task_stop, task_retry): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls task_create → receives task_id → polls task_status → optionally calls task_retry on failed → uses task_file_info (and optionally task_download via mcp_local). This document specifies those tools.</li>
 <li><strong>MCP tasks protocol</strong> ("Run as task" in some UIs): a separate mechanism where the client can run a tool "as a task" using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.</li>
 </ul>
-<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. Intended flow: call <code>prompt_examples</code>; optionally call <code>model_profiles</code>; perform the non-tool prompt drafting/approval step; call <code>task_create</code>; poll <code>task_status</code>; then call <code>task_file_info</code> (or <code>task_download</code> via mcp_local).</p>
+<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. Intended flow: call <code>prompt_examples</code>; optionally call <code>model_profiles</code>; perform the non-tool prompt drafting/approval step; call <code>task_create</code>; poll <code>task_status</code>; if failed call <code>task_retry</code> (optional); then call <code>task_file_info</code> (or <code>task_download</code> via mcp_local) when completed.</p>
 <hr />
 <h2 id="4-system-model">4. System Model</h2>
 <h3 id="41-core-entities">4.1 Core entities</h3>
@@ -5933,6 +5955,7 @@
 <li>pending → processing when picked up by a worker</li>
 <li>processing → completed via normal success</li>
 <li>processing → failed via error</li>
+<li>failed → pending when <code>task_retry</code> is accepted</li>
 </ul>
 <h3 id="53-invalid-transitions">5.3 Invalid transitions</h3>
 <ul>
@@ -6082,7 +6105,7 @@ If no models are available in any profile, the tool returns <code>isError=true</
 </code></pre></div>
 <p><strong>Important</strong></p>
 <ul>
-<li>task_id is a UUID returned by task_create. Use this exact UUID for task_status/task_stop/task_file_info (and task_download when using mcp_local).</li>
+<li>task_id is a UUID returned by task_create. Use this exact UUID for task_status/task_stop/task_retry/task_file_info (and task_download when using mcp_local).</li>
 </ul>
 <p><strong>Behavior</strong></p>
 <ul>
@@ -6158,7 +6181,40 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <li>Must persist enough Luigi state to resume incrementally.</li>
 </ul>
 <hr />
-<h3 id="65-download-flow-task_download-vs-task_file_info">6.5 Download flow (task_download vs task_file_info)</h3>
+<h3 id="65-task_retry">6.5 task_retry</h3>
+<p>Retries a task that is currently in <code>failed</code> state.</p>
+<p><strong>Request</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Input</strong></p>
+<ul>
+<li>task_id: UUID of a failed task.</li>
+<li>model_profile: optional (<code>baseline</code> | <code>premium</code> | <code>frontier</code> | <code>custom</code>), default <code>baseline</code>.</li>
+</ul>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="nt">&quot;retried_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-24T15:20:00Z&quot;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Required semantics</strong></p>
+<ul>
+<li>Only failed tasks are retryable.</li>
+<li>On success, the same task_id is reset to <code>pending</code> and requeued.</li>
+<li>Prior artifacts for that task are cleared before requeue.</li>
+</ul>
+<p><strong>Error behavior</strong></p>
+<ul>
+<li>Unknown task_id: <code>TASK_NOT_FOUND</code> (<code>isError=true</code>).</li>
+<li>Task not failed: <code>TASK_NOT_FAILED</code> (<code>isError=true</code>).</li>
+</ul>
+<hr />
+<h3 id="66-download-flow-task_download-vs-task_file_info">6.6 Download flow (task_download vs task_file_info)</h3>
 <p><strong>If your client exposes task_download</strong> (e.g. mcp_local): use it to save the report or zip locally; it calls task_file_info under the hood, then fetches and writes to the local save path (e.g. PLANEXE_PATH).</p>
 <p><strong>If you only have task_file_info</strong> (e.g. direct connection to mcp_cloud): call it with task_id and artifact ("report" or "zip"); use the returned download_url to fetch the file (e.g. GET with API key if configured).</p>
 <p><strong>task_file_info input</strong></p>
@@ -6203,6 +6259,7 @@ Concurrency is a client-side coordination concern.</p>
 <p>Additional semantics:</p>
 <ul>
 <li>Every <code>task_create</code> call creates a new independent task with a new <code>task_id</code>.</li>
+<li><code>task_retry</code> reuses the existing failed <code>task_id</code> (it does not create a new task id).</li>
 <li>The server does not deduplicate “same prompt” requests into a single shared task.</li>
 <li>Keep your own task registry/client state if you run multiple tasks concurrently.</li>
 </ul>
@@ -6216,16 +6273,16 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>error.details</code>: optional object</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TASK_NOT_FOUND&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Task not found: &lt;task_id&gt;&quot;</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TASK_NOT_FOUND&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Task not found: &lt;task_id&gt;&quot;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="92-iserror-behavior">9.2 isError behavior</h3>
 <ul>
-<li><code>task_create</code>, <code>task_status</code>, <code>task_stop</code>: unknown/invalid requests return <code>isError=true</code> with <code>error</code>.</li>
+<li><code>task_create</code>, <code>task_status</code>, <code>task_stop</code>, <code>task_retry</code>: unknown/invalid requests return <code>isError=true</code> with <code>error</code>.</li>
 <li><code>model_profiles</code>: returns <code>isError=true</code> with <code>MODEL_PROFILES_UNAVAILABLE</code> when no models are available in any profile.</li>
 <li><code>task_file_info</code>: uses mixed behavior:</li>
 <li>returns <code>{}</code> (not an error) while artifacts are not ready.</li>
@@ -6239,6 +6296,7 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>INVALID_TOOL</code>: unknown MCP tool name.</li>
 <li><code>INTERNAL_ERROR</code>: uncaught server error.</li>
 <li><code>TASK_NOT_FOUND</code>: task id not found.</li>
+<li><code>TASK_NOT_FAILED</code>: task_retry called for a task that is not in failed state.</li>
 <li><code>INVALID_USER_API_KEY</code>: provided user_api_key is invalid.</li>
 <li><code>USER_API_KEY_REQUIRED</code>: deployment requires user_api_key for task_create.</li>
 <li><code>INSUFFICIENT_CREDITS</code>: caller account has no credits for task_create.</li>
@@ -6262,6 +6320,7 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>USER_API_KEY_REQUIRED</code></li>
 <li><code>INSUFFICIENT_CREDITS</code></li>
 <li><code>INVALID_TOOL</code></li>
+<li>For <code>TASK_NOT_FAILED</code>: call <code>task_retry</code> only after <code>task_status.state == failed</code>.</li>
 <li>For <code>TASK_NOT_FOUND</code>: verify task_id source and stop polling that id.</li>
 <li>For <code>generation_failed</code>: treat as terminal failure and surface task progress_message to user.</li>
 </ul>
@@ -6398,13 +6457,13 @@ Concurrency is a client-side coordination concern.</p>
 <hr />
 <h2 id="appendix-a-example-end-to-end-flow">Appendix A — Example End-to-End Flow</h2>
 <p><strong>Create task</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p><strong>Start run</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p><strong>Stop</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="appendix-b-optional-v11-extensions">Appendix B — Optional v1.1 Extensions</h2>
