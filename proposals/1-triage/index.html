@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry the Laptop Lobster">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/1-triage/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/29-elo-ranked-bid-selection-and-escalation/">
+        <link rel="prev" href="../08-ui-for-editing-plan/">
       
       
-        <link rel="prev" href="../28-autonomous-bid-factory-orchestration/">
-      
-      
-        <link rel="next" href="../30-autonomous-bid-governance-risk-and-ethics/">
+        <link rel="next" href="../11-investor-thesis-matching-engine/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>ELO-Ranked Bid Selection & Escalation Pipeline: Technical Documentation - PlanExe Documentation</title>
+        <title>1 triage - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ELO-Ranked Bid Selection & Escalation Pipeline: Technical Documentation - PlanExe Documentation" />
+<meta property="og:title" content="1 triage - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/29-elo-ranked-bid-selection-and-escalation.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/1-triage.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/29-elo-ranked-bid-selection-and-escalation/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/1-triage/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="ELO-Ranked Bid Selection & Escalation Pipeline: Technical Documentation - PlanExe Documentation" />
+<meta property="twitter:title" content="1 triage - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/29-elo-ranked-bid-selection-and-escalation.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/1-triage.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#elo-ranked-bid-selection-escalation-pipeline" class="md-skip">
+        <a href="#planexe-proposal-triage-8020-analysis-strategic-gaps" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ELO-Ranked Bid Selection & Escalation Pipeline: Technical Documentation
+              1 triage
             
           </span>
         </div>
@@ -2201,10 +2199,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../1-triage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 triage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2220,6 +2245,497 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-leverage-proposals-the-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Leverage Proposals (The 20%)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuse-opportunities-adjacent-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reuse Opportunities &amp; Adjacent Clusters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reuse Opportunities &amp; Adjacent Clusters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proposal-pairs-that-share-heuristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposal Pairs That Share Heuristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-cluster-interconnected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Cluster (Interconnected)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8020-quick-wins-parameter-tweaks-no-rewrites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        80:20 Quick Wins (Parameter Tweaks, No Rewrites)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="80:20 Quick Wins (Parameter Tweaks, No Rewrites)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#category-1-ranking-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 1: Ranking Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-2-dag-distribution-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 2: DAG &amp; Distribution Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-3-alignment-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 3: Alignment &amp; Terminology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secondthird-order-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second/Third Order Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Second/Third Order Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-1st-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct (1st Order)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2nd-order-downstream-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2nd Order (Downstream Reliability)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3rd-order-strategic-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3rd Order (Strategic Implications)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-gaps-in-existing-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Gaps in Existing Proposals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Gaps in Existing Proposals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gap-1-execution-feedback-loop-missing-entirely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 1: Execution Feedback Loop (Missing Entirely)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-2-cost-estimation-validation-order-of-magnitude-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 2: Cost Estimation Validation (Order-of-Magnitude Reconciliation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-3-stakeholder-alignment-pre-plan-assumption-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 3: Stakeholder Alignment Pre-Plan (Assumption Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-4-plan-complexity-budgeting-dont-over-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 4: Plan Complexity Budgeting (Don't Over-Plan)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-5-software-plan-specialization-code-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 5: Software Plan Specialization (Code Bridge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-proposals-should-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Proposals (Should Exist)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategic-questions-simon-might-not-be-asking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategic Questions Simon Might Not Be Asking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strategic Questions Simon Might Not Be Asking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-unit-economics-of-plan-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Unit Economics of Plan Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-data-moat-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Data Moat Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-competitive-positioning-vs-consulting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Competitive Positioning vs. Consulting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-megaproject-scalability-10-year-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Megaproject Scalability (10-Year Plans)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-margin-structure-cost-reduction-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: Margin Structure &amp; Cost Reduction Curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-tasks-we-can-execute-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relevant Tasks We Can Execute Now
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevant Tasks We Can Execute Now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-proposal-dependency-graph-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Proposal Dependency Graph (Executable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-estimation-reconciliation-fermisanitycheck-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Estimation Reconciliation (FermiSanityCheck Extension)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-proposal-sizing-matrix-quick-win-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Proposal Sizing Matrix (Quick Win Inventory)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-fermisanitycheck-implementation-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: FermiSanityCheck Implementation (Core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-validation-observability-dashboard-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5: Validation Observability Dashboard (Reporting)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-stakeholder-assumption-validation-ui-pre-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6: Stakeholder Assumption Validation UI (Pre-Plan)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-complexity-gating-implementation-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7: Complexity Gating Implementation (Cost Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-execution-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Execution Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Execution Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-this-week-stabilization-fermi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 (This Week): Stabilization + Fermi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-next-week-quick-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 (Next Week): Quick Wins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-week-after-strategic-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 (Week After): Strategic Proposals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-Off
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2859,44 +3375,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    29 elo ranked bid selection and escalation
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
         
   
   
@@ -2919,364 +3401,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Architecture
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="System Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-bid-ingestion-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Bid Ingestion &amp; Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-pairwise-comparison-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Pairwise Comparison Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-elo-update-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Elo Update Worker
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-escalation-monitor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Escalation Monitor
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ranking-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ranking Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Ranking Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard-elo-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Standard Elo Formula
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update Rule
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dynamic-k-factor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dynamic K-Factor
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#database-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Database Schema
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Database Schema">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bids" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        bids
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comparisons" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        comparisons
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#escalation_queue" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        escalation_queue
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#post-apibidssubmit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/bids/submit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-apibidsqueueescalated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /api/bids/queue/escalated
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-apiadminforce_match" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/admin/force_match
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-with-notification-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration with Notification Systems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-selection-funnel-definition-1-week" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Selection Funnel Definition (1 week)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-ranking-pipeline-integration-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Ranking Pipeline Integration (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-escalation-workflow-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Escalation Workflow (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-outcome-learning-loop-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Outcome Learning Loop (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4686,10 +4810,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-problem" class="md-nav__link">
+  <a href="#high-leverage-proposals-the-20" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Problem
+        High-Leverage Proposals (The 20%)
       
     </span>
   </a>
@@ -4697,22 +4821,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
+  <a href="#reuse-opportunities-adjacent-clusters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        System Architecture
+        Reuse Opportunities &amp; Adjacent Clusters
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="System Architecture">
+    <nav class="md-nav" aria-label="Reuse Opportunities &amp; Adjacent Clusters">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-bid-ingestion-normalization" class="md-nav__link">
+  <a href="#proposal-pairs-that-share-heuristics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Bid Ingestion &amp; Normalization
+        Proposal Pairs That Share Heuristics
       
     </span>
   </a>
@@ -4720,32 +4844,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-pairwise-comparison-engine" class="md-nav__link">
+  <a href="#validation-cluster-interconnected" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pairwise Comparison Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-elo-update-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Elo Update Worker
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-escalation-monitor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Escalation Monitor
+        Validation Cluster (Interconnected)
       
     </span>
   </a>
@@ -4758,22 +4860,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ranking-model" class="md-nav__link">
+  <a href="#8020-quick-wins-parameter-tweaks-no-rewrites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ranking Model
+        80:20 Quick Wins (Parameter Tweaks, No Rewrites)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Ranking Model">
+    <nav class="md-nav" aria-label="80:20 Quick Wins (Parameter Tweaks, No Rewrites)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#standard-elo-formula" class="md-nav__link">
+  <a href="#category-1-ranking-tuning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Standard Elo Formula
+        Category 1: Ranking Tuning
       
     </span>
   </a>
@@ -4781,10 +4883,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update-rule" class="md-nav__link">
+  <a href="#category-2-dag-distribution-tuning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update Rule
+        Category 2: DAG &amp; Distribution Tuning
       
     </span>
   </a>
@@ -4792,10 +4894,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dynamic-k-factor" class="md-nav__link">
+  <a href="#category-3-alignment-terminology" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic K-Factor
+        Category 3: Alignment &amp; Terminology
       
     </span>
   </a>
@@ -4808,22 +4910,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#database-schema" class="md-nav__link">
+  <a href="#secondthird-order-effects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Database Schema
+        Second/Third Order Effects
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Database Schema">
+    <nav class="md-nav" aria-label="Second/Third Order Effects">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bids" class="md-nav__link">
+  <a href="#direct-1st-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bids
+        Direct (1st Order)
       
     </span>
   </a>
@@ -4831,10 +4933,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparisons" class="md-nav__link">
+  <a href="#2nd-order-downstream-reliability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        comparisons
+        2nd Order (Downstream Reliability)
       
     </span>
   </a>
@@ -4842,10 +4944,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#escalation_queue" class="md-nav__link">
+  <a href="#3rd-order-strategic-implications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        escalation_queue
+        3rd Order (Strategic Implications)
       
     </span>
   </a>
@@ -4858,22 +4960,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
+  <a href="#critical-gaps-in-existing-proposals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API Reference
+        Critical Gaps in Existing Proposals
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="API Reference">
+    <nav class="md-nav" aria-label="Critical Gaps in Existing Proposals">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#post-apibidssubmit" class="md-nav__link">
+  <a href="#gap-1-execution-feedback-loop-missing-entirely" class="md-nav__link">
     <span class="md-ellipsis">
       
-        POST /api/bids/submit
+        Gap 1: Execution Feedback Loop (Missing Entirely)
       
     </span>
   </a>
@@ -4881,10 +4983,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-apibidsqueueescalated" class="md-nav__link">
+  <a href="#gap-2-cost-estimation-validation-order-of-magnitude-reconciliation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GET /api/bids/queue/escalated
+        Gap 2: Cost Estimation Validation (Order-of-Magnitude Reconciliation)
       
     </span>
   </a>
@@ -4892,10 +4994,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-apiadminforce_match" class="md-nav__link">
+  <a href="#gap-3-stakeholder-alignment-pre-plan-assumption-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        POST /api/admin/force_match
+        Gap 3: Stakeholder Alignment Pre-Plan (Assumption Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-4-plan-complexity-budgeting-dont-over-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 4: Plan Complexity Budgeting (Don't Over-Plan)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-5-software-plan-specialization-code-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 5: Software Plan Specialization (Code Bridge)
       
     </span>
   </a>
@@ -4908,10 +5032,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integration-with-notification-systems" class="md-nav__link">
+  <a href="#missing-proposals-should-exist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integration with Notification Systems
+        Missing Proposals (Should Exist)
       
     </span>
   </a>
@@ -4919,33 +5043,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
+  <a href="#strategic-questions-simon-might-not-be-asking" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Future Enhancements
+        Strategic Questions Simon Might Not Be Asking
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+    <nav class="md-nav" aria-label="Strategic Questions Simon Might Not Be Asking">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-a-selection-funnel-definition-1-week" class="md-nav__link">
+  <a href="#question-1-unit-economics-of-plan-generation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase A — Selection Funnel Definition (1 week)
+        Question 1: Unit Economics of Plan Generation
       
     </span>
   </a>
@@ -4953,10 +5066,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-b-ranking-pipeline-integration-2-weeks" class="md-nav__link">
+  <a href="#question-2-data-moat-strategy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase B — Ranking Pipeline Integration (2 weeks)
+        Question 2: Data Moat Strategy
       
     </span>
   </a>
@@ -4964,10 +5077,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-c-escalation-workflow-2-weeks" class="md-nav__link">
+  <a href="#question-3-competitive-positioning-vs-consulting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase C — Escalation Workflow (2 weeks)
+        Question 3: Competitive Positioning vs. Consulting
       
     </span>
   </a>
@@ -4975,10 +5088,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-d-outcome-learning-loop-2-weeks" class="md-nav__link">
+  <a href="#question-4-megaproject-scalability-10-year-plans" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase D — Outcome Learning Loop (2 weeks)
+        Question 4: Megaproject Scalability (10-Year Plans)
       
     </span>
   </a>
@@ -4986,21 +5099,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
+  <a href="#question-5-margin-structure-cost-reduction-curve" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
+        Question 5: Margin Structure &amp; Cost Reduction Curve
       
     </span>
   </a>
@@ -5009,6 +5111,161 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-tasks-we-can-execute-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relevant Tasks We Can Execute Now
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevant Tasks We Can Execute Now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-proposal-dependency-graph-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Proposal Dependency Graph (Executable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-estimation-reconciliation-fermisanitycheck-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Estimation Reconciliation (FermiSanityCheck Extension)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-proposal-sizing-matrix-quick-win-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Proposal Sizing Matrix (Quick Win Inventory)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-fermisanitycheck-implementation-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: FermiSanityCheck Implementation (Core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-validation-observability-dashboard-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5: Validation Observability Dashboard (Reporting)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-stakeholder-assumption-validation-ui-pre-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6: Stakeholder Assumption Validation UI (Pre-Plan)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-complexity-gating-implementation-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7: Complexity Gating Implementation (Cost Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-execution-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Execution Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Execution Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-this-week-stabilization-fermi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 (This Week): Stabilization + Fermi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-next-week-quick-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 (Next Week): Quick Wins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-week-after-strategic-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 (Week After): Strategic Proposals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-Off
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5032,273 +5289,484 @@
   
 
 
-<h1 id="elo-ranked-bid-selection-escalation-pipeline">ELO-Ranked Bid Selection &amp; Escalation Pipeline</h1>
-<p><strong>Author:</strong> Larry (via OpenClaw)<br />
-<strong>Date:</strong> 2026-02-11<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Audience:</strong> Developers, Product Managers  </p>
+<h1 id="planexe-proposal-triage-8020-analysis-strategic-gaps">PlanExe Proposal Triage — 80:20 Analysis &amp; Strategic Gaps</h1>
+<p><strong>Date:</strong> 26 February 2026<br />
+<strong>Authors:</strong> Larry + Egon<br />
+<strong>Status:</strong> Ready for Review &amp; Discussion  </p>
 <hr />
 <h2 id="overview">Overview</h2>
-<p>This system implements an automated ranking and escalation pipeline for incoming project proposals (bids). It uses an Elo rating system—similar to chess rankings—to dynamically score bids against each other based on quality, feasibility, and strategic fit. High-scoring bids are automatically escalated to human reviewers, while low-scoring bids are filtered out.</p>
-<h2 id="core-problem">Core Problem</h2>
-<p>When the "Bid Factory" generates hundreds of potential project bids per day, human review becomes the bottleneck. We need a way to mathematically sort the "signal" from the "noise" without manually reading every submission.</p>
-<h2 id="system-architecture">System Architecture</h2>
-<h3 id="1-bid-ingestion-normalization">1. Bid Ingestion &amp; Normalization</h3>
-<p>Bids arrive from various sources (User input, Agent generated). They are normalized into a standard JSON structure suitable for analysis.</p>
-<h3 id="2-pairwise-comparison-engine">2. Pairwise Comparison Engine</h3>
-<p>The core logic. An LLM (<code>gemini-2.0-flash</code>) acts as the judge.
--   It takes two bids (A and B).
--   It evaluates them on 5 key dimensions:
-    1.  <strong>Completeness:</strong> Is the plan fully formed?
-    2.  <strong>Evidence:</strong> Is it backed by data?
-    3.  <strong>ROI:</strong> Is the return worth the risk?
-    4.  <strong>Feasibility:</strong> Can we actually build this?
-    5.  <strong>Strategic Fit:</strong> Does it align with current goals?
--   It outputs a "Win Probability" for Bid A.</p>
-<h3 id="3-elo-update-worker">3. Elo Update Worker</h3>
-<p>A background worker processes the LLM's decision and updates the Elo scores of both bids.
--   <strong>K-Factor:</strong> We use a dynamic K-factor. New bids have high K (volatile rating), established bids have low K (stable rating).</p>
-<h3 id="4-escalation-monitor">4. Escalation Monitor</h3>
-<p>A specialized service that watches for:
--   <strong>Elite Bids:</strong> Elo &gt; 1800 (Top 5%). Immediate Slack/Email alert to Investment Committee.
--   <strong>Promising Bids:</strong> Elo &gt; 1500 (Top 50%). Added to the "Weekly Review" queue.
--   <strong>Junk Bids:</strong> Elo &lt; 1200. Auto-archived.</p>
+<p>Simon asked us to triage the proposal space with an 80:20 lens. This document captures:</p>
+<ol>
+<li><strong>Which proposals deliver outsized value</strong> — the 20% that unlock 80% of the architecture</li>
+<li><strong>Related proposals nearby in the graph</strong> — which ones can reuse artifacts or reasoning</li>
+<li><strong>High-leverage parameter tweaks</strong> — code tweaks and second/third order effects</li>
+<li><strong>Critical gaps</strong> — what's missing that should be proposed</li>
+<li><strong>Relevant questions</strong> — what Simon might not be asking yet</li>
+<li><strong>Actionable tasks</strong> — what we can execute proactively</li>
+</ol>
+<p>We focused on recent proposals ("67+" cluster) plus the validation/orchestration story that <strong>FermiSanityCheck</strong> will unlock.</p>
 <hr />
-<h2 id="ranking-model">Ranking Model</h2>
-<h3 id="standard-elo-formula">Standard Elo Formula</h3>
-<p>We use the standard logistic curve for expected score:</p>
-<p>$$E_A = \frac{1}{1 + 10^{(R_B - R_A) / 400}}$$</p>
-<p>Where:
-- $E_A$ is the expected score for Bid A.
-- $R_A$ and $R_B$ are the current ratings.</p>
-<h3 id="update-rule">Update Rule</h3>
-<p>$$R_A' = R_A + K \cdot (S_A - E_A)$$</p>
-<p>Where:
-- $S_A$ is the actual score (1 for win, 0 for loss, 0.5 for draw).
-- $K$ is the K-factor (defaults to 32).</p>
-<h3 id="dynamic-k-factor">Dynamic K-Factor</h3>
-<p>To quickly identify diamonds in the rough:
--   If <code>bids_count</code> &lt; 10: $K = 64$
--   If <code>bids_count</code> &gt; 10: $K = 32$
--   If <code>escalated</code> = True: $K = 16$ (Stability mode)</p>
-<hr />
-<h2 id="database-schema">Database Schema</h2>
-<h3 id="bids"><code>bids</code></h3>
-<p>The central table for all project proposals.</p>
+<h2 id="high-leverage-proposals-the-20">High-Leverage Proposals (The 20%)</h2>
+<p>These 5-7 proposals drive 80% of architectural value:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
+<th>#</th>
+<th>Title</th>
+<th>Lines</th>
+<th>Why It Matters</th>
+<th>Role</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
+<td><strong>07</strong></td>
+<td>Elo Ranking System</td>
+<td>1,751</td>
+<td>Core ranking mechanism for comparing plan quality across all downstream use cases</td>
+<td>Foundation</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>title</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">Project Title</td>
+<td><strong>63-66</strong></td>
+<td>Orchestration Cluster (Luigi integration, post-plan orchestration, enrichment swarm)</td>
+<td>2,000+</td>
+<td>Controls how PlanExe schedules, retries, and enriches the Luigi DAG. Any new validation task (like FermiSanityCheck) ripples here</td>
+<td>Critical Path</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>author_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Creator</td>
+<td><strong>62</strong></td>
+<td>Agent-First Frontend Discoverability</td>
+<td>609</td>
+<td>Defines agent UX; depends on ranking (#07) and validation signals</td>
+<td>Interface</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>current_elo</code></td>
-<td style="text-align: left;">INT</td>
-<td style="text-align: left;">Default 1500</td>
+<td><strong>69</strong></td>
+<td>Arcgentica Agent Patterns</td>
+<td>279</td>
+<td>Hardens PlanExe via recursion + typed returns + soft eval; now references FermiSanityCheck</td>
+<td>Hardening</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>status</code></td>
-<td style="text-align: left;">ENUM</td>
-<td style="text-align: left;"><code>new</code>, <code>ranking</code>, <code>escalated</code>, <code>rejected</code></td>
+<td><strong>41</strong></td>
+<td>Autonomous Execution of Plan</td>
+<td>200+</td>
+<td>Distributed execution of plans; feeds back to ranking and reporting</td>
+<td>Execution</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>metadata</code></td>
-<td style="text-align: left;">JSONB</td>
-<td style="text-align: left;">Full bid content</td>
+<td><strong>05</strong></td>
+<td>Semantic Plan Search Graph</td>
+<td>200+</td>
+<td>Retrieval and discoverability; powers agent discovery (#62)</td>
+<td>Search</td>
 </tr>
 </tbody>
 </table>
-<h3 id="comparisons"><code>comparisons</code></h3>
-<p>Log of all pairwise battles.</p>
+<p><strong>These interlock around:</strong> Planning quality signals (#07, #69, FermiSanityCheck) → Orchestration (#63-66) → Interfaces (#62, #41, #05).</p>
+<hr />
+<h2 id="reuse-opportunities-adjacent-clusters">Reuse Opportunities &amp; Adjacent Clusters</h2>
+<h3 id="proposal-pairs-that-share-heuristics">Proposal Pairs That Share Heuristics</h3>
+<p><strong>#07 Elo Ranking + #62 Agent-First Frontend</strong>
+- Both score/rank plans but likely with independent heuristics
+- <strong>Quick win:</strong> Extract ranking weights (cost, feasibility, confidence) to shared module
+- Both proposals reference the same quality signals
+- FermiSanityCheck flags become features in both scoring systems</p>
+<p><strong>#38 Risk Propagation Network + #44 Investor Grade Audit Pack</strong>
+- Both model risk but likely with different terminology
+- <strong>Quick win:</strong> Create unified <code>RiskModel</code> Pydantic schema; both consume it
+- Eliminates duplicate code, improves consistency
+- Single source of truth for risk visualization</p>
+<h3 id="validation-cluster-interconnected">Validation Cluster (Interconnected)</h3>
+<p><strong>#69 Arcgentica + #56 Adversarial Red Team + #43 Assumption Drift Monitor</strong>
+- FermiSanityCheck = front-line validation (quantitative grounding)
+- Red-team (#56) = logic/feasibility check (qualitative, adversarial)
+- Drift monitor (#43) = tracking invalidation over time
+- All three consume validation_report.json and escalate to human review</p>
+<p><strong>#63-66 Orchestration Cluster (Internal Coherence)</strong>
+- #63 (Luigi integration), #64 (post-plan orchestration), #66 (enrichment swarm) all touch DAG
+- Currently unclear how they fit together
+- <strong>Quick win:</strong> Add relationship map to each showing dependencies and integration points</p>
+<hr />
+<h2 id="8020-quick-wins-parameter-tweaks-no-rewrites">80:20 Quick Wins (Parameter Tweaks, No Rewrites)</h2>
+<h3 id="category-1-ranking-tuning">Category 1: Ranking Tuning</h3>
+<p><strong>#07 Elo Ranking: Adjust Scoring Weights</strong>
+- <strong>Current:</strong> Unknown weighting between cost, feasibility, risk, confidence
+- <strong>Quick win:</strong> Expose weights as configurable; test 3 profiles (cost-optimized, risk-minimized, time-critical)
+- <strong>Effort:</strong> 2-4 hours
+- <strong>Impact:</strong> Same engine serves different user priorities; agents can ask "what's your priority?"
+- <strong>Integration:</strong> FermiSanityCheck confidence becomes a penalty/bonus in ranking</p>
+<p><strong>#07 + #62: Share Ranking Heuristics</strong>
+- <strong>Current:</strong> Likely duplicated ranking logic across ranking (#07) and UI discovery (#62)
+- <strong>Quick win:</strong> Extract heuristics to shared module
+- <strong>Effort:</strong> 2-3 hours
+- <strong>Impact:</strong> Consistent rankings across all surfaces; single source of truth</p>
+<h3 id="category-2-dag-distribution-tuning">Category 2: DAG &amp; Distribution Tuning</h3>
+<p><strong>#32 Gantt Parallelization: Parameterize Lane Constraints</strong>
+- <strong>Current:</strong> Unknown lane count, cost thresholds
+- <strong>Quick win:</strong> Make lane count, parallel cost ceiling, task-splitting configurable
+- <strong>Effort:</strong> 1-2 hours
+- <strong>Impact:</strong> One algorithm covers 80% of Gantt use cases (startup vs. enterprise scale)
+- <strong>Integration:</strong> Reuse FermiSanityCheck heuristics for duration plausibility</p>
+<p><strong>#36-37 Monte Carlo: Adjust Distribution Models</strong>
+- <strong>Current:</strong> Likely simple distributions for uncertainty
+- <strong>Quick win:</strong> Expose distribution type (uniform, normal, triangular) per cost category
+- <strong>Effort:</strong> 1-2 hours
+- <strong>Impact:</strong> More realistic cost/timeline distributions without rewriting</p>
+<h3 id="category-3-alignment-terminology">Category 3: Alignment &amp; Terminology</h3>
+<p><strong>#38 + #44: Risk Terminology Unification</strong>
+- <strong>Current:</strong> Both define risk differently
+- <strong>Quick win:</strong> Create shared <code>RiskModel</code> schema; both reference it
+- <strong>Effort:</strong> 2-3 hours
+- <strong>Impact:</strong> Eliminate duplicate code, improve consistency, enable shared visualization</p>
+<p><strong>#63-66: Orchestration Relationship Mapping</strong>
+- <strong>Current:</strong> Three proposals all touch orchestration; unclear how they fit
+- <strong>Quick win:</strong> Add "Relationship Map" section to each showing integration order
+- <strong>Effort:</strong> 1 hour
+- <strong>Impact:</strong> Clear implementation order, reduced confusion</p>
+<hr />
+<h2 id="secondthird-order-effects">Second/Third Order Effects</h2>
+<h3 id="direct-1st-order">Direct (1st Order)</h3>
+<ul>
+<li><strong>FermiSanityCheck validates quantified claims</strong> immediately after MakeAssumptions</li>
+<li>Prevents garbage-in → garbage-out in downstream tasks</li>
+<li>Reduces manual Simon review overhead</li>
+</ul>
+<h3 id="2nd-order-downstream-reliability">2nd Order (Downstream Reliability)</h3>
+<ul>
+<li><strong>#36-37 Monte Carlo:</strong> With validated bounds, success probability distributions are grounded in evidence, not guesses</li>
+<li><strong>#38 Risk Propagation:</strong> With better assumptions, risk models catch <em>real</em> threats</li>
+<li><strong>#41 Autonomous Execution:</strong> Plans with validated assumptions have higher real-world success</li>
+<li><strong>#43 Assumption Drift:</strong> Baseline assumptions are now credible; drift detection has a trustworthy reference</li>
+<li><strong>#44 Investor Audit:</strong> Reports cite evidence-backed numbers → credibility increases</li>
+<li><strong>#07 Ranking:</strong> FermiSanityCheck confidence becomes a scoring feature; better plans rank higher</li>
+</ul>
+<h3 id="3rd-order-strategic-implications">3rd Order (Strategic Implications)</h3>
+<p>Once assumptions are validated + execution tracked + drift monitored:</p>
+<ul>
+<li><strong>PlanExe becomes a learning system</strong></li>
+<li>Early execution failures → identify assumption gaps → improve MakeAssumptions prompts</li>
+<li>Drift detection → trigger re-planning before catastrophic failure</li>
+<li>
+<p>Execution feedback → inform future FermiSanityCheck heuristics</p>
+</li>
+<li>
+<p><strong>Trust compounding:</strong> Validated → Executed → Monitored → Improved → Trusted (virtuous cycle)</p>
+</li>
+<li>
+<p><strong>Competitive moat:</strong> If execution feedback loops work, PlanExe plans become <em>more valuable over time</em> (vs. one-shot consulting)</p>
+</li>
+<li>
+<p><strong>Validation observability:</strong> Dashboard tracking how many plans pass/fail FermiSanityCheck each week; historical trends inform product roadmap</p>
+</li>
+</ul>
+<hr />
+<h2 id="critical-gaps-in-existing-proposals">Critical Gaps in Existing Proposals</h2>
+<h3 id="gap-1-execution-feedback-loop-missing-entirely">Gap 1: Execution Feedback Loop (Missing Entirely)</h3>
+<p><strong>What's missing:</strong>
+- #41 (Autonomous Execution) says "run the plan" but doesn't specify how execution metrics feed back into planning
+- #43 (Assumption Drift) says "monitor" but doesn't spec <em>when</em> to re-plan vs. <em>when</em> to adjust-on-the-fly</p>
+<p><strong>Impact:</strong> Without feedback, PlanExe is write-once (create, execute, done). With feedback, it's learning (create, execute, learn, re-plan).</p>
+<p><strong>Recommendation:</strong> Create <strong>#55 Execution Feedback Loop</strong> proposal defining:
+- KPI tracking during execution (% of plan met, timeline vs. actual, cost vs. actual)
+- Criteria for "assumption invalidated" (what % deviation triggers re-plan?)
+- Re-planning strategy (full re-plan vs. localized fix?)
+- Feedback → prompt improvement (how execution data improves future MakeAssumptions)</p>
+<hr />
+<h3 id="gap-2-cost-estimation-validation-order-of-magnitude-reconciliation">Gap 2: Cost Estimation Validation (Order-of-Magnitude Reconciliation)</h3>
+<p><strong>What's missing:</strong>
+- #34 (Finance top-down) and #35 (bottom-up) estimate costs but don't validate against each other
+- No proposal says "if top-down ≠ bottom-up by &gt;2×, escalate to human"</p>
+<p><strong>Impact:</strong> Cost overruns (most common plan failure) aren't caught early.</p>
+<p><strong>Recommendation:</strong> Extend FermiSanityCheck to <strong>estimation reconciliation</strong>:
+- Extract top-down and bottom-up cost estimates
+- Flag if diverge by &gt;50% (signal of missing scope or hidden assumptions)
+- Do the same for timeline</p>
+<hr />
+<h3 id="gap-3-stakeholder-alignment-pre-plan-assumption-validation">Gap 3: Stakeholder Alignment Pre-Plan (Assumption Validation)</h3>
+<p><strong>What's missing:</strong>
+- MakeAssumptions generates assumptions but doesn't validate with stakeholders first
+- Risk: plan is based on wrong assumptions; stakeholders reject after weeks of work</p>
+<p><strong>Impact:</strong> Wasted plan generation effort + stakeholder friction.</p>
+<p><strong>Recommendation:</strong> Create <strong>#57 Assumption Validation with Stakeholders</strong> proposal:
+- After MakeAssumptions, surface top 5 assumptions for stakeholder thumbs-up/down
+- If 2+ rejected, re-generate before investing in full plan
+- Saves 90% of downstream rework</p>
+<hr />
+<h3 id="gap-4-plan-complexity-budgeting-dont-over-plan">Gap 4: Plan Complexity Budgeting (Don't Over-Plan)</h3>
+<p><strong>What's missing:</strong>
+- No proposal caps plan complexity
+- Risk: 3-month projects get 50 WBS tasks + governance phases (overkill)</p>
+<p><strong>Impact:</strong> High plan generation cost + user friction for simple projects.</p>
+<p><strong>Recommendation:</strong> Create <strong>#58 Complexity-Gated Pipeline</strong> proposal:
+- After MakeAssumptions, estimate project complexity (cost × duration × stakeholders)
+- Route simple projects → "fast track" (WBS only, no expert review)
+- Route medium → "standard" (WBS + governance)
+- Route complex → "full" (everything)
+- Reduces cost/time for 60% of plans by 70%</p>
+<hr />
+<h3 id="gap-5-software-plan-specialization-code-bridge">Gap 5: Software Plan Specialization (Code Bridge)</h3>
+<p><strong>What's missing:</strong>
+- PlanExe optimized for business/organizational plans
+- Software projects need code-specific artifacts (architecture, API contracts, testing, deployment)
+- #06 (Adopt on the fly) tries but doesn't go deep</p>
+<p><strong>Impact:</strong> Software founders get generic business plans, not actionable dev roadmaps.</p>
+<p><strong>Recommendation:</strong> Create <strong>#59 Software Plan Specialization</strong> proposal:
+- Detect "this is a software project" in MakeAssumptions
+- Route through software-specific WBS (architecture → MVP → iteration)
+- Generate deployment checklist, testing strategy, tech debt budget
+- Integrate with code search/LODA for architectural patterns</p>
+<hr />
+<h2 id="missing-proposals-should-exist">Missing Proposals (Should Exist)</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
+<th>#</th>
+<th>Title</th>
+<th>Why Needed</th>
+<th>Effort</th>
+<th>Leverage</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
+<td><strong>55</strong></td>
+<td>Execution Feedback Loop</td>
+<td>Close the learn-from-execution cycle</td>
+<td>High</td>
+<td><strong>High</strong> (enables learning moat)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>bid_a_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Bids</td>
+<td><strong>56</strong></td>
+<td>Adversarial Red-Team Reality Check</td>
+<td>Questions assumptions from hostile angle</td>
+<td>High</td>
+<td><strong>Medium</strong> (complements Fermi)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>bid_b_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Bids</td>
+<td><strong>57</strong></td>
+<td>Assumption Validation with Stakeholders</td>
+<td>De-risk assumptions early</td>
+<td>Medium</td>
+<td><strong>High</strong> (saves 80% rework)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>winner_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Bids (or NULL for draw)</td>
+<td><strong>58</strong></td>
+<td>Complexity-Gated Pipeline</td>
+<td>Don't over-engineer simple projects</td>
+<td>Medium</td>
+<td><strong>High</strong> (70% cost reduction for 60% of plans)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>score_delta</code></td>
-<td style="text-align: left;">INT</td>
-<td style="text-align: left;">Points exchanged</td>
+<td><strong>59</strong></td>
+<td>Software Plan Specialization</td>
+<td>Bridge PlanExe ↔ code</td>
+<td>High</td>
+<td><strong>Medium</strong> (critical for dev teams)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>judge_model</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">LLM used (e.g., <code>gemini-2.0-flash</code>)</td>
+<td><strong>60</strong></td>
+<td>Plan Versioning &amp; Comparison</td>
+<td>Track assumption/scope changes</td>
+<td>Low</td>
+<td><strong>Medium</strong> (useful for ongoing projects)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>reasoning</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">LLM explanation for the decision</td>
-</tr>
-</tbody>
-</table>
-<h3 id="escalation_queue"><code>escalation_queue</code></h3>
-<p>The priority list for human review.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
+<td><strong>61</strong></td>
+<td>Validation Observability Dashboard</td>
+<td>Real-time view of live plans</td>
+<td>Medium</td>
+<td><strong>Medium</strong> (stakeholder trust)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>bid_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Bids</td>
+<td><strong>62</strong></td>
+<td>Aggregate Data Strategy</td>
+<td>How to retain/use execution data</td>
+<td>High</td>
+<td><strong>High</strong> (data moat)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>reason</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">"Top 5% Elo" or "High ROI"</td>
+<td><strong>63</strong></td>
+<td>Competitive Positioning</td>
+<td>vs. manual consulting</td>
+<td>Medium</td>
+<td><strong>High</strong> (informs GTM)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>priority</code></td>
-<td style="text-align: left;">INT</td>
-<td style="text-align: left;">1 (Urgent) to 5 (Standard)</td>
+<td><strong>64</strong></td>
+<td>Megaproject Scalability</td>
+<td>10-year plans with quarterly re-planning</td>
+<td>High</td>
+<td><strong>Medium</strong> (TAM expansion)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>assigned_to</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Reviewer ID</td>
+<td><strong>65</strong></td>
+<td>Cost Reduction Curve</td>
+<td>Margin improvement with scale</td>
+<td>Medium</td>
+<td><strong>High</strong> (profitability)</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="api-reference">API Reference</h2>
-<h3 id="post-apibidssubmit"><code>POST /api/bids/submit</code></h3>
-<p>Ingest a new bid for ranking.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mars Colony Logistics&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A plan to...&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
-</code></pre></div></p>
-<h3 id="get-apibidsqueueescalated"><code>GET /api/bids/queue/escalated</code></h3>
-<p>Fetch the current top priorities for human review.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;bid_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b_999&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mars Colony Logistics&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;elo&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1850</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;escalation_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Top 1% Elo Score&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/review/b_999&quot;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">]</span>
-</code></pre></div></p>
-<h3 id="post-apiadminforce_match"><code>POST /api/admin/force_match</code></h3>
-<p>Manually trigger a comparison between two specific bids (for calibration).
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;bid_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_1&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;bid_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_2&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
-</code></pre></div></p>
+<h2 id="strategic-questions-simon-might-not-be-asking">Strategic Questions Simon Might Not Be Asking</h2>
+<h3 id="question-1-unit-economics-of-plan-generation">Question 1: Unit Economics of Plan Generation</h3>
+<p><strong>Context:</strong> Proposals discuss implementation effort but don't tie to revenue.</p>
+<p><strong>Unanswered:</strong>
+- How much does a plan cost to generate (tokens, compute)?
+- How much value does a plan create for users (time saved, better decisions)?
+- At what project size does PlanExe ROI break even?
+- Does ROI flip at $100k vs. $1M vs. $100M projects?</p>
+<p><strong>Why it matters:</strong>
+- If generating a plan costs $500 in API calls, you need $5k+ project value to be worthwhile
+- Determines TAM and go-to-market strategy
+- Affects which proposals are worth building (e.g., #58 Complexity-Gating becomes <em>essential</em>)</p>
+<p><strong>Recommendation:</strong> Create cost accounting for plan generation (token count per task, cost breakdown). Model unit economics by project size. Use that to prioritize proposals.</p>
 <hr />
-<h2 id="integration-with-notification-systems">Integration with Notification Systems</h2>
-<p>The Escalation Monitor connects to external Webhooks:
--   <strong>Slack:</strong> Posts to <code>#deal-flow-elite</code> for &gt;1800 Elo.
--   <strong>Email:</strong> Weekly digest of &gt;1500 Elo bids.
--   <strong>Dashboard:</strong> Real-time leaderboard widget.</p>
-<h2 id="future-enhancements">Future Enhancements</h2>
+<h3 id="question-2-data-moat-strategy">Question 2: Data Moat Strategy</h3>
+<p><strong>Context:</strong> PlanExe collects execution data (via #41-43), but there's no proposal about what to do with it.</p>
+<p><strong>Unanswered:</strong>
+- Do you retain execution data? How long?
+- Can you compare user outcomes to benchmarks ("your project ran 10% over budget; industry is 15% over")?
+- Can you use aggregate data to improve MakeAssumptions? (e.g., "e-commerce projects have 3× cost overruns → adjust baselines")
+- Is data a defensible moat, or just overhead?</p>
+<p><strong>Why it matters:</strong>
+- If you have a moat, PlanExe gets <em>better over time</em> (vs. static)
+- Justifies continued investment in execution feedback loops
+- Competitors can't easily copy without historical data</p>
+<p><strong>Recommendation:</strong> Create <strong>#62 Aggregate Data Strategy</strong> proposal defining what data to retain, how to anonymize for benchmarking, how aggregate insights improve plan quality.</p>
+<hr />
+<h3 id="question-3-competitive-positioning-vs-consulting">Question 3: Competitive Positioning vs. Consulting</h3>
+<p><strong>Context:</strong> A human consultant also creates plans; they're just slower and more expensive.</p>
+<p><strong>Unanswered:</strong>
+- What does PlanExe do <em>better</em> than human consulting?
+- Speed (same quality, faster)? Comprehensiveness? Consistency? Complement?
+- If PlanExe is "fast but lower quality," TAM = small projects only
+- If "same quality, faster, cheaper," direct displacement (larger TAM)
+- If "complement," revenue model is add-on (lower ceiling)</p>
+<p><strong>Why it matters:</strong> Informs go-to-market messaging and TAM sizing.</p>
+<p><strong>Recommendation:</strong> Create <strong>#63 Competitive Positioning</strong> proposal defining quality bar vs. manual, competitive advantages, and strategic positioning.</p>
+<hr />
+<h3 id="question-4-megaproject-scalability-10-year-plans">Question 4: Megaproject Scalability (10-Year Plans)</h3>
+<p><strong>Context:</strong> Most proposals assume 6-24 month projects.</p>
+<p><strong>Unanswered:</strong>
+- Can PlanExe generate 10-year plans with quarterly re-planning?
+- Can it handle strategic pivots (market shifts → re-scope everything)?
+- Can it track across 40+ quarterly re-plans?</p>
+<p><strong>Why it matters:</strong>
+- If yes, TAM includes infrastructure, government, aerospace (high-value)
+- If no, capped at 2-3 year projects (smaller TAM)</p>
+<p><strong>Recommendation:</strong> Create <strong>#64 Megaproject Scalability</strong> proposal defining quarterly re-plan mechanics, scope change propagation, and cost/token budgets.</p>
+<hr />
+<h3 id="question-5-margin-structure-cost-reduction-curve">Question 5: Margin Structure &amp; Cost Reduction Curve</h3>
+<p><strong>Context:</strong> Early PlanExe usage is expensive (high API calls). Improves with volume?</p>
+<p><strong>Unanswered:</strong>
+- Can caching/retrieval (LODA, semantic search) reduce generation cost?
+- If you've planned 100 SaaS startups, does plan 101 cost 50% less (template reuse)?
+- Does margin improve <em>compound</em> with scale?</p>
+<p><strong>Why it matters:</strong>
+- If margin improves with scale, you have a winner (more volume → cheaper → more volume)
+- If flat, need high volume to be profitable</p>
+<p><strong>Recommendation:</strong> Create <strong>#65 Cost Reduction Curve</strong> proposal modeling token usage plan 1 vs. plan 100, estimating savings from semantic search + template reuse, setting margin targets.</p>
+<hr />
+<h2 id="relevant-tasks-we-can-execute-now">Relevant Tasks We Can Execute Now</h2>
+<h3 id="task-1-proposal-dependency-graph-executable">Task 1: Proposal Dependency Graph (Executable)</h3>
+<p><strong>What:</strong> Build visual/code showing which proposals depend on which.</p>
+<p><strong>Current state:</strong> Unknown.</p>
+<p><strong>Output:</strong> Visual DAG + implementation order.</p>
+<p><strong>Why it matters:</strong> Shows critical paths, which proposals unblock 3+ others.</p>
+<p><strong>Effort:</strong> 4-6 hours.</p>
+<hr />
+<h3 id="task-2-estimation-reconciliation-fermisanitycheck-extension">Task 2: Estimation Reconciliation (FermiSanityCheck Extension)</h3>
+<p><strong>What:</strong> Validate top-down vs. bottom-up cost/time estimates.</p>
+<p><strong>Current state:</strong> FermiSanityCheck validates individual claims; doesn't cross-check.</p>
+<p><strong>Output:</strong> Flag when top-down ≠ bottom-up by &gt;50%; diagnostic suggestions.</p>
+<p><strong>Why it matters:</strong> Cost overruns are #1 plan failure mode.</p>
+<p><strong>Effort:</strong> 2-3 hours (once FermiSanityCheck built).</p>
+<hr />
+<h3 id="task-3-proposal-sizing-matrix-quick-win-inventory">Task 3: Proposal Sizing Matrix (Quick Win Inventory)</h3>
+<p><strong>What:</strong> 2×2 matrix for all 54 proposals: effort (1-10) vs. impact (1-10).</p>
+<p><strong>Current state:</strong> Unknown.</p>
+<p><strong>Output:</strong> Top-left quadrant (low effort, high impact) = quick wins to tackle first.</p>
+<p><strong>Why it matters:</strong> Transparent prioritization; efficient resource allocation.</p>
+<p><strong>Effort:</strong> 3-4 hours.</p>
+<hr />
+<h3 id="task-4-fermisanitycheck-implementation-core">Task 4: FermiSanityCheck Implementation (Core)</h3>
+<p><strong>What:</strong> Build the Luigi task + QuantifiedAssumption schema + validation report.</p>
+<p><strong>Current state:</strong> Plan approved; awaiting implementation.</p>
+<p><strong>Output:</strong> Validated assumptions + validation_report.json.</p>
+<p><strong>Why it matters:</strong> Gates quality of all downstream tasks.</p>
+<p><strong>Effort:</strong> 5-6 hours (Egon data model + Larry validation logic + integration).</p>
+<hr />
+<h3 id="task-5-validation-observability-dashboard-reporting">Task 5: Validation Observability Dashboard (Reporting)</h3>
+<p><strong>What:</strong> Dashboard showing FermiSanityCheck pass/fail rates, trends, failure categories.</p>
+<p><strong>Current state:</strong> Not built.</p>
+<p><strong>Output:</strong> Weekly reports: "80 plans passed, 12 failed quantitative grounding, top 3 failure modes: ___".</p>
+<p><strong>Why it matters:</strong> Tracks product health; informs what assumptions users typically miss.</p>
+<p><strong>Effort:</strong> 4-6 hours (once FermiSanityCheck live).</p>
+<hr />
+<h3 id="task-6-stakeholder-assumption-validation-ui-pre-plan">Task 6: Stakeholder Assumption Validation UI (Pre-Plan)</h3>
+<p><strong>What:</strong> After MakeAssumptions, surface top 5 assumptions for stakeholder sign-off.</p>
+<p><strong>Current state:</strong> Not built.</p>
+<p><strong>Output:</strong> "Please confirm these 5 assumptions" → yes/no/discuss → re-run if rejected.</p>
+<p><strong>Why it matters:</strong> De-risks expensive full plan generation; increases stakeholder buy-in.</p>
+<p><strong>Effort:</strong> 3-4 hours.</p>
+<hr />
+<h3 id="task-7-complexity-gating-implementation-cost-optimization">Task 7: Complexity Gating Implementation (Cost Optimization)</h3>
+<p><strong>What:</strong> Route simple projects through fast-track, complex through full.</p>
+<p><strong>Current state:</strong> Not built.</p>
+<p><strong>Output:</strong> Complexity score function + route definitions (fast/standard/full).</p>
+<p><strong>Why it matters:</strong> Reduces cost 70% for 60% of plans.</p>
+<p><strong>Effort:</strong> 4-6 hours.</p>
+<hr />
+<h2 id="recommended-execution-path">Recommended Execution Path</h2>
+<h3 id="phase-1-this-week-stabilization-fermi">Phase 1 (This Week): Stabilization + Fermi</h3>
+<ol>
+<li>Implement FermiSanityCheck (Larry + Egon, ~5-6 hours)</li>
+<li>Create Proposal Sizing Matrix (1 of us, ~3-4 hours)</li>
+<li>Build Proposal Dependency Graph (1 of us, ~4-6 hours)</li>
+</ol>
+<p><strong>Goal:</strong> Clear picture of high-leverage vs. nice-to-have.</p>
+<h3 id="phase-2-next-week-quick-wins">Phase 2 (Next Week): Quick Wins</h3>
+<ol>
+<li>Parameterize #07 Elo-Ranking weights (~2-4 hours)</li>
+<li>Merge #38 + #44 Risk terminology (~2-3 hours)</li>
+<li>Document #63-66 relationships (~1 hour)</li>
+</ol>
+<p><strong>Goal:</strong> Deliver 80:20 impact without big rewrites.</p>
+<h3 id="phase-3-week-after-strategic-proposals">Phase 3 (Week After): Strategic Proposals</h3>
+<ol>
+<li>Write #55 (Execution Feedback Loop)</li>
+<li>Write #57 (Stakeholder Assumption Validation)</li>
+<li>Write #58 (Complexity-Gated Pipeline)</li>
+</ol>
+<p><strong>Goal:</strong> Fill critical gaps; unlock learning/scalability.</p>
+<hr />
+<h2 id="sign-off">Sign-Off</h2>
 <ul>
-<li><strong>Tournament Mode:</strong> Periodically re-rank the top 50 bids against each other to ensure the "King of the Hill" is truly the best.</li>
-<li><strong>Niche Pools:</strong> Separate Elo ladders for different sectors (e.g., "BioTech Elo", "Crypto Elo").</li>
+<li>[ ] Simon: Priorities approved?</li>
+<li>[ ] Simon: Any gaps or unanswered questions?</li>
+<li>[ ] Larry/Egon: Ready to execute Phase 1?</li>
 </ul>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-selection-funnel-definition-1-week">Phase A — Selection Funnel Definition (1 week)</h3>
-<ol>
-<li>Define funnel cutoffs and policy defaults (20% -&gt; 5% -&gt; 1%).</li>
-<li>Define promotion/demotion rules with override controls.</li>
-<li>Define confidence requirements for borderline candidates.</li>
-</ol>
-<h3 id="phase-b-ranking-pipeline-integration-2-weeks">Phase B — Ranking Pipeline Integration (2 weeks)</h3>
-<ol>
-<li>Pull ELO and percentile outputs from proposal-07 stack.</li>
-<li>Add domain-fit and verification features to ranking vector.</li>
-<li>Compute composite selection score for escalation decisions.</li>
-</ol>
-<h3 id="phase-c-escalation-workflow-2-weeks">Phase C — Escalation Workflow (2 weeks)</h3>
-<ol>
-<li>Route top cohort to expert verification and premium refinement.</li>
-<li>Track escalation outcomes and review costs.</li>
-<li>Add auto-stop for candidates that fail critical post-escalation checks.</li>
-</ol>
-<h3 id="phase-d-outcome-learning-loop-2-weeks">Phase D — Outcome Learning Loop (2 weeks)</h3>
-<ol>
-<li>Ingest real bid outcomes (win/loss/shortlist).</li>
-<li>Recalibrate ranking and threshold policies.</li>
-<li>Add model drift alerts when ranking precision degrades.</li>
-</ol>
-<h3 id="data-model-additions">Data model additions</h3>
-<ul>
-<li><code>selection_funnel_runs</code></li>
-<li><code>selection_scores</code></li>
-<li><code>escalation_events</code></li>
-<li><code>bid_outcome_feedback</code></li>
-</ul>
-<h3 id="validation-checklist">Validation checklist</h3>
-<ul>
-<li>Precision@top cohorts</li>
-<li>Win-rate lift vs non-ranked baseline</li>
-<li>Cost savings from reduced deep review</li>
-<li>Stability of thresholds across domains</li>
-</ul>
+<hr />
+<p><em>This triage is a living document. Updates as Simon provides feedback or new context emerges.</em></p>
+<hr />
+<p><strong>Appendix: Full Proposal List (For Reference)</strong></p>
+<p>All 54 + new proposals organized by theme:</p>
+<p><strong>Core Pipeline (1-8):</strong> 01-agent-smart-routing, 02-plans-as-LLM-templates, 03-distributed-plan-execution, 04-plan-explain-as-API-service, 05-semantic-plan-search-graph, 06-adopt-on-the-fly, 07-elo-ranking, 08-ui-for-editing-plan</p>
+<p><strong>Capital/Investors (11-15):</strong> 11-investor-thesis-matching-engine, 12-evidence-based-founder-execution-index, 13-portfolio-aware-capital-allocation, 14-confidence-weighted-funding-auctions, 15-outcome-feedback-and-model-governance</p>
+<p><strong>Plugins (16-20):</strong> 16-on-demand-plugin-synthesis-hub, 17-plugin-adaptation-lifecycle, 18-plugin-benchmarking-coverage-harness, 19-plugin-safety-governance-for-runtime-loading, 20-plugin-hub-discovery-ranking-and-reuse</p>
+<p><strong>Experts/Verification (21-30):</strong> 21-expert-discovery-and-fit-scoring, 22-multi-stage-verification-workflow, 23-expert-collaboration-marketplace-and-reputation, 24-cross-border-project-verification-framework, 25-verification-incentives-governance-and-liability, 26-news-intake-and-opportunity-sensing-grid, 27-multi-angle-topic-verification-engine, 28-autonomous-bid-factory-orchestration, 29-elo-ranked-bid-selection-and-escalation, 30-autonomous-bid-governance-risk-and-ethics</p>
+<p><strong>Finance/Estimation (31-37):</strong> 31-token-counting-and-cost-transparency, 32-gantt-parallelization-and-fast-tracking, 33-cost-breakdown-structure-cbs, 34-finance-top-down-estimation, 35-finance-bottom-up-estimation-and-reconciliation, 36-monte-carlo-plan-success-probability-engine, 37-cashflow-and-funding-stress-monte-carlo</p>
+<p><strong>Risk/Analysis (38-46):</strong> 38-risk-propagation-network-and-failure-modes, 39-frontier-research-gap-mapper-for-megaprojects, 40-three-hypotheses-engine-for-unsolved-challenges, 41-autonomous-execution-of-plan, 42-evidence-traceability-ledger, 43-assumption-drift-monitor, 44-investor-grade-audit-pack-generator, 45-counterfactual-scenario-explorer, 46-execution-readiness-scoring</p>
+<p><strong>Infrastructure (47-54):</strong> 47-openclaw-agent-skill-integration, 48-moltbook-reputation-bridge, 49-distributed-physical-task-dispatch-protocol, 50-agent-to-agent-payment-gateway, 51-decentralized-planexe-survivability, 52-mcp-oauth, 53-uuid-only-task-id, 54-agent-safety-trusted-information</p>
+<p><strong>New Proposals (To Be Created):</strong> 55-execution-feedback-loop, 56-adversarial-red-team-reality-check, 57-assumption-validation-with-stakeholders, 58-complexity-gated-pipeline, 59-software-plan-specialization, 60-plan-versioning-and-comparison, 61-validation-observability-dashboard, 62-aggregate-data-strategy, 63-competitive-positioning, 64-megaproject-scalability, 65-cost-reduction-curve</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
