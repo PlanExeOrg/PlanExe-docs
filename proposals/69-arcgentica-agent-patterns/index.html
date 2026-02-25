@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry the Laptop Lobster">
+        <meta name="author" content="Larry (VoynichLabs)">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/33-cost-breakdown-structure-cbs/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/69-arcgentica-agent-patterns/">
       
       
-        <link rel="prev" href="../32-gantt-parallelization-and-fast-tracking/">
+        <link rel="prev" href="../68-domain-aware-plan-ranking-engine/">
       
-      
-        <link rel="next" href="../34-finance-top-down-estimation/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Cost Breakdown Structure (CBS) Generation - PlanExe Documentation</title>
+        <title>Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Cost Breakdown Structure (CBS) Generation - PlanExe Documentation" />
+<meta property="og:title" content="Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/33-cost-breakdown-structure-cbs.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/69-arcgentica-agent-patterns.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/33-cost-breakdown-structure-cbs/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/69-arcgentica-agent-patterns/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cost Breakdown Structure (CBS) Generation - PlanExe Documentation" />
+<meta property="twitter:title" content="Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/33-cost-breakdown-structure-cbs.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/69-arcgentica-agent-patterns.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cost-breakdown-structure-cbs-generation" class="md-skip">
+        <a href="#proposal-69-hardening-planexe-with-arcgentica-agent-patterns" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cost Breakdown Structure (CBS) Generation
+              Hardening PlanExe with Arcgentica Agent Patterns
             
           </span>
         </div>
@@ -2971,44 +2969,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    33 cost breakdown structure cbs
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../33-cost-breakdown-structure-cbs/" class="md-nav__link">
         
   
   
@@ -3031,385 +2995,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cbs-taxonomy-default" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CBS Taxonomy (Default)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generation-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generation Process
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Generation Process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-scope-extraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) Scope Extraction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-mapping-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Mapping Rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-cost-estimation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Cost Estimation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#31-multi-currency-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1) Multi-Currency Handling
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-confidence-assignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) Confidence Assignment
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-canonical-cbs-taxonomy-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) Canonical CBS taxonomy service
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-wbs-to-cbs-mapper" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) WBS-to-CBS mapper
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-cost-line-generation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Cost line generation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-assumptions-and-provenance-registry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) Assumptions and provenance registry
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-cbs-outputs-and-exports" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) CBS outputs and exports
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-integration-with-top-down-and-bottom-up-finance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6) Integration with top-down and bottom-up finance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-api-contract-proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7) API contract proposal
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8-rollout-phases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8) Rollout phases
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9) Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan-finance-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan (Finance Integration)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan (Finance Integration)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#domain-template-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Domain Template Strategy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#editing-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Editing Workflow
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Change Control
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export-targets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Export Targets
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4595,10 +4180,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../69-arcgentica-agent-patterns/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    69 arcgentica agent patterns
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4621,6 +4240,231 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-brittleness-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Brittleness Gaps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Three Brittleness Gaps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gap-1-one-llm-call-per-task-no-self-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 1: One LLM call per task — no self-evaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 2: ReviewPlan produces critiques that die at the task boundary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#four-adaptations-from-arcgentica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Four Adaptations from arcgentica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Four Adaptations from arcgentica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptation-2-wire-reviewplan-signals-to-task_retry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation 2: Wire ReviewPlan Signals to task_retry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptation-3-typed-output-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation 3: Typed Output Contracts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adaptation-4-complexity-gated-task-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation 4: Complexity-Gated Task Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-stays-the-same" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Stays the Same
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptation-5-quantitative-grounding-fermi-sanity-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation 5: Quantitative Grounding (Fermi Sanity Check)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptation 5: Quantitative Grounding (Fermi Sanity Check)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-task-fermisanitycheck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New task: FermiSanityCheck
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revised-priority-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revised Priority Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions-for-simon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions for Simon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4668,10 +4512,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Context
       
     </span>
   </a>
@@ -4679,66 +4523,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#the-three-brittleness-gaps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        The Three Brittleness Gaps
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cbs-taxonomy-default" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CBS Taxonomy (Default)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generation-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generation Process
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Generation Process">
+    <nav class="md-nav" aria-label="The Three Brittleness Gaps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-scope-extraction" class="md-nav__link">
+  <a href="#gap-1-one-llm-call-per-task-no-self-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) Scope Extraction
+        Gap 1: One LLM call per task — no self-evaluation
       
     </span>
   </a>
@@ -4746,10 +4546,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-mapping-rules" class="md-nav__link">
+  <a href="#gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) Mapping Rules
+        Gap 2: ReviewPlan produces critiques that die at the task boundary
       
     </span>
   </a>
@@ -4757,32 +4557,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-cost-estimation" class="md-nav__link">
+  <a href="#gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) Cost Estimation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#31-multi-currency-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3.1) Multi-Currency Handling
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-confidence-assignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) Confidence Assignment
+        Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity
       
     </span>
   </a>
@@ -4795,77 +4573,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
+  <a href="#four-adaptations-from-arcgentica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output Schema
+        Four Adaptations from arcgentica
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+    <nav class="md-nav" aria-label="Four Adaptations from arcgentica">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-canonical-cbs-taxonomy-service" class="md-nav__link">
+  <a href="#adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) Canonical CBS taxonomy service
+        Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks
       
     </span>
   </a>
@@ -4873,10 +4596,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-wbs-to-cbs-mapper" class="md-nav__link">
+  <a href="#adaptation-2-wire-reviewplan-signals-to-task_retry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) WBS-to-CBS mapper
+        Adaptation 2: Wire ReviewPlan Signals to task_retry
       
     </span>
   </a>
@@ -4884,10 +4607,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-cost-line-generation" class="md-nav__link">
+  <a href="#adaptation-3-typed-output-contracts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) Cost line generation
+        Adaptation 3: Typed Output Contracts
       
     </span>
   </a>
@@ -4895,65 +4618,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-assumptions-and-provenance-registry" class="md-nav__link">
+  <a href="#adaptation-4-complexity-gated-task-selection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) Assumptions and provenance registry
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-cbs-outputs-and-exports" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) CBS outputs and exports
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-integration-with-top-down-and-bottom-up-finance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6) Integration with top-down and bottom-up finance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-api-contract-proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7) API contract proposal
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8-rollout-phases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8) Rollout phases
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9) Validation checklist
+        Adaptation 4: Complexity-Gated Task Selection
       
     </span>
   </a>
@@ -4966,22 +4634,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-implementation-plan-finance-integration" class="md-nav__link">
+  <a href="#what-stays-the-same" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detailed Implementation Plan (Finance Integration)
+        What Stays the Same
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Detailed Implementation Plan (Finance Integration)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adaptation-5-quantitative-grounding-fermi-sanity-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation 5: Quantitative Grounding (Fermi Sanity Check)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptation 5: Quantitative Grounding (Fermi Sanity Check)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#domain-template-strategy" class="md-nav__link">
+  <a href="#new-task-fermisanitycheck" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Domain Template Strategy
+        New task: FermiSanityCheck
       
     </span>
   </a>
@@ -4989,32 +4679,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#editing-workflow" class="md-nav__link">
+  <a href="#revised-priority-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Editing Workflow
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#change-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Change Control
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#export-targets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Export Targets
+        Revised Priority Order
       
     </span>
   </a>
@@ -5023,6 +4691,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions-for-simon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions for Simon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5046,237 +4736,328 @@
   
 
 
-<h1 id="cost-breakdown-structure-cbs-generation">Cost Breakdown Structure (CBS) Generation</h1>
-<h2 id="pitch">Pitch</h2>
-<p>Automatically generate a Cost Breakdown Structure (CBS) from a plan, mapping scope to cost categories, subcategories, and line items with assumptions and confidence levels.</p>
-<h2 id="why">Why</h2>
-<p>Most plans mention costs but do not structure them. A CBS enables:</p>
+<h1 id="proposal-69-hardening-planexe-with-arcgentica-agent-patterns">Proposal 69: Hardening PlanExe with Arcgentica Agent Patterns</h1>
+<p><strong>Author:</strong> Larry (VoynichLabs)<br />
+<strong>Date:</strong> 2026-02-25<br />
+<strong>Status:</strong> Proposal<br />
+<strong>Tags:</strong> <code>architecture</code>, <code>agent-orchestration</code>, <code>reliability</code>, <code>agentica</code>, <code>luigi</code></p>
+<hr />
+<h2 id="context">Context</h2>
+<p>We spent time reading two Symbolica AI repositories:</p>
 <ul>
-<li>Comparable cost estimates across plans.</li>
-<li>Immediate visibility into cost drivers.</li>
-<li>Faster budgeting, funding, and procurement decisions.</li>
+<li><a href="https://github.com/VoynichLabs/agentica-typescript-sdk">agentica-typescript-sdk</a></li>
+<li><a href="https://github.com/VoynichLabs/arcgentica">arcgentica</a> — the ARC-AGI-2 solver built on agentica-python-sdk</li>
 </ul>
-<h2 id="problem">Problem</h2>
-<p>Without a CBS:</p>
-<ul>
-<li>Cost claims are vague or non-auditable.</li>
-<li>Missing categories create hidden risk.</li>
-<li>Downstream financial models are inconsistent.</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Implement a CBS generator that:</p>
-<ol>
-<li>Parses plan scope and milestones.</li>
-<li>Maps scope elements to standard cost categories.</li>
-<li>Produces a multi-level CBS with assumptions and ranges.</li>
-<li>Assigns confidence and missing-info flags.</li>
-</ol>
-<h2 id="cbs-taxonomy-default">CBS Taxonomy (Default)</h2>
-<p>Level 1 categories:</p>
-<ul>
-<li>Labor</li>
-<li>Materials</li>
-<li>Equipment</li>
-<li>Software and Licenses</li>
-<li>Facilities</li>
-<li>Professional Services</li>
-<li>Compliance and Legal</li>
-<li>Operations and Maintenance</li>
-<li>Contingency</li>
-</ul>
-<p>Level 2 examples:</p>
-<ul>
-<li>Labor: engineering, project management, field staff</li>
-<li>Materials: raw materials, components, consumables</li>
-<li>Facilities: rent, utilities, site prep</li>
-<li>Compliance: permits, audits, regulatory fees</li>
-</ul>
-<h2 id="generation-process">Generation Process</h2>
-<h3 id="1-scope-extraction">1) Scope Extraction</h3>
-<p>Identify:</p>
-<ul>
-<li>Deliverables (what will be built or delivered)</li>
-<li>Work packages (tasks and milestones)</li>
-<li>Dependencies and external services</li>
-</ul>
-<h3 id="2-mapping-rules">2) Mapping Rules</h3>
-<p>Apply mapping from scope to cost categories:</p>
-<ul>
-<li>Physical deliverables -&gt; materials + equipment + labor</li>
-<li>Software deliverables -&gt; labor + cloud + licenses</li>
-<li>Regulated projects -&gt; compliance + legal</li>
-</ul>
-<h3 id="3-cost-estimation">3) Cost Estimation</h3>
-<p>Use a combination of:</p>
-<ul>
-<li>Benchmark ratios (per unit, per employee, per square meter)</li>
-<li>Historical PlanExe costs</li>
-<li>User-provided or inferred quantities</li>
-</ul>
-<h3 id="31-multi-currency-handling">3.1) Multi-Currency Handling</h3>
-<p>Plans may involve multiple currencies (e.g., cross-border bridge projects). The CBS should:</p>
-<ul>
-<li>Capture line items in their native currency.</li>
-<li>Store a reporting currency for rollups (default to plan base currency).</li>
-<li>Record FX assumptions (rate, date, source, volatility band).</li>
-<li>Allow dual-currency rollups when contracts are split by jurisdiction.</li>
-</ul>
-<h3 id="4-confidence-assignment">4) Confidence Assignment</h3>
-<ul>
-<li>High: explicit quantities and pricing provided.</li>
-<li>Medium: benchmark-based estimates.</li>
-<li>Low: inferred or missing data.</li>
-</ul>
-<h2 id="output-schema">Output Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;cbs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Labor&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&quot;subcategories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Engineering&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;estimate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">420000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">},</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Project Management&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;estimate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">120000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">}</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="p">]</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">      </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Compliance and Legal&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">&quot;subcategories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Permits&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;estimate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DKK&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;low&quot;</span><span class="p">}</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="p">]</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span><span class="nt">&quot;total_estimate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">570000</span><span class="p">,</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="nt">&quot;reporting_currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EUR&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="nt">&quot;fx_assumptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;pair&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DKK/EUR&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;rate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.13</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;as_of&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;volatility&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">}</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="nt">&quot;contingency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="nt">&quot;assumptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="s2">&quot;Engineering team of 5 for 12 months&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="s2">&quot;Permit costs based on regional averages&quot;</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">}</span>
+<p>arcgentica scores 85.28% on ARC-AGI-2 at $6.94/task using Claude Opus. Its architecture is fundamentally different from PlanExe's Luigi DAG in ways that are directly applicable to PlanExe's brittleness problems.</p>
+<p>We also read <code>worker_plan_internal/plan/run_plan_pipeline.py</code> in full. PlanExe is already a sophisticated multi-agent system — 40+ Luigi tasks, each making its own LLMExecutor call with retry and resume built in. The orchestration layer is solid. The brittleness is not in the plumbing; it's in three specific gaps.</p>
+<hr />
+<h2 id="the-three-brittleness-gaps">The Three Brittleness Gaps</h2>
+<h3 id="gap-1-one-llm-call-per-task-no-self-evaluation">Gap 1: One LLM call per task — no self-evaluation</h3>
+<p>Every Luigi task in PlanExe calls <code>LLMExecutor.execute()</code> once and writes the result to disk. If the model produces a malformed or low-quality output, the pipeline accepts it and moves on. The next 30 tasks process garbage silently.</p>
+<p>arcgentica handles this differently. Agents evaluate their own output before returning:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># From arcgentica solve.py</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">FinalSolution</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="n">examples</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">soft</span> <span class="o">=</span> <span class="n">soft_accuracy</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">transform_code</span><span class="p">,</span> <span class="n">examples</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">if</span> <span class="n">soft</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">FinalSolution</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="n">examples</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="integration-points">Integration Points</h2>
-<ul>
-<li>Feed into top-down and bottom-up finance modules.</li>
-<li>Use as a checklist for missing cost categories.</li>
-<li>Provide input to bid pricing and risk analysis.</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>% plans with a generated CBS.</li>
-<li>Reduction in unaccounted cost categories during review.</li>
-<li>Alignment between CBS totals and final budget.</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>Over-simplified categories: mitigate with domain-specific mappings.</li>
-<li>False precision: provide ranges and confidence labels.</li>
-<li>Missing quantities: require user clarification prompts.</li>
-</ul>
-<h2 id="future-enhancements">Future Enhancements</h2>
-<ul>
-<li>Domain-specific CBS templates.</li>
-<li>Automated cost library updates.</li>
-<li>Integration with procurement and supplier pricing feeds.</li>
-</ul>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="1-canonical-cbs-taxonomy-service">1) Canonical CBS taxonomy service</h3>
-<p>Create a versioned taxonomy module:
-- global categories (L1)
-- domain-specific subcategories (L2/L3)
-- mapping aliases (e.g., “permits” -&gt; compliance/legal)</p>
-<p>This avoids inconsistent CBS labels across plans.</p>
-<h3 id="2-wbs-to-cbs-mapper">2) WBS-to-CBS mapper</h3>
-<p>Implement deterministic + ML-assisted mapper:
-1. Rule-based first pass from task metadata and keywords.
-2. LLM-assisted classification for ambiguous tasks.
-3. Confidence score and explanation per mapping.</p>
-<p>Store mapping artifacts:
-- <code>wbs_task_id</code>
-- <code>cbs_path</code>
-- <code>mapping_confidence</code>
-- <code>mapping_reason</code></p>
-<h3 id="3-cost-line-generation">3) Cost line generation</h3>
-<p>For each mapped task, generate cost lines:
-- quantity
-- unit
-- unit rate
-- currency
-- low/base/high estimate
-- source (user input, benchmark, quote, inferred)</p>
-<p>Represent uncertainty explicitly; avoid single-point false precision.</p>
-<h3 id="4-assumptions-and-provenance-registry">4) Assumptions and provenance registry</h3>
-<p>Every cost line should reference an assumption record:
-- assumption text
-- evidence source
-- owner
-- last update timestamp</p>
-<p>Provide “assumption drift” detection if benchmarks change.</p>
-<h3 id="5-cbs-outputs-and-exports">5) CBS outputs and exports</h3>
-<p>Generate:
-- hierarchical CBS table
-- WBS↔CBS crosswalk table
-- top cost drivers with sensitivity
-- export to CSV/XLSX/JSON for finance tooling</p>
-<h3 id="6-integration-with-top-down-and-bottom-up-finance">6) Integration with top-down and bottom-up finance</h3>
-<ul>
-<li>Top-down uses CBS categories for ratio application.</li>
-<li>Bottom-up consumes CBS line items as task-level cost ledger.</li>
-<li>Reconciliation reports highlight CBS categories causing variance.</li>
-</ul>
-<h3 id="7-api-contract-proposal">7) API contract proposal</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;cbs_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;v1.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="nt">&quot;wbs_task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.2&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="nt">&quot;cbs_path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Labor/Engineering/Backend&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="nt">&quot;estimate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;base&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">70000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">95000</span><span class="p">},</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medium&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="nt">&quot;assumption_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;asm_42&quot;</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
+<p>The agent checks its own work. If <code>soft_accuracy</code> is below threshold, it retries with its first attempt as a hint. Two attempts max. This is not unlimited looping — it's bounded self-correction.</p>
+<h3 id="gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary">Gap 2: ReviewPlan produces critiques that die at the task boundary</h3>
+<p><code>ReviewPlan.execute()</code> asks 15 structured question blocks (critical issues, showstopper risks, assumptions, KPIs, etc.) and writes a structured critique to <code>review_plan.md</code>. That's where it stops. The critique never reaches the tasks that caused the problems.</p>
+<p>Simon recently added <code>task_retry</code> to the MCP layer — tasks can now be retried. The wiring between ReviewPlan's critique output and <code>task_retry</code> doesn't exist yet.</p>
+<h3 id="gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity">Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity</h3>
+<p>A two-sentence business idea goes through the same GovernancePhase 1-6, ExpertOrchestrator, full WBS Level 1-2-3, and CreateSchedule as a full enterprise plan. The <code>speed_vs_detail</code> parameter controls model choice but not task selection. This is expensive and produces bloated output for simple inputs.</p>
+<hr />
+<h2 id="four-adaptations-from-arcgentica">Four Adaptations from arcgentica</h2>
+<h3 id="adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks">Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks</h3>
+<p>For tasks where a bad output causes maximum downstream damage — <code>MakeAssumptions</code>, <code>ReviewAssumptions</code>, <code>CreateWBSLevel1</code> — wrap the <code>LLMExecutor</code> call in a bounded self-evaluation loop.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MakeAssumptions</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">execute_with_eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_attempts</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">attempt</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="k">while</span> <span class="n">attempt</span> <span class="o">&lt;</span> <span class="n">max_attempts</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            <span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_assumptions</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            <span class="k">if</span> <span class="n">score</span><span class="o">.</span><span class="n">passes_threshold</span><span class="p">:</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                <span class="k">break</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="c1"># Re-prompt with self-critique as context</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Previous attempt:</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Issues found:</span><span class="se">\n</span><span class="si">{</span><span class="n">score</span><span class="o">.</span><span class="n">issues</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Please correct:&quot;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="n">attempt</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="k">return</span> <span class="n">output</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_assumptions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EvalResult</span><span class="p">:</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Lightweight check: are all required sections present? Any contradictions?&quot;&quot;&quot;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="n">required</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Market&quot;</span><span class="p">,</span> <span class="s2">&quot;Timeline&quot;</span><span class="p">,</span> <span class="s2">&quot;Budget&quot;</span><span class="p">,</span> <span class="s2">&quot;Risks&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">required</span> <span class="k">if</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">output</span><span class="p">]</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="k">return</span> <span class="n">EvalResult</span><span class="p">(</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            <span class="n">passes_threshold</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            <span class="n">issues</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Missing sections: </span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">missing</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="p">)</span>
 </code></pre></div>
-<h3 id="8-rollout-phases">8) Rollout phases</h3>
+<p>This adds one retry for the highest-risk tasks. Not 10 iterations — just 2. The <code>evaluate_assumptions</code> check is cheap (structural, not another LLM call).</p>
+<p><strong>Where to apply:</strong> <code>MakeAssumptions</code>, <code>CreateWBSLevel1</code>, <code>SelectScenario</code>, <code>ReviewPlan</code></p>
+<h3 id="adaptation-2-wire-reviewplan-signals-to-task_retry">Adaptation 2: Wire ReviewPlan Signals to <code>task_retry</code></h3>
+<p>ReviewPlan already classifies failure signals by question block. The existing <code>task_retry</code> MCP tool already retries tasks. The missing piece is the bridge.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># New module: worker_plan_internal/diagnostics/review_retry_bridge.py</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">SIGNAL_TO_TASK_GROUP</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="s2">&quot;critical_issues&quot;</span><span class="p">:</span>     <span class="p">[</span><span class="s2">&quot;MakeAssumptions&quot;</span><span class="p">,</span> <span class="s2">&quot;ReviewAssumptions&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="s2">&quot;showstopper_risks&quot;</span><span class="p">:</span>   <span class="p">[</span><span class="s2">&quot;GovernancePhase4&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase5&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="s2">&quot;timeline_dependency&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;CreateWBSLevel3&quot;</span><span class="p">,</span> <span class="s2">&quot;EstimateWBSTaskDurations&quot;</span><span class="p">,</span> <span class="s2">&quot;ProjectSchedulePopulator&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="s2">&quot;data_uncertainty&quot;</span><span class="p">:</span>    <span class="p">[</span><span class="s2">&quot;DataCollection&quot;</span><span class="p">,</span> <span class="s2">&quot;FilterDocumentsToFind&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="s2">&quot;stakeholder_gaps&quot;</span><span class="p">:</span>    <span class="p">[</span><span class="s2">&quot;FindTeamMembers&quot;</span><span class="p">,</span> <span class="s2">&quot;ReviewTeam&quot;</span><span class="p">],</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">parse_review_signals</span><span class="p">(</span><span class="n">review_plan_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract actionable signals from review_plan.md.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">review_plan_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="n">signals</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">tasks</span> <span class="ow">in</span> <span class="n">SIGNAL_TO_TASK_GROUP</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="k">if</span> <span class="n">is_flagged</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            <span class="n">signals</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="n">category</span><span class="p">,</span> <span class="s2">&quot;tasks&quot;</span><span class="p">:</span> <span class="n">tasks</span><span class="p">,</span> <span class="s2">&quot;severity&quot;</span><span class="p">:</span> <span class="n">extract_severity</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">category</span><span class="p">)})</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="k">return</span> <span class="n">signals</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="k">def</span><span class="w"> </span><span class="nf">trigger_retries</span><span class="p">(</span><span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">signals</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">budget</span><span class="p">:</span> <span class="n">RetryBudget</span><span class="p">):</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Call task_retry for each flagged task group, respecting budget.&quot;&quot;&quot;</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="k">for</span> <span class="n">signal</span> <span class="ow">in</span> <span class="n">signals</span><span class="p">:</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="k">if</span> <span class="n">signal</span><span class="p">[</span><span class="s2">&quot;severity&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">budget</span><span class="o">.</span><span class="n">severity_threshold</span><span class="p">:</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>            <span class="k">continue</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        <span class="k">for</span> <span class="n">task_name</span> <span class="ow">in</span> <span class="n">signal</span><span class="p">[</span><span class="s2">&quot;tasks&quot;</span><span class="p">]:</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>            <span class="k">if</span> <span class="n">budget</span><span class="o">.</span><span class="n">can_retry</span><span class="p">():</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>                <span class="n">task_retry</span><span class="p">(</span><span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">,</span> <span class="n">task_name</span><span class="o">=</span><span class="n">task_name</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">signal</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">])</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>                <span class="n">budget</span><span class="o">.</span><span class="n">consume</span><span class="p">()</span>
+</code></pre></div>
+<p><code>RetryBudget</code> caps total retries per run (default: 3 task groups, 2 retries each) to prevent runaway costs.</p>
+<h3 id="adaptation-3-typed-output-contracts">Adaptation 3: Typed Output Contracts</h3>
+<p>arcgentica agents return typed objects, not raw strings:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">FinalSolution</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="n">examples</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># FinalSolution is a TypedDict — parsing failure raises immediately, not 20 tasks later</span>
+</code></pre></div>
+<p>PlanExe tasks write markdown. Structural failures are discovered late. Adding Pydantic output validation to high-risk tasks catches them at the task boundary:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">validator</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">AssumptionsOutput</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">assumptions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">risks</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span>  <span class="c1"># 0.0-1.0</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="nd">@validator</span><span class="p">(</span><span class="s1">&#39;assumptions&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">at_least_three</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Need at least 3 assumptions&#39;</span><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="k">return</span> <span class="n">v</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="k">class</span><span class="w"> </span><span class="nc">MakeAssumptions</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        <span class="n">raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>            <span class="n">parsed</span> <span class="o">=</span> <span class="n">AssumptionsOutput</span><span class="o">.</span><span class="n">model_validate_json</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>            <span class="c1"># Fail loudly at this task, not 30 tasks later</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>            <span class="k">raise</span> <span class="n">TaskOutputError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MakeAssumptions output failed validation: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">parsed</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">())</span>
+</code></pre></div>
+<p>This requires prompts to request JSON output — a prompt change, not an architecture change. The JSON structure becomes the contract between tasks.</p>
+<p><strong>Where to start:</strong> <code>MakeAssumptions</code> → <code>AssumptionsOutput</code>. Single task, high leverage, easy to validate.</p>
+<h3 id="adaptation-4-complexity-gated-task-selection">Adaptation 4: Complexity-Gated Task Selection</h3>
+<p>arcgentica's root agent decides dynamically how many sub-agents to spawn based on the problem. PlanExe can adapt this: an early <code>PlanComplexityAssessor</code> task gates which downstream task groups run.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanComplexityAssessor</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">    Fast, cheap classification of plan complexity.</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">    Output: complexity.json with tier and skip_phases list.</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="n">prompt_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_prompt</span><span class="p">()</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="n">tier</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute_cheap</span><span class="p">(</span><span class="n">COMPLEXITY_PROMPT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="n">prompt_text</span><span class="p">))</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="c1"># Returns: &quot;simple&quot; | &quot;medium&quot; | &quot;complex&quot;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="n">skip_phases</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            <span class="s2">&quot;simple&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;GovernancePhase4&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase5&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase6&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>                        <span class="s2">&quot;ExpertCriticism&quot;</span><span class="p">,</span> <span class="s2">&quot;CreateWBSLevel3&quot;</span><span class="p">],</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            <span class="s2">&quot;medium&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;GovernancePhase5&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase6&quot;</span><span class="p">],</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            <span class="s2">&quot;complex&quot;</span><span class="p">:</span> <span class="p">[],</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="p">}[</span><span class="n">tier</span><span class="p">]</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span><span class="s2">&quot;tier&quot;</span><span class="p">:</span> <span class="n">tier</span><span class="p">,</span> <span class="s2">&quot;skip_phases&quot;</span><span class="p">:</span> <span class="n">skip_phases</span><span class="p">},</span> <span class="n">f</span><span class="p">)</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="k">class</span><span class="w"> </span><span class="nc">GovernancePhase4</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">GovernancePhase3</span><span class="p">(),</span> <span class="n">PlanComplexityAssessor</span><span class="p">()]</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>        <span class="n">complexity</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>        <span class="k">if</span> <span class="s2">&quot;GovernancePhase4&quot;</span> <span class="ow">in</span> <span class="n">complexity</span><span class="p">[</span><span class="s2">&quot;skip_phases&quot;</span><span class="p">]:</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>            <span class="c1"># Write empty output and mark complete</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;skipped&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="s2">&quot;complexity=simple&quot;</span><span class="p">}))</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>            <span class="k">return</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>        <span class="c1"># ... normal execution</span>
+</code></pre></div>
+<p><code>PlanComplexityAssessor</code> uses a cheap model (Haiku, Flash) for the classification — not the full pipeline model. Cost: one small LLM call per run. Benefit: skip 5-10 expensive tasks for simple plans.</p>
+<hr />
+<h2 id="what-stays-the-same">What Stays the Same</h2>
 <ul>
-<li>Phase A: rule-based mapping + static taxonomy</li>
-<li>Phase B: confidence scoring + assumption registry</li>
-<li>Phase C: export + integration with finance modules</li>
-<li>Phase D: live vendor pricing and automated refresh</li>
+<li>The Luigi DAG structure. It's correct. Resume, retry, and flag-file-based progress tracking are solid.</li>
+<li><code>LLMExecutor</code>. The fallback model chain and retry logic are good. We're wrapping it, not replacing it.</li>
+<li>The overall pipeline sequence. The task ordering is well-designed.</li>
 </ul>
-<h3 id="9-validation-checklist">9) Validation checklist</h3>
-<ul>
-<li>Coverage: % WBS tasks mapped to valid CBS nodes</li>
-<li>Consistency: repeated runs produce stable mappings</li>
-<li>Auditability: every line has source + assumption</li>
-<li>Usability: finance users can edit/approve CBS quickly</li>
-</ul>
-<h2 id="detailed-implementation-plan-finance-integration">Detailed Implementation Plan (Finance Integration)</h2>
-<h3 id="domain-template-strategy">Domain Template Strategy</h3>
-<ul>
-<li>Start with 5 templates: software, infra, manufacturing, nonprofit, public sector.</li>
-<li>Fallback to generic taxonomy when domain confidence &lt; threshold.</li>
-</ul>
-<h3 id="editing-workflow">Editing Workflow</h3>
+<hr />
+<h2 id="implementation-priority">Implementation Priority</h2>
+<p>Start small. Each adaptation is independent:</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Adaptation</th>
+<th>Effort</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ReviewPlan → task_retry bridge</td>
+<td>Low</td>
+<td>Low — uses existing task_retry</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Soft self-eval on MakeAssumptions</td>
+<td>Medium</td>
+<td>Low — bounded, isolated to one task</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Typed output for MakeAssumptions</td>
+<td>Medium</td>
+<td>Medium — requires prompt change</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PlanComplexityAssessor</td>
+<td>High</td>
+<td>Low — purely additive</td>
+</tr>
+</tbody>
+</table>
+<p>Adaptation 1 has the highest value/effort ratio. Simon already built <code>task_retry</code> — we're just connecting ReviewPlan output to it. No new infrastructure, no prompt changes, no Luigi restructuring.</p>
+<hr />
+<h2 id="adaptation-5-quantitative-grounding-fermi-sanity-check">Adaptation 5: Quantitative Grounding (Fermi Sanity Check)</h2>
+<p><em>Added after direct feedback from Simon Strandgaard, 2026-02-25</em></p>
+<p>Simon's primary quality signal: <strong>numbers off by 2 orders of magnitude are the real failure mode.</strong> Plans must be grounded in current physical reality. Estimates without bounds are not estimates — they're guesses.</p>
+<p>This is the highest-priority adaptation. It doesn't require arcgentica patterns — it requires a new task.</p>
+<h3 id="new-task-fermisanitycheck">New task: <code>FermiSanityCheck</code></h3>
+<p>Runs after <code>MakeAssumptions</code> and before <code>ReviewPlan</code>. Extracts quantitative claims from the plan and checks them against physical plausibility.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">QuantifiedClaim</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">lower_bound</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">confidence</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;high&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;low&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">evidence</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># what justifies this range</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">FermiSanityResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">claims</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">QuantifiedClaim</span><span class="p">]</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">flagged</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>  <span class="c1"># claims where upper/lower ratio &gt; 100x or evidence is empty</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">grounded</span><span class="p">:</span> <span class="nb">bool</span>       <span class="c1"># False if any critical claim is flagged</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="k">class</span><span class="w"> </span><span class="nc">FermiSanityCheck</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="sd">    Extracts numerical claims from assumptions and validates order-of-magnitude plausibility.</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="sd">    Fails loudly if critical estimates are ungrounded (no bounds) or implausible (&gt;2 OOM spread).</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="k">return</span> <span class="n">MakeAssumptions</span><span class="p">()</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="n">assumptions_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>            <span class="n">FERMI_CHECK_PROMPT</span><span class="p">,</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>            <span class="n">context</span><span class="o">=</span><span class="n">assumptions_text</span><span class="p">,</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>            <span class="n">return_type</span><span class="o">=</span><span class="n">FermiSanityResult</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>        <span class="p">)</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        <span class="n">flagged</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>            <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">claims</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>            <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">lower_bound</span> <span class="o">==</span> <span class="mi">0</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>            <span class="ow">or</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">upper_bound</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower_bound</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">100</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>            <span class="ow">or</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">evidence</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>        <span class="p">]</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>        <span class="n">result</span><span class="o">.</span><span class="n">flagged</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">description</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">flagged</span><span class="p">]</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>        <span class="n">result</span><span class="o">.</span><span class="n">grounded</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">flagged</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">grounded</span><span class="p">:</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>            <span class="c1"># Do not halt pipeline — log and flag for ReviewPlan to catch</span>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;FermiSanityCheck: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flagged</span><span class="p">)</span><span class="si">}</span><span class="s2"> ungrounded claims&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>The prompt</strong> (<code>FERMI_CHECK_PROMPT</code>) instructs the LLM to:
+1. Extract every numerical claim from the assumptions (cost, timeline, market size, resource requirements, physical quantities)
+2. Express each as lower/upper bounds with units
+3. Cite what justifies the range (industry data, physical constants, analogous projects)
+4. Flag any claim where the ratio <code>upper/lower &gt; 100</code> or where no evidence is provided</p>
+<p><strong>Integration:</strong> <code>ReviewPlan</code> reads <code>fermi_sanity.json</code> as an additional input. Ungrounded claims in <code>flagged</code> are automatically promoted to the <code>critical_issues</code> signal category in the ReviewPlan → task_retry bridge (Adaptation 2).</p>
+<h3 id="revised-priority-order">Revised Priority Order</h3>
+<p>Based on Simon's feedback, the implementation order changes:</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Adaptation</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Fermi Sanity Check (new, Adaptation 5)</td>
+<td>Simon's primary quality signal</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Typed output contracts for <code>MakeAssumptions</code></td>
+<td>Required for Fermi check to work reliably</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ReviewPlan → task_retry bridge</td>
+<td>Connects Fermi failures to reruns</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Soft self-eval loop on high-stakes tasks</td>
+<td>Incremental quality improvement</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Complexity-gated pipeline</td>
+<td>Cost optimization, lower urgency</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="open-questions-for-simon">Open Questions for Simon</h2>
 <ol>
-<li>Auto-generate CBS draft.</li>
-<li>User reviews low-confidence lines first.</li>
-<li>Finance reviewer signs off final CBS baseline.</li>
+<li>
+<p><strong>What does a "good plan" look like to your actual users, and what's the most common complaint you hear?</strong> We've speculated about which pipeline stages fail — it would be valuable to know what failure modes users actually notice.</p>
+</li>
+<li>
+<p><strong>Is the Luigi DAG the architecture you want to extend for the next 12 months?</strong> If there are plans to replace the orchestration layer, we should know before proposing deep integrations.</p>
+</li>
+<li>
+<p><strong>Which of these four adaptations, if any, aligns with where you want PlanExe to go?</strong> Specifically: are typed Pydantic output contracts an acceptable pattern given your codebase conventions?</p>
+</li>
 </ol>
-<h3 id="change-control">Change Control</h3>
+<hr />
+<h2 id="references">References</h2>
 <ul>
-<li>Every CBS edit creates a diff record with rationale.</li>
-<li>Lock finalized CBS version for downstream reconciliation.</li>
-</ul>
-<h3 id="export-targets">Export Targets</h3>
-<ul>
-<li>CSV for analysts</li>
-<li>XLSX for procurement/accounting</li>
-<li>JSON for API consumers</li>
+<li><a href="https://github.com/VoynichLabs/arcgentica">arcgentica source</a></li>
+<li><a href="https://github.com/VoynichLabs/agentica-typescript-sdk">agentica-typescript-sdk</a></li>
+<li><a href="https://github.com/VoynichLabs/swarm-coordination/blob/main/events/2026/feb/25/planexe-pipeline-notes.md">PlanExe pipeline notes</a></li>
+<li><a href="../63-luigi-agent-integration/">Proposal 63: Luigi Agent Integration</a> — complementary <code>@agent_meta</code> decorator approach</li>
+<li><a href="../59-prompt-optimizing-with-ab-testing/">Proposal 59: A/B Testing for Prompt Optimization</a> — evaluation harness for validating any changes proposed here</li>
 </ul>
 
 
