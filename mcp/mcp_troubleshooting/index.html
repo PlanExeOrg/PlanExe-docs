@@ -1088,6 +1088,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#invalid-api-key-403" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid API key (403)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4435,6 +4446,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#invalid-api-key-403" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invalid API key (403)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4496,6 +4518,19 @@
 <li>Verify your provider has active billing.</li>
 <li>Check usage limits or rate limits.</li>
 <li>Try a different model or provider.</li>
+</ul>
+<hr />
+<h2 id="invalid-api-key-403"><code>Invalid API key</code> (403)</h2>
+<p>If your MCP client can reach <code>https://mcp.planexe.org/mcp</code> but receives <code>{"detail":"Invalid API key"}</code>:</p>
+<ul>
+<li>Send <strong>only the raw key value</strong> (e.g. <code>pex_…</code>), not <code>X-API-Key: pex_…</code>.</li>
+<li>The header should be <code>X-API-Key: &lt;key&gt;</code> or <code>Authorization: Bearer &lt;key&gt;</code>.</li>
+<li>Verify with curl:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span>-i<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_your_key_here&quot;</span><span class="w"> </span>https://mcp.planexe.org/mcp/tools
+</code></pre></div>
+<ul>
+<li>For self-hosted deployments: ensure <code>PLANEXE_API_KEY_SECRET</code> matches in both <code>frontend_multi_user</code> (key issuer) and <code>mcp_cloud</code> (key validator). A mismatch causes all <code>pex_…</code> keys to be rejected.</li>
 </ul>
 
 

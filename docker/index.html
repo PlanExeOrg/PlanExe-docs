@@ -4523,6 +4523,13 @@ This page covers common Docker workflows and troubleshooting.</p>
 <li>Build fresh and start services: <code>docker compose build --no-cache database_postgres worker_plan frontend_single_user frontend_multi_user &amp;&amp; docker compose up</code></li>
 </ul>
 <h2 id="while-developing">While developing</h2>
+<p>Simons typical workflow.</p>
+<p>While making code changes, I do this.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>--remove-orphans
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>build<span class="w"> </span>--no-cache
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
+</code></pre></div>
+<p>Frequently I do <code>docker system prune -a</code> to free disk space.</p>
 <ul>
 <li>Live rebuild/restart on changes: <code>docker compose watch</code> (requires Docker Desktop 4.28+).<br />
   If watch misses changes after file moves, rerun the no-cache build above.</li>
@@ -4559,15 +4566,15 @@ This page covers common Docker workflows and troubleshooting.</p>
 - <strong>Linux</strong>: System PostgreSQL installed via <code>apt install postgresql</code> or similar
 - <strong>Windows</strong>: PostgreSQL installer, pgAdmin, or other database tools</p>
 <p><strong>Solution</strong>: Set <code>PLANEXE_POSTGRES_PORT</code> to a different value:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_PORT</span><span class="o">=</span><span class="m">5433</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_PORT</span><span class="o">=</span><span class="m">5433</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
 </code></pre></div></p>
 <p>This only affects the HOST port (how you access Postgres from your machine). Inside Docker, containers always connect to each other on port 5432—this is hardcoded and unaffected by <code>PLANEXE_POSTGRES_PORT</code>.</p>
 <p>To make this permanent, add to your <code>.env</code> file:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PLANEXE_POSTGRES_PORT=5433
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PLANEXE_POSTGRES_PORT=5433
 </code></pre></div></p>
 <p>When connecting from your host machine (e.g., DBeaver, <code>psql</code>), use the port you set:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-p<span class="w"> </span><span class="m">5433</span><span class="w"> </span>-U<span class="w"> </span>planexe<span class="w"> </span>-d<span class="w"> </span>planexe
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-p<span class="w"> </span><span class="m">5433</span><span class="w"> </span>-U<span class="w"> </span>planexe<span class="w"> </span>-d<span class="w"> </span>planexe
 </code></pre></div></p>
 <h2 id="environment-notes">Environment notes</h2>
 <ul>
@@ -4585,11 +4592,11 @@ This page covers common Docker workflows and troubleshooting.</p>
   - Linux: <code>http://172.17.0.1:5100</code> (or add <code>host.docker.internal</code> pointing to the bridge IP).
 - <code>PLANEXE_HOST_RUN_DIR</code>: optional; defaults to <code>PlanExe/run</code> on the host. Set an absolute path if you relocate the run directory.</p>
 <p>1) Start host opener <strong>before</strong> Docker (on the host):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>open_dir_server
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># Windows: venv\Scripts\activate</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>python<span class="w"> </span>app.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>open_dir_server
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># Windows: venv\Scripts\activate</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>python<span class="w"> </span>app.py
 </code></pre></div>
 2) Provide <code>PLANEXE_OPEN_DIR_SERVER_URL</code> via your shell env, <code>.env</code>, or docker compose environment for <code>frontend_single_user</code>.</p>
 
