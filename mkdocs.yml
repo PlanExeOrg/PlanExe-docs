@@ -49,6 +49,7 @@ nav:
       - Ollama: ai_providers/ollama.md
       - LM Studio: ai_providers/lm_studio.md
       - Mistral: ai_providers/mistral.md
+    - Status: status.md
     - Railway: railway.md
     - Deployment and hosting: deployment_hosting.md
     - Docs style guide: docs_style_guide.md
