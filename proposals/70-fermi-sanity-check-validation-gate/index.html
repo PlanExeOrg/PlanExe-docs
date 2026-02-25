@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/70-fermi-sanity-check-validation-gate/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/37-cashflow-and-funding-stress-monte-carlo/">
+        <link rel="prev" href="../69-arcgentica-agent-patterns/">
       
       
-        <link rel="prev" href="../36-monte-carlo-plan-success-probability-engine/">
-      
-      
-        <link rel="next" href="../38-risk-propagation-network-and-failure-modes/">
+        <link rel="next" href="../70-mcp-interface-evaluation-and-roadmap/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Cashflow + Funding Stress Monte Carlo (How Money Moves) - PlanExe Documentation</title>
+        <title>70 fermi sanity check validation gate - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Cashflow + Funding Stress Monte Carlo (How Money Moves) - PlanExe Documentation" />
+<meta property="og:title" content="70 fermi sanity check validation gate - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/37-cashflow-and-funding-stress-monte-carlo.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/70-fermi-sanity-check-validation-gate.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/37-cashflow-and-funding-stress-monte-carlo/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/70-fermi-sanity-check-validation-gate/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cashflow + Funding Stress Monte Carlo (How Money Moves) - PlanExe Documentation" />
+<meta property="twitter:title" content="70 fermi sanity check validation gate - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/37-cashflow-and-funding-stress-monte-carlo.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/70-fermi-sanity-check-validation-gate.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cashflow-funding-stress-monte-carlo-how-money-moves" class="md-skip">
+        <a href="#fermisanitycheck-as-the-validation-gate" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cashflow + Funding Stress Monte Carlo (How Money Moves)
+              70 fermi sanity check validation gate
             
           </span>
         </div>
@@ -3139,44 +3137,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    37 cashflow and funding stress monte carlo
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
         
   
   
@@ -3199,341 +3163,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cashflow-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cashflow Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cashflow Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#inflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inflows
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#outflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Outflows
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risk-drivers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risk Drivers
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#simulation-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simulation Workflow
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#policy-hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Policy Hooks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-cashflow-model-assembly" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Cashflow Model Assembly
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-stress-simulation-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Stress Simulation Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-decision-layer-policy-hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Decision Layer + Policy Hooks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uxreporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        UX/reporting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan-treasury-readiness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan (Treasury Readiness)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan (Treasury Readiness)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#treasury-simulation-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Treasury Simulation Features
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decision-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Decision Outputs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alerting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alerting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4614,10 +4243,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../70-fermi-sanity-check-validation-gate/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    70 fermi sanity check validation gate
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4633,6 +4289,153 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposal-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposal Scope
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposal Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Validation Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-extensibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Extensibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deliverables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-docs-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Docs First
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4736,21 +4539,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why
+        Summary
       
     </span>
   </a>
@@ -4769,33 +4561,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#proposal-scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed Solution
+        Proposal Scope
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cashflow-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cashflow Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cashflow Model">
+    <nav class="md-nav" aria-label="Proposal Scope">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inflows" class="md-nav__link">
+  <a href="#1-inputs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inflows
+        1. Inputs
       
     </span>
   </a>
@@ -4803,10 +4584,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#outflows" class="md-nav__link">
+  <a href="#2-validation-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Outflows
+        2. Validation Rules
       
     </span>
   </a>
@@ -4814,10 +4595,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#risk-drivers" class="md-nav__link">
+  <a href="#3-outputs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Risk Drivers
+        3. Outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-extensibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Extensibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Metrics
       
     </span>
   </a>
@@ -4830,10 +4633,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulation-workflow" class="md-nav__link">
+  <a href="#deliverables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simulation Workflow
+        Deliverables
       
     </span>
   </a>
@@ -4841,10 +4644,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
+  <a href="#why-docs-first" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output Schema
+        Why Docs First
       
     </span>
   </a>
@@ -4852,201 +4655,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#policy-hooks" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Policy Hooks
+        Next Steps
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-cashflow-model-assembly" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Cashflow Model Assembly
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-stress-simulation-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Stress Simulation Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-decision-layer-policy-hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Decision Layer + Policy Hooks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uxreporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        UX/reporting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan-treasury-readiness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan (Treasury Readiness)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan (Treasury Readiness)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#treasury-simulation-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Treasury Simulation Features
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decision-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Decision Outputs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alerting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alerting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5070,200 +4685,65 @@
   
 
 
-<h1 id="cashflow-funding-stress-monte-carlo-how-money-moves">Cashflow + Funding Stress Monte Carlo (How Money Moves)</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-10<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>cashflow</code>, <code>finance</code>, <code>simulation</code>, <code>liquidity</code>, <code>risk</code></p>
-<h2 id="pitch">Pitch</h2>
-<p>Simulate weekly or monthly cash movement under uncertainty to identify liquidity cliffs, funding gaps, and insolvency windows before execution starts.</p>
-<h2 id="why">Why</h2>
-<p>Projects fail from <strong>cash timing issues</strong> even when total budget looks sufficient. A stress simulation surfaces liquidity risk early and informs funding structure.</p>
+<h1 id="fermisanitycheck-as-the-validation-gate">FermiSanityCheck as the Validation Gate</h1>
+<p><strong>Date:</strong> 2026-02-25<br />
+<strong>Authors:</strong> Egon &amp; Larry<br />
+<strong>Status:</strong> Proposal (docs-only — awaiting Simon's review before implementation)<br />
+<strong>Tags:</strong> validation, planexe, strategy  </p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>FermiSanityCheck is the first rule-based guard that touches every PlanExe assumption. Rather than a plan generator, PlanExe should be the <strong>auditing gate</strong> that agents call before executing assumptions. This proposal explains how the validation module should operate, what signals it emits, and how to keep it extensible for domain-specific heuristics.</p>
+<hr />
 <h2 id="problem">Problem</h2>
-<ul>
-<li>Budget totals do not capture timing risk.</li>
-<li>Payment delays and drawdown constraints are often ignored.</li>
-<li>Financing plans are rarely stress-tested.</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Build a Monte Carlo cashflow simulator that:</p>
+<p>Autonomous agents hallucinate when they accept ungrounded claims: missing bounds, 100× spans, and low-confidence evidence. We already added a prototype <code>fermi_sanity_check.py</code>, but it currently mixes English-only heuristics, hardcoded units, and no documented extensions. Simon highlighted the need for proposals before implementation; we need a clean doc describing the validation gate before touching more code.</p>
+<hr />
+<h2 id="proposal-scope">Proposal Scope</h2>
+<h3 id="1-inputs">1. Inputs</h3>
+<p>Describe the structured <code>QuantifiedAssumption</code> contract (claim, lower/upper, unit, confidence, evidence) and how <code>MakeAssumptions</code> outputs feed it.</p>
+<h3 id="2-validation-rules">2. Validation Rules</h3>
+<p>Outline the core checks:
+- Bounds present and non-contradictory
+- Span ratio ≤ 100× (warn at 50×)
+- Evidence present for low-confidence claims
+- Budget/timeline/team heuristics (domain-agnostic defaults)</p>
+<p>And how they map to signal categories (assumptions, governance, WBS, etc.).</p>
+<h3 id="3-outputs">3. Outputs</h3>
+<p>Define the JSON report (<code>pass/fail</code>, reasons, <code>pass_rate_pct</code>) and Markdown summary, plus how downstream tasks should consume them.</p>
+<h3 id="4-extensibility">4. Extensibility</h3>
+<p>Provide guidance on adding domain profiles (carpenter/dentist/personal), currency/metric conversions, and future keyword lists so the validation gate remains adaptable — <strong>without hardcoding English-specific terms in the core module</strong>.</p>
+<h3 id="5-metrics">5. Metrics</h3>
+<p>Suggest how we will measure success:
+- <code>pass_rate_pct</code> per plan
+- Reduction in downstream review cycles
+- Agent adoption of validation report before task execution</p>
+<hr />
+<h2 id="deliverables">Deliverables</h2>
 <ol>
-<li>Models inflows and outflows over time.</li>
-<li>Incorporates stochastic delays and default probabilities.</li>
-<li>Runs thousands of scenarios to estimate liquidity risk.</li>
-<li>Produces funding buffer recommendations.</li>
+<li>This doc-only PR in <code>docs/proposals/70-fermi-sanity-check-validation-gate.md</code></li>
+<li>A short appendix with example validation reports and sample prompts for hallucination triggers</li>
+<li>A review checklist for Simon: do these checks cover the key failure modes? Are the hooks for downstream tasks clear?</li>
 </ol>
-<h2 id="cashflow-model">Cashflow Model</h2>
-<h3 id="inflows">Inflows</h3>
-<ul>
-<li>milestone payments</li>
-<li>investor tranches</li>
-<li>grants</li>
-<li>debt drawdowns</li>
-</ul>
-<h3 id="outflows">Outflows</h3>
-<ul>
-<li>labor and contractors</li>
-<li>materials and equipment</li>
-<li>logistics</li>
-<li>compliance and legal</li>
-<li>contingency</li>
-</ul>
-<h3 id="risk-drivers">Risk Drivers</h3>
-<ul>
-<li>counterparty payment delays</li>
-<li>procurement cost inflation</li>
-<li>FX volatility (for multi-currency plans)</li>
-<li>timeline slips affecting cash burn</li>
-</ul>
-<h2 id="simulation-workflow">Simulation Workflow</h2>
-<ol>
-<li>Build baseline cashflow schedule.</li>
-<li>Sample stochastic events (delays, cost spikes).</li>
-<li>Compute cash balance over time.</li>
-<li>Record insolvency windows and buffer needs.</li>
-</ol>
-<h2 id="output-schema">Output Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;probability_negative_cash&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.27</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;min_cash_buffer&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1800000</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;worst_case_gap&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3200000</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;time_to_insolvency_weeks&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="policy-hooks">Policy Hooks</h2>
-<ul>
-<li>Block plan escalation if liquidity failure probability exceeds threshold.</li>
-<li>Recommend tranche redesign or payment renegotiation.</li>
-<li>Adjust schedule to smooth peak burn periods.</li>
-</ul>
-<h2 id="integration-points">Integration Points</h2>
-<ul>
-<li>Feeds into top-down and bottom-up finance modules.</li>
-<li>Informs investor risk scoring and funding structure.</li>
-<li>Links to risk propagation network.</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>Reduction in mid-project funding crises.</li>
-<li>Better alignment between payment schedules and burn.</li>
-<li>Increased confidence in funding adequacy.</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>Over-reliance on assumed distributions.</li>
-<li>Underestimating black swan funding shocks.</li>
-<li>Poor quality input data yields false security.</li>
-</ul>
-<h2 id="future-enhancements">Future Enhancements</h2>
-<ul>
-<li>Scenario-specific macro stress models.</li>
-<li>Automated FX hedging analysis.</li>
-<li>Live cashflow tracking during execution.</li>
-</ul>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-1-cashflow-model-assembly">Phase 1: Cashflow Model Assembly</h3>
-<ol>
-<li>Build canonical cashflow timeline object:</li>
-<li>period granularity (weekly/monthly)</li>
-<li>inflow schedule with uncertainty bands</li>
-<li>
-<p>outflow schedule from CBS and staffing plans</p>
-</li>
-<li>
-<p>Add uncertainty injectors:</p>
-</li>
-<li>receivable delay distributions</li>
-<li>procurement inflation shocks</li>
-<li>FX movement models for multi-currency projects</li>
-<li>
-<p>drawdown timing constraints for debt/grants</p>
-</li>
-<li>
-<p>Define insolvency rules:</p>
-</li>
-<li>threshold crossing (<code>cash_balance &lt; 0</code>)</li>
-<li>sustained shortfall windows (<code>n</code> periods below minimum buffer)</li>
-</ol>
-<h3 id="phase-2-stress-simulation-engine">Phase 2: Stress Simulation Engine</h3>
-<ol>
-<li>Run 10,000 stochastic scenarios with deterministic seed option.</li>
-<li>Compute key outputs:</li>
-<li>probability of negative cash by period</li>
-<li>minimum viable reserve buffer</li>
-<li>
-<p>required funding bridge amount and timing</p>
-</li>
-<li>
-<p>Tag scenario archetypes:</p>
-</li>
-<li>delay-driven insolvency</li>
-<li>inflation-driven insolvency</li>
-<li>FX-driven insolvency</li>
-</ol>
-<h3 id="phase-3-decision-layer-policy-hooks">Phase 3: Decision Layer + Policy Hooks</h3>
-<ol>
-<li>Add policy thresholds configurable by domain/risk appetite.</li>
-<li>Emit recommendations automatically:</li>
-<li>resequence payment milestones</li>
-<li>increase contingency reserve</li>
-<li>
-<p>add backup credit facility</p>
-</li>
-<li>
-<p>Integrate with bid/no-bid gate:</p>
-</li>
-<li>block escalation if liquidity failure probability exceeds limit.</li>
-</ol>
-<h3 id="data-model-additions">Data model additions</h3>
-<ul>
-<li><code>cashflow_scenarios</code> (run_id, period, inflow, outflow, balance, scenario_id)</li>
-<li><code>cashflow_risk_summary</code> (run_id, p_negative_cash, min_buffer, worst_gap)</li>
-<li><code>funding_actions</code> (run_id, action_type, expected_impact)</li>
-</ul>
-<h3 id="uxreporting">UX/reporting</h3>
-<p>Add a dedicated report section:
-- cash-at-risk curve
-- highest-risk periods
-- mitigation playbook with expected probability reduction</p>
-<h3 id="validation-checklist">Validation checklist</h3>
-<ul>
-<li>Reconcile baseline simulation with deterministic cashflow model.</li>
-<li>Verify multi-currency translation consistency.</li>
-<li>Backtest against historical liquidity incidents where available.</li>
-</ul>
-<h2 id="detailed-implementation-plan-treasury-readiness">Detailed Implementation Plan (Treasury Readiness)</h2>
-<h3 id="treasury-simulation-features">Treasury Simulation Features</h3>
-<ul>
-<li>Dynamic cash floor policy per project stage</li>
-<li>Payment delay distributions by counterparty type</li>
-<li>Optional emergency facility simulation</li>
-</ul>
-<h3 id="decision-outputs">Decision Outputs</h3>
-<ul>
-<li>Minimum reserve recommendation</li>
-<li>Funding bridge trigger points</li>
-<li>Suggested payment milestone re-shaping</li>
-</ul>
-<h3 id="alerting">Alerting</h3>
-<ul>
-<li>Critical alert when insolvency probability exceeds configured threshold</li>
-<li>Daily digest for plans in warning zone</li>
-</ul>
-<h3 id="validation">Validation</h3>
-<ul>
-<li>Replay historical near-insolvency projects for calibration</li>
-<li>Stress test with correlated shock scenarios</li>
-</ul>
+<hr />
+<h2 id="why-docs-first">Why Docs First</h2>
+<p>The previous implementation attempt (PR #69) was rejected because:
+- Too large (mixed too many concerns)
+- Hardcoded units (English-only heuristics)
+- No proposal approved before implementation</p>
+<p>This proposal isolates the <strong>why and what</strong> from the <strong>how</strong>. Once approved, implementation resumes with a clear mandate and clean scope.</p>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
+<p>Once Simon approves this proposal:
+1. Implementation (FermiSanityCheck module, domain normalizer, DAG wiring) resumes
+2. Each implementation PR stays small and focused on one concern
+3. Domain profiles are a separate proposal (not bundled with validation rules)</p>
+<hr />
+<p><em>Incident reference: <code>swarm-coordination/events/2026/feb/2026-02-25-planexe-implementation-without-proposal-approval.md</code></em></p>
 
 
 
 
 
 
-
-  
-  
 
 
 

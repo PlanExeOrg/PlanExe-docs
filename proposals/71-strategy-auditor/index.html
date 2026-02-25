@@ -9,16 +9,12 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/71-strategy-auditor/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/37-cashflow-and-funding-stress-monte-carlo/">
+        <link rel="prev" href="../70-mcp-interface-evaluation-and-roadmap/">
       
-      
-        <link rel="prev" href="../36-monte-carlo-plan-success-probability-engine/">
-      
-      
-        <link rel="next" href="../38-risk-propagation-network-and-failure-modes/">
       
       
         
@@ -29,7 +25,7 @@
     
     
       
-        <title>Cashflow + Funding Stress Monte Carlo (How Money Moves) - PlanExe Documentation</title>
+        <title>71 strategy auditor - PlanExe Documentation</title>
       
     
     
@@ -77,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Cashflow + Funding Stress Monte Carlo (How Money Moves) - PlanExe Documentation" />
+<meta property="og:title" content="71 strategy auditor - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/37-cashflow-and-funding-stress-monte-carlo.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/71-strategy-auditor.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/37-cashflow-and-funding-stress-monte-carlo/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/71-strategy-auditor/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cashflow + Funding Stress Monte Carlo (How Money Moves) - PlanExe Documentation" />
+<meta property="twitter:title" content="71 strategy auditor - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/37-cashflow-and-funding-stress-monte-carlo.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/71-strategy-auditor.png" />
 </head>
   
   
@@ -107,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cashflow-funding-stress-monte-carlo-how-money-moves" class="md-skip">
+        <a href="#from-plan-generator-to-autonomous-agent-auditor" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cashflow + Funding Stress Monte Carlo (How Money Moves)
+              71 strategy auditor
             
           </span>
         </div>
@@ -3139,44 +3135,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    37 cashflow and funding stress monte carlo
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
         
   
   
@@ -3199,341 +3161,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cashflow-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cashflow Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cashflow Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#inflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inflows
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#outflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Outflows
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#risk-drivers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risk Drivers
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#simulation-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simulation Workflow
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#policy-hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Policy Hooks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-cashflow-model-assembly" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Cashflow Model Assembly
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-stress-simulation-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Stress Simulation Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-decision-layer-policy-hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Decision Layer + Policy Hooks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uxreporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        UX/reporting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan-treasury-readiness" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan (Treasury Readiness)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan (Treasury Readiness)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#treasury-simulation-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Treasury Simulation Features
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#decision-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Decision Outputs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#alerting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alerting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4670,10 +4297,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../71-strategy-auditor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    71 strategy auditor
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4689,6 +4343,220 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-autonomous-agents-in-bubbles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem: Autonomous Agents in Bubbles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-opportunity-validation-as-a-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Opportunity: Validation as a Service
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-wins-in-the-agentic-economy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Wins in the Agentic Economy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Wins in the Agentic Economy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-software-already-won-the-llm-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Software Already Won the LLM Game
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-agents-are-untrusted-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Agents Are Untrusted Sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-auditing-is-composable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Auditing is Composable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-business-model-shift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Business Model Shift
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Business Model Shift">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-2025-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before (2025 thinking):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-2026-reality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After (2026 reality):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: ✅ Done
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: 🔄 In Progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-proposed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Proposed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-questions-for-simon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Questions for Simon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4736,10 +4604,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#executive-summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Executive Summary
       
     </span>
   </a>
@@ -4747,10 +4615,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#the-problem-autonomous-agents-in-bubbles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        The Problem: Autonomous Agents in Bubbles
       
     </span>
   </a>
@@ -4758,10 +4626,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#the-opportunity-validation-as-a-service" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        The Opportunity: Validation as a Service
       
     </span>
   </a>
@@ -4769,33 +4637,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#why-this-wins-in-the-agentic-economy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed Solution
+        Why This Wins in the Agentic Economy
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cashflow-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cashflow Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cashflow Model">
+    <nav class="md-nav" aria-label="Why This Wins in the Agentic Economy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inflows" class="md-nav__link">
+  <a href="#1-software-already-won-the-llm-game" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inflows
+        1. Software Already Won the LLM Game
       
     </span>
   </a>
@@ -4803,10 +4660,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#outflows" class="md-nav__link">
+  <a href="#2-agents-are-untrusted-sources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Outflows
+        2. Agents Are Untrusted Sources
       
     </span>
   </a>
@@ -4814,10 +4671,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#risk-drivers" class="md-nav__link">
+  <a href="#3-auditing-is-composable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Risk Drivers
+        3. Auditing is Composable
       
     </span>
   </a>
@@ -4830,99 +4687,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulation-workflow" class="md-nav__link">
+  <a href="#the-business-model-shift" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Simulation Workflow
+        The Business Model Shift
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#policy-hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Policy Hooks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+    <nav class="md-nav" aria-label="The Business Model Shift">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-1-cashflow-model-assembly" class="md-nav__link">
+  <a href="#before-2025-thinking" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 1: Cashflow Model Assembly
+        Before (2025 thinking):
       
     </span>
   </a>
@@ -4930,54 +4710,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-2-stress-simulation-engine" class="md-nav__link">
+  <a href="#after-2026-reality" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 2: Stress Simulation Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-decision-layer-policy-hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Decision Layer + Policy Hooks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uxreporting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        UX/reporting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
+        After (2026 reality):
       
     </span>
   </a>
@@ -4990,22 +4726,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-implementation-plan-treasury-readiness" class="md-nav__link">
+  <a href="#implementation-path" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detailed Implementation Plan (Treasury Readiness)
+        Implementation Path
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Detailed Implementation Plan (Treasury Readiness)">
+    <nav class="md-nav" aria-label="Implementation Path">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#treasury-simulation-features" class="md-nav__link">
+  <a href="#phase-1-done" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Treasury Simulation Features
+        Phase 1: ✅ Done
       
     </span>
   </a>
@@ -5013,10 +4749,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#decision-outputs" class="md-nav__link">
+  <a href="#phase-2-in-progress" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Decision Outputs
+        Phase 2: 🔄 In Progress
       
     </span>
   </a>
@@ -5024,21 +4760,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alerting" class="md-nav__link">
+  <a href="#phase-3-proposed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alerting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation
+        Phase 3: Proposed
       
     </span>
   </a>
@@ -5047,6 +4772,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-questions-for-simon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Questions for Simon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5070,200 +4817,129 @@
   
 
 
-<h1 id="cashflow-funding-stress-monte-carlo-how-money-moves">Cashflow + Funding Stress Monte Carlo (How Money Moves)</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-10<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>cashflow</code>, <code>finance</code>, <code>simulation</code>, <code>liquidity</code>, <code>risk</code></p>
-<h2 id="pitch">Pitch</h2>
-<p>Simulate weekly or monthly cash movement under uncertainty to identify liquidity cliffs, funding gaps, and insolvency windows before execution starts.</p>
-<h2 id="why">Why</h2>
-<p>Projects fail from <strong>cash timing issues</strong> even when total budget looks sufficient. A stress simulation surfaces liquidity risk early and informs funding structure.</p>
-<h2 id="problem">Problem</h2>
-<ul>
-<li>Budget totals do not capture timing risk.</li>
-<li>Payment delays and drawdown constraints are often ignored.</li>
-<li>Financing plans are rarely stress-tested.</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Build a Monte Carlo cashflow simulator that:</p>
+<h1 id="from-plan-generator-to-autonomous-agent-auditor">From Plan Generator to Autonomous Agent Auditor</h1>
+<p><strong>Date:</strong> 26 February 2026<br />
+<strong>Authors:</strong> Larry, Egon, Simon (for review)<br />
+<strong>Status:</strong> Strategic Proposal for Feedback  </p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>PlanExe was originally positioned as a plan <em>generator</em> — take a vague idea, have an LLM dream up a business plan. In 2025, we learned that LLMs hallucinate plans with no grounding. By 2026, the market has moved on: agents don't need another hallucinated plan generator.</p>
+<p><strong>What agents actually need:</strong> A trusted auditing layer that validates whether the assumptions driving their autonomous workflows are sane.</p>
+<p>This proposal argues that PlanExe's real value in 2026 is as <strong>the canonical auditing gate for autonomous agent loops</strong> — not as a plan creator, but as a safety layer that prevents hallucinations before they propagate downstream.</p>
+<hr />
+<h2 id="the-problem-autonomous-agents-in-bubbles">The Problem: Autonomous Agents in Bubbles</h2>
+<p>Agents run in isolation. They have no world model. They can't verify if their assumptions are grounded in reality. They hallucinate:
+- Cost estimates that are off by orders of magnitude
+- Timelines that ignore real-world constraints
+- Team sizes that make no sense</p>
+<p><strong>The consequence:</strong> Bad assumptions → bad downstream decisions → failed autonomy.</p>
+<p>Agents need an external oracle that can say: <strong>"This assumption is grounded. Proceed."</strong> or <strong>"This looks hallucinated. Re-evaluate."</strong></p>
+<hr />
+<h2 id="the-opportunity-validation-as-a-service">The Opportunity: Validation as a Service</h2>
+<p><strong>What we've built in Phase 1-2:</strong></p>
 <ol>
-<li>Models inflows and outflows over time.</li>
-<li>Incorporates stochastic delays and default probabilities.</li>
-<li>Runs thousands of scenarios to estimate liquidity risk.</li>
-<li>Produces funding buffer recommendations.</li>
+<li><strong>FermiSanityCheck (Phase 1)</strong>: A validation gate that inspects every quantified assumption:</li>
+<li>Are bounds present and non-contradictory?</li>
+<li>Is the span ratio reasonable (≤100×)?</li>
+<li>Does low-confidence claim have supporting evidence?</li>
+<li>Do the numbers pass domain heuristics?</li>
 </ol>
-<h2 id="cashflow-model">Cashflow Model</h2>
-<h3 id="inflows">Inflows</h3>
-<ul>
-<li>milestone payments</li>
-<li>investor tranches</li>
-<li>grants</li>
-<li>debt drawdowns</li>
-</ul>
-<h3 id="outflows">Outflows</h3>
-<ul>
-<li>labor and contractors</li>
-<li>materials and equipment</li>
-<li>logistics</li>
-<li>compliance and legal</li>
-<li>contingency</li>
-</ul>
-<h3 id="risk-drivers">Risk Drivers</h3>
-<ul>
-<li>counterparty payment delays</li>
-<li>procurement cost inflation</li>
-<li>FX volatility (for multi-currency plans)</li>
-<li>timeline slips affecting cash burn</li>
-</ul>
-<h2 id="simulation-workflow">Simulation Workflow</h2>
+<p><strong>Output:</strong> Structured JSON + Markdown that agents can parse deterministically.</p>
 <ol>
-<li>Build baseline cashflow schedule.</li>
-<li>Sample stochastic events (delays, cost spikes).</li>
-<li>Compute cash balance over time.</li>
-<li>Record insolvency windows and buffer needs.</li>
+<li><strong>Domain-Aware Auditor (Phase 2)</strong>: Auto-detect the domain (carpenter, dentist, personal project) and normalize to domain standards:</li>
+<li>Currency → domain default + EUR for comparison</li>
+<li>Units → metric</li>
+<li>Confidence keywords → domain-aware signals</li>
 </ol>
-<h2 id="output-schema">Output Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;probability_negative_cash&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.27</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;min_cash_buffer&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1800000</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;worst_case_gap&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3200000</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;time_to_insolvency_weeks&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="policy-hooks">Policy Hooks</h2>
+<p><strong>Why it matters:</strong> "Cost 5000" means nothing without context. "5000 DKK for a carpenter project" is verifiable and sane. FermiSanityCheck becomes the translator.</p>
+<hr />
+<h2 id="why-this-wins-in-the-agentic-economy">Why This Wins in the Agentic Economy</h2>
+<h3 id="1-software-already-won-the-llm-game">1. <strong>Software Already Won the LLM Game</strong></h3>
+<p>Code is verifiable. It compiles or it doesn't. Tests pass or they don't. No trust required.</p>
+<p><strong>Business plans?</strong> No immediate validation. High trust requirement. High risk.</p>
+<h3 id="2-agents-are-untrusted-sources">2. <strong>Agents Are Untrusted Sources</strong></h3>
+<p>The lesson from 2025: don't trust the AI.</p>
+<p>In 2026, agents will run in bubbles. External content will be labeled as untrusted to prevent prompt injection. But agents still need <em>some</em> external signal they can trust.</p>
+<p><strong>PlanExe becomes that trusted signal.</strong> It's not trying to out-think the agent; it's just saying: "Your assumption passes quantitative grounding. You can rely on it."</p>
+<h3 id="3-auditing-is-composable">3. <strong>Auditing is Composable</strong></h3>
+<p>Agents will chain together. Agent A's output becomes Agent B's input. Without a validation layer, assumptions compound into hallucinations.</p>
+<p><strong>PlanExe sits in the middle:</strong> catches bad assumptions before they propagate.</p>
+<hr />
+<h2 id="the-business-model-shift">The Business Model Shift</h2>
+<h3 id="before-2025-thinking">Before (2025 thinking):</h3>
 <ul>
-<li>Block plan escalation if liquidity failure probability exceeds threshold.</li>
-<li>Recommend tranche redesign or payment renegotiation.</li>
-<li>Adjust schedule to smooth peak burn periods.</li>
+<li>Sell plans to humans</li>
+<li>Revenue: per-plan generation</li>
+<li>Value proposition: "Better plans than manual consulting"</li>
+<li>Problem: Plans are hallucinated; no immediate verification</li>
 </ul>
-<h2 id="integration-points">Integration Points</h2>
+<h3 id="after-2026-reality">After (2026 reality):</h3>
 <ul>
-<li>Feeds into top-down and bottom-up finance modules.</li>
-<li>Informs investor risk scoring and funding structure.</li>
-<li>Links to risk propagation network.</li>
+<li>Sell validation to agents</li>
+<li>Revenue: per-assumption audited (or per-agent subscription)</li>
+<li>Value proposition: "Safe, trustworthy validation gate for autonomous loops"</li>
+<li>Advantage: Immediate, deterministic output (JSON); agents can compose it</li>
 </ul>
-<h2 id="success-metrics">Success Metrics</h2>
+<hr />
+<h2 id="implementation-path">Implementation Path</h2>
+<h3 id="phase-1-done">Phase 1: ✅ Done</h3>
 <ul>
-<li>Reduction in mid-project funding crises.</li>
-<li>Better alignment between payment schedules and burn.</li>
-<li>Increased confidence in funding adequacy.</li>
+<li>FermiSanityCheck validator</li>
+<li>DAG integration (MakeAssumptions → Validate → DistillAssumptions)</li>
+<li>Structured JSON output</li>
 </ul>
-<h2 id="risks">Risks</h2>
+<h3 id="phase-2-in-progress">Phase 2: 🔄 In Progress</h3>
 <ul>
-<li>Over-reliance on assumed distributions.</li>
-<li>Underestimating black swan funding shocks.</li>
-<li>Poor quality input data yields false security.</li>
+<li>Domain profiles (Carpenter, Dentist, Personal, Startup, etc.)</li>
+<li>Auto-detection + normalization</li>
+<li>Ready for integration testing</li>
 </ul>
-<h2 id="future-enhancements">Future Enhancements</h2>
+<h3 id="phase-3-proposed">Phase 3: Proposed</h3>
 <ul>
-<li>Scenario-specific macro stress models.</li>
-<li>Automated FX hedging analysis.</li>
-<li>Live cashflow tracking during execution.</li>
+<li>Auditing API (agents call <code>/validate</code> with assumptions)</li>
+<li>Trust scoring (confidence + grounding + domain consistency)</li>
+<li>Audit logs (track what agents relied on)</li>
 </ul>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-1-cashflow-model-assembly">Phase 1: Cashflow Model Assembly</h3>
+<hr />
+<h2 id="key-questions-for-simon">Key Questions for Simon</h2>
 <ol>
-<li>Build canonical cashflow timeline object:</li>
-<li>period granularity (weekly/monthly)</li>
-<li>inflow schedule with uncertainty bands</li>
 <li>
-<p>outflow schedule from CBS and staffing plans</p>
+<p><strong>Does this positioning resonate?</strong> Are we solving the right problem for agents?</p>
 </li>
 <li>
-<p>Add uncertainty injectors:</p>
+<p><strong>Should we lean harder into auditor narrative?</strong></p>
 </li>
-<li>receivable delay distributions</li>
-<li>procurement inflation shocks</li>
-<li>FX movement models for multi-currency projects</li>
+<li>Update PRs to frame FermiSanityCheck as "validation gate for agents"</li>
+<li>Reposition marketing toward agent platforms (not humans)</li>
 <li>
-<p>drawdown timing constraints for debt/grants</p>
+<p>Build toward auditing API (Phase 3)</p>
 </li>
 <li>
-<p>Define insolvency rules:</p>
+<p><strong>Or stay hybrid?</strong> Keep the plan-generator story + add auditing as a feature?</p>
 </li>
-<li>threshold crossing (<code>cash_balance &lt; 0</code>)</li>
-<li>sustained shortfall windows (<code>n</code> periods below minimum buffer)</li>
+<li>
+<p><strong>What does success look like in 2026?</strong></p>
+</li>
+<li>Agents paying for validation service?</li>
+<li>PlanExe as a required middleware in agentic workflows?</li>
+<li>Something else?</li>
 </ol>
-<h3 id="phase-2-stress-simulation-engine">Phase 2: Stress Simulation Engine</h3>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
 <ol>
-<li>Run 10,000 stochastic scenarios with deterministic seed option.</li>
-<li>Compute key outputs:</li>
-<li>probability of negative cash by period</li>
-<li>minimum viable reserve buffer</li>
-<li>
-<p>required funding bridge amount and timing</p>
-</li>
-<li>
-<p>Tag scenario archetypes:</p>
-</li>
-<li>delay-driven insolvency</li>
-<li>inflation-driven insolvency</li>
-<li>FX-driven insolvency</li>
+<li><strong>Simon's feedback</strong> on positioning (auditor vs. hybrid)</li>
+<li><strong>Phase 2 completion</strong> + integration testing</li>
+<li><strong>PR updates</strong> (if auditor positioning is approved)</li>
+<li><strong>Phase 3 design</strong> (auditing API + trust scoring)</li>
 </ol>
-<h3 id="phase-3-decision-layer-policy-hooks">Phase 3: Decision Layer + Policy Hooks</h3>
-<ol>
-<li>Add policy thresholds configurable by domain/risk appetite.</li>
-<li>Emit recommendations automatically:</li>
-<li>resequence payment milestones</li>
-<li>increase contingency reserve</li>
-<li>
-<p>add backup credit facility</p>
-</li>
-<li>
-<p>Integrate with bid/no-bid gate:</p>
-</li>
-<li>block escalation if liquidity failure probability exceeds limit.</li>
-</ol>
-<h3 id="data-model-additions">Data model additions</h3>
-<ul>
-<li><code>cashflow_scenarios</code> (run_id, period, inflow, outflow, balance, scenario_id)</li>
-<li><code>cashflow_risk_summary</code> (run_id, p_negative_cash, min_buffer, worst_gap)</li>
-<li><code>funding_actions</code> (run_id, action_type, expected_impact)</li>
-</ul>
-<h3 id="uxreporting">UX/reporting</h3>
-<p>Add a dedicated report section:
-- cash-at-risk curve
-- highest-risk periods
-- mitigation playbook with expected probability reduction</p>
-<h3 id="validation-checklist">Validation checklist</h3>
-<ul>
-<li>Reconcile baseline simulation with deterministic cashflow model.</li>
-<li>Verify multi-currency translation consistency.</li>
-<li>Backtest against historical liquidity incidents where available.</li>
-</ul>
-<h2 id="detailed-implementation-plan-treasury-readiness">Detailed Implementation Plan (Treasury Readiness)</h2>
-<h3 id="treasury-simulation-features">Treasury Simulation Features</h3>
-<ul>
-<li>Dynamic cash floor policy per project stage</li>
-<li>Payment delay distributions by counterparty type</li>
-<li>Optional emergency facility simulation</li>
-</ul>
-<h3 id="decision-outputs">Decision Outputs</h3>
-<ul>
-<li>Minimum reserve recommendation</li>
-<li>Funding bridge trigger points</li>
-<li>Suggested payment milestone re-shaping</li>
-</ul>
-<h3 id="alerting">Alerting</h3>
-<ul>
-<li>Critical alert when insolvency probability exceeds configured threshold</li>
-<li>Daily digest for plans in warning zone</li>
-</ul>
-<h3 id="validation">Validation</h3>
-<ul>
-<li>Replay historical near-insolvency projects for calibration</li>
-<li>Stress test with correlated shock scenarios</li>
-</ul>
+<hr />
+<p><strong>End of proposal.</strong> Ready for Simon's thoughts.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
