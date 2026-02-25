@@ -4467,6 +4467,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    70 mcp interface evaluation and roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4754,6 +4782,9 @@
 <h3 id="connect-to-mcp-server">Connect to MCP Server</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>--server-url<span class="w"> </span>https://mcp.planexe.org/mcp/
 </code></pre></div>
+<blockquote>
+<p><strong>URL note</strong>: The canonical server URL is <code>https://mcp.planexe.org/mcp</code> (no trailing slash) — use this in JSON config files and registry entries. The trailing slash (<code>/mcp/</code>) is used above because the MCP Inspector CLI appends sub-paths to the base URL; without it the inspector may send requests to the wrong path. Both forms are accepted by the server.</p>
+</blockquote>
 <p>This opens the inspector in a browser</p>
 <p><img alt="screenshot of mcp inspector" src="../inspector_step1_mcp_planexe_org.webp" /></p>
 <p>In the left sidebar; Expand the <code>Authentication</code> section.</p>
@@ -4786,8 +4817,7 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>task_retry
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>task_file_info
 </code></pre></div></p>
-<p>When you inspect <code>task_create</code>, the visible input schema includes <code>prompt</code> and optional <code>model_profile</code>.
-The <code>speed_vs_detail</code> parameter is intentionally hidden and only set via tool-specific metadata, since it confuses AI agents.</p>
+<p>When you inspect <code>task_create</code>, the visible input schema includes <code>prompt</code> and optional <code>model_profile</code>.</p>
 <p>Follow these steps:
 <img alt="screenshot of mcp inspector invoke tool" src="../inspector_step5_mcp_planexe_org.webp" /></p>
 <ol>

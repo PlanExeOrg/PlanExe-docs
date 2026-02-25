@@ -4585,6 +4585,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    70 mcp interface evaluation and roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -5015,7 +5043,7 @@ OAuth is not supported for the MCP API.</p>
 <p><strong>You do not need SSE for tools.</strong> MCP over HTTP can use plain JSON:</p>
 <ul>
 <li><strong>List tools:</strong> <code>GET http://&lt;host&gt;:8001/mcp/tools</code> → returns <code>{"tools": [...]}</code> (JSON).</li>
-<li><strong>Call a tool:</strong> <code>POST http://&lt;host&gt;:8001/mcp/tools/call</code> with body <code>{"tool": "task_create", "arguments": {"prompt": "…"}, "metadata": {"task_create": {"speed_vs_detail": "ping"}}}</code> → returns JSON.</li>
+<li><strong>Call a tool:</strong> <code>POST http://&lt;host&gt;:8001/mcp/tools/call</code> with body <code>{"tool": "task_create", "arguments": {"prompt": "…"}}</code> → returns JSON.</li>
 </ul>
 <p>If your client only supports Streamable HTTP and fails on <code>/mcp</code>, you have two options:</p>
 <ol>

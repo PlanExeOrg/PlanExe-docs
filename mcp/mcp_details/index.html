@@ -4533,6 +4533,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    70 mcp interface evaluation and roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4895,41 +4923,8 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <p>Optional visible argument:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>model_profile: &quot;baseline&quot; | &quot;premium&quot; | &quot;frontier&quot; | &quot;custom&quot;
 </code></pre></div></p>
-<p>Developer-only hidden metadata (not part of visible tool schema shown to agents):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>speed_vs_detail: &quot;ping&quot; | &quot;fast&quot; | &quot;all&quot;
-</code></pre></div></p>
 <p>Example with visible <code>model_profile</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Weekly meetup for humans where participants are randomly paired every 5 minutes...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;premium&quot;</span><span class="p">}</span>
-</code></pre></div></p>
-<p>Example with hidden metadata override. The <code>ping</code> only checks if the LLMs are connected and doesn't trigger a full plan to be created:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Weekly meetup for humans where participants are randomly paired every 5 minutes...&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&quot;task_create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="nt">&quot;speed_vs_detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ping&quot;</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>Example with hidden metadata override. The <code>fast</code> triggers a plan to be created, where the entire Luigi pipeline gets exercised, while skipping as much detail as possible:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Weekly meetup for humans where participants are randomly paired every 5 minutes...&quot;</span><span class="p">,</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;task_create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">      </span><span class="nt">&quot;speed_vs_detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fast&quot;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
-</code></pre></div></p>
-<p>Example with hidden metadata override. The <code>all</code> is the default setting. Creates a plan with <strong>ALL</strong> details:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Weekly meetup for humans where participants are randomly paired every 5 minutes...&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&quot;task_create&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="nt">&quot;speed_vs_detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all&quot;</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Weekly meetup for humans where participants are randomly paired every 5 minutes...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;premium&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>Counterexamples (do NOT use PlanExe for these):</p>
 <ul>
@@ -4948,10 +4943,10 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <h3 id="task_status">task_status</h3>
 <p>Fetch status/progress and recent files for a task.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Get status for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Get status for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>State contract:</p>
 <ul>
@@ -4963,18 +4958,18 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <h3 id="task_stop">task_stop</h3>
 <p>Request an active task to stop.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Stop task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Stop task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="task_retry">task_retry</h3>
 <p>Retry a failed task by requeueing the same <code>task_id</code>.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Retry failed task 2d57a448-1b09-45aa-ad37-e69891ff6ec7 with baseline profile.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Retry failed task 2d57a448-1b09-45aa-ad37-e69891ff6ec7 with baseline profile.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>Notes:
 - <code>model_profile</code> is optional and defaults to <code>baseline</code>.
@@ -4983,39 +4978,39 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <h3 id="task_file_info">task_file_info</h3>
 <p>Return download metadata for report or zip artifacts.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Get report info for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Get report info for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>Available artifacts:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&quot;report&quot; | &quot;zip&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>&quot;report&quot; | &quot;zip&quot;
 </code></pre></div></p>
 <p>Typical successful response:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nt">&quot;content_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/zip&quot;</span><span class="p">,</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="nt">&quot;sha256&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f8ad556b635b14e375222150664e85b426bf7f9209ede2f37f47a8975e286323&quot;</span><span class="p">,</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">  </span><span class="nt">&quot;download_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17262032</span><span class="p">,</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="nt">&quot;download_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/&lt;task_id&gt;/run.zip&quot;</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&quot;content_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;sha256&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f8ad556b635b14e375222150664e85b426bf7f9209ede2f37f47a8975e286323&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="nt">&quot;download_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17262032</span><span class="p">,</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="nt">&quot;download_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/&lt;task_id&gt;/run.zip&quot;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="download-with-curl">Download with <code>curl</code></h3>
 <p>When <code>task_file_info</code> returns a <code>download_url</code>, you can download directly with the same <code>X-API-Key</code> used for MCP authentication.</p>
 <p>Download zip:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/run.zip&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/run.zip&quot;</span>
 </code></pre></div></p>
 <p>Download report:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/030-report.html&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/030-report.html&quot;</span>
 </code></pre></div></p>
 <h2 id="tool-catalog-mcp_local">Tool Catalog, <code>mcp_local</code></h2>
 <p>The local proxy exposes the same tools as the server, and adds:</p>
 <h3 id="task_download">task_download</h3>
 <p>Download report or zip to a local path.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Download the report for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Download the report for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p><code>PLANEXE_PATH</code> behavior for <code>task_download</code>:
 - Save directory is <code>PLANEXE_PATH</code>, or current working directory if unset.
@@ -5025,7 +5020,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 - Response includes <code>saved_path</code> with the exact local file location.</p>
 <h2 id="minimal-error-handling-contract">Minimal error-handling contract</h2>
 <p>Error payload shape:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{</span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SOME_CODE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Human readable message&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SOME_CODE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Human readable message&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}}}</span>
 </code></pre></div></p>
 <p>Common cloud/core error codes:
 - <code>TASK_NOT_FOUND</code>
@@ -5055,42 +5050,42 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <h3 id="1-get-example-prompts">1. Get example prompts</h3>
 <p>The user often starts with a vague idea. The AI calls <code>prompt_examples</code> first to see what good prompts look like (around five samples, typically 300-800 words each), then expands the user’s idea into a high-quality prompt using this compact shape: objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria.</p>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Get example prompts for creating a plan.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Get example prompts for creating a plan.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">{}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{}</span>
 </code></pre></div></p>
 <h3 id="2-inspect-model-profiles-optional-but-recommended">2. Inspect model profiles (optional but recommended)</h3>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Show model profile options and available models.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Show model profile options and available models.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{}</span>
 </code></pre></div></p>
 <h3 id="3-draft-and-approve-the-prompt-non-tool-step">3. Draft and approve the prompt (non-tool step)</h3>
 <p>At this step, the agent writes a high-quality prompt draft (typically 300-800 words, with objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria), shows it to the user, and waits for approval.</p>
 <h3 id="4-create-a-plan">4. Create a plan</h3>
 <p>The user reviews the prompt and either asks for further changes or confirms it’s good to go. When the user confirms, the agent calls <code>task_create</code> with that prompt.</p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">{</span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="5-get-status">5. Get status</h3>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Get status for my latest task.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Get status for my latest task.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>If state is <code>failed</code>, optional retry:</p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="6-download-the-report">6. Download the report</h3>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Download the report for my task.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Download the report for my task.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 
 
