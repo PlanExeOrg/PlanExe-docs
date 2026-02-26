@@ -1051,10 +1051,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_create" class="md-nav__link">
+  <a href="#plan_create" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_create
+        plan_create
       
     </span>
   </a>
@@ -1062,10 +1062,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_status" class="md-nav__link">
+  <a href="#plan_status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_status
+        plan_status
       
     </span>
   </a>
@@ -1073,10 +1073,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_stop" class="md-nav__link">
+  <a href="#plan_stop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_stop
+        plan_stop
       
     </span>
   </a>
@@ -1084,10 +1084,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_retry" class="md-nav__link">
+  <a href="#plan_retry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_retry
+        plan_retry
       
     </span>
   </a>
@@ -1095,10 +1095,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_file_info" class="md-nav__link">
+  <a href="#plan_file_info" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_file_info
+        plan_file_info
       
     </span>
   </a>
@@ -1134,10 +1134,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#task_download" class="md-nav__link">
+  <a href="#plan_download" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_download
+        plan_download
       
     </span>
   </a>
@@ -4816,10 +4816,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_create" class="md-nav__link">
+  <a href="#plan_create" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_create
+        plan_create
       
     </span>
   </a>
@@ -4827,10 +4827,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_status" class="md-nav__link">
+  <a href="#plan_status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_status
+        plan_status
       
     </span>
   </a>
@@ -4838,10 +4838,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_stop" class="md-nav__link">
+  <a href="#plan_stop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_stop
+        plan_stop
       
     </span>
   </a>
@@ -4849,10 +4849,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_retry" class="md-nav__link">
+  <a href="#plan_retry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_retry
+        plan_retry
       
     </span>
   </a>
@@ -4860,10 +4860,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task_file_info" class="md-nav__link">
+  <a href="#plan_file_info" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_file_info
+        plan_file_info
       
     </span>
   </a>
@@ -4899,10 +4899,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#task_download" class="md-nav__link">
+  <a href="#plan_download" class="md-nav__link">
     <span class="md-ellipsis">
       
-        task_download
+        plan_download
       
     </span>
   </a>
@@ -5048,11 +5048,11 @@ If there is a particular tool you want. Write to me on the <a href="https://plan
 <li>The primary MCP server runs in the cloud (see <code>mcp_cloud</code>).</li>
 <li>The local MCP proxy (<code>mcp_local</code>) forwards calls to the server and adds a local download helper.</li>
 <li>Tool responses return JSON in both <code>content.text</code> and <code>structuredContent</code>.</li>
-<li>Workflow note: drafting and user approval of the prompt is a non-tool step between setup tools and <code>task_create</code>.</li>
+<li>Workflow note: drafting and user approval of the prompt is a non-tool step between setup tools and <code>plan_create</code>.</li>
 </ul>
 <h2 id="tool-catalog-mcp_cloud">Tool Catalog, <code>mcp_cloud</code></h2>
 <h3 id="prompt_examples">prompt_examples</h3>
-<p>Returns around five example prompts that show what good prompts look like. Each sample is typically 300-800 words. Usually the AI does the heavy lifting: the user has a vague idea, the agent calls <code>prompt_examples</code>, then expands that idea into a high-quality prompt (300-800 words). A compact prompt shape works best: objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria. The prompt is shown to the user, who can ask for further changes or confirm it’s good to go. When the user confirms, the agent then calls <code>task_create</code>. Shorter or vaguer prompts produce lower-quality plans.</p>
+<p>Returns around five example prompts that show what good prompts look like. Each sample is typically 300-800 words. Usually the AI does the heavy lifting: the user has a vague idea, the agent calls <code>prompt_examples</code>, then expands that idea into a high-quality prompt (300-800 words). A compact prompt shape works best: objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria. The prompt is shown to the user, who can ask for further changes or confirm it’s good to go. When the user confirms, the agent then calls <code>plan_create</code>. Shorter or vaguer prompts produce lower-quality plans.</p>
 <p>Example prompt:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Get example prompts for creating a plan.
 </code></pre></div></p>
@@ -5061,7 +5061,7 @@ If there is a particular tool you want. Write to me on the <a href="https://plan
 </code></pre></div></p>
 <p>Response includes <code>samples</code> (array of prompt strings, each ~300-800 words) and <code>message</code>.</p>
 <h3 id="model_profiles">model_profiles</h3>
-<p>Returns profile guidance and model availability for <code>task_create.model_profile</code>.
+<p>Returns profile guidance and model availability for <code>plan_create.model_profile</code>.
 This helps agents pick a profile without knowing internal <code>llm_config/*.json</code> details.
 Profiles with zero models are omitted from the <code>profiles</code> list.
 If no models are available in any profile, <code>model_profiles</code> returns <code>isError=true</code> with <code>error.code = MODEL_PROFILES_UNAVAILABLE</code>.</p>
@@ -5079,7 +5079,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
   - <code>summary</code>
   - <code>model_count</code>
   - <code>models[]</code> (<code>key</code>, <code>provider_class</code>, <code>model</code>, <code>priority</code>)</p>
-<h3 id="task_create">task_create</h3>
+<h3 id="plan_create">plan_create</h3>
 <p>Create a new plan task.</p>
 <p>Example prompt:</p>
 <blockquote>
@@ -5108,7 +5108,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <li>For PlanExe, send a substantial multi-phase project prompt with scope, constraints, timeline, budget, stakeholders, and success criteria.</li>
 <li>PlanExe always runs a fixed end-to-end pipeline; it does not support selecting only internal pipeline subsets.</li>
 </ul>
-<h3 id="task_status">task_status</h3>
+<h3 id="plan_status">plan_status</h3>
 <p>Fetch status/progress and recent files for a task.</p>
 <p>Example prompt:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Get status for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
@@ -5123,7 +5123,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <li><code>completed</code>: terminal success, proceed to download.</li>
 <li><code>failed</code>: terminal error.</li>
 </ul>
-<h3 id="task_stop">task_stop</h3>
+<h3 id="plan_stop">plan_stop</h3>
 <p>Request an active task to stop.</p>
 <p>Example prompt:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Stop task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
@@ -5131,7 +5131,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <p>Example call:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
 </code></pre></div></p>
-<h3 id="task_retry">task_retry</h3>
+<h3 id="plan_retry">plan_retry</h3>
 <p>Retry a failed task by requeueing the same <code>task_id</code>.</p>
 <p>Example prompt:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Retry failed task 2d57a448-1b09-45aa-ad37-e69891ff6ec7 with baseline profile.
@@ -5143,7 +5143,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 - <code>model_profile</code> is optional and defaults to <code>baseline</code>.
 - Only failed tasks can be retried.
 - Non-failed tasks return <code>TASK_NOT_FAILED</code>.</p>
-<h3 id="task_file_info">task_file_info</h3>
+<h3 id="plan_file_info">plan_file_info</h3>
 <p>Return download metadata for report or zip artifacts.</p>
 <p>Example prompt:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Get report info for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
@@ -5163,7 +5163,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="download-with-curl">Download with <code>curl</code></h3>
-<p>When <code>task_file_info</code> returns a <code>download_url</code>, you can download directly with the same <code>X-API-Key</code> used for MCP authentication.</p>
+<p>When <code>plan_file_info</code> returns a <code>download_url</code>, you can download directly with the same <code>X-API-Key</code> used for MCP authentication.</p>
 <p>Download zip:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/run.zip&quot;</span>
 </code></pre></div></p>
@@ -5172,7 +5172,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 </code></pre></div></p>
 <h2 id="tool-catalog-mcp_local">Tool Catalog, <code>mcp_local</code></h2>
 <p>The local proxy exposes the same tools as the server, and adds:</p>
-<h3 id="task_download">task_download</h3>
+<h3 id="plan_download">plan_download</h3>
 <p>Download report or zip to a local path.</p>
 <p>Example prompt:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Download the report for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
@@ -5180,7 +5180,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <p>Example call:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
-<p><code>PLANEXE_PATH</code> behavior for <code>task_download</code>:
+<p><code>PLANEXE_PATH</code> behavior for <code>plan_download</code>:
 - Save directory is <code>PLANEXE_PATH</code>, or current working directory if unset.
 - Non-existing directories are created automatically.
 - If <code>PLANEXE_PATH</code> points to a file, download fails.
@@ -5204,10 +5204,10 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 - <code>REMOTE_ERROR</code>
 - <code>DOWNLOAD_FAILED</code></p>
 <p>Special case:
-- <code>task_file_info</code> may return <code>{}</code> while the artifact is not ready yet (not an error).</p>
+- <code>plan_file_info</code> may return <code>{}</code> while the artifact is not ready yet (not an error).</p>
 <h2 id="concurrency-semantics-practical">Concurrency semantics (practical)</h2>
 <ul>
-<li>Each <code>task_create</code> call creates a new task with a new <code>task_id</code>.</li>
+<li>Each <code>plan_create</code> call creates a new task with a new <code>task_id</code>.</li>
 <li>The server does not enforce a global “one active task per client” cap.</li>
 <li>Parallelism is a client orchestration concern:</li>
 <li>start with 1 task</li>
@@ -5233,7 +5233,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <h3 id="3-draft-and-approve-the-prompt-non-tool-step">3. Draft and approve the prompt (non-tool step)</h3>
 <p>At this step, the agent writes a high-quality prompt draft (typically 300-800 words, with objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria), shows it to the user, and waits for approval.</p>
 <h3 id="4-create-a-plan">4. Create a plan</h3>
-<p>The user reviews the prompt and either asks for further changes or confirms it’s good to go. When the user confirms, the agent calls <code>task_create</code> with that prompt.</p>
+<p>The user reviews the prompt and either asks for further changes or confirms it’s good to go. When the user confirms, the agent calls <code>plan_create</code> with that prompt.</p>
 <p>Tool call:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">{</span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">}</span>
 </code></pre></div></p>
@@ -5242,18 +5242,18 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Get status for my latest task.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_plan_create&gt;&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>If state is <code>failed</code>, optional retry:</p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="6-download-the-report">6. Download the report</h3>
 <p>Prompt:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Download the report for my task.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_task_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 
 

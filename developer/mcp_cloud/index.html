@@ -5152,8 +5152,8 @@
 <li><strong>File Metadata</strong>: Get report/zip metadata and download URLs</li>
 </ul>
 <h2 id="run-as-task-mcp-tasks-protocol">Run as task (MCP tasks protocol)</h2>
-<p>MCP has two ways to run long-running work: <strong>tools</strong> (what we use) and the <strong>tasks</strong> protocol ("Run as task" in some UIs). PlanExe uses <strong>tools only</strong>: <code>prompt_examples</code>, <code>model_profiles</code>, <code>task_create</code>, <code>task_status</code>, <code>task_stop</code>, <code>task_retry</code>, <code>task_file_info</code> (or <code>task_download</code> via <code>mcp_local</code>). The agent creates a task, polls status, retries on failed when needed, then downloads; that is the intended flow per <code>docs/mcp/planexe_mcp_interface.md</code>. We do not advertise or implement the MCP tasks protocol (tasks/get, tasks/result, etc.). Clients like Cursor do not support it properly—use the tools directly.
-Workflow clarity: prompt drafting + user approval is a non-tool step between setup tools and <code>task_create</code>.</p>
+<p>MCP has two ways to run long-running work: <strong>tools</strong> (what we use) and the <strong>tasks</strong> protocol ("Run as task" in some UIs). PlanExe uses <strong>tools only</strong>: <code>prompt_examples</code>, <code>model_profiles</code>, <code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_file_info</code> (or <code>plan_download</code> via <code>mcp_local</code>). The agent creates a task, polls status, retries on failed when needed, then downloads; that is the intended flow per <code>docs/mcp/planexe_mcp_interface.md</code>. We do not advertise or implement the MCP tasks protocol (tasks/get, tasks/result, etc.). Clients like Cursor do not support it properly—use the tools directly.
+Workflow clarity: prompt drafting + user approval is a non-tool step between setup tools and <code>plan_create</code>.</p>
 <h2 id="client-choice-guide">Client Choice Guide</h2>
 <ul>
 <li><strong>Use <code>mcp_cloud</code> directly (HTTP)</strong>: If you are running in the cloud or you do
@@ -5168,7 +5168,7 @@ Workflow clarity: prompt drafting + user approval is a non-tool step between set
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
 </code></pre></div>
 <p>Important: <code>mcp_cloud</code> enqueues tasks and <code>worker_plan_database_{n}</code> executes them.<br />
-If no <code>worker_plan_database*</code> service is running, <code>task_create</code> returns a task id but the task will not progress.</p>
+If no <code>worker_plan_database*</code> service is running, <code>plan_create</code> returns a task id but the task will not progress.</p>
 <p>mcp_cloud exposes HTTP endpoints on port <code>8001</code> (or <code>${PLANEXE_MCP_HTTP_PORT}</code>). Authentication is controlled by <code>PLANEXE_MCP_REQUIRE_AUTH</code>:
 - <code>false</code>: no API key needed (local docker default).
 - <code>true</code>: provide a valid <code>X-API-Key</code>.
@@ -5213,7 +5213,7 @@ When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <c
 <p><strong>You do not need SSE for tools.</strong> MCP over HTTP can use plain JSON:</p>
 <ul>
 <li><strong>List tools:</strong> <code>GET http://&lt;host&gt;:8001/mcp/tools</code> → returns <code>{"tools": [...]}</code> (JSON).</li>
-<li><strong>Call a tool:</strong> <code>POST http://&lt;host&gt;:8001/mcp/tools/call</code> with body <code>{"tool": "task_create", "arguments": {"prompt": "…"}}</code> → returns JSON.</li>
+<li><strong>Call a tool:</strong> <code>POST http://&lt;host&gt;:8001/mcp/tools/call</code> with body <code>{"tool": "plan_create", "arguments": {"prompt": "…"}}</code> → returns JSON.</li>
 </ul>
 <p>If your client only supports Streamable HTTP and fails on <code>/mcp</code>, you have two options:</p>
 <ol>
@@ -5227,7 +5227,7 @@ When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <c
 <li><code>PLANEXE_MCP_API_KEY</code>: Optional shared secret for auth. When auth is enabled, clients can use this key instead of a UserApiKey. For production with user accounts, keys from home.planexe.org (UserApiKey) are validated against the database.</li>
 <li><code>PLANEXE_MCP_HTTP_HOST</code>: HTTP server host (default: <code>127.0.0.1</code>). Use <code>0.0.0.0</code> to bind all interfaces (containers/cloud).</li>
 <li><code>PLANEXE_MCP_HTTP_PORT</code>: HTTP server port (default: <code>8001</code>). Railway will override with <code>PORT</code> env var.</li>
-<li><code>PLANEXE_MCP_PUBLIC_BASE_URL</code>: Public base URL for report/zip download links in <code>task_file_info</code> (e.g. <code>http://192.168.1.40:8001</code>). When set, <code>download_url</code> is built from this value. When unset, the HTTP server uses the request’s host (scheme + authority), so clients connecting at <code>http://192.168.1.40:8001/mcp/</code> get download URLs like <code>http://192.168.1.40:8001/download/...</code> instead of localhost. If clients still see localhost in download URLs (e.g. behind a proxy), set this env var explicitly in <code>.env</code>.</li>
+<li><code>PLANEXE_MCP_PUBLIC_BASE_URL</code>: Public base URL for report/zip download links in <code>plan_file_info</code> (e.g. <code>http://192.168.1.40:8001</code>). When set, <code>download_url</code> is built from this value. When unset, the HTTP server uses the request’s host (scheme + authority), so clients connecting at <code>http://192.168.1.40:8001/mcp/</code> get download URLs like <code>http://192.168.1.40:8001/download/...</code> instead of localhost. If clients still see localhost in download URLs (e.g. behind a proxy), set this env var explicitly in <code>.env</code>.</li>
 <li><code>PORT</code>: Railway-provided port (takes precedence over <code>PLANEXE_MCP_HTTP_PORT</code>)</li>
 <li><code>PLANEXE_MCP_CORS_ORIGINS</code>: Comma-separated list of allowed origins. When unset, uses <code>*</code> (all origins) so browser-based tools like the MCP Inspector can connect. If you set it (e.g. for a specific frontend), include <code>http://localhost:6274</code> and <code>http://127.0.0.1:6274</code> for the Inspector.</li>
 <li><code>PLANEXE_MCP_MAX_BODY_BYTES</code>: Max request size for <code>POST /mcp/tools/call</code> (default: <code>1048576</code>).</li>
@@ -5248,31 +5248,31 @@ When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <c
 <h2 id="mcp-tools">MCP Tools</h2>
 <p>See <code>docs/mcp/planexe_mcp_interface.md</code> for full specification. Available tools:</p>
 <ul>
-<li><code>prompt_examples</code> - Return example prompts. Use these as examples for task_create.</li>
+<li><code>prompt_examples</code> - Return example prompts. Use these as examples for plan_create.</li>
 <li><code>model_profiles</code> - List profile options and currently available models in each profile.</li>
-<li><code>task_create</code> - Create a new task (returns task_id as UUID; may require user_api_key for credits)</li>
-<li><code>task_status</code> - Get task status and progress</li>
-<li><code>task_stop</code> - Stop an active task</li>
-<li><code>task_retry</code> - Retry a failed task with the same task_id (optional model_profile, default baseline)</li>
-<li><code>task_file_info</code> - Get file metadata for report or zip</li>
+<li><code>plan_create</code> - Create a new task (returns task_id as UUID; may require user_api_key for credits)</li>
+<li><code>plan_status</code> - Get task status and progress</li>
+<li><code>plan_stop</code> - Stop an active task</li>
+<li><code>plan_retry</code> - Retry a failed task with the same task_id (optional model_profile, default baseline)</li>
+<li><code>plan_file_info</code> - Get file metadata for report or zip</li>
 </ul>
-<p><code>task_status</code> caller contract:
+<p><code>plan_status</code> caller contract:
 - <code>pending</code> / <code>processing</code>: keep polling.
 - <code>completed</code>: terminal success, download is ready.
 - <code>failed</code>: terminal error.
-- If <code>failed</code>, call <code>task_retry</code> to requeue the same task id.</p>
+- If <code>failed</code>, call <code>plan_retry</code> to requeue the same task id.</p>
 <p>Concurrency semantics:
-- Each <code>task_create</code> call creates a new <code>task_id</code>.
-- <code>task_retry</code> reuses the same failed <code>task_id</code>.
+- Each <code>plan_create</code> call creates a new <code>task_id</code>.
+- <code>plan_retry</code> reuses the same failed <code>task_id</code>.
 - Server does not enforce a global one-task-at-a-time cap per client.
 - Client should track task ids explicitly when running tasks in parallel.</p>
 <p>Minimal error contract:
 - Tool errors use <code>{"error":{"code","message","details?"}}</code>.
 - Common codes: <code>TASK_NOT_FOUND</code>, <code>TASK_NOT_FAILED</code>, <code>INVALID_USER_API_KEY</code>, <code>USER_API_KEY_REQUIRED</code>, <code>INSUFFICIENT_CREDITS</code>, <code>INTERNAL_ERROR</code>, <code>generation_failed</code>, <code>content_unavailable</code>.
-- <code>task_file_info</code> may return <code>{}</code> while output is not ready (not an error payload).</p>
-<p>Note: <code>task_download</code> is a synthetic tool provided by <code>mcp_local</code>, not by this server. If your client exposes <code>task_download</code>, use it to save the report or zip locally; otherwise use <code>task_file_info</code> to get <code>download_url</code> and fetch the file yourself.</p>
-<p><strong>Tip</strong>: Call <code>prompt_examples</code> to get example prompts to use with task_create, then call <code>model_profiles</code> to choose <code>model_profile</code> based on current runtime availability. The prompt catalog is the same as in the frontends (<code>worker_plan.worker_plan_api.PromptCatalog</code>). When running with <code>PYTHONPATH</code> set to the repo root (e.g. stdio setup), the catalog is loaded automatically; otherwise built-in examples are returned.</p>
-<p>Download flow: call <code>task_file_info</code> to obtain the <code>download_url</code>, then fetch the
+- <code>plan_file_info</code> may return <code>{}</code> while output is not ready (not an error payload).</p>
+<p>Note: <code>plan_download</code> is a synthetic tool provided by <code>mcp_local</code>, not by this server. If your client exposes <code>plan_download</code>, use it to save the report or zip locally; otherwise use <code>plan_file_info</code> to get <code>download_url</code> and fetch the file yourself.</p>
+<p><strong>Tip</strong>: Call <code>prompt_examples</code> to get example prompts to use with plan_create, then call <code>model_profiles</code> to choose <code>model_profile</code> based on current runtime availability. The prompt catalog is the same as in the frontends (<code>worker_plan.worker_plan_api.PromptCatalog</code>). When running with <code>PYTHONPATH</code> set to the repo root (e.g. stdio setup), the catalog is loaded automatically; otherwise built-in examples are returned.</p>
+<p>Download flow: call <code>plan_file_info</code> to obtain the <code>download_url</code>, then fetch the
 report via <code>GET /download/{task_id}/030-report.html</code> (API key required if configured).
 If <code>download_url</code> is missing, configure <code>PLANEXE_MCP_PUBLIC_BASE_URL</code> so the server can emit a reachable absolute URL.</p>
 <h2 id="debugging-with-the-mcp-inspector">Debugging with the MCP Inspector</h2>
