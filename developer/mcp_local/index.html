@@ -4797,7 +4797,7 @@
 <p>Model Context Protocol (MCP) local proxy for PlanExe.</p>
 <p>It runs on the user's computer and provides local disk access for downloads.
 The pipeline still runs in <code>mcp_cloud</code>, the MCP server running in the cloud; this
-proxy forwards tool calls over HTTP and downloads artifacts from <code>/download/{task_id}/...</code>.</p>
+proxy forwards tool calls over HTTP and downloads artifacts from <code>/download/{plan_id}/...</code>.</p>
 <h2 id="tools">Tools</h2>
 <p><code>prompt_examples</code> - Return example prompts. Use these as examples for plan_create. You can also call <code>plan_create</code> with any prompt—short prompts produce less detailed plans.
 <code>model_profiles</code> - Show model_profile options and currently available models in each profile.
@@ -4841,7 +4841,7 @@ file locally into <code>PLANEXE_PATH</code>.</p>
 <li>Tool calls prefer the remote HTTP wrapper (<code>/mcp/tools/call</code>).</li>
 <li>If the HTTP wrapper is unavailable, the proxy falls back to MCP JSON-RPC
   over <code>POST /mcp</code> (not SSE).</li>
-<li>Downloads use the remote <code>/download/{task_id}/...</code> endpoints.</li>
+<li>Downloads use the remote <code>/download/{plan_id}/...</code> endpoints.</li>
 <li>Authentication uses <code>PLANEXE_MCP_API_KEY</code> as custom header <code>X-API-Key</code> (not OAuth/Bearer).</li>
 <li><strong>Retry behavior</strong>: Transient failures (server 5xx errors, network timeouts) are
   automatically retried up to 3 times with exponential backoff (1s, 2s delays).

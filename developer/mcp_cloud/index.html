@@ -5360,7 +5360,7 @@ When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <c
 </blockquote>
 <p><strong>Tip</strong>: Call <code>prompt_examples</code> to get example prompts to use with plan_create, then call <code>model_profiles</code> to choose <code>model_profile</code> based on current runtime availability. The prompt catalog is the same as in the frontends (<code>worker_plan.worker_plan_api.PromptCatalog</code>). When running with <code>PYTHONPATH</code> set to the repo root (e.g. stdio setup), the catalog is loaded automatically; otherwise built-in examples are returned.</p>
 <p>Download flow: call <code>plan_file_info</code> to obtain the <code>download_url</code>, then fetch the
-report via <code>GET /download/{task_id}/030-report.html</code> (API key required if configured).
+report via <code>GET /download/{plan_id}/030-report.html</code> (API key required if configured).
 If <code>download_url</code> is missing, configure <code>PLANEXE_MCP_PUBLIC_BASE_URL</code> so the server can emit a reachable absolute URL.</p>
 <h2 id="debugging-with-the-mcp-inspector">Debugging with the MCP Inspector</h2>
 <p>Use the <a href="https://github.com/modelcontextprotocol/inspector">MCP Inspector</a> to verify tool registration, authentication, and output schemas.</p>
