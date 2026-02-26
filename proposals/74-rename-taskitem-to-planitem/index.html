@@ -9,16 +9,12 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry (VoynichLabs)">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/74-rename-taskitem-to-planitem/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/69-arcgentica-agent-patterns/">
+        <link rel="prev" href="../73-rename-task-prefix-in-mcp-tools/">
       
-      
-        <link rel="prev" href="../68-domain-aware-plan-ranking-engine/">
-      
-      
-        <link rel="next" href="../70-fermi-sanity-check-validation-gate/">
       
       
         
@@ -29,7 +25,7 @@
     
     
       
-        <title>Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation</title>
+        <title>74 rename taskitem to planitem - PlanExe Documentation</title>
       
     
     
@@ -77,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation" />
+<meta property="og:title" content="74 rename taskitem to planitem - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/69-arcgentica-agent-patterns.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/74-rename-taskitem-to-planitem.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/69-arcgentica-agent-patterns/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/74-rename-taskitem-to-planitem/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation" />
+<meta property="twitter:title" content="74 rename taskitem to planitem - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/69-arcgentica-agent-patterns.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/74-rename-taskitem-to-planitem.png" />
 </head>
   
   
@@ -107,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proposal-69-hardening-planexe-with-arcgentica-agent-patterns" class="md-skip">
+        <a href="#proposal-74-rename-taskitem-to-planitem" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hardening PlanExe with Arcgentica Agent Patterns
+              74 rename taskitem to planitem
             
           </span>
         </div>
@@ -4238,44 +4234,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    69 arcgentica agent patterns
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../69-arcgentica-agent-patterns/" class="md-nav__link">
         
   
   
@@ -4298,231 +4260,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Context
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-three-brittleness-gaps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Three Brittleness Gaps
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Three Brittleness Gaps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gap-1-one-llm-call-per-task-no-self-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gap 1: One LLM call per task — no self-evaluation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gap 2: ReviewPlan produces critiques that die at the task boundary
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#four-adaptations-from-arcgentica" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Four Adaptations from arcgentica
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Four Adaptations from arcgentica">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-2-wire-reviewplan-signals-to-task_retry-invalid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 2: ~~Wire ReviewPlan Signals to task_retry~~ [INVALID]
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-3-systemic-structured-output-validation-already-implemented" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 3: Systemic Structured Output Validation (Already Implemented)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-4-complexity-gated-task-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 4: Complexity-Gated Task Selection
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-stays-the-same" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Stays the Same
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-priority-revised" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Priority (REVISED)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adaptation-5-quantitative-grounding-fermi-sanity-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 5: Quantitative Grounding (Fermi Sanity Check)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adaptation 5: Quantitative Grounding (Fermi Sanity Check)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-task-fermisanitycheck" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        New task: FermiSanityCheck
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#final-priority-order-updated-2026-02-25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Priority Order (Updated 2026-02-25)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-questions-for-simon" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open Questions for Simon
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4672,10 +4409,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../74-rename-taskitem-to-planitem/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    74 rename taskitem to planitem
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4691,6 +4455,346 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-to-proposal-73" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to Proposal 73
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-database-table-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical: Database Table Name
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-of-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope of Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scope of Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-model-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core model file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-that-import-taskitem-or-taskstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files that import TaskItem or TaskState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-only-references-no-import-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comment-only references (no import needed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-feature-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Create a feature branch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-rename-and-update-model_taskitempy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Rename and update model_taskitem.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-rename-and-update-the-test-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Rename and update the test file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-update-mcp_cloudapppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Update mcp_cloud/app.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-update-mcp_cloud-test-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Update mcp_cloud test files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-update-frontend_multi_usersrcapppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Update frontend_multi_user/src/app.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-update-worker_plan_databaseapppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Update worker_plan_database/app.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-update-comment-only-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Update comment-only references
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-update-documentation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Update documentation files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-verify-__tablename__-is-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10 — Verify __tablename__ is set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-run-the-test-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 11 — Run the test suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-start-the-application-and-verify-the-admin-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 12 — Start the application and verify the admin panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-open-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 13 — Open a pull request
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-and-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks and Mitigations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4738,10 +4842,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
+  <a href="#status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Context
+        Status
       
     </span>
   </a>
@@ -4749,22 +4853,77 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-three-brittleness-gaps" class="md-nav__link">
+  <a href="#relationship-to-proposal-73" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Three Brittleness Gaps
+        Relationship to Proposal 73
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The Three Brittleness Gaps">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-database-table-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical: Database Table Name
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-of-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope of Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scope of Changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gap-1-one-llm-call-per-task-no-self-evaluation" class="md-nav__link">
+  <a href="#core-model-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gap 1: One LLM call per task — no self-evaluation
+        Core model file
       
     </span>
   </a>
@@ -4772,10 +4931,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary" class="md-nav__link">
+  <a href="#files-that-import-taskitem-or-taskstate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gap 2: ReviewPlan produces critiques that die at the task boundary
+        Files that import TaskItem or TaskState
       
     </span>
   </a>
@@ -4783,10 +4942,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity" class="md-nav__link">
+  <a href="#test-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity
+        Test file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-only-references-no-import-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comment-only references (no import needed)
       
     </span>
   </a>
@@ -4799,22 +4980,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#four-adaptations-from-arcgentica" class="md-nav__link">
+  <a href="#step-by-step-procedure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Four Adaptations from arcgentica
+        Step-by-Step Procedure
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Four Adaptations from arcgentica">
+    <nav class="md-nav" aria-label="Step-by-Step Procedure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks" class="md-nav__link">
+  <a href="#step-1-create-a-feature-branch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks
+        Step 1 — Create a feature branch
       
     </span>
   </a>
@@ -4822,10 +5003,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adaptation-2-wire-reviewplan-signals-to-task_retry-invalid" class="md-nav__link">
+  <a href="#step-2-rename-and-update-model_taskitempy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adaptation 2: ~~Wire ReviewPlan Signals to task_retry~~ [INVALID]
+        Step 2 — Rename and update model_taskitem.py
       
     </span>
   </a>
@@ -4833,10 +5014,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adaptation-3-systemic-structured-output-validation-already-implemented" class="md-nav__link">
+  <a href="#step-3-rename-and-update-the-test-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adaptation 3: Systemic Structured Output Validation (Already Implemented)
+        Step 3 — Rename and update the test file
       
     </span>
   </a>
@@ -4844,10 +5025,109 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#adaptation-4-complexity-gated-task-selection" class="md-nav__link">
+  <a href="#step-4-update-mcp_cloudapppy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adaptation 4: Complexity-Gated Task Selection
+        Step 4 — Update mcp_cloud/app.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-update-mcp_cloud-test-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Update mcp_cloud test files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-update-frontend_multi_usersrcapppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Update frontend_multi_user/src/app.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-update-worker_plan_databaseapppy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Update worker_plan_database/app.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-update-comment-only-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Update comment-only references
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-update-documentation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Update documentation files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-verify-__tablename__-is-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10 — Verify __tablename__ is set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-run-the-test-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 11 — Run the test suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-start-the-application-and-verify-the-admin-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 12 — Start the application and verify the admin panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-open-a-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 13 — Open a pull request
       
     </span>
   </a>
@@ -4860,10 +5140,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-stays-the-same" class="md-nav__link">
+  <a href="#risks-and-mitigations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Stays the Same
+        Risks and Mitigations
       
     </span>
   </a>
@@ -4871,71 +5151,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-priority-revised" class="md-nav__link">
+  <a href="#acceptance-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation Priority (REVISED)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adaptation-5-quantitative-grounding-fermi-sanity-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 5: Quantitative Grounding (Fermi Sanity Check)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adaptation 5: Quantitative Grounding (Fermi Sanity Check)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-task-fermisanitycheck" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        New task: FermiSanityCheck
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#final-priority-order-updated-2026-02-25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Priority Order (Updated 2026-02-25)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-questions-for-simon" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open Questions for Simon
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
+        Acceptance Criteria
       
     </span>
   </a>
@@ -4962,282 +5181,363 @@
   
 
 
-<h1 id="proposal-69-hardening-planexe-with-arcgentica-agent-patterns">Proposal 69: Hardening PlanExe with Arcgentica Agent Patterns</h1>
-<p><strong>Author:</strong> Larry (VoynichLabs)<br />
-<strong>Date:</strong> 2026-02-25<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>architecture</code>, <code>agent-orchestration</code>, <code>reliability</code>, <code>agentica</code>, <code>luigi</code></p>
+<h1 id="proposal-74-rename-taskitem-to-planitem">Proposal 74 — Rename <code>TaskItem</code> to <code>PlanItem</code></h1>
+<h2 id="status">Status</h2>
+<p>Draft</p>
+<h2 id="relationship-to-proposal-73">Relationship to Proposal 73</h2>
+<p>Proposal 73 covers renaming the public MCP tool names (e.g. <code>task_create</code> → <code>plan_create</code>).
+That proposal explicitly deferred renaming the internal <code>TaskItem</code> model. This proposal addresses that deferred work.</p>
 <hr />
-<h2 id="context">Context</h2>
-<p>We spent time reading two Symbolica AI repositories:</p>
+<h2 id="problem">Problem</h2>
+<p>The internal SQLAlchemy model is named <code>TaskItem</code> (defined in <code>database_api/model_taskitem.py</code>). The associated state enum is <code>TaskState</code>. Both names carry <code>Task</code> — the same word that:</p>
 <ul>
-<li><a href="https://github.com/VoynichLabs/agentica-typescript-sdk">agentica-typescript-sdk</a></li>
-<li><a href="https://github.com/VoynichLabs/arcgentica">arcgentica</a> — the ARC-AGI-2 solver built on agentica-python-sdk</li>
+<li>Clashes with the MCP protocol's own "task" concept (addressed in proposal 73 for public tool names).</li>
+<li>Clashes with Claude Code's built-in <code>Task</code> tool (visible to any agent working in this codebase).</li>
+<li>Adds confusion for contributors: "TaskItem" sounds like a to-do list item, not a long-running strategic plan generation run.</li>
 </ul>
-<p>arcgentica scores 85.28% on ARC-AGI-2 at $6.94/task using Claude Opus. Its architecture is fundamentally different from PlanExe's Luigi DAG in ways that are directly applicable to PlanExe's brittleness problems.</p>
-<p>We also read <code>worker_plan_internal/plan/run_plan_pipeline.py</code> in full. PlanExe is already a sophisticated multi-agent system — 40+ Luigi tasks, each making its own LLMExecutor call with retry and resume built in. The orchestration layer is solid. The brittleness is not in the plumbing; it's in three specific gaps.</p>
+<p><code>PlanItem</code> is the natural equivalent: each row represents one invocation of the PlanExe planning pipeline — i.e., one <em>plan</em> being generated.</p>
 <hr />
-<h2 id="the-three-brittleness-gaps">The Three Brittleness Gaps</h2>
-<h3 id="gap-1-one-llm-call-per-task-no-self-evaluation">Gap 1: One LLM call per task — no self-evaluation</h3>
-<p>Every Luigi task in PlanExe calls <code>LLMExecutor.execute()</code> once and writes the result to disk. If the model produces a malformed or low-quality output, the pipeline accepts it and moves on. The next 30 tasks process garbage silently.</p>
-<p>arcgentica handles this differently. Agents evaluate their own output before returning:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># From arcgentica solve.py</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">FinalSolution</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="n">examples</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">soft</span> <span class="o">=</span> <span class="n">soft_accuracy</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">transform_code</span><span class="p">,</span> <span class="n">examples</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">if</span> <span class="n">soft</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">FinalSolution</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="n">examples</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div>
-<p>The agent checks its own work. If <code>soft_accuracy</code> is below threshold, it retries with its first attempt as a hint. Two attempts max. This is not unlimited looping — it's bounded self-correction.</p>
-<h3 id="gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary">Gap 2: ReviewPlan produces critiques that die at the task boundary</h3>
-<p><code>ReviewPlan.execute()</code> asks 15 structured question blocks (critical issues, showstopper risks, assumptions, KPIs, etc.) and writes a structured critique to <code>review_plan.md</code>. That's where it stops. The critique never reaches the tasks that caused the problems.</p>
-<p>⚠️ <strong>CORRECTION (Simon Strandgaard, 2026-02-25):</strong> task_retry is an MCP interface for restarting Luigi pipelines. The actual retry logic lives in <code>llm_executor.py</code> and is not exposed through MCP. Using MCP task_retry inside <code>run_plan_pipeline.py</code> would cause recursive calls and database manipulation, making it unsuitable as a fallback mechanism. Do not pursue the "ReviewPlan → task_retry bridge" pattern.</p>
-<h3 id="gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity">Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity</h3>
-<p>A two-sentence business idea goes through the same GovernancePhase 1-6, ExpertOrchestrator, full WBS Level 1-2-3, and CreateSchedule as a full enterprise plan. The <code>speed_vs_detail</code> parameter controls model choice but not task selection. This is expensive and produces bloated output for simple inputs.</p>
-<hr />
-<h2 id="four-adaptations-from-arcgentica">Four Adaptations from arcgentica</h2>
-<h3 id="adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks">Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks</h3>
-<p>For tasks where a bad output causes maximum downstream damage — <code>MakeAssumptions</code>, <code>ReviewAssumptions</code>, <code>CreateWBSLevel1</code> — wrap the <code>LLMExecutor</code> call in a bounded self-evaluation loop.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MakeAssumptions</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">execute_with_eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_attempts</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">attempt</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="k">while</span> <span class="n">attempt</span> <span class="o">&lt;</span> <span class="n">max_attempts</span><span class="p">:</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            <span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_assumptions</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            <span class="k">if</span> <span class="n">score</span><span class="o">.</span><span class="n">passes_threshold</span><span class="p">:</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                <span class="k">break</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="c1"># Re-prompt with self-critique as context</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Previous attempt:</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Issues found:</span><span class="se">\n</span><span class="si">{</span><span class="n">score</span><span class="o">.</span><span class="n">issues</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Please correct:&quot;</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="n">attempt</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="k">return</span> <span class="n">output</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_assumptions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EvalResult</span><span class="p">:</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Lightweight check: are all required sections present? Any contradictions?&quot;&quot;&quot;</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="n">required</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Market&quot;</span><span class="p">,</span> <span class="s2">&quot;Timeline&quot;</span><span class="p">,</span> <span class="s2">&quot;Budget&quot;</span><span class="p">,</span> <span class="s2">&quot;Risks&quot;</span><span class="p">]</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">required</span> <span class="k">if</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">output</span><span class="p">]</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="k">return</span> <span class="n">EvalResult</span><span class="p">(</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            <span class="n">passes_threshold</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            <span class="n">issues</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Missing sections: </span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">missing</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="p">)</span>
-</code></pre></div>
-<p>This adds one retry for the highest-risk tasks. Not 10 iterations — just 2. The <code>evaluate_assumptions</code> check is cheap (structural, not another LLM call).</p>
-<p><strong>Where to apply:</strong> <code>MakeAssumptions</code>, <code>CreateWBSLevel1</code>, <code>SelectScenario</code>, <code>ReviewPlan</code></p>
-<h3 id="adaptation-2-wire-reviewplan-signals-to-task_retry-invalid">Adaptation 2: ~~Wire ReviewPlan Signals to <code>task_retry</code>~~ [INVALID]</h3>
-<p>⚠️ <strong>REJECTED (Simon Strandgaard, 2026-02-25):</strong> The MCP <code>task_retry</code> interface is not suitable as a ReviewPlan fallback mechanism. The retry logic is internal to <code>llm_executor.py</code> in each task, not exposed through MCP. Using MCP task_retry inside <code>run_plan_pipeline.py</code> would cause recursive calls and database corruption. </p>
-<p><strong>Do not pursue this adaptation.</strong> Instead, focus on Adaption 5 (Fermi Sanity Check) and improving task-level retry logic directly within <code>llm_executor.py</code>.</p>
-<h3 id="adaptation-3-systemic-structured-output-validation-already-implemented">Adaptation 3: Systemic Structured Output Validation (Already Implemented)</h3>
-<p>⚠️ <strong>CORRECTION (Simon Strandgaard, 2026-02-25):</strong> PlanExe <strong>already uses structured output validation systemically</strong>, not just at single task boundaries.</p>
-<p>Across <code>premise_attack.py</code>, <code>identify_potential_levers.py</code>, <code>premortem.py</code>, and many other files, PlanExe enforces structured output by saving results as:
-- <strong>JSON:</strong> Full system prompt, user prompt, input data, and LLM response (for troubleshooting)
-- <strong>Markdown:</strong> Pretty-printed essential parts only (for human review)</p>
-<p>This dual output pattern (JSON + Markdown) is the systemic contract between tasks. Each task validates its JSON output before writing, and downstream tasks can trust the structure.</p>
-<p><strong>No change needed.</strong> The typed output pattern is already built into PlanExe's core. Focus instead on improving task-level validation logic within existing structured output patterns.</p>
-<h3 id="adaptation-4-complexity-gated-task-selection">Adaptation 4: Complexity-Gated Task Selection</h3>
-<p>arcgentica's root agent decides dynamically how many sub-agents to spawn based on the problem. PlanExe can adapt this: an early <code>PlanComplexityAssessor</code> task gates which downstream task groups run.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanComplexityAssessor</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    Fast, cheap classification of plan complexity.</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">    Output: complexity.json with tier and skip_phases list.</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">prompt_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_prompt</span><span class="p">()</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">tier</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute_cheap</span><span class="p">(</span><span class="n">COMPLEXITY_PROMPT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="n">prompt_text</span><span class="p">))</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="c1"># Returns: &quot;simple&quot; | &quot;medium&quot; | &quot;complex&quot;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">skip_phases</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>            <span class="s2">&quot;simple&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;GovernancePhase4&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase5&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase6&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>                        <span class="s2">&quot;ExpertCriticism&quot;</span><span class="p">,</span> <span class="s2">&quot;CreateWBSLevel3&quot;</span><span class="p">],</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            <span class="s2">&quot;medium&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;GovernancePhase5&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase6&quot;</span><span class="p">],</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="s2">&quot;complex&quot;</span><span class="p">:</span> <span class="p">[],</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="p">}[</span><span class="n">tier</span><span class="p">]</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span><span class="s2">&quot;tier&quot;</span><span class="p">:</span> <span class="n">tier</span><span class="p">,</span> <span class="s2">&quot;skip_phases&quot;</span><span class="p">:</span> <span class="n">skip_phases</span><span class="p">},</span> <span class="n">f</span><span class="p">)</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">class</span><span class="w"> </span><span class="nc">GovernancePhase4</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">GovernancePhase3</span><span class="p">(),</span> <span class="n">PlanComplexityAssessor</span><span class="p">()]</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>        <span class="n">complexity</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>        <span class="k">if</span> <span class="s2">&quot;GovernancePhase4&quot;</span> <span class="ow">in</span> <span class="n">complexity</span><span class="p">[</span><span class="s2">&quot;skip_phases&quot;</span><span class="p">]:</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>            <span class="c1"># Write empty output and mark complete</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;skipped&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="s2">&quot;complexity=simple&quot;</span><span class="p">}))</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>            <span class="k">return</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="c1"># ... normal execution</span>
-</code></pre></div>
-<p><code>PlanComplexityAssessor</code> uses a cheap model (Haiku, Flash) for the classification — not the full pipeline model. Cost: one small LLM call per run. Benefit: skip 5-10 expensive tasks for simple plans.</p>
-<hr />
-<h2 id="what-stays-the-same">What Stays the Same</h2>
+<h2 id="goals">Goals</h2>
+<ol>
+<li>Rename the Python class <code>TaskItem</code> → <code>PlanItem</code> throughout the codebase.</li>
+<li>Rename the Python enum <code>TaskState</code> → <code>PlanState</code>.</li>
+<li>Rename the source file <code>model_taskitem.py</code> → <code>model_planitem.py</code> and the test file accordingly.</li>
+<li>Keep the production <strong>database table name unchanged</strong> (<code>task_item</code>) so that no database migration is required.</li>
+<li>Update all imports, usages, docstrings, and documentation.</li>
+</ol>
+<h2 id="non-goals">Non-goals</h2>
 <ul>
-<li>The Luigi DAG structure. It's correct. Resume, retry, and flag-file-based progress tracking are solid.</li>
-<li><code>LLMExecutor</code>. The fallback model chain and retry logic are good. We're wrapping it, not replacing it.</li>
-<li>The overall pipeline sequence. The task ordering is well-designed.</li>
+<li>Renaming the <code>task_id</code> UUID field exposed in MCP API responses (covered as a separate decision in proposal 73).</li>
+<li>Changing any database column names or table structure.</li>
+<li>Renaming the <code>task_id</code> column in <code>model_token_metrics.py</code> or <code>model_worker.py</code> (those are foreign-key column names in the database; changing them would require a migration).</li>
 </ul>
 <hr />
-<h2 id="implementation-priority-revised">Implementation Priority (REVISED)</h2>
-<p>⚠️ <strong>UPDATE (Simon Strandgaard, 2026-02-25):</strong> Adaptation 2 (ReviewPlan → task_retry bridge) is invalid. See corrections above.</p>
-<p><strong>Valid adaptations, ranked by value/effort:</strong></p>
+<h2 id="critical-database-table-name">Critical: Database Table Name</h2>
+<p><code>TaskItem</code> has <strong>no explicit <code>__tablename__</code></strong> in its class definition. SQLAlchemy derives the table name automatically by converting the class name to snake_case:</p>
+<ul>
+<li><code>TaskItem</code> → table <code>task_item</code></li>
+<li><code>PlanItem</code> → table <code>plan_item</code> ← <strong>wrong; this would break all queries against the live database</strong></li>
+</ul>
+<p>Therefore, when the class is renamed to <code>PlanItem</code>, an explicit <code>__tablename__</code> must be added at the same time:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanItem</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;task_item&quot;</span>   <span class="c1"># ← keep existing DB table name</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>This single line preserves full backward compatibility with the existing database — no migration script needed.</p>
+<hr />
+<h2 id="scope-of-changes">Scope of Changes</h2>
+<h3 id="core-model-file">Core model file</h3>
 <table>
 <thead>
 <tr>
-<th>Priority</th>
-<th>Adaptation</th>
-<th>Effort</th>
-<th>Risk</th>
-<th>Notes</th>
+<th>File</th>
+<th>Change</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>Fermi Sanity Check (Adaptation 5)</td>
-<td>Medium</td>
-<td>Low</td>
-<td>Simon's primary quality signal: quantitative grounding</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Soft self-eval on MakeAssumptions</td>
-<td>Medium</td>
-<td>Low</td>
-<td>Bounded, isolated to one task</td>
-</tr>
-<tr>
-<td>3</td>
-<td>~~Typed output for MakeAssumptions~~</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>Already systemic in PlanExe — no change needed</td>
-</tr>
-<tr>
-<td>4</td>
-<td>PlanComplexityAssessor</td>
-<td>High</td>
-<td>Low</td>
-<td>Cost optimization, lower urgency</td>
+<td><code>database_api/model_taskitem.py</code> → rename to <code>model_planitem.py</code></td>
+<td>Rename file; rename class <code>TaskItem</code> → <code>PlanItem</code>; add <code>__tablename__ = "task_item"</code>; rename enum <code>TaskState</code> → <code>PlanState</code>; rename listener function <code>_sanitize_taskitem_fields</code> → <code>_sanitize_planitem_fields</code>; update all internal references</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Start with Adaptation 5 (Fermi Sanity Check).</strong> It directly addresses Simon's feedback on quantitative grounding and doesn't require architectural changes to Luigi or task_retry.</p>
-<hr />
-<h2 id="adaptation-5-quantitative-grounding-fermi-sanity-check">Adaptation 5: Quantitative Grounding (Fermi Sanity Check)</h2>
-<p><em>Added after direct feedback from Simon Strandgaard, 2026-02-25</em></p>
-<p>Simon's primary quality signal: <strong>numbers off by 2 orders of magnitude are the real failure mode.</strong> Plans must be grounded in current physical reality. Estimates without bounds are not estimates — they're guesses.</p>
-<p>This is the highest-priority adaptation. It doesn't require arcgentica patterns — it requires a new task.</p>
-<h3 id="new-task-fermisanitycheck">New task: <code>FermiSanityCheck</code></h3>
-<p>Runs after <code>MakeAssumptions</code> and before <code>ReviewPlan</code>. Extracts quantitative claims from the plan and checks them against physical plausibility.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">QuantifiedClaim</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">lower_bound</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">confidence</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;high&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;low&quot;</span><span class="p">]</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">evidence</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># what justifies this range</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">FermiSanityResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">claims</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">QuantifiedClaim</span><span class="p">]</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">flagged</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>  <span class="c1"># claims where upper/lower ratio &gt; 100x or evidence is empty</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">grounded</span><span class="p">:</span> <span class="nb">bool</span>       <span class="c1"># False if any critical claim is flagged</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">class</span><span class="w"> </span><span class="nc">FermiSanityCheck</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="sd">    Extracts numerical claims from assumptions and validates order-of-magnitude plausibility.</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="sd">    Fails loudly if critical estimates are ungrounded (no bounds) or implausible (&gt;2 OOM spread).</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        <span class="k">return</span> <span class="n">MakeAssumptions</span><span class="p">()</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        <span class="n">assumptions_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            <span class="n">FERMI_CHECK_PROMPT</span><span class="p">,</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            <span class="n">context</span><span class="o">=</span><span class="n">assumptions_text</span><span class="p">,</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>            <span class="n">return_type</span><span class="o">=</span><span class="n">FermiSanityResult</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>        <span class="p">)</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>        <span class="n">flagged</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>            <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">claims</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>            <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">lower_bound</span> <span class="o">==</span> <span class="mi">0</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>            <span class="ow">or</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">upper_bound</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower_bound</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">100</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>            <span class="ow">or</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">evidence</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>        <span class="p">]</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>        <span class="n">result</span><span class="o">.</span><span class="n">flagged</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">description</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">flagged</span><span class="p">]</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>        <span class="n">result</span><span class="o">.</span><span class="n">grounded</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">flagged</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">grounded</span><span class="p">:</span>
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>            <span class="c1"># Do not halt pipeline — log and flag for ReviewPlan to catch</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;FermiSanityCheck: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flagged</span><span class="p">)</span><span class="si">}</span><span class="s2"> ungrounded claims&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p><strong>The prompt</strong> (<code>FERMI_CHECK_PROMPT</code>) instructs the LLM to:
-1. Extract every numerical claim from the assumptions (cost, timeline, market size, resource requirements, physical quantities)
-2. Express each as lower/upper bounds with units
-3. Cite what justifies the range (industry data, physical constants, analogous projects)
-4. Flag any claim where the ratio <code>upper/lower &gt; 100</code> or where no evidence is provided</p>
-<p><strong>Integration:</strong> <code>ReviewPlan</code> reads <code>fermi_sanity.json</code> as an additional input. Ungrounded claims in <code>flagged</code> are automatically promoted to the <code>critical_issues</code> signal category in the ReviewPlan → task_retry bridge (Adaptation 2).</p>
-<h3 id="final-priority-order-updated-2026-02-25">Final Priority Order (Updated 2026-02-25)</h3>
-<p>Based on Simon Strandgaard's feedback, the final implementation order is:</p>
+<h3 id="files-that-import-taskitem-or-taskstate">Files that import <code>TaskItem</code> or <code>TaskState</code></h3>
 <table>
 <thead>
 <tr>
-<th>Priority</th>
-<th>Adaptation</th>
-<th>Rationale</th>
+<th>File</th>
+<th>Change</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td><strong>Fermi Sanity Check (Adaptation 5)</strong></td>
-<td>Simon's primary quality signal; highest value/effort</td>
+<td><code>mcp_cloud/app.py</code></td>
+<td>Update import (<code>from database_api.model_planitem import PlanItem, PlanState</code>); rename <code>TaskItem</code> → <code>PlanItem</code>, <code>TaskState</code> → <code>PlanState</code> throughout; rename helper functions <code>find_task_by_task_id</code> → <code>find_plan_by_task_id</code> (or keep as-is since <code>task_id</code> is the UUID field name)</td>
 </tr>
 <tr>
-<td>2</td>
-<td>Soft self-eval loop on high-stakes tasks</td>
-<td>Incremental quality improvement; low risk</td>
+<td><code>mcp_cloud/tests/test_task_create_tool.py</code></td>
+<td>Update import; rename <code>TaskItem</code> mock</td>
 </tr>
 <tr>
-<td>3</td>
-<td>~~ReviewPlan → task_retry bridge~~</td>
-<td><strong>INVALID</strong> — do not pursue (see Gap 2 correction)</td>
+<td><code>mcp_cloud/tests/test_task_file_info_tool.py</code></td>
+<td>Update import; rename <code>TaskState</code> → <code>PlanState</code></td>
 </tr>
 <tr>
-<td>4</td>
-<td>~~Typed output contracts~~</td>
-<td><strong>Already systemic in PlanExe</strong> (see Adaptation 3 correction)</td>
+<td><code>mcp_cloud/tests/test_task_status_tool.py</code></td>
+<td>Update import; rename <code>TaskState</code> → <code>PlanState</code></td>
 </tr>
 <tr>
-<td>5</td>
-<td>Complexity-gated pipeline (Adaptation 4)</td>
-<td>Cost optimization; lower urgency</td>
+<td><code>frontend_multi_user/src/app.py</code></td>
+<td>Update import; rename <code>TaskItem</code> → <code>PlanItem</code>, <code>TaskState</code> → <code>PlanState</code>; rename <code>TaskItemView</code> → <code>PlanItemView</code>; update all method signatures and variable names</td>
+</tr>
+<tr>
+<td><code>worker_plan_database/app.py</code></td>
+<td>Update import; rename <code>TaskItem</code> → <code>PlanItem</code>, <code>TaskState</code> → <code>PlanState</code> throughout</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Removed from scope:</strong> Adaptations 2 and 3 as described are either invalid (MCP task_retry) or redundant (structured output). Focus on Adaptation 5 first.</p>
+<h3 id="test-file">Test file</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>database_api/tests/test_taskitem_model.py</code> → rename to <code>test_planitem_model.py</code></td>
+<td>Rename file; update import from <code>model_planitem</code>; rename <code>TaskItem</code> → <code>PlanItem</code>, <code>TaskState</code> → <code>PlanState</code> in all tests</td>
+</tr>
+</tbody>
+</table>
+<h3 id="documentation-files">Documentation files</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>database_api/README.md</code></td>
+<td>Update model name and import example</td>
+</tr>
+<tr>
+<td><code>frontend_multi_user/AGENTS.md</code></td>
+<td>Update <code>TaskItem</code> references</td>
+</tr>
+<tr>
+<td><code>worker_plan_database/AGENTS.md</code></td>
+<td>Update <code>TaskItem</code> references</td>
+</tr>
+<tr>
+<td><code>mcp_cloud/AGENTS.md</code></td>
+<td>Update <code>TaskItem ↔ MCP task</code> mapping description</td>
+</tr>
+<tr>
+<td><code>mcp_cloud/README.md</code></td>
+<td>Update <code>TaskItem</code> references</td>
+</tr>
+<tr>
+<td><code>worker_plan_database/README.md</code></td>
+<td>Update <code>TaskItem</code> references</td>
+</tr>
+<tr>
+<td><code>docs/proposals/55-taskitem-activity-log-decomposition-and-secure-downloads.md</code></td>
+<td>Historical — leave filename as-is; prose can be left unchanged (it is a completed proposal)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comment-only-references-no-import-needed">Comment-only references (no import needed)</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>worker_plan/worker_plan_internal/llm_util/token_instrumentation.py</code></td>
+<td>Update comments referencing <code>TaskItem.id</code> → <code>PlanItem.id</code></td>
+</tr>
+<tr>
+<td><code>worker_plan/worker_plan_internal/llm_util/token_metrics_store.py</code></td>
+<td>Update comments</td>
+</tr>
+<tr>
+<td><code>database_api/model_token_metrics.py</code></td>
+<td>Update comments; the <code>task_id</code> column name itself stays unchanged</td>
+</tr>
+<tr>
+<td><code>database_api/model_worker.py</code></td>
+<td>Update comments; the <code>current_task_id</code> column name itself stays unchanged</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="open-questions-for-simon">Open Questions for Simon</h2>
+<h2 id="step-by-step-procedure">Step-by-Step Procedure</h2>
+<h3 id="step-1-create-a-feature-branch">Step 1 — Create a feature branch</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>main
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>pull
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>rename-taskitem-to-planitem
+</code></pre></div>
+<h3 id="step-2-rename-and-update-model_taskitempy">Step 2 — Rename and update <code>model_taskitem.py</code></h3>
 <ol>
 <li>
-<p><strong>What does a "good plan" look like to your actual users, and what's the most common complaint you hear?</strong> We've speculated about which pipeline stages fail — it would be valuable to know what failure modes users actually notice.</p>
+<p>Rename the file:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>mv<span class="w"> </span>database_api/model_taskitem.py<span class="w"> </span>database_api/model_planitem.py
+</code></pre></div></p>
 </li>
 <li>
-<p><strong>Is the Luigi DAG the architecture you want to extend for the next 12 months?</strong> If there are plans to replace the orchestration layer, we should know before proposing deep integrations.</p>
-</li>
-<li>
-<p><strong>Which of these four adaptations, if any, aligns with where you want PlanExe to go?</strong> Specifically: are typed Pydantic output contracts an acceptable pattern given your codebase conventions?</p>
+<p>Inside the new <code>model_planitem.py</code>, make the following changes:</p>
 </li>
 </ol>
+<p>a. Rename the enum:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Before</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">TaskState</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># After</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanState</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">Enum</span><span class="p">):</span>
+</code></pre></div></p>
+<p>b. Rename the class and add the explicit table name:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Before</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">TaskItem</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># After</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanItem</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;task_item&quot;</span>
+</code></pre></div></p>
+<p>c. Update all internal references to <code>TaskItem</code> and <code>TaskState</code> within the file (the <code>demo_items</code> method, event listener, and the <code>_sanitize_taskitem_fields</code> function):
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Before</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nd">@classmethod</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">demo_items</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="s1">&#39;TaskItem&#39;</span><span class="p">]:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">task1</span> <span class="o">=</span> <span class="n">TaskItem</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">TaskState</span><span class="o">.</span><span class="n">failed</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="o">...</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nd">@event</span><span class="o">.</span><span class="n">listens_for</span><span class="p">(</span><span class="n">TaskItem</span><span class="p">,</span> <span class="s2">&quot;before_insert&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nd">@event</span><span class="o">.</span><span class="n">listens_for</span><span class="p">(</span><span class="n">TaskItem</span><span class="p">,</span> <span class="s2">&quot;before_update&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">_sanitize_taskitem_fields</span><span class="p">(</span><span class="n">_mapper</span><span class="p">,</span> <span class="n">_connection</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># After</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nd">@classmethod</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="k">def</span><span class="w"> </span><span class="nf">demo_items</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="s1">&#39;PlanItem&#39;</span><span class="p">]:</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">task1</span> <span class="o">=</span> <span class="n">PlanItem</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">PlanState</span><span class="o">.</span><span class="n">failed</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="o">...</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="nd">@event</span><span class="o">.</span><span class="n">listens_for</span><span class="p">(</span><span class="n">PlanItem</span><span class="p">,</span> <span class="s2">&quot;before_insert&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="nd">@event</span><span class="o">.</span><span class="n">listens_for</span><span class="p">(</span><span class="n">PlanItem</span><span class="p">,</span> <span class="s2">&quot;before_update&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="k">def</span><span class="w"> </span><span class="nf">_sanitize_planitem_fields</span><span class="p">(</span><span class="n">_mapper</span><span class="p">,</span> <span class="n">_connection</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</code></pre></div></p>
+<h3 id="step-3-rename-and-update-the-test-file">Step 3 — Rename and update the test file</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>mv<span class="w"> </span>database_api/tests/test_taskitem_model.py<span class="w"> </span>database_api/tests/test_planitem_model.py
+</code></pre></div>
+<p>Inside <code>test_planitem_model.py</code>:
+- Update the import: <code>from database_api.model_planitem import PlanItem, PlanState</code>
+- Replace <code>TaskItem(</code> → <code>PlanItem(</code>, <code>TaskState.</code> → <code>PlanState.</code> throughout.</p>
+<h3 id="step-4-update-mcp_cloudapppy">Step 4 — Update <code>mcp_cloud/app.py</code></h3>
+<ol>
+<li>Update the import line:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Before</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">database_api.model_taskitem</span><span class="w"> </span><span class="kn">import</span> <span class="n">TaskItem</span><span class="p">,</span> <span class="n">TaskState</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># After</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">database_api.model_planitem</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlanItem</span><span class="p">,</span> <span class="n">PlanState</span>
+</code></pre></div></li>
+<li>Replace all <code>TaskItem</code> → <code>PlanItem</code> and <code>TaskState</code> → <code>PlanState</code> in the file body.</li>
+<li>Optionally rename internal helper functions for clarity (e.g. <code>find_task_by_task_id</code> → <code>find_plan_by_task_id</code>). Note: the <code>task_id</code> argument name itself should remain <code>task_id</code> since that is the UUID field name in API payloads.</li>
+</ol>
+<h3 id="step-5-update-mcp_cloud-test-files">Step 5 — Update <code>mcp_cloud</code> test files</h3>
+<p>For each of:
+- <code>mcp_cloud/tests/test_task_create_tool.py</code>
+- <code>mcp_cloud/tests/test_task_file_info_tool.py</code>
+- <code>mcp_cloud/tests/test_task_status_tool.py</code></p>
+<p>Update the import from <code>model_taskitem</code> to <code>model_planitem</code>; rename <code>TaskItem</code> → <code>PlanItem</code>, <code>TaskState</code> → <code>PlanState</code>.</p>
+<h3 id="step-6-update-frontend_multi_usersrcapppy">Step 6 — Update <code>frontend_multi_user/src/app.py</code></h3>
+<ol>
+<li>Update the import.</li>
+<li>Replace <code>TaskItem</code> → <code>PlanItem</code> and <code>TaskState</code> → <code>PlanState</code> throughout (~30 occurrences).</li>
+<li>Rename the admin view class:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Before</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">TaskItemView</span><span class="p">(</span><span class="n">AdminOnlyModelView</span><span class="p">):</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># After</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanItemView</span><span class="p">(</span><span class="n">AdminOnlyModelView</span><span class="p">):</span>
+</code></pre></div></li>
+<li>Update the <code>add_view</code> call:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Before</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="bp">self</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">TaskItemView</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">TaskItem</span><span class="p">,</span> <span class="o">...</span><span class="p">))</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># After</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="bp">self</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">PlanItemView</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">PlanItem</span><span class="p">,</span> <span class="o">...</span><span class="p">))</span>
+</code></pre></div></li>
+<li>Update all method signatures that type-hint <code>task: TaskItem</code> → <code>task: PlanItem</code>.</li>
+</ol>
+<h3 id="step-7-update-worker_plan_databaseapppy">Step 7 — Update <code>worker_plan_database/app.py</code></h3>
+<ol>
+<li>Update the import.</li>
+<li>Replace <code>TaskItem</code> → <code>PlanItem</code> and <code>TaskState</code> → <code>PlanState</code> throughout.</li>
+</ol>
+<h3 id="step-8-update-comment-only-references">Step 8 — Update comment-only references</h3>
+<p>For each of:
+- <code>worker_plan/worker_plan_internal/llm_util/token_instrumentation.py</code>
+- <code>worker_plan/worker_plan_internal/llm_util/token_metrics_store.py</code>
+- <code>database_api/model_token_metrics.py</code>
+- <code>database_api/model_worker.py</code></p>
+<p>Update prose comments that mention <code>TaskItem</code> → <code>PlanItem</code>. Do <strong>not</strong> rename database column names (<code>task_id</code>, <code>current_task_id</code>).</p>
+<h3 id="step-9-update-documentation-files">Step 9 — Update documentation files</h3>
+<p>For each documentation file in the scope above, replace <code>TaskItem</code> → <code>PlanItem</code> and <code>TaskState</code> → <code>PlanState</code> in prose. The <code>task_id</code> UUID identifier should remain unchanged.</p>
+<p>A grep to check completeness before committing:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>grep<span class="w"> </span>-rn<span class="w"> </span><span class="s2">&quot;TaskItem\|TaskState\|model_taskitem\|test_taskitem&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span>database_api/<span class="w"> </span>mcp_cloud/<span class="w"> </span>frontend_multi_user/<span class="w"> </span>worker_plan_database/<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span>worker_plan/<span class="w"> </span>docs/<span class="w"> </span>skills/<span class="w"> </span>README.md
+</code></pre></div>
+<p>The only acceptable remaining hits after this step are:
+- The historical proposal file <code>docs/proposals/55-taskitem-activity-log-decomposition-and-secure-downloads.md</code> (filename and completed-proposal prose — leave unchanged).
+- Database column names <code>task_id</code> and <code>current_task_id</code> in model files and comments (intentionally kept).</p>
+<h3 id="step-10-verify-__tablename__-is-set">Step 10 — Verify <code>__tablename__</code> is set</h3>
+<p>Before committing, confirm the class definition in <code>model_planitem.py</code> contains:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanItem</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;task_item&quot;</span>
+</code></pre></div>
+<p>This is the most safety-critical line in the entire rename. Without it, every ORM query will target a non-existent <code>plan_item</code> table and fail at runtime.</p>
+<h3 id="step-11-run-the-test-suite">Step 11 — Run the test suite</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>database_api/tests/<span class="w"> </span>-v
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>mcp_cloud/tests/<span class="w"> </span>-v
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>frontend_multi_user/tests/<span class="w"> </span>-v
+</code></pre></div>
+<p>All tests must pass.</p>
+<h3 id="step-12-start-the-application-and-verify-the-admin-panel">Step 12 — Start the application and verify the admin panel</h3>
+<ol>
+<li>Start the full stack locally (database + mcp_cloud + frontend_multi_user).</li>
+<li>Open the admin panel and confirm the <code>task_item</code> table is visible and queryable via <code>PlanItemView</code>.</li>
+<li>Create a test plan run via <code>plan_create</code> (after proposal 73 lands) or via the existing UI.</li>
+<li>Verify the row appears in the admin view under <code>PlanItem</code>.</li>
+</ol>
+<h3 id="step-13-open-a-pull-request">Step 13 — Open a pull request</h3>
+<p>Note in the PR summary:
+- <code>__tablename__ = "task_item"</code> is set — no database migration required.
+- <code>task_id</code> column names and API field names are intentionally unchanged.
+- This PR should land <strong>after</strong> (or together with) proposal 73 to keep naming consistent.</p>
 <hr />
-<h2 id="references">References</h2>
+<h2 id="risks-and-mitigations">Risks and Mitigations</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missing <code>__tablename__</code> causes all queries to hit a non-existent <code>plan_item</code> table</td>
+<td>Step 10 is a mandatory pre-commit check; verified by the test suite and the smoke test in Step 12</td>
+</tr>
+<tr>
+<td>Import path <code>database_api.model_taskitem</code> still used somewhere</td>
+<td>The grep in Step 9 will surface any remaining occurrences</td>
+</tr>
+<tr>
+<td><code>model_taskitem</code> string appears in string literals (e.g., Alembic migration comments)</td>
+<td>Grep covers string literals too; Alembic migration files are not present in this repo (ORM-managed schema), so no migration files to update</td>
+</tr>
+<tr>
+<td><code>TaskState</code> values (<code>.pending</code>, <code>.processing</code>, <code>.completed</code>, <code>.failed</code>) are stored in the database as strings; renaming the enum class does not affect stored values</td>
+<td><code>PlanState.pending</code> still stores the string <code>"pending"</code> — enum <em>class name</em> is not persisted. Safe to rename.</td>
+</tr>
+<tr>
+<td>Frontend admin panel URL path for TaskItemView changes</td>
+<td>Flask-Admin derives the URL endpoint from the class name by default. <code>TaskItemView</code> → <code>PlanItemView</code> changes the admin endpoint URL (e.g. <code>/admin/taskitemview/</code> → <code>/admin/planitemview/</code>). Any hardcoded bookmarks or links to the old URL will break. Update any such links.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
 <ul>
-<li><a href="https://github.com/VoynichLabs/arcgentica">arcgentica source</a></li>
-<li><a href="https://github.com/VoynichLabs/agentica-typescript-sdk">agentica-typescript-sdk</a></li>
-<li><a href="https://github.com/VoynichLabs/swarm-coordination/blob/main/events/2026/feb/25/planexe-pipeline-notes.md">PlanExe pipeline notes</a></li>
-<li><a href="../63-luigi-agent-integration/">Proposal 63: Luigi Agent Integration</a> — complementary <code>@agent_meta</code> decorator approach</li>
-<li><a href="../59-prompt-optimizing-with-ab-testing/">Proposal 59: A/B Testing for Prompt Optimization</a> — evaluation harness for validating any changes proposed here</li>
+<li>[ ] <code>database_api/model_planitem.py</code> exists; <code>model_taskitem.py</code> is deleted.</li>
+<li>[ ] <code>PlanItem</code> class contains <code>__tablename__ = "task_item"</code>.</li>
+<li>[ ] <code>TaskState</code> is replaced by <code>PlanState</code> in all Python files.</li>
+<li>[ ] No remaining <code>TaskItem</code> or <code>TaskState</code> references in non-historical source files and docs (verified by grep).</li>
+<li>[ ] <code>task_id</code> field names in API schemas and database column definitions are unchanged.</li>
+<li>[ ] All tests pass.</li>
+<li>[ ] Application starts, the admin panel shows the <code>PlanItem</code> view, and existing database rows are readable.</li>
 </ul>
 
 
@@ -5245,9 +5545,6 @@
 
 
 
-
-  
-  
 
 
 

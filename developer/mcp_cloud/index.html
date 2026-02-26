@@ -4725,6 +4725,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    73 rename task prefix in mcp tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/74-rename-taskitem-to-planitem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    74 rename taskitem to planitem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -5118,7 +5174,7 @@ If no <code>worker_plan_database*</code> service is running, <code>task_create</
 - <code>true</code>: provide a valid <code>X-API-Key</code>.
 Accepted keys are (1) UserApiKey from home.planexe.org (<code>pex_...</code>), or (2) <code>PLANEXE_MCP_API_KEY</code> if set (for dev or shared secret).
 OAuth is not supported for the MCP API.
-When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <code>notifications/initialized</code>, <code>tools/list</code>, <code>prompts/list</code>, <code>resources/list</code>, <code>resources/templates/list</code>, <code>ping</code>, <code>GET /mcp/tools</code>, and probe traffic to <code>/mcp</code> for redirect/handshake compatibility) are intentionally allowed without API key for connector health checks; tool execution remains protected.</p>
+When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <code>notifications/initialized</code>, <code>tools/list</code>, <code>prompts/list</code>, <code>resources/list</code>, <code>resources/templates/list</code>, <code>ping</code>, <code>GET /mcp/tools</code>, and probe traffic to <code>/mcp</code> for redirect/handshake compatibility) are intentionally allowed without API key for connector health checks. In addition, <code>tools/call</code> is open without API key only for <code>model_profiles</code> and <code>prompt_examples</code>; all other tool calls remain protected.</p>
 <h3 id="connecting-via-httpurl">Connecting via HTTP/URL</h3>
 <p>After starting with Docker, configure your MCP client (e.g., LM Studio) to connect via HTTP:</p>
 <p><strong>Remote MCP:</strong></p>
