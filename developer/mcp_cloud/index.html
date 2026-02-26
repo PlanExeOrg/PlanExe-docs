@@ -4781,6 +4781,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/75-post-rename-cleanup-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    75 post rename cleanup issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -5329,8 +5357,8 @@ still requires API key authentication when <code>PLANEXE_MCP_REQUIRE_AUTH=true</
 <h2 id="architecture">Architecture</h2>
 <p>mcp_cloud maps MCP concepts to PlanExe's database models:</p>
 <ul>
-<li><strong>Task</strong> → <code>TaskItem</code> (each task corresponds to a TaskItem)</li>
-<li><strong>Run</strong> → Execution of a TaskItem by <code>worker_plan_database</code></li>
+<li><strong>Task</strong> → <code>PlanItem</code> (each task corresponds to a PlanItem)</li>
+<li><strong>Run</strong> → Execution of a PlanItem by <code>worker_plan_database</code></li>
 <li><strong>Report</strong> → HTML report fetched from <code>worker_plan</code> via HTTP API</li>
 </ul>
 <p>mcp_cloud reads task state and progress from the database, and fetches artifacts from <code>worker_plan</code> via HTTP instead of accessing the run directory directly. This allows mcp_cloud to work without mounting the run directory, making it compatible with Railway and other cloud platforms that don't support shared volumes across services.</p>
@@ -5463,7 +5491,7 @@ recommended flow is Docker (server) + <code>mcp_local</code> (client).</p>
 <li>Other files are fetched by downloading the run zip and extracting the file (less efficient but works without additional endpoints)</li>
 <li>Artifact writes are not yet supported via HTTP (would require a write endpoint in <code>worker_plan</code>).</li>
 <li>Artifact writes are rejected while a run is active (strict policy per spec).</li>
-<li>Task IDs use the TaskItem UUID (e.g., <code>5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1</code>).</li>
+<li>Task IDs use the PlanItem UUID (e.g., <code>5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1</code>).</li>
 <li><strong>Security</strong>: Authentication is configurable. For production, set <code>PLANEXE_MCP_REQUIRE_AUTH=true</code> and use UserApiKey validation (optionally with <code>PLANEXE_MCP_API_KEY</code> as a shared secret).</li>
 </ul>
 

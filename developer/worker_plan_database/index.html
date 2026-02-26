@@ -4504,6 +4504,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/75-post-rename-cleanup-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    75 post rename cleanup issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4590,7 +4618,7 @@
 <h1 id="worker-plan-database">Worker plan database</h1>
 <p>Subclass of the <code>worker_plan</code> service that runs the PlanExe pipeline with a Postgres database.</p>
 <ul>
-<li>Polls <code>TaskItem</code> rows, marks them processing, and runs the pipeline.</li>
+<li>Polls <code>PlanItem</code> rows, marks them processing, and runs the pipeline.</li>
 <li>Reports state/progress back to the DB and posts confirmations to MachAI.</li>
 <li>Uses the same <code>worker_plan_internal</code> code as <code>worker_plan</code>, plus the shared <code>database_api</code> models.</li>
 <li>Configure MachAI confirmation endpoints with <code>PLANEXE_IFRAME_GENERATOR_CONFIRMATION_PRODUCTION_URL</code> and <code>PLANEXE_IFRAME_GENERATOR_CONFIRMATION_DEVELOPMENT_URL</code> (both are required; the worker fails fast if missing).</li>
