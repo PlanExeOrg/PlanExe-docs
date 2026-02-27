@@ -1220,10 +1220,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#task" class="md-nav__link">
+  <a href="#plan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Task
+        Plan
       
     </span>
   </a>
@@ -1769,10 +1769,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#171-plan_list-or-task_recent" class="md-nav__link">
+  <a href="#171-plan_list-or-plan_recent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.1 plan_list (or task_recent)
+        17.1 plan_list (or plan_recent)
       
     </span>
   </a>
@@ -1780,10 +1780,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#172-task_wait" class="md-nav__link">
+  <a href="#172-plan_wait" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.2 task_wait
+        17.2 plan_wait
       
     </span>
   </a>
@@ -1791,10 +1791,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#173-task_get_latest" class="md-nav__link">
+  <a href="#173-plan_get_latest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.3 task_get_latest
+        17.3 plan_get_latest
       
     </span>
   </a>
@@ -1802,10 +1802,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#174-task_logs_tail-optional" class="md-nav__link">
+  <a href="#174-plan_logs_tail-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.4 task_logs_tail (optional)
+        17.4 plan_logs_tail (optional)
       
     </span>
   </a>
@@ -5542,10 +5542,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#task" class="md-nav__link">
+  <a href="#plan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Task
+        Plan
       
     </span>
   </a>
@@ -6091,10 +6091,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#171-plan_list-or-task_recent" class="md-nav__link">
+  <a href="#171-plan_list-or-plan_recent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.1 plan_list (or task_recent)
+        17.1 plan_list (or plan_recent)
       
     </span>
   </a>
@@ -6102,10 +6102,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#172-task_wait" class="md-nav__link">
+  <a href="#172-plan_wait" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.2 task_wait
+        17.2 plan_wait
       
     </span>
   </a>
@@ -6113,10 +6113,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#173-task_get_latest" class="md-nav__link">
+  <a href="#173-plan_get_latest" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.3 task_get_latest
+        17.3 plan_get_latest
       
     </span>
   </a>
@@ -6124,10 +6124,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#174-task_logs_tail-optional" class="md-nav__link">
+  <a href="#174-plan_logs_tail-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.4 task_logs_tail (optional)
+        17.4 plan_logs_tail (optional)
       
     </span>
   </a>
@@ -6184,21 +6184,21 @@
 <h1 id="planexe-mcp-interface-specification-v10">PlanExe MCP Interface Specification (v1.0)</h1>
 <h2 id="1-purpose">1. Purpose</h2>
 <h3 id="11-what-is-planexe">1.1 What is PlanExe</h3>
-<p>PlanExe is a service that generates <strong>strategic project-plan drafts</strong> from a natural-language prompt. You describe a large goal (e.g. open a clinic, launch a product, build a moon base)—the kind of project that in reality takes months or years. PlanExe produces a structured draft with 20+ sections: steps, documents, and deliverables. The plan is not executable in its current form; it is a draft to refine and act on. Creating a plan is a long-running task (100+ LLM inference calls): create a task with a prompt, poll status, then download the HTML report and zip when done.</p>
+<p>PlanExe is a service that generates <strong>strategic project-plan drafts</strong> from a natural-language prompt. You describe a large goal (e.g. open a clinic, launch a product, build a moon base)—the kind of project that in reality takes months or years. PlanExe produces a structured draft with 20+ sections: steps, documents, and deliverables. The plan is not executable in its current form; it is a draft to refine and act on. Creating a plan is a long-running operation (100+ LLM inference calls): create a plan with a prompt, poll status, then download the HTML report and zip when done.</p>
 <h3 id="12-what-kind-of-plan-does-it-create">1.2 What kind of plan does it create</h3>
-<p>The plan is a <strong>project plan</strong>: a DAG of steps (Luigi tasks) that produce artifacts including a Gantt chart, risk analysis, and other project management deliverables. The main output is a self-contained interactive HTML report (~700KB) with collapsible sections, interactive Gantt charts, and embedded JavaScript. The report contains 20+ sections including executive summary, investor pitch, project plan with SMART criteria, strategic decision analysis, scenario comparison, assumptions with expert review, governance structure, SWOT analysis, team role profiles, simulated expert criticism, work breakdown structure, plan review, Q&amp;A, premortem with failure scenarios, self-audit checklist, and adversarial premise attacks. There is also a zip file containing all intermediary pipeline files (md, json, csv) that fed the report. Plan quality depends on prompt quality; use the prompt_examples tool to see the baseline before calling plan_create.</p>
+<p>The plan is a <strong>project plan</strong>: a DAG of steps (Luigi pipeline stages) that produce artifacts including a Gantt chart, risk analysis, and other project management deliverables. The main output is a self-contained interactive HTML report (~700KB) with collapsible sections, interactive Gantt charts, and embedded JavaScript. The report contains 20+ sections including executive summary, investor pitch, project plan with SMART criteria, strategic decision analysis, scenario comparison, assumptions with expert review, governance structure, SWOT analysis, team role profiles, simulated expert criticism, work breakdown structure, plan review, Q&amp;A, premortem with failure scenarios, self-audit checklist, and adversarial premise attacks. There is also a zip file containing all intermediary pipeline files (md, json, csv) that fed the report. Plan quality depends on prompt quality; use the prompt_examples tool to see the baseline before calling plan_create.</p>
 <h4 id="121-agent-facing-summary-for-server-instructions-tool-descriptions">1.2.1 Agent-facing summary (for server instructions / tool descriptions)</h4>
 <p>Implementors should expose the following to agents so they understand what PlanExe does:</p>
 <ul>
 <li><strong>What:</strong> PlanExe turns a plain-English goal into a strategic project-plan draft (20+ sections) in ~10–20 min. Sections include executive summary, interactive Gantt charts, investor pitch, SWOT, governance, team profiles, work breakdown, scenario comparison, expert criticism, and adversarial sections (premortem, self-audit, premise attacks) that stress-test the plan. The output is a draft to refine, not an executable or final document — but it surfaces hard questions the prompter may not have considered.</li>
-<li><strong>Required interaction order:</strong> Call <code>prompt_examples</code> first. Optional before <code>plan_create</code>: call <code>model_profiles</code> to inspect profile guidance and available models in each profile. Then complete a non-tool step: formulate a detailed prompt as flowing prose (not structured markdown), typically ~300-800 words, using the examples as a baseline; include objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria; get user approval. Only after approval, call <code>plan_create</code>. Then poll <code>plan_status</code> (about every 5 minutes); use <code>plan_download</code> (mcp_local helper) or <code>plan_file_info</code> (mcp_cloud tool) when complete (<code>pending</code>/<code>processing</code> = keep polling, <code>completed</code> = download now, <code>failed</code> = terminal). If a task fails and the caller wants another attempt for the same <code>task_id</code>, call <code>plan_retry</code> (optional <code>model_profile</code>, default <code>baseline</code>). To stop, call <code>plan_stop</code> with the <code>task_id</code> from <code>plan_create</code>.</li>
+<li><strong>Required interaction order:</strong> Call <code>prompt_examples</code> first. Optional before <code>plan_create</code>: call <code>model_profiles</code> to inspect profile guidance and available models in each profile. Then complete a non-tool step: formulate a detailed prompt as flowing prose (not structured markdown), typically ~300-800 words, using the examples as a baseline; include objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria; get user approval. Only after approval, call <code>plan_create</code>. Then poll <code>plan_status</code> (about every 5 minutes); use <code>plan_download</code> (mcp_local helper) or <code>plan_file_info</code> (mcp_cloud tool) when complete (<code>pending</code>/<code>processing</code> = keep polling, <code>completed</code> = download now, <code>failed</code> = terminal). If a plan fails and the caller wants another attempt for the same <code>plan_id</code>, call <code>plan_retry</code> (optional <code>model_profile</code>, default <code>baseline</code>). To stop, call <code>plan_stop</code> with the <code>plan_id</code> from <code>plan_create</code>.</li>
 <li><strong>Output:</strong> Self-contained interactive HTML report (~700KB) with collapsible sections and interactive Gantt charts — open in a browser. The zip contains the intermediary pipeline files (md, json, csv) that fed the report.</li>
 </ul>
 <h3 id="13-scope-of-this-document">1.3 Scope of this document</h3>
 <p>This document specifies a Model Context Protocol (MCP) interface for PlanExe that enables AI agents and client UIs to:</p>
 <ol>
 <li>Create and run long-running plan generation workflows.</li>
-<li>Receive real-time progress updates (task status, log output).</li>
+<li>Receive real-time progress updates (plan status, log output).</li>
 <li>List, read, and edit artifacts produced in an output directory.</li>
 <li>Stop and resume execution with Luigi-aware incremental recomputation.</li>
 </ol>
@@ -6212,11 +6212,11 @@
 <h2 id="2-goals">2. Goals</h2>
 <h3 id="21-functional-goals">2.1 Functional goals</h3>
 <ul>
-<li>Task-based orchestration: each run is associated with a task ID.</li>
+<li>Plan-based orchestration: each run is associated with a plan ID.</li>
 <li>Long-running execution: starts asynchronously; clients poll or subscribe to events.</li>
 <li>Artifact-first workflow: outputs are exposed as file-like artifacts.</li>
 <li>Stop / Resume with minimal recompute:</li>
-<li>on resume, only invalidated downstream tasks regenerate.</li>
+<li>on resume, only invalidated downstream stages regenerate.</li>
 <li>Progress reporting:</li>
 <li>progress_percentage</li>
 <li>Editable artifacts:</li>
@@ -6228,7 +6228,7 @@
 <li>Idempotency: repeated tool calls should not corrupt state.</li>
 <li>Observability: logs, state transitions, and artifacts must be inspectable.</li>
 <li>Concurrency safety: prevent conflicting writes and illegal resume patterns.</li>
-<li>Extensibility: future versions can add task graph browsing, caching backends, exports.</li>
+<li>Extensibility: future versions can add plan graph browsing, caching backends, exports.</li>
 </ul>
 <hr />
 <h2 id="3-non-goals">3. Non-goals</h2>
@@ -6241,24 +6241,24 @@
 <h3 id="31-mcp-tools-vs-mcp-tasks-run-as-task">3.1 MCP tools vs MCP tasks ("Run as task")</h3>
 <p>The MCP specification defines two different mechanisms:</p>
 <ul>
-<li><strong>MCP tools</strong> (e.g. plan_create, plan_status, plan_stop, plan_retry): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls plan_create → receives task_id → polls plan_status → optionally calls plan_retry on failed → uses plan_file_info (and optionally plan_download via mcp_local). This document specifies those tools.</li>
+<li><strong>MCP tools</strong> (e.g. plan_create, plan_status, plan_stop, plan_retry): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls plan_create → receives plan_id → polls plan_status → optionally calls plan_retry on failed → uses plan_file_info (and optionally plan_download via mcp_local). This document specifies those tools.</li>
 <li><strong>MCP tasks protocol</strong> ("Run as task" in some UIs): a separate mechanism where the client can run a tool "as a task" using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.</li>
 </ul>
 <p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. Intended flow: call <code>prompt_examples</code>; optionally call <code>model_profiles</code>; perform the non-tool prompt drafting/approval step; call <code>plan_create</code>; poll <code>plan_status</code>; if failed call <code>plan_retry</code> (optional); then call <code>plan_file_info</code> (or <code>plan_download</code> via mcp_local) when completed.</p>
 <hr />
 <h2 id="4-system-model">4. System Model</h2>
 <h3 id="41-core-entities">4.1 Core entities</h3>
-<h4 id="task">Task</h4>
+<h4 id="plan">Plan</h4>
 <p>A long-lived container for a PlanExe project run.</p>
 <p><strong>Key properties</strong></p>
 <ul>
-<li>task_id: UUID returned by plan_create for that task. Each plan_create returns a new UUID. Use that exact UUID for all MCP calls; do not substitute ids from other services.</li>
-<li>output_dir: artifact root namespace for task</li>
+<li>plan_id: UUID returned by plan_create for that plan. Each plan_create returns a new UUID. Use that exact UUID for all MCP calls; do not substitute ids from other services.</li>
+<li>output_dir: artifact root namespace for plan</li>
 <li>config: immutable run configuration (models, runtime limits, Luigi params)</li>
 <li>created_at, updated_at</li>
 </ul>
 <h4 id="execution">Execution</h4>
-<p>A single execution attempt inside a task.</p>
+<p>A single execution attempt inside a plan.</p>
 <p><strong>Key properties</strong></p>
 <ul>
 <li>state: pending | processing | completed | failed</li>
@@ -6269,7 +6269,7 @@
 <p>A file-like output managed by PlanExe.</p>
 <p><strong>Key properties</strong></p>
 <ul>
-<li>path: path relative to task output root</li>
+<li>path: path relative to plan output root</li>
 <li>size, updated_at</li>
 <li>content_type: text/markdown, text/html, application/json, etc.</li>
 <li>sha256: content hash for optimistic locking and invalidation</li>
@@ -6302,8 +6302,8 @@
 </ul>
 <h3 id="53-invalid-transitions">5.3 Invalid transitions</h3>
 <ul>
-<li>completed → processing (new run must be triggered by creating a new task)</li>
-<li>processing → processing is not a state transition on the same task; create separate tasks for parallel work.</li>
+<li>completed → processing (new run must be triggered by creating a new plan)</li>
+<li>processing → processing is not a state transition on the same plan; create separate plans for parallel work.</li>
 </ul>
 <hr />
 <h2 id="6-mcp-tools-v1-required">6. MCP Tools (v1 Required)</h2>
@@ -6423,31 +6423,31 @@ If no models are available in any profile, the tool returns <code>isError=true</
 </ul>
 <p><strong>Response</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-01-14T12:34:56Z&quot;</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Important</strong></p>
 <ul>
-<li>task_id is a UUID returned by plan_create. Use this exact UUID for plan_status/plan_stop/plan_retry/plan_file_info (and plan_download when using mcp_local).</li>
+<li>plan_id is a UUID returned by plan_create. Use this exact UUID for plan_status/plan_stop/plan_retry/plan_file_info (and plan_download when using mcp_local).</li>
 </ul>
 <p><strong>Behavior</strong></p>
 <ul>
 <li>Must be idempotent only if client supplies an optional client_request_id (optional extension).</li>
-<li>Task config is immutable after creation in v1.</li>
-<li>By default, repeated <code>plan_create</code> calls produce new tasks (new <code>task_id</code>s).</li>
+<li>Plan config is immutable after creation in v1.</li>
+<li>By default, repeated <code>plan_create</code> calls produce new plans (new <code>plan_id</code>s).</li>
 </ul>
 <hr />
 <h3 id="63-plan_status">6.3 plan_status</h3>
-<p>Returns task status and progress. Used for progress bars and UI states. <strong>Polling interval:</strong> call at reasonable intervals only (e.g. every 5 minutes); plan generation typically takes 10–20 minutes (baseline profile) and may take longer on higher-quality profiles.</p>
+<p>Returns plan status and progress. Used for progress bars and UI states. <strong>Polling interval:</strong> call at reasonable intervals only (e.g. every 5 minutes); plan generation typically takes 10–20 minutes (baseline profile) and may take longer on higher-quality profiles.</p>
 <p><strong>Request</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Input</strong></p>
 <ul>
-<li>task_id: UUID returned by plan_create. Use it to reference the plan being created.</li>
+<li>plan_id: UUID returned by plan_create. Use it to reference the plan being created.</li>
 </ul>
 <p><strong>Caller contract (state meanings)</strong></p>
 <ul>
@@ -6462,7 +6462,7 @@ If no models are available in any profile, the tool returns <code>isError=true</
 </ul>
 <p><strong>Response</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;processing&quot;</span><span class="p">,</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;progress_percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">62.0</span><span class="p">,</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;timing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -6483,15 +6483,15 @@ If no models are available in any profile, the tool returns <code>isError=true</
 </ul>
 <hr />
 <h3 id="64-plan_stop">6.4 plan_stop</h3>
-<p>Requests the plan generation to stop. Pass the <strong>task_id</strong> (the UUID returned by plan_create). Call <code>plan_stop</code> with that task_id.</p>
+<p>Requests the plan generation to stop. Pass the <strong>plan_id</strong> (the UUID returned by plan_create). Call <code>plan_stop</code> with that plan_id.</p>
 <p><strong>Request</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Input</strong></p>
 <ul>
-<li>task_id: UUID returned by plan_create. Use this same UUID when calling plan_stop to request the task to stop.</li>
+<li>plan_id: UUID returned by plan_create. Use this same UUID when calling plan_stop to request the plan to stop.</li>
 </ul>
 <p><strong>Response</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
@@ -6506,21 +6506,21 @@ If no models are available in any profile, the tool returns <code>isError=true</
 </ul>
 <hr />
 <h3 id="65-plan_retry">6.5 plan_retry</h3>
-<p>Retries a task that is currently in <code>failed</code> state.</p>
+<p>Retries a plan that is currently in <code>failed</code> state.</p>
 <p><strong>Request</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Input</strong></p>
 <ul>
-<li>task_id: UUID of a failed task.</li>
+<li>plan_id: UUID of a failed plan.</li>
 <li>model_profile: optional (<code>baseline</code> | <code>premium</code> | <code>frontier</code> | <code>custom</code>), default <code>baseline</code>.</li>
 </ul>
 <p><strong>Response</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span><span class="p">,</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">,</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="nt">&quot;retried_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-24T15:20:00Z&quot;</span>
@@ -6528,22 +6528,22 @@ If no models are available in any profile, the tool returns <code>isError=true</
 </code></pre></div>
 <p><strong>Required semantics</strong></p>
 <ul>
-<li>Only failed tasks are retryable.</li>
-<li>On success, the same task_id is reset to <code>pending</code> and requeued.</li>
-<li>Prior artifacts for that task are cleared before requeue.</li>
+<li>Only failed plans are retryable.</li>
+<li>On success, the same plan_id is reset to <code>pending</code> and requeued.</li>
+<li>Prior artifacts for that plan are cleared before requeue.</li>
 </ul>
 <p><strong>Error behavior</strong></p>
 <ul>
-<li>Unknown task_id: <code>TASK_NOT_FOUND</code> (<code>isError=true</code>).</li>
-<li>Task not failed: <code>TASK_NOT_FAILED</code> (<code>isError=true</code>).</li>
+<li>Unknown plan_id: <code>PLAN_NOT_FOUND</code> (<code>isError=true</code>).</li>
+<li>Plan not failed: <code>PLAN_NOT_FAILED</code> (<code>isError=true</code>).</li>
 </ul>
 <hr />
 <h3 id="66-download-flow-plan_download-vs-plan_file_info">6.6 Download flow (plan_download vs plan_file_info)</h3>
 <p><strong>If your client exposes plan_download</strong> (e.g. mcp_local): use it to save the report or zip locally; it calls plan_file_info under the hood, then fetches and writes to the local save path (e.g. PLANEXE_PATH).</p>
-<p><strong>If you only have plan_file_info</strong> (e.g. direct connection to mcp_cloud): call it with task_id and artifact ("report" or "zip"); use the returned download_url to fetch the file (e.g. GET with API key if configured).</p>
+<p><strong>If you only have plan_file_info</strong> (e.g. direct connection to mcp_cloud): call it with plan_id and artifact ("report" or "zip"); use the returned download_url to fetch the file (e.g. GET with API key if configured).</p>
 <p><strong>plan_file_info input</strong></p>
 <ul>
-<li>task_id: UUID returned by plan_create. Use it to download the created plan.</li>
+<li>plan_id: UUID returned by plan_create. Use it to download the created plan.</li>
 <li>artifact: "report" or "zip" (default "report").</li>
 </ul>
 <p><strong>plan_download local path behavior (mcp_local)</strong></p>
@@ -6551,7 +6551,7 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <li>Save directory is <code>PLANEXE_PATH</code>.</li>
 <li>If <code>PLANEXE_PATH</code> is unset, save to current working directory.</li>
 <li>If <code>PLANEXE_PATH</code> points to a file (not a directory), return an error.</li>
-<li>Filenames are <code>&lt;task_id&gt;-030-report.html</code> or <code>&lt;task_id&gt;-run.zip</code>.</li>
+<li>Filenames are <code>&lt;plan_id&gt;-030-report.html</code> or <code>&lt;plan_id&gt;-run.zip</code>.</li>
 <li>If a filename already exists, append <code>-1</code>, <code>-2</code>, ... before extension.</li>
 <li>Successful responses include <code>saved_path</code>.</li>
 </ul>
@@ -6572,20 +6572,20 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <hr />
 <h2 id="8-concurrency-locking">8. Concurrency &amp; Locking</h2>
 <h3 id="81-client-side-concurrency-guidance">8.1 Client-side concurrency guidance</h3>
-<p>The server does not enforce a global limit on how many tasks a client can create.
+<p>The server does not enforce a global limit on how many plans a client can create.
 Concurrency is a client-side coordination concern.</p>
 <p>Recommended practice for MCP clients:</p>
 <ul>
-<li>Start with 1 active task.</li>
-<li>If needed, increase to 2 tasks in parallel.</li>
-<li>Going beyond 4 parallel tasks is usually hard to track; avoid unless necessary.</li>
+<li>Start with 1 active plan.</li>
+<li>If needed, increase to 2 plans in parallel.</li>
+<li>Going beyond 4 parallel plans is usually hard to track; avoid unless necessary.</li>
 </ul>
 <p>Additional semantics:</p>
 <ul>
-<li>Every <code>plan_create</code> call creates a new independent task with a new <code>task_id</code>.</li>
-<li><code>plan_retry</code> reuses the existing failed <code>task_id</code> (it does not create a new task id).</li>
-<li>The server does not deduplicate “same prompt” requests into a single shared task.</li>
-<li>Keep your own task registry/client state if you run multiple tasks concurrently.</li>
+<li>Every <code>plan_create</code> call creates a new independent plan with a new <code>plan_id</code>.</li>
+<li><code>plan_retry</code> reuses the existing failed <code>plan_id</code> (it does not create a new plan id).</li>
+<li>The server does not deduplicate “same prompt” requests into a single shared plan.</li>
+<li>Keep your own plan registry/client state if you run multiple plans concurrently.</li>
 </ul>
 <hr />
 <h2 id="9-error-model">9. Error Model</h2>
@@ -6599,8 +6599,8 @@ Concurrency is a client-side coordination concern.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TASK_NOT_FOUND&quot;</span><span class="p">,</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Task not found: &lt;task_id&gt;&quot;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLAN_NOT_FOUND&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan not found: &lt;plan_id&gt;&quot;</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
 </code></pre></div>
@@ -6611,7 +6611,7 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>plan_file_info</code>: uses mixed behavior:</li>
 <li>returns <code>{}</code> (not an error) while artifacts are not ready.</li>
 <li>may return <code>{"error": ...}</code> with <code>isError=false</code> for terminal artifact-level problems.</li>
-<li>returns <code>isError=true</code> for unknown task id (<code>TASK_NOT_FOUND</code>).</li>
+<li>returns <code>isError=true</code> for unknown plan_id (<code>PLAN_NOT_FOUND</code>).</li>
 <li><code>mcp_local</code> may return proxy/transport failures as <code>REMOTE_ERROR</code> and local download write failures as <code>DOWNLOAD_FAILED</code>.</li>
 </ul>
 <h3 id="93-minimal-code-contract-current">9.3 Minimal code contract (current)</h3>
@@ -6619,13 +6619,13 @@ Concurrency is a client-side coordination concern.</p>
 <ul>
 <li><code>INVALID_TOOL</code>: unknown MCP tool name.</li>
 <li><code>INTERNAL_ERROR</code>: uncaught server error.</li>
-<li><code>TASK_NOT_FOUND</code>: task id not found.</li>
-<li><code>TASK_NOT_FAILED</code>: plan_retry called for a task that is not in failed state.</li>
+<li><code>PLAN_NOT_FOUND</code>: plan_id not found.</li>
+<li><code>PLAN_NOT_FAILED</code>: plan_retry called for a plan that is not in failed state.</li>
 <li><code>INVALID_USER_API_KEY</code>: provided user_api_key is invalid.</li>
 <li><code>USER_API_KEY_REQUIRED</code>: deployment requires user_api_key for plan_create.</li>
 <li><code>INSUFFICIENT_CREDITS</code>: caller account has no credits for plan_create.</li>
 <li><code>MODEL_PROFILES_UNAVAILABLE</code>: model_profiles found zero available models across all profiles.</li>
-<li><code>generation_failed</code>: plan_file_info report path when task ended in failed.</li>
+<li><code>generation_failed</code>: plan_file_info report path when plan ended in failed.</li>
 <li><code>content_unavailable</code>: plan_file_info cannot read requested artifact bytes.</li>
 </ul>
 <p>Local proxy specific codes:</p>
@@ -6644,21 +6644,21 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>USER_API_KEY_REQUIRED</code></li>
 <li><code>INSUFFICIENT_CREDITS</code></li>
 <li><code>INVALID_TOOL</code></li>
-<li>For <code>TASK_NOT_FAILED</code>: call <code>plan_retry</code> only after <code>plan_status.state == failed</code>.</li>
-<li>For <code>TASK_NOT_FOUND</code>: verify task_id source and stop polling that id.</li>
-<li>For <code>generation_failed</code>: treat as terminal failure and surface task progress_message to user.</li>
+<li>For <code>PLAN_NOT_FAILED</code>: call <code>plan_retry</code> only after <code>plan_status.state == failed</code>.</li>
+<li>For <code>PLAN_NOT_FOUND</code>: verify plan_id source and stop polling that id.</li>
+<li>For <code>generation_failed</code>: treat as terminal failure and surface plan progress_message to user.</li>
 </ul>
 <hr />
 <h2 id="10-security-isolation">10. Security &amp; Isolation</h2>
 <h3 id="101-sandbox-constraints">10.1 Sandbox constraints</h3>
 <ul>
-<li>All artifacts must live under task-scoped storage.</li>
+<li>All artifacts must live under plan-scoped storage.</li>
 <li>Artifact URIs must not permit path traversal.</li>
 </ul>
 <h3 id="102-access-control">10.2 Access control</h3>
 <p>At minimum:</p>
 <ul>
-<li>task must be scoped to a user identity (metadata.user_id)</li>
+<li>plan must be scoped to a user identity (metadata.user_id)</li>
 <li>callers without permission must receive PERMISSION_DENIED</li>
 </ul>
 <h3 id="103-sensitive-data-handling">10.3 Sensitive data handling</h3>
@@ -6724,7 +6724,7 @@ Concurrency is a client-side coordination concern.</p>
 </ul>
 <h3 id="153-load-tests-recommended">15.3 Load tests (recommended)</h3>
 <ul>
-<li>multiple tasks concurrently, one run each</li>
+<li>multiple plans concurrently, one run each</li>
 <li>event streaming stability under heavy log output</li>
 </ul>
 <hr />
@@ -6732,8 +6732,8 @@ Concurrency is a client-side coordination concern.</p>
 <p>PlanExe is artifact-first, and MCP already has a native concept for that: resources. Today artifacts are exposed via download_url or via proxy download + saved_path. Future versions SHOULD expose artifacts as MCP resources so clients can fetch them via standard resource reads (and treat PlanExe as a first-class MCP server rather than a thin API wrapper).</p>
 <p><strong>Proposed resource identifiers</strong></p>
 <ul>
-<li>planexe://task/<task_id>/report</li>
-<li>planexe://task/<task_id>/zip</li>
+<li>planexe://plan/<plan_id>/report</li>
+<li>planexe://plan/<plan_id>/zip</li>
 </ul>
 <p><strong>Recommended resource metadata</strong></p>
 <ul>
@@ -6750,54 +6750,54 @@ Concurrency is a client-side coordination concern.</p>
 <hr />
 <h2 id="17-future-tools-high-leverage-low-complexity">17. Future Tools (High-Leverage, Low-Complexity)</h2>
 <p>The following tools remove common UX friction without expanding the core model.</p>
-<h3 id="171-plan_list-or-task_recent">17.1 plan_list (or task_recent)</h3>
-<p>Return a short list of recent tasks so agents can recover if they lost a task_id.</p>
+<h3 id="171-plan_list-or-plan_recent">17.1 plan_list (or plan_recent)</h3>
+<p>Return a short list of recent plans so agents can recover if they lost a plan_id.</p>
 <p><strong>Notes</strong></p>
 <ul>
-<li>Default limit: 5–10 tasks.</li>
-<li>Include task_id, created_at, state, and prompt summary.</li>
+<li>Default limit: 5–10 plans.</li>
+<li>Include plan_id, created_at, state, and prompt summary.</li>
 </ul>
-<h3 id="172-task_wait">17.2 task_wait</h3>
-<p>Blocking helper that polls internally until the task completes or times out. Returns the final plan_status payload plus suggested next steps.</p>
+<h3 id="172-plan_wait">17.2 plan_wait</h3>
+<p>Blocking helper that polls internally until the plan completes or times out. Returns the final plan_status payload plus suggested next steps.</p>
 <p><strong>Notes</strong></p>
 <ul>
-<li>Inputs: task_id, timeout_sec (optional), poll_interval_sec (optional).</li>
+<li>Inputs: plan_id, timeout_sec (optional), poll_interval_sec (optional).</li>
 <li>Outputs: same as plan_status + next_steps (string or list).</li>
 </ul>
-<h3 id="173-task_get_latest">17.3 task_get_latest</h3>
-<p>Simplest recovery: return the most recently created task for the caller.</p>
+<h3 id="173-plan_get_latest">17.3 plan_get_latest</h3>
+<p>Simplest recovery: return the most recently created plan for the caller.</p>
 <p><strong>Notes</strong></p>
 <ul>
 <li>Useful for single-user / single-session flows.</li>
 <li>Should be scoped to the caller/user_id when available.</li>
 </ul>
-<h3 id="174-task_logs_tail-optional">17.4 task_logs_tail (optional)</h3>
+<h3 id="174-plan_logs_tail-optional">17.4 plan_logs_tail (optional)</h3>
 <p>Return the tail of recent log lines for troubleshooting failures.</p>
 <p><strong>Notes</strong></p>
 <ul>
-<li>Inputs: task_id, max_lines (optional), since_cursor (optional).</li>
+<li>Inputs: plan_id, max_lines (optional), since_cursor (optional).</li>
 <li>Useful when plan_status shows failed but no context.</li>
 </ul>
 <hr />
 <h2 id="appendix-a-example-end-to-end-flow">Appendix A — Example End-to-End Flow</h2>
-<p><strong>Create task</strong></p>
+<p><strong>Create plan</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p><strong>Start run</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p><strong>Stop</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="appendix-b-optional-v11-extensions">Appendix B — Optional v1.1 Extensions</h2>
 <p>If you want richer Luigi integration later:</p>
 <ul>
-<li>planexe.task.graph (nodes + edges + states)</li>
-<li>planexe.task.invalidate (rerun subtree)</li>
+<li>planexe.plan.graph (nodes + edges + states)</li>
+<li>planexe.plan.invalidate (rerun subtree)</li>
 <li>planexe.export.bundle (zip all artifacts)</li>
 <li>planexe.validate.only (audit without regeneration)</li>
-<li>planexe.task.archive (freeze task)</li>
+<li>planexe.plan.archive (freeze plan)</li>
 </ul>
 
 
