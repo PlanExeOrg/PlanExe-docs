@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry (VoynichLabs)">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/77-cache-aware-model-handoff/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/69-arcgentica-agent-patterns/">
+        <link rel="prev" href="../76-x402-a2a-payment-roadmap/">
       
       
-        <link rel="prev" href="../68-domain-aware-plan-ranking-engine/">
-      
-      
-        <link rel="next" href="../70-fermi-sanity-check-validation-gate/">
+        <link rel="next" href="../77-ccusage-real-data-analysis/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation</title>
+        <title>77 cache aware model handoff - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation" />
+<meta property="og:title" content="77 cache aware model handoff - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/69-arcgentica-agent-patterns.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/77-cache-aware-model-handoff.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/69-arcgentica-agent-patterns/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/77-cache-aware-model-handoff/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hardening PlanExe with Arcgentica Agent Patterns - PlanExe Documentation" />
+<meta property="twitter:title" content="77 cache aware model handoff - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/69-arcgentica-agent-patterns.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/77-cache-aware-model-handoff.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proposal-69-hardening-planexe-with-arcgentica-agent-patterns" class="md-skip">
+        <a href="#proposal-77-cache-aware-model-handoff-architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hardening PlanExe with Arcgentica Agent Patterns
+              77 cache aware model handoff
             
           </span>
         </div>
@@ -4294,44 +4292,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    69 arcgentica agent patterns
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../69-arcgentica-agent-patterns/" class="md-nav__link">
         
   
   
@@ -4354,231 +4318,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Context
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-three-brittleness-gaps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Three Brittleness Gaps
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="The Three Brittleness Gaps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gap-1-one-llm-call-per-task-no-self-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gap 1: One LLM call per task — no self-evaluation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gap 2: ReviewPlan produces critiques that die at the task boundary
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#four-adaptations-from-arcgentica" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Four Adaptations from arcgentica
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Four Adaptations from arcgentica">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-2-wire-reviewplan-signals-to-task_retry-invalid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 2: ~~Wire ReviewPlan Signals to task_retry~~ [INVALID]
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-3-systemic-structured-output-validation-already-implemented" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 3: Systemic Structured Output Validation (Already Implemented)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-4-complexity-gated-task-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 4: Complexity-Gated Task Selection
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-stays-the-same" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Stays the Same
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-priority-revised" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Priority (REVISED)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adaptation-5-quantitative-grounding-fermi-sanity-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 5: Quantitative Grounding (Fermi Sanity Check)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adaptation 5: Quantitative Grounding (Fermi Sanity Check)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-task-fermisanitycheck" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        New task: FermiSanityCheck
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#final-priority-order-updated-2026-02-25" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Priority Order (Updated 2026-02-25)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-questions-for-simon" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open Questions for Simon
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4952,10 +4691,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../77-cache-aware-model-handoff/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    77 cache aware model handoff
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4971,6 +4737,259 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem-naive-model-switching-is-counter-productive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem: Naive Model Switching Is Counter-Productive
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Problem: Naive Model Switching Is Counter-Productive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-solution-cache-safe-subagent-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: Cache-Safe Subagent Handoff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Solution: Cache-Safe Subagent Handoff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handoff-message-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handoff Message Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Handoff Message Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-handoff-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Handoff Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handoff-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handoff Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-proposal-73-when-to-trigger-a-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Proposal #73: When to Trigger a Handoff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upward-routing-when-you-need-more-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upward Routing: When You Need More Power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-set-stability-during-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Set Stability During Handoff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-planexe-should-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What PlanExe Should NOT Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-to-planexes-existing-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to PlanExe's Existing Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relationship to PlanExe&#39;s Existing Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luigi-task-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Luigi Task Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compaction-summarization-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compaction / Summarization Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server Calls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-to-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics to Track
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-checklist-docs-only-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Checklist (Docs-Only Phase)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5046,10 +5065,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#context" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Context
+        Summary
       
     </span>
   </a>
@@ -5057,44 +5076,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-three-brittleness-gaps" class="md-nav__link">
+  <a href="#the-problem-naive-model-switching-is-counter-productive" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Three Brittleness Gaps
+        The Problem: Naive Model Switching Is Counter-Productive
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The Three Brittleness Gaps">
+    <nav class="md-nav" aria-label="The Problem: Naive Model Switching Is Counter-Productive">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gap-1-one-llm-call-per-task-no-self-evaluation" class="md-nav__link">
+  <a href="#why" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gap 1: One LLM call per task — no self-evaluation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gap 2: ReviewPlan produces critiques that die at the task boundary
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity
+        Why
       
     </span>
   </a>
@@ -5107,55 +5104,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#four-adaptations-from-arcgentica" class="md-nav__link">
+  <a href="#the-solution-cache-safe-subagent-handoff" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Four Adaptations from arcgentica
+        The Solution: Cache-Safe Subagent Handoff
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Four Adaptations from arcgentica">
+    <nav class="md-nav" aria-label="The Solution: Cache-Safe Subagent Handoff">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks" class="md-nav__link">
+  <a href="#why-this-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-2-wire-reviewplan-signals-to-task_retry-invalid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 2: ~~Wire ReviewPlan Signals to task_retry~~ [INVALID]
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-3-systemic-structured-output-validation-already-implemented" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 3: Systemic Structured Output Validation (Already Implemented)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adaptation-4-complexity-gated-task-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 4: Complexity-Gated Task Selection
+        Why This Works
       
     </span>
   </a>
@@ -5168,44 +5132,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-stays-the-same" class="md-nav__link">
+  <a href="#handoff-message-format" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Stays the Same
+        Handoff Message Format
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-priority-revised" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Priority (REVISED)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adaptation-5-quantitative-grounding-fermi-sanity-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adaptation 5: Quantitative Grounding (Fermi Sanity Check)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Adaptation 5: Quantitative Grounding (Fermi Sanity Check)">
+    <nav class="md-nav" aria-label="Handoff Message Format">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#new-task-fermisanitycheck" class="md-nav__link">
+  <a href="#recommended-handoff-schema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        New task: FermiSanityCheck
+        Recommended Handoff Schema
       
     </span>
   </a>
@@ -5213,10 +5155,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#final-priority-order-updated-2026-02-25" class="md-nav__link">
+  <a href="#handoff-principles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Final Priority Order (Updated 2026-02-25)
+        Handoff Principles
       
     </span>
   </a>
@@ -5229,10 +5171,115 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#open-questions-for-simon" class="md-nav__link">
+  <a href="#integration-with-proposal-73-when-to-trigger-a-handoff" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Open Questions for Simon
+        Integration with Proposal #73: When to Trigger a Handoff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upward-routing-when-you-need-more-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upward Routing: When You Need More Power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-set-stability-during-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Set Stability During Handoff
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-planexe-should-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What PlanExe Should NOT Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-to-planexes-existing-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to PlanExe's Existing Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relationship to PlanExe&#39;s Existing Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#luigi-task-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Luigi Task Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compaction-summarization-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compaction / Summarization Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server Calls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-to-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics to Track
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-checklist-docs-only-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Checklist (Docs-Only Phase)
       
     </span>
   </a>
@@ -5270,292 +5317,234 @@
   
 
 
-<h1 id="proposal-69-hardening-planexe-with-arcgentica-agent-patterns">Proposal 69: Hardening PlanExe with Arcgentica Agent Patterns</h1>
-<p><strong>Author:</strong> Larry (VoynichLabs)<br />
-<strong>Date:</strong> 2026-02-25<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>architecture</code>, <code>agent-orchestration</code>, <code>reliability</code>, <code>agentica</code>, <code>luigi</code></p>
+<h1 id="proposal-77-cache-aware-model-handoff-architecture">Proposal 77: Cache-Aware Model Handoff Architecture</h1>
+<p><strong>Status:</strong> Draft<br />
+<strong>Date:</strong> 27 February 2026<br />
+<strong>Author:</strong> Larry (VoynichLabs / OpenClaw)<br />
+<strong>Depends on:</strong> Proposal #73 (task complexity routing), Proposal #74 (model routing UX modes)<br />
+<strong>Related:</strong> Claude Code Engineering Blog — <a href="https://www.anthropic.com/engineering/prompt-caching">Prompt Caching at Scale</a></p>
 <hr />
-<h2 id="context">Context</h2>
-<p>We spent time reading two Symbolica AI repositories:</p>
-<ul>
-<li><a href="https://github.com/VoynichLabs/agentica-typescript-sdk">agentica-typescript-sdk</a></li>
-<li><a href="https://github.com/VoynichLabs/arcgentica">arcgentica</a> — the ARC-AGI-2 solver built on agentica-python-sdk</li>
-</ul>
-<p>arcgentica scores 85.28% on ARC-AGI-2 at $6.94/task using Claude Opus. Its architecture is fundamentally different from PlanExe's Luigi DAG in ways that are directly applicable to PlanExe's brittleness problems.</p>
-<p>We also read <code>worker_plan_internal/plan/run_plan_pipeline.py</code> in full. PlanExe is already a sophisticated multi-agent system — 40+ Luigi tasks, each making its own LLMExecutor call with retry and resume built in. The orchestration layer is solid. The brittleness is not in the plumbing; it's in three specific gaps.</p>
+<h2 id="summary">Summary</h2>
+<p>Proposal #73 defined <em>when</em> to switch models (complexity rubric → model tier). This proposal defines <em>how</em> to switch models without destroying the prompt cache and turning cost savings into cost increases.</p>
+<p>The two proposals together form a complete model routing architecture for PlanExe.</p>
 <hr />
-<h2 id="the-three-brittleness-gaps">The Three Brittleness Gaps</h2>
-<h3 id="gap-1-one-llm-call-per-task-no-self-evaluation">Gap 1: One LLM call per task — no self-evaluation</h3>
-<p>Every Luigi task in PlanExe calls <code>LLMExecutor.execute()</code> once and writes the result to disk. If the model produces a malformed or low-quality output, the pipeline accepts it and moves on. The next 30 tasks process garbage silently.</p>
-<p>arcgentica handles this differently. Agents evaluate their own output before returning:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># From arcgentica solve.py</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">FinalSolution</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="n">examples</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">soft</span> <span class="o">=</span> <span class="n">soft_accuracy</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">transform_code</span><span class="p">,</span> <span class="n">examples</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">if</span> <span class="n">soft</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">FinalSolution</span><span class="p">,</span> <span class="n">task</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="n">examples</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div>
-<p>The agent checks its own work. If <code>soft_accuracy</code> is below threshold, it retries with its first attempt as a hint. Two attempts max. This is not unlimited looping — it's bounded self-correction.</p>
-<h3 id="gap-2-reviewplan-produces-critiques-that-die-at-the-task-boundary">Gap 2: ReviewPlan produces critiques that die at the task boundary</h3>
-<p><code>ReviewPlan.execute()</code> asks 15 structured question blocks (critical issues, showstopper risks, assumptions, KPIs, etc.) and writes a structured critique to <code>review_plan.md</code>. That's where it stops. The critique never reaches the tasks that caused the problems.</p>
-<p>⚠️ <strong>CORRECTION (Simon Strandgaard, 2026-02-25):</strong> task_retry is an MCP interface for restarting Luigi pipelines. The actual retry logic lives in <code>llm_executor.py</code> and is not exposed through MCP. Using MCP task_retry inside <code>run_plan_pipeline.py</code> would cause recursive calls and database manipulation, making it unsuitable as a fallback mechanism. Do not pursue the "ReviewPlan → task_retry bridge" pattern.</p>
-<h3 id="gap-3-pipeline-always-runs-all-40-tasks-regardless-of-input-complexity">Gap 3: Pipeline always runs all 40+ tasks regardless of input complexity</h3>
-<p>A two-sentence business idea goes through the same GovernancePhase 1-6, ExpertOrchestrator, full WBS Level 1-2-3, and CreateSchedule as a full enterprise plan. The <code>speed_vs_detail</code> parameter controls model choice but not task selection. This is expensive and produces bloated output for simple inputs.</p>
-<hr />
-<h2 id="four-adaptations-from-arcgentica">Four Adaptations from arcgentica</h2>
-<h3 id="adaptation-1-soft-self-evaluation-loop-for-high-stakes-tasks">Adaptation 1: Soft Self-Evaluation Loop for High-Stakes Tasks</h3>
-<p>For tasks where a bad output causes maximum downstream damage — <code>MakeAssumptions</code>, <code>ReviewAssumptions</code>, <code>CreateWBSLevel1</code> — wrap the <code>LLMExecutor</code> call in a bounded self-evaluation loop.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MakeAssumptions</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">execute_with_eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_attempts</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">attempt</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="k">while</span> <span class="n">attempt</span> <span class="o">&lt;</span> <span class="n">max_attempts</span><span class="p">:</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            <span class="n">score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_assumptions</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            <span class="k">if</span> <span class="n">score</span><span class="o">.</span><span class="n">passes_threshold</span><span class="p">:</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                <span class="k">break</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="c1"># Re-prompt with self-critique as context</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Previous attempt:</span><span class="se">\n</span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Issues found:</span><span class="se">\n</span><span class="si">{</span><span class="n">score</span><span class="o">.</span><span class="n">issues</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">Please correct:&quot;</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="n">attempt</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="k">return</span> <span class="n">output</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_assumptions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EvalResult</span><span class="p">:</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Lightweight check: are all required sections present? Any contradictions?&quot;&quot;&quot;</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="n">required</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Market&quot;</span><span class="p">,</span> <span class="s2">&quot;Timeline&quot;</span><span class="p">,</span> <span class="s2">&quot;Budget&quot;</span><span class="p">,</span> <span class="s2">&quot;Risks&quot;</span><span class="p">]</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">required</span> <span class="k">if</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">output</span><span class="p">]</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="k">return</span> <span class="n">EvalResult</span><span class="p">(</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            <span class="n">passes_threshold</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            <span class="n">issues</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Missing sections: </span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">missing</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="p">)</span>
-</code></pre></div>
-<p>This adds one retry for the highest-risk tasks. Not 10 iterations — just 2. The <code>evaluate_assumptions</code> check is cheap (structural, not another LLM call).</p>
-<p><strong>Where to apply:</strong> <code>MakeAssumptions</code>, <code>CreateWBSLevel1</code>, <code>SelectScenario</code>, <code>ReviewPlan</code></p>
-<h3 id="adaptation-2-wire-reviewplan-signals-to-task_retry-invalid">Adaptation 2: ~~Wire ReviewPlan Signals to <code>task_retry</code>~~ [INVALID]</h3>
-<p>⚠️ <strong>REJECTED (Simon Strandgaard, 2026-02-25):</strong> The MCP <code>task_retry</code> interface is not suitable as a ReviewPlan fallback mechanism. The retry logic is internal to <code>llm_executor.py</code> in each task, not exposed through MCP. Using MCP task_retry inside <code>run_plan_pipeline.py</code> would cause recursive calls and database corruption. </p>
-<p><strong>Do not pursue this adaptation.</strong> Instead, focus on Adaption 5 (Fermi Sanity Check) and improving task-level retry logic directly within <code>llm_executor.py</code>.</p>
-<h3 id="adaptation-3-systemic-structured-output-validation-already-implemented">Adaptation 3: Systemic Structured Output Validation (Already Implemented)</h3>
-<p>⚠️ <strong>CORRECTION (Simon Strandgaard, 2026-02-25):</strong> PlanExe <strong>already uses structured output validation systemically</strong>, not just at single task boundaries.</p>
-<p>Across <code>premise_attack.py</code>, <code>identify_potential_levers.py</code>, <code>premortem.py</code>, and many other files, PlanExe enforces structured output by saving results as:
-- <strong>JSON:</strong> Full system prompt, user prompt, input data, and LLM response (for troubleshooting)
-- <strong>Markdown:</strong> Pretty-printed essential parts only (for human review)</p>
-<p>This dual output pattern (JSON + Markdown) is the systemic contract between tasks. Each task validates its JSON output before writing, and downstream tasks can trust the structure.</p>
-<p><strong>No change needed.</strong> The typed output pattern is already built into PlanExe's core. Focus instead on improving task-level validation logic within existing structured output patterns.</p>
-<h3 id="adaptation-4-complexity-gated-task-selection">Adaptation 4: Complexity-Gated Task Selection</h3>
-<p>arcgentica's root agent decides dynamically how many sub-agents to spawn based on the problem. PlanExe can adapt this: an early <code>PlanComplexityAssessor</code> task gates which downstream task groups run.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanComplexityAssessor</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    Fast, cheap classification of plan complexity.</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">    Output: complexity.json with tier and skip_phases list.</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">prompt_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_prompt</span><span class="p">()</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">tier</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute_cheap</span><span class="p">(</span><span class="n">COMPLEXITY_PROMPT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="n">prompt_text</span><span class="p">))</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="c1"># Returns: &quot;simple&quot; | &quot;medium&quot; | &quot;complex&quot;</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="n">skip_phases</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>            <span class="s2">&quot;simple&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;GovernancePhase4&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase5&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase6&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>                        <span class="s2">&quot;ExpertCriticism&quot;</span><span class="p">,</span> <span class="s2">&quot;CreateWBSLevel3&quot;</span><span class="p">],</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            <span class="s2">&quot;medium&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;GovernancePhase5&quot;</span><span class="p">,</span> <span class="s2">&quot;GovernancePhase6&quot;</span><span class="p">],</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="s2">&quot;complex&quot;</span><span class="p">:</span> <span class="p">[],</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="p">}[</span><span class="n">tier</span><span class="p">]</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span><span class="s2">&quot;tier&quot;</span><span class="p">:</span> <span class="n">tier</span><span class="p">,</span> <span class="s2">&quot;skip_phases&quot;</span><span class="p">:</span> <span class="n">skip_phases</span><span class="p">},</span> <span class="n">f</span><span class="p">)</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="k">class</span><span class="w"> </span><span class="nc">GovernancePhase4</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">GovernancePhase3</span><span class="p">(),</span> <span class="n">PlanComplexityAssessor</span><span class="p">()]</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>        <span class="n">complexity</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">open</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>        <span class="k">if</span> <span class="s2">&quot;GovernancePhase4&quot;</span> <span class="ow">in</span> <span class="n">complexity</span><span class="p">[</span><span class="s2">&quot;skip_phases&quot;</span><span class="p">]:</span>
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>            <span class="c1"># Write empty output and mark complete</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&quot;skipped&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;reason&quot;</span><span class="p">:</span> <span class="s2">&quot;complexity=simple&quot;</span><span class="p">}))</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>            <span class="k">return</span>
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="c1"># ... normal execution</span>
-</code></pre></div>
-<p><code>PlanComplexityAssessor</code> uses a cheap model (Haiku, Flash) for the classification — not the full pipeline model. Cost: one small LLM call per run. Benefit: skip 5-10 expensive tasks for simple plans.</p>
-<hr />
-<h2 id="what-stays-the-same">What Stays the Same</h2>
-<ul>
-<li>The Luigi DAG structure. It's correct. Resume, retry, and flag-file-based progress tracking are solid.</li>
-<li><code>LLMExecutor</code>. The fallback model chain and retry logic are good. We're wrapping it, not replacing it.</li>
-<li>The overall pipeline sequence. The task ordering is well-designed.</li>
-</ul>
-<hr />
-<h2 id="implementation-priority-revised">Implementation Priority (REVISED)</h2>
-<p>⚠️ <strong>UPDATE (Simon Strandgaard, 2026-02-25):</strong> Adaptation 2 (ReviewPlan → task_retry bridge) is invalid. See corrections above.</p>
-<p><strong>Valid adaptations, ranked by value/effort:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Priority</th>
-<th>Adaptation</th>
-<th>Effort</th>
-<th>Risk</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Fermi Sanity Check (Adaptation 5)</td>
-<td>Medium</td>
-<td>Low</td>
-<td>Simon's primary quality signal: quantitative grounding</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Soft self-eval on MakeAssumptions</td>
-<td>Medium</td>
-<td>Low</td>
-<td>Bounded, isolated to one task</td>
-</tr>
-<tr>
-<td>3</td>
-<td>~~Typed output for MakeAssumptions~~</td>
-<td>N/A</td>
-<td>N/A</td>
-<td>Already systemic in PlanExe — no change needed</td>
-</tr>
-<tr>
-<td>4</td>
-<td>PlanComplexityAssessor</td>
-<td>High</td>
-<td>Low</td>
-<td>Cost optimization, lower urgency</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Start with Adaptation 5 (Fermi Sanity Check).</strong> It directly addresses Simon's feedback on quantitative grounding and doesn't require architectural changes to Luigi or task_retry.</p>
-<hr />
-<h2 id="adaptation-5-quantitative-grounding-fermi-sanity-check">Adaptation 5: Quantitative Grounding (Fermi Sanity Check)</h2>
-<p><em>Added after direct feedback from Simon Strandgaard, 2026-02-25</em></p>
-<p>Simon's primary quality signal: <strong>numbers off by 2 orders of magnitude are the real failure mode.</strong> Plans must be grounded in current physical reality. Estimates without bounds are not estimates — they're guesses.</p>
-<p>This is the highest-priority adaptation. It doesn't require arcgentica patterns — it requires a new task.</p>
-<h3 id="new-task-fermisanitycheck">New task: <code>FermiSanityCheck</code></h3>
-<p>Runs after <code>MakeAssumptions</code> and before <code>ReviewPlan</code>. Extracts quantitative claims from the plan and checks them against physical plausibility.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">QuantifiedClaim</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">lower_bound</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">upper_bound</span><span class="p">:</span> <span class="nb">float</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">confidence</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;high&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">,</span> <span class="s2">&quot;low&quot;</span><span class="p">]</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">evidence</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># what justifies this range</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">FermiSanityResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">claims</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">QuantifiedClaim</span><span class="p">]</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">flagged</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>  <span class="c1"># claims where upper/lower ratio &gt; 100x or evidence is empty</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">grounded</span><span class="p">:</span> <span class="nb">bool</span>       <span class="c1"># False if any critical claim is flagged</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">class</span><span class="w"> </span><span class="nc">FermiSanityCheck</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="sd">    Extracts numerical claims from assumptions and validates order-of-magnitude plausibility.</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="sd">    Fails loudly if critical estimates are ungrounded (no bounds) or implausible (&gt;2 OOM spread).</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        <span class="k">return</span> <span class="n">MakeAssumptions</span><span class="p">()</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        <span class="n">assumptions_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            <span class="n">FERMI_CHECK_PROMPT</span><span class="p">,</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>            <span class="n">context</span><span class="o">=</span><span class="n">assumptions_text</span><span class="p">,</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>            <span class="n">return_type</span><span class="o">=</span><span class="n">FermiSanityResult</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>        <span class="p">)</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>        <span class="n">flagged</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>            <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">claims</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>            <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">lower_bound</span> <span class="o">==</span> <span class="mi">0</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>            <span class="ow">or</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">upper_bound</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower_bound</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">100</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>            <span class="ow">or</span> <span class="ow">not</span> <span class="n">c</span><span class="o">.</span><span class="n">evidence</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>        <span class="p">]</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>        <span class="n">result</span><span class="o">.</span><span class="n">flagged</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">description</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">flagged</span><span class="p">]</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>        <span class="n">result</span><span class="o">.</span><span class="n">grounded</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">flagged</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span><span class="p">()</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">grounded</span><span class="p">:</span>
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>            <span class="c1"># Do not halt pipeline — log and flag for ReviewPlan to catch</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;FermiSanityCheck: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">flagged</span><span class="p">)</span><span class="si">}</span><span class="s2"> ungrounded claims&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p><strong>The prompt</strong> (<code>FERMI_CHECK_PROMPT</code>) instructs the LLM to:
-1. Extract every numerical claim from the assumptions (cost, timeline, market size, resource requirements, physical quantities)
-2. Express each as lower/upper bounds with units
-3. Cite what justifies the range (industry data, physical constants, analogous projects)
-4. Flag any claim where the ratio <code>upper/lower &gt; 100</code> or where no evidence is provided</p>
-<p><strong>Integration:</strong> <code>ReviewPlan</code> reads <code>fermi_sanity.json</code> as an additional input. Ungrounded claims in <code>flagged</code> are automatically promoted to the <code>critical_issues</code> signal category in the ReviewPlan → task_retry bridge (Adaptation 2).</p>
-<h3 id="final-priority-order-updated-2026-02-25">Final Priority Order (Updated 2026-02-25)</h3>
-<p>Based on Simon Strandgaard's feedback, the final implementation order is:</p>
-<table>
-<thead>
-<tr>
-<th>Priority</th>
-<th>Adaptation</th>
-<th>Rationale</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><strong>Fermi Sanity Check (Adaptation 5)</strong></td>
-<td>Simon's primary quality signal; highest value/effort</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Soft self-eval loop on high-stakes tasks</td>
-<td>Incremental quality improvement; low risk</td>
-</tr>
-<tr>
-<td>3</td>
-<td>~~ReviewPlan → task_retry bridge~~</td>
-<td><strong>INVALID</strong> — do not pursue (see Gap 2 correction)</td>
-</tr>
-<tr>
-<td>4</td>
-<td>~~Typed output contracts~~</td>
-<td><strong>Already systemic in PlanExe</strong> (see Adaptation 3 correction)</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Complexity-gated pipeline (Adaptation 4)</td>
-<td>Cost optimization; lower urgency</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Removed from scope:</strong> Adaptations 2 and 3 as described are either invalid (MCP task_retry) or redundant (structured output). Focus on Adaptation 5 first.</p>
-<hr />
-<h2 id="open-questions-for-simon">Open Questions for Simon</h2>
+<h2 id="the-problem-naive-model-switching-is-counter-productive">The Problem: Naive Model Switching Is Counter-Productive</h2>
+<p>The intuitive model routing implementation looks like this:</p>
 <ol>
-<li>
-<p><strong>What does a "good plan" look like to your actual users, and what's the most common complaint you hear?</strong> We've speculated about which pipeline stages fail — it would be valuable to know what failure modes users actually notice.</p>
-</li>
-<li>
-<p><strong>Is the Luigi DAG the architecture you want to extend for the next 12 months?</strong> If there are plans to replace the orchestration layer, we should know before proposing deep integrations.</p>
-</li>
-<li>
-<p><strong>Which of these four adaptations, if any, aligns with where you want PlanExe to go?</strong> Specifically: are typed Pydantic output contracts an acceptable pattern given your codebase conventions?</p>
-</li>
+<li>Score task complexity → tier = Haiku</li>
+<li>Switch the current session from Opus to Haiku</li>
+<li>Continue execution with Haiku</li>
 </ol>
+<p><strong>This is wrong.</strong> It costs <em>more</em> than using Opus for everything.</p>
+<h3 id="why">Why</h3>
+<p>Prompt caches are <strong>model-specific</strong> and built on <strong>prefix matching</strong>. When a session accumulates 100K tokens with Opus, switching to Haiku does not transfer that cached context. The Haiku API call must re-process all 100K tokens from scratch to build its own cache — at Haiku's per-token rate.</p>
+<p>At that point:
+- <strong>Opus cached cost:</strong> ~$0.375 per 100K tokens (at $3.75/MTok cache read)
+- <strong>Haiku cold-start cost:</strong> ~$1.00 per 100K tokens (at $10/MTok input, uncached)</p>
+<p>The "cheaper" model becomes the expensive one because we abandoned a warm cache.</p>
+<blockquote>
+<p><em>"If you're 100k tokens into a conversation with Opus and want to ask a question that is fairly easy to answer, it would actually be more expensive to switch to Haiku than to have Opus answer, because we would need to rebuild the prompt cache for Haiku."</em><br />
+— Claude Code Engineering Team</p>
+</blockquote>
+<p>This is counter-intuitive. The math is unforgiving.</p>
+<hr />
+<h2 id="the-solution-cache-safe-subagent-handoff">The Solution: Cache-Safe Subagent Handoff</h2>
+<p>The correct pattern is <strong>never switch models mid-session</strong>. Instead:</p>
+<ol>
+<li>The current model (e.g., Opus) completes its work</li>
+<li>Opus prepares a <strong>structured handoff summary</strong> — a compact, self-contained context document</li>
+<li>A <strong>new subagent</strong> on the target model tier (e.g., Haiku) starts fresh with only the handoff summary</li>
+<li>The subagent builds its own cache from zero — but with a <em>small</em> initial context, not 100K tokens</li>
+</ol>
+<p>The subagent's cache builds cheaply because it starts small. The parent session's cache remains intact because nothing changed.</p>
+<h3 id="why-this-works">Why This Works</h3>
+<ul>
+<li><strong>Parent session:</strong> Opus's warm cache is never invalidated; the parent can continue or terminate cleanly</li>
+<li><strong>Subagent:</strong> Starts with a compact, curated context — fast to cache, cheap to run</li>
+<li><strong>Total cost:</strong> Subagent cold-start is cheap when starting small; far cheaper than mid-session model swap after large context accumulation</li>
+</ul>
+<hr />
+<h2 id="handoff-message-format">Handoff Message Format</h2>
+<p>When a PlanExe task step crosses a model tier boundary, the current model should produce a structured handoff before the subagent is spawned.</p>
+<h3 id="recommended-handoff-schema">Recommended Handoff Schema</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;handoff_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;uuid&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;task_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;what needs to be done, plain language&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;target_model_tier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;haiku | minimax | sonnet | opus&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;complexity_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;file_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;semantic_complexity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;ambiguity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;context_dependency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">&quot;required_context&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">&quot;plan_summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;curated summary of relevant plan state&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">&quot;relevant_files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&lt;list of files the subagent needs&gt;&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="nt">&quot;prior_decisions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&lt;decisions made upstream that constrain this task&gt;&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="nt">&quot;success_criteria&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;what done looks like&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nt">&quot;constraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;&lt;hard limits: time, cost, scope&gt;&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">  </span><span class="nt">&quot;handoff_instructions&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;specific instructions for the receiving model&gt;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="nt">&quot;parent_task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;uuid of parent task, for result routing&gt;&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="handoff-principles">Handoff Principles</h3>
+<ol>
+<li><strong>Curate aggressively.</strong> The handoff should contain only what the subagent needs. Every extra token in the handoff is a token that must be cached from scratch.</li>
+<li><strong>Include success criteria explicitly.</strong> The subagent cannot ask clarifying questions in the same way the parent could.</li>
+<li><strong>Prior decisions are not optional.</strong> If Opus decided X, the Haiku subagent must know X so it doesn't re-litigate it.</li>
+<li><strong>No full history dumps.</strong> Do not copy the entire conversation history into the handoff. Summarize; curate.</li>
+</ol>
+<hr />
+<h2 id="integration-with-proposal-73-when-to-trigger-a-handoff">Integration with Proposal #73: When to Trigger a Handoff</h2>
+<p>Using the 4-dimension rubric from Proposal #73:</p>
+<table>
+<thead>
+<tr>
+<th>Total Score</th>
+<th>Model Tier</th>
+<th>Handoff Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4–7</td>
+<td>Minimax</td>
+<td>Handoff if current session is Haiku or higher</td>
+</tr>
+<tr>
+<td>8–11</td>
+<td>Haiku</td>
+<td>Handoff if current session is Sonnet or higher</td>
+</tr>
+<tr>
+<td>12–15</td>
+<td>Sonnet</td>
+<td>Handoff if current session is Opus</td>
+</tr>
+<tr>
+<td>16–20</td>
+<td>Opus</td>
+<td>No handoff needed; Opus handles directly</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key rule:</strong> Only trigger a handoff when crossing <em>downward</em> in model tier (routing to a cheaper model). Routing <em>upward</em> (needing more powerful model mid-session) should use a different pattern — see §5 below.</p>
+<hr />
+<h2 id="upward-routing-when-you-need-more-power">Upward Routing: When You Need More Power</h2>
+<p>The inverse case: a task starts on Haiku but mid-execution proves to be harder than the rubric scored. Two options:</p>
+<ol>
+<li><strong>Abort and re-route:</strong> The Haiku subagent recognizes it cannot complete the task, returns a structured escalation response, and PlanExe spawns a new Opus subagent with the same handoff (plus Haiku's partial findings)</li>
+<li><strong>Ask the parent:</strong> The subagent delivers a "blocked" response upstream; the parent Opus session picks it up and completes the work (parent cache still warm)</li>
+</ol>
+<p>Option 2 is preferred when the parent session is still running. Option 1 is for asynchronous task queues.</p>
+<hr />
+<h2 id="tool-set-stability-during-handoff">Tool Set Stability During Handoff</h2>
+<p>Proposal #73 defines routing by task type. The cache doctrine adds a constraint: <strong>the subagent's tool set must be defined at spawn time and never changed.</strong></p>
+<p>Changing tools mid-subagent-session invalidates the subagent's cache — same problem, smaller scale.</p>
+<p><strong>Implementation note:</strong> Use <code>defer_loading: true</code> stubs for rarely-used tools. Keep the declared tool set stable. Let the subagent discover full schemas when needed rather than loading all schemas upfront.</p>
+<hr />
+<h2 id="what-planexe-should-not-do">What PlanExe Should NOT Do</h2>
+<table>
+<thead>
+<tr>
+<th>Anti-pattern</th>
+<th>Why it's wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Switch the model parameter mid-session</td>
+<td>Destroys the accumulated prefix cache; costs more than using original model</td>
+</tr>
+<tr>
+<td>Pass full conversation history to subagent</td>
+<td>Increases cold-start cost; defeats the purpose of routing to a cheaper model</td>
+</tr>
+<tr>
+<td>Add or remove tools between handoff steps</td>
+<td>Invalidates cache at every tool set change</td>
+</tr>
+<tr>
+<td>Use different system prompts across handoffs</td>
+<td>Each variant builds its own cache from scratch; prefer a stable system prompt</td>
+</tr>
+<tr>
+<td>Skip the handoff summary for "simple" tasks</td>
+<td>Without curated context, the subagent may re-do work or make wrong assumptions</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="relationship-to-planexes-existing-architecture">Relationship to PlanExe's Existing Architecture</h2>
+<h3 id="luigi-task-pipeline">Luigi Task Pipeline</h3>
+<p>Each Luigi task in PlanExe generates work and passes results forward. The handoff pattern maps naturally onto this: when a Luigi task needs to delegate to a cheaper model for a subtask, it generates a handoff document (structured output) rather than a continuation of the same LLM session.</p>
+<h3 id="compaction-summarization-steps">Compaction / Summarization Steps</h3>
+<p>When PlanExe summarizes completed plan phases, it should use <strong>cache-safe forking</strong>: same system prompt, same tool set, parent conversation history prepended, new summarization prompt appended. This reuses the parent's cached prefix rather than starting from scratch.</p>
+<p>Reference: Claude Code Engineering Blog, <em>Cache-Safe Forking</em> section.</p>
+<h3 id="mcp-server-calls">MCP Server Calls</h3>
+<p>PlanExe's MCP server makes API calls for each plan step. Each of these is an independent API call with its own cache lifecycle. The system prompt and tool set for these calls should be <strong>identical across all MCP calls</strong> to maximize cross-call cache hits. Dynamic content (the plan request) goes last in the message sequence, not in the system prompt.</p>
+<hr />
+<h2 id="metrics-to-track">Metrics to Track</h2>
+<p>Per the cache doctrine: <strong>monitor cache hit rate like uptime</strong>. Recommended metrics for PlanExe:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Target</th>
+<th>Alert Threshold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cache hit rate (per model tier)</td>
+<td>&gt;85%</td>
+<td>&lt;70%</td>
+</tr>
+<tr>
+<td>Handoff summary size</td>
+<td>&lt;8K tokens</td>
+<td>&gt;16K tokens</td>
+</tr>
+<tr>
+<td>Subagent cold-start cost vs. direct Opus cost</td>
+<td>&lt;50% of Opus</td>
+<td>&gt;90% of Opus (handoff not helping)</td>
+</tr>
+<tr>
+<td>Mid-session model switches (should be zero)</td>
+<td>0</td>
+<td>Any</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="implementation-checklist-docs-only-phase">Implementation Checklist (Docs-Only Phase)</h2>
+<p>This proposal is docs-only. Before implementing:</p>
+<ul>
+<li>[ ] Simon reviews and approves the handoff schema</li>
+<li>[ ] Agreement on which Luigi tasks should trigger downward routing</li>
+<li>[ ] Agreement on upward escalation protocol (abort-and-respawn vs. return-to-parent)</li>
+<li>[ ] Cache hit rate monitoring infrastructure scoped (separate proposal or extension of Proposal #31)</li>
+</ul>
 <hr />
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://github.com/VoynichLabs/arcgentica">arcgentica source</a></li>
-<li><a href="https://github.com/VoynichLabs/agentica-typescript-sdk">agentica-typescript-sdk</a></li>
-<li><a href="https://github.com/VoynichLabs/swarm-coordination/blob/main/events/2026/feb/25/planexe-pipeline-notes.md">PlanExe pipeline notes</a></li>
-<li><a href="../63-luigi-agent-integration/">Proposal 63: Luigi Agent Integration</a> — complementary <code>@agent_meta</code> decorator approach</li>
-<li><a href="../59-prompt-optimizing-with-ab-testing/">Proposal 59: A/B Testing for Prompt Optimization</a> — evaluation harness for validating any changes proposed here</li>
+<li><strong>Proposal #73:</strong> Task Complexity Scoring + Model Routing Rubric (merged, PR #102)</li>
+<li><strong>Proposal #74:</strong> Model Routing UX Modes (merged)</li>
+<li><strong>Claude Code Engineering Blog:</strong> Prompt Caching at Scale — lessons from building Claude Code around prompt caching at production scale</li>
+<li><strong>Anthropic API Docs:</strong> Prompt caching, <code>cache_control</code> breakpoints, model-specific cache retention</li>
 </ul>
+<hr />
+<p><em>The complexity rubric tells you when to switch. This proposal tells you how. Both are required for a correct implementation.</em></p>
 
 
 
 
 
 
-
-  
-  
 
 
 
