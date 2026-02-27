@@ -10,13 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/71-model-routing-postmortem-simon-26feb2026/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/76-x402-a2a-payment-roadmap/">
       
       
-        <link rel="prev" href="../70-mcp-interface-evaluation-and-roadmap/">
+        <link rel="prev" href="../75-post-rename-cleanup-issues/">
       
-      
-        <link rel="next" href="../71-strategy-auditor/">
       
       
         
@@ -27,7 +25,7 @@
     
     
       
-        <title>71 model routing postmortem simon 26feb2026 - PlanExe Documentation</title>
+        <title>76 x402 a2a payment roadmap - PlanExe Documentation</title>
       
     
     
@@ -75,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="71 model routing postmortem simon 26feb2026 - PlanExe Documentation" />
+<meta property="og:title" content="76 x402 a2a payment roadmap - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/71-model-routing-postmortem-simon-26feb2026.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/76-x402-a2a-payment-roadmap.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/71-model-routing-postmortem-simon-26feb2026/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/76-x402-a2a-payment-roadmap/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="71 model routing postmortem simon 26feb2026 - PlanExe Documentation" />
+<meta property="twitter:title" content="76 x402 a2a payment roadmap - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/71-model-routing-postmortem-simon-26feb2026.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/76-x402-a2a-payment-roadmap.png" />
 </head>
   
   
@@ -105,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#model-routing-post-mortem-simons-26-february-2026-planexe-refactor" class="md-skip">
+        <a href="#proposal-76-x402-a2a-payment-roadmap-for-planexe" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              71 model routing postmortem simon 26feb2026
+              76 x402 a2a payment roadmap
             
           </span>
         </div>
@@ -4383,37 +4381,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    71 model routing postmortem simon 26feb2026
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../71-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
         
   
   
@@ -4429,247 +4400,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#executive-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Executive Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pricing-reference-per-1m-tokens" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pricing Reference (per 1M tokens)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complexity-rubric" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Complexity Rubric
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#task-cluster-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Task Cluster Analysis
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Task Cluster Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-file-sizes-actual-post-refactor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key file sizes (actual, post-refactor)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-1-module-split-apppy-10-focused-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 1: Module Split (app.py → 10 focused modules)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-2-external-api-rename-task_id-plan_id-task_-plan_" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 2: External API Rename (task_id → plan_id, TASK_ → PLAN_)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-3-performance-optimizations-deferred-columns-column-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 3: Performance Optimizations (deferred columns, column selection)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-4-security-auth-hardening-cors-fail-hard-rate-limiting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 4: Security / Auth Hardening (CORS, fail-hard, rate limiting)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-5-documentation-updates-readme-agentsmd-mcp-interface-spec-proposals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 5: Documentation Updates (README, AGENTS.md, MCP interface spec, proposals)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-6-tests-plan_list-test-file-renames-type_checking-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 6: Tests (plan_list, test file renames, TYPE_CHECKING fixes)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-7-glama-registry-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 7: Glama / Registry Work
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-findings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Findings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommendations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommendations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommendations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-two-phase-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Two-Phase Pattern
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-routing-quick-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Task Routing Quick Reference
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-start-a-new-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to Start a New Session
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-is-not" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What This Is NOT
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4931,10 +4661,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../76-x402-a2a-payment-roadmap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    76 x402 a2a payment roadmap
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4950,6 +4707,175 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters Now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Core Idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x402-http-402-for-machine-payments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        x402: HTTP 402 for Machine Payments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a2a-agent-to-agent-invocation-with-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2A: Agent-to-Agent Invocation with Payment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-cost-tagging-weeks-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Cost Tagging (Weeks 1–2)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-credit-system-weeks-34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Credit System (Weeks 3–4)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-x402-machine-payments-weeks-58" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: x402 Machine Payments (Weeks 5–8)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-a2a-integration-weeks-912" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: A2A Integration (Weeks 9–12)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-reinvestment-governance-weeks-1316" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Reinvestment + Governance (Weeks 13–16)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-economics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Economics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-model-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection to Model Routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions-for-simon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions for Simon
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4997,10 +4923,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#executive-summary" class="md-nav__link">
+  <a href="#why-this-matters-now" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Executive Summary
+        Why This Matters Now
       
     </span>
   </a>
@@ -5008,10 +4934,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pricing-reference-per-1m-tokens" class="md-nav__link">
+  <a href="#the-core-idea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pricing Reference (per 1M tokens)
+        The Core Idea
       
     </span>
   </a>
@@ -5019,10 +4945,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#complexity-rubric" class="md-nav__link">
+  <a href="#x402-http-402-for-machine-payments" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Complexity Rubric
+        x402: HTTP 402 for Machine Payments
       
     </span>
   </a>
@@ -5030,22 +4956,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-cluster-analysis" class="md-nav__link">
+  <a href="#a2a-agent-to-agent-invocation-with-payment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Task Cluster Analysis
+        A2A: Agent-to-Agent Invocation with Payment
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Task Cluster Analysis">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase Roadmap">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-file-sizes-actual-post-refactor" class="md-nav__link">
+  <a href="#phase-1-cost-tagging-weeks-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key file sizes (actual, post-refactor)
+        Phase 1: Cost Tagging (Weeks 1–2)
       
     </span>
   </a>
@@ -5053,10 +4990,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-1-module-split-apppy-10-focused-modules" class="md-nav__link">
+  <a href="#phase-2-credit-system-weeks-34" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster 1: Module Split (app.py → 10 focused modules)
+        Phase 2: Credit System (Weeks 3–4)
       
     </span>
   </a>
@@ -5064,10 +5001,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-2-external-api-rename-task_id-plan_id-task_-plan_" class="md-nav__link">
+  <a href="#phase-3-x402-machine-payments-weeks-58" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster 2: External API Rename (task_id → plan_id, TASK_ → PLAN_)
+        Phase 3: x402 Machine Payments (Weeks 5–8)
       
     </span>
   </a>
@@ -5075,10 +5012,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-3-performance-optimizations-deferred-columns-column-selection" class="md-nav__link">
+  <a href="#phase-4-a2a-integration-weeks-912" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster 3: Performance Optimizations (deferred columns, column selection)
+        Phase 4: A2A Integration (Weeks 9–12)
       
     </span>
   </a>
@@ -5086,43 +5023,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-4-security-auth-hardening-cors-fail-hard-rate-limiting" class="md-nav__link">
+  <a href="#phase-5-reinvestment-governance-weeks-1316" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster 4: Security / Auth Hardening (CORS, fail-hard, rate limiting)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-5-documentation-updates-readme-agentsmd-mcp-interface-spec-proposals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 5: Documentation Updates (README, AGENTS.md, MCP interface spec, proposals)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-6-tests-plan_list-test-file-renames-type_checking-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 6: Tests (plan_list, test file renames, TYPE_CHECKING fixes)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-7-glama-registry-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster 7: Glama / Registry Work
+        Phase 5: Reinvestment + Governance (Weeks 13–16)
       
     </span>
   </a>
@@ -5135,10 +5039,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cost-summary" class="md-nav__link">
+  <a href="#the-economics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cost Summary
+        The Economics
       
     </span>
   </a>
@@ -5146,10 +5050,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-findings" class="md-nav__link">
+  <a href="#connection-to-model-routing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Findings
+        Connection to Model Routing
       
     </span>
   </a>
@@ -5157,60 +5061,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommendations" class="md-nav__link">
+  <a href="#questions-for-simon" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommendations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommendations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-two-phase-pattern" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Two-Phase Pattern
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-routing-quick-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Task Routing Quick Reference
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-to-start-a-new-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to Start a New Session
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-is-not" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What This Is NOT
+        Questions for Simon
       
     </span>
   </a>
@@ -5237,587 +5091,166 @@
   
 
 
-<h1 id="model-routing-post-mortem-simons-26-february-2026-planexe-refactor">Model Routing Post-Mortem: Simon's 26 February 2026 PlanExe Refactor</h1>
-<p><strong>Author:</strong> Larry (analysis), Egon (rubric refinement)<br />
-<strong>Date:</strong> 2026-02-26<br />
-<strong>Status:</strong> Draft — for Simon's review</p>
+<h1 id="proposal-76-x402-a2a-payment-roadmap-for-planexe">Proposal 76: x402 + A2A Payment Roadmap for PlanExe</h1>
+<p><strong>Author:</strong> Larry (Sonnet 4.6)<br />
+<strong>Date:</strong> 2026-02-27<br />
+<strong>Status:</strong> Draft — for Simon's consideration<br />
+<strong>Relates to:</strong> Proposal 73 (complexity scoring), Proposal 74 (routing UX modes)</p>
 <hr />
-<h2 id="executive-summary">Executive Summary</h2>
-<p>Simon shipped 64 commits across 16 PRs on 26 February 2026, touching 88 files with 8,269 insertions and 2,137 deletions. This was exceptional productivity. The purpose of this post-mortem is not to question Simon's choices — the work is architecturally sound, well-tested, and thoroughly documented. The purpose is to identify a repeatable <strong>model routing pattern</strong> that can reduce API costs on future refactors of similar scale without sacrificing quality or causing re-work.</p>
-<p>The core finding: <strong>two task clusters (module split + external rename) justified Opus due to file size and cross-file dependency. The remaining 60%+ of commits (docs, tests, small fixes, internal renames) could have executed on Haiku or Minimax with a well-structured plan from Opus.</strong></p>
+<h2 id="why-this-matters-now">Why This Matters Now</h2>
+<p>PlanExe already knows — or will soon know (Proposals 73/74) — the exact cost of executing any plan: which model ran which task, how many tokens were consumed, what the output cost at current market rates.</p>
+<p>That cost data is sitting there. Right now it evaporates after each session. This proposal is about turning it into something useful: a payment layer that makes PlanExe self-financing for agent-driven workflows.</p>
+<p>Two standards make this possible today:
+- <strong>x402</strong> — HTTP 402 "Payment Required" micropayment protocol for machine-to-machine value exchange
+- <strong>A2A</strong> (Agent-to-Agent) — Google's open protocol for agents invoking other agents with payment and accountability</p>
 <hr />
-<h2 id="pricing-reference-per-1m-tokens">Pricing Reference (per 1M tokens)</h2>
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>Input (≤200K)</th>
-<th>Output (≤200K)</th>
-<th>Context</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Minimax M2.5</td>
-<td>$0.30</td>
-<td>$1.10</td>
-<td>196K</td>
-</tr>
-<tr>
-<td>Haiku 4.5</td>
-<td>$1.00</td>
-<td>$5.00</td>
-<td>200K</td>
-</tr>
-<tr>
-<td>Sonnet 4.6</td>
-<td>$3.00</td>
-<td>$15.00</td>
-<td>1M</td>
-</tr>
-<tr>
-<td>Opus 4.6</td>
-<td>$5.00</td>
-<td>$25.00</td>
-<td>1M</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Note:</strong> Sonnet and Opus prices <strong>double</strong> past 200K tokens. Haiku and Minimax do not double.</p>
-</blockquote>
+<h2 id="the-core-idea">The Core Idea</h2>
+<p>When an agent (or a human) asks PlanExe to execute a plan, they're consuming compute: token budget, model time, tool calls, storage. PlanExe should be able to:</p>
+<ol>
+<li><strong>Quote</strong> the cost before execution (already exists conceptually in Proposal 74's <code>review</code> mode)</li>
+<li><strong>Charge</strong> for that execution via x402 micropayment</li>
+<li><strong>Receive</strong> payment from agent callers via A2A invoicing</li>
+<li><strong>Reinvest</strong> a portion of revenue into compute credits for future execution</li>
+<li><strong>Report</strong> cost breakdowns to users, teams, and agent orchestrators</li>
+</ol>
+<p>This is the difference between PlanExe as a tool you run locally and PlanExe as a service agents can hire.</p>
 <hr />
-<h2 id="complexity-rubric">Complexity Rubric</h2>
-<p>Rate each task 1–5 on four dimensions. Sum for model recommendation.</p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>File size</strong></td>
-<td>&lt;100 lines</td>
-<td>100–300</td>
-<td>300–600</td>
-<td>600–1000</td>
-<td>1000+</td>
-</tr>
-<tr>
-<td><strong>Semantic complexity</strong></td>
-<td>rename/replace</td>
-<td>simple logic</td>
-<td>new function</td>
-<td>architectural</td>
-<td>cross-file refactor</td>
-</tr>
-<tr>
-<td><strong>Ambiguity</strong></td>
-<td>crystal clear + line numbers</td>
-<td>minor choices</td>
-<td>some design</td>
-<td>significant decisions</td>
-<td>open-ended</td>
-</tr>
-<tr>
-<td><strong>Context dependency</strong></td>
-<td>self-contained</td>
-<td>1 file</td>
-<td>1 module</td>
-<td>multi-module</td>
-<td>whole codebase</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Score → Model:</strong>
-- 4–7: <strong>Minimax</strong> (mechanical execution)
-- 8–11: <strong>Haiku</strong> (guided execution)
-- 12–15: <strong>Sonnet</strong> (moderate complexity)
-- 16–20: <strong>Opus</strong> (planning, large files, architectural)</p>
+<h2 id="x402-http-402-for-machine-payments">x402: HTTP 402 for Machine Payments</h2>
+<p>The HTTP 402 status code has been reserved since 1991 for "Payment Required." It was never standardized. x402 is the open-source specification that finally does it.</p>
+<p><strong>How it works:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Client → POST /api/execute-plan
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Server → 402 Payment Required
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>         X-Payment-Required: {&quot;amount&quot;: &quot;0.05&quot;, &quot;currency&quot;: &quot;USDC&quot;, &quot;address&quot;: &quot;0x...&quot;}
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Client → POST /api/execute-plan
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>         X-Payment: {&quot;tx&quot;: &quot;0x...&quot;, &quot;proof&quot;: &quot;...&quot;}
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Server → 200 OK + plan output
+</code></pre></div></p>
+<p>For PlanExe, each plan execution endpoint becomes a paid endpoint. The cost is derived directly from the routing layer's cost estimate (Proposal 74). The payment is settled on-chain (USDC/stablecoin) before execution begins.</p>
+<p><strong>Why stablecoins, not fiat:</strong>
+- Machine-to-machine payments can't go through card processors — no human is approving each $0.003 Minimax call
+- Stablecoins are programmable, instant, and don't require banking relationships
+- USDC on Base L2: sub-cent transaction fees, 2-second finality</p>
 <hr />
-<h2 id="task-cluster-analysis">Task Cluster Analysis</h2>
-<h3 id="key-file-sizes-actual-post-refactor">Key file sizes (actual, post-refactor)</h3>
-<table>
-<thead>
-<tr>
-<th>File</th>
-<th>Lines</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mcp_local/planexe_mcp_local.py</td>
-<td>1,055</td>
-</tr>
-<tr>
-<td>mcp_cloud/http_server.py</td>
-<td>1,089</td>
-</tr>
-<tr>
-<td>mcp_cloud/handlers.py</td>
-<td>554</td>
-</tr>
-<tr>
-<td>mcp_cloud/tool_models.py</td>
-<td>298</td>
-</tr>
-<tr>
-<td>mcp_cloud/db_queries.py</td>
-<td>304</td>
-</tr>
-<tr>
-<td>mcp_cloud/schemas.py</td>
-<td>239</td>
-</tr>
-<tr>
-<td>mcp_cloud/app.py (thin facade)</td>
-<td>176</td>
-</tr>
-<tr>
-<td>mcp_cloud/download_tokens.py</td>
-<td>152</td>
-</tr>
-<tr>
-<td>mcp_cloud/auth.py</td>
-<td>50</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h3 id="cluster-1-module-split-apppy-10-focused-modules">Cluster 1: Module Split (app.py → 10 focused modules)</h3>
-<p><em>PRs: #91 vicinity — <code>9f1a7db</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td>5</td>
-<td>Original app.py was 76KB monolith</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td>5</td>
-<td>Architectural — split into 10 modules with correct imports</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td>3</td>
-<td>High-level goal clear, but module boundaries required design decisions</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td>5</td>
-<td>Whole codebase — all callers needed updating</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>18</strong></td>
-<td><strong>→ Opus</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Estimated tokens:</strong> ~150K input (reading full monolith + callers) + 30K output = 180K tokens<br />
-<strong>Cost at Opus:</strong> 150K×$0.0050 + 30K×$0.0250 = <strong>$0.75 + $0.75 = ~$1.50</strong><br />
-<strong>Could cheaper model execute it?</strong> Yes — with Opus writing a surgical plan (module boundaries, exact file/line splits), Sonnet could execute. Saves ~50%.<br />
-<strong>Confidence (Sonnet executes):</strong> 4/5<br />
-<strong>Retry factor:</strong> Low — plan is precise enough for Sonnet</p>
-<hr />
-<h3 id="cluster-2-external-api-rename-task_id-plan_id-task_-plan_">Cluster 2: External API Rename (task_id → plan_id, TASK_<em> → PLAN_</em>)</h3>
-<p><em>PRs: #88, #89, #92, #101 — commits <code>3663bc6</code>, <code>0dbe1af</code>, <code>0f2e9cc</code>, <code>3624db7</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td>5</td>
-<td>Hits planexe_mcp_local.py (1,055 lines) and http_server.py (1,089 lines)</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td>3</td>
-<td>Rename is mechanical, but must not break backward compat aliases during transition</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td>2</td>
-<td>Clear goal — but alias removal timing was a design decision</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td>5</td>
-<td>Full stack: MCP cloud, MCP local, tool_models, schemas, test files</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>15</strong></td>
-<td><strong>→ Sonnet (planning pass), Haiku (execution)</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Estimated tokens:</strong> ~200K input (reading all affected files) + 20K output = 220K tokens<br />
-<strong>Cost at Opus:</strong> 200K×$0.0050 + 20K×$0.0250 = <strong>$1.00 + $0.50 = ~$1.50</strong><br />
-<strong>Cost at Sonnet plan + Haiku execute:</strong> ~$0.75 + ~$0.25 = <strong>~$1.00</strong><br />
-<strong>Savings:</strong> ~33% — modest because rename is fast even at Opus<br />
-<strong>Confidence (Sonnet/Haiku):</strong> 5/5 for mechanical rename, 4/5 for alias decisions<br />
-<strong>Retry factor:</strong> Low — if Haiku misses a rename, it's a quick grep-and-fix</p>
-<hr />
-<h3 id="cluster-3-performance-optimizations-deferred-columns-column-selection">Cluster 3: Performance Optimizations (deferred columns, column selection)</h3>
-<p><em>PRs: #93, #95, #96 — commits <code>5b3c479</code>, <code>b4a27d8</code>, <code>b3cefab</code>, <code>c13e0b6</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td>4</td>
-<td>db_queries.py (304 lines), http_server.py (1,089 lines)</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td>4</td>
-<td>SQLAlchemy deferred loading, column_property — non-trivial</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td>3</td>
-<td>Goal clear, but SQLAlchemy patterns require deep understanding</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td>4</td>
-<td>DB model, HTTP handlers, MCP local all interdependent</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>15</strong></td>
-<td><strong>→ Sonnet</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Estimated tokens:</strong> ~80K input + 15K output = 95K tokens<br />
-<strong>Cost at Opus:</strong> ~$0.40 + $0.375 = <strong>~$0.78</strong><br />
-<strong>Cost at Sonnet:</strong> ~$0.24 + $0.225 = <strong>~$0.47</strong><br />
-<strong>Savings:</strong> ~40%<br />
-<strong>Confidence (Sonnet):</strong> 4/5<br />
-<strong>Retry factor:</strong> Medium — deferred loading bugs can be subtle</p>
-<hr />
-<h3 id="cluster-4-security-auth-hardening-cors-fail-hard-rate-limiting">Cluster 4: Security / Auth Hardening (CORS, fail-hard, rate limiting)</h3>
-<p><em>PRs: #92, #93 — commits <code>73457d4</code>, <code>642a759</code>, <code>d39167e</code>, <code>52d426b</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td>3</td>
-<td>auth.py (50 lines), http_server.py (1,089 lines)</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td>3</td>
-<td>New validation + rate limiter module</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td>2</td>
-<td>Specs clear (fail hard, CORS default)</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td>3</td>
-<td>http_server.py + auth.py</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>11</strong></td>
-<td><strong>→ Haiku</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Estimated tokens:</strong> ~40K input + 10K output = 50K tokens<br />
-<strong>Cost at Opus:</strong> ~$0.20 + $0.25 = <strong>~$0.45</strong><br />
-<strong>Cost at Haiku:</strong> ~$0.04 + $0.05 = <strong>~$0.09</strong><br />
-<strong>Savings:</strong> ~80%<br />
-<strong>Confidence (Haiku):</strong> 4/5<br />
-<strong>Retry factor:</strong> Low — specs are explicit</p>
-<hr />
-<h3 id="cluster-5-documentation-updates-readme-agentsmd-mcp-interface-spec-proposals">Cluster 5: Documentation Updates (README, AGENTS.md, MCP interface spec, proposals)</h3>
-<p><em>PRs: #100, #101, #97 — commits <code>587dccf</code>, <code>3624db7</code>, <code>ba6e7d4</code>, <code>843b98d</code>, <code>5b3c479</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td>2</td>
-<td>Mostly markdown, &lt;300 lines per file</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td>1</td>
-<td>Writing/updating docs</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td>2</td>
-<td>Some judgment calls on framing</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td>2</td>
-<td>Read code, write docs — no code changes</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>7</strong></td>
-<td><strong>→ Minimax</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Estimated tokens:</strong> ~30K input + 10K output = 40K tokens<br />
-<strong>Cost at Opus:</strong> ~$0.15 + $0.25 = <strong>~$0.40</strong><br />
-<strong>Cost at Minimax:</strong> ~$0.009 + $0.011 = <strong>~$0.02</strong><br />
-<strong>Savings:</strong> ~95%<br />
-<strong>Confidence (Minimax):</strong> 5/5<br />
-<strong>Retry factor:</strong> None — docs are easy to review and fix</p>
-<hr />
-<h3 id="cluster-6-tests-plan_list-test-file-renames-type_checking-fixes">Cluster 6: Tests (plan_list, test file renames, TYPE_CHECKING fixes)</h3>
-<p><em>PRs: #92, #94 — commits <code>ad0d339</code>, <code>006fc93</code>, <code>dd61a58</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td>2</td>
-<td>Test files ~100-200 lines each</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td>2</td>
-<td>Writing tests against known API</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td>1</td>
-<td>Clear — test the documented behavior</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td>2</td>
-<td>One module per test file</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>7</strong></td>
-<td><strong>→ Minimax / Haiku</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Estimated tokens:</strong> ~20K input + 15K output = 35K tokens<br />
-<strong>Cost at Opus:</strong> ~$0.10 + $0.375 = <strong>~$0.475</strong><br />
-<strong>Cost at Haiku:</strong> ~$0.02 + $0.075 = <strong>~$0.095</strong><br />
-<strong>Savings:</strong> ~80%<br />
-<strong>Confidence (Haiku):</strong> 5/5<br />
-<strong>Retry factor:</strong> None — tests are deterministic</p>
-<hr />
-<h3 id="cluster-7-glama-registry-work">Cluster 7: Glama / Registry Work</h3>
-<p><em>PRs: #98, parts of #100 — commits <code>fa811d9</code>, <code>587dccf</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td>1</td>
-<td>Config files, small</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td>1</td>
-<td>File placement, JSON config</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td>2</td>
-<td>Trial and error on Glama claim</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td>1</td>
-<td>Self-contained</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>5</strong></td>
-<td><strong>→ Minimax</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Cost at Opus:</strong> ~$0.20<br />
-<strong>Cost at Minimax:</strong> ~$0.01<br />
-<strong>Savings:</strong> ~95%</p>
-<hr />
-<h2 id="cost-summary">Cost Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Cluster</th>
-<th>Actual model used</th>
-<th>Est. cost at Opus</th>
-<th>Est. cost optimal</th>
-<th>Savings</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Module split</td>
-<td>Opus</td>
-<td>~$1.50</td>
-<td>~$0.75 (Opus plan + Sonnet exec)</td>
-<td>~50%</td>
-</tr>
-<tr>
-<td>External rename</td>
-<td>Opus</td>
-<td>~$1.50</td>
-<td>~$1.00 (Sonnet + Haiku)</td>
-<td>~33%</td>
-</tr>
-<tr>
-<td>Performance opts</td>
-<td>Opus</td>
-<td>~$0.78</td>
-<td>~$0.47 (Sonnet)</td>
-<td>~40%</td>
-</tr>
-<tr>
-<td>Security hardening</td>
-<td>Opus</td>
-<td>~$0.45</td>
-<td>~$0.09 (Haiku)</td>
-<td>~80%</td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td>Opus</td>
-<td>~$0.40</td>
-<td>~$0.02 (Minimax)</td>
-<td>~95%</td>
-</tr>
-<tr>
-<td>Tests</td>
-<td>Opus</td>
-<td>~$0.475</td>
-<td>~$0.095 (Haiku)</td>
-<td>~80%</td>
-</tr>
-<tr>
-<td>Glama/registry</td>
-<td>Opus</td>
-<td>~$0.20</td>
-<td>~$0.01 (Minimax)</td>
-<td>~95%</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td>Opus throughout</td>
-<td><strong>~$5.30</strong></td>
-<td><strong>~$2.47</strong></td>
-<td><strong>~53%</strong></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Important note:</strong> These are estimates based on typical token usage patterns. Actual usage depends on session length, context carried between tasks, compaction events, and whether tasks were batched or separate sessions. Simon's actual spend would reflect his real session structure.</p>
-</blockquote>
-<hr />
-<h2 id="key-findings">Key Findings</h2>
-<p><strong>1. Opus was fully justified for planning the module split and external rename.</strong><br />
-Both involved 1,000+ line files and cross-codebase changes. Opus needed to read <code>http_server.py</code> (1,089 lines) and <code>planexe_mcp_local.py</code> (1,055 lines) top-to-bottom to produce surgical plans. This is exactly the Opus use case.</p>
-<p><strong>2. Execution of those plans could have shifted to Sonnet/Haiku in a fresh session.</strong><br />
-Once Opus produces a plan with exact file paths and line numbers, a cheaper model executes it without needing the full planning context. Fresh session = no context drag from prior planning work.</p>
-<p><strong>3. Docs, tests, small fixes, and Glama work are Minimax/Haiku territory.</strong><br />
-These represent roughly 40% of the commits. Routing them to Minimax ($0.30/$1.10) vs Opus ($5/$25) is a ~95% cost reduction per task.</p>
-<p><strong>4. The &gt;200K token price jump is the real risk.</strong><br />
-If a session carrying the full app.py monolith context rolls past 200K tokens, Opus input cost doubles from $5 to $10/1M and output from $25 to $37.50. Starting fresh sessions at task boundaries is the single most impactful session hygiene practice.</p>
-<hr />
-<h2 id="recommendations">Recommendations</h2>
-<h3 id="the-two-phase-pattern">The Two-Phase Pattern</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Phase 1 (Opus, new session):
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  - Read all large files relevant to the task
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  - Write a surgical plan: file paths, line numbers, exact changes, decisions made
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  - End session
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Phase 2 (Sonnet/Haiku/Minimax, fresh session):
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  - Load only the plan document + target files
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  - Execute mechanically
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  - No context from Phase 1 carried over
-</code></pre></div>
-<h3 id="task-routing-quick-reference">Task Routing Quick Reference</h3>
+<h2 id="a2a-agent-to-agent-invocation-with-payment">A2A: Agent-to-Agent Invocation with Payment</h2>
+<p>Google's A2A protocol defines how agents discover, invoke, and pay other agents. A PlanExe A2A endpoint would allow:</p>
 <ul>
-<li><strong>Opus</strong>: files &gt;400 lines, cross-module architectural decisions, ambiguous design calls</li>
-<li><strong>Sonnet</strong>: files 200–600 lines, moderate logic changes, executing a clear plan on complex files</li>
-<li><strong>Haiku</strong>: files &lt;200 lines, test writing, security config with clear specs, executing rename plans</li>
-<li><strong>Minimax</strong>: documentation, registry work, boilerplate, simple renames in small files</li>
+<li>An external orchestrator (AutoGen, CrewAI, OpenClaw) to invoke PlanExe as a sub-agent</li>
+<li>PlanExe to quote execution cost as part of the A2A capability advertisement</li>
+<li>Payment to flow automatically from orchestrator to PlanExe on task completion</li>
+<li>Cost receipts to be included in the A2A response payload for the caller's accounting</li>
 </ul>
-<h3 id="when-to-start-a-new-session">When to Start a New Session</h3>
+<p><strong>A2A capability advertisement (simplified):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;agent_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe.voynich.io&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;capabilities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;plan_generation&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;task_routing&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cost_estimation&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;pricing&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;per_execution&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;estimate_endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/api/quote&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;payment_protocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x402&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">&quot;accepted_currencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;USDC&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="phase-roadmap">Phase Roadmap</h2>
+<h3 id="phase-1-cost-tagging-weeks-12">Phase 1: Cost Tagging (Weeks 1–2)</h3>
+<p><em>Prerequisite: Proposal 73 complexity scoring exists</em></p>
 <ul>
-<li>After writing a plan (don't execute in the same session)</li>
-<li>When context exceeds ~150K tokens (approaching the doubling threshold)</li>
-<li>When switching from planning to execution</li>
-<li>When switching from one task cluster to another</li>
+<li>Tag each task in the execution log with: model used, input tokens, output tokens, estimated USD cost</li>
+<li>Persist cost data in the plan record (DB)</li>
+<li>Expose cost summary in plan output JSON</li>
+<li>No payment yet — just instrumentation</li>
 </ul>
+<p><strong>Outcome:</strong> Every plan execution produces a cost receipt.</p>
+<h3 id="phase-2-credit-system-weeks-34">Phase 2: Credit System (Weeks 3–4)</h3>
+<p><em>Prerequisite: Phase 1 complete</em></p>
+<ul>
+<li>User accounts carry a credit balance (USD equivalent)</li>
+<li>Credits deducted per plan execution at actual cost</li>
+<li>Admin top-up via Stripe (Proposal 72/Stripe top-up, if that's in flight)</li>
+<li>Simple credit guard: refuse execution if balance insufficient, return 402 with required amount</li>
+</ul>
+<p><strong>Outcome:</strong> PlanExe is metered. Local/demo usage can be free-tier; production usage is paid.</p>
+<h3 id="phase-3-x402-machine-payments-weeks-58">Phase 3: x402 Machine Payments (Weeks 5–8)</h3>
+<p><em>Prerequisite: Phase 2 complete</em></p>
+<ul>
+<li>Implement x402 server-side: return 402 with payment details when credit insufficient</li>
+<li>Implement payment verification: validate on-chain tx before execution</li>
+<li>Support USDC on Base L2 (low fees, fast finality)</li>
+<li>Credit wallet per user/org: auto-top-up when balance falls below threshold</li>
+</ul>
+<p><strong>Outcome:</strong> Agents can pay PlanExe directly. No human in the payment loop.</p>
+<h3 id="phase-4-a2a-integration-weeks-912">Phase 4: A2A Integration (Weeks 9–12)</h3>
+<p><em>Prerequisite: Phase 3 complete</em></p>
+<ul>
+<li>Publish PlanExe A2A capability manifest at <code>/.well-known/agent.json</code></li>
+<li>Implement A2A invocation endpoint: accept task, quote, accept payment, execute, return result + receipt</li>
+<li>Test with at least two external orchestrators (AutoGen + CrewAI)</li>
+<li>Document A2A integration for third-party agent developers</li>
+</ul>
+<p><strong>Outcome:</strong> PlanExe is a first-class citizen in the agent economy. Any A2A-compatible orchestrator can hire it.</p>
+<h3 id="phase-5-reinvestment-governance-weeks-1316">Phase 5: Reinvestment + Governance (Weeks 13–16)</h3>
+<p><em>Prerequisite: Phase 4 complete</em></p>
+<ul>
+<li>Reinvestment fund: a configurable % of execution revenue auto-purchases compute credits</li>
+<li>Cost dashboards: per-user, per-project, per-model-tier breakdowns</li>
+<li>Team billing: org accounts with shared credit pools and per-member caps</li>
+<li>Budget guardrails: hard stop at configurable daily/monthly spend limits</li>
+<li>Transparency reports: publishable cost summaries for open-source usage accounting</li>
+</ul>
+<p><strong>Outcome:</strong> PlanExe can sustain its own compute costs from execution revenue.</p>
 <hr />
-<h2 id="what-this-is-not">What This Is NOT</h2>
-<p>This is not a suggestion that Simon's workflow was wrong. Using Opus throughout a complex refactor guarantees quality and avoids re-work. The cost of one Haiku failure that requires a Sonnet debugging session can easily exceed the savings. The rubric exists to help <strong>future planning</strong> — knowing upfront which tasks need Opus for the plan, which can execute on Haiku, and where session breaks save money.</p>
-<p>Simon shipped 16 PRs in one day. That productivity is worth optimizing around, not second-guessing.</p>
+<h2 id="the-economics">The Economics</h2>
+<p>Using the routing model from Proposals 73/74, a typical plan execution costs:</p>
+<table>
+<thead>
+<tr>
+<th>Routing mode</th>
+<th>Cost per plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>All-Opus (no routing)</td>
+<td>~$18.00</td>
+</tr>
+<tr>
+<td>Optimized routing</td>
+<td>~$4.63</td>
+</tr>
+<tr>
+<td>Local inference + cloud routing</td>
+<td>~$1.20</td>
+</tr>
+</tbody>
+</table>
+<p>At a 2× margin on optimized routing, PlanExe charges ~$9.26 per plan execution and spends ~$4.63 on compute. The difference funds:
+- Infrastructure
+- Model API overhead
+- Reinvestment credits
+- Open-source sustainability fund</p>
+<p>For high-volume users (Spotify-class: 650 AI changes/month), the payment layer makes the economics explicit: they're buying 650 optimized plan executions, not paying for raw token time.</p>
 <hr />
-<p><em>Post-mortem written by Larry. Rubric refinements by Egon. Authorized by Mark.</em><br />
-<em>Next step: Submit as docs-only proposal PR to PlanExeOrg/PlanExe for Simon's review.</em></p>
+<h2 id="connection-to-model-routing">Connection to Model Routing</h2>
+<p>The cost estimate from Proposal 74's <code>optimize</code> mode IS the x402 payment amount. The routing layer already does the hard work: it knows which model runs which task and what it costs. The payment layer just needs to:</p>
+<ol>
+<li>Read that estimate</li>
+<li>Hold funds before execution</li>
+<li>Reconcile actual vs estimated cost after execution</li>
+<li>Issue a receipt</li>
+</ol>
+<p>The only new work is the payment plumbing (x402 server, A2A manifest, credit ledger). The intelligence is already in the routing layer.</p>
+<hr />
+<h2 id="questions-for-simon">Questions for Simon</h2>
+<ol>
+<li>Is x402 on Base L2 (USDC) the right payment rail, or would a simpler API key + Stripe billing model serve 80% of users?</li>
+<li>Should Phase 1 (cost tagging) ship before or alongside Proposal 73's complexity scoring?</li>
+<li>Is there an existing credit/billing system in PlanExe that this should extend rather than replace?</li>
+<li>For A2A: is Google's A2A protocol the right target, or should we start with a simpler custom invocation API and add A2A later?</li>
+<li>Open-source sustainability: should PlanExe have a "contribute back" mechanism where agents that earn from PlanExe execution auto-contribute a small % to the project?</li>
+</ol>
+<hr />
+<p><em>Docs-only. No code. Companion to Proposals 73 and 74.</em></p>
 
 
 
