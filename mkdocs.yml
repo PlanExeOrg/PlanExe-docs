@@ -20,11 +20,12 @@ nav:
     - MCP setup: mcp/mcp_setup.md
     - MCP registry publishing: mcp/mcp_registry.md
     - MCP Inspector: mcp/inspector.md
-    - LM Studio: mcp/lm_studio.md
-    - Windsurf: mcp/windsurf.md
+    - Claude: mcp/claude.md
     - Cursor: mcp/cursor.md
-    - Antigravity: mcp/antigravity.md
     - Codex: mcp/codex.md
+    - Antigravity: mcp/antigravity.md
+    - Windsurf: mcp/windsurf.md
+    - LM Studio: mcp/lm_studio.md
     - MCP details: mcp/mcp_details.md
     - MCP troubleshooting: mcp/mcp_troubleshooting.md
     - PlanExe MCP interface: mcp/planexe_mcp_interface.md
