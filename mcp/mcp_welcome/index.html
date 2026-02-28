@@ -5002,7 +5002,7 @@
 <li><strong>Get example prompts</strong> — See what good prompts look like (detailed, typically ~300-800 words). It is the <strong>caller’s responsibility</strong> to take inspiration from these examples and ensure the prompt sent to PlanExe is of similar or better quality. A compact prompt shape works best: objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria. The agent can refine a vague idea into a high-quality prompt and show it to the user for approval before creating the plan.</li>
 <li><strong>Create a plan</strong> — Send a prompt; PlanExe starts creating the plan (typically takes 10–20 minutes on baseline profile). If the input prompt is of low quality, the output plan will be crap too. Visible <code>plan_create</code> options include <code>model_profile</code>.</li>
 <li><strong>Check progress</strong> — Ask for status and see how far the plan has gotten.</li>
-<li><strong>Retry failed runs</strong> — If status is <code>failed</code>, call <code>plan_retry</code> (defaults to baseline model profile) to requeue the same task id.</li>
+<li><strong>Retry failed runs</strong> — If status is <code>failed</code>, call <code>plan_retry</code> (defaults to baseline model profile) to requeue the same <code>plan_id</code>.</li>
 <li><strong>Download the report</strong> — When the plan is ready, the user specifies whether to download the HTML report or the zip of intermediary files (JSON, MD, CSV).</li>
 </ul>
 <hr />

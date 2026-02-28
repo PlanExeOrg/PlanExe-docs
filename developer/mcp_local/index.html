@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#planexe-mcp-locally-experimental-likely-to-be-changed-a-lot" class="md-skip">
+        <a href="#planexe-mcp-locally" class="md-skip">
           Skip to content
         </a>
       
@@ -1642,6 +1642,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ideas
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5025,6 +5036,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ideas
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5045,7 +5067,7 @@
   
 
 
-<h1 id="planexe-mcp-locally-experimental-likely-to-be-changed-a-lot">PlanExe MCP locally - Experimental, likely to be changed a lot!</h1>
+<h1 id="planexe-mcp-locally">PlanExe MCP locally</h1>
 <p>Model Context Protocol (MCP) local proxy for PlanExe.</p>
 <p>It runs on the user's computer and provides local disk access for downloads.
 The pipeline still runs in <code>mcp_cloud</code>, the MCP server running in the cloud; this
@@ -5145,6 +5167,8 @@ directory where PlanExe is allowed to save files.</p>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="p">}</span>
 </code></pre></div>
+<h2 id="ideas">Ideas</h2>
+<p>I’m considering dropping <code>mcp_local</code>. The benefit of having the <code>plan_download</code> is too small, vs. using <code>plan_file_info</code> and downloading the url afterwards. It saves 1 reasoning step. Alas the UX of configuring <code>mcp_local</code> is terrible. The documentation can be less confusing by not covering <code>mcp_local</code>.</p>
 
 
 

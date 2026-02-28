@@ -5028,7 +5028,7 @@
 </ul>
 <hr />
 <h2 id="billing-timing">Billing timing</h2>
-<p>Billing is applied at <strong>task completion time</strong> in <code>worker_plan_database</code>, not at task creation time.</p>
+<p>Billing is applied at <strong>plan completion time</strong> in <code>worker_plan_database</code>, not at plan creation time.</p>
 <p>This ensures we can bill based on final observed inference usage and success/failure outcome.</p>
 <hr />
 <h2 id="data-source-for-inference-cost">Data source for inference cost</h2>
@@ -5078,13 +5078,13 @@
 <li>First plan can be flagged to skip usage billing.</li>
 <li>Subsequent plans are usage-billed according to formulas above.</li>
 </ul>
-<p>This is implemented as an explicit task parameter so billing logic remains deterministic and auditable.</p>
+<p>This is implemented as an explicit plan parameter so billing logic remains deterministic and auditable.</p>
 <hr />
 <h2 id="operational-notes">Operational notes</h2>
 <ul>
-<li>Billing is idempotent per task: usage charge is applied once.</li>
-<li>Billing records should be traceable to task id and run output.</li>
-<li>Payment/support investigations should join <code>CreditHistory</code> with <code>token_metrics</code> via task context and <code>user_id</code>.</li>
+<li>Billing is idempotent per plan: usage charge is applied once.</li>
+<li>Billing records should be traceable to plan id and run output.</li>
+<li>Payment/support investigations should join <code>CreditHistory</code> with <code>token_metrics</code> via plan context and <code>user_id</code>.</li>
 <li>If pricing policy changes, update this document and relevant env defaults together.</li>
 </ul>
 <hr />

@@ -4974,7 +4974,7 @@
 <li>Inspect <code>model_profile</code> options and available models.</li>
 <li>Expand the user idea into a high-quality prompt (typically ~300-800 words) and get user approval.
    Use this compact shape: objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria.</li>
-<li>Create the plan task.</li>
+<li>Create the plan.</li>
 <li>Poll for status (about every 5 minutes).</li>
 <li>If status is <code>failed</code>, optionally call <code>plan_retry</code> (defaults to <code>model_profile=baseline</code>).</li>
 <li>Download artifacts via <code>plan_file_info</code> (cloud) or <code>plan_download</code> (mcp_local helper).</li>
@@ -4986,7 +4986,7 @@
 <li><code>model_profiles</code></li>
 <li><code>plan_create</code></li>
 <li><code>plan_status</code></li>
-<li><code>plan_retry</code> (optional, only for failed tasks)</li>
+<li><code>plan_retry</code> (optional, only for failed plans)</li>
 <li><code>plan_file_info</code></li>
 </ol>
 <p>Optional local helper:
@@ -5000,10 +5000,10 @@
 <h2 id="3-success-criteria">3. Success criteria</h2>
 <ul>
 <li>You can fetch example prompts.</li>
-<li>You can create a plan task.</li>
+<li>You can create a plan.</li>
 <li>You can fetch artifact metadata/URLs with <code>plan_file_info</code> (and optionally save locally via <code>plan_download</code> when using <code>mcp_local</code>).</li>
 <li>Your client can parse <code>error.code</code> and <code>error.message</code> and handle <code>{}</code> from <code>plan_file_info</code> as "not ready yet".</li>
-<li>If running parallel work, your client tracks multiple <code>task_id</code>s explicitly (server-side global cap is not enforced).</li>
+<li>If running parallel work, your client tracks multiple <code>plan_id</code>s explicitly (server-side global cap is not enforced).</li>
 </ul>
 <hr />
 <h2 id="next-steps">Next steps</h2>

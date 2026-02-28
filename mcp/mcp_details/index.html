@@ -5416,7 +5416,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
   - <code>model_count</code>
   - <code>models[]</code> (<code>key</code>, <code>provider_class</code>, <code>model</code>, <code>priority</code>)</p>
 <h3 id="plan_create">plan_create</h3>
-<p>Create a new plan task.</p>
+<p>Create a new plan.</p>
 <p>Example prompt:</p>
 <blockquote>
 <p>Create a plan for: Weekly meetup for humans where participants are randomly paired every 5 minutes...</p>
@@ -5445,12 +5445,12 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <li>PlanExe always runs a fixed end-to-end pipeline; it does not support selecting only internal pipeline subsets.</li>
 </ul>
 <h3 id="plan_status">plan_status</h3>
-<p>Fetch status/progress and recent files for a task.</p>
+<p>Fetch status/progress and recent files for a plan.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Get status for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Get status for plan 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>State contract:</p>
 <ul>
@@ -5460,32 +5460,32 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <li><code>failed</code>: terminal error.</li>
 </ul>
 <h3 id="plan_stop">plan_stop</h3>
-<p>Request an active task to stop.</p>
+<p>Request an active plan to stop.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Stop task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Stop plan 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="plan_retry">plan_retry</h3>
-<p>Retry a failed task by requeueing the same <code>task_id</code>.</p>
+<p>Retry a failed plan by requeueing the same <code>plan_id</code>.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Retry failed task 2d57a448-1b09-45aa-ad37-e69891ff6ec7 with baseline profile.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Retry failed plan 2d57a448-1b09-45aa-ad37-e69891ff6ec7 with baseline profile.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>Notes:
 - <code>model_profile</code> is optional and defaults to <code>baseline</code>.
-- Only failed tasks can be retried.
-- Non-failed tasks return <code>TASK_NOT_FAILED</code>.</p>
+- Only failed plans can be retried.
+- Non-failed plans return <code>PLAN_NOT_FAILED</code>.</p>
 <h3 id="plan_file_info">plan_file_info</h3>
 <p>Return download metadata for report or zip artifacts.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Get report info for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Get report info for plan 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>Available artifacts:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>&quot;report&quot; | &quot;zip&quot;
@@ -5495,7 +5495,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&quot;content_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/zip&quot;</span><span class="p">,</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;sha256&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f8ad556b635b14e375222150664e85b426bf7f9209ede2f37f47a8975e286323&quot;</span><span class="p">,</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">  </span><span class="nt">&quot;download_size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">17262032</span><span class="p">,</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="nt">&quot;download_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/&lt;task_id&gt;/run.zip&quot;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="nt">&quot;download_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/&lt;plan_id&gt;/run.zip&quot;</span>
 <a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="download-with-curl">Download with <code>curl</code></h3>
@@ -5511,24 +5511,24 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <h3 id="plan_download">plan_download</h3>
 <p>Download report or zip to a local path.</p>
 <p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Download the report for task 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Download the report for plan 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
 </code></pre></div></p>
 <p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p><code>PLANEXE_PATH</code> behavior for <code>plan_download</code>:
 - Save directory is <code>PLANEXE_PATH</code>, or current working directory if unset.
 - Non-existing directories are created automatically.
 - If <code>PLANEXE_PATH</code> points to a file, download fails.
-- Filename is prefixed with task id (for example <code>&lt;task_id&gt;-030-report.html</code>).
+- Filename is prefixed with plan id (for example <code>&lt;plan_id&gt;-030-report.html</code>).
 - Response includes <code>saved_path</code> with the exact local file location.</p>
 <h2 id="minimal-error-handling-contract">Minimal error-handling contract</h2>
 <p>Error payload shape:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SOME_CODE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Human readable message&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}}}</span>
 </code></pre></div></p>
 <p>Common cloud/core error codes:
-- <code>TASK_NOT_FOUND</code>
-- <code>TASK_NOT_FAILED</code>
+- <code>PLAN_NOT_FOUND</code>
+- <code>PLAN_NOT_FAILED</code>
 - <code>INVALID_USER_API_KEY</code>
 - <code>USER_API_KEY_REQUIRED</code>
 - <code>INSUFFICIENT_CREDITS</code>
@@ -5543,12 +5543,12 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 - <code>plan_file_info</code> may return <code>{}</code> while the artifact is not ready yet (not an error).</p>
 <h2 id="concurrency-semantics-practical">Concurrency semantics (practical)</h2>
 <ul>
-<li>Each <code>plan_create</code> call creates a new task with a new <code>task_id</code>.</li>
-<li>The server does not enforce a global “one active task per client” cap.</li>
+<li>Each <code>plan_create</code> call creates a new plan with a new <code>plan_id</code>.</li>
+<li>The server does not enforce a global “one active plan per client” cap.</li>
 <li>Parallelism is a client orchestration concern:</li>
-<li>start with 1 task</li>
+<li>start with 1 plan</li>
 <li>scale to 2 in parallel if needed</li>
-<li>avoid more than 4 unless you have strong task-tracking UX</li>
+<li>avoid more than 4 unless you have strong plan-tracking UX</li>
 </ul>
 <h2 id="typical-flow">Typical Flow</h2>
 <h3 id="1-get-example-prompts">1. Get example prompts</h3>
@@ -5575,21 +5575,21 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 </code></pre></div></p>
 <h3 id="5-get-status">5. Get status</h3>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Get status for my latest task.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Get status for my latest plan.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_plan_create&gt;&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>If state is <code>failed</code>, optional retry:</p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="6-download-the-report">6. Download the report</h3>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Download the report for my task.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Download the report for my plan.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;task_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 
 
