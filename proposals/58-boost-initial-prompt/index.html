@@ -5418,7 +5418,7 @@
 <p>When this happens, later stages can look polished but still be impractical because the seed prompt is weak.</p>
 <p>There is already a quality gap between two prompt sources:</p>
 <ul>
-<li>MCP tool-driven prompt assembly that follows <code>prompt_examples</code> (high structure, better constraints).</li>
+<li>MCP tool-driven prompt assembly that follows <code>example_prompts</code> (high structure, better constraints).</li>
 <li>Direct human input that is often shorter, incomplete, or inconsistent.</li>
 </ul>
 <p>This proposal targets that gap by lifting weak human prompts toward the same baseline used in MCP flows.</p>
@@ -5428,7 +5428,7 @@
 <ul>
 <li>We already have high-quality prompt examples in <code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code>.</li>
 <li>We already document strong prompt shape in <code>docs/prompt_writing_guide.md</code>.</li>
-<li>MCP usage already enforces prompt-quality workflow via <code>docs/mcp/planexe_mcp_interface.md</code> (<code>prompt_examples</code> -&gt; formulate -&gt; <code>task_create</code>).</li>
+<li>MCP usage already enforces prompt-quality workflow via <code>docs/mcp/planexe_mcp_interface.md</code> (<code>example_prompts</code> -&gt; formulate -&gt; <code>task_create</code>).</li>
 <li>PlanExe already contains assumption-oriented components (<code>assume/*</code>) that can consume cleaner input.</li>
 <li>The rewrite stage can be bounded, deterministic in structure, and audited with artifacts.</li>
 </ul>
@@ -5549,7 +5549,7 @@
 <li><code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code> (including MCP-curated examples)</li>
 </ul>
 <h2 id="mcp-baseline-alignment">MCP Baseline Alignment</h2>
-<p>Use MCP <code>prompt_examples</code> as the reference quality target for rewritten human prompts.</p>
+<p>Use MCP <code>example_prompts</code> as the reference quality target for rewritten human prompts.</p>
 <p>Concretely:</p>
 <ul>
 <li>Extract structural patterns from MCP examples (scope, budget, timeline, location, success criteria).</li>

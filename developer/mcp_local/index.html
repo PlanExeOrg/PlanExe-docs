@@ -5073,7 +5073,8 @@
 The pipeline still runs in <code>mcp_cloud</code>, the MCP server running in the cloud; this
 proxy forwards tool calls over HTTP and downloads artifacts from <code>/download/{plan_id}/...</code>.</p>
 <h2 id="tools">Tools</h2>
-<p><code>prompt_examples</code> - Return example prompts. Use these as examples for plan_create. You can also call <code>plan_create</code> with any prompt—short prompts produce less detailed plans.
+<p><code>example_plans</code> - Return curated example plans with download links for reports and zip bundles.
+<code>example_prompts</code> - Return example prompts. Use these as examples for plan_create. You can also call <code>plan_create</code> with any prompt—short prompts produce less detailed plans.
 <code>model_profiles</code> - Show model_profile options and currently available models in each profile.
 <code>plan_create</code> - Initiate creation of a plan.
 <code>plan_status</code> - Get status and progress about the creation of a plan.
@@ -5095,7 +5096,7 @@ proxy forwards tool calls over HTTP and downloads artifacts from <code>/download
 - <code>plan_retry</code> may return <code>PLAN_NOT_FAILED</code> if the task is not currently failed.
 - Local proxy specific codes: <code>REMOTE_ERROR</code>, <code>DOWNLOAD_FAILED</code>.
 - <code>plan_file_info</code> (called under the hood by plan_download) may return <code>{}</code> while output is not ready.</p>
-<p><strong>Tip</strong>: Call <code>prompt_examples</code> to get example prompts to use with plan_create. The full catalog lives at <code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code>.</p>
+<p><strong>Tip</strong>: Call <code>example_plans</code> to preview example output, then call <code>example_prompts</code> to get example prompts to use with plan_create. The full catalog lives at <code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code>.</p>
 <p><code>plan_download</code> is a synthetic tool provided by the local proxy. It calls the
 remote MCP tool <code>plan_file_info</code> to obtain a download URL, then downloads the
 file locally into <code>PLANEXE_PATH</code>.</p>
@@ -5107,7 +5108,7 @@ file locally into <code>PLANEXE_PATH</code>.</p>
 - <code>plan_download</code> returns <code>saved_path</code> with the final file location.</p>
 <h2 id="run-as-task-mcp-tasks-protocol">Run as task (MCP tasks protocol)</h2>
 <p>Some MCP clients (e.g. the MCP Inspector) show a <strong>"Run as task"</strong> option for tools. That refers to the MCP <strong>tasks</strong> protocol: a separate mechanism where the client runs a tool in the background using RPC methods like <code>tasks/run</code>, <code>tasks/get</code>, <code>tasks/result</code>, and <code>tasks/cancel</code>, instead of a single blocking tool call.</p>
-<p><strong>PlanExe does not use or advertise the MCP tasks protocol.</strong> Our interface is <strong>tool-based</strong> only: the agent calls <code>prompt_examples</code> and <code>model_profiles</code> for setup, completes a non-tool prompt drafting/approval step, then <code>plan_create</code> → gets a <code>plan_id</code> → polls <code>plan_status</code> → optionally calls <code>plan_retry</code> if failed → uses <code>plan_download</code>. That flow is defined in <code>docs/mcp/planexe_mcp_interface.md</code> and is the intended design.</p>
+<p><strong>PlanExe does not use or advertise the MCP tasks protocol.</strong> Our interface is <strong>tool-based</strong> only: the agent calls <code>example_plans</code>, <code>example_prompts</code>, and <code>model_profiles</code> for setup, completes a non-tool prompt drafting/approval step, then <code>plan_create</code> → gets a <code>plan_id</code> → polls <code>plan_status</code> → optionally calls <code>plan_retry</code> if failed → uses <code>plan_download</code>. That flow is defined in <code>docs/mcp/planexe_mcp_interface.md</code> and is the intended design.</p>
 <p>You should <strong>not</strong> enable "Run as task" for PlanExe. The Python MCP SDK and clients like Cursor do not properly support the tasks protocol (method registration and initialization fail). Use the tools directly: create a task, poll status, then download when done.</p>
 <h2 id="how-it-talks-to-mcp_cloud">How it talks to mcp_cloud</h2>
 <ul>

@@ -5853,7 +5853,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>prompt_examples</code></td>
+<td><code>example_prompts</code></td>
 <td>yes</td>
 <td>yes</td>
 <td>Public</td>
@@ -5922,7 +5922,7 @@
 <hr />
 <h2 id="2-whats-working-well">2. What's Working Well</h2>
 <p><strong>Dual transport.</strong> <code>mcp_cloud</code> (stateless HTTP / Railway) and <code>mcp_local</code> (stdio proxy) cover the two major deployment patterns. Most users can pick one without reading source code.</p>
-<p><strong>Clean module structure.</strong> <code>mcp_cloud/app.py</code> is now a thin re-export facade (~195 lines). Logic lives in focused modules: <code>handlers.py</code> (tool handlers), <code>schemas.py</code> (tool definitions), <code>tool_models.py</code> (Pydantic models), <code>db_queries.py</code> (DB operations), <code>auth.py</code> (key hashing/user resolution), <code>download_tokens.py</code> (signed tokens), <code>model_profiles.py</code>, <code>worker_fetchers.py</code>, <code>zip_utils.py</code>, <code>prompt_examples.py</code>. This makes PRs reviewable and bugs easy to isolate.</p>
+<p><strong>Clean module structure.</strong> <code>mcp_cloud/app.py</code> is now a thin re-export facade (~195 lines). Logic lives in focused modules: <code>handlers.py</code> (tool handlers), <code>schemas.py</code> (tool definitions), <code>tool_models.py</code> (Pydantic models), <code>db_queries.py</code> (DB operations), <code>auth.py</code> (key hashing/user resolution), <code>download_tokens.py</code> (signed tokens), <code>model_profiles.py</code>, <code>worker_fetchers.py</code>, <code>zip_utils.py</code>, <code>example_prompts.py</code>. This makes PRs reviewable and bugs easy to isolate.</p>
 <p><strong>Consistent <code>plan_</code>* naming throughout.</strong> The rename from <code>task_</code>* to <code>plan_*</code> covers the full stack: external tool names, handler functions, request classes (<code>PlanCreateRequest</code>, etc.), DB query helpers (<code>_create_plan_sync</code>, <code>get_plan_by_id</code>, etc.), local variable names, and test file names. No backward-compat aliases remain.</p>
 <p><strong>Layered authentication.</strong> Two distinct auth paths — a server-wide <code>PLANEXE_MCP_API_KEY</code> for self-hosters, and per-user <code>pex_…</code> keys issued by home.planexe.org — are a good design. The key-normalisation helper (<code>_normalize_api_key_value</code> in <code>http_server.py</code>) handles common copy-paste artefacts (Bearer prefix, surrounding quotes, full header line pasted as value).</p>
 <p><strong>Auto-injected <code>user_api_key</code>.</strong> For <code>plan_create</code> and <code>plan_list</code>, the HTTP layer reads the authenticated user from the request context and injects <code>user_api_key</code> into handler arguments automatically. Callers never see <code>user_api_key</code> as a required field in the MCP schema — a clean separation between transport-level auth and tool-level logic.</p>
@@ -6026,7 +6026,7 @@
 <li><strong>GitHub Actions</strong> — a reusable workflow <code>planexe/create-plan@v1</code> that runs <code>plan_create</code> and uploads the result as a release asset. This is a high-visibility integration channel.</li>
 </ul>
 <h3 id="64-example-prompt-gallery">6.4 Example prompt gallery</h3>
-<p>Add 10–15 high-quality example prompts (startup, research paper, home renovation, hiring plan, …) to <code>prompt_examples</code>. Agents and users copy-paste these; each successful use is a social proof data point.</p>
+<p>Add 10–15 high-quality example prompts (startup, research paper, home renovation, hiring plan, …) to <code>example_prompts</code>. Agents and users copy-paste these; each successful use is a social proof data point.</p>
 <h3 id="65-observability-social-proof">6.5 Observability / social proof</h3>
 <ul>
 <li>Add a public counter to the homepage: "X plans created this week".</li>

@@ -1669,6 +1669,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#discovery-well-known-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery / .well-known Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sse-error-or-no-server-sse-stream-from-the-client" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5237,6 +5248,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#discovery-well-known-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery / .well-known Endpoints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#sse-error-or-no-server-sse-stream-from-the-client" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5488,7 +5510,7 @@
 <li><strong>File Metadata</strong>: Get report/zip metadata and download URLs</li>
 </ul>
 <h2 id="run-as-task-mcp-tasks-protocol">Run as task (MCP tasks protocol)</h2>
-<p>MCP has two ways to run long-running work: <strong>tools</strong> (what we use) and the <strong>tasks</strong> protocol ("Run as task" in some UIs). PlanExe uses <strong>tools only</strong>: <code>prompt_examples</code>, <code>model_profiles</code>, <code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_file_info</code> (or <code>plan_download</code> via <code>mcp_local</code>). The agent creates a task, polls status, retries on failed when needed, then downloads; that is the intended flow per <code>docs/mcp/planexe_mcp_interface.md</code>. We do not advertise or implement the MCP tasks protocol (tasks/get, tasks/result, etc.). Clients like Cursor do not support it properly—use the tools directly.
+<p>MCP has two ways to run long-running work: <strong>tools</strong> (what we use) and the <strong>tasks</strong> protocol ("Run as task" in some UIs). PlanExe uses <strong>tools only</strong>: <code>example_plans</code>, <code>example_prompts</code>, <code>model_profiles</code>, <code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_file_info</code> (or <code>plan_download</code> via <code>mcp_local</code>). The agent creates a task, polls status, retries on failed when needed, then downloads; that is the intended flow per <code>docs/mcp/planexe_mcp_interface.md</code>. We do not advertise or implement the MCP tasks protocol (tasks/get, tasks/result, etc.). Clients like Cursor do not support it properly—use the tools directly.
 Workflow clarity: prompt drafting + user approval is a non-tool step between setup tools and <code>plan_create</code>.</p>
 <h2 id="client-choice-guide">Client Choice Guide</h2>
 <ul>
@@ -5510,7 +5532,7 @@ If no <code>worker_plan_database*</code> service is running, <code>plan_create</
 - <code>true</code>: provide a valid <code>X-API-Key</code>.
 Accepted keys are (1) UserApiKey from home.planexe.org (<code>pex_...</code>), or (2) <code>PLANEXE_MCP_API_KEY</code> if set (for dev or shared secret).
 OAuth is not supported for the MCP API.
-When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <code>notifications/initialized</code>, <code>tools/list</code>, <code>prompts/list</code>, <code>resources/list</code>, <code>resources/templates/list</code>, <code>ping</code>, <code>GET /mcp/tools</code>, and probe traffic to <code>/mcp</code> for redirect/handshake compatibility) are intentionally allowed without API key for connector health checks. In addition, <code>tools/call</code> is open without API key only for <code>model_profiles</code> and <code>prompt_examples</code>; all other tool calls remain protected.</p>
+When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <code>notifications/initialized</code>, <code>tools/list</code>, <code>prompts/list</code>, <code>resources/list</code>, <code>resources/templates/list</code>, <code>ping</code>, <code>GET /mcp/tools</code>, and probe traffic to <code>/mcp</code> for redirect/handshake compatibility) are intentionally allowed without API key for connector health checks. In addition, <code>tools/call</code> is open without API key only for <code>example_plans</code>, <code>example_prompts</code>, and <code>model_profiles</code>; all other tool calls remain protected.</p>
 <h3 id="connecting-via-httpurl">Connecting via HTTP/URL</h3>
 <p>After starting with Docker, configure your MCP client (e.g., LM Studio) to connect via HTTP:</p>
 <p><strong>Remote MCP:</strong></p>
@@ -5543,6 +5565,12 @@ When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <c
 <li><code>GET /healthcheck</code> - Health check endpoint</li>
 <li><code>GET /docs</code> - OpenAPI documentation (Swagger UI)</li>
 <li><code>GET /robots.txt</code> - Crawler rules for public metadata discovery</li>
+</ul>
+<h3 id="discovery-well-known-endpoints">Discovery / <code>.well-known</code> Endpoints</h3>
+<p>The <code>/.well-known/</code> prefix is an <a href="https://www.rfc-editor.org/rfc/rfc8615">IETF standard (RFC 8615)</a> for machine-readable metadata. Automated systems (registries, crawlers, AI agents) fetch these to discover what the server offers without performing a full handshake.</p>
+<ul>
+<li><strong><code>GET /.well-known/mcp/server-card.json</code></strong> — MCP Server Card (<a href="https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1649">SEP-1649</a>). Lets MCP registries (Smithery, etc.) discover the server's name, description, transport type, capabilities, and auth requirements in a single JSON fetch — no MCP handshake needed.</li>
+<li><strong><code>GET /.well-known/glama.json</code></strong> — Glama ownership verification. When registering at <a href="https://glama.ai">glama.ai</a>, their crawler fetches this to confirm the server maintainer (contains a maintainer email).</li>
 </ul>
 <h3 id="sse-error-or-no-server-sse-stream-from-the-client">"SSE error" or "no Server-SSE stream" from the client</h3>
 <p>Some MCP clients (e.g. OpenClaw/mcporter) connect by doing a <strong>GET</strong> to the server URL and expect a <strong>Server-Sent Events (SSE)</strong> stream (<code>Content-Type: text/event-stream</code>). That is the <strong>Streamable HTTP</strong> transport. This server mounts FastMCP at <code>/mcp</code>; <strong>GET /mcp</strong> returns a <strong>307 redirect</strong> to <code>/mcp/</code>, and the Streamable HTTP handshake may not match what the client expects, so the client reports "SSE error" or "could not fetch … no SSE stream".</p>
@@ -5584,7 +5612,8 @@ When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <c
 <h2 id="mcp-tools">MCP Tools</h2>
 <p>See <code>docs/mcp/planexe_mcp_interface.md</code> for full specification. Available tools:</p>
 <ul>
-<li><code>prompt_examples</code> - Return example prompts. Use these as examples for plan_create.</li>
+<li><code>example_plans</code> - Return curated example plans with download links for reports and zip bundles.</li>
+<li><code>example_prompts</code> - Return example prompts. Use these as examples for plan_create.</li>
 <li><code>model_profiles</code> - List profile options and currently available models in each profile.</li>
 <li><code>plan_create</code> - Create a new plan (returns plan_id as UUID; may require user_api_key for credits)</li>
 <li><code>plan_status</code> - Get plan status and progress</li>
@@ -5610,7 +5639,7 @@ When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <c
 <blockquote>
 <p><strong>Breaking change (v2026-02-26):</strong> External-facing field names were renamed from <code>task_id</code> → <code>plan_id</code>, <code>tasks</code> → <code>plans</code>, and error codes from <code>TASK_NOT_FOUND</code> → <code>PLAN_NOT_FOUND</code>, <code>TASK_NOT_FAILED</code> → <code>PLAN_NOT_FAILED</code>.</p>
 </blockquote>
-<p><strong>Tip</strong>: Call <code>prompt_examples</code> to get example prompts to use with plan_create, then call <code>model_profiles</code> to choose <code>model_profile</code> based on current runtime availability. The prompt catalog is the same as in the frontends (<code>worker_plan.worker_plan_api.PromptCatalog</code>). When running with <code>PYTHONPATH</code> set to the repo root (e.g. stdio setup), the catalog is loaded automatically; otherwise built-in examples are returned.</p>
+<p><strong>Tip</strong>: Call <code>example_plans</code> to preview example output, then call <code>example_prompts</code> to get example prompts to use with plan_create, then call <code>model_profiles</code> to choose <code>model_profile</code> based on current runtime availability. The prompt catalog is the same as in the frontends (<code>worker_plan.worker_plan_api.PromptCatalog</code>). When running with <code>PYTHONPATH</code> set to the repo root (e.g. stdio setup), the catalog is loaded automatically; otherwise built-in examples are returned.</p>
 <p>Download flow: call <code>plan_file_info</code> to obtain the <code>download_url</code>, then fetch the
 report via <code>GET /download/{plan_id}/030-report.html</code> (API key required if configured).
 If <code>download_url</code> is missing, configure <code>PLANEXE_MCP_PUBLIC_BASE_URL</code> so the server can emit a reachable absolute URL.</p>

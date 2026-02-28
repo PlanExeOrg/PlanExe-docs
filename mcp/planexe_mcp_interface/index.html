@@ -1364,10 +1364,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-prompt_examples" class="md-nav__link">
+  <a href="#61-example_prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.1 prompt_examples
+        6.1 example_prompts
       
     </span>
   </a>
@@ -5910,10 +5910,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-prompt_examples" class="md-nav__link">
+  <a href="#61-example_prompts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.1 prompt_examples
+        6.1 example_prompts
       
     </span>
   </a>
@@ -6438,12 +6438,12 @@
 <h3 id="11-what-is-planexe">1.1 What is PlanExe</h3>
 <p>PlanExe is a service that generates <strong>strategic project-plan drafts</strong> from a natural-language prompt. You describe a large goal (e.g. open a clinic, launch a product, build a moon base)—the kind of project that in reality takes months or years. PlanExe produces a structured draft with 20+ sections: steps, documents, and deliverables. The plan is not executable in its current form; it is a draft to refine and act on. Creating a plan is a long-running operation (100+ LLM inference calls): create a plan with a prompt, poll status, then download the HTML report and zip when done.</p>
 <h3 id="12-what-kind-of-plan-does-it-create">1.2 What kind of plan does it create</h3>
-<p>The plan is a <strong>project plan</strong>: a DAG of steps (Luigi pipeline stages) that produce artifacts including a Gantt chart, risk analysis, and other project management deliverables. The main output is a self-contained interactive HTML report (~700KB) with collapsible sections, interactive Gantt charts, and embedded JavaScript. The report contains 20+ sections including executive summary, investor pitch, project plan with SMART criteria, strategic decision analysis, scenario comparison, assumptions with expert review, governance structure, SWOT analysis, team role profiles, simulated expert criticism, work breakdown structure, plan review, Q&amp;A, premortem with failure scenarios, self-audit checklist, and adversarial premise attacks. There is also a zip file containing all intermediary pipeline files (md, json, csv) that fed the report. Plan quality depends on prompt quality; use the prompt_examples tool to see the baseline before calling plan_create.</p>
+<p>The plan is a <strong>project plan</strong>: a DAG of steps (Luigi pipeline stages) that produce artifacts including a Gantt chart, risk analysis, and other project management deliverables. The main output is a self-contained interactive HTML report (~700KB) with collapsible sections, interactive Gantt charts, and embedded JavaScript. The report contains 20+ sections including executive summary, investor pitch, project plan with SMART criteria, strategic decision analysis, scenario comparison, assumptions with expert review, governance structure, SWOT analysis, team role profiles, simulated expert criticism, work breakdown structure, plan review, Q&amp;A, premortem with failure scenarios, self-audit checklist, and adversarial premise attacks. There is also a zip file containing all intermediary pipeline files (md, json, csv) that fed the report. Plan quality depends on prompt quality; use the example_prompts tool to see the baseline before calling plan_create.</p>
 <h4 id="121-agent-facing-summary-for-server-instructions-tool-descriptions">1.2.1 Agent-facing summary (for server instructions / tool descriptions)</h4>
 <p>Implementors should expose the following to agents so they understand what PlanExe does:</p>
 <ul>
 <li><strong>What:</strong> PlanExe turns a plain-English goal into a strategic project-plan draft (20+ sections) in ~10–20 min. Sections include executive summary, interactive Gantt charts, investor pitch, SWOT, governance, team profiles, work breakdown, scenario comparison, expert criticism, and adversarial sections (premortem, self-audit, premise attacks) that stress-test the plan. The output is a draft to refine, not an executable or final document — but it surfaces hard questions the prompter may not have considered.</li>
-<li><strong>Required interaction order:</strong> Call <code>prompt_examples</code> first. Optional before <code>plan_create</code>: call <code>model_profiles</code> to inspect profile guidance and available models in each profile. Then complete a non-tool step: formulate a detailed prompt as flowing prose (not structured markdown), typically ~300-800 words, using the examples as a baseline; include objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria; get user approval. Only after approval, call <code>plan_create</code>. Then poll <code>plan_status</code> (about every 5 minutes); use <code>plan_download</code> (mcp_local helper) or <code>plan_file_info</code> (mcp_cloud tool) when complete (<code>pending</code>/<code>processing</code> = keep polling, <code>completed</code> = download now, <code>failed</code> = terminal). If a plan fails and the caller wants another attempt for the same <code>plan_id</code>, call <code>plan_retry</code> (optional <code>model_profile</code>, default <code>baseline</code>). To stop, call <code>plan_stop</code> with the <code>plan_id</code> from <code>plan_create</code>.</li>
+<li><strong>Required interaction order:</strong> Call <code>example_plans</code> (optional) and <code>example_prompts</code> first. Optional before <code>plan_create</code>: call <code>model_profiles</code> to inspect profile guidance and available models in each profile. Then complete a non-tool step: formulate a detailed prompt as flowing prose (not structured markdown), typically ~300-800 words, using the examples as a baseline; include objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria; get user approval. Only after approval, call <code>plan_create</code>. Then poll <code>plan_status</code> (about every 5 minutes); use <code>plan_download</code> (mcp_local helper) or <code>plan_file_info</code> (mcp_cloud tool) when complete (<code>pending</code>/<code>processing</code> = keep polling, <code>completed</code> = download now, <code>failed</code> = terminal). If a plan fails and the caller wants another attempt for the same <code>plan_id</code>, call <code>plan_retry</code> (optional <code>model_profile</code>, default <code>baseline</code>). To stop, call <code>plan_stop</code> with the <code>plan_id</code> from <code>plan_create</code>.</li>
 <li><strong>Output:</strong> Self-contained interactive HTML report (~700KB) with collapsible sections and interactive Gantt charts — open in a browser. The zip contains the intermediary pipeline files (md, json, csv) that fed the report.</li>
 </ul>
 <h3 id="13-scope-of-this-document">1.3 Scope of this document</h3>
@@ -6496,7 +6496,7 @@
 <li><strong>MCP tools</strong> (e.g. plan_create, plan_status, plan_stop, plan_retry): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls plan_create → receives plan_id → polls plan_status → optionally calls plan_retry on failed → uses plan_file_info (and optionally plan_download via mcp_local). This document specifies those tools.</li>
 <li><strong>MCP tasks protocol</strong> ("Run as task" in some UIs): a separate mechanism where the client can run a tool "as a task" using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.</li>
 </ul>
-<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. Intended flow: call <code>prompt_examples</code>; optionally call <code>model_profiles</code>; perform the non-tool prompt drafting/approval step; call <code>plan_create</code>; poll <code>plan_status</code>; if failed call <code>plan_retry</code> (optional); then call <code>plan_file_info</code> (or <code>plan_download</code> via mcp_local) when completed.</p>
+<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. Intended flow: optionally call <code>example_plans</code>; call <code>example_prompts</code>; optionally call <code>model_profiles</code>; perform the non-tool prompt drafting/approval step; call <code>plan_create</code>; poll <code>plan_status</code>; if failed call <code>plan_retry</code> (optional); then call <code>plan_file_info</code> (or <code>plan_download</code> via mcp_local) when completed.</p>
 <hr />
 <h2 id="4-system-model">4. System Model</h2>
 <h3 id="41-core-entities">4.1 Core entities</h3>
@@ -6560,8 +6560,8 @@
 <hr />
 <h2 id="6-mcp-tools-v1-required">6. MCP Tools (v1 Required)</h2>
 <p>All tool names below are normative.</p>
-<h3 id="61-prompt_examples">6.1 prompt_examples</h3>
-<p><strong>Call this first.</strong> Returns example prompts that define the baseline for what a good prompt looks like. Do not call plan_create yet. Correct flow: call this tool; optionally call <code>model_profiles</code>; then complete a non-tool step (draft and approve a detailed prompt, typically ~300-800 words); only then call <code>plan_create</code>. If you call <code>plan_create</code> before formulating and approving a prompt, the resulting plan will be lower quality than it could be.</p>
+<h3 id="61-example_prompts">6.1 example_prompts</h3>
+<p><strong>Call this first.</strong> Returns example prompts that define the baseline for what a good prompt looks like. Do not call plan_create yet. Correct flow: optionally call <code>example_plans</code>; call this tool; optionally call <code>model_profiles</code>; then complete a non-tool step (draft and approve a detailed prompt, typically ~300-800 words); only then call <code>plan_create</code>. If you call <code>plan_create</code> before formulating and approving a prompt, the resulting plan will be lower quality than it could be.</p>
 <p>Write the prompt as flowing prose, not structured markdown with headers or bullet lists. Weave technical specs, constraints, and targets naturally into sentences. Include banned words/approaches and governance structure inline. Typical length: 300–800 words. The examples demonstrate this prose style — match their tone and density.</p>
 <p><strong>Request:</strong> no parameters (empty object).</p>
 <p><strong>Response:</strong></p>
@@ -6601,7 +6601,7 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <p>Use the returned <code>profile</code> values directly in <code>plan_create.model_profile</code>.</p>
 <hr />
 <h3 id="62-plan_create">6.2 plan_create</h3>
-<p><strong>Call only after prompt_examples and after the non-tool drafting/approval step.</strong> Start creating a new plan with the approved prompt.</p>
+<p><strong>Call only after example_prompts and after the non-tool drafting/approval step.</strong> Start creating a new plan with the approved prompt.</p>
 <p><strong>Request</strong></p>
 <p><strong>Schema</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
@@ -6668,7 +6668,7 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <li>model_profile: LLM profile (<code>baseline</code> | <code>premium</code> | <code>frontier</code> | <code>custom</code>). If unsure, call <code>model_profiles</code> first.</li>
 <li>user_api_key: user API key for credits and attribution (if your deployment requires it).</li>
 </ul>
-<p>Clients can call the MCP tool <strong>prompt_examples</strong> to retrieve example prompts. Use these as examples for plan_create; they can also call plan_create with any prompt—short prompts produce less detailed plans.</p>
+<p>Clients can call the MCP tool <strong>example_prompts</strong> to retrieve example prompts. Use these as examples for plan_create; they can also call plan_create with any prompt—short prompts produce less detailed plans.</p>
 <p>For the full catalog file:</p>
 <ul>
 <li><code>worker_plan/worker_plan_api/prompt/data/simple_plan_prompts.jsonl</code> — JSONL with <code>id</code>, <code>prompt</code>, optional <code>tags</code>, and optional <code>mcp_example</code> (true = curated for MCP).</li>
