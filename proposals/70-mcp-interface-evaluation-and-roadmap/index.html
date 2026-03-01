@@ -4836,6 +4836,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#612-smithery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2 Smithery
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5752,6 +5763,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#612-smithery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2 Smithery
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6022,8 +6044,8 @@
 <h3 id="61-mcp-registries">6.1 MCP registries</h3>
 <ul>
 <li><strong>Glama</strong> — already listed</li>
-<li><strong>mcp.so</strong> — submit <code>server.json</code>; high traffic from Claude desktop users</li>
 <li><strong>Smithery</strong> — another fast-growing directory; supports one-click install</li>
+<li><strong>mcp.so</strong> — submit <code>server.json</code>; high traffic from Claude desktop users</li>
 <li><strong>awesome-mcp-servers</strong> (GitHub) — submit a PR; maintainers merge quickly</li>
 <li><strong>OpenTools</strong> — focus on enterprise MCP discovery</li>
 </ul>
@@ -6040,6 +6062,21 @@
 <li>Add a /.well-known/glama.json to claim ownership of planexe. No luck.</li>
 <li>Add a /glama.json to repo to claim ownership of planexe. No luck.</li>
 <li>Customize profile text, categories, favicon.</li>
+</ul>
+<h4 id="612-smithery">6.1.2 Smithery</h4>
+<p>https://smithery.ai/servers/planexeorg/planexe</p>
+<p>Smithery has problems updating the entry automatically. When I have made mcp interface changes, then I'm not seeing them show up in Smithery's UI.
+Syncing is something I have to do manually, by going to the <code>Releases</code> page, and go through the <code>Publish</code> flow.
+https://smithery.ai/servers/planexeorg/planexe/releases
+That reloads the PlanExe data entry, by pulling it from the mcp.planexe.org/mcp, IMO something that should happen automatic.
+It may be possible to force reload via CLI. I have not investigated this.
+https://smithery.ai/docs/build/publish#cli-advanced</p>
+<p>Smithery has no filtering. No sort by date or by name.</p>
+<p>Smithery's one-click install is neat.</p>
+<p>Outstanding issues:</p>
+<ul>
+<li>Automation. Whenever I make changes to MCP, I will have to manually update the PlanExe profile on Smithery. </li>
+<li>improve on Smithery’s Quality Score. Currently it’s 81 of 100.</li>
 </ul>
 <h3 id="62-content">6.2 Content</h3>
 <ul>
