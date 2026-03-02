@@ -888,17 +888,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sample prompt
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#success-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5157,17 +5146,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-prompt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sample prompt
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#success-criteria" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5405,26 +5383,26 @@
 
 <h1 id="claude">Claude</h1>
 <p><a href="https://claude.ai/">Claude</a> is available as a desktop app and as <a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a>, Anthropic's CLI tool. Both support MCP and are configured the same way.</p>
+<p>PlanExe turns a plain-English goal into a strategic project-plan draft (20+ sections) in ~10-20 minutes. The output is a self-contained interactive HTML report you open in a browser.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Claude desktop app or Claude Code installed.</li>
-<li>PlanExe MCP server reachable by Claude.</li>
+<li>One of the following:</li>
+<li>An API key from <a href="https://home.planexe.org/">home.planexe.org</a> (cloud server, no installation needed).</li>
+<li>PlanExe running locally via Docker (<code>docker compose up</code>, port 8001).</li>
 </ul>
 <h2 id="quick-setup">Quick setup</h2>
 <ol>
-<li>Configure MCP in Claude (see options below).</li>
-<li>Ask for prompt examples.</li>
-<li>Create a plan and download the report.</li>
+<li>Configure MCP in Claude (see connection options below).</li>
+<li>Verify the connection with <code>/mcp</code> in Claude Code or Settings &gt; MCP in the desktop app.</li>
+<li>Ask Claude to create a plan — it handles the full workflow (prompt drafting, creation, status polling, download).</li>
 </ol>
-<h2 id="sample-prompt">Sample prompt</h2>
-<blockquote>
-<p>Get example prompts for creating a plan.</p>
-</blockquote>
 <h2 id="success-criteria">Success criteria</h2>
 <ul>
-<li>You can fetch prompt examples.</li>
-<li>You can create a plan.</li>
-<li>You can download the report.</li>
+<li><code>/mcp</code> (Claude Code) or Settings &gt; MCP (desktop) shows <code>planexe</code> as connected.</li>
+<li>You can fetch prompt examples (<code>example_prompts</code>).</li>
+<li>You can create a plan (<code>plan_create</code>) and poll it to completion (<code>plan_status</code>).</li>
+<li>You can download the report (<code>plan_file_info</code> or <code>plan_download</code>).</li>
 </ul>
 <hr />
 <h2 id="option-a-connect-to-the-cloud-server-mcpplanexeorg">Option A: Connect to the cloud server (mcp.planexe.org)</h2>
@@ -5435,14 +5413,14 @@ Your key will be prefixed with <code>pex_</code>.</p>
 <h3 id="2-add-the-mcp-server">2. Add the MCP server</h3>
 <p>Run this command in your terminal:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>planexe<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>https://mcp.planexe.org/mcp
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>planexe<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>https://mcp.planexe.org/mcp<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--header<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_YOUR_API_KEY&quot;</span>
 </code></pre></div>
 <p>Replace <code>pex_YOUR_API_KEY</code> with your actual API key.</p>
 <h3 id="3-verify">3. Verify</h3>
 <p>Start Claude and check that the server is connected.</p>
-<p>In Claude Code, type <code>/mcp</code> to see the server status. In the Claude desktop app, go to Settings and check the MCP section. You should see <code>planexe</code> listed with its tools.</p>
+<p>In Claude Code, type <code>/mcp</code> to see the server status. In the Claude desktop app, go to Settings and check the MCP section. You should see <code>planexe</code> listed with its tools (<code>example_plans</code>, <code>example_prompts</code>, <code>model_profiles</code>, <code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_file_info</code>, <code>plan_list</code>).</p>
 <hr />
 <h2 id="option-b-run-docker-locally-connect-directly-via-http">Option B: Run Docker locally + connect directly via HTTP</h2>
 <p>This connects Claude directly to the local MCP server over HTTP. No <code>mcp_local</code> proxy needed.</p>
@@ -5460,7 +5438,7 @@ Your key will be prefixed with <code>pex_</code>.</p>
 <h3 id="3-verify_1">3. Verify</h3>
 <p>In Claude Code, type <code>/mcp</code> to see the server status. In the Claude desktop app, check Settings &gt; MCP.</p>
 <blockquote>
-<p><strong>Note:</strong> With this option, <code>plan_file_info</code> returns a download URL. Claude can fetch the URL content for you, or you can open the URL in your browser.</p>
+<p><strong>Note:</strong> With this option, <code>plan_file_info</code> returns a <code>download_url</code>. Ask Claude to fetch it, or open the URL in your browser. For local disk saves, use Option C instead (adds the <code>plan_download</code> tool).</p>
 </blockquote>
 <hr />
 <h2 id="option-c-run-docker-locally-use-the-mcp_local-proxy">Option C: Run Docker locally + use the mcp_local proxy</h2>
@@ -5552,21 +5530,26 @@ Your key will be prefixed with <code>pex_</code>.</p>
 </code></pre></div>
 <hr />
 <h2 id="interaction">Interaction</h2>
-<p>My interaction with Claude for creating a plan is like this:</p>
+<p>A typical conversation for creating a plan looks like this:</p>
 <ol>
-<li>tell me about the planexe mcp tool you have access to</li>
-<li>get the prompt examples</li>
-<li>I want a prompt about building a community solar farm in rural Denmark</li>
-<li>go ahead create this plan</li>
-<li><em>wait for 10-20 minutes, Claude polls status automatically</em></li>
-<li>download the report</li>
+<li><strong>Explore</strong> — "Tell me about the PlanExe MCP tools you have access to."</li>
+<li><strong>Get examples</strong> — "Get the prompt examples."</li>
+<li><strong>Describe your goal</strong> — "I want a prompt about building a community solar farm in rural Denmark."
+   Claude drafts a detailed prompt (~300-800 words) based on the examples and your idea.</li>
+<li><strong>Approve and create</strong> — "Go ahead, create this plan."
+   Claude calls <code>plan_create</code>, which returns a <code>plan_id</code>.</li>
+<li><strong>Wait</strong> — Plan generation takes ~10-20 minutes. Claude polls <code>plan_status</code> automatically every few minutes. Alternatively, <code>plan_create</code> returns an <code>sse_url</code> — a GET endpoint (text/event-stream) that streams real-time progress events until the plan completes. Claude Code agents can run <code>curl -N &lt;sse_url&gt;</code> in a background shell to monitor progress instead of polling.</li>
+<li><strong>Download</strong> — "Download the report." Claude fetches the HTML report via <code>plan_file_info</code> (cloud) or <code>plan_download</code> (local proxy).</li>
 </ol>
+<p>If a plan fails, Claude can retry it with <code>plan_retry</code>. If a <code>plan_id</code> is lost, <code>plan_list</code> recovers recent plans.</p>
 <hr />
 <h2 id="troubleshooting">Troubleshooting</h2>
 <ul>
-<li>If <code>/mcp</code> shows the server as disconnected, check that Docker is running (<code>docker compose ps</code>) or that <code>mcp.planexe.org</code> is reachable.</li>
-<li>If you get authentication errors with the cloud server, verify your API key at <a href="https://home.planexe.org/">home.planexe.org</a>.</li>
-<li>For stdio transport issues, make sure <code>uv</code> is installed and on your PATH.</li>
+<li><strong>Server disconnected</strong>: <code>/mcp</code> shows disconnected — check that Docker is running (<code>docker compose ps</code>) or that <code>mcp.planexe.org</code> is reachable.</li>
+<li><strong>Authentication errors</strong>: Verify your API key at <a href="https://home.planexe.org/">home.planexe.org</a>. Keys are prefixed with <code>pex_</code>.</li>
+<li><strong>stdio transport</strong>: Make sure <code>uv</code> is installed and on your PATH.</li>
+<li><strong>Plan stuck in pending</strong>: If <code>plan_status</code> stays <code>pending</code> for &gt;5 minutes, the worker likely hasn't picked it up. Check Docker logs or report the issue.</li>
+<li><strong>Plan failed</strong>: Call <code>plan_retry</code> to requeue the same <code>plan_id</code> (defaults to baseline profile).</li>
 <li>For more help, see the <a href="../mcp_troubleshooting/">Troubleshooting guide</a> or ask on the <a href="https://planexe.org/discord">PlanExe Discord</a>.</li>
 </ul>
 
