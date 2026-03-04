@@ -9,16 +9,12 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/79-multiple-api-keys/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/42-evidence-traceability-ledger/">
+        <link rel="prev" href="../78-planexe-growth-awareness-strategy/">
       
-      
-        <link rel="prev" href="../41-autonomous-execution-of-plan/">
-      
-      
-        <link rel="next" href="../43-assumption-drift-monitor/">
       
       
         
@@ -29,7 +25,7 @@
     
     
       
-        <title>Evidence Traceability Ledger: Technical Documentation - PlanExe Documentation</title>
+        <title>79 multiple api keys - PlanExe Documentation</title>
       
     
     
@@ -77,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Evidence Traceability Ledger: Technical Documentation - PlanExe Documentation" />
+<meta property="og:title" content="79 multiple api keys - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/42-evidence-traceability-ledger.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/79-multiple-api-keys.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/42-evidence-traceability-ledger/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/79-multiple-api-keys/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Evidence Traceability Ledger: Technical Documentation - PlanExe Documentation" />
+<meta property="twitter:title" content="79 multiple api keys - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/42-evidence-traceability-ledger.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/79-multiple-api-keys.png" />
 </head>
   
   
@@ -107,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evidence-traceability-ledger-technical-documentation" class="md-skip">
+        <a href="#proposal-79-multiple-api-keys" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Evidence Traceability Ledger: Technical Documentation
+              79 multiple api keys
             
           </span>
         </div>
@@ -3426,44 +3422,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    42 evidence traceability ledger
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
         
   
   
@@ -3486,364 +3448,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Use Cases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Architecture
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="System Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-claim-extraction-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Claim Extraction Pipeline
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-evidence-mapping-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Evidence Mapping &amp; Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-the-ledger-storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. The Ledger (Storage)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-tables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Tables
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Tables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#claims" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        claims
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evidence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ledger_entries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ledger_entries
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#post-apiledgerextract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/ledger/extract
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-apiledgerlink" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/ledger/link
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-apiledgerreportplan_id" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /api/ledger/report/{plan_id}
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-freshness-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm: Freshness Scoring
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Interface
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Interface">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#sidebar-ledger" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sidebar Ledger
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#audit-view" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Audit View
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-roadmap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Roadmap
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-claims-pipeline-foundation-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Claims Pipeline Foundation (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-evidence-ingestion-scoring-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Evidence Ingestion + Scoring (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-ledger-integrity-audit-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Ledger Integrity + Audit (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-product-integration-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Product Integration (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#suggested-quality-thresholds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Suggested quality thresholds
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-hardening" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model hardening
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-safeguards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational safeguards
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5197,10 +4801,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../79-multiple-api-keys/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    79 multiple api keys
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -5216,6 +4847,392 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Origin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-schema-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user_api_key-table-add-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user_api_key table — add label
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task_item-table-add-api_key_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        task_item table — add api_key_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credit_history-table-add-api_key_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        credit_history table — add api_key_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schema-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Migrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema Migrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-function-ensure_multi_api_key_columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New function: ensure_multi_api_key_columns()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-auth-return-api_key_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend Auth — Return api_key_id
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planbilling-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan/Billing Attribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plan/Billing Attribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp_cloudhandlerspy-handle_plan_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mcp_cloud/handlers.py — handle_plan_create()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp_clouddb_queriespy-_create_plan_sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mcp_cloud/db_queries.py — _create_plan_sync()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker_plan_databaseapppy-_charge_usage_credits_once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        worker_plan_database/app.py — _charge_usage_credits_once()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-multi-key-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend — Multi-Key Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend — Multi-Key Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_get_or_create_api_key-accept-optional-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _get_or_create_api_key() — accept optional label
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-route-new-post-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account route — new POST actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-route-per-key-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account route — per-key stats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-login-auto-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-login auto-create
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-account-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend — Account Template
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend — Account Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-key-one-time-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New-key one-time display
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-key-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create key form
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files Changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backward-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backward Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-and-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks and Mitigations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5263,10 +5280,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Status
       
     </span>
   </a>
@@ -5274,10 +5291,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#use-cases" class="md-nav__link">
+  <a href="#origin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Use Cases
+        Origin
       
     </span>
   </a>
@@ -5285,22 +5302,67 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
+  <a href="#problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        System Architecture
+        Problem
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="System Architecture">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Goals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-claim-extraction-pipeline" class="md-nav__link">
+  <a href="#database-schema-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Claim Extraction Pipeline
+        Database Schema Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Schema Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user_api_key-table-add-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user_api_key table — add label
       
     </span>
   </a>
@@ -5308,10 +5370,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-evidence-mapping-scoring" class="md-nav__link">
+  <a href="#task_item-table-add-api_key_id" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Evidence Mapping &amp; Scoring
+        task_item table — add api_key_id
       
     </span>
   </a>
@@ -5319,10 +5381,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-the-ledger-storage" class="md-nav__link">
+  <a href="#credit_history-table-add-api_key_id" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. The Ledger (Storage)
+        credit_history table — add api_key_id
       
     </span>
   </a>
@@ -5333,46 +5395,24 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#data-tables" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#schema-migrations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Tables
+        Schema Migrations
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Data Tables">
+    <nav class="md-nav" aria-label="Schema Migrations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#claims" class="md-nav__link">
+  <a href="#new-function-ensure_multi_api_key_columns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        claims
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#evidence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ledger_entries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ledger_entries
+        New function: ensure_multi_api_key_columns()
       
     </span>
   </a>
@@ -5383,24 +5423,35 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#backend-auth-return-api_key_id" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API Reference
+        Backend Auth — Return api_key_id
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="API Reference">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planbilling-attribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plan/Billing Attribution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plan/Billing Attribution">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#post-apiledgerextract" class="md-nav__link">
+  <a href="#mcp_cloudhandlerspy-handle_plan_create" class="md-nav__link">
     <span class="md-ellipsis">
       
-        POST /api/ledger/extract
+        mcp_cloud/handlers.py — handle_plan_create()
       
     </span>
   </a>
@@ -5408,10 +5459,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#post-apiledgerlink" class="md-nav__link">
+  <a href="#mcp_clouddb_queriespy-_create_plan_sync" class="md-nav__link">
     <span class="md-ellipsis">
       
-        POST /api/ledger/link
+        mcp_cloud/db_queries.py — _create_plan_sync()
       
     </span>
   </a>
@@ -5419,10 +5470,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-apiledgerreportplan_id" class="md-nav__link">
+  <a href="#worker_plan_databaseapppy-_charge_usage_credits_once" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GET /api/ledger/report/{plan_id}
+        worker_plan_database/app.py — _charge_usage_credits_once()
       
     </span>
   </a>
@@ -5433,35 +5484,24 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm-freshness-scoring" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#frontend-multi-key-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm: Freshness Scoring
+        Frontend — Multi-Key Management
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User Interface
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Interface">
+    <nav class="md-nav" aria-label="Frontend — Multi-Key Management">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sidebar-ledger" class="md-nav__link">
+  <a href="#_get_or_create_api_key-accept-optional-label" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sidebar Ledger
+        _get_or_create_api_key() — accept optional label
       
     </span>
   </a>
@@ -5469,10 +5509,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#audit-view" class="md-nav__link">
+  <a href="#account-route-new-post-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audit View
+        Account route — new POST actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-route-per-key-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account route — per-key stats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-login-auto-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-login auto-create
       
     </span>
   </a>
@@ -5483,35 +5545,24 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#future-roadmap" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#frontend-account-template" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Future Roadmap
+        Frontend — Account Template
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+    <nav class="md-nav" aria-label="Frontend — Account Template">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-a-claims-pipeline-foundation-23-weeks" class="md-nav__link">
+  <a href="#key-table" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase A — Claims Pipeline Foundation (2–3 weeks)
+        Key table
       
     </span>
   </a>
@@ -5519,10 +5570,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-b-evidence-ingestion-scoring-23-weeks" class="md-nav__link">
+  <a href="#new-key-one-time-display" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase B — Evidence Ingestion + Scoring (2–3 weeks)
+        New-key one-time display
       
     </span>
   </a>
@@ -5530,65 +5581,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-c-ledger-integrity-audit-2-weeks" class="md-nav__link">
+  <a href="#create-key-form" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase C — Ledger Integrity + Audit (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-product-integration-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Product Integration (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#suggested-quality-thresholds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Suggested quality thresholds
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-hardening" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model hardening
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-safeguards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational safeguards
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
+        Create key form
       
     </span>
   </a>
@@ -5597,6 +5593,55 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files Changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backward-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backward Compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-and-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks and Mitigations
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5620,345 +5665,451 @@
   
 
 
-<h1 id="evidence-traceability-ledger-technical-documentation">Evidence Traceability Ledger: Technical Documentation</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-11<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Audience:</strong> Developers, Auditors, Investors  </p>
+<h1 id="proposal-79-multiple-api-keys">Proposal 79 — Multiple API Keys</h1>
+<h2 id="status">Status</h2>
+<p>Proposed</p>
+<h2 id="origin">Origin</h2>
+<p>From <code>docs/plan.md</code>:</p>
+<blockquote>
+<p>As of 2026-mar-02, the user can only have 1 api key.
+Now I have quite a few places where PlanExe is integrated, and
+I want to see stats on what api key is being used, and cost.
+Resetting the api key, and all the integrations dies.</p>
+</blockquote>
 <hr />
-<h2 id="overview">Overview</h2>
-<p>The <strong>Evidence Traceability Ledger</strong> is a core component of the PlanExe verification engine. It transforms vague claims into verifiable facts by maintaining a cryptographically-linked ledger of every claim made in a plan and its corresponding evidence.</p>
-<p>Unlike a simple citation list, this ledger systems:
-1.  <strong>Extracts atomic claims</strong> from unstructured plan text.
-2.  <strong>Scores evidence strength</strong> (Level 1-3) using automated heuristics and expert verification.
-3.  <strong>Monitors freshness</strong> of linked data sources.
-4.  <strong>Generates audit trails</strong> for investor due diligence.</p>
-<h2 id="use-cases">Use Cases</h2>
+<h2 id="problem">Problem</h2>
+<p>Today each user has at most one active <code>UserApiKey</code>. Regenerating that key revokes it — instantly breaking every integration that used it (MCP clients, CI pipelines, HTTP scripts). There is also no way to see which key triggered a plan or how much each integration is costing.</p>
+<h2 id="goals">Goals</h2>
+<ol>
+<li>Allow up to 10 active API keys per user.</li>
+<li>Each key carries an optional human-readable label (e.g. "Claude Code", "CI pipeline").</li>
+<li>Plans and credit ledger entries are attributed to the key that created them.</li>
+<li>The account page shows per-key stats: plans created, credits used, last used.</li>
+<li>Keys can be individually revoked without affecting the others.</li>
+</ol>
+<h2 id="non-goals">Non-Goals</h2>
 <ul>
-<li><strong>Investor Diligence:</strong> "Show me the source for the $4.2B TAM claim and when it was last verified."</li>
-<li><strong>Living Plans:</strong> "Alert me if the regulatory approval document expires."</li>
-<li><strong>Automated Verification:</strong> "Reject any plan with &gt;20% Level 1 (anecdotal) evidence."</li>
+<li>Per-key rate limiting or spending caps (future work).</li>
+<li>Key scoping / permissions (all keys have full account access).</li>
+<li>Renaming the database table <code>user_api_key</code> (it stays as-is).</li>
 </ul>
-<h2 id="system-architecture">System Architecture</h2>
-<h3 id="1-claim-extraction-pipeline">1. Claim Extraction Pipeline</h3>
-<p>When a plan is submitted or updated:
-1.  <strong>Parsing:</strong> The plan markdown is parsed into semantic blocks.
-2.  <strong>Claim Detection:</strong> An LLM (<code>gemini-2.0-flash</code>) identifies discrete factual claims (e.g., "Market grows at 5% CAGR", "Patent #12345 granted").
-3.  <strong>Fingerprinting:</strong> Each claim is hashed for change detection.</p>
-<h3 id="2-evidence-mapping-scoring">2. Evidence Mapping &amp; Scoring</h3>
-<p>Each extracted claim must be linked to an evidence source.
--   <strong>Automated Linking:</strong> URL scraping and semantic matching.
--   <strong>Manual Linking:</strong> User uploads documents (PDFs, contracts).
--   <strong>Scoring Engine:</strong> Assigns a <code>VerificationLevel</code> (1-3) based on source reliability.</p>
-<h3 id="3-the-ledger-storage">3. The Ledger (Storage)</h3>
-<p>A <code>ledger_entries</code> table tracks the state of every claim-evidence pair over time, creating an immutable history of truth.</p>
 <hr />
-<h2 id="data-tables">Data Tables</h2>
-<h3 id="claims"><code>claims</code></h3>
-<p>Stores atomic assertions extracted from the plan.</p>
+<h2 id="design">Design</h2>
+<h3 id="database-schema-changes">Database Schema Changes</h3>
+<p>All new columns are <strong>nullable</strong> so existing rows are unaffected and no data backfill is needed.</p>
+<h4 id="user_api_key-table-add-label"><code>user_api_key</code> table — add <code>label</code></h4>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
+<th>Column</th>
+<th>Type</th>
+<th>Default</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>plan_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Plans</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>content</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">The extracted text of the claim</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>location_ref</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">Pointer to section/line in the plan</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>created_at</code></td>
-<td style="text-align: left;">TIMESTAMPTZ</td>
-<td style="text-align: left;">Creation timestamp</td>
+<td><code>label</code></td>
+<td><code>VARCHAR(128)</code></td>
+<td><code>NULL</code></td>
+<td>Human-readable name for the key</td>
 </tr>
 </tbody>
 </table>
-<h3 id="evidence"><code>evidence</code></h3>
-<p>Stores the source material data.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>source_type</code></td>
-<td style="text-align: left;">ENUM</td>
-<td style="text-align: left;"><code>url</code>, <code>document</code>, <code>database_record</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>uri</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">URL or S3 path</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>snapshot_hash</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">SHA-256 of the content at time of capture</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>verification_level</code></td>
-<td style="text-align: left;">INT</td>
-<td style="text-align: left;">1 (Weak) to 3 (Strong)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>last_verified_at</code></td>
-<td style="text-align: left;">TIMESTAMPTZ</td>
-<td style="text-align: left;">Freshness timestamp</td>
-</tr>
-</tbody>
-</table>
-<h3 id="ledger_entries"><code>ledger_entries</code></h3>
-<p>The join table linking claims to evidence with status.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>claim_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Claims</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>evidence_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Evidence</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>status</code></td>
-<td style="text-align: left;">ENUM</td>
-<td style="text-align: left;"><code>verified</code>, <code>disputed</code>, <code>stale</code>, <code>missing</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>verifier_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to User or Agent</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>notes</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">Reviewer comments</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="api-reference">API Reference</h2>
-<h3 id="post-apiledgerextract"><code>POST /api/ledger/extract</code></h3>
-<p>Trigger manual extraction of claims for a plan section.</p>
-<p><strong>Request:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid...&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;section_content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The market is projected to reach $50B by 2030...&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;force_refresh&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
-</code></pre></div></p>
-<p><strong>Response:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;claims&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;claim_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c_123&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Market projected to reach $50B by 2030&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;suggested_evidence_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;market_report&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
-</code></pre></div></p>
-<h3 id="post-apiledgerlink"><code>POST /api/ledger/link</code></h3>
-<p>Attach evidence to a specific claim.</p>
-<p><strong>Request:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;claim_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c_123&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;evidence_uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://doi.org/10.1038/s41586-020-2012-7&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;evidence_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;url&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
-</code></pre></div></p>
-<h3 id="get-apiledgerreportplan_id"><code>GET /api/ledger/report/{plan_id}</code></h3>
-<p>Get the full traceability report.</p>
-<p><strong>Response:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid...&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;overall_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">88</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;claims_total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&quot;claims_verified&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&quot;freshness_concerns&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&quot;entries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">      </span><span class="nt">&quot;claim&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patent #12345 granted&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;verified&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">      </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;USPTO Database&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">      </span><span class="nt">&quot;last_checked&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-10&quot;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">}</span>
-</code></pre></div></p>
-<hr />
-<h2 id="algorithm-freshness-scoring">Algorithm: Freshness Scoring</h2>
-<p>Evidence degrades over time. The system calculates a <code>freshness_score</code> (0.0 - 1.0) daily.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">calculate_freshness</span><span class="p">(</span><span class="n">evidence_type</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">last_verified</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">age_days</span> <span class="o">=</span> <span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">last_verified</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="c1"># Decay rates based on type</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">half_life_days</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="s1">&#39;financial_statement&#39;</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>  <span class="c1"># Quarterly</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="s1">&#39;market_report&#39;</span><span class="p">:</span> <span class="mi">365</span><span class="p">,</span>       <span class="c1"># Yearly</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="s1">&#39;news_article&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>         <span class="c1"># Fast moving</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="s1">&#39;legal_contract&#39;</span><span class="p">:</span> <span class="mi">1095</span><span class="p">,</span>     <span class="c1"># 3 Years</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="s1">&#39;academic_paper&#39;</span><span class="p">:</span> <span class="mi">1825</span>      <span class="c1"># 5 Years</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="p">}</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">tau</span> <span class="o">=</span> <span class="n">half_life_days</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">evidence_type</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">score</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="p">(</span><span class="n">age_days</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="k">return</span> <span class="n">score</span>
+<p>In the model (<code>database_api/model_user_api_key.py</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># New column — optional human label for the key.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">label</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">128</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-<p>Using this score, the UI flags items as "Stale" (score &lt; 0.5) or "Expired" (score &lt; 0.1).</p>
+<p>Display fallback: if <code>label</code> is NULL or empty, the UI shows <code>"Untitled"</code>.</p>
+<h4 id="task_item-table-add-api_key_id"><code>task_item</code> table — add <code>api_key_id</code></h4>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Default</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_key_id</code></td>
+<td><code>VARCHAR(36)</code></td>
+<td><code>NULL</code></td>
+<td>UUID of the <code>UserApiKey</code> that created this plan</td>
+</tr>
+</tbody>
+</table>
+<p>In the model (<code>database_api/model_planitem.py</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Which API key created this plan (NULL for legacy/frontend plans).</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">api_key_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">36</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="credit_history-table-add-api_key_id"><code>credit_history</code> table — add <code>api_key_id</code></h4>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Default</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_key_id</code></td>
+<td><code>VARCHAR(36)</code></td>
+<td><code>NULL</code></td>
+<td>UUID of the key whose plan incurred this charge</td>
+</tr>
+</tbody>
+</table>
+<p>In the model (<code>database_api/model_credit_history.py</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Which API key&#39;s plan incurred this charge (NULL for purchases/legacy).</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">api_key_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">36</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="schema-migrations">Schema Migrations</h3>
+<p>Follow the existing <code>ALTER TABLE ADD COLUMN IF NOT EXISTS</code> pattern used throughout the codebase. A single new function runs on startup in all three services.</p>
+<h4 id="new-function-ensure_multi_api_key_columns">New function: <code>ensure_multi_api_key_columns()</code></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">ensure_multi_api_key_columns</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Add columns for multi-API-key support (idempotent).&quot;&quot;&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">statements</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="s2">&quot;ALTER TABLE user_api_key ADD COLUMN IF NOT EXISTS label VARCHAR(128)&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="s2">&quot;ALTER TABLE task_item ADD COLUMN IF NOT EXISTS api_key_id VARCHAR(36)&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="s2">&quot;ALTER TABLE credit_history ADD COLUMN IF NOT EXISTS api_key_id VARCHAR(36)&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">with</span> <span class="n">db</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">statements</span><span class="p">:</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                <span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">text</span><span class="p">(</span><span class="n">stmt</span><span class="p">))</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Schema update failed for </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">stmt</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Where it is called</strong> (three places, mirroring the existing pattern):</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Call site</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mcp_cloud/db_setup.py</code></td>
+<td>Module-level <code>with app.app_context():</code> block (line 76–77) — after <code>ensure_planitem_stop_columns()</code></td>
+</tr>
+<tr>
+<td><code>worker_plan_database/app.py</code></td>
+<td>Inside <code>startup_worker()</code> (line 991) — after <code>ensure_fractional_credit_columns()</code></td>
+</tr>
+<tr>
+<td><code>frontend_multi_user/src/app.py</code></td>
+<td>Inside <code>_setup_db()</code> (line 506) — after <code>_ensure_user_account_columns()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="backend-auth-return-api_key_id">Backend Auth — Return <code>api_key_id</code></h3>
+<p><strong>File:</strong> <code>mcp_cloud/auth.py</code> — <code>_resolve_user_from_api_key()</code></p>
+<p>Currently returns:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="s2">&quot;credits_balance&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">credits_balance</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">),</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>Change to also include the key's UUID:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="s2">&quot;credits_balance&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">credits_balance</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">),</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="s2">&quot;api_key_id&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">api_key</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>No callers inspect unknown keys in this dict, so adding a field is safe.</p>
+<h3 id="planbilling-attribution">Plan/Billing Attribution</h3>
+<h4 id="mcp_cloudhandlerspy-handle_plan_create"><code>mcp_cloud/handlers.py</code> — <code>handle_plan_create()</code></h4>
+<p>Currently passes metadata:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">user_context</span><span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">])}</span> <span class="k">if</span> <span class="n">user_context</span> <span class="k">else</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Change to also forward the key ID:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">user_context</span><span class="p">[</span><span class="s2">&quot;user_id&quot;</span><span class="p">]),</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="s2">&quot;api_key_id&quot;</span><span class="p">:</span> <span class="n">user_context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;api_key_id&quot;</span><span class="p">),</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span> <span class="k">if</span> <span class="n">user_context</span> <span class="k">else</span> <span class="kc">None</span>
+</code></pre></div>
+<h4 id="mcp_clouddb_queriespy-_create_plan_sync"><code>mcp_cloud/db_queries.py</code> — <code>_create_plan_sync()</code></h4>
+<p>Currently creates the PlanItem without <code>api_key_id</code>. Add:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">plan</span> <span class="o">=</span> <span class="n">PlanItem</span><span class="p">(</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">state</span><span class="o">=</span><span class="n">PlanState</span><span class="o">.</span><span class="n">pending</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">user_id</span><span class="o">=</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;user_id&quot;</span><span class="p">,</span> <span class="s2">&quot;admin&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">metadata</span> <span class="k">else</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">api_key_id</span><span class="o">=</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;api_key_id&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">metadata</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>   <span class="c1"># ← new</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">parameters</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">)</span>
+</code></pre></div>
+<p>Also include <code>api_key_id</code> in the <code>event_context</code> dict for observability.</p>
+<h4 id="worker_plan_databaseapppy-_charge_usage_credits_once"><code>worker_plan_database/app.py</code> — <code>_charge_usage_credits_once()</code></h4>
+<p>When creating the <code>CreditHistory</code> ledger entry (line 565–572), propagate <code>api_key_id</code> from the task:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">ledger</span> <span class="o">=</span> <span class="n">_new_model</span><span class="p">(</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">CreditHistory</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">user_id</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">delta</span><span class="o">=-</span><span class="n">charged_credits</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;plan_created_with_usage_cost&quot;</span> <span class="k">if</span> <span class="n">success</span> <span class="k">else</span> <span class="s2">&quot;plan_failed_usage_cost&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">source</span><span class="o">=</span><span class="s2">&quot;usage_billing&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">external_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">task_id</span><span class="p">),</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">api_key_id</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="s2">&quot;api_key_id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>   <span class="c1"># ← new</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="frontend-multi-key-management">Frontend — Multi-Key Management</h3>
+<p><strong>File:</strong> <code>frontend_multi_user/src/app.py</code></p>
+<h4 id="_get_or_create_api_key-accept-optional-label"><code>_get_or_create_api_key()</code> — accept optional label</h4>
+<p>Current signature:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_get_or_create_api_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">UserAccount</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</code></pre></div>
+<p>New signature:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_get_or_create_api_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">UserAccount</span><span class="p">,</span> <span class="n">label</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</code></pre></div>
+<p>Changes:
+- Remove the early-return guard that checks for an existing active key (the whole point is to allow multiple keys).
+- Instead, enforce a max-10-key limit:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">active_count</span> <span class="o">=</span> <span class="n">UserApiKey</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">revoked_at</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">if</span> <span class="n">active_count</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+</code></pre></div>
+<ul>
+<li>Pass <code>label</code> when creating the <code>UserApiKey</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">api_key</span> <span class="o">=</span> <span class="n">_new_model</span><span class="p">(</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">UserApiKey</span><span class="p">,</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">user_id</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="n">key_hash</span><span class="o">=</span><span class="n">key_hash</span><span class="p">,</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="n">key_prefix</span><span class="o">=</span><span class="n">key_prefix</span><span class="p">,</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="n">label</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()[:</span><span class="mi">128</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">)</span>
+</code></pre></div>
+<h4 id="account-route-new-post-actions">Account route — new POST actions</h4>
+<p>Replace the single <code>regenerate_api_key</code> action with two actions:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_api_key</code></td>
+<td>Call <code>_get_or_create_api_key(user, label=request.form.get("label"))</code>. If the returned key is non-empty, store in session for one-time display. If empty (limit reached), flash an error.</td>
+</tr>
+<tr>
+<td><code>revoke_api_key</code></td>
+<td>Receive <code>key_id</code> from the form. Look up the <code>UserApiKey</code> by id, verify it belongs to the current user and is not already revoked. Set <code>revoked_at = now</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Keep the existing <code>regenerate_api_key</code> action working for backwards compatibility (it revokes all keys and creates a new one), but the UI will no longer send it.</p>
+<h4 id="account-route-per-key-stats">Account route — per-key stats</h4>
+<p>Compute stats to pass to the template:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">active_keys</span> <span class="o">=</span> <span class="p">(</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">UserApiKey</span><span class="o">.</span><span class="n">query</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">revoked_at</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">UserApiKey</span><span class="o">.</span><span class="n">created_at</span><span class="o">.</span><span class="n">asc</span><span class="p">())</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">)</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="c1"># Per-key plan counts</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">func</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">plan_counts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PlanItem</span><span class="o">.</span><span class="n">api_key_id</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">PlanItem</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>    <span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PlanItem</span><span class="o">.</span><span class="n">api_key_id</span><span class="o">.</span><span class="n">in_</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">active_keys</span><span class="p">]))</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">PlanItem</span><span class="o">.</span><span class="n">api_key_id</span><span class="p">)</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    <span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="p">)</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="c1"># Per-key credit usage (sum of negative deltas)</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="n">credit_usage</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">CreditHistory</span><span class="o">.</span><span class="n">api_key_id</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">CreditHistory</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>    <span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>        <span class="n">CreditHistory</span><span class="o">.</span><span class="n">api_key_id</span><span class="o">.</span><span class="n">in_</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">active_keys</span><span class="p">]),</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>        <span class="n">CreditHistory</span><span class="o">.</span><span class="n">delta</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    <span class="p">)</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>    <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">CreditHistory</span><span class="o">.</span><span class="n">api_key_id</span><span class="p">)</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    <span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="p">)</span>
+</code></pre></div>
+<p>Pass <code>active_keys</code>, <code>plan_counts</code>, <code>credit_usage</code>, and <code>can_create_key = len(active_keys) &lt; 10</code> to the template.</p>
+<h4 id="first-login-auto-create">First-login auto-create</h4>
+<p>The OAuth callback currently calls <code>_get_or_create_api_key(user)</code> which returns empty string if a key exists. With the guard removed, it would create a new key on every login. Fix: only call it if the user has zero active keys:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">has_key</span> <span class="o">=</span> <span class="n">UserApiKey</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">revoked_at</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">has_key</span><span class="p">:</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="n">new_api_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_or_create_api_key</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="k">if</span> <span class="n">new_api_key</span><span class="p">:</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        <span class="n">session</span><span class="p">[</span><span class="s2">&quot;new_api_key&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_api_key</span>
+</code></pre></div>
+<h3 id="frontend-account-template">Frontend — Account Template</h3>
+<p><strong>File:</strong> <code>frontend_multi_user/templates/account.html</code></p>
+<p>Replace the current single-key section with a multi-key table and create form.</p>
+<h4 id="key-table">Key table</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;payments-table&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Label<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Key<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Created<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Last Used<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Plans<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Credits Used<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>        {% for key in active_keys %}
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ key.label or &quot;Untitled&quot; }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;key-prefix&quot;</span><span class="p">&gt;</span>{{ key.key_prefix }}...<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ key.created_at.strftime(&quot;%Y-%m-%d&quot;) if key.created_at else &quot;—&quot; }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ key.last_used_at.strftime(&quot;%Y-%m-%d&quot;) if key.last_used_at else &quot;Never&quot; }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ plan_counts.get(key.id|string, 0) }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ format_credits(credit_usage.get(key.id|string, 0)) }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>                <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin:0;&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;csrf_token&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ csrf_token() }}&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;action&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;revoke_api_key&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>                    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;key_id&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ key.id }}&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>                    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn-acct btn-acct-secondary&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:#991b1b;&quot;</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>                        <span class="na">onclick</span><span class="o">=</span><span class="s">&quot;return confirm(&#39;Revoke this key? Integrations using it will stop working.&#39;)&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>                        Revoke
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>                    <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>                <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>        {% endfor %}
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="new-key-one-time-display">New-key one-time display</h4>
+<p>Kept as-is (the <code>new_api_key</code> session variable pattern already works).</p>
+<h4 id="create-key-form">Create key form</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>{% if can_create_key %}
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-top: 12px; display: flex; gap: 8px; align-items: flex-end;&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;csrf_token&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{ csrf_token() }}&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;action&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;create_api_key&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;billing-input-group&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;key-label&quot;</span><span class="p">&gt;</span>Label (optional)<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;label&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;key-label&quot;</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">&quot;128&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;e.g. Claude Code&quot;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>            <span class="na">style</span><span class="o">=</span><span class="s">&quot;width: 200px; padding: 8px 10px; border: 1px solid var(--color-border); border-radius: var(--radius); font-size: 0.9rem;&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn-acct btn-acct-primary&quot;</span><span class="p">&gt;</span>Create API Key<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>{% else %}
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;key-hint&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin-top: 12px;&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    Maximum of 10 keys reached. Revoke an unused key to create a new one.
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>{% endif %}
+</code></pre></div>
 <hr />
-<h2 id="user-interface">User Interface</h2>
-<h3 id="sidebar-ledger">Sidebar Ledger</h3>
-<p>A slide-out panel in the plan editor shows the "Evidence Health" of the current section.
--   <strong>Green checkmarks</strong> for verified Level 3 claims.
--   <strong>Yellow warnings</strong> for stale evidence.
--   <strong>Red alerts</strong> for unverified claims &gt; 48 hours old.</p>
-<h3 id="audit-view">Audit View</h3>
-<p>A specialized view for investors that hides the prose and focuses on the <code>Claim -&gt; Evidence</code> graph.
--   Filters by "Verification Level".
--   "Challenge" button to requesting updated evidence for specific claims.</p>
-<h2 id="future-roadmap">Future Roadmap</h2>
-<ol>
-<li><strong>Blockchain Anchoring:</strong> Hash ledger entries to a public chain for tamper-proof history.</li>
-<li><strong>Automated Crawler:</strong> Agent that periodically re-checks URLs for 404s or content changes.</li>
-<li><strong>Citation Graph:</strong> Visualize how one piece of evidence supports multiple claims across different plans (e.g., a shared market report).</li>
-</ol>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-claims-pipeline-foundation-23-weeks">Phase A — Claims Pipeline Foundation (2–3 weeks)</h3>
-<ol>
-<li>Add section-aware parser for plan markdown/JSON artifacts.</li>
-<li>Implement claim extraction with stable claim IDs:</li>
-<li>hash = normalized claim text + location_ref + plan_version</li>
-<li>Create confidence classifier for extracted claims:</li>
-<li>factual numeric</li>
-<li>factual non-numeric</li>
-<li>normative/opinion (excluded from strict ledger)</li>
-</ol>
-<h3 id="phase-b-evidence-ingestion-scoring-23-weeks">Phase B — Evidence Ingestion + Scoring (2–3 weeks)</h3>
-<ol>
-<li>Build evidence adapters:</li>
-<li>URL fetch + snapshot hash</li>
-<li>document upload + OCR extraction</li>
-<li>
-<p>structured source connectors (registry/DB)</p>
-</li>
-<li>
-<p>Implement verification-level scoring policy:</p>
-</li>
-<li>Level 1: weak/secondary</li>
-<li>Level 2: credible but indirect</li>
-<li>
-<p>Level 3: primary authoritative evidence</p>
-</li>
-<li>
-<p>Introduce freshness profile by evidence type with default half-life values.</p>
-</li>
-</ol>
-<h3 id="phase-c-ledger-integrity-audit-2-weeks">Phase C — Ledger Integrity + Audit (2 weeks)</h3>
-<ol>
-<li>Append-only <code>ledger_entries</code> with immutable versioning.</li>
-<li>Add digital signature of report bundle and ledger digest.</li>
-<li>Implement dispute flow:</li>
-<li>mark <code>disputed</code></li>
-<li>assign reviewer</li>
-<li>record resolution actions</li>
-</ol>
-<h3 id="phase-d-product-integration-2-weeks">Phase D — Product Integration (2 weeks)</h3>
-<ol>
-<li>Add inline plan UI badges per claim:</li>
-<li>verified / stale / missing / disputed</li>
-<li>Add investor audit export endpoint:</li>
-<li>summary + full trace tables + signatures</li>
-<li>Add policy gate:</li>
-<li>block “investor-ready” status if verification coverage below threshold</li>
-</ol>
-<h3 id="suggested-quality-thresholds">Suggested quality thresholds</h3>
+<h2 id="files-changed">Files Changed</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>database_api/model_user_api_key.py</code></td>
+<td>Add <code>label</code> column</td>
+</tr>
+<tr>
+<td><code>database_api/model_planitem.py</code></td>
+<td>Add <code>api_key_id</code> column</td>
+</tr>
+<tr>
+<td><code>database_api/model_credit_history.py</code></td>
+<td>Add <code>api_key_id</code> column</td>
+</tr>
+<tr>
+<td><code>mcp_cloud/db_setup.py</code></td>
+<td>Add <code>ensure_multi_api_key_columns()</code>, call on startup</td>
+</tr>
+<tr>
+<td><code>mcp_cloud/auth.py</code></td>
+<td>Return <code>api_key_id</code> in user_context dict</td>
+</tr>
+<tr>
+<td><code>mcp_cloud/handlers.py</code></td>
+<td>Pass <code>api_key_id</code> in metadata to <code>_create_plan_sync</code></td>
+</tr>
+<tr>
+<td><code>mcp_cloud/db_queries.py</code></td>
+<td>Store <code>api_key_id</code> on <code>PlanItem</code></td>
+</tr>
+<tr>
+<td><code>worker_plan_database/app.py</code></td>
+<td>Call migration on startup; store <code>api_key_id</code> on <code>CreditHistory</code> ledger entries</td>
+</tr>
+<tr>
+<td><code>frontend_multi_user/src/app.py</code></td>
+<td>Multi-key limit, <code>create_api_key</code>/<code>revoke_api_key</code> actions, per-key stats, label parameter</td>
+</tr>
+<tr>
+<td><code>frontend_multi_user/templates/account.html</code></td>
+<td>Multi-key table, create form, per-key stats display</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="backward-compatibility">Backward Compatibility</h2>
 <ul>
-<li>
-<blockquote>
-<p>=80% claims must have evidence link</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>=60% claims must be Level 2+</p>
-</blockquote>
-</li>
-<li>0 critical claims in <code>missing</code> or <code>disputed</code> state</li>
+<li><strong>All new columns are nullable.</strong> Existing single-key users are unaffected.</li>
+<li><strong><code>api_key_id = NULL</code></strong> on old plans and ledger entries simply means "created before multi-key tracking" — these rows are excluded from per-key stats and attributed to no specific key.</li>
+<li><strong>Label fallback:</strong> NULL or empty labels display as "Untitled" in the UI.</li>
+<li><strong>First-login behavior:</strong> Unchanged — a first-time OAuth user still gets one auto-generated key (now labeled "Default").</li>
+<li><strong>MCP API contract:</strong> <code>user_api_key</code> field in <code>plan_create</code>/<code>plan_list</code> works exactly as before. No new required fields.</li>
 </ul>
-<h3 id="data-model-hardening">Data model hardening</h3>
-<ul>
-<li>Add <code>plan_version</code> to claims and ledger rows</li>
-<li>Add <code>source_fetch_status</code> and <code>source_http_code</code></li>
-<li>Add <code>evidence_expiry_at</code> for freshness checks</li>
-</ul>
-<h3 id="operational-safeguards">Operational safeguards</h3>
-<ul>
-<li>Cache source snapshots to avoid link rot dependence</li>
-<li>Rate-limit external crawlers</li>
-<li>PII redaction on uploaded documents before indexing</li>
-</ul>
-<h3 id="validation-checklist">Validation checklist</h3>
-<ul>
-<li>Claim extraction precision/recall benchmarks</li>
-<li>Deterministic claim IDs across reruns</li>
-<li>Tamper detection test via signature mismatch</li>
-<li>Freshness state transition tests</li>
-<li>Audit export completeness checks</li>
-</ul>
+<hr />
+<h2 id="verification">Verification</h2>
+<ol>
+<li><strong>Existing single-key user:</strong> Log in, verify account page shows the existing key in the table with "Untitled" label. Old plans show 0 in the per-key stats (since they have no <code>api_key_id</code>).</li>
+<li><strong>Create multiple keys:</strong> Use the create form to add keys with different labels. Verify each gets a unique prefix and is listed in the table.</li>
+<li><strong>Revoke one key:</strong> Click Revoke on one key. Verify it disappears from the table. Verify other keys still work via MCP.</li>
+<li><strong>Per-key attribution:</strong> Create plans using different API keys. Verify the account page shows correct plan counts and credit usage per key.</li>
+<li><strong>Max limit:</strong> Create 10 keys. Verify the "Create API Key" button is replaced by the limit message.</li>
+<li><strong>Run existing tests:</strong> <code>pytest database_api/tests/ mcp_cloud/tests/ frontend_multi_user/tests/ -v</code> — all pass.</li>
+<li><strong>Migration idempotency:</strong> Restart each service multiple times. Verify no errors from <code>ALTER TABLE ADD COLUMN IF NOT EXISTS</code>.</li>
+</ol>
+<hr />
+<h2 id="risks-and-mitigations">Risks and Mitigations</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Existing <code>_get_or_create_api_key</code> callers assume at most one key</td>
+<td>Audit all call sites (OAuth callback, <code>regenerate_api_key</code> action). OAuth callback is updated to check <code>has_key</code> before calling.</td>
+</tr>
+<tr>
+<td>Performance of per-key stats queries on large accounts</td>
+<td>Queries use indexed <code>api_key_id</code> columns and are bounded by the 10-key limit. Stats are computed per page load, not in a hot loop.</td>
+</tr>
+<tr>
+<td><code>api_key_id</code> is <code>VARCHAR(36)</code> instead of a UUID foreign key</td>
+<td>Matches the existing <code>user_id</code> pattern on <code>PlanItem</code> (also a string, not a FK). Avoids FK constraint complexity across services. Index provides lookup performance.</td>
+</tr>
+<tr>
+<td>User accidentally revokes their only key</td>
+<td>The UI shows a confirmation dialog. Creating a new key is one click away.</td>
+</tr>
+</tbody>
+</table>
 
 
 
 
 
 
-
-  
-  
 
 
 
