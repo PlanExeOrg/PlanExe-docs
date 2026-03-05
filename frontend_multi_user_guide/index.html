@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/openclaw-integration/">
+        <link rel="canonical" href="https://docs.planexe.org/frontend_multi_user_guide/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>OpenClaw MCP Integration - PlanExe Documentation</title>
+        <title>Frontend Multi-User Developer Guide - PlanExe Documentation</title>
       
     
     
@@ -71,17 +71,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="OpenClaw MCP Integration - PlanExe Documentation" />
+<meta property="og:title" content="Frontend Multi-User Developer Guide - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/openclaw-integration.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/frontend_multi_user_guide.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/openclaw-integration/" />
+<meta property="og:url" content="https://docs.planexe.org/frontend_multi_user_guide/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="OpenClaw MCP Integration - PlanExe Documentation" />
+<meta property="twitter:title" content="Frontend Multi-User Developer Guide - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/openclaw-integration.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/frontend_multi_user_guide.png" />
 </head>
   
   
@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openclaw-mcp-integration" class="md-skip">
+        <a href="#frontend-multi-user-developer-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -136,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenClaw MCP Integration
+              Frontend Multi-User Developer Guide
             
           </span>
         </div>
@@ -4912,10 +4912,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#template-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Template Hierarchy
       
     </span>
   </a>
@@ -4923,34 +4923,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-scenarios" class="md-nav__link">
+  <a href="#authentication-states" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup Scenarios
+        Authentication States
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Setup Scenarios">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#scenario-a-cloud-hosted-mcp-service" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nav-bar-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scenario A: Cloud-Hosted MCP Service
+        Nav Bar Behavior
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scenario A: Cloud-Hosted MCP Service">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Routes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Routes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#public-no-login-required" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Public (no login required)
       
     </span>
   </a>
@@ -4958,10 +4968,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#authenticated-login-required" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Authenticated (login required)
       
     </span>
   </a>
@@ -4969,10 +4979,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#admin-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usage
+        Admin only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#billing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Billing
       
     </span>
   </a>
@@ -4983,24 +5004,24 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#scenario-b-remote-docker-deployment" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#account-page" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scenario B: Remote Docker Deployment
+        Account Page
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scenario B: Remote Docker Deployment">
+    <nav class="md-nav" aria-label="Account Page">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prerequisites_1" class="md-nav__link">
+  <a href="#post-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        POST Actions
       
     </span>
   </a>
@@ -5008,32 +5029,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setup-on-remote-machine" class="md-nav__link">
+  <a href="#key-table-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup on Remote Machine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration-in-openclaw" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration in OpenClaw
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usage_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Usage
+        Key Table UI
       
     </span>
   </a>
@@ -5044,24 +5043,24 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#scenario-c-local-docker-deployment" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#billing-and-per-key-stats" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scenario C: Local Docker Deployment
+        Billing and Per-Key Stats
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scenario C: Local Docker Deployment">
+    <nav class="md-nav" aria-label="Billing and Per-Key Stats">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#prerequisites_2" class="md-nav__link">
+  <a href="#plan-creation-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Plan creation paths
       
     </span>
   </a>
@@ -5069,10 +5068,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#plan-retry-attribution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup
+        Plan retry attribution
       
     </span>
   </a>
@@ -5080,10 +5079,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuration-in-openclaw_1" class="md-nav__link">
+  <a href="#incremental-billing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration in OpenClaw
+        Incremental billing
       
     </span>
   </a>
@@ -5091,10 +5090,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#usage_2" class="md-nav__link">
+  <a href="#billing-source-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usage
+        Billing source values
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-backward-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin backward compatibility
       
     </span>
   </a>
@@ -5105,17 +5115,12 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
         <li class="md-nav__item">
-  <a href="#key-notes" class="md-nav__link">
+  <a href="#database-migrations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Notes
+        Database Migrations
       
     </span>
   </a>
@@ -5123,10 +5128,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#invoking-planexe-tools" class="md-nav__link">
+  <a href="#session-and-login" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Invoking PlanExe Tools
+        Session and Login
       
     </span>
   </a>
@@ -5134,10 +5139,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#api-key-secret-visibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        API Key Secret Visibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-access-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Access Mode
       
     </span>
   </a>
@@ -5164,100 +5180,348 @@
   
 
 
-<h1 id="openclaw-mcp-integration">OpenClaw MCP Integration</h1>
-<h2 id="overview">Overview</h2>
-<p>PlanExe exposes a Model Context Protocol (MCP) interface that allows OpenClaw to connect and access PlanExe's powerful planning capabilities. OpenClaw users can interact with PlanExe tools through the dedicated <code>planexe-mcp</code> skill, which is available on ClawHub.</p>
-<p>The integration supports three deployment scenarios:</p>
+<h1 id="frontend-multi-user-developer-guide">Frontend Multi-User Developer Guide</h1>
+<p>How <code>frontend_multi_user</code> works — page structure, authentication states, nav bar behavior, and route map.</p>
+<h2 id="template-hierarchy">Template Hierarchy</h2>
+<p>All pages extend <code>base.html</code>, which provides the site header (nav bar), main content area, and footer.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>base.html
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── index.html          Home / dashboard
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── login.html          Sign-in page (admin + OAuth providers)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── account.html        API keys, credits, billing
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── plan_list.html      &quot;Plans&quot; page — list of user&#39;s plans
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── plan_iframe.html    Single plan detail (report viewer)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── models.html         Model profile browser
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── run_via_database.html  &quot;Start New Plan&quot; form
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── demo_run.html       Quick demo form (no login needed in open-access mode)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── check_is_working.html  /healthcheck diagnostic
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>└── ping.html           SSE connectivity test
+</code></pre></div>
+<h2 id="authentication-states">Authentication States</h2>
+<p>The app has three user states. Every template receives <code>current_user_name</code> and <code>current_user</code> via the <code>inject_current_user_name</code> context processor (defined in <code>app.py</code>).</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th><code>current_user_name</code></th>
+<th><code>current_user.is_admin</code></th>
+<th>How it's set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Logged out</strong></td>
+<td><code>None</code></td>
+<td>N/A</td>
+<td>Not authenticated</td>
+</tr>
+<tr>
+<td><strong>Admin</strong></td>
+<td><code>"Admin"</code></td>
+<td><code>True</code></td>
+<td>Username/password login via <code>PLANEXE_FRONTEND_MULTIUSER_ADMIN_USERNAME/PASSWORD</code> env vars</td>
+</tr>
+<tr>
+<td><strong>OAuth user</strong></td>
+<td>Full name (e.g. <code>"Simon Strandgaard"</code>)</td>
+<td><code>False</code></td>
+<td>OAuth via Google, GitHub, Discord, or Telegram</td>
+</tr>
+</tbody>
+</table>
+<p>The context processor resolves the display name from the <code>UserAccount</code> model in this priority: <code>name</code> &gt; <code>given_name</code> &gt; <code>email</code> &gt; <code>"Account"</code>.</p>
+<h2 id="nav-bar-behavior">Nav Bar Behavior</h2>
+<p>The nav bar in <code>base.html</code> adapts to the authentication state:</p>
+<p><strong>Admin user:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[PlanExe Home]  Plans  Models  ···spacer···  Account  [Admin Panel]
+</code></pre></div>
+- "Account" links to <code>/account</code> (API keys, credits, billing)
+- "Admin Panel" is a styled button linking to the Flask-Admin panel</p>
+<p><strong>OAuth user:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[PlanExe Home]  Plans  Models  ···spacer···  Simon Strandgaard
+</code></pre></div>
+- The user's full name links to <code>/account</code>
+- No admin panel button</p>
+<p><strong>Logged out:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[PlanExe Home]  ···spacer···  About  [Sign In]
+</code></pre></div>
+- "Plans" and "Models" links are hidden
+- "About" links to planexe.org
+- "Sign In" is a styled button linking to <code>/login</code></p>
+<p>The active page is highlighted with an underline (<code>nav-active</code> class) using <code>request.endpoint</code> checks.</p>
+<h2 id="key-routes">Key Routes</h2>
+<h3 id="public-no-login-required">Public (no login required)</h3>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>Home page — landing for logged-out users, dashboard for logged-in users</td>
+</tr>
+<tr>
+<td><code>/login</code></td>
+<td>Sign-in form (admin credentials + OAuth provider buttons)</td>
+</tr>
+<tr>
+<td><code>/login/&lt;provider&gt;</code></td>
+<td>Initiates OAuth flow for the given provider</td>
+</tr>
+<tr>
+<td><code>/auth/&lt;provider&gt;/callback</code></td>
+<td>OAuth callback handler</td>
+</tr>
+<tr>
+<td><code>/healthcheck</code></td>
+<td>Returns JSON status — used by Railway health checks</td>
+</tr>
+<tr>
+<td><code>/llms.txt</code>, <code>/llm.txt</code></td>
+<td>Machine-readable site description</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authenticated-login-required">Authenticated (login required)</h3>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/account</code></td>
+<td>API key management, credit balance, billing actions</td>
+</tr>
+<tr>
+<td><code>/models</code></td>
+<td>Browse available model profiles</td>
+</tr>
+<tr>
+<td><code>/plan</code></td>
+<td>Plan list (no <code>?id=</code>) or plan detail (with <code>?id=&lt;uuid&gt;</code>)</td>
+</tr>
+<tr>
+<td><code>/plan/download/report</code></td>
+<td>Download HTML report for a plan</td>
+</tr>
+<tr>
+<td><code>/plan/download/zip</code></td>
+<td>Download zip bundle for a plan</td>
+</tr>
+<tr>
+<td><code>/plan/stop</code></td>
+<td>POST — stop a running plan</td>
+</tr>
+<tr>
+<td><code>/plan/retry</code></td>
+<td>POST — retry a failed plan</td>
+</tr>
+<tr>
+<td><code>/create_plan</code></td>
+<td>POST — start a new plan from the dashboard</td>
+</tr>
+<tr>
+<td><code>/run</code></td>
+<td>Legacy "Start New Plan" form</td>
+</tr>
+<tr>
+<td><code>/logout</code></td>
+<td>Ends the session</td>
+</tr>
+</tbody>
+</table>
+<h3 id="admin-only">Admin only</h3>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/admin/...</code></td>
+<td>Flask-Admin panel (user management, plan inspection)</td>
+</tr>
+<tr>
+<td><code>/admin/reconciliation</code></td>
+<td>Credit reconciliation report</td>
+</tr>
+<tr>
+<td><code>/admin/task/&lt;id&gt;/report</code></td>
+<td>Direct report access by task ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="billing">Billing</h3>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/billing/stripe/checkout</code></td>
+<td>POST — create Stripe checkout session</td>
+</tr>
+<tr>
+<td><code>/billing/stripe/webhook</code></td>
+<td>POST — Stripe webhook receiver</td>
+</tr>
+<tr>
+<td><code>/billing/telegram/invoice</code></td>
+<td>POST — create Telegram Stars invoice</td>
+</tr>
+<tr>
+<td><code>/billing/telegram/webhook</code></td>
+<td>POST — Telegram payment webhook</td>
+</tr>
+</tbody>
+</table>
+<h2 id="account-page">Account Page</h2>
+<p>The <code>/account</code> page shows the full API key management UI for both admin and OAuth users. Admin users see API keys but not billing (credits, payments); OAuth users see everything.</p>
+<p>Admin gets a <code>UserAccount</code> row via <code>_get_current_user_account()</code>, which creates one on first visit using a deterministic UUID (<code>uuid5</code> of the admin username). This lets admin own API keys in the same table as OAuth users.</p>
+<h3 id="post-actions">POST Actions</h3>
+<p>The <code>/account</code> route handles POST actions via a hidden <code>action</code> form field:</p>
+<ul>
+<li><code>create_api_key</code> — Create a new API key (with optional name), max 10 active keys</li>
+<li><code>rename_api_key</code> — Update the name on an existing key (click-to-edit UI with Save/Cancel)</li>
+<li><code>reset_api_key</code> — Rotate the secret on an existing key (new hash + prefix, same UUID so name/stats are preserved)</li>
+<li><code>revoke_api_key</code> — Soft-delete an API key by setting <code>revoked_at</code></li>
+<li><code>regenerate_api_key</code> — Legacy action kept for backward compatibility</li>
+<li><code>change_name</code> — Update display name</li>
+<li><code>change_email</code> — Update email</li>
+<li><code>delete_data</code> — Delete all user data (plans, keys, account)</li>
+</ul>
+<h3 id="key-table-ui">Key Table UI</h3>
+<p>Each key row has a three-dot overflow menu with "Reset secret" and "Delete". The name column uses a click-to-edit pattern: plain text with a pencil icon on hover, expanding to an edit form showing the old name, an input, Save, and Cancel (Escape key also cancels).</p>
+<h2 id="billing-and-per-key-stats">Billing and Per-Key Stats</h2>
+<p>The account page key table shows per-key <strong>LLM Calls</strong> and <strong>Credits Used</strong>:</p>
+<ul>
+<li><strong>LLM Calls</strong> comes from <code>TokenMetrics.api_key_id</code> — each row records which API key was active when the LLM call was made. The query filters directly on <code>TokenMetrics.api_key_id</code>, not through <code>PlanItem</code>.</li>
+<li><strong>Credits Used</strong> comes from <code>CreditHistory.api_key_id</code> — each billing entry records which API key incurred the charge. The query sums all <code>CreditHistory</code> entries with <code>delta &lt; 0</code>.</li>
+</ul>
+<p>Both columns are immutable per-row: once a <code>TokenMetrics</code> or <code>CreditHistory</code> row is created with an <code>api_key_id</code>, it never changes. This means retrying a plan with a different key does NOT move historical stats between keys.</p>
+<p>For these stats to work, both fields must be set when creating a plan:</p>
 <ol>
-<li><strong>Cloud</strong>: Connect to the hosted <code>mcp.planexe.org</code> service</li>
-<li><strong>Remote Docker</strong>: Connect to a Docker container running on a separate machine</li>
-<li><strong>Local Docker</strong>: Connect to a Docker container on the same machine as OpenClaw</li>
+<li>
+<p><strong><code>PlanItem.user_id</code></strong> must be a valid <code>UserAccount</code> UUID. The worker billing function (<code>_charge_usage_credits_once</code> in <code>worker_plan_database/app.py</code>) parses it via <code>uuid.UUID()</code> — a plain string like <code>"admin"</code> fails and billing is silently skipped.</p>
+</li>
+<li>
+<p><strong><code>PlanItem.api_key_id</code></strong> must match an active <code>UserApiKey.id</code>. The worker copies this to <code>CreditHistory.api_key_id</code> and <code>TokenMetrics.api_key_id</code>. If NULL, entries won't appear in per-key stats.</p>
+</li>
 </ol>
-<h2 id="setup-scenarios">Setup Scenarios</h2>
-<h3 id="scenario-a-cloud-hosted-mcp-service">Scenario A: Cloud-Hosted MCP Service</h3>
-<p>Connect directly to the hosted PlanExe MCP service at <code>mcp.planexe.org</code>.</p>
-<h4 id="prerequisites">Prerequisites</h4>
+<h3 id="plan-creation-paths">Plan creation paths</h3>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th><code>user_id</code></th>
+<th><code>api_key_id</code></th>
+<th>Billing works?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend <code>/create_plan</code></td>
+<td>Admin's UserAccount UUID</td>
+<td>First active key</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Frontend <code>/run</code> (legacy)</td>
+<td>Admin's UserAccount UUID</td>
+<td>Not set</td>
+<td>Partial (billing works, per-key stats don't)</td>
+</tr>
+<tr>
+<td>MCP with <code>user_api_key</code></td>
+<td>Resolved from key</td>
+<td>Resolved from key</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>MCP without <code>user_api_key</code></td>
+<td><code>"admin"</code> (string)</td>
+<td>NULL</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>For local MCP development, pass <code>user_api_key</code> in <code>plan_create</code> calls to enable credit tracking. When <code>PLANEXE_MCP_REQUIRE_AUTH=false</code>, the HTTP server still resolves any provided API key for attribution purposes (<code>last_used_at</code>, per-key billing) — it just never rejects unauthenticated requests.</p>
+<h3 id="plan-retry-attribution">Plan retry attribution</h3>
+<p>When <code>plan_retry</code> is called via MCP with a user API key, the plan's <code>user_id</code> and <code>api_key_id</code> are updated to the caller's identity. New LLM calls and billing entries are attributed to the new key. Old incremental billing entries are archived (source changed from <code>usage_billing_progress</code> to <code>usage_billing_settled</code>) so the new run starts fresh without erasing the old key's credit history.</p>
+<h3 id="incremental-billing">Incremental billing</h3>
+<p>Credits are charged during plan execution, not just at completion. The worker calls <code>_charge_incremental_usage()</code> on each progress heartbeat, reading the current <code>activity_overview.json</code> and creating <code>CreditHistory</code> entries with <code>source="usage_billing_progress"</code>. When the plan finishes, <code>_charge_usage_credits_once()</code> subtracts what was already charged incrementally and creates a final <code>source="usage_billing"</code> entry for the remainder plus the success fee.</p>
+<p>This prevents abuse where a user starts many plans and aborts them at the last minute to avoid charges. The account page's Credits Used column sums all <code>CreditHistory</code> entries with <code>delta &lt; 0</code>, regardless of source — so incremental, settled, and final entries are all included.</p>
+<h3 id="billing-source-values">Billing source values</h3>
+<table>
+<thead>
+<tr>
+<th><code>source</code></th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>usage_billing_progress</code></td>
+<td>Incremental charge during active plan execution</td>
+</tr>
+<tr>
+<td><code>usage_billing_settled</code></td>
+<td>Archived incremental charge from a previous run (created when plan is retried)</td>
+</tr>
+<tr>
+<td><code>usage_billing</code></td>
+<td>Final charge at plan completion/failure</td>
+</tr>
+</tbody>
+</table>
+<h3 id="admin-backward-compatibility">Admin backward compatibility</h3>
+<p>Old plans have <code>user_id="admin"</code> (string). The <code>_admin_user_ids()</code> helper returns both the old username and the new UUID, so dashboard and plan list queries find all admin plans.</p>
+<h2 id="database-migrations">Database Migrations</h2>
+<p>Schema migrations run at startup using <code>ALTER TABLE ADD COLUMN IF NOT EXISTS</code> statements. This pattern is:
+- <strong>Idempotent</strong> — safe to run from multiple services simultaneously
+- <strong>Non-blocking</strong> — PostgreSQL <code>ADD COLUMN</code> without a default doesn't lock the table
+- <strong>Backward compatible</strong> — new columns are always nullable</p>
+<p>Index creation uses <code>CREATE INDEX IF NOT EXISTS</code>. PostgreSQL has a known race condition where concurrent sessions issuing the same <code>CREATE INDEX IF NOT EXISTS</code> can throw a <code>UniqueViolation</code> on <code>pg_class_relname_nsp_index</code>. Each index creation statement must be wrapped in its own try/except to handle this gracefully when multiple gunicorn workers start simultaneously.</p>
+<p>Migration functions are called inside <code>_create_tables_with_retry()</code> during app initialization.</p>
+<h2 id="session-and-login">Session and Login</h2>
 <ul>
-<li>An active PlanExe account</li>
-<li>Credits purchased via Stripe at <a href="https://home.planexe.org">home.planexe.org</a></li>
+<li><strong>Admin login</strong>: Flask-Login with a hardcoded <code>AdminUser</code> object. Credentials come from env vars. A <code>UserAccount</code> row is lazily created (deterministic UUID) so admin can own API keys.</li>
+<li><strong>OAuth login</strong>: Flask-Login with UUID-based user IDs from the <code>UserAccount</code> table. OAuth state/tokens are stored in Flask's encrypted session cookie.</li>
+<li><strong>Session secret</strong>: <code>SECRET_KEY</code> env var. Must be the same across all replicas for sessions to work in a multi-replica deployment.</li>
 </ul>
-<h4 id="configuration">Configuration</h4>
-<p>Set the following environment variables in your OpenClaw configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">PLANEXE_MCP_URL</span><span class="o">=</span>https://mcp.planexe.org
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">PLANEXE_API_KEY</span><span class="o">=</span>your_api_key_here
-</code></pre></div>
-<p>The <code>PLANEXE_API_KEY</code> is available in your PlanExe account dashboard after purchasing credits.</p>
-<h4 id="usage">Usage</h4>
-<p>Once configured, the <code>planexe-mcp</code> skill will automatically route all PlanExe tool calls to the cloud service. No additional setup is required.</p>
-<hr />
-<h3 id="scenario-b-remote-docker-deployment">Scenario B: Remote Docker Deployment</h3>
-<p>Run PlanExe as a Docker container on a separate machine and connect OpenClaw remotely.</p>
-<h4 id="prerequisites_1">Prerequisites</h4>
-<ul>
-<li>Docker installed on the remote machine</li>
-<li>Network connectivity between OpenClaw and the remote machine</li>
-<li>The remote machine's IP address or hostname</li>
-</ul>
-<h4 id="setup-on-remote-machine">Setup on Remote Machine</h4>
-<p>Run the PlanExe Docker container with port 8001 exposed:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8001</span>:8001<span class="w"> </span>planexe/planexe:latest
-</code></pre></div>
-<p>The MCP interface will be available at <code>http://&lt;remote-ip&gt;:8001</code>.</p>
-<h4 id="configuration-in-openclaw">Configuration in OpenClaw</h4>
-<p>Set the following environment variables in your OpenClaw configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">PLANEXE_MCP_URL</span><span class="o">=</span>http://&lt;remote-ip&gt;:8001
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">PLANEXE_API_KEY</span><span class="o">=</span>your_api_key_here
-</code></pre></div>
-<p>Replace <code>&lt;remote-ip&gt;</code> with the IP address or hostname of the remote machine running Docker.</p>
-<h4 id="usage_1">Usage</h4>
-<p>The <code>planexe-mcp</code> skill will automatically route all PlanExe tool calls to the remote Docker instance.</p>
-<hr />
-<h3 id="scenario-c-local-docker-deployment">Scenario C: Local Docker Deployment</h3>
-<p>Run PlanExe as a Docker container on the same machine as OpenClaw.</p>
-<h4 id="prerequisites_2">Prerequisites</h4>
-<ul>
-<li>Docker installed locally</li>
-<li>OpenClaw running on the same machine</li>
-</ul>
-<h4 id="setup">Setup</h4>
-<p>Run the PlanExe Docker container locally:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">8001</span>:8001<span class="w"> </span>planexe/planexe:latest
-</code></pre></div>
-<p>The MCP interface will be available at <code>http://127.0.0.1:8001</code>.</p>
-<h4 id="configuration-in-openclaw_1">Configuration in OpenClaw</h4>
-<p>Set the following environment variables in your OpenClaw configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">PLANEXE_MCP_URL</span><span class="o">=</span>http://127.0.0.1:8001
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">PLANEXE_API_KEY</span><span class="o">=</span>your_api_key_here
-</code></pre></div>
-<h4 id="usage_2">Usage</h4>
-<p>The <code>planexe-mcp</code> skill will automatically route all PlanExe tool calls to the local Docker container.</p>
-<hr />
-<h2 id="key-notes">Key Notes</h2>
-<ul>
-<li>
-<p><strong>Single Skill</strong>: The <code>planexe-mcp</code> skill handles all three scenarios seamlessly. Choose your deployment approach, set the appropriate environment variables, and the skill automatically routes requests correctly.</p>
-</li>
-<li>
-<p><strong>ClawHub</strong>: The <code>planexe-mcp</code> skill is available on <a href="https://clawhub.ai">ClawHub</a>, OpenClaw's skill marketplace. Install it like any other OpenClaw skill.</p>
-</li>
-<li>
-<p><strong>API Key Management</strong>: Regardless of deployment scenario, you'll need a valid <code>PLANEXE_API_KEY</code>. For cloud deployments, this is purchased via Stripe. For Docker deployments, consult the PlanExe documentation for local authentication setup.</p>
-</li>
-</ul>
-<h2 id="invoking-planexe-tools">Invoking PlanExe Tools</h2>
-<p>Once the <code>planexe-mcp</code> skill is installed and configured:</p>
-<ol>
-<li>Reference PlanExe tools in your OpenClaw workflows</li>
-<li>The skill automatically connects to your configured MCP endpoint</li>
-<li>Tool results are returned directly to your OpenClaw context</li>
-</ol>
-<p>For specific tool documentation, refer to the <a href="https://planexe.org/docs">PlanExe documentation</a>.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<ul>
-<li><strong>Connection Refused</strong>: Verify that <code>PLANEXE_MCP_URL</code> is correct and the service is running</li>
-<li><strong>Authentication Failed</strong>: Check that <code>PLANEXE_API_KEY</code> is valid</li>
-<li><strong>Timeout</strong>: For Docker deployments, ensure the container is fully initialized before making requests</li>
-</ul>
+<h2 id="api-key-secret-visibility">API Key Secret Visibility</h2>
+<p>Controlled by <code>PLANEXE_API_KEY_SHOW_ONCE</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unset / <code>false</code> (default)</td>
+<td>The full secret is stored in <code>key_plaintext</code> and always visible in the account table with a copy button.</td>
+</tr>
+<tr>
+<td><code>true</code> / <code>1</code> / <code>yes</code></td>
+<td>The secret is shown once after creation/reset, then only the prefix is displayed. Suitable for production with many users.</td>
+</tr>
+</tbody>
+</table>
+<p>When show-once is off, both <code>create_api_key</code> and <code>reset_api_key</code> persist the raw key so users can copy it at any time.</p>
+<h2 id="open-access-mode">Open Access Mode</h2>
+<p>When <code>PLANEXE_FRONTEND_MULTIUSER_OPEN_ACCESS=true</code>, certain pages (like <code>/demo_run</code>) are accessible without login. The <code>open_access</code> flag is injected into all templates by the context processor.</p>
 
 
 
