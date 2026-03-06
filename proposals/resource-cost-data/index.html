@@ -9,16 +9,12 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry the Laptop Lobster">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/resource-cost-data/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/29-elo-ranked-bid-selection-and-escalation/">
+        <link rel="prev" href="../currency-service/">
       
-      
-        <link rel="prev" href="../28-autonomous-bid-factory-orchestration/">
-      
-      
-        <link rel="next" href="../30-autonomous-bid-governance-risk-and-ethics/">
       
       
         
@@ -29,7 +25,7 @@
     
     
       
-        <title>ELO-Ranked Bid Selection & Escalation Pipeline: Technical Documentation - PlanExe Documentation</title>
+        <title>resource cost data - PlanExe Documentation</title>
       
     
     
@@ -77,17 +73,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ELO-Ranked Bid Selection & Escalation Pipeline: Technical Documentation - PlanExe Documentation" />
+<meta property="og:title" content="resource cost data - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/29-elo-ranked-bid-selection-and-escalation.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/resource-cost-data.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/29-elo-ranked-bid-selection-and-escalation/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/resource-cost-data/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="ELO-Ranked Bid Selection & Escalation Pipeline: Technical Documentation - PlanExe Documentation" />
+<meta property="twitter:title" content="resource cost data - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/29-elo-ranked-bid-selection-and-escalation.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/resource-cost-data.png" />
 </head>
   
   
@@ -107,7 +103,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#elo-ranked-bid-selection-escalation-pipeline" class="md-skip">
+        <a href="#proposal-location-aware-resource-cost-data-service" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +138,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ELO-Ranked Bid Selection & Escalation Pipeline: Technical Documentation
+              resource cost data
             
           </span>
         </div>
@@ -2971,44 +2967,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    29 elo ranked bid selection and escalation
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
         
   
   
@@ -3031,364 +2993,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Architecture
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="System Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-bid-ingestion-normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Bid Ingestion &amp; Normalization
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-pairwise-comparison-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Pairwise Comparison Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-elo-update-worker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Elo Update Worker
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-escalation-monitor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Escalation Monitor
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ranking-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ranking Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Ranking Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard-elo-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Standard Elo Formula
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update Rule
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dynamic-k-factor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dynamic K-Factor
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#database-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Database Schema
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Database Schema">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bids" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        bids
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comparisons" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        comparisons
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#escalation_queue" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        escalation_queue
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        API Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#post-apibidssubmit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/bids/submit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-apibidsqueueescalated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /api/bids/queue/escalated
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-apiadminforce_match" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/admin/force_match
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-with-notification-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration with Notification Systems
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-selection-funnel-definition-1-week" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Selection Funnel Definition (1 week)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-ranking-pipeline-integration-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Ranking Pipeline Integration (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-escalation-workflow-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Escalation Workflow (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-outcome-learning-loop-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Outcome Learning Loop (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5309,10 +4913,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../resource-cost-data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource cost data
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -5328,6 +4959,275 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-scale-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Scale Challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tier-1-authoritative-data-sources-high-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 1: Authoritative Data Sources (high confidence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-2-interpolation-estimation-medium-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 2: Interpolation &amp; Estimation (medium confidence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tier-3-llm-assisted-estimation-low-confidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tier 3: LLM-Assisted Estimation (low confidence)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpolation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpolation Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpolation Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-exact-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Exact Match
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-geographic-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Geographic Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-ppp-adjustment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: PPP Adjustment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-llm-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: LLM Estimation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-core-framework-static-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Core Framework + Static Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-dynamic-data-fetching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Dynamic Data Fetching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-llm-assisted-gap-filling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: LLM-Assisted Gap Filling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-community-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Community Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-planexe-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with PlanExe Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5375,10 +5275,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#problem-statement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Problem Statement
       
     </span>
   </a>
@@ -5386,10 +5286,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-problem" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Problem
+        Requirements
       
     </span>
   </a>
@@ -5397,22 +5297,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
+  <a href="#the-scale-challenge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        System Architecture
+        The Scale Challenge
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="System Architecture">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Architecture">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-bid-ingestion-normalization" class="md-nav__link">
+  <a href="#tier-1-authoritative-data-sources-high-confidence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Bid Ingestion &amp; Normalization
+        Tier 1: Authoritative Data Sources (high confidence)
       
     </span>
   </a>
@@ -5420,10 +5331,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-pairwise-comparison-engine" class="md-nav__link">
+  <a href="#tier-2-interpolation-estimation-medium-confidence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pairwise Comparison Engine
+        Tier 2: Interpolation &amp; Estimation (medium confidence)
       
     </span>
   </a>
@@ -5431,21 +5342,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-elo-update-worker" class="md-nav__link">
+  <a href="#tier-3-llm-assisted-estimation-low-confidence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Elo Update Worker
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-escalation-monitor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Escalation Monitor
+        Tier 3: LLM-Assisted Estimation (low confidence)
       
     </span>
   </a>
@@ -5458,22 +5358,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ranking-model" class="md-nav__link">
+  <a href="#data-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ranking Model
+        Data Model
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Ranking Model">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpolation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpolation Strategy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpolation Strategy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#standard-elo-formula" class="md-nav__link">
+  <a href="#step-1-exact-match" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Standard Elo Formula
+        Step 1: Exact Match
       
     </span>
   </a>
@@ -5481,10 +5392,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update-rule" class="md-nav__link">
+  <a href="#step-2-geographic-fallback" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update Rule
+        Step 2: Geographic Fallback
       
     </span>
   </a>
@@ -5492,10 +5403,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dynamic-k-factor" class="md-nav__link">
+  <a href="#step-3-ppp-adjustment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic K-Factor
+        Step 3: PPP Adjustment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-llm-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: LLM Estimation
       
     </span>
   </a>
@@ -5508,22 +5430,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#database-schema" class="md-nav__link">
+  <a href="#implementation-approach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Database Schema
+        Implementation Approach
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Database Schema">
+    <nav class="md-nav" aria-label="Implementation Approach">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bids" class="md-nav__link">
+  <a href="#phase-1-core-framework-static-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        bids
+        Phase 1: Core Framework + Static Data
       
     </span>
   </a>
@@ -5531,10 +5453,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#comparisons" class="md-nav__link">
+  <a href="#phase-2-dynamic-data-fetching" class="md-nav__link">
     <span class="md-ellipsis">
       
-        comparisons
+        Phase 2: Dynamic Data Fetching
       
     </span>
   </a>
@@ -5542,10 +5464,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#escalation_queue" class="md-nav__link">
+  <a href="#phase-3-llm-assisted-gap-filling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        escalation_queue
+        Phase 3: LLM-Assisted Gap Filling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-community-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Community Data
       
     </span>
   </a>
@@ -5558,60 +5491,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-reference" class="md-nav__link">
+  <a href="#integration-with-planexe-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="API Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#post-apibidssubmit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/bids/submit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get-apibidsqueueescalated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /api/bids/queue/escalated
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#post-apiadminforce_match" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /api/admin/force_match
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-with-notification-systems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration with Notification Systems
+        Integration with PlanExe Pipeline
       
     </span>
   </a>
@@ -5619,10 +5502,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
+  <a href="#open-questions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Future Enhancements
+        Open Questions
       
     </span>
   </a>
@@ -5630,85 +5513,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
+  <a href="#risks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Detailed Implementation Plan
+        Risks
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-selection-funnel-definition-1-week" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Selection Funnel Definition (1 week)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-ranking-pipeline-integration-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Ranking Pipeline Integration (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-escalation-workflow-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Escalation Workflow (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-outcome-learning-loop-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Outcome Learning Loop (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5732,263 +5543,151 @@
   
 
 
-<h1 id="elo-ranked-bid-selection-escalation-pipeline">ELO-Ranked Bid Selection &amp; Escalation Pipeline</h1>
-<p><strong>Author:</strong> Larry (via OpenClaw)<br />
-<strong>Date:</strong> 2026-02-11<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Audience:</strong> Developers, Product Managers  </p>
-<hr />
-<h2 id="overview">Overview</h2>
-<p>This system implements an automated ranking and escalation pipeline for incoming project proposals (bids). It uses an Elo rating system—similar to chess rankings—to dynamically score bids against each other based on quality, feasibility, and strategic fit. High-scoring bids are automatically escalated to human reviewers, while low-scoring bids are filtered out.</p>
-<h2 id="core-problem">Core Problem</h2>
-<p>When the "Bid Factory" generates hundreds of potential project bids per day, human review becomes the bottleneck. We need a way to mathematically sort the "signal" from the "noise" without manually reading every submission.</p>
-<h2 id="system-architecture">System Architecture</h2>
-<h3 id="1-bid-ingestion-normalization">1. Bid Ingestion &amp; Normalization</h3>
-<p>Bids arrive from various sources (User input, Agent generated). They are normalized into a standard JSON structure suitable for analysis.</p>
-<h3 id="2-pairwise-comparison-engine">2. Pairwise Comparison Engine</h3>
-<p>The core logic. An LLM (<code>gemini-2.0-flash</code>) acts as the judge.
--   It takes two bids (A and B).
--   It evaluates them on 5 key dimensions:
-    1.  <strong>Completeness:</strong> Is the plan fully formed?
-    2.  <strong>Evidence:</strong> Is it backed by data?
-    3.  <strong>ROI:</strong> Is the return worth the risk?
-    4.  <strong>Feasibility:</strong> Can we actually build this?
-    5.  <strong>Strategic Fit:</strong> Does it align with current goals?
--   It outputs a "Win Probability" for Bid A.</p>
-<h3 id="3-elo-update-worker">3. Elo Update Worker</h3>
-<p>A background worker processes the LLM's decision and updates the Elo scores of both bids.
--   <strong>K-Factor:</strong> We use a dynamic K-factor. New bids have high K (volatile rating), established bids have low K (stable rating).</p>
-<h3 id="4-escalation-monitor">4. Escalation Monitor</h3>
-<p>A specialized service that watches for:
--   <strong>Elite Bids:</strong> Elo &gt; 1800 (Top 5%). Immediate Slack/Email alert to Investment Committee.
--   <strong>Promising Bids:</strong> Elo &gt; 1500 (Top 50%). Added to the "Weekly Review" queue.
--   <strong>Junk Bids:</strong> Elo &lt; 1200. Auto-archived.</p>
-<hr />
-<h2 id="ranking-model">Ranking Model</h2>
-<h3 id="standard-elo-formula">Standard Elo Formula</h3>
-<p>We use the standard logistic curve for expected score:</p>
-<p>$$E_A = \frac{1}{1 + 10^{(R_B - R_A) / 400}}$$</p>
-<p>Where:
-- $E_A$ is the expected score for Bid A.
-- $R_A$ and $R_B$ are the current ratings.</p>
-<h3 id="update-rule">Update Rule</h3>
-<p>$$R_A' = R_A + K \cdot (S_A - E_A)$$</p>
-<p>Where:
-- $S_A$ is the actual score (1 for win, 0 for loss, 0.5 for draw).
-- $K$ is the K-factor (defaults to 32).</p>
-<h3 id="dynamic-k-factor">Dynamic K-Factor</h3>
-<p>To quickly identify diamonds in the rough:
--   If <code>bids_count</code> &lt; 10: $K = 64$
--   If <code>bids_count</code> &gt; 10: $K = 32$
--   If <code>escalated</code> = True: $K = 16$ (Stability mode)</p>
-<hr />
-<h2 id="database-schema">Database Schema</h2>
-<h3 id="bids"><code>bids</code></h3>
-<p>The central table for all project proposals.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>title</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">Project Title</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>author_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Creator</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>current_elo</code></td>
-<td style="text-align: left;">INT</td>
-<td style="text-align: left;">Default 1500</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>status</code></td>
-<td style="text-align: left;">ENUM</td>
-<td style="text-align: left;"><code>new</code>, <code>ranking</code>, <code>escalated</code>, <code>rejected</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>metadata</code></td>
-<td style="text-align: left;">JSONB</td>
-<td style="text-align: left;">Full bid content</td>
-</tr>
-</tbody>
-</table>
-<h3 id="comparisons"><code>comparisons</code></h3>
-<p>Log of all pairwise battles.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>bid_a_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Bids</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>bid_b_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Bids</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>winner_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Bids (or NULL for draw)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>score_delta</code></td>
-<td style="text-align: left;">INT</td>
-<td style="text-align: left;">Points exchanged</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>judge_model</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">LLM used (e.g., <code>gemini-2.0-flash</code>)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>reasoning</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">LLM explanation for the decision</td>
-</tr>
-</tbody>
-</table>
-<h3 id="escalation_queue"><code>escalation_queue</code></h3>
-<p>The priority list for human review.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Column</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Primary Key</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>bid_id</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">FK to Bids</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>reason</code></td>
-<td style="text-align: left;">TEXT</td>
-<td style="text-align: left;">"Top 5% Elo" or "High ROI"</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>priority</code></td>
-<td style="text-align: left;">INT</td>
-<td style="text-align: left;">1 (Urgent) to 5 (Standard)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>assigned_to</code></td>
-<td style="text-align: left;">UUID</td>
-<td style="text-align: left;">Reviewer ID</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="api-reference">API Reference</h2>
-<h3 id="post-apibidssubmit"><code>POST /api/bids/submit</code></h3>
-<p>Ingest a new bid for ranking.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mars Colony Logistics&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A plan to...&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
-</code></pre></div></p>
-<h3 id="get-apibidsqueueescalated"><code>GET /api/bids/queue/escalated</code></h3>
-<p>Fetch the current top priorities for human review.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;bid_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b_999&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mars Colony Logistics&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;elo&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1850</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;escalation_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Top 1% Elo Score&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;link&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/review/b_999&quot;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">]</span>
-</code></pre></div></p>
-<h3 id="post-apiadminforce_match"><code>POST /api/admin/force_match</code></h3>
-<p>Manually trigger a comparison between two specific bids (for calibration).
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;bid_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_1&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;bid_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid_2&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
-</code></pre></div></p>
-<hr />
-<h2 id="integration-with-notification-systems">Integration with Notification Systems</h2>
-<p>The Escalation Monitor connects to external Webhooks:
--   <strong>Slack:</strong> Posts to <code>#deal-flow-elite</code> for &gt;1800 Elo.
--   <strong>Email:</strong> Weekly digest of &gt;1500 Elo bids.
--   <strong>Dashboard:</strong> Real-time leaderboard widget.</p>
-<h2 id="future-enhancements">Future Enhancements</h2>
+<h1 id="proposal-location-aware-resource-cost-data-service">Proposal: Location-Aware Resource &amp; Cost Data Service</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>PlanExe generates plans that involve real-world costs — labor, materials, services, equipment. Currently, cost assumptions are whatever the LLM hallucinates. For PlanExe to be a <strong>trusted auditing layer</strong>, it needs access to real cost data:</p>
 <ul>
-<li><strong>Tournament Mode:</strong> Periodically re-rank the top 50 bids against each other to ensure the "King of the Hill" is truly the best.</li>
-<li><strong>Niche Pools:</strong> Separate Elo ladders for different sectors (e.g., "BioTech Elo", "Crypto Elo").</li>
+<li>"What does a carpenter cost in Nairobi, Kenya?"</li>
+<li>"What does mahogany wood cost per board-foot in that region?"</li>
+<li>"What's the hourly rate for a dentist in Copenhagen?"</li>
+<li>"What does commercial rent cost per sqm in downtown São Paulo?"</li>
 </ul>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-selection-funnel-definition-1-week">Phase A — Selection Funnel Definition (1 week)</h3>
-<ol>
-<li>Define funnel cutoffs and policy defaults (20% -&gt; 5% -&gt; 1%).</li>
-<li>Define promotion/demotion rules with override controls.</li>
-<li>Define confidence requirements for borderline candidates.</li>
-</ol>
-<h3 id="phase-b-ranking-pipeline-integration-2-weeks">Phase B — Ranking Pipeline Integration (2 weeks)</h3>
-<ol>
-<li>Pull ELO and percentile outputs from proposal-07 stack.</li>
-<li>Add domain-fit and verification features to ranking vector.</li>
-<li>Compute composite selection score for escalation decisions.</li>
-</ol>
-<h3 id="phase-c-escalation-workflow-2-weeks">Phase C — Escalation Workflow (2 weeks)</h3>
-<ol>
-<li>Route top cohort to expert verification and premium refinement.</li>
-<li>Track escalation outcomes and review costs.</li>
-<li>Add auto-stop for candidates that fail critical post-escalation checks.</li>
-</ol>
-<h3 id="phase-d-outcome-learning-loop-2-weeks">Phase D — Outcome Learning Loop (2 weeks)</h3>
-<ol>
-<li>Ingest real bid outcomes (win/loss/shortlist).</li>
-<li>Recalibrate ranking and threshold policies.</li>
-<li>Add model drift alerts when ranking precision degrades.</li>
-</ol>
-<h3 id="data-model-additions">Data model additions</h3>
+<p>These questions span every country, every profession, every material. The data is massive, always changing, and often incomplete.</p>
+<h2 id="requirements">Requirements</h2>
 <ul>
-<li><code>selection_funnel_runs</code></li>
-<li><code>selection_scores</code></li>
-<li><code>escalation_events</code></li>
-<li><code>bid_outcome_feedback</code></li>
+<li>Location-aware cost lookups (country, city, region)</li>
+<li>Labor costs by profession/skill level</li>
+<li>Material costs by type and specification</li>
+<li>Service costs (rent, utilities, insurance, etc.)</li>
+<li>Graceful handling of missing data (interpolation, estimates)</li>
+<li>Currency-aware (integrates with Currency Service proposal)</li>
+<li>Data freshness indicators (how old is this data point?)</li>
+<li>Confidence levels (exact data vs interpolated vs LLM-estimated)</li>
 </ul>
-<h3 id="validation-checklist">Validation checklist</h3>
+<h2 id="the-scale-challenge">The Scale Challenge</h2>
+<p>This is potentially a massive database:
+- ~200 countries × ~1000 professions × ~10,000 materials = billions of data points
+- Most of these combinations don't have direct data
+- Data goes stale at different rates (labor costs: yearly, commodities: daily, rent: monthly)</p>
+<h2 id="data-architecture">Data Architecture</h2>
+<h3 id="tier-1-authoritative-data-sources-high-confidence">Tier 1: Authoritative Data Sources (high confidence)</h3>
 <ul>
-<li>Precision@top cohorts</li>
-<li>Win-rate lift vs non-ranked baseline</li>
-<li>Cost savings from reduced deep review</li>
-<li>Stability of thresholds across domains</li>
+<li><strong>ILO (International Labour Organization)</strong>: Labor costs by country/sector</li>
+<li><strong>World Bank Open Data</strong>: Economic indicators, PPP adjustments</li>
+<li><strong>UN COMTRADE</strong>: Commodity trade data</li>
+<li><strong>BLS (US Bureau of Labor Statistics)</strong>: Detailed US labor/material costs</li>
+<li><strong>Eurostat</strong>: European cost data</li>
+<li><strong>Numbeo</strong>: Cost of living data (crowdsourced but large coverage)</li>
+<li><strong>Trading Economics</strong>: Economic indicators by country</li>
+</ul>
+<h3 id="tier-2-interpolation-estimation-medium-confidence">Tier 2: Interpolation &amp; Estimation (medium confidence)</h3>
+<p>When exact data isn't available for a location:</p>
+<p><strong>Geographic interpolation:</strong>
+- If we don't have carpenter costs for Nairobi specifically, use Kenya national average
+- If Kenya data is missing, use East African regional average
+- Weight by economic similarity (GDP per capita, urbanization rate)</p>
+<p><strong>PPP (Purchasing Power Parity) adjustment:</strong>
+- If we know US carpenter costs and the PPP ratio between US and Kenya, we can estimate
+- World Bank publishes PPP conversion factors for most countries</p>
+<p><strong>Economic similarity clustering:</strong>
+- Group countries by GDP per capita, economic structure, urbanization
+- Use known costs from similar countries to estimate missing ones
+- Example: If we know costs in Ghana and Tanzania, interpolate for Uganda</p>
+<h3 id="tier-3-llm-assisted-estimation-low-confidence">Tier 3: LLM-Assisted Estimation (low confidence)</h3>
+<ul>
+<li>For truly obscure combinations, ask the LLM but flag confidence as "estimated"</li>
+<li>Use the LLM's training data as a rough guide, validated against Tier 1/2 where possible</li>
+<li>Always flag these as "LLM estimate — verify before using in financial projections"</li>
+</ul>
+<h2 id="data-model">Data Model</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CostDataPoint:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  category: str          # &quot;labor&quot;, &quot;material&quot;, &quot;service&quot;, &quot;equipment&quot;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  item: str              # &quot;carpenter&quot;, &quot;mahogany_lumber&quot;, &quot;commercial_rent&quot;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  location:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    country: str         # ISO 3166-1 alpha-2 (e.g., &quot;KE&quot;)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    region: str?         # State/province if available
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    city: str?           # City if available
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  value: float
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  currency: str          # ISO 4217 (e.g., &quot;KES&quot;)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  unit: str              # &quot;per_hour&quot;, &quot;per_board_foot&quot;, &quot;per_sqm_month&quot;
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  source: str            # &quot;ilo&quot;, &quot;worldbank&quot;, &quot;interpolated&quot;, &quot;llm_estimate&quot;
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  confidence: float      # 0.0 - 1.0
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  date: date             # When this data was collected/computed
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  freshness: str         # &quot;live&quot;, &quot;monthly&quot;, &quot;annual&quot;, &quot;stale&quot;
+</code></pre></div>
+<h2 id="interpolation-strategy">Interpolation Strategy</h2>
+<h3 id="step-1-exact-match">Step 1: Exact Match</h3>
+<p>Look up exact (item, country, city) combination. If found, return with high confidence.</p>
+<h3 id="step-2-geographic-fallback">Step 2: Geographic Fallback</h3>
+<ol>
+<li>Try (item, country, region) → medium-high confidence</li>
+<li>Try (item, country) national average → medium confidence</li>
+<li>Try (item, economic_region) using similar countries → medium-low confidence</li>
+</ol>
+<h3 id="step-3-ppp-adjustment">Step 3: PPP Adjustment</h3>
+<ol>
+<li>Find the item cost in a reference country (usually US or nearest country with data)</li>
+<li>Apply PPP conversion factor</li>
+<li>Return with low-medium confidence, flagged as "PPP-adjusted estimate"</li>
+</ol>
+<h3 id="step-4-llm-estimation">Step 4: LLM Estimation</h3>
+<ol>
+<li>Ask the LLM with structured prompting: "Based on economic conditions in [country], estimate the cost of [item]"</li>
+<li>Cross-reference against Tier 1/2 bounds if available</li>
+<li>Return with low confidence, flagged as "LLM estimate"</li>
+</ol>
+<h2 id="implementation-approach">Implementation Approach</h2>
+<h3 id="phase-1-core-framework-static-data">Phase 1: Core Framework + Static Data</h3>
+<ul>
+<li>Data model and query API</li>
+<li>Bundled static dataset covering major economies (US, EU, China, India, Brazil, Nigeria, Kenya, etc.)</li>
+<li>PPP adjustment using World Bank data (updated annually)</li>
+<li>Basic geographic interpolation</li>
+<li>Tests with realistic queries</li>
+</ul>
+<h3 id="phase-2-dynamic-data-fetching">Phase 2: Dynamic Data Fetching</h3>
+<ul>
+<li>API integrations (ILO, World Bank, Numbeo)</li>
+<li>Caching layer with TTL per data source</li>
+<li>Data freshness tracking</li>
+<li>Incremental updates</li>
+</ul>
+<h3 id="phase-3-llm-assisted-gap-filling">Phase 3: LLM-Assisted Gap Filling</h3>
+<ul>
+<li>Structured prompts for cost estimation</li>
+<li>Confidence scoring</li>
+<li>Validation against known data points</li>
+<li>Human review workflow for flagged estimates</li>
+</ul>
+<h3 id="phase-4-community-data">Phase 4: Community Data</h3>
+<ul>
+<li>Allow users to contribute local cost data</li>
+<li>Verification/moderation pipeline</li>
+<li>Regional experts can validate estimates</li>
+</ul>
+<h2 id="integration-with-planexe-pipeline">Integration with PlanExe Pipeline</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Plan Generation → Extract Cost Assumptions → Query Cost Service → Compare/Validate → Flag Discrepancies
+</code></pre></div>
+<p>The cost service would be called by:
+1. <strong>FermiSanityCheck</strong> — "Is this cost assumption reasonable for this location?"
+2. <strong>DomainNormalizer</strong> — "Convert this cost to standard units and currency"
+3. <strong>RiskAssessment</strong> — "How volatile are these cost inputs over the plan's time horizon?"</p>
+<h2 id="open-questions">Open Questions</h2>
+<ol>
+<li>How much static data should we bundle vs fetch dynamically?</li>
+<li>Should the service be synchronous (query per assumption) or batch (validate all assumptions at once)?</li>
+<li>What's the minimum viable dataset for Phase 1?</li>
+<li>How do we handle informal economies where official statistics don't reflect reality?</li>
+<li>Should material costs include supply chain factors (shipping to location)?</li>
+<li>How do we handle time-varying costs (seasonal labor, commodity cycles)?</li>
+</ol>
+<h2 id="risks">Risks</h2>
+<ul>
+<li><strong>Data quality</strong>: Crowdsourced data (Numbeo) may be unreliable</li>
+<li><strong>Coverage gaps</strong>: Many developing countries lack detailed cost data</li>
+<li><strong>Staleness</strong>: Economic conditions change rapidly (inflation, crises)</li>
+<li><strong>Complexity creep</strong>: This could become an entire product on its own</li>
+<li><strong>Scope</strong>: Need to define "good enough" for Phase 1</li>
 </ul>
 
 
@@ -5996,9 +5695,6 @@
 
 
 
-
-  
-  
 
 
 

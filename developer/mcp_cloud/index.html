@@ -5351,6 +5351,62 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/currency-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    currency service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proposals/resource-cost-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource cost data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6002,8 +6058,8 @@ If <code>download_url</code> is missing, configure <code>PLANEXE_MCP_PUBLIC_BASE
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;sse_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/sse/plan/abc-123&quot;</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
 </code></pre></div>
-<p>Connect using the same API key header used for MCP calls:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-N<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_...&quot;</span><span class="w"> </span>https://mcp.planexe.org/sse/plan/abc-123
+<p>No API key is required — the plan_id UUID is unguessable and serves as the access token:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-N<span class="w"> </span>https://mcp.planexe.org/sse/plan/abc-123
 </code></pre></div>
 <h3 id="event-types">Event types</h3>
 <p>The stream emits standard SSE events:</p>

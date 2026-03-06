@@ -564,4 +564,12 @@
          <loc>https://docs.planexe.org/proposals/AGENTS/</loc>
          <lastmod>2026-03-06</lastmod>
     </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/currency-service/</loc>
+         <lastmod>2026-03-06</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/resource-cost-data/</loc>
+         <lastmod>2026-03-06</lastmod>
+    </url>
 </urlset>
