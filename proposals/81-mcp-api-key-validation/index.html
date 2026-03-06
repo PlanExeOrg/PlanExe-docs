@@ -5059,6 +5059,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3-enforce_api_key-middleware-json-rpc-error-wrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. enforce_api_key middleware — JSON-RPC error wrapping
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5286,6 +5297,17 @@
     <span class="md-ellipsis">
       
         2. enforce_api_key middleware — validate at connection time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-enforce_api_key-middleware-json-rpc-error-wrapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. enforce_api_key middleware — JSON-RPC error wrapping
       
     </span>
   </a>
@@ -5547,6 +5569,29 @@ tools:</p>
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                <span class="k">return</span> <span class="n">_append_cors_headers</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">error_response</span><span class="p">)</span>
 </code></pre></div>
 <p>Keyless requests still pass through to public methods as before.</p>
+<h4 id="3-enforce_api_key-middleware-json-rpc-error-wrapping">3. <code>enforce_api_key</code> middleware — JSON-RPC error wrapping</h4>
+<p>When the middleware returns a plain HTTP 401/403 on the <code>/mcp/</code> Streamable
+HTTP endpoint, the MCP SDK interprets it as an OAuth challenge and tries
+<code>/.well-known/oauth-authorization-server</code> discovery, which fails with 404
+and produces a confusing "Invalid OAuth error response" message.</p>
+<p>A new helper <code>_make_jsonrpc_auth_error()</code> wraps auth errors as JSON-RPC
+error envelopes with HTTP 200:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_make_jsonrpc_auth_error</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">detail</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="c1"># Extract JSON-RPC request id from body</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">request_id</span> <span class="o">=</span> <span class="o">...</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">return</span> <span class="n">JSONResponse</span><span class="p">(</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">content</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>            <span class="s2">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>            <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">32001</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">detail</span><span class="p">},</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">request_id</span><span class="p">,</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="p">},</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="p">)</span>
+</code></pre></div>
+<p>The middleware uses an inner <code>_check_auth()</code> helper that calls
+<code>_validate_api_key()</code> and, for Streamable HTTP paths (<code>/mcp</code>, <code>/mcp/</code>),
+wraps any error response via <code>_make_jsonrpc_auth_error()</code>.  REST endpoints
+(<code>/mcp/tools/call</code>, <code>/download</code>) keep plain HTTP status codes.</p>
 <h3 id="interaction-with-planexe_mcp_api_key-shared-secret">Interaction with <code>PLANEXE_MCP_API_KEY</code> (shared secret)</h3>
 <p>The shared-secret check (<code>REQUIRED_API_KEY</code>) only runs when <code>AUTH_REQUIRED=true</code>.
 Local mode (<code>AUTH_REQUIRED=false</code>) does not use shared secrets, so no change
@@ -5559,6 +5604,9 @@ is needed there.</p>
   accepted, now rejected with 403. This is intentional and desirable. The fix
   is to either remove the key or replace it with a valid one.</li>
 <li><strong>Production (<code>REQUIRE_AUTH=true</code>)</strong>: no change at all.</li>
+<li><strong>MCP SDK users without a key</strong>: keyless connections now succeed for
+  discovery. Paid tools return a clear JSON-RPC error instead of a confusing
+  OAuth/404 message.</li>
 </ul>
 <h2 id="verification">Verification</h2>
 <ol>
@@ -5566,12 +5614,15 @@ is needed there.</p>
 <li>Connect via MCP Inspector <strong>without</strong> <code>X-API-Key</code> → should work (anonymous).</li>
 <li>Connect with a <strong>valid</strong> <code>pex_...</code> key → should work (authenticated, stats tracked).</li>
 <li>Connect with <code>X-API-Key: junk</code> → connection should <strong>fail immediately</strong>
-   during the <code>initialize</code> handshake with 403 and a clear error message.
+   during the <code>initialize</code> handshake with a clear JSON-RPC error message.
    The client should never see the tool list.</li>
 <li>Start MCP server with <code>PLANEXE_MCP_REQUIRE_AUTH=true</code>.</li>
-<li>Connect without key → 401 at connection time.</li>
-<li>Connect with junk key → 403 at connection time.</li>
-<li>Connect with valid key → works.</li>
+<li>Connect without key → succeeds (initialize is public).</li>
+<li>Call a discovery tool (<code>example_plans</code>) without key → works.</li>
+<li>Call a paid tool (<code>plan_create</code>) without key → JSON-RPC error:
+   "Missing API key. Create an API key at https://home.planexe.org/"</li>
+<li>Connect with junk key → JSON-RPC error at connection time.</li>
+<li>Connect with valid key → everything works.</li>
 </ol>
 
 
