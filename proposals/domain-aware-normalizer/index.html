@@ -1,0 +1,5948 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/domain-aware-normalizer/">
+      
+      
+        <link rel="prev" href="../currency-service/">
+      
+      
+        <link rel="next" href="../resource-cost-data/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>domain aware normalizer - PlanExe Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/copy-all.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/nav-status.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-2F6NE7JWTR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-2F6NE7JWTR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-2F6NE7JWTR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="domain aware normalizer - PlanExe Documentation" />
+<meta property="og:description" content="From a single goal statement to a full strategic plan." />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/domain-aware-normalizer.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/domain-aware-normalizer/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="domain aware normalizer - PlanExe Documentation" />
+<meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/domain-aware-normalizer.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#proposal-domain-aware-assumption-normalizer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://planexe.org" title="PlanExe Documentation" class="md-header__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PlanExe Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              domain aware normalizer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PlanExeOrg/PlanExe" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PlanExeOrg/PlanExe
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mcp/mcp_welcome/" class="md-tabs__link">
+          
+  
+  
+  MCP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../plan/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://planexe.org" title="PlanExe Documentation" class="md-nav__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    PlanExe Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PlanExeOrg/PlanExe" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PlanExeOrg/PlanExe
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt_writing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt writing guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plan_output_anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan output anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../costs_and_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Costs and models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP registry publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/inspector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/claude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cursor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/antigravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antigravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/windsurf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windsurf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/lm_studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP details
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/planexe_mcp_interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlanExe MCP interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAuth setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../token_counting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token counting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Components
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/open_dir_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    open_dir_server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/worker_plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    worker_plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/frontend_single_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frontend_single_user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/database_postgres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    database_postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/worker_plan_database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    worker_plan_database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/frontend_multi_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frontend_multi_user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/mcp_local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp_local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/mcp_cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp_cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI providers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI providers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/openrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenRouter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ollama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/lm_studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/mistral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../railway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Railway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment_hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs_style_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docs style guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting_stuck_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stuck pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proposals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proposals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-agent-smart-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 agent smart routing
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-plans-as-LLM-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 plans as LLM templates
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-distributed-plan-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 distributed plan execution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-plan-explain-as-API-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 plan explain as API service
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-semantic-plan-search-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 semantic plan search graph
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-adopt-on-the-fly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 adopt on the fly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-elo-ranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 elo ranking
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-ui-for-editing-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 ui for editing plan
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--in-progress"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-triage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 triage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-investor-thesis-matching-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 investor thesis matching engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-evidence-based-founder-execution-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 evidence based founder execution index
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-portfolio-aware-capital-allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 portfolio aware capital allocation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-confidence-weighted-funding-auctions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 confidence weighted funding auctions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 outcome feedback and model governance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 on demand plugin synthesis hub
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-plugin-adaptation-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 plugin adaptation lifecycle
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 plugin benchmarking coverage harness
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 plugin safety governance for runtime loading
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 plugin hub discovery ranking and reuse
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-02-26-human-utility-show-pedigree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 02 26 human utility show pedigree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-02-26-lobster-museum-donation-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 02 26 lobster museum donation routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-expert-discovery-and-fit-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 expert discovery and fit scoring
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-multi-stage-verification-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 multi stage verification workflow
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 expert collaboration marketplace and reputation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-cross-border-project-verification-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 cross border project verification framework
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-verification-incentives-governance-and-liability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 verification incentives governance and liability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 news intake and opportunity sensing grid
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-multi-angle-topic-verification-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 multi angle topic verification engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-autonomous-bid-factory-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 autonomous bid factory orchestration
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29 elo ranked bid selection and escalation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30 autonomous bid governance risk and ethics
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-token-counting-and-cost-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31 token counting and cost transparency
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32 gantt parallelization and fast tracking
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-cost-breakdown-structure-cbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33 cost breakdown structure cbs
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-finance-top-down-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34 finance top down estimation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35 finance bottom up estimation and reconciliation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36 monte carlo plan success probability engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37 cashflow and funding stress monte carlo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38 risk propagation network and failure modes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39 frontier research gap mapper for megaprojects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    40 three hypotheses engine for unsolved challenges
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-autonomous-execution-of-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    41 autonomous execution of plan
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    42 evidence traceability ledger
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-assumption-drift-monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    43 assumption drift monitor
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-investor-grade-audit-pack-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    44 investor grade audit pack generator
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-counterfactual-scenario-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    45 counterfactual scenario explorer
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-execution-readiness-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    46 execution readiness scoring
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-openclaw-agent-skill-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    47 openclaw agent skill integration
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-moltbook-reputation-bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    48 moltbook reputation bridge
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    49 distributed physical task dispatch protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-agent-to-agent-payment-gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    50 agent to agent payment gateway
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-decentralized-planexe-survivability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    51 decentralized planexe survivability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../52-mcp-oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    52 mcp oauth
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../53-uuid-only-task-id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    53 uuid only task id
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../54-agent-safety-trusted-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    54 agent safety trusted information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    55 taskitem activity log decomposition and secure downloads
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--completed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    56 adversarial red team reality check for plans
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    57 banned words and lever realism guardrails
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../58-boost-initial-prompt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    58 boost initial prompt
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    59 prompt optimizing with ab testing
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../60-plan-to-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    60 plan to repo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../61-post-plan-agent-swarm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    61 post plan agent swarm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../62-agent-first-frontend-discoverability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    62 agent first frontend discoverability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-luigi-agent-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    63 luigi agent integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-post-plan-orchestration-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    64 post plan orchestration layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-git-state-machine-enrichment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    65 git state machine enrichment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-post-plan-enrichment-swarm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    66 post plan enrichment swarm
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../67-buildinpublic-twitter-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    67 buildinpublic twitter automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../68-domain-aware-plan-ranking-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    68 domain aware plan ranking engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../69-arcgentica-agent-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    69 arcgentica agent patterns
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../70-fermi-sanity-check-validation-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    70 fermi sanity check validation gate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    70 mcp interface evaluation and roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    71 model routing postmortem simon 26feb2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-strategy-auditor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    71 strategy auditor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../72-ai-replacing-c-level-roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    72 ai replacing c level roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../72-complexity-assessment-bubba-haiku/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    72 complexity assessment bubba haiku
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../72-complexity-assessment-larry-sonnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    72 complexity assessment larry sonnet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    73 rename task prefix in mcp tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../73-task-complexity-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    73 task complexity routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-model-routing-ux-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    74 model routing ux modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-rename-taskitem-to-planitem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    74 rename taskitem to planitem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-post-rename-cleanup-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    75 post rename cleanup issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-x402-a2a-payment-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    76 x402 a2a payment roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-cache-aware-model-handoff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    77 cache aware model handoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-ccusage-real-data-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    77 ccusage real data analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../78-planexe-growth-awareness-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    78 planexe growth awareness strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../79-multiple-api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    79 multiple api keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../80-zero-downtime-railway-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    80 zero downtime railway deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../81-mcp-api-key-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    81 mcp api key validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../currency-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    currency service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    domain aware normalizer
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    domain aware normalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ethical-dimension-a-moral-compass-for-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ethical Dimension: A Moral Compass for Planning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Ethical Dimension: A Moral Compass for Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-ethical-guardrails-in-the-normalizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: Ethical Guardrails in the Normalizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclusive-workforce-planning-beyond-the-stereotypical-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inclusive Workforce Planning: Beyond the Stereotypical Worker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inclusive Workforce Planning: Beyond the Stereotypical Worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-specific-forms-of-discrimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Specific Forms of Discrimination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-the-normalizer-detects-exclusionary-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Normalizer Detects Exclusionary Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-normalizer-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Normalizer Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Normalizer Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-domain-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Domain Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-assumption-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Assumption Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-fermi-sanity-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Fermi Sanity Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-currency-and-unit-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Currency and Unit Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-confidence-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Confidence Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-domain-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Domain Profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-precision-and-currency-reality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Precision and Currency Reality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-planexe-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with PlanExe Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Phases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-from-pr-72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changed from PR #72
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-cost-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resource cost data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ethical-dimension-a-moral-compass-for-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Ethical Dimension: A Moral Compass for Planning
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Ethical Dimension: A Moral Compass for Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-ethical-guardrails-in-the-normalizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Solution: Ethical Guardrails in the Normalizer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclusive-workforce-planning-beyond-the-stereotypical-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inclusive Workforce Planning: Beyond the Stereotypical Worker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inclusive Workforce Planning: Beyond the Stereotypical Worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-specific-forms-of-discrimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Specific Forms of Discrimination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-the-normalizer-detects-exclusionary-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Normalizer Detects Exclusionary Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-normalizer-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the Normalizer Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Normalizer Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-domain-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Domain Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-assumption-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Assumption Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-fermi-sanity-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Fermi Sanity Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-currency-and-unit-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Currency and Unit Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-confidence-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Confidence Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-domain-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Domain Profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-precision-and-currency-reality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numeric Precision and Currency Reality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-planexe-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with PlanExe Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-phases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Phases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-from-pr-72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changed from PR #72
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="proposal-domain-aware-assumption-normalizer">Proposal: Domain-Aware Assumption Normalizer</h1>
+<p><em>Preserving and evolving the vision from PR #72, built on the Currency Service (PR #147) and Resource/Cost Data Service (PR #146) foundations.</em></p>
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>PlanExe generates business plans for anything — a carpentry workshop in Copenhagen, a dental clinic in Denver, a community farm in Nairobi, a tech startup in Seoul. Each of these plans lives in a completely different economic reality. A $50,000 budget means something very different for a lemonade stand than for a data center. "Three months" is a tight timeline for construction but generous for a software prototype. "I've done this before" carries different weight from a 30-year master carpenter than from a first-time entrepreneur.</p>
+<p>Today, PlanExe treats all assumptions the same. When the LLM generates a plan that says "labor costs will be approximately $15-25 per hour," PlanExe has no way to know whether that's reasonable for a carpenter in rural Kenya (where it would be wildly high) or a software contractor in San Francisco (where it would be impossibly low). The numbers pass through unchecked, and downstream tasks like budgeting, scheduling, and risk assessment build on potentially hallucinated foundations.</p>
+<p>The Domain-Aware Assumption Normalizer changes this. It sits in the pipeline between assumption generation and assumption review, and it does four things: it figures out what kind of plan this is, it converts all the numbers to a standard representation, it checks whether those numbers make sense in the real world, and it flags anything that looks wrong — including plans that rely on exploiting workers or ignoring safety standards.</p>
+<h2 id="the-ethical-dimension-a-moral-compass-for-planning">The Ethical Dimension: A Moral Compass for Planning</h2>
+<p>This is not just a technical normalization problem. When PlanExe helps someone plan a business, it has a responsibility not to optimize for human exploitation.</p>
+<h3 id="the-problem">The Problem</h3>
+<p>Consider a plan that says: "We'll hire 40 textile workers in Dhaka at $2/day to handle chemical dyes without protective equipment, saving 85% on labor compared to European manufacturing." From a pure cost-optimization perspective, this plan might score well — the numbers are internally consistent, the budget works out, the timeline is achievable. But it describes a sweatshop. PlanExe should not help build sweatshops.</p>
+<p>Or consider: "Source rare earth minerals from artisanal mines in the DRC using child labor, reducing material costs by 60%." The economics might work. The plan is monstrous.</p>
+<p>These aren't edge cases. Labor exploitation is one of the most common ways businesses cut costs, and any planning tool that optimizes for cost without considering human welfare becomes complicit in that exploitation.</p>
+<h3 id="the-solution-ethical-guardrails-in-the-normalizer">The Solution: Ethical Guardrails in the Normalizer</h3>
+<p>The Domain-Aware Normalizer will include an ethical assessment layer that evaluates labor and safety assumptions against established standards. This is not about being preachy or blocking legitimate low-cost operations in developing economies — it's about catching plans that cross clearly defined ethical lines.</p>
+<p><strong>Fair Wage Floors:</strong>
+The normalizer will compare proposed labor costs against living wage data for the specified location. Not minimum wage (which is often exploitative itself), but living wage — the amount a worker needs to afford basic necessities including housing, food, healthcare, and education for their family. Data sources include the Global Living Wage Coalition, WageIndicator Foundation, and ILO datasets. If a plan proposes paying workers significantly below the living wage for their location, it gets flagged — not silently passed through.</p>
+<p><strong>Workplace Safety Standards:</strong>
+When a plan involves manufacturing, construction, agriculture, mining, or any physical labor, the normalizer will check whether the plan accounts for safety equipment, training, and compliance with ILO conventions on occupational safety. A plan that mentions hazardous materials but doesn't budget for protective equipment gets flagged. A plan that proposes construction timelines impossible without cutting safety corners gets flagged.</p>
+<p><strong>Child Labor and Ethical Concerns — Offering Alternatives Instead of Blocking:</strong>
+When the normalizer detects plans that propose ethically problematic assumptions — including child labor, sub-living wages, missing safety provisions, or exploitative conditions — it does not refuse to create the plan. Instead, it generates <strong>ethical alternative recommendations</strong> alongside the flagged assumptions. This steers plan creators toward fairness without blocking their work.</p>
+<p><em>Example:</em> A plan proposes "Hire 20 workers in rural Cambodia at $1.50/day to manufacture garments without protective equipment." The normalizer:
+1. <strong>Flags the ethical issues:</strong> Sub-living wages + no safety budget + hazardous work environment
+2. <strong>Shows the original numbers:</strong> This approach saves ~$18,000/year in labor costs
+3. <strong>Presents an ethical alternative:</strong> "Fair-wage version at $6/day with safety equipment and training changes labor costs from $10,950/year to $43,800/year. This reduces reputational risk, improves worker retention by ~30% (based on industry benchmarks), and qualifies for fair-trade certification, which may unlock premium pricing and larger contracts."
+4. <strong>Lets the creator decide:</strong> The plan creator sees their original assumptions, understands the consequences and risks, and can choose to adopt the ethical alternative, adjust it, or proceed with the original numbers (now informed of the tradeoffs).</p>
+<p>This approach respects the creator's autonomy while providing the information needed to make responsible choices. When plans explicitly describe conditions amounting to forced labor or involve workers clearly under the ILO minimum age (under 15 in most countries, under 18 in hazardous work), these are flagged as <strong>critical risks</strong> with strong emphasis on the alternative — but the system does not refuse to process them. The creator gets a better plan <em>and</em> avoids pitfalls.</p>
+<p><strong>Working Conditions Assessment &amp; ILO vs. Local Law:</strong>
+The normalizer evaluates proposed working hours, conditions, and benefits against the <em>higher</em> of local labor law or ILO Decent Work standards. This is critical because some countries' own laws fall below international standards.</p>
+<p><strong>The max(local_law, ILO) principle:</strong> When a country's local minimum wage, maximum working hours, or safety requirements fall below ILO recommendations, the normalizer uses the ILO standard as the threshold and flags the gap as a risk factor. For example:
+- A plan complies with Country X's local minimum wage of $1.50/day, but ILO living wage guidelines for that country recommend $6/day. The normalizer flags this as <strong>reputational and supply chain audit risk</strong> — major international buyers (retailers, manufacturers) now audit supply chains for ILO compliance, and operating at local minimum creates exposure.
+- A plan proposes 16-hour shifts in a jurisdiction where local law allows it but ILO conventions recommend 8 hours. The normalizer flags this with alternatives: "Your timeline assumes 16-hour days, which local law permits but creates worker burnout risk and may trigger international audit failures. A revised timeline with 10-hour days would extend the project by X weeks but reduces reputational risk."</p>
+<p><strong>Key principle:</strong> Local legality is not the same as ethical approval. Many developing nations have weak labor laws by international standards, sometimes deliberately (to attract foreign investment), sometimes due to lack of enforcement capacity. PlanExe should help creators understand when they're operating in a legal-but-risky zone and offer alternatives that protect both workers and the business's reputation.</p>
+<p><strong>How This Works in Practice:</strong></p>
+<p>A plan for a textile factory in Bangladesh that budgets $8/day for workers (above local minimum wage but below living wage) with proper safety equipment and reasonable hours would receive an <strong>informational flag</strong> — noting that wages fall below ILO living wage estimates for the region. The report presents an alternative: "Fair-wage version budgeting $12/day (closer to ILO guidelines) with the same safety provisions would increase labor costs by ~$80,000/year. This reduces supply chain audit risk and improves worker retention."</p>
+<p>A plan for the same factory at $2/day with no safety budget would receive a <strong>critical flag with strong alternatives</strong>. The report shows: original cost ($2/day, no safety = $35,000/year), the ethical alternative ($8/day with safety equipment and training = $140,000/year), and a middle option ($5/day with basic safety = $87,500/year). It explains the reputational, audit, and retention risks of each approach. The creator chooses.</p>
+<p>A plan that explicitly describes forced labor or involves workers clearly under the ILO minimum age (under 15 in most countries, under 18 in hazardous work) receives a <strong>critical risk flag</strong> with strong emphasis on the ethical alternative — but the system still generates the plan, showing both the original and the revised approach. The creator has autonomy, but with full information about the risks and consequences.</p>
+<p><strong>The key principle:</strong> PlanExe should help people build legitimate businesses, including in developing economies where costs are genuinely lower. It should not help people exploit vulnerable workers. When costs are being cut through exploitation, PlanExe shows the creator a better way — not by blocking the plan, but by offering a version that's both more ethical AND more profitable in the long term (reduced audit risk, better retention, access to premium markets).</p>
+<h2 id="inclusive-workforce-planning-beyond-the-stereotypical-worker">Inclusive Workforce Planning: Beyond the Stereotypical Worker</h2>
+<p>The ethical framework above focuses on preventing exploitation and ensuring fair treatment of workers. But there is another form of discrimination that planning systems often fail to address: the implicit assumption that the workforce should look a specific way.</p>
+<p>When business plans are created, they often implicitly assume a narrow "ideal worker" — typically a healthy, young-to-middle-aged male with no disabilities, no caregiving responsibilities, and full-time availability. This assumption is so embedded in planning conventions that it often goes unexamined. A plan that budgets for "full-time" positions assumes workers can work 40 hours a week every week. A timeline that requires employees to "ramp up quickly" assumes no need for mentoring or gradual onboarding. A safety plan that mentions "standard equipment" often omits accommodations for workers with specific needs. These assumptions are not malicious, but they are discriminatory in effect — they systematically exclude large portions of the population from consideration, without explicit justification.</p>
+<p>PlanExe should not reinforce these biases. When the normalizer detects workforce assumptions that exclude or disadvantage specific groups, it should identify the exclusion, explain why it matters, and offer inclusive alternatives that often perform better both ethically and economically.</p>
+<h3 id="the-specific-forms-of-discrimination">The Specific Forms of Discrimination</h3>
+<p><strong>Gender Discrimination and the Pregnancy Penalty:</strong> Many business plans, especially in fields like construction or manufacturing, implicitly assume an all-male or predominantly male workforce. This assumption often stems from outdated perceptions about physical capability or workplace culture. More pernicious is the explicit "pregnancy penalty" — the practice of avoiding hiring women of childbearing age because of the costs associated with parental leave. A plan that assumes 100% male workforce without justification, or that explicitly factors in "pregnancy risk" as a cost reduction, is engaging in gender discrimination. The normalizer should flag these assumptions and present an alternative: budget for parental leave as a standard business cost (it is one), and note that diverse teams consistently outperform homogeneous ones in innovation, decision-making, and customer understanding. If a plan budgets labor at $8/hour for male workers but would only hire women at $5/hour to avoid pregnancy-related costs, that disparity gets flagged with an inclusive alternative showing the true cost of treating parental leave as a one-time business expense rather than avoiding it through discrimination.</p>
+<p><strong>Disability Exclusion and Reasonable Accommodations:</strong> A significant portion of the population has disabilities — visible or invisible — that do not prevent them from performing valuable work. Yet workforce plans routinely assume all workers must be fully able-bodied and available for the full standard schedule. A person with mobility constraints might be a gifted software developer who needs a modified desk setup. A person with severe anxiety disorder might be an excellent specialist who works most effectively with a flexible schedule or partial remote work. A person who can only work three days a week due to chronic illness might deliver more focused, high-quality output than a full-time worker spreading themselves thin. The normalizer should flag plans that assume all workers must be full-time, on-site, and without accommodation needs. It should then present inclusive alternatives: suggest flexible work arrangements, reasonable accommodations (which often cost far less than assumed), and the business benefits of accessing talent pools competitors overlook. When a plan's timeline assumes continuous full-time availability but could accommodate four-day weeks or split shifts at minimal cost change, the normalizer surfaces this alternative with explicit cost comparisons and retention benefits.</p>
+<p><strong>Mental Health as a Business Cost:</strong> Workers with depression, anxiety, PTSD, or other mental health conditions are often excluded from workforce planning as though mental health support were a luxury rather than a cost of doing business. Yet mental health conditions are common, treatable, and compatible with excellent work performance when properly supported. A plan that does not account for mental health support — whether through EAP (Employee Assistance Programs), mental health days, flexible scheduling during mental health crises, or therapeutic support — is implicitly assuming workers do not have mental health needs. This assumption is both statistically incorrect (approximately 1 in 5 adults experience mental illness in a given year) and economically unsound (untreated mental health issues drive absenteeism and turnover). The normalizer should flag plans that don't budget for mental health support, then present an inclusive alternative: add a mental health budget line item (often 2-3% of labor costs for programs like EAP, mental health days, and flexible scheduling). The alternative shows how these investments reduce turnover, decrease unplanned absences, and improve overall productivity — making inclusion cost-positive for the business.</p>
+<p><strong>Racial and Ethnic Discrimination in Pay and Hiring:</strong> Some plans implicitly or explicitly assume different pay rates for workers of different ethnicities, or target hiring from specific ethnic groups to access cheaper labor markets or stereotyped skills. Others may propose pay structures that, while not explicitly discriminatory, correlate with demographic assumptions — assuming "entry-level workers" (coded as young and potentially from particular backgrounds) will earn less than "senior workers," then staffing the entry-level roles with workers from specific ethnic backgrounds. The normalizer should flag pay disparities that correlate with demographic assumptions, and it should identify any hiring assumptions that target specific ethnic groups or regions as a way to reduce labor costs. The inclusive alternative is straightforward: standardized pay scales based on role, experience, and demonstrated capability, not identity. When a plan proposes different wage tracks for "local hires" versus "immigrant workers" in the same role, or assumes workers from certain countries will accept lower wages, the normalizer surfaces this as discrimination and presents an alternative with unified pay scales, showing how this reduces legal risk, improves retention, and strengthens workplace culture.</p>
+<p><strong>Age Discrimination and Knowledge Transfer:</strong> Business plans often target workers in a narrow age range — typically 25 to 45 — explicitly or implicitly excluding younger workers (perceived as needing too much training) and older workers (perceived as past their prime or less adaptable). This assumption ignores the reality that mixed-age teams have significant advantages: younger workers bring current skills and energy, older workers bring experience and stability, and mentoring structures between them improve knowledge transfer and reduce single-points-of-failure. A plan that assumes a 25-45 age band without justification, or that explicitly budgets extra training costs for workers outside this range, is engaging in age discrimination. The normalizer should flag unrealistic age-range assumptions and present an inclusive alternative: design the team with explicit age diversity and mentoring structures. The alternative shows how this approach reduces knowledge loss when experienced workers leave (a major cost center in knowledge-intensive fields), improves innovation through perspective diversity, and accesses talent in both the entry-level and experienced-worker markets competitors might neglect.</p>
+<h3 id="why-this-matters_1">Why This Matters</h3>
+<p>The underlying principle is simple: PlanExe should help create plans that give ALL people better work conditions, not narrowly optimize for the stereotypical "ideal worker." When the normalizer detects assumptions that exclude or disadvantage certain groups, it should offer inclusive alternatives that show the business benefits of diversity. These benefits are not merely ethical — they are economic:</p>
+<ul>
+<li><strong>Broader talent pool:</strong> When you exclude entire categories of people, you're choosing to hire from a smaller, more competitive pool. Inclusive hiring expands the pool and reduces recruitment costs.</li>
+<li><strong>Lower turnover:</strong> Inclusive workplaces retain employees better. Research across industries shows that employees from historically underrepresented groups stay longer in inclusive environments, reducing the turnover cost (estimated at 50-200% of annual salary per replacement).</li>
+<li><strong>Innovation and problem-solving:</strong> Diverse teams make better decisions, solve problems more creatively, and catch blind spots that homogeneous teams miss. This translates directly to better products, fewer costly mistakes, and faster adaptation to market changes.</li>
+<li><strong>Legal and compliance risk reduction:</strong> Plans that explicitly or implicitly discriminate create legal exposure. Inclusive alternatives reduce this risk while improving the business's position if audited or challenged.</li>
+<li><strong>Access to government incentives:</strong> Many jurisdictions offer tax credits, grants, or preferential bidding for businesses that demonstrate inclusive hiring practices, particularly for hiring workers with disabilities or from disadvantaged backgrounds.</li>
+<li><strong>Customer loyalty and brand reputation:</strong> Customers increasingly prefer to do business with companies that treat workers fairly and practice inclusion. This can translate to premium pricing, customer loyalty, and willingness to recommend the business.</li>
+</ul>
+<h3 id="how-the-normalizer-detects-exclusionary-assumptions">How the Normalizer Detects Exclusionary Assumptions</h3>
+<p>The normalizer checks workforce assumptions against specific inclusion indicators. When these indicators suggest exclusionary assumptions, the system flags them and generates inclusive alternatives with adjusted costs. The checks include:</p>
+<p><strong>Demographic profiling:</strong> Does the plan assume a specific demographic profile for ideal workers (age range, gender, disability status, family structure)? If so, the plan is flagged with a note explaining which groups are implicitly excluded and why this assumption warrants reconsideration.</p>
+<p><strong>Accommodation budgeting:</strong> When a plan involves workers, does it budget for accommodations that some workers might need (modified workspace, assistive technology, flexible scheduling support)? If not, the plan assumes an able-bodied, fully available workforce.</p>
+<p><strong>Parental leave and family support:</strong> Is parental leave included as a standard business cost, or is it absent from labor cost calculations? Absence suggests an implicit assumption that workers have no caregiving responsibilities.</p>
+<p><strong>Flexible work provisions:</strong> Does the plan allow for flexible hours, remote work, part-time arrangements, or other non-standard schedules where operationally feasible? If all assumptions are "full-time on-site," the plan excludes workers who need flexibility.</p>
+<p><strong>Pay scales and demographics:</strong> Do pay scales vary by role and demonstrated capability, or do they correlate with demographic assumptions (age, ethnicity, gender)? The normalizer compares proposed pay against role-based benchmarks to detect implicit demographic-based pricing.</p>
+<p><strong>Team composition and diversity:</strong> Does the plan include explicit attention to hiring or team diversity, or are hiring decisions framed in purely functional terms without demographic consideration? Inclusion means actively designing for diversity, not just happening to be diverse.</p>
+<p>When gaps are found, the normalizer generates inclusive alternatives with adjusted costs and timeline implications. For example, if a plan assumes a full-time workforce but could accommodate flexible arrangements at no schedule cost change, that alternative is shown. If a plan excludes people with disabilities due to assumed accommodation costs, the alternative calculates reasonable accommodations (often &lt;$5K per person annually) and shows the net benefit of accessing that talent. If a plan implicitly assumes a male-only workforce, the alternative shows the cost of genuine gender-neutral hiring and the performance benefits of diverse teams.</p>
+<p>The creator sees the original assumptions, the inclusive alternatives, and the quantified tradeoffs — and chooses how to proceed. PlanExe does not force inclusion. It makes the case for inclusion visible, financially quantified, and grounded in business benefits, not just ethics.</p>
+<h2 id="how-the-normalizer-works">How the Normalizer Works</h2>
+<h3 id="step-1-domain-detection">Step 1: Domain Detection</h3>
+<p>When a plan enters the normalizer, the first task is figuring out what kind of plan it is. A carpentry business operates in a fundamentally different domain than a SaaS startup, and the normalizer needs to know which domain's rules to apply.</p>
+<p>Domain detection works by analyzing the plan text for signals: currencies mentioned (DKK suggests Scandinavia), units used (board-feet suggests woodworking), and keywords that indicate the industry (mentions of "patients" and "appointments" suggest healthcare). Each signal contributes to a score, and the highest-scoring domain profile wins.</p>
+<p>Domain profiles are stored as external YAML configuration files — not hardcoded in Python. This means new domains can be added without changing source code, and existing domains can be tuned without redeploying. Each profile defines the domain's default currency, preferred units, confidence keyword mappings, and plausibility ranges.</p>
+<h3 id="step-2-assumption-extraction">Step 2: Assumption Extraction</h3>
+<p>Before assumptions can be normalized, they need to be structured. The LLM produces free-text assumptions like "The project will cost between $50,000 and $75,000 over 6-8 months with a team of 3-5 people." The QuantifiedAssumptionExtractor parses these into typed objects:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">QuantifiedAssumption</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">assumption_id</span><span class="p">:</span> <span class="nb">str</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">claim</span><span class="p">:</span> <span class="nb">str</span>                  <span class="c1"># &quot;The project will cost $50,000-$75,000&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">lower_bound</span><span class="p">:</span> <span class="n">Decimal</span>        <span class="c1"># Decimal(&quot;50&quot;) — exact, no floating-point drift</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">upper_bound</span><span class="p">:</span> <span class="n">Decimal</span>        <span class="c1"># Decimal(&quot;75&quot;) — exact, no floating-point drift</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">exponent</span><span class="p">:</span> <span class="nb">int</span>               <span class="c1"># 3 (actual value = mantissa × 10^exponent)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span>                   <span class="c1"># &quot;USD&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">region</span><span class="p">:</span> <span class="nb">str</span>                 <span class="c1"># &quot;KE&quot; (ISO 3166-1 alpha-2 country code)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">confidence</span><span class="p">:</span> <span class="nb">str</span>             <span class="c1"># &quot;medium&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">evidence</span><span class="p">:</span> <span class="nb">str</span>               <span class="c1"># Supporting text from the plan</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">span_ratio</span><span class="p">:</span> <span class="nb">float</span>           <span class="c1"># upper/lower = 1.5</span>
+</code></pre></div>
+<p><strong>Why Decimal, Not Float:</strong></p>
+<p>Financial values must be stored as <code>Decimal</code> (from Python's <code>decimal</code> module), not <code>float</code>. A float cannot represent $25.00 exactly — it becomes 24.999999... or 25.000001... due to binary floating-point representation. This matters when comparing costs, checking thresholds, and displaying values to users. <code>Decimal("25.00")</code> is exactly 25.00, always. This is the same approach used by banks, payment processors, and financial software worldwide. The <code>span_ratio</code> field remains a <code>float</code> because it's a relative ratio, not a monetary value — precision drift in a ratio like 1.4999 vs 1.5000 is inconsequential.</p>
+<p><strong>Why the Exponent Field Matters:</strong></p>
+<p>The exponent field is critical for handling the enormous range of monetary values that real-world plans encounter. Rather than storing raw numbers — which quickly become unwieldy in hyperinflation economies or meaninglessly small for cryptocurrency — the assumption extractor separates every numeric value into a mantissa and a power-of-ten exponent. This is essentially scientific notation for business planning.</p>
+<p>A carpentry project costing $50,000–$75,000 is stored as mantissa 50–75 with exponent 3. The same project priced in Venezuelan Bolívares at 50,000,000–75,000,000 becomes mantissa 50–75 with exponent 6. A Bitcoin-denominated project at 0.0050–0.0075 BTC becomes mantissa 50–75 with exponent -4. In all three cases, the mantissa is the same — only the scale changes.</p>
+<p>This separation has several practical benefits. First, it makes cross-currency comparison meaningful: the normalizer can compare mantissas directly once currencies are converted, without dealing with strings of zeros. Second, it handles hyperinflation gracefully — when Zimbabwe's dollar inflated, prices went from hundreds to trillions, but the underlying economic relationships (relative costs of labor vs materials) remained expressible in small mantissa values at different exponents. Third, it future-proofs the system for whatever monetary forms emerge — whether a country adopts Bitcoin, a regional digital currency, or a new post-crisis denomination, the exponent simply adjusts.</p>
+<p>Each assumption also carries a <code>region</code> tag — an ISO 3166-1 country code identifying where the assumption applies. This is critical because the same exponent and unit combination means very different things in different regions. A labor cost of mantissa 50 with exponent 0 in USD means $50/hour in the US (reasonable for skilled trades) but $50/hour in rural Kenya (wildly high). The region tag lets downstream pipeline tasks — governance, risk assessment, ethical checks, FermiSanityCheck — apply location-appropriate plausibility ranges, living wage comparisons, and regulatory context without re-parsing the original claim text. The region is stored directly in the assumption JSON so every downstream consumer has immediate access to it.</p>
+<p>The extractor determines the appropriate exponent automatically by analyzing the currency, location, and context. For stable currencies like USD, EUR, or CHF, the exponent typically ranges from -2 to 6. For currencies experiencing active hyperinflation, the exponent might reach 9 or higher. For cryptocurrencies, negative exponents are common. The exponent is always stored alongside the value so downstream tasks can reconstruct the actual amount when needed: <code>actual_value = mantissa × 10^exponent</code>.</p>
+<p><strong>Examples of Exponent-Based Representation:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Standard USD project
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>claim: &quot;Labor costs $50,000-$75,000&quot;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>lower_bound: 50, upper_bound: 75, exponent: 3, unit: USD
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a># actual: $50,000 - $75,000
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a># Venezuelan Bolívares (hyperinflation)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>claim: &quot;Office rent 50,000,000-75,000,000 VES/month&quot;
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>lower_bound: 50, upper_bound: 75, exponent: 6, unit: VES
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a># actual: 50,000,000 - 75,000,000 VES
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a># Bitcoin micro-transaction
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>claim: &quot;Server costs 0.0050-0.0075 BTC/month&quot;
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>lower_bound: 50, upper_bound: 75, exponent: -4, unit: BTC
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a># actual: 0.0050 - 0.0075 BTC
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a># Small item (individual nails)
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>claim: &quot;Nails cost $0.005-$0.008 each&quot;
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>lower_bound: 5, upper_bound: 8, exponent: -3, unit: USD
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a># actual: $0.005 - $0.008
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a># Post-denomination (country resets currency)
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>claim: &quot;After redenomination, costs 50-75 new ZWL&quot;
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>lower_bound: 50, upper_bound: 75, exponent: 0, unit: ZWL
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a># actual: 50 - 75 ZWL
+</code></pre></div>
+<p>This extraction handles multiple formats: explicit ranges ("10-20"), approximate values ("about $50K"), percentage ranges ("15-25% growth"), and duration estimates ("3-6 months"). It also detects currencies from context — "$" is USD in an American plan but might be AUD, CAD, or SGD depending on other signals. The extractor automatically identifies the optimal exponent by analyzing the magnitude of extracted numbers and the currency context, ensuring mantissas always fall within a reasonable range (typically 1–999) for clarity and precision.</p>
+<h3 id="step-3-fermi-sanity-check">Step 3: Fermi Sanity Check</h3>
+<p>Named after Enrico Fermi's famous estimation technique, this step asks: "Are these numbers physically plausible?" It's not checking whether the business plan is good — it's checking whether the numbers describe something that could exist in reality.</p>
+<p>The sanity check operates at several levels:</p>
+<p><strong>Magnitude checks</strong> compare proposed costs against real-world benchmarks from the Resource/Cost Data Service. If a plan says a carpenter in Nairobi charges $500/hour, that's flagged — real rates are $5-15/hour. If a plan says commercial rent in Manhattan is $5/sqft/month, that's also flagged — real rates are $60-150/sqft/year.</p>
+<p><strong>Span ratio checks</strong> look at the range between lower and upper bounds. A span ratio of 1.5 (upper is 50% more than lower) is normal uncertainty. A span ratio of 100 (upper is 100× the lower bound) suggests the assumption is meaningless — the planner has no idea what the real number is. These are flagged for review.</p>
+<p><strong>Internal consistency checks</strong> compare assumptions against each other within the same plan. If one assumption says the team is 3 people and another says labor costs are $2M/year for entry-level work, something doesn't add up.</p>
+<p><strong>Ethical checks</strong> (described above) evaluate labor costs, safety provisions, and working conditions against international standards.</p>
+<h3 id="step-4-currency-and-unit-normalization">Step 4: Currency and Unit Normalization</h3>
+<p>Once assumptions are extracted and sanity-checked, they're normalized to a standard representation. All monetary values are converted using the Currency Service (live exchange rates, not hardcoded) to the domain's default currency plus a EUR equivalent for cross-plan comparison. All physical measurements are converted to metric. Duration estimates are standardized to a common format.</p>
+<p>This normalization makes it possible to compare plans across domains and regions. A carpentry workshop in Copenhagen and one in Nairobi can be meaningfully compared when their costs are expressed in the same currency at current exchange rates, rather than in whatever currency the LLM happened to generate.</p>
+<h3 id="step-5-confidence-calibration">Step 5: Confidence Calibration</h3>
+<p>Different domains have different relationships with certainty. When a master carpenter says "this will take three weeks," that estimate is grounded in decades of experience — it deserves high confidence. When a first-time startup founder says "we'll achieve product-market fit in three months," that's aspirational at best — it deserves low confidence regardless of how certain they sound.</p>
+<p>The normalizer applies domain-specific confidence calibration using keyword analysis. Each domain profile defines which phrases indicate high, medium, and low confidence in that domain's context. "Standard practice in the industry" means high confidence in an established trade but medium confidence in a novel technology sector. "Based on comparable projects" means high confidence if those projects are cited, medium if they're vague.</p>
+<h2 id="example-domain-profile">Example Domain Profile</h2>
+<p>Domain profiles are external YAML configuration files that define domain-specific rules, currency preferences, units, and confidence mappings. Below is a real-world example: the Carpentry &amp; Woodworking domain.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Domain Profile: Carpentry / Woodworking</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># File: domain-profiles/carpentry.yaml</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">profile</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">carpentry</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Carpentry</span><span class="nv"> </span><span class="s">&amp;</span><span class="nv"> </span><span class="s">Woodworking&quot;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="no">Covers woodworking businesses from small workshops to furniture</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="no">manufacturers. Includes custom cabinetry, construction carpentry,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="no">and artisan woodcraft.</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="nt">detection</span><span class="p">:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">keywords</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wood</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lumber</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">timber</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cabinet</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">furniture</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joinery</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">carpentry</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">woodwork</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plywood</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">veneer</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hardwood</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">softwood</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">    </span><span class="nt">currency_signals</span><span class="p">:</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DKK</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EUR</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">USD</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SEK</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NOK</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="nt">unit_signals</span><span class="p">:</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">board_feet</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linear_feet</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cubic_meters</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sheets</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">  </span><span class="nt">currency</span><span class="p">:</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EUR</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">    </span><span class="nt">display_precision</span><span class="p">:</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">      </span><span class="nt">material_cost</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">        </span><span class="c1"># €12.50 per board foot</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">      </span><span class="nt">labor_hourly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">         </span><span class="c1"># €45/hour (no cents needed)</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">      </span><span class="nt">project_total</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">        </span><span class="c1"># €15,000 (round numbers)</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">    </span><span class="c1"># Some markets use a different operational currency than official</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">    </span><span class="nt">dual_currency_awareness</span><span class="p">:</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">country</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TR</span><span class="w">           </span><span class="c1"># Turkey</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">        </span><span class="nt">official</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRY</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">        </span><span class="nt">operational</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">EUR</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">USD</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">        </span><span class="nt">note</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;High</span><span class="nv"> </span><span class="s">inflation</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">many</span><span class="nv"> </span><span class="s">B2B</span><span class="nv"> </span><span class="s">transactions</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">EUR/USD&quot;</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">country</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ZW</span><span class="w">           </span><span class="c1"># Zimbabwe</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">        </span><span class="nt">official</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ZWL</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">        </span><span class="nt">operational</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">USD</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">        </span><span class="nt">note</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;USD</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">de</span><span class="nv"> </span><span class="s">facto</span><span class="nv"> </span><span class="s">currency</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">most</span><span class="nv"> </span><span class="s">business</span><span class="nv"> </span><span class="s">transactions&quot;</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">  </span><span class="nt">units</span><span class="p">:</span>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">    </span><span class="nt">prefer_metric</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">    </span><span class="nt">conversions</span><span class="p">:</span>
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">board_feet</span>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a><span class="w">        </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cubic_meters</span>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="w">        </span><span class="nt">factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.00236</span>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linear_feet</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">        </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meters</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">        </span><span class="nt">factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.3048</span>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inches</span>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a><span class="w">        </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">centimeters</span>
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">        </span><span class="nt">factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.54</span>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">square_feet</span>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="w">        </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">square_meters</span>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">        </span><span class="nt">factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0929</span>
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="w">  </span><span class="nt">confidence</span><span class="p">:</span>
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a><span class="w">    </span><span class="nt">high</span><span class="p">:</span>
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;standard</span><span class="nv"> </span><span class="s">practice&quot;</span>
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;I&#39;ve</span><span class="nv"> </span><span class="s">done</span><span class="nv"> </span><span class="s">this&quot;</span>
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;always</span><span class="nv"> </span><span class="s">costs&quot;</span>
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;industry</span><span class="nv"> </span><span class="s">standard&quot;</span>
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;based</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">20</span><span class="nv"> </span><span class="s">years&quot;</span>
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;we</span><span class="nv"> </span><span class="s">quoted&quot;</span>
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="w">    </span><span class="nt">medium</span><span class="p">:</span>
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;typically&quot;</span>
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;usually&quot;</span>
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;expect&quot;</span>
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;comparable</span><span class="nv"> </span><span class="s">projects&quot;</span>
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;market</span><span class="nv"> </span><span class="s">rate&quot;</span>
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a><span class="w">    </span><span class="nt">low</span><span class="p">:</span>
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;rough</span><span class="nv"> </span><span class="s">estimate&quot;</span>
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;maybe&quot;</span>
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;not</span><span class="nv"> </span><span class="s">sure&quot;</span>
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;guessing&quot;</span>
+<a id="__codelineno-2-90" name="__codelineno-2-90" href="#__codelineno-2-90"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;could</span><span class="nv"> </span><span class="s">be&quot;</span>
+<a id="__codelineno-2-91" name="__codelineno-2-91" href="#__codelineno-2-91"></a>
+<a id="__codelineno-2-92" name="__codelineno-2-92" href="#__codelineno-2-92"></a><span class="w">  </span><span class="nt">plausibility</span><span class="p">:</span>
+<a id="__codelineno-2-93" name="__codelineno-2-93" href="#__codelineno-2-93"></a><span class="w">    </span><span class="nt">labor</span><span class="p">:</span>
+<a id="__codelineno-2-94" name="__codelineno-2-94" href="#__codelineno-2-94"></a><span class="w">      </span><span class="nt">hourly_rate</span><span class="p">:</span>
+<a id="__codelineno-2-95" name="__codelineno-2-95" href="#__codelineno-2-95"></a><span class="w">        </span><span class="nt">global_range</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">150</span><span class="p p-Indicator">]</span><span class="w">          </span><span class="c1"># USD equivalent</span>
+<a id="__codelineno-2-96" name="__codelineno-2-96" href="#__codelineno-2-96"></a><span class="w">        </span><span class="nt">developed_market</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">25</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">150</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-97" name="__codelineno-2-97" href="#__codelineno-2-97"></a><span class="w">        </span><span class="nt">developing_market</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">40</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-98" name="__codelineno-2-98" href="#__codelineno-2-98"></a><span class="w">      </span><span class="nt">living_wage_source</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Global</span><span class="nv"> </span><span class="s">Living</span><span class="nv"> </span><span class="s">Wage</span><span class="nv"> </span><span class="s">Coalition&quot;</span>
+<a id="__codelineno-2-99" name="__codelineno-2-99" href="#__codelineno-2-99"></a><span class="w">    </span><span class="nt">materials</span><span class="p">:</span>
+<a id="__codelineno-2-100" name="__codelineno-2-100" href="#__codelineno-2-100"></a><span class="w">      </span><span class="c1"># Precision varies: lumber is 2 decimals, nails might be 4</span>
+<a id="__codelineno-2-101" name="__codelineno-2-101" href="#__codelineno-2-101"></a><span class="w">      </span><span class="nt">precision_rules</span><span class="p">:</span>
+<a id="__codelineno-2-102" name="__codelineno-2-102" href="#__codelineno-2-102"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lumber</span>
+<a id="__codelineno-2-103" name="__codelineno-2-103" href="#__codelineno-2-103"></a><span class="w">          </span><span class="nt">min_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-2-104" name="__codelineno-2-104" href="#__codelineno-2-104"></a><span class="w">          </span><span class="nt">typical_range_usd</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">2.00</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">50.00</span><span class="p p-Indicator">]</span><span class="w">    </span><span class="c1"># per board foot</span>
+<a id="__codelineno-2-105" name="__codelineno-2-105" href="#__codelineno-2-105"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hardware</span>
+<a id="__codelineno-2-106" name="__codelineno-2-106" href="#__codelineno-2-106"></a><span class="w">          </span><span class="nt">min_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-2-107" name="__codelineno-2-107" href="#__codelineno-2-107"></a><span class="w">          </span><span class="nt">typical_range_usd</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.005</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">25.00</span><span class="p p-Indicator">]</span><span class="w">   </span><span class="c1"># single nail to hinge</span>
+<a id="__codelineno-2-108" name="__codelineno-2-108" href="#__codelineno-2-108"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">finish</span>
+<a id="__codelineno-2-109" name="__codelineno-2-109" href="#__codelineno-2-109"></a><span class="w">          </span><span class="nt">min_decimals</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<a id="__codelineno-2-110" name="__codelineno-2-110" href="#__codelineno-2-110"></a><span class="w">          </span><span class="nt">typical_range_usd</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">15.00</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">80.00</span><span class="p p-Indicator">]</span><span class="w">   </span><span class="c1"># per gallon/liter</span>
+<a id="__codelineno-2-111" name="__codelineno-2-111" href="#__codelineno-2-111"></a><span class="w">    </span><span class="nt">project_budget</span><span class="p">:</span>
+<a id="__codelineno-2-112" name="__codelineno-2-112" href="#__codelineno-2-112"></a><span class="w">      </span><span class="nt">small_workshop</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">500</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">50000</span><span class="p p-Indicator">]</span><span class="w">            </span><span class="c1"># EUR</span>
+<a id="__codelineno-2-113" name="__codelineno-2-113" href="#__codelineno-2-113"></a><span class="w">      </span><span class="nt">medium_business</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">50000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">500000</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-114" name="__codelineno-2-114" href="#__codelineno-2-114"></a><span class="w">      </span><span class="nt">large_operation</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">500000</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">5000000</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-2-115" name="__codelineno-2-115" href="#__codelineno-2-115"></a>
+<a id="__codelineno-2-116" name="__codelineno-2-116" href="#__codelineno-2-116"></a><span class="w">  </span><span class="nt">ethical</span><span class="p">:</span>
+<a id="__codelineno-2-117" name="__codelineno-2-117" href="#__codelineno-2-117"></a><span class="w">    </span><span class="nt">labor_standards</span><span class="p">:</span>
+<a id="__codelineno-2-118" name="__codelineno-2-118" href="#__codelineno-2-118"></a><span class="w">      </span><span class="c1"># Use the HIGHER of local law or ILO recommendation</span>
+<a id="__codelineno-2-119" name="__codelineno-2-119" href="#__codelineno-2-119"></a><span class="w">      </span><span class="nt">standard_source</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;max(local_law,</span><span class="nv"> </span><span class="s">ilo_recommendation)&quot;</span>
+<a id="__codelineno-2-120" name="__codelineno-2-120" href="#__codelineno-2-120"></a><span class="w">      </span><span class="nt">flag_when_local_below_ilo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-121" name="__codelineno-2-121" href="#__codelineno-2-121"></a><span class="w">      </span><span class="nt">flag_message</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<a id="__codelineno-2-122" name="__codelineno-2-122" href="#__codelineno-2-122"></a><span class="w">        </span><span class="no">Local labor laws in {country} fall below ILO recommendations</span>
+<a id="__codelineno-2-123" name="__codelineno-2-123" href="#__codelineno-2-123"></a><span class="w">        </span><span class="no">for {standard}. This creates reputational and supply chain</span>
+<a id="__codelineno-2-124" name="__codelineno-2-124" href="#__codelineno-2-124"></a><span class="w">        </span><span class="no">audit risks. Consider adopting ILO standards.</span>
+<a id="__codelineno-2-125" name="__codelineno-2-125" href="#__codelineno-2-125"></a><span class="w">    </span><span class="nt">safety</span><span class="p">:</span>
+<a id="__codelineno-2-126" name="__codelineno-2-126" href="#__codelineno-2-126"></a><span class="w">      </span><span class="nt">required_for</span><span class="p">:</span>
+<a id="__codelineno-2-127" name="__codelineno-2-127" href="#__codelineno-2-127"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chemical_finishing</span>
+<a id="__codelineno-2-128" name="__codelineno-2-128" href="#__codelineno-2-128"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">power_tools</span>
+<a id="__codelineno-2-129" name="__codelineno-2-129" href="#__codelineno-2-129"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heavy_machinery</span>
+<a id="__codelineno-2-130" name="__codelineno-2-130" href="#__codelineno-2-130"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dust_exposure</span>
+<a id="__codelineno-2-131" name="__codelineno-2-131" href="#__codelineno-2-131"></a><span class="w">      </span><span class="nt">missing_safety_flag</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<a id="__codelineno-2-132" name="__codelineno-2-132" href="#__codelineno-2-132"></a><span class="w">        </span><span class="no">Plan involves {hazard} but does not budget for protective</span>
+<a id="__codelineno-2-133" name="__codelineno-2-133" href="#__codelineno-2-133"></a><span class="w">        </span><span class="no">equipment or safety training. Recommended addition: {recommendation}</span>
+</code></pre></div>
+<p>This example shows:
+- <strong>Domain detection:</strong> Keywords, currency signals, and units that identify carpentry plans
+- <strong>Dual currency awareness:</strong> Turkey and Zimbabwe use official currencies that aren't operationally realistic; the profile notes the currencies actually used in business transactions
+- <strong>Numeric precision rules:</strong> Not all costs are rounded to the nearest dollar. Hardware items (nails) need 3 decimal places ($0.005), while project totals are rounded to whole dollars
+- <strong>Plausibility ranges:</strong> Labor rates and material costs vary by market; the profile defines realistic ranges
+- <strong>Ethical standards:</strong> Uses the <em>higher</em> of local law or ILO recommendations, and flags when local law is itself inadequate</p>
+<h2 id="numeric-precision-and-currency-reality">Numeric Precision and Currency Reality</h2>
+<p>A common mistake in planning systems is assuming all costs are nice round numbers in major currencies. Reality is messier.</p>
+<p><strong>Arbitrary Precision in Costs:</strong>
+Not all costs are in the thousands. A single sheet of paper costs $0.01. A single nail costs $0.005. A bottle of epoxy finish costs $25.50. These are not rounding errors — they're real costs that compound across a project. The normalizer must handle arbitrary decimal precision, not force everything into dollars-and-cents. This is why the domain profiles include <code>precision_rules</code> that specify the minimum decimals for different categories.</p>
+<p><strong>Hyperinflation and Currency Reality:</strong>
+In some countries, official currency values bear no relationship to real purchasing power. A bottle of water in Venezuela might cost 1,000,000 Bolívares — not because of a data entry error, but because hyperinflation has made the currency nearly worthless for real transactions. The normalizer must recognize hyperinflation contexts and flag them, often recommending that costs be expressed in a more stable reference currency (USD, EUR) instead.</p>
+<p><strong>Dual-Currency Operations:</strong>
+Many countries maintain an official currency while actually operating on a different, more stable currency. Examples:
+- <strong>Zimbabwe:</strong> Official ZWL (Zimbabwean Dollar), but USD is the de facto currency for most business transactions — stable, trusted, widely accepted
+- <strong>Venezuela:</strong> Official VES (Bolívar), but USD circulates widely for B2B transactions due to hyperinflation of the local currency
+- <strong>Turkey:</strong> Official TRY (Turkish Lira), but many B2B and international transactions use EUR or USD due to persistent high inflation
+- <strong>Cuba:</strong> Official CUP (Cuban Peso), but CUC (convertible peso) was historically used for tourism/business; now largely unified but the legacy of dual currency remains
+- <strong>Lebanon:</strong> Official LBP (Lebanese Pound), but USD has been the operational currency for most real transactions since the 2019 financial crisis</p>
+<p>The normalizer should detect these dual-currency contexts and present costs in both currencies, with a clear note about which one reflects real purchasing decisions. A plan costing 500,000 TRY sounds expensive; the same plan costing €25,000 is more honest about its real cost in Turkey's economy.</p>
+<p><strong>Handling Precision and Reality Together:</strong>
+When the normalizer encounters a cost in a hyperinflated currency, it should:
+1. Recognize the hyperinflation context from domain/location signals
+2. Offer a conversion to a stable reference currency (USD or EUR at current rates)
+3. Flag this as a currency reality issue for the plan creator
+4. Include both in reports, with the stable-currency version as the primary number</p>
+<p>This ensures plans are grounded in economic reality, not in currency fantasy.</p>
+<h2 id="integration-with-planexe-pipeline">Integration with PlanExe Pipeline</h2>
+<p>The normalizer integrates as a Luigi task in the existing DAG:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>MakeAssumptions → [QuantifiedAssumptionExtractor] → [FermiSanityCheck] → [DomainNormalizer] → DistillAssumptions
+</code></pre></div>
+<p>The three new tasks (in brackets) are inserted between the existing MakeAssumptions and DistillAssumptions tasks. Each produces output files following PlanExe's standard naming convention:</p>
+<ul>
+<li><code>003-12-fermi_sanity_check_report.json</code> — detailed per-assumption verdicts</li>
+<li><code>003-13-fermi_sanity_check_summary.md</code> — human-readable summary of findings</li>
+<li><code>003-14-normalized_assumptions.json</code> — all assumptions in standard representation</li>
+</ul>
+<p>The FermiSanityCheck report includes a section on ethical flags, making it visible to both the downstream pipeline tasks and human reviewers.</p>
+<h2 id="implementation-phases">Implementation Phases</h2>
+<p><strong>Phase 1</strong> builds the QuantifiedAssumptionExtractor as a standalone component. This is pure text parsing and structuring — no external service dependencies, easy to test, and immediately useful even without the other components.</p>
+<p><strong>Phase 2</strong> creates the domain profile system. YAML schema, profile loader, default profiles for common domains (construction/trades, healthcare, technology, food service, non-profit, personal/lifestyle). Detection algorithm with scoring. This is also standalone and testable.</p>
+<p><strong>Phase 3</strong> implements FermiSanityCheck. This component benefits from the Resource/Cost Data Service but works without it — falling back to heuristic thresholds when real-world benchmark data isn't available. The ethical assessment layer is part of this phase.</p>
+<p><strong>Phase 4</strong> brings it all together with the DomainNormalizer. Currency normalization via the Currency Service, unit conversion, confidence calibration, and full pipeline integration. This phase depends on all previous phases plus the Currency Service implementation.</p>
+<p>Each phase will be submitted as a separate, focused PR.</p>
+<h2 id="what-changed-from-pr-72">What Changed from PR #72</h2>
+<p>PR #72 attempted to deliver all of this in a single 1,260-line PR with hardcoded currency rates, a fragile file path for domain profiles, and no ethical framework. It was closed because the foundation wasn't right.</p>
+<p>This proposal redesigns the same vision with proper prerequisites (Currency Service and Resource/Cost Data Service, both now merged as proposals), external configuration instead of hardcoded values, phased delivery instead of a monolithic PR, and — critically — an ethical framework that ensures PlanExe's cost optimization doesn't become a tool for labor exploitation.</p>
+<p>The technical problems (hardcoded rates, fragile paths, uppercase loggers) were symptoms. The real issue was that cost normalization needs to be built on real data services and ethical principles, not hardcoded approximations. That foundation is now in place.</p>
+<h2 id="open-questions">Open Questions</h2>
+<ol>
+<li>Should the ethical assessment be configurable (strictness levels) or fixed to ILO standards?</li>
+<li>How should PlanExe handle plans that are borderline — legal in the target jurisdiction but below ILO recommendations?</li>
+<li>Should the FermiSanityCheck block pipeline progression (hard gate) or annotate and continue (soft gate)?</li>
+<li>What's the minimum set of domain profiles for a useful v1?</li>
+<li>How do we source living wage data reliably? The Global Living Wage Coalition covers ~30 countries — what about the rest?</li>
+<li>Should the ethical flags be visible to the end user or only to the pipeline operator?</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/copy-all.js"></script>
+      
+    
+  </body>
+</html>
