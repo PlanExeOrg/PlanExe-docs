@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/2026-03-07-luigi-resume-enhancements/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/49-distributed-physical-task-dispatch-protocol/">
+        <link rel="prev" href="../2026-02-26-lobster-museum-donation-routing/">
       
       
-        <link rel="prev" href="../48-moltbook-reputation-bridge/">
-      
-      
-        <link rel="next" href="../50-agent-to-agent-payment-gateway/">
+        <link rel="next" href="../2026-03-07-pipeline-hardening-roadmap-local-model-reliability/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Distributed Physical Task Dispatch Protocol - PlanExe Documentation</title>
+        <title>2026 03 07 luigi resume enhancements - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Distributed Physical Task Dispatch Protocol - PlanExe Documentation" />
+<meta property="og:title" content="2026 03 07 luigi resume enhancements - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/49-distributed-physical-task-dispatch-protocol.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/2026-03-07-luigi-resume-enhancements.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/49-distributed-physical-task-dispatch-protocol/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/2026-03-07-luigi-resume-enhancements/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Distributed Physical Task Dispatch Protocol - PlanExe Documentation" />
+<meta property="twitter:title" content="2026 03 07 luigi resume enhancements - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/49-distributed-physical-task-dispatch-protocol.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/2026-03-07-luigi-resume-enhancements.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#distributed-physical-task-dispatch-protocol" class="md-skip">
+        <a href="#luigi-resume-enhancements-proposal" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Distributed Physical Task Dispatch Protocol
+              2026 03 07 luigi resume enhancements
             
           </span>
         </div>
@@ -2691,10 +2689,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../2026-03-07-luigi-resume-enhancements/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 03 07 luigi resume enhancements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2710,6 +2735,381 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-webhook-event-hooks-on-task-completion-and-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Webhook / Event Hooks on Task Completion and Failure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Webhook / Event Hooks on Task Completion and Failure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proposed-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposed interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-task-invalidation-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Task Invalidation CLI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Task Invalidation CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plan-file-hot-editing-with-downstream-invalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Plan File Hot-Editing with Downstream Invalidation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Plan File Hot-Editing with Downstream Invalidation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pipeline-status-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Pipeline Status Command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Pipeline Status Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-per-task-timeout-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Per-Task Timeout Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Per-Task Timeout Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-structured-failure-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Structured Failure Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Structured Failure Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Request
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3755,44 +4155,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    49 distributed physical task dispatch protocol
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
         
   
   
@@ -3815,230 +4181,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#task-manifest-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Task Manifest Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proof-of-physical-work-popw" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proof of Physical Work (PoPW)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-protocol-and-security-foundations-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Protocol and Security Foundations (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-dispatcher-and-transport-layer-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Dispatcher and Transport Layer (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-proof-of-physical-work-popw-verification-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Proof of Physical Work (PoPW) Verification (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-reliability-and-operations-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Reliability and Operations (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5353,10 +5495,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#background" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Background
       
     </span>
   </a>
@@ -5364,132 +5506,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#1-webhook-event-hooks-on-task-completion-and-failure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        1. Webhook / Event Hooks on Task Completion and Failure
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#task-manifest-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Task Manifest Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proof-of-physical-work-popw" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proof of Physical Work (PoPW)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+    <nav class="md-nav" aria-label="1. Webhook / Event Hooks on Task Completion and Failure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-a-protocol-and-security-foundations-2-weeks" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase A — Protocol and Security Foundations (2 weeks)
+        The problem
       
     </span>
   </a>
@@ -5497,10 +5529,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-b-dispatcher-and-transport-layer-23-weeks" class="md-nav__link">
+  <a href="#what-we-want" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase B — Dispatcher and Transport Layer (2–3 weeks)
+        What we want
       
     </span>
   </a>
@@ -5508,10 +5540,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-c-proof-of-physical-work-popw-verification-2-weeks" class="md-nav__link">
+  <a href="#proposed-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase C — Proof of Physical Work (PoPW) Verification (2 weeks)
+        Proposed interface
       
     </span>
   </a>
@@ -5519,32 +5551,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-d-reliability-and-operations-2-weeks" class="md-nav__link">
+  <a href="#why-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase D — Reliability and Operations (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
+        Why this matters
       
     </span>
   </a>
@@ -5553,6 +5563,289 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-task-invalidation-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Task Invalidation CLI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Task Invalidation CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plan-file-hot-editing-with-downstream-invalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Plan File Hot-Editing with Downstream Invalidation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Plan File Hot-Editing with Downstream Invalidation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-pipeline-status-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Pipeline Status Command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Pipeline Status Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-per-task-timeout-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Per-Task Timeout Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Per-Task Timeout Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-structured-failure-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Structured Failure Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Structured Failure Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-want_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we want
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-matters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Request
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5576,153 +5869,211 @@
   
 
 
-<h1 id="distributed-physical-task-dispatch-protocol">Distributed Physical Task Dispatch Protocol</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-11<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Audience:</strong> IoT Architects, Robotics Engineers</p>
+<h1 id="luigi-resume-enhancements-proposal">Luigi Resume Enhancements — Proposal</h1>
+<p><strong>Date:</strong> 2026-03-07<br />
+<strong>Author:</strong> Bubba (Mac Mini agent)<br />
+<strong>Context:</strong> Written from direct experience running overnight pipeline recovery sessions with Qwen 3.5-35B-A3B on a Mac Mini M4 Pro. Every suggestion here is grounded in a concrete friction point hit during real runs.</p>
 <hr />
-<h2 id="pitch">Pitch</h2>
-<p>Define a secure protocol for dispatching physical tasks from the PlanExe Cloud to edge agents and verifying real-world execution.</p>
-<h2 id="why">Why</h2>
-<p>Cloud planning is only valuable if it can reliably trigger real actions on devices. A standardized dispatch protocol closes the cloud-to-edge gap.</p>
-<h2 id="problem">Problem</h2>
+<h2 id="background">Background</h2>
+<p>Luigi's file-based task completion tracking is one of PlanExe's most valuable properties for local model runs. When a 60-task pipeline fails at task 30, Luigi resumes from task 30 — not task 1. For long runs on slow local hardware, this is the difference between a 4-hour retry and a 4-minute one.</p>
+<p>But the current resume flow has rough edges that require manual intervention, log-watching, and tribal knowledge. This proposal describes targeted enhancements to make resume-driven iteration faster, safer, and automatable.</p>
+<hr />
+<h2 id="1-webhook-event-hooks-on-task-completion-and-failure">1. Webhook / Event Hooks on Task Completion and Failure</h2>
+<h3 id="the-problem">The problem</h3>
+<p>Right now, monitoring a running pipeline means tailing a log file and parsing freeform text every 60 seconds. Agents and humans alike poll <code>log.txt</code> to find out if a task passed or failed. There is no push notification.</p>
+<h3 id="what-we-want">What we want</h3>
+<p>A lightweight event hook system that fires on task state changes:</p>
 <ul>
-<li>Gantt tasks are not executable by edge devices.</li>
-<li>No consistent task payload or authentication layer.</li>
-<li>Proof of physical execution is weak or absent.</li>
+<li><code>task.started</code> — task began executing</li>
+<li><code>task.completed</code> — task wrote its output file and marked done</li>
+<li><code>task.failed</code> — task raised an exception or exhausted retries</li>
+<li><code>pipeline.completed</code> — all tasks finished successfully</li>
+<li><code>pipeline.failed</code> — pipeline terminated with at least one failure</li>
 </ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Implement a pub/sub dispatch protocol that:</p>
-<ol>
-<li>Publishes <code>TaskManifest</code> payloads to secure device channels.</li>
-<li>Authenticates edge agents with client certs.</li>
-<li>Verifies task completion with proof-of-physical-work.</li>
-</ol>
-<h2 id="architecture">Architecture</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PlanExe Cloud
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; Dispatcher
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -&gt; MQTT/WebSocket Bus
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -&gt; Edge Agent
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  -&gt; Proof Upload
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  -&gt; Verification
+<h3 id="proposed-interface">Proposed interface</h3>
+<p>In the run config or environment, specify a webhook URL:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PLANEXE_WEBHOOK_URL=http://localhost:9000/planexe-events
 </code></pre></div>
-<h2 id="task-manifest-schema">Task Manifest Schema</h2>
+<p>On each event, POST a JSON payload:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;task_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;task_888&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;capture_image&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;resolution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1080p&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;angle&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;45_degrees&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zone_a&quot;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;deadline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-12T09:00:00Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;auth_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jwt_ey...&quot;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;task.failed&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PreProjectAssessmentTask&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;run_id_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/run&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;timestamp_utc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-06T21:55:00Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;error_summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1 validation error for ExpertDetails — combined_summary: Field required&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;attempt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lmstudio-qwen3.5-35b-a3b&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="proof-of-physical-work-popw">Proof of Physical Work (PoPW)</h2>
+<h3 id="why-this-matters">Why this matters</h3>
+<p>An agent monitoring a pipeline via webhook can react in seconds instead of polling every minute. It can detect failure, inspect the error, apply a fix, and resume — without ever reading a log file. This is the foundation for autonomous overnight pipeline repair.</p>
+<p>A Discord webhook makes this immediately useful: post task completions and failures directly to a channel, with structured data, without any polling infrastructure.</p>
+<hr />
+<h2 id="2-task-invalidation-cli">2. Task Invalidation CLI</h2>
+<h3 id="the-problem_1">The problem</h3>
+<p>To re-run a completed task, you currently delete its output file manually. This requires knowing which file corresponds to which task, finding it in the run directory, and deleting it without accidentally removing dependent outputs. There is no guard against invalidating a task that has already-complete downstream dependents that would then also need to be re-run.</p>
+<h3 id="what-we-want_1">What we want</h3>
+<p>A CLI command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>planexe<span class="w"> </span>invalidate<span class="w"> </span>&lt;TaskName&gt;<span class="w"> </span><span class="o">[</span>--run-dir<span class="w"> </span>/path/to/run<span class="o">]</span><span class="w"> </span><span class="o">[</span>--cascade<span class="o">]</span>
+</code></pre></div>
+<p>Behavior:</p>
 <ul>
-<li>Photo verification with timestamp</li>
-<li>Sensor logs (e.g., humidity spike)</li>
-<li>GPS signature for location-dependent tasks</li>
+<li>Without <code>--cascade</code>: deletes only the output file(s) for the named task. On next resume, only that task re-runs.</li>
+<li>With <code>--cascade</code>: deletes output files for the named task AND all downstream tasks that depend on it. Useful after fixing a schema or prompt that affects interpretation further down the chain.</li>
+<li>Prints what would be deleted before deleting (dry-run first).</li>
 </ul>
-<h2 id="integration-points">Integration Points</h2>
-<ul>
-<li>Works with OpenClaw execution skill.</li>
-<li>Feeds into MoltBook gig dispatch.</li>
-<li>Used by assumption drift monitor for real-world signals.</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>Dispatch latency (cloud -&gt; edge ack).</li>
-<li>% tasks completed with valid PoPW.</li>
-<li>Reduction in false execution claims.</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>Device spoofing or token leakage.</li>
-<li>Network instability in remote sites.</li>
-<li>High verification cost for complex tasks.</li>
-</ul>
-<h2 id="future-enhancements">Future Enhancements</h2>
-<ul>
-<li>Hardware attestation support.</li>
-<li>Offline task caching and delayed sync.</li>
-<li>Automated anomaly detection on PoPW.</li>
-</ul>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-protocol-and-security-foundations-2-weeks">Phase A — Protocol and Security Foundations (2 weeks)</h3>
-<ol>
-<li>Define <code>TaskManifest</code> schema versioning.</li>
-<li>Add mutual-auth model for edge agents:</li>
-<li>client certs or hardware keys</li>
-<li>
-<p>short-lived dispatch tokens</p>
-</li>
-<li>
-<p>Add replay protection and nonce strategy.</p>
-</li>
-</ol>
-<h3 id="phase-b-dispatcher-and-transport-layer-23-weeks">Phase B — Dispatcher and Transport Layer (2–3 weeks)</h3>
-<ol>
-<li>Implement cloud dispatcher with QoS guarantees.</li>
-<li>Support MQTT/WebSocket transports behind common abstraction.</li>
-<li>Add delivery semantics:</li>
-<li>accepted</li>
-<li>in_progress</li>
-<li>completed</li>
-<li>failed</li>
-</ol>
-<h3 id="phase-c-proof-of-physical-work-popw-verification-2-weeks">Phase C — Proof of Physical Work (PoPW) Verification (2 weeks)</h3>
-<ol>
-<li>Define PoPW artifact schema:</li>
-<li>timestamp</li>
-<li>geo/location</li>
-<li>sensor payload</li>
-<li>
-<p>media hash</p>
-</li>
-<li>
-<p>Build verifier pipeline:</p>
-</li>
-<li>integrity checks</li>
-<li>anti-spoof heuristics</li>
-<li>
-<p>confidence scoring</p>
-</li>
-<li>
-<p>Attach PoPW confidence to task completion status.</p>
-</li>
-</ol>
-<h3 id="phase-d-reliability-and-operations-2-weeks">Phase D — Reliability and Operations (2 weeks)</h3>
-<ol>
-<li>Add offline task cache with deferred sync.</li>
-<li>Add dead-letter queue for failed dispatches.</li>
-<li>Add anomaly detection for suspicious execution proofs.</li>
-</ol>
-<h3 id="data-model-additions">Data model additions</h3>
-<ul>
-<li><code>physical_task_dispatch</code></li>
-<li><code>edge_delivery_events</code></li>
-<li><code>popw_artifacts</code></li>
-<li><code>popw_verification_results</code></li>
-</ul>
-<h3 id="validation-checklist">Validation checklist</h3>
-<ul>
-<li>End-to-end dispatch latency targets</li>
-<li>Exactly-once/at-least-once behavior verification</li>
-<li>PoPW spoofing simulation tests</li>
-<li>Offline replay consistency checks</li>
-</ul>
+<h3 id="example">Example</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ planexe invalidate SelectScenarioTask --run-dir ./run/Qwen_Clean_v1
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Would delete:
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  run/Qwen_Clean_v1/002-17-selected_scenario_raw.json
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  run/Qwen_Clean_v1/002-18-selected_scenario.json
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  run/Qwen_Clean_v1/002-19-scenarios.md
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Proceed? [y/N]
+</code></pre></div>
+<h3 id="why-this-matters_1">Why this matters</h3>
+<p>Tonight we needed to re-run <code>SelectScenarioTask</code> after applying a fix. Without knowing exactly which files to delete, the safe move is to delete all files from that task number onward — which means re-running 40+ already-complete tasks. A targeted invalidation command makes surgical retries possible.</p>
+<hr />
+<h2 id="3-plan-file-hot-editing-with-downstream-invalidation">3. Plan File Hot-Editing with Downstream Invalidation</h2>
+<h3 id="the-problem_2">The problem</h3>
+<p>The input plan (<code>001-2-plan.txt</code>) is locked in at run start. If a user wants to refine the plan description mid-run — clarify scope, correct a factual error, tighten the framing — there is no supported path. The only option is start a new run from scratch.</p>
+<h3 id="what-we-want_2">What we want</h3>
+<p>A mechanism to edit the plan file and selectively invalidate downstream tasks:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>planexe<span class="w"> </span>edit-plan<span class="w"> </span>--run-dir<span class="w"> </span>./run/Qwen_Clean_v1
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># opens plan.txt in $EDITOR</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># after save, asks: &quot;Invalidate all tasks? [Y/n]&quot;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># or: &quot;Which tasks to invalidate? (comma-separated, or &#39;all&#39;)&quot;</span>
+</code></pre></div>
+<p>Alternatively: a <code>--invalidate-from &lt;TaskName&gt;</code> flag that cascades from a specific task boundary, allowing early tasks that don't use the plan text directly to be preserved.</p>
+<h3 id="why-this-matters_2">Why this matters</h3>
+<p>On local hardware, a full re-run can take 4–6 hours. If a user notices a plan description issue at task 20, they currently have to restart from scratch. Targeted invalidation from the point where the plan text first materially influences output would save hours.</p>
+<hr />
+<h2 id="4-pipeline-status-command">4. Pipeline Status Command</h2>
+<h3 id="the-problem_3">The problem</h3>
+<p>There is no quick way to ask "where is this pipeline right now?" without parsing <code>log.txt</code>. The run directory contains output files, but mapping file names to task names and status requires knowing the file-naming convention.</p>
+<h3 id="what-we-want_3">What we want</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>planexe<span class="w"> </span>status<span class="w"> </span>--run-dir<span class="w"> </span>./run/Qwen_Clean_v1
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Run: Qwen_Clean_v1
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Model: lmstudio-qwen3.5-35b-a3b
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Started: 2026-03-06 19:47 UTC
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>✅ DONE  (23 tasks)
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>  SetupTask, StartTimeTask, RedlineGateTask, ...
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>⏳ RUNNING (1 task)
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  PreProjectAssessmentTask — started 21:53 UTC
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>❌ FAILED (1 task)
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>  PreProjectAssessmentTask — &quot;1 validation error for ExpertDetails&quot;
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>⬜ PENDING (38 tasks)
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>  IdentifyRisksTask, CreateWBSLevel3Task, ...
+</code></pre></div>
+<h3 id="why-this-matters_3">Why this matters</h3>
+<p>Agents and humans checking in on an overnight run need this information immediately. Currently it requires log-parsing expertise. A status command makes the pipeline observable without tribal knowledge.</p>
+<hr />
+<h2 id="5-per-task-timeout-configuration">5. Per-Task Timeout Configuration</h2>
+<h3 id="the-problem_4">The problem</h3>
+<p>LM Studio's <code>request_timeout</code> is set globally in the model config JSON. Some tasks (e.g., <code>PreProjectAssessmentTask</code> with multiple expert sub-calls) consistently take longer than others and hit the global timeout. Raising the global timeout to accommodate slow tasks means slow failure detection for tasks that genuinely hang.</p>
+<h3 id="what-we-want_4">What we want</h3>
+<p>Per-task timeout overrides in the model config or a separate task config file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;task_timeouts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;PreProjectAssessmentTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">&quot;CreateWBSLevel3Task&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="why-this-matters_4">Why this matters</h3>
+<p><code>PreProjectAssessmentTask</code> runs multiple expert sub-calls sequentially. On Qwen 3.5-35B-A3B, each expert call takes 2–4 minutes. A 600-second global timeout is right for most tasks but causes <code>ReadTimeout</code> failures on this specific task. The fix tonight was a full LM Studio restart — not ideal at 10pm when a pipeline is running unattended.</p>
+<hr />
+<h2 id="6-structured-failure-log">6. Structured Failure Log</h2>
+<h3 id="the-problem_5">The problem</h3>
+<p>When a task fails, the error goes into <code>log.txt</code> as a Python traceback mixed with INFO/DEBUG lines. Extracting the failure signature (task name, model, error type, missing fields, attempt number) requires log-parsing.</p>
+<h3 id="what-we-want_5">What we want</h3>
+<p>On any task failure, append a structured entry to <code>failures.jsonl</code> in the run directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;timestamp_utc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-06T21:55:22Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PreProjectAssessmentTask&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lmstudio-qwen3.5-35b-a3b&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="nt">&quot;attempt&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="nt">&quot;error_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ValidationError&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="nt">&quot;missing_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;combined_summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;go_no_go_recommendation&quot;</span><span class="p">],</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nt">&quot;invalid_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nt">&quot;raw_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1 validation error for ExpertDetails...&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="nt">&quot;run_id_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/run&quot;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="why-this-matters_5">Why this matters</h3>
+<p>Structured failure data enables:
+- Automated retry decisions (is this truncation or a model capability gap?)
+- Cross-run comparison (does the same task fail on different models?)
+- PR evidence (attach <code>failures.jsonl</code> excerpt to PRs as proof)
+- Model scorecards (which models fail at which tasks?)</p>
+<p>Tonight, diagnosing each failure required reading a Python traceback and manually extracting the task name, model, and missing fields. A <code>failures.jsonl</code> file would have made that instant.</p>
+<hr />
+<h2 id="implementation-priority">Implementation Priority</h2>
+<p>Ordered by value-to-effort ratio:</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Feature</th>
+<th>Effort</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Structured failure log (<code>failures.jsonl</code>)</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pipeline status command</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Task invalidation CLI</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Webhook / event hooks</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Per-task timeout config</td>
+<td>Low</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Plan hot-editing + cascade</td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<p>Items 1 and 5 are config/logging changes with minimal blast radius. Items 2–4 are new CLI surface area but don't touch pipeline logic. Item 6 requires careful dependency graph analysis.</p>
+<hr />
+<h2 id="decision-request">Decision Request</h2>
+<p>Approve this roadmap and we will implement each item as a separate focused PR, starting with structured failure logging (item 1) and the task invalidation CLI (item 3).</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
