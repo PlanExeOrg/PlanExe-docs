@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/81-mcp-api-key-validation/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/82-measure-drift-proposal/">
       
       
-        <link rel="prev" href="../80-zero-downtime-railway-deployment/">
+        <link rel="prev" href="../81-mcp-api-key-validation/">
       
       
-        <link rel="next" href="../82-measure-drift-proposal/">
+        <link rel="next" href="../83-measure-drift-specification/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>81 mcp api key validation - PlanExe Documentation</title>
+        <title>82 measure drift proposal - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="81 mcp api key validation - PlanExe Documentation" />
+<meta property="og:title" content="82 measure drift proposal - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/81-mcp-api-key-validation.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/82-measure-drift-proposal.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/81-mcp-api-key-validation/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/82-measure-drift-proposal/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="81 mcp api key validation - PlanExe Documentation" />
+<meta property="twitter:title" content="82 measure drift proposal - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/81-mcp-api-key-validation.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/82-measure-drift-proposal.png" />
 </head>
   
   
@@ -103,11 +103,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#proposal-81-mcp-api-key-validation" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -140,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              81 mcp api key validation
+              82 measure drift proposal
             
           </span>
         </div>
@@ -4971,37 +4966,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    81 mcp api key validation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../81-mcp-api-key-validation/" class="md-nav__link">
         
   
   
@@ -5017,220 +4985,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#date" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Date
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Problem">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#current-code-http_serverpy-_validate_api_key" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current code (http_server.py, _validate_api_key)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Goals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#non-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Non-Goals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-behavior-matrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        New behavior matrix
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error response
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Code changes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Code changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-_validate_api_key-reject-invalid-keys-in-local-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. _validate_api_key — reject invalid keys in local mode
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-enforce_api_key-middleware-validate-at-connection-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. enforce_api_key middleware — validate at connection time
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enforce_api_key-middleware-json-rpc-error-wrapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. enforce_api_key middleware — JSON-RPC error wrapping
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interaction-with-planexe_mcp_api_key-shared-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interaction with PLANEXE_MCP_API_KEY (shared secret)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backward-compatibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backward Compatibility
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verification
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5240,10 +4994,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../82-measure-drift-proposal/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -5259,6 +5020,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -5436,210 +5198,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#date" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Date
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Problem">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#current-code-http_serverpy-_validate_api_key" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current code (http_server.py, _validate_api_key)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Goals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#non-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Non-Goals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#new-behavior-matrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        New behavior matrix
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error response
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Code changes
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Code changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-_validate_api_key-reject-invalid-keys-in-local-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. _validate_api_key — reject invalid keys in local mode
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-enforce_api_key-middleware-validate-at-connection-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. enforce_api_key middleware — validate at connection time
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enforce_api_key-middleware-json-rpc-error-wrapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. enforce_api_key middleware — JSON-RPC error wrapping
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#interaction-with-planexe_mcp_api_key-shared-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interaction with PLANEXE_MCP_API_KEY (shared secret)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backward-compatibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backward Compatibility
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verification
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -5659,259 +5217,670 @@
   
 
 
-<h1 id="proposal-81-mcp-api-key-validation">Proposal 81 — MCP API Key Validation</h1>
-<h2 id="status">Status</h2>
-<p>Implemented (2026-03-05)</p>
-<h2 id="date">Date</h2>
-<p>2026-03-05</p>
-<h2 id="problem">Problem</h2>
-<p>The MCP server (<code>mcp_cloud</code>) accepts junk API keys and lets callers create plans,
-retry plans, and consume resources without ever verifying the key is real.</p>
-<p>Today's auth logic is a binary toggle controlled by <code>PLANEXE_MCP_REQUIRE_AUTH</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>true</code></td>
-<td>Reject missing/invalid keys with 401/403.</td>
-</tr>
-<tr>
-<td><code>false</code></td>
-<td>Accept <strong>anything</strong> — junk keys, empty keys, no key at all.</td>
-</tr>
-</tbody>
-</table>
-<p>The problem is that <code>false</code> is the default for local Docker deployments, where
-there is only an admin user and no OAuth. In that mode, if someone supplies
-<code>X-API-Key: garbage</code>, the server silently accepts it, creates plans attributed
-to no real user, and provides no feedback that the key is wrong.</p>
-<p>This leads to confusion: a user can copy-paste a stale or mistyped key into
-their MCP client config, believe everything is fine, and later discover that
-billing, per-key stats, and "Last Used" timestamps never worked.</p>
-<h3 id="current-code-http_serverpy-_validate_api_key">Current code (<code>http_server.py</code>, <code>_validate_api_key</code>)</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">AUTH_REQUIRED</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c1"># Auth disabled — still resolve the key for attribution but never reject.</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">if</span> <span class="n">provided_key</span><span class="p">:</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">_resolve_user_from_api_key</span><span class="p">,</span> <span class="n">provided_key</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="n">_authenticated_user_api_key_ctx</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">provided_key</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">return</span> <span class="kc">None</span>          <span class="c1"># ← always allows the request, even with junk key</span>
-</code></pre></div>
-<h2 id="goals">Goals</h2>
+  <h1>82 measure drift proposal</h1>
+
 <ol>
-<li><strong>Reject invalid keys</strong> — when a caller explicitly provides an <code>X-API-Key</code>
-   that does not match any active key in the database, return an error with a
-   clear message, regardless of deployment mode.</li>
-<li><strong>Allow keyless access on localhost</strong> — when no key is provided and the server
-   is in local/admin-only mode, continue allowing requests (current behavior).</li>
-<li><strong>Clear error messages</strong> — tell the user exactly what went wrong and where to
-   get a valid key.</li>
+<li>Purpose</li>
 </ol>
-<h2 id="non-goals">Non-Goals</h2>
-<ul>
-<li>Implementing OAuth on the MCP server (see Proposal 52).</li>
-<li>Rate limiting or abuse prevention (separate concern).</li>
-<li>Changing the <code>PLANEXE_MCP_REQUIRE_AUTH=true</code> code path (already correct).</li>
-</ul>
-<h2 id="design">Design</h2>
-<h3 id="new-behavior-matrix">New behavior matrix</h3>
-<table>
-<thead>
-<tr>
-<th><code>REQUIRE_AUTH</code></th>
-<th>Key provided?</th>
-<th>Key valid?</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>true</code></td>
-<td>No</td>
-<td>—</td>
-<td><strong>401</strong> Missing API key</td>
-</tr>
-<tr>
-<td><code>true</code></td>
-<td>Yes</td>
-<td>No</td>
-<td><strong>403</strong> Invalid API key</td>
-</tr>
-<tr>
-<td><code>true</code></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Allow (authenticated)</td>
-</tr>
-<tr>
-<td><code>false</code></td>
-<td>No</td>
-<td>—</td>
-<td><strong>Allow</strong> (anonymous/admin)</td>
-</tr>
-<tr>
-<td><code>false</code></td>
-<td>Yes</td>
-<td>No</td>
-<td><strong>403</strong> Invalid API key</td>
-</tr>
-<tr>
-<td><code>false</code></td>
-<td>Yes</td>
-<td>Yes</td>
-<td>Allow (authenticated + attribution)</td>
-</tr>
-</tbody>
-</table>
-<p>The only change from today is row 3 of the <code>false</code> block: when auth is
-disabled but a key <strong>is</strong> provided and does <strong>not</strong> resolve, the server now
-rejects instead of silently ignoring.</p>
-<p>The reasoning: if the caller went through the trouble of setting <code>X-API-Key</code>,
-they clearly intend to authenticate. Silently accepting a bad key is worse than
-telling them it's wrong.</p>
-<h3 id="error-response">Error response</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-32001</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid API key. Check your key or create a new one at https://home.planexe.org/&quot;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
-</code></pre></div>
-<p>HTTP status: <strong>403 Forbidden</strong>.</p>
-<p>For the <code>REQUIRE_AUTH=false</code> case, the error message should also hint that
-running without a key is fine for local use:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;jsonrpc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-32001</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid API key. Remove the X-API-Key header for local access, or get a valid key at https://home.planexe.org/&quot;</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="code-changes">Code changes</h3>
-<p>Two changes in <strong><code>mcp_cloud/http_server.py</code></strong>:</p>
-<h4 id="1-_validate_api_key-reject-invalid-keys-in-local-mode">1. <code>_validate_api_key</code> — reject invalid keys in local mode</h4>
-<p>Previously the <code>AUTH_REQUIRED=false</code> branch silently accepted any key.
-Now, if a key is provided but does not resolve to a real user, the request
-is rejected with 403:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">AUTH_REQUIRED</span><span class="p">:</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">if</span> <span class="n">provided_key</span><span class="p">:</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">_resolve_user_from_api_key</span><span class="p">,</span> <span class="n">provided_key</span><span class="p">)</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>            <span class="n">_authenticated_user_api_key_ctx</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">provided_key</span><span class="p">)</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            <span class="k">await</span> <span class="n">_log_auth_rejection</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;invalid_api_key_local&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>            <span class="k">return</span> <span class="n">JSONResponse</span><span class="p">(</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>                <span class="n">status_code</span><span class="o">=</span><span class="mi">403</span><span class="p">,</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                <span class="n">content</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                    <span class="s2">&quot;detail&quot;</span><span class="p">:</span> <span class="p">(</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                        <span class="s2">&quot;Invalid API key. &quot;</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>                        <span class="s2">&quot;Remove the X-API-Key header for local access, &quot;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>                        <span class="s2">&quot;or get a valid key at https://home.planexe.org/&quot;</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>                    <span class="p">)</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>                <span class="p">},</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>            <span class="p">)</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># No key provided, allow anonymous/admin access</span>
-</code></pre></div>
-<h4 id="2-enforce_api_key-middleware-validate-at-connection-time">2. <code>enforce_api_key</code> middleware — validate at connection time</h4>
-<p>Previously, the <code>initialize</code> and other handshake/discovery JSON-RPC methods
-were in <code>PUBLIC_JSONRPC_METHODS_NO_AUTH</code> and skipped validation entirely.
-A junk key sailed through the MCP handshake unchallenged; the user only
-discovered the problem on the first paid tool call.</p>
-<p>Now, even for public methods, if a key <strong>is</strong> provided, it is validated
-immediately. This means a bad key is rejected on the very first
-<code>initialize</code> request — the MCP connection fails before the client sees any
-tools:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;OPTIONS&quot;</span> <span class="ow">and</span> <span class="p">(</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;/mcp&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;/download&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">):</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">is_public</span> <span class="o">=</span> <span class="k">await</span> <span class="n">_is_public_mcp_request_without_auth</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="c1"># Even for public/discovery methods (initialize, tools/list, etc.),</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="c1"># validate the API key if one was provided.</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="k">if</span> <span class="n">is_public</span> <span class="ow">and</span> <span class="n">_extract_api_key</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="n">error_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">_validate_api_key</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="k">if</span> <span class="n">error_response</span><span class="p">:</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            <span class="k">return</span> <span class="n">_append_cors_headers</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">error_response</span><span class="p">)</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_public</span><span class="p">:</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="n">is_tokenized_download</span> <span class="o">=</span> <span class="p">(</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>            <span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;/download&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            <span class="ow">and</span> <span class="n">_has_valid_download_token</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="p">)</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_tokenized_download</span><span class="p">:</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>            <span class="n">error_response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">_validate_api_key</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>            <span class="k">if</span> <span class="n">error_response</span><span class="p">:</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>                <span class="k">return</span> <span class="n">_append_cors_headers</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">error_response</span><span class="p">)</span>
-</code></pre></div>
-<p>Keyless requests still pass through to public methods as before.</p>
-<h4 id="3-enforce_api_key-middleware-json-rpc-error-wrapping">3. <code>enforce_api_key</code> middleware — JSON-RPC error wrapping</h4>
-<p>When the middleware returns a plain HTTP 401/403 on the <code>/mcp/</code> Streamable
-HTTP endpoint, the MCP SDK interprets it as an OAuth challenge and tries
-<code>/.well-known/oauth-authorization-server</code> discovery, which fails with 404
-and produces a confusing "Invalid OAuth error response" message.</p>
-<p>A new helper <code>_make_jsonrpc_auth_error()</code> wraps auth errors as JSON-RPC
-error envelopes with HTTP 200:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_make_jsonrpc_auth_error</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">detail</span><span class="p">):</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="c1"># Extract JSON-RPC request id from body</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">request_id</span> <span class="o">=</span> <span class="o">...</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">return</span> <span class="n">JSONResponse</span><span class="p">(</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">content</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>            <span class="s2">&quot;jsonrpc&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>            <span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">32001</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="n">detail</span><span class="p">},</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">request_id</span><span class="p">,</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="p">},</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="p">)</span>
-</code></pre></div>
-<p>The middleware uses an inner <code>_check_auth()</code> helper that calls
-<code>_validate_api_key()</code> and, for Streamable HTTP paths (<code>/mcp</code>, <code>/mcp/</code>),
-wraps any error response via <code>_make_jsonrpc_auth_error()</code>.  REST endpoints
-(<code>/mcp/tools/call</code>, <code>/download</code>) keep plain HTTP status codes.</p>
-<h3 id="interaction-with-planexe_mcp_api_key-shared-secret">Interaction with <code>PLANEXE_MCP_API_KEY</code> (shared secret)</h3>
-<p>The shared-secret check (<code>REQUIRED_API_KEY</code>) only runs when <code>AUTH_REQUIRED=true</code>.
-Local mode (<code>AUTH_REQUIRED=false</code>) does not use shared secrets, so no change
-is needed there.</p>
-<h2 id="backward-compatibility">Backward Compatibility</h2>
-<ul>
-<li><strong>Local users who never set <code>X-API-Key</code></strong>: no change, requests still allowed.</li>
-<li><strong>Local users with a valid key</strong>: no change, key resolves and is attributed.</li>
-<li><strong>Local users with a junk key</strong>: <strong>breaking change</strong> — previously silently
-  accepted, now rejected with 403. This is intentional and desirable. The fix
-  is to either remove the key or replace it with a valid one.</li>
-<li><strong>Production (<code>REQUIRE_AUTH=true</code>)</strong>: no change at all.</li>
-<li><strong>MCP SDK users without a key</strong>: keyless connections now succeed for
-  discovery. Paid tools return a clear JSON-RPC error instead of a confusing
-  OAuth/404 message.</li>
-</ul>
-<h2 id="verification">Verification</h2>
+<p>This proposal defines a rigorous framework for measuring drift between an initial prompt and a generated plan.</p>
+<p>The goal is not to score writing quality in the abstract. The goal is to determine whether the generated plan remains faithful to the source intent, scope, constraints, and epistemic posture of the initial prompt.</p>
+<p>This proposal is written so that an AI agent can apply it without any prior knowledge of the conversation that produced it.</p>
+<p>It is designed for systems that transform an initial prompt into a long-form structured artifact such as a strategic plan, project plan, proposal, roadmap, report, or multi-section analysis.</p>
+<p>⸻</p>
 <ol>
-<li>Start MCP server with <code>PLANEXE_MCP_REQUIRE_AUTH=false</code>.</li>
-<li>Connect via MCP Inspector <strong>without</strong> <code>X-API-Key</code> → should work (anonymous).</li>
-<li>Connect with a <strong>valid</strong> <code>pex_...</code> key → should work (authenticated, stats tracked).</li>
-<li>Connect with <code>X-API-Key: junk</code> → connection should <strong>fail immediately</strong>
-   during the <code>initialize</code> handshake with a clear JSON-RPC error message.
-   The client should never see the tool list.</li>
-<li>Start MCP server with <code>PLANEXE_MCP_REQUIRE_AUTH=true</code>.</li>
-<li>Connect without key → succeeds (initialize is public).</li>
-<li>Call a discovery tool (<code>example_plans</code>) without key → works.</li>
-<li>Call a paid tool (<code>plan_create</code>) without key → JSON-RPC error:
-   "Missing API key. Create an API key at https://home.planexe.org/"</li>
-<li>Connect with junk key → JSON-RPC error at connection time.</li>
-<li>Connect with valid key → everything works.</li>
+<li>Definition of Drift</li>
 </ol>
+<p>2.1 Core definition</p>
+<p>Drift is the degree to which a generated plan departs from the source prompt in meaningfully important ways.</p>
+<p>Drift is not mere rewording.
+Drift occurs when the generated plan changes what the prompt was trying to say, protect, avoid, limit, or leave uncertain.</p>
+<p>2.2 What counts as drift</p>
+<p>A generated plan drifts when it does one or more of the following:
+    •   expands scope beyond the source prompt
+    •   weakens or ignores explicit constraints
+    •   introduces unsupported assumptions as if they were true
+    •   inflates confidence beyond what the prompt justified
+    •   changes the target user, buyer, or customer
+    •   changes the product type or business model
+    •   adds invented details that look plausible but were not grounded
+    •   turns cautious claims into strong claims
+    •   reintroduces ideas the prompt explicitly excluded
+    •   changes priorities or success criteria
+    •   launders ambiguity into false coherence</p>
+<p>2.3 What does not count as drift</p>
+<p>These should not be treated as drift by default:
+    •   rephrasing
+    •   reorganizing content
+    •   summarizing with preserved meaning
+    •   elaborating on source-backed ideas while clearly marking assumptions
+    •   adding implementation detail that is directly implied and remains consistent
+    •   making the structure more readable without changing claims</p>
+<p>⸻</p>
+<ol>
+<li>Why Drift Measurement Matters</li>
+</ol>
+<p>Prompt-to-plan systems often fail in a specific way: they generate artifacts that are more polished, more complete-sounding, and more “strategic” than the source material, but less faithful.</p>
+<p>This creates a dangerous illusion of quality. The output may look stronger while actually being less true.</p>
+<p>A drift measurement framework is needed to detect failures such as:
+    •   scope inflation disguised as helpful elaboration
+    •   fictional detail disguised as completeness
+    •   premature certainty disguised as rigor
+    •   business model mutation disguised as strategy refinement
+    •   constraint erosion disguised as flexibility
+    •   institutional jargon creep disguised as professionalism</p>
+<p>A good planner should not merely produce rich output. It should preserve the source prompt’s structure of commitments and non-commitments.</p>
+<p>⸻</p>
+<ol>
+<li>Design Principles</li>
+</ol>
+<p>Any drift evaluation framework should follow these principles.</p>
+<p>4.1 Fidelity over polish</p>
+<p>A faithful awkward plan is better than a polished unfaithful one.</p>
+<p>4.2 Constraint preservation is first-class</p>
+<p>Explicit exclusions, caveats, warnings, banned concepts, and scope limits are not minor details. They are often the most important parts of the prompt.</p>
+<p>4.3 Unsupported specificity is a major error</p>
+<p>Invented tools, budgets, team roles, metrics, legal assumptions, office locations, and market claims should be treated as risk, not as value.</p>
+<p>4.4 Epistemic posture matters</p>
+<p>If the source prompt is cautious, conditional, or uncertain, the generated plan should preserve that posture. Replacing uncertainty with smooth confident language is drift.</p>
+<p>4.5 Negative space matters</p>
+<p>What the prompt deliberately does not claim is often as important as what it does claim.</p>
+<p>4.6 Evaluation must distinguish severity</p>
+<p>Not all drift is equally harmful. Small stylistic deviation is not the same as changing the customer, business model, or regulatory posture.</p>
+<p>⸻</p>
+<ol>
+<li>What Should Be Measured</li>
+</ol>
+<p>Drift should be measured across multiple dimensions, not as a single vague judgment.</p>
+<p>5.1 Scope fidelity</p>
+<p>Does the generated plan stay within the intended scope?</p>
+<p>Questions:
+    •   Did the output add adjacent markets, sectors, or customer types not present in the source?
+    •   Did the output expand from a narrow tool into a broad platform, ecosystem, marketplace, or transformation story?
+    •   Did the output introduce future ambitions as if they were part of the core plan?</p>
+<p>Failure examples:
+    •   a workflow tool becomes a marketplace
+    •   a pilot becomes a broad industry rollout
+    •   a single-vertical plan becomes multi-sector strategy</p>
+<p>5.2 Constraint fidelity</p>
+<p>Does the generated plan preserve hard constraints and exclusions?</p>
+<p>Questions:
+    •   Were banned concepts reintroduced indirectly?
+    •   Were explicit limitations softened or omitted?
+    •   Were “do not claim X” instructions ignored?
+    •   Were boundaries between optional and core features preserved?</p>
+<p>Failure examples:
+    •   “not a venture product” becomes venture-adjacent language
+    •   “do not market as AI” becomes “AI-powered intelligence platform”
+    •   “optional scoring” becomes core algorithmic ranking</p>
+<p>5.3 Claim strength fidelity</p>
+<p>Did the plan escalate the strength of claims?</p>
+<p>Questions:
+    •   Did tentative claims become assertive?
+    •   Did workflow improvement become outcome prediction?
+    •   Did operational hypotheses become commercial certainty?
+    •   Did local advantages become decisive strategic moats?</p>
+<p>Failure examples:
+    •   “may reduce review time” becomes “will revolutionize decisions”
+    •   “structured comparison helps triage” becomes “identifies best projects”
+    •   “pilot may validate demand” becomes “positions company as category leader”</p>
+<p>5.4 Evidence grounding fidelity</p>
+<p>Are output claims grounded in the prompt?</p>
+<p>Questions:
+    •   Can each major claim be traced back to source content?
+    •   Are derived claims clearly marked as derived?
+    •   Are speculative additions labeled as speculative?
+    •   Were numbers invented without support?</p>
+<p>Failure examples:
+    •   added ROI figures
+    •   fabricated efficiency percentages
+    •   invented market size or conversion claims
+    •   inserted tools, staff roles, or locations not in source</p>
+<p>5.5 Entity fidelity</p>
+<p>Does the plan preserve the identity of core entities?</p>
+<p>This includes:
+    •   customer
+    •   user
+    •   buyer
+    •   applicant
+    •   regulator
+    •   product
+    •   business model
+    •   channel
+    •   pilot partner
+    •   success metric owner</p>
+<p>Failure examples:
+    •   analysts become investors
+    •   applicants become founders
+    •   institutional sales becomes self-serve signup
+    •   tool becomes advisory service</p>
+<p>5.6 Causal fidelity</p>
+<p>Does the generated plan preserve the source logic of why the product matters?</p>
+<p>Questions:
+    •   Did the main problem statement change?
+    •   Did the proposed mechanism of value shift?
+    •   Did the output subtly replace workflow value with intelligence value?
+    •   Did it switch from operational efficiency to predictive superiority?</p>
+<p>Failure examples:
+    •   “saves normalization time” becomes “improves capital allocation quality”
+    •   “supports comparison” becomes “predicts project success”</p>
+<p>5.7 Epistemic fidelity</p>
+<p>Does the output preserve uncertainty, caution, and limits?</p>
+<p>Questions:
+    •   Are assumptions still framed as assumptions?
+    •   Are unknowns still visible?
+    •   Are risk areas still treated as unresolved?
+    •   Were caveats collapsed into false coherence?</p>
+<p>Failure examples:
+    •   uncertain regulatory positioning becomes settled
+    •   slow procurement risk disappears
+    •   variable intake quality becomes smooth process
+    •   hard-to-measure outcomes become precise targets</p>
+<p>5.8 Source-trace fidelity</p>
+<p>Can important parts of the plan be linked back to the prompt?</p>
+<p>Questions:
+    •   Can an evaluator identify which prompt statements justify which plan sections?
+    •   Does the plan distinguish source-stated vs derived vs speculative content?
+    •   Are critical sections unsupported by the input?</p>
+<p>This dimension is especially important for agentic planning systems.</p>
+<p>5.9 Structural priority fidelity</p>
+<p>Does the generated plan preserve what the prompt treated as primary versus secondary?</p>
+<p>Questions:
+    •   Did the output overemphasize optional layers?
+    •   Did it bury the core value proposition under secondary features?
+    •   Did it promote future possibilities into central strategy?</p>
+<p>Failure examples:
+    •   optional scoring dominates normalization
+    •   long-term expansion dominates immediate beachhead
+    •   market narrative dominates workflow problem</p>
+<p>5.10 Language posture fidelity</p>
+<p>Does the style of language distort meaning?</p>
+<p>Questions:
+    •   Did plain operational language become inflated strategic language?
+    •   Did cautious descriptions become grandiose?
+    •   Did jargon obscure the original discipline?</p>
+<p>Failure examples:
+    •   “tool” becomes “ecosystem”
+    •   “workflow support” becomes “transformational platform”
+    •   “structured comparison” becomes “intelligent decision engine”</p>
+<p>⸻</p>
+<ol>
+<li>A Practical Drift Taxonomy</li>
+</ol>
+<p>For reliable evaluation, drift should be categorized.</p>
+<p>6.1 Type A: Scope expansion drift</p>
+<p>The output widens the plan beyond the intended product, market, or phase.</p>
+<p>6.2 Type B: Constraint erosion drift</p>
+<p>The output ignores, weakens, or bypasses explicit constraints.</p>
+<p>6.3 Type C: Unsupported invention drift</p>
+<p>The output introduces detail without source support.</p>
+<p>6.4 Type D: Confidence inflation drift</p>
+<p>The output upgrades tentative or conditional language into confident claims.</p>
+<p>6.5 Type E: Business model drift</p>
+<p>The output changes how the product makes money, reaches customers, or creates value.</p>
+<p>6.6 Type F: Customer drift</p>
+<p>The output changes who the product is for or who uses it.</p>
+<p>6.7 Type G: Mechanism drift</p>
+<p>The output changes how the product supposedly works or why it matters.</p>
+<p>6.8 Type H: Priority drift</p>
+<p>The output misorders what is core versus optional.</p>
+<p>6.9 Type I: Governance/regulatory drift</p>
+<p>The output changes compliance posture, legal assumptions, or decision responsibility.</p>
+<p>6.10 Type J: Style-induced semantic drift</p>
+<p>The wording becomes more strategic, polished, or “professional,” but at the cost of changing the actual content.</p>
+<p>⸻</p>
+<ol>
+<li>Severity Model</li>
+</ol>
+<p>Every drift issue should be assigned a severity level.</p>
+<p>7.1 Severity 0 — No drift</p>
+<p>Faithful restatement or harmless elaboration.</p>
+<p>7.2 Severity 1 — Minor drift</p>
+<p>Slight wording inflation or weakly supported elaboration that does not alter the core plan.</p>
+<p>Examples:
+    •   mild jargon creep
+    •   extra but harmless formatting detail</p>
+<p>7.3 Severity 2 — Moderate drift</p>
+<p>A meaningful change in emphasis, detail, or interpretation, but core identity remains intact.</p>
+<p>Examples:
+    •   optional feature treated as more important than intended
+    •   localized unsupported tooling detail
+    •   softening of caveats</p>
+<p>7.4 Severity 3 — Major drift</p>
+<p>A significant shift in scope, claims, or product framing.</p>
+<p>Examples:
+    •   workflow tool becomes decision engine
+    •   institutional pilot becomes marketplace narrative
+    •   unsupported metrics presented as if grounded</p>
+<p>7.5 Severity 4 — Critical drift</p>
+<p>The generated plan no longer faithfully represents the source prompt in one or more central ways.</p>
+<p>Examples:
+    •   customer changed
+    •   business model changed
+    •   explicit exclusions ignored
+    •   speculative fiction treated as fact
+    •   core cautious thesis replaced with stronger but unsupported thesis</p>
+<p>⸻</p>
+<ol>
+<li>Evaluation Procedure</li>
+</ol>
+<p>This section defines a workflow an AI agent can follow.</p>
+<p>Step 1: Extract the Source Prompt Contract</p>
+<p>The evaluator should first convert the source prompt into a structured “contract.”</p>
+<p>The contract should include:</p>
+<p>8.1 Core intent</p>
+<p>What is the plan fundamentally about?</p>
+<p>8.2 Primary problem</p>
+<p>What exact problem is being solved?</p>
+<p>8.3 Proposed solution</p>
+<p>What is the actual product or system?</p>
+<p>8.4 Non-goals</p>
+<p>What is explicitly not being claimed or targeted?</p>
+<p>8.5 Constraints</p>
+<p>Hard limits, banned terms, prohibited framings, scope boundaries.</p>
+<p>8.6 Core entities</p>
+<p>Who are the users, buyers, applicants, reviewers, regulators, etc.?</p>
+<p>8.7 Causal logic</p>
+<p>Why should the product help?</p>
+<p>8.8 Optional vs core features</p>
+<p>What is required, optional, phased, deferred, or excluded?</p>
+<p>8.9 Risk and uncertainty posture</p>
+<p>What is still uncertain or conditional?</p>
+<p>8.10 Success metrics</p>
+<p>What outcomes actually matter?</p>
+<p>This “prompt contract” is the baseline against which the generated plan should be judged.</p>
+<p>Step 2: Extract the Generated Plan Claims</p>
+<p>The evaluator should parse the generated plan into its actual commitments.</p>
+<p>At minimum, extract:
+    •   product definition
+    •   customer definition
+    •   business model
+    •   mechanism of value
+    •   implementation assumptions
+    •   roles and teams
+    •   metrics
+    •   legal/regulatory posture
+    •   market claims
+    •   future roadmap
+    •   operational dependencies</p>
+<p>Step 3: Align Source and Output</p>
+<p>For each major claim in the output, assign one of these labels:
+    •   Source-stated: explicitly present in the prompt
+    •   Source-derived: reasonable inference from the prompt
+    •   Speculative but flagged: added by the plan and clearly identified as assumption
+    •   Unsupported: added without prompt support or explicit uncertainty marking
+    •   Contradictory: conflicts with the prompt</p>
+<p>Step 4: Identify Drift Incidents</p>
+<p>Each drift incident should include:
+    •   drift type
+    •   affected passage or section
+    •   source prompt reference
+    •   explanation of mismatch
+    •   severity score</p>
+<p>Step 5: Score by Dimension</p>
+<p>Assign scores for each drift dimension.</p>
+<p>Recommended scale: 0 to 5, where:
+    •   5 = excellent fidelity
+    •   4 = good fidelity with minor drift
+    •   3 = mixed fidelity with notable issues
+    •   2 = weak fidelity
+    •   1 = severe drift
+    •   0 = failed completely</p>
+<p>Dimensions:
+    •   scope fidelity
+    •   constraint fidelity
+    •   claim strength fidelity
+    •   evidence grounding fidelity
+    •   entity fidelity
+    •   causal fidelity
+    •   epistemic fidelity
+    •   source-trace fidelity
+    •   structural priority fidelity
+    •   language posture fidelity</p>
+<p>Step 6: Produce Composite Scores</p>
+<p>Suggested outputs:
+    •   Overall Fidelity Score
+    •   Overall Drift Risk Score
+    •   Critical Drift Count
+    •   Unsupported Claim Count
+    •   Constraint Violation Count
+    •   Confidence Inflation Count</p>
+<p>Step 7: Produce a Human-Readable Verdict</p>
+<p>The evaluator should summarize:
+    •   what the plan preserved well
+    •   where drift occurred
+    •   whether the plan is usable as-is
+    •   whether the output should be revised or rejected</p>
+<p>⸻</p>
+<ol>
+<li>Recommended Scoring Model</li>
+</ol>
+<p>A weighted model is better than a flat average.</p>
+<p>Suggested weights:
+    •   Constraint fidelity: 20%
+    •   Scope fidelity: 15%
+    •   Evidence grounding fidelity: 15%
+    •   Causal fidelity: 10%
+    •   Entity fidelity: 10%
+    •   Epistemic fidelity: 10%
+    •   Structural priority fidelity: 8%
+    •   Claim strength fidelity: 5%
+    •   Source-trace fidelity: 4%
+    •   Language posture fidelity: 3%</p>
+<p>Reasoning:
+    •   constraint violations and unsupported invention are more dangerous than stylistic inflation
+    •   changing the product/customer/mechanism is worse than wording drift
+    •   preserving uncertainty matters a lot in planning systems</p>
+<p>9.1 Disqualifying conditions</p>
+<p>Regardless of weighted score, the output should be flagged as unacceptable if any of the following occur:
+    •   explicit banned concepts are reintroduced
+    •   the target customer changes materially
+    •   the business model changes materially
+    •   unsupported numerical claims are presented as facts in multiple important sections
+    •   explicit non-goals are violated
+    •   regulatory posture is materially misrepresented
+    •   the generated plan cannot distinguish source content from invented content</p>
+<p>⸻</p>
+<ol>
+<li>Suggested Output Schema for AI Agents</li>
+</ol>
+<p>An AI evaluator should produce results in a structured format.</p>
+<p>{
+  "summary": {
+    "overall_fidelity_score": 3.4,
+    "overall_drift_risk": "medium",
+    "usable_as_is": false,
+    "requires_revision": true
+  },
+  "prompt_contract": {
+    "core_intent": "...",
+    "primary_problem": "...",
+    "proposed_solution": "...",
+    "non_goals": ["..."],
+    "constraints": ["..."],
+    "core_entities": {
+      "buyer": "...",
+      "user": "...",
+      "applicant": "..."
+    },
+    "optional_features": ["..."],
+    "uncertainties": ["..."]
+  },
+  "dimension_scores": {
+    "scope_fidelity": 2,
+    "constraint_fidelity": 4,
+    "claim_strength_fidelity": 2,
+    "evidence_grounding_fidelity": 1,
+    "entity_fidelity": 4,
+    "causal_fidelity": 3,
+    "epistemic_fidelity": 2,
+    "source_trace_fidelity": 1,
+    "structural_priority_fidelity": 3,
+    "language_posture_fidelity": 2
+  },
+  "drift_incidents": [
+    {
+      "type": "unsupported_invention",
+      "severity": 4,
+      "section": "budget assumptions",
+      "source_reference": "no tooling stack specified",
+      "output_claim": "uses Jira and Salesforce",
+      "explanation": "specific tools were invented without source support"
+    }
+  ],
+  "counts": {
+    "critical_drift_count": 2,
+    "unsupported_claim_count": 14,
+    "constraint_violation_count": 1,
+    "confidence_inflation_count": 6
+  },
+  "verdict": {
+    "preserved_well": ["..."],
+    "major_failures": ["..."],
+    "recommended_actions": ["..."]
+  }
+}</p>
+<p>⸻</p>
+<ol>
+<li>Prompt Contract Extraction Template</li>
+</ol>
+<p>Before evaluating drift, an agent should rewrite the source prompt into this compact canonical form.</p>
+<p>Source Prompt Contract
+    •   Core intent:
+    •   Primary problem:
+    •   Product/tool definition:
+    •   Primary buyer:
+    •   Primary user:
+    •   Target context:
+    •   Core value claim:
+    •   Explicit non-goals:
+    •   Explicit exclusions/banned concepts:
+    •   Hard constraints:
+    •   Optional features:
+    •   Deferred features:
+    •   Key uncertainties/assumptions:
+    •   Success metrics:
+    •   Regulatory/legal posture:
+    •   Implementation scope:
+    •   Business model/GTM:</p>
+<p>This should be mandatory. Most drift failures happen because the evaluator never first formalized what the prompt was actually committing to.</p>
+<p>⸻</p>
+<ol>
+<li>Types of Evidence an Agent Should Use</li>
+</ol>
+<p>When evaluating whether a generated claim is valid, the evaluator should classify evidence quality.</p>
+<p>12.1 Strong support</p>
+<p>Directly stated in the prompt.</p>
+<p>12.2 Moderate support</p>
+<p>Logically implied by multiple prompt elements.</p>
+<p>12.3 Weak support</p>
+<p>Plausible but not clearly anchored.</p>
+<p>12.4 No support</p>
+<p>Not present and not clearly implied.</p>
+<p>12.5 Contradicted</p>
+<p>Conflicts with explicit prompt content.</p>
+<p>Only strong and moderate support should be treated as safe for unflagged inclusion.</p>
+<p>⸻</p>
+<ol>
+<li>Common Drift Patterns in Prompt-to-Plan Systems</li>
+</ol>
+<p>AI agents should specifically watch for these recurring failure modes.</p>
+<p>13.1 Consultant inflation</p>
+<p>The plan becomes more strategic-sounding but less grounded.</p>
+<p>Signs:
+    •   category creation language
+    •   transformation claims
+    •   ecosystem/platform inflation
+    •   market-share rhetoric
+    •   grand positioning language</p>
+<p>13.2 Fabricated concreteness</p>
+<p>The model invents details to make the plan feel complete.</p>
+<p>Signs:
+    •   specific tools
+    •   specific staff roles
+    •   specific offices or neighborhoods
+    •   precise percentages
+    •   detailed budgets without source basis</p>
+<p>13.3 Confidence laundering</p>
+<p>The model removes caveats and uncertainty.</p>
+<p>Signs:
+    •   “may” becomes “will”
+    •   pilot assumptions become operating facts
+    •   unproven GTM becomes settled strategy</p>
+<p>13.4 Future-roadmap takeover</p>
+<p>Deferred or optional features dominate the document.</p>
+<p>Signs:
+    •   future sectors overshadow initial wedge
+    •   advanced scoring overshadows core workflow
+    •   strategic expansion overtakes initial validation</p>
+<p>13.5 Misplaced optimization</p>
+<p>The plan improves readability while distorting substance.</p>
+<p>Signs:
+    •   weak ideas become cleaner but stronger sounding
+    •   unsupported assumptions are made consistent instead of being flagged
+    •   ambiguity is hidden rather than preserved</p>
+<p>13.6 Constraint decay</p>
+<p>Hard boundaries vanish as the plan expands.</p>
+<p>Signs:
+    •   banned framings subtly reappear
+    •   excluded markets return as “future opportunities”
+    •   optional features become implicit requirements</p>
+<p>⸻</p>
+<ol>
+<li>Revision Guidance After Drift Detection</li>
+</ol>
+<p>The framework should not only detect drift. It should recommend repairs.</p>
+<p>14.1 If unsupported invention is high</p>
+<p>Require all material claims to be labeled as:
+    •   source-stated
+    •   source-derived
+    •   speculative</p>
+<p>14.2 If scope drift is high</p>
+<p>Force the model to regenerate using a locked scope summary.</p>
+<p>14.3 If constraint drift is high</p>
+<p>Promote constraints into an immutable “must preserve” block.</p>
+<p>14.4 If confidence inflation is high</p>
+<p>Require modal language restoration:
+    •   may
+    •   could
+    •   assumed
+    •   conditional on
+    •   unverified
+    •   exploratory</p>
+<p>14.5 If priority drift is high</p>
+<p>Force the model to restate:
+    •   core product
+    •   optional layers
+    •   deferred layers</p>
+<p>before writing full sections.</p>
+<p>14.6 If source-trace fidelity is low</p>
+<p>Require every major paragraph to map to one or more source prompt elements.</p>
+<p>⸻</p>
+<ol>
+<li>Recommendations for System Architecture</li>
+</ol>
+<p>To reduce drift in planning systems, the generation pipeline itself should be changed.</p>
+<p>15.1 Add a locked source contract layer</p>
+<p>Before plan generation, create a compact immutable contract containing:
+    •   core intent
+    •   non-goals
+    •   exclusions
+    •   buyer
+    •   product
+    •   causal logic
+    •   uncertainty posture</p>
+<p>Every downstream step should reference this.</p>
+<p>15.2 Require source attribution tags internally</p>
+<p>Each generated section should internally label its claims as:
+    •   source-stated
+    •   source-derived
+    •   speculative</p>
+<p>These tags do not always need to appear in the final user document, but they should exist in the system.</p>
+<p>15.3 Add a contradiction checker</p>
+<p>Run a dedicated pass that asks:
+    •   What did the source explicitly reject?
+    •   Did the output reintroduce any of it?
+    •   What did the source treat as optional that the output treated as core?</p>
+<p>15.4 Add an unsupported-specificity checker</p>
+<p>Run a pass that flags:
+    •   numbers
+    •   tools
+    •   teams
+    •   legal interpretations
+    •   geographic advantages
+    •   market size claims
+    •   operating assumptions</p>
+<p>unless grounded in source text.</p>
+<p>15.5 Add an epistemic-preservation checker</p>
+<p>Run a pass that compares modal language between source and output:
+    •   maybe
+    •   likely
+    •   assumed
+    •   uncertain
+    •   conditional
+    •   possible</p>
+<p>If these disappear, the system should flag potential confidence inflation.</p>
+<p>15.6 Prefer explicit incompleteness over invented completeness</p>
+<p>The system should be allowed to say:
+    •   unspecified
+    •   not provided
+    •   unclear from source
+    •   assumption required
+    •   should be validated</p>
+<p>This is better than filling gaps with plausible fiction.</p>
+<p>⸻</p>
+<ol>
+<li>Benchmarking and Evaluation Dataset Design</li>
+</ol>
+<p>To make the framework operational, create a benchmark dataset.</p>
+<p>Each evaluation case should contain:
+    •   initial prompt
+    •   generated plan
+    •   gold prompt contract
+    •   annotated drift incidents
+    •   severity labels
+    •   final accept/reject judgment</p>
+<p>16.1 Dataset diversity</p>
+<p>Include prompts with:
+    •   hard exclusions
+    •   optional features
+    •   explicit uncertainty
+    •   banned terms
+    •   narrow wedges
+    •   legal caveats
+    •   phased roadmaps
+    •   budget ambiguity
+    •   deliberately incomplete information</p>
+<p>16.2 Adversarial cases</p>
+<p>Include prompts designed to tempt drift:
+    •   prompts with prestigious adjacent markets
+    •   prompts with missing operational detail
+    •   prompts with sharp anti-hype constraints
+    •   prompts where the most natural completion would be wrong</p>
+<p>16.3 Evaluation metrics for the evaluator</p>
+<p>If using AI agents to detect drift, measure:
+    •   precision on true drift incidents
+    •   recall on critical drift incidents
+    •   agreement with expert labels
+    •   false positives on harmless elaboration
+    •   performance by drift type</p>
+<p>⸻</p>
+<ol>
+<li>Minimal Acceptability Standard</li>
+</ol>
+<p>A generated plan should be considered acceptable only if all of the following are true:
+    •   no critical constraint violations
+    •   no material customer or business model drift
+    •   no repeated unsupported invention in important sections
+    •   uncertainty is preserved where present in source
+    •   optional features are not misrepresented as core
+    •   source-grounded value logic remains intact
+    •   the output is more useful than the input without becoming less truthful</p>
+<p>⸻</p>
+<ol>
+<li>Final Recommendation</li>
+</ol>
+<p>The best way to measure drift is not by asking, “Does the generated plan sound good?”</p>
+<p>The right question is:</p>
+<p>Does the generated plan remain loyal to the source prompt’s commitments, limits, and uncertainty while making the content more usable?</p>
+<p>That requires a structured evaluation system built around:
+    •   prompt contract extraction
+    •   multi-dimensional fidelity scoring
+    •   drift incident logging
+    •   severity classification
+    •   unsupported claim detection
+    •   constraint violation detection
+    •   epistemic posture preservation</p>
+<p>A planning system should be judged not only by richness, coherence, and completeness, but by its ability to avoid becoming more impressive at the cost of becoming less true.</p>
+<p>That is the core principle this proposal recommends.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
