@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/currency-service/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/84-business-idea-proposal/">
       
       
-        <link rel="prev" href="../85-business-idea-specification/">
+        <link rel="prev" href="../83-measure-drift-specification/">
       
       
-        <link rel="next" href="../domain-aware-normalizer/">
+        <link rel="next" href="../85-business-idea-specification/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>currency service - PlanExe Documentation</title>
+        <title>84 business idea proposal - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="currency service - PlanExe Documentation" />
+<meta property="og:title" content="84 business idea proposal - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/currency-service.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/84-business-idea-proposal.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/currency-service/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/84-business-idea-proposal/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="currency service - PlanExe Documentation" />
+<meta property="twitter:title" content="84 business idea proposal - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/currency-service.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/84-business-idea-proposal.png" />
 </head>
   
   
@@ -103,11 +103,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#proposal-currency-exchange-rate-service-for-planexe" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -140,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              currency service
+              84 business idea proposal
             
           </span>
         </div>
@@ -5055,10 +5050,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../84-business-idea-proposal/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -5074,6 +5076,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -5111,37 +5114,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    currency service
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../currency-service/" class="md-nav__link">
         
   
   
@@ -5157,192 +5133,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#approach-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach Analysis
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Approach Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#approach-a-python-module-with-local-cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach A: Python Module with Local Cache
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#approach-b-docker-microservice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach B: Docker Microservice
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#approach-c-mcp-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach C: MCP Tool
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hybrid-approach-python-module-mcp-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hybrid Approach: Python Module + MCP Tool
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ranking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ranking
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommended Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-python-module-this-proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Python Module (this proposal)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-mcp-tool-future" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: MCP Tool (future)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-enhanced-data-future" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Enhanced Data (future)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-sources-free-no-api-key" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Sources (Free, No API Key)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open Questions
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5464,182 +5254,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#problem-statement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem Statement
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#approach-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach Analysis
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Approach Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#approach-a-python-module-with-local-cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach A: Python Module with Local Cache
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#approach-b-docker-microservice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach B: Docker Microservice
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#approach-c-mcp-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach C: MCP Tool
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#hybrid-approach-python-module-mcp-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hybrid Approach: Python Module + MCP Tool
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ranking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ranking
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Recommended Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-python-module-this-proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Python Module (this proposal)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-mcp-tool-future" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: MCP Tool (future)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-enhanced-data-future" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Enhanced Data (future)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-sources-free-no-api-key" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Sources (Free, No API Key)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#open-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open Questions
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -5659,128 +5273,608 @@
   
 
 
-<h1 id="proposal-currency-exchange-rate-service-for-planexe">Proposal: Currency Exchange Rate Service for PlanExe</h1>
-<h2 id="problem-statement">Problem Statement</h2>
-<p>PlanExe generates plans for any country and currency. The current approach (PR #72) hardcoded a handful of currency conversion rates (USD, EUR, DKK, GBP, CAD) which is fundamentally wrong:</p>
-<ul>
-<li>Plans can involve ANY currency the LLM knows about</li>
-<li>Exchange rates change daily</li>
-<li>Multi-year plans need volatility data (a 5-year plan in Turkish Lira vs Swiss Franc has very different risk profiles)</li>
-<li>Geopolitical events (wars, tariffs, currency unions) affect long-term currency assumptions</li>
-<li>Future currencies may be digital/crypto</li>
-</ul>
-<h2 id="requirements">Requirements</h2>
-<ul>
-<li>Daily exchange rate updates (or on-demand)</li>
-<li>Support for ALL ISO 4217 currencies (not a hardcoded subset)</li>
-<li>Historical rate data for volatility calculations</li>
-<li>Graceful degradation when offline</li>
-<li>No hardcoded rates in PlanExe source code</li>
-<li>Cache layer to avoid hammering APIs during pipeline runs</li>
-</ul>
-<h2 id="approach-analysis">Approach Analysis</h2>
-<h3 id="approach-a-python-module-with-local-cache">Approach A: Python Module with Local Cache</h3>
-<p><strong>Description:</strong> A standalone Python module within worker_plan that fetches rates from a free API (ECB, exchangerate.host, Open Exchange Rates) and caches them locally (JSON file or SQLite).</p>
-<p><strong>Pros:</strong>
-- Simplest to implement and deploy — no extra services to run
-- Works in single-user/local mode without Docker
-- Easy to test (mock the API, test cache logic)
-- No infrastructure overhead
-- Can bundle a fallback rates file for offline use
-- Fits existing PlanExe architecture (just another module)</p>
-<p><strong>Cons:</strong>
-- Tightly coupled to worker_plan
-- Cache management is the module's responsibility
-- No shared cache between multiple worker instances
-- Rate limiting on free APIs could be an issue in CI/testing
-- Volatility calculations need historical data (more complex caching)</p>
-<h3 id="approach-b-docker-microservice">Approach B: Docker Microservice</h3>
-<p><strong>Description:</strong> A separate Docker container that exposes a REST API for currency conversion. Runs alongside PlanExe's existing Docker Compose stack. Fetches and caches rates internally.</p>
-<p><strong>Pros:</strong>
-- Clean separation of concerns — currency is its own service
-- Shared cache across all PlanExe instances
-- Can be scaled/replaced independently
-- Could serve other services beyond PlanExe
-- Natural fit for the existing Docker Compose deployment
-- Can include a proper database for historical rates</p>
-<p><strong>Cons:</strong>
-- Adds infrastructure complexity (another container to manage)
-- Doesn't work for single-user/local-only mode without Docker
-- Network latency between services (minor)
-- More complex deployment and testing
-- Overkill for simple single-plan runs</p>
-<h3 id="approach-c-mcp-tool">Approach C: MCP Tool</h3>
-<p><strong>Description:</strong> Implement currency conversion as an MCP (Model Context Protocol) tool that the LLM can call directly during plan generation.</p>
-<p><strong>Pros:</strong>
-- LLM-native — the model can request conversions when it needs them
-- Flexible — LLM decides when and what to convert
-- Fits PlanExe's existing MCP infrastructure
-- Could combine with other financial data tools
-- No preprocessing step needed — conversion happens during generation</p>
-<p><strong>Cons:</strong>
-- Depends on LLM tool-calling reliability (local models may not call tools correctly)
-- Less predictable — LLM might not call the tool when it should
-- Harder to test deterministically
-- Currency data still needs to come from somewhere (API/cache)
-- Doesn't solve the pipeline-level normalization need (post-generation validation)
-- Each LLM call adds latency</p>
-<h3 id="hybrid-approach-python-module-mcp-tool">Hybrid Approach: Python Module + MCP Tool</h3>
-<p><strong>Description:</strong> Python module for pipeline-level normalization (reliable, deterministic) PLUS an MCP tool for LLM-initiated conversions during generation.</p>
-<p><strong>Pros:</strong>
-- Best of both worlds — deterministic pipeline normalization + LLM flexibility
-- MCP tool is optional (degrades gracefully)
-- Python module handles the critical path
-- Can share the same underlying rate cache</p>
-<p><strong>Cons:</strong>
-- More code to maintain
-- Two interfaces to the same data</p>
-<h2 id="ranking">Ranking</h2>
+  <h1>84 business idea proposal</h1>
+
 <ol>
-<li><strong>Python Module with Local Cache</strong> — Start here. Simplest, works everywhere, no infrastructure overhead. Covers 90% of the need.</li>
-<li><strong>Hybrid (Module + MCP Tool)</strong> — Natural evolution once the module exists. Add MCP tool later for LLM-initiated conversions.</li>
-<li><strong>Docker Microservice</strong> — Only if PlanExe moves to a multi-service architecture. Overkill for current state.</li>
-<li><strong>MCP Tool alone</strong> — Too unreliable as the sole approach. LLM tool-calling isn't deterministic enough for critical financial data.</li>
+<li>Purpose</li>
 </ol>
-<h2 id="recommended-implementation-plan">Recommended Implementation Plan</h2>
-<h3 id="phase-1-python-module-this-proposal">Phase 1: Python Module (this proposal)</h3>
-<ul>
-<li>Fetch rates from ECB (free, no API key, 60+ currencies)</li>
-<li>Local JSON cache with TTL (24h default)</li>
-<li>Fallback rates file bundled for offline use</li>
-<li>ISO 4217 currency code validation</li>
-<li>Simple API: <code>get_rate(from_currency, to_currency, date=None)</code></li>
-<li>Historical rates for volatility calculation: <code>get_volatility(currency_pair, years=5)</code></li>
-</ul>
-<h3 id="phase-2-mcp-tool-future">Phase 2: MCP Tool (future)</h3>
-<ul>
-<li>Wraps the Python module as an MCP tool</li>
-<li>LLM can request conversions during plan generation</li>
-<li>Optional — pipeline still works without it</li>
-</ul>
-<h3 id="phase-3-enhanced-data-future">Phase 3: Enhanced Data (future)</h3>
-<ul>
-<li>Historical volatility modeling</li>
-<li>Geopolitical risk factors</li>
-<li>Digital/crypto currency support</li>
-</ul>
-<h2 id="data-sources-free-no-api-key">Data Sources (Free, No API Key)</h2>
-<ul>
-<li><strong>ECB (European Central Bank)</strong>: https://data.ecb.europa.eu — 60+ currencies, daily, free, reliable</li>
-<li><strong>exchangerate.host</strong>: https://exchangerate.host — 170+ currencies, free tier</li>
-<li><strong>Frankfurter</strong>: https://frankfurter.app — ECB data via REST API, no key needed</li>
-</ul>
-<h2 id="open-questions">Open Questions</h2>
+<p>This proposal defines a system for generating and refining business ideas through a structured multi-round loop.</p>
+<p>The system starts from an initial business idea prompt, critiques it hard, revises it, critiques it again, and continues for 3 to 5 rounds. At the end, the idea is either:
+    •   accepted as a keeper
+    •   rejected as unsalvageable
+    •   parked as interesting but not yet investable</p>
+<p>The goal is not to reward ideas for sounding clever. The goal is to pressure-test them until weak ideas collapse quickly and strong ideas become sharper, narrower, and more realistic.</p>
+<p>This system is designed for use by AI agents that do not know anything about prior conversation history.</p>
+<p>⸻</p>
 <ol>
-<li>Should the cache be per-plan or global?</li>
-<li>What's the acceptable staleness for rates? (24h? 1 week for offline mode?)</li>
-<li>Should volatility data be pre-computed or calculated on demand?</li>
+<li>Core Concept</li>
 </ol>
+<p>The system uses at least two roles:</p>
+<p>Role A: Critic</p>
+<p>A harsh evaluator that attacks the current version of the idea.</p>
+<p>Its job is to identify:
+    •   false assumptions
+    •   weak demand logic
+    •   vague customer definitions
+    •   fake differentiation
+    •   impossible GTM
+    •   regulatory or operational blockers
+    •   overbuilt product fantasies
+    •   business models that do not work
+    •   ideas that are simply not worth saving</p>
+<p>Role B: Reviser</p>
+<p>A generator that takes the critique seriously and produces the next version.</p>
+<p>Its job is not to defend the old version. Its job is to:
+    •   narrow scope
+    •   remove bad claims
+    •   change target market if needed
+    •   simplify the product
+    •   preserve what still works
+    •   rewrite the idea into a stronger version</p>
+<p>Optionally, a third role can exist:</p>
+<p>Role C: Judge</p>
+<p>A final evaluator that decides whether the idea is now a keeper, should continue, or should be rejected.</p>
+<p>This role is useful because a reviser tends to be optimistic and a critic can become destructively negative.</p>
+<p>⸻</p>
+<ol>
+<li>High-Level Workflow</li>
+</ol>
+<p>The workflow is simple.</p>
+<p>Round 0</p>
+<p>User provides an initial idea prompt, called Prompt V1.</p>
+<p>Round 1</p>
+<p>Critic evaluates Prompt V1 and produces:
+    •   a brutal critique
+    •   a diagnosis of what is broken
+    •   a salvageability assessment
+    •   revision priorities</p>
+<p>Reviser then produces Prompt V2.</p>
+<p>Round 2</p>
+<p>Critic evaluates Prompt V2.
+Reviser produces Prompt V3.</p>
+<p>Round 3</p>
+<p>Critic evaluates Prompt V3.
+Reviser produces Prompt V4.</p>
+<p>Optional Rounds 4 and 5</p>
+<p>Repeat if the idea is improving but not yet good enough.</p>
+<p>Final Decision</p>
+<p>After 3 to 5 rounds, the Judge assigns one of:
+    •   KEEPER
+    •   REJECT
+    •   PARK / NEEDS HUMAN REFRAME</p>
+<p>⸻</p>
+<ol>
+<li>Design Goal</li>
+</ol>
+<p>The system should optimize for this:</p>
+<p>rapid elimination of bad ideas, and disciplined sharpening of good ideas</p>
+<p>It should not optimize for:
+    •   creativity theater
+    •   idea inflation
+    •   making every idea sound fundable
+    •   endless iteration with no decisive outcome</p>
+<p>If an idea is bad, the system should say so.</p>
+<p>If an idea is fixable, the system should make it materially better, not just cosmetically cleaner.</p>
+<p>⸻</p>
+<ol>
+<li>What Counts as a Good Outcome</li>
+</ol>
+<p>A good outcome is not “the final prompt sounds polished.”</p>
+<p>A good outcome is one of these:</p>
+<p>5.1 Strong keeper</p>
+<p>The final idea has:
+    •   a clear buyer
+    •   a real pain point
+    •   a plausible product
+    •   a believable wedge
+    •   a credible GTM
+    •   manageable operational and regulatory risk
+    •   a reason this business might actually work</p>
+<p>5.2 Honest rejection</p>
+<p>The idea is rejected with specific reasons such as:
+    •   no real pain
+    •   wrong customer behavior assumptions
+    •   no economic engine
+    •   impossible acquisition channel
+    •   unsalvageable dependence on hype
+    •   market too broad and generic
+    •   product too complex for the value delivered
+    •   legally or operationally blocked
+    •   all attempted revisions still converge on a weak core</p>
+<p>5.3 Useful parking decision</p>
+<p>The idea may be interesting, but the system determines:
+    •   it needs a different customer
+    •   it needs a different wedge
+    •   it should become a feature, not a company
+    •   it belongs inside an existing workflow rather than as a standalone business</p>
+<p>That is a valid result.</p>
+<p>⸻</p>
+<ol>
+<li>System Philosophy</li>
+</ol>
+<p>This generator should behave like a hard-nosed early-stage filter, not like a cheerleader.</p>
+<p>It should follow these principles:</p>
+<p>6.1 Brutal honesty</p>
+<p>Do not protect the idea from criticism.</p>
+<p>6.2 Specificity over abstraction</p>
+<p>“Interesting” is not enough. Name the actual problem.</p>
+<p>6.3 Narrowing is progress</p>
+<p>A smaller sharper idea is usually better than a broad ambitious one.</p>
+<p>6.4 Workflow pain beats conceptual elegance</p>
+<p>The best ideas usually solve an ugly real problem, not an intellectually neat one.</p>
+<p>6.5 Reject fake moats</p>
+<p>“AI”, “platform”, “matching”, “network effects”, “personalization”, and “marketplace” should not be treated as strengths unless the economics and behavior really support them.</p>
+<p>6.6 Prefer kill decisions over fake refinement</p>
+<p>If the idea is rotten at the core, stop polishing it.</p>
+<p>⸻</p>
+<ol>
+<li>Required Inputs</li>
+</ol>
+<p>The system should accept:
+    •   initial idea prompt
+    •   optional constraints from the user
+    •   optional banned words or banned framings
+    •   optional target market or region
+    •   optional budget, team, or timeline assumptions</p>
+<p>The system should not require business-plan-level detail at the start. It should be able to work from a rough idea.</p>
+<p>⸻</p>
+<ol>
+<li>Required Outputs Per Round</li>
+</ol>
+<p>Each critique round should output all of the following.</p>
+<p>8.1 Current idea summary</p>
+<p>A concise restatement of the current version.</p>
+<p>8.2 What improved since last round</p>
+<p>Only for rounds after V1.</p>
+<p>8.3 Core weaknesses</p>
+<p>The top reasons the idea is weak.</p>
+<p>8.4 Salvageable elements</p>
+<p>The pieces worth preserving.</p>
+<p>8.5 Non-salvageable elements</p>
+<p>The parts that should be deleted, not repaired.</p>
+<p>8.6 Revision priorities</p>
+<p>The minimum changes needed for the next version.</p>
+<p>8.7 Round verdict</p>
+<p>One of:
+    •   improve and continue
+    •   major pivot required
+    •   reject now</p>
+<p>The reviser then produces the next prompt version in full.</p>
+<p>⸻</p>
+<ol>
+<li>Final Output Requirements</li>
+</ol>
+<p>At the end of the process, the system must output:</p>
+<p>9.1 Final verdict
+    •   KEEPER
+    •   REJECT
+    •   PARK</p>
+<p>9.2 Confidence level
+    •   high
+    •   medium
+    •   low</p>
+<p>9.3 Why</p>
+<p>A plain-language explanation of the final decision.</p>
+<p>9.4 Best final version</p>
+<p>The strongest prompt version reached.</p>
+<p>9.5 Decision memo</p>
+<p>A short memo covering:
+    •   target buyer
+    •   problem
+    •   wedge
+    •   business model
+    •   GTM
+    •   main risks
+    •   why it survived or failed</p>
+<p>⸻</p>
+<ol>
+<li>Evaluation Dimensions</li>
+</ol>
+<p>Each round should score the current idea across these dimensions.</p>
+<p>Use a 0 to 5 scale.
+    •   Problem Reality — is the pain real and strong?
+    •   Buyer Clarity — is there a clear buyer?
+    •   User Need — does the actual user care?
+    •   Value Proposition — is the product meaningfully useful?
+    •   Differentiation — is there something non-generic here?
+    •   GTM Credibility — can this plausibly get customers?
+    •   Operational Feasibility — can it actually be built and run?
+    •   Economic Viability — is there a believable business model?
+    •   Regulatory/Trust Risk — does legal or trust friction kill it?
+    •   Scope Discipline — is it focused enough to test?</p>
+<p>These scores are not the final answer by themselves. They are inputs into the round judgment.</p>
+<p>⸻</p>
+<ol>
+<li>Rejection Criteria</li>
+</ol>
+<p>An idea should be rejected early if one or more of these conditions persist after revision.</p>
+<p>11.1 No real pain</p>
+<p>The user inconvenience is mild, optional, or already adequately solved.</p>
+<p>11.2 No buyer with urgency</p>
+<p>Even if the product is useful, nobody has enough pain to pay or change workflow.</p>
+<p>11.3 Generic solution syndrome</p>
+<p>The idea is a vague “platform”, “engine”, or “marketplace” with no sharp wedge.</p>
+<p>11.4 Impossible adoption model</p>
+<p>The product requires too much behavior change from too many parties.</p>
+<p>11.5 No credible distribution</p>
+<p>There is no believable path to get initial customers.</p>
+<p>11.6 Bad economics</p>
+<p>The product would be expensive to deliver and hard to charge enough for.</p>
+<p>11.7 Dependency on false assumptions</p>
+<p>The business only works if users behave in unrealistic ways.</p>
+<p>11.8 Regulatory or trust barrier too high</p>
+<p>Legal exposure, procurement friction, or trust requirements are too severe for the proposed wedge.</p>
+<p>11.9 Endless revision without convergence</p>
+<p>If after multiple rounds the idea remains broad, confused, or dependent on major hand-waving, reject it.</p>
+<p>⸻</p>
+<ol>
+<li>Keeper Criteria</li>
+</ol>
+<p>An idea can be marked a keeper if by the end it satisfies most of these:
+    •   strong pain in a specific buyer segment
+    •   a narrow, testable wedge
+    •   a product that clearly fits the pain
+    •   credible first customer acquisition path
+    •   reasonable delivery scope for an MVP
+    •   business model with believable willingness to pay
+    •   no fatal regulatory or behavior-change blocker
+    •   clear articulation of what the business is not
+    •   improvement across rounds that converges rather than sprawls</p>
+<p>A keeper does not need to be perfect. It needs to be worth testing in the real world.</p>
+<p>⸻</p>
+<ol>
+<li>Parking Criteria</li>
+</ol>
+<p>An idea should be parked rather than rejected if:
+    •   the core pain seems real
+    •   but the proposed product shape is wrong
+    •   and the business may work only under a different framing</p>
+<p>Examples:
+    •   should be sold as internal tooling, not a marketplace
+    •   should target one niche customer, not a broad sector
+    •   should be a feature inside another workflow
+    •   should become a services-led wedge before software</p>
+<p>Park means:
+not good enough as currently framed, but not dead</p>
+<p>⸻</p>
+<ol>
+<li>Iteration Limits</li>
+</ol>
+<p>The system should run for 3 to 5 rounds maximum.</p>
+<p>Why:
+    •   fewer than 3 rounds often does not separate cosmetic improvement from real improvement
+    •   more than 5 rounds often becomes diminishing returns or idea-rescue theater</p>
+<p>Recommended rule:
+    •   minimum 3 rounds
+    •   stop early only if the idea is obviously dead
+    •   hard cap at 5 rounds</p>
+<p>⸻</p>
+<ol>
+<li>Stop Rules</li>
+</ol>
+<p>The process stops when one of the following occurs.</p>
+<p>15.1 Keeper stop</p>
+<p>The idea reaches keeper threshold before round 5.</p>
+<p>15.2 Hard reject stop</p>
+<p>The critic determines the idea is fundamentally broken and revisions are not fixing the core.</p>
+<p>15.3 No-progress stop</p>
+<p>Two consecutive rounds show mostly wording changes and no meaningful business improvement.</p>
+<p>15.4 Convergence stop</p>
+<p>The idea is now coherent, focused, and the next revision would likely be marginal only.</p>
+<p>⸻</p>
+<ol>
+<li>Suggested Round Logic</li>
+</ol>
+<p>Round 1: Kill fantasy</p>
+<p>Main task:
+    •   identify whether the idea is pointed at a real problem or a conceptual mirage</p>
+<p>Focus on:
+    •   who cares
+    •   why they care
+    •   why now
+    •   what is fake</p>
+<p>Round 2: Find the wedge</p>
+<p>Main task:
+    •   narrow the idea until it becomes sellable</p>
+<p>Focus on:
+    •   one buyer
+    •   one workflow
+    •   one pain
+    •   one adoption path</p>
+<p>Round 3: Stress the business</p>
+<p>Main task:
+    •   test whether the sharpened idea still holds commercially</p>
+<p>Focus on:
+    •   GTM
+    •   implementation friction
+    •   economics
+    •   trust/regulation
+    •   behavior change</p>
+<p>Round 4: Remove remaining fluff</p>
+<p>Main task:
+    •   strip strategic theater and fake sophistication</p>
+<p>Focus on:
+    •   unnecessary features
+    •   optional vs core
+    •   inflated claims
+    •   implementation realism</p>
+<p>Round 5: Final verdict</p>
+<p>Main task:
+    •   decide whether the idea deserves real-world testing</p>
+<p>⸻</p>
+<ol>
+<li>Agent Roles in Detail</li>
+</ol>
+<p>17.1 Critic agent instructions</p>
+<p>The critic should:
+    •   be direct
+    •   focus on market truth, not politeness
+    •   attack assumptions
+    •   identify the deepest flaw, not just surface flaws
+    •   prefer fewer stronger criticisms over many weak ones
+    •   state when an idea is drifting instead of improving</p>
+<p>The critic should not:
+    •   rewrite the entire idea
+    •   add lots of speculative features
+    •   rescue weak ideas through imagination alone</p>
+<p>17.2 Reviser agent instructions</p>
+<p>The reviser should:
+    •   preserve only what survives criticism
+    •   narrow scope aggressively
+    •   remove claims that cannot be defended
+    •   rewrite the prompt into a stronger version
+    •   explicitly carry forward constraints and non-goals</p>
+<p>The reviser should not:
+    •   defend weak parts from earlier versions
+    •   add grand strategy fluff
+    •   compensate for criticism by adding complexity</p>
+<p>17.3 Judge agent instructions</p>
+<p>The judge should:
+    •   compare progression across rounds
+    •   check whether improvement is real
+    •   distinguish sharpened ideas from cosmetically polished ones
+    •   make a decisive final call</p>
+<p>The judge should not:
+    •   keep iterating to avoid making a decision</p>
+<p>⸻</p>
+<ol>
+<li>Prompt Templates</li>
+</ol>
+<p>18.1 Critic prompt template</p>
+<p>Use this structure for the critic agent:</p>
+<p>Input
+    •   current idea version
+    •   previous critique summary
+    •   previous version summary
+    •   current round number</p>
+<p>Task</p>
+<p>Critique this business idea brutally. Focus on whether this is a real business worth pursuing. Identify:
+    •   the deepest flaws
+    •   what is salvageable
+    •   what should be deleted entirely
+    •   whether this should continue to another round or be rejected now</p>
+<p>Score it on:
+    •   Problem Reality
+    •   Buyer Clarity
+    •   Value Proposition
+    •   GTM Credibility
+    •   Operational Feasibility
+    •   Economic Viability
+    •   Scope Discipline</p>
+<p>Then provide:
+    •   top 3 fatal issues
+    •   top 3 salvageable strengths
+    •   revision priorities
+    •   round verdict</p>
+<p>18.2 Reviser prompt template</p>
+<p>Use this structure for the reviser agent:</p>
+<p>Input
+    •   current idea version
+    •   latest critique
+    •   all persistent constraints
+    •   all explicit non-goals
+    •   current round number</p>
+<p>Task</p>
+<p>Produce the next version of the business idea prompt. Do not defend weak elements. Remove bad assumptions. Preserve the strongest surviving core. Narrow the scope if necessary. Keep the idea realistic, disciplined, and commercially sharper than the previous version.</p>
+<p>Output:
+    •   short summary of major changes
+    •   full revised prompt
+    •   what was intentionally removed
+    •   unresolved risks still remaining</p>
+<p>18.3 Judge prompt template</p>
+<p>Use this structure for the judge agent:</p>
+<p>Input
+    •   all prompt versions
+    •   all critiques
+    •   all revision summaries</p>
+<p>Task</p>
+<p>Determine whether this idea is now a KEEPER, REJECT, or PARK. Explain whether the idea improved meaningfully across rounds or merely became more polished. State the main reason for the final decision and whether further iteration is likely to help.</p>
+<p>⸻</p>
+<ol>
+<li>Scoring and Thresholds</li>
+</ol>
+<p>Use a 0 to 5 score for each dimension.</p>
+<p>Suggested weighted score:
+    •   Problem Reality: 20%
+    •   Buyer Clarity: 15%
+    •   Value Proposition: 15%
+    •   GTM Credibility: 15%
+    •   Economic Viability: 10%
+    •   Operational Feasibility: 10%
+    •   Scope Discipline: 10%
+    •   Regulatory/Trust Risk: 5%</p>
+<p>Thresholds</p>
+<p>KEEPER
+    •   weighted score &gt;= 4.0
+    •   no fatal flaw unresolved
+    •   clear wedge and buyer
+    •   credible GTM path</p>
+<p>PARK
+    •   weighted score 3.0 to 3.99
+    •   some promise remains
+    •   but product shape, GTM, or customer framing still needs a human rethink</p>
+<p>REJECT
+    •   weighted score &lt; 3.0
+    •   or fatal flaw persists after multiple rounds
+    •   or no meaningful convergence by round 4 or 5</p>
+<p>A fatal flaw can override the score.</p>
+<p>⸻</p>
+<ol>
+<li>Fatal Flaw Rules</li>
+</ol>
+<p>Automatic reject if any of these remain unresolved by round 3 or later:
+    •   no buyer with urgent pain
+    •   no plausible route to first customers
+    •   product still depends on unrealistic multi-party adoption
+    •   core value proposition still vague
+    •   business depends on made-up behavior change
+    •   economics clearly do not support the proposed delivery model
+    •   legal/trust barrier is central and not credibly addressed
+    •   every revision merely changes wording, not the business</p>
+<p>⸻</p>
+<ol>
+<li>Anti-Gaming Rules</li>
+</ol>
+<p>The system must defend against fake improvement.</p>
+<p>21.1 Do not reward longer prompts</p>
+<p>More detail is not improvement.</p>
+<p>21.2 Do not reward jargon</p>
+<p>Words like platform, thesis, optimization, ecosystem, intelligence, transformation, and scalable are not evidence.</p>
+<p>21.3 Do not reward complexity</p>
+<p>Adding layers, dashboards, matching, analytics, and scoring often makes ideas worse.</p>
+<p>21.4 Do not reward confidence</p>
+<p>Stronger language is not stronger logic.</p>
+<p>21.5 Do not reward breadth</p>
+<p>Expansion across sectors or users usually means the idea is still blurry.</p>
+<p>⸻</p>
+<ol>
+<li>Failure Modes of the Generator Itself</li>
+</ol>
+<p>The system can fail even if the idea is decent.</p>
+<p>Watch for these system-level failures:</p>
+<p>22.1 Critic becomes repetitive</p>
+<p>The same critique is repeated without deeper diagnosis.</p>
+<p>22.2 Reviser becomes defensive</p>
+<p>Bad assumptions remain alive round after round.</p>
+<p>22.3 Reviser becomes decorative</p>
+<p>The prompt gets cleaner but not better.</p>
+<p>22.4 Judge becomes indecisive</p>
+<p>The system keeps iterating to avoid admitting the idea is weak.</p>
+<p>22.5 Optimism bias</p>
+<p>The system tries too hard to save every idea.</p>
+<p>22.6 Complexity drift</p>
+<p>Each round adds more machinery instead of simplifying the business.</p>
+<p>⸻</p>
+<ol>
+<li>Recommended Logging Structure</li>
+</ol>
+<p>Each round should be stored with:
+    •   round number
+    •   idea version
+    •   critic scores
+    •   critic fatal issues
+    •   critic salvageable strengths
+    •   revision priorities
+    •   revised version
+    •   major changes
+    •   unresolved risks
+    •   continue / reject signal</p>
+<p>This makes it possible to inspect whether progress is real.</p>
+<p>⸻</p>
+<ol>
+<li>Suggested Output Schema</li>
+</ol>
+<p>{
+  "meta": {
+    "max_rounds": 5,
+    "current_round": 3,
+    "status": "continue | keeper | park | reject"
+  },
+  "idea_versions": [
+    {
+      "version": "V1",
+      "prompt": "...",
+      "summary": "..."
+    },
+    {
+      "version": "V2",
+      "prompt": "...",
+      "summary": "..."
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "critic_scores": {
+        "problem_reality": 2,
+        "buyer_clarity": 2,
+        "value_proposition": 2,
+        "gtm_credibility": 1,
+        "operational_feasibility": 3,
+        "economic_viability": 2,
+        "scope_discipline": 1,
+        "regulatory_trust_risk": 2
+      },
+      "fatal_issues": [
+        "...",
+        "...",
+        "..."
+      ],
+      "salvageable_strengths": [
+        "...",
+        "...",
+        "..."
+      ],
+      "revision_priorities": [
+        "...",
+        "...",
+        "..."
+      ],
+      "round_verdict": "continue"
+    }
+  ],
+  "final_decision": {
+    "verdict": "KEEPER | PARK | REJECT",
+    "confidence": "high | medium | low",
+    "reason": "...",
+    "best_version": "V4",
+    "further_iteration_likely_helpful": false
+  }
+}</p>
+<p>⸻</p>
+<ol>
+<li>Best-Practice Operating Mode</li>
+</ol>
+<p>The strongest operating mode is:
+    •   one critic model
+    •   one reviser model
+    •   one judge model
+    •   hard round cap
+    •   hard reject capability
+    •   visible scoring
+    •   visible reasons for rejection
+    •   visible record of what changed each round</p>
+<p>This creates a process that is actually useful instead of just generative.</p>
+<p>⸻</p>
+<ol>
+<li>Recommended Final Framing</li>
+</ol>
+<p>The system should be positioned as:</p>
+<p>an iterative business idea filter and refinement engine that pressure-tests concepts through repeated adversarial critique and revision, then forces a keep / park / reject decision within 3 to 5 rounds</p>
+<p>That framing is honest and useful.</p>
+<p>It does not promise to invent good businesses from thin air.
+It promises to do something more valuable:</p>
+<p>separate ideas that sharpen under pressure from ideas that collapse under pressure.</p>
+<p>That is the real job.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
