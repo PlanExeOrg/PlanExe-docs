@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry the Laptop Lobster">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/llm-executor-retry-improvements/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/21-expert-discovery-and-fit-scoring/">
+        <link rel="prev" href="../domain-aware-normalizer/">
       
       
-        <link rel="prev" href="../2026-03-07-pipeline-intelligence-layer/">
-      
-      
-        <link rel="next" href="../22-multi-stage-verification-workflow/">
+        <link rel="next" href="../llm-thinking-mode-middleware/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Expert Discovery + Fit Scoring for Plan Verification - PlanExe Documentation</title>
+        <title>llm executor retry improvements - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Expert Discovery + Fit Scoring for Plan Verification - PlanExe Documentation" />
+<meta property="og:title" content="llm executor retry improvements - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/21-expert-discovery-and-fit-scoring.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/llm-executor-retry-improvements.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/21-expert-discovery-and-fit-scoring/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/llm-executor-retry-improvements/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Expert Discovery + Fit Scoring for Plan Verification - PlanExe Documentation" />
+<meta property="twitter:title" content="llm executor retry improvements - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/21-expert-discovery-and-fit-scoring.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/llm-executor-retry-improvements.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expert-discovery-fit-scoring-for-plan-verification" class="md-skip">
+        <a href="#proposal-llmexecutor-retry-resilience-improvements" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Expert Discovery + Fit Scoring for Plan Verification
+              llm executor retry improvements
             
           </span>
         </div>
@@ -2803,44 +2801,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    21 expert discovery and fit scoring
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../21-expert-discovery-and-fit-scoring/" class="md-nav__link">
         
   
   
@@ -2863,308 +2827,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fit-scoring-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fit Scoring Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fit Scoring Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#inputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inputs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Formula
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#expert-registry-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expert Registry Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matching-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Matching Workflow
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Matching Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-requirement-extraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) Requirement Extraction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-candidate-retrieval" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Candidate Retrieval
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-fit-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Fit Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-assignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) Assignment
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-expert-ontology-data-connectors-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Expert Ontology + Data Connectors (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-fit-scoring-service-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Fit Scoring Service (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-user-workflow-outreach-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — User Workflow + Outreach (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5645,10 +5307,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../llm-executor-retry-improvements/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    llm executor retry improvements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -5664,6 +5353,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problems-with-the-current-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems with the Current Approach
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposed-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposed Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposed Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-config-driven-retry-in-llm_executorpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Config-driven retry in llm_executor.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-luigi-resume-as-the-resilience-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Luigi resume as the resilience mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-two-tier-resilience-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3: Two-tier resilience (recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-overflow-handling-separate-from-retries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Overflow Handling (separate from retries)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5767,10 +5581,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#background" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Background
       
     </span>
   </a>
@@ -5778,10 +5592,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#problems-with-the-current-approach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        Problems with the Current Approach
       
     </span>
   </a>
@@ -5789,44 +5603,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#proposed-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        Proposed Improvements
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fit-scoring-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fit Scoring Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Fit Scoring Model">
+    <nav class="md-nav" aria-label="Proposed Improvements">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inputs" class="md-nav__link">
+  <a href="#option-1-config-driven-retry-in-llm_executorpy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inputs
+        Option 1: Config-driven retry in llm_executor.py
       
     </span>
   </a>
@@ -5834,10 +5626,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-formula" class="md-nav__link">
+  <a href="#option-2-luigi-resume-as-the-resilience-mechanism" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Formula
+        Option 2: Luigi resume as the resilience mechanism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-two-tier-resilience-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3: Two-tier resilience (recommended)
       
     </span>
   </a>
@@ -5850,10 +5653,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#expert-registry-schema" class="md-nav__link">
+  <a href="#context-overflow-handling-separate-from-retries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Expert Registry Schema
+        Context Overflow Handling (separate from retries)
       
     </span>
   </a>
@@ -5861,10 +5664,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#output-schema" class="md-nav__link">
+  <a href="#recommended-next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Output Schema
+        Recommended Next Steps
       
     </span>
   </a>
@@ -5872,179 +5675,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#matching-workflow" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Matching Workflow
+        References
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Matching Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-requirement-extraction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) Requirement Extraction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-candidate-retrieval" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Candidate Retrieval
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-fit-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Fit Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-assignment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) Assignment
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-expert-ontology-data-connectors-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Expert Ontology + Data Connectors (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-fit-scoring-service-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Fit Scoring Service (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-user-workflow-outreach-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — User Workflow + Outreach (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6068,149 +5705,89 @@
   
 
 
-<h1 id="expert-discovery-fit-scoring-for-plan-verification">Expert Discovery + Fit Scoring for Plan Verification</h1>
-<h2 id="pitch">Pitch</h2>
-<p>Automatically identify and rank qualified experts for plan verification using a structured fit scoring model that balances domain expertise, availability, cost, and reputation.</p>
-<h2 id="why">Why</h2>
-<p>Verification requires the right experts, but manual discovery is slow and unreliable. Fit scoring streamlines selection while maintaining quality and accountability.</p>
-<h2 id="problem">Problem</h2>
-<ul>
-<li>Expert discovery is ad hoc and time-consuming.</li>
-<li>Expertise is not normalized across domains.</li>
-<li>Cost and availability trade-offs are poorly quantified.</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Build a system that:</p>
+<h1 id="proposal-llmexecutor-retry-resilience-improvements">Proposal: LLMExecutor Retry &amp; Resilience Improvements</h1>
+<p><strong>Status:</strong> Draft<br />
+<strong>Author:</strong> Bubba + Egon<br />
+<strong>Related PRs:</strong> #198 (DeduplicateLeversTask per-lever decomposition)</p>
+<hr />
+<h2 id="background">Background</h2>
+<p><code>llm_executor.py</code> currently implements a fallback chain: when one LLM fails, it tries the next configured LLM in sequence. This handles model-level failures well.</p>
+<p>Several tasks (e.g., <code>DeduplicateLeversTask</code>, <code>ReviewPlanTask</code>) have added their own local retry loops on top of <code>llm_executor.run()</code>. This creates duplicated, inconsistent retry logic scattered across task files.</p>
+<p>neoneye's design direction (from PR #198 review): <strong>retry logic belongs in <code>llm_executor.py</code>, not in individual tasks.</strong></p>
+<hr />
+<h2 id="problems-with-the-current-approach">Problems with the Current Approach</h2>
 <ol>
-<li>Extracts verification requirements from a plan.</li>
-<li>Queries an expert registry and external sources.</li>
-<li>Scores experts by fit and ranks the best matches.</li>
-<li>Produces an explainable recommendation list.</li>
+<li><strong>Duplicated retry logic</strong> — Each task that needs retries implements its own loop with its own backoff, attempt counts, and error handling.</li>
+<li><strong>Hardcoded attempt counts</strong> — <code>max_retries = 3</code> appears in task files, not configurable without code changes.</li>
+<li><strong>Inconsistent error handling</strong> — Some tasks retry on all exceptions, others on specific ones. No shared policy.</li>
+<li><strong>No coordination with Luigi resume</strong> — If a task fails mid-pipeline, Luigi can resume from the last successful task. But per-call retries inside a task don't benefit from Luigi's resume mechanism.</li>
 </ol>
-<h2 id="fit-scoring-model">Fit Scoring Model</h2>
-<h3 id="inputs">Inputs</h3>
-<ul>
-<li>Domain match (primary and secondary expertise)</li>
-<li>Verification experience and prior outcomes</li>
-<li>Availability and turnaround time</li>
-<li>Cost relative to budget constraints</li>
-<li>Reputation score from marketplace</li>
-</ul>
-<h3 id="example-formula">Example Formula</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>FitScore =
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  0.35*DomainMatch +
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  0.25*Reputation +
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  0.20*Availability +
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  0.10*CostFit +
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  0.10*OutcomeHistory
+<hr />
+<h2 id="proposed-improvements">Proposed Improvements</h2>
+<h3 id="option-1-config-driven-retry-in-llm_executorpy">Option 1: Config-driven retry in <code>llm_executor.py</code></h3>
+<p>Add retry configuration to the LLM config file (e.g., <code>llm_config/custom.json</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;retry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;max_attempts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;backoff_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;retry_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rate_limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;connection_error&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="expert-registry-schema">Expert Registry Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;expert_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exp_441&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;domains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;regulation&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;PE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PhD&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;availability_days&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;hourly_rate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;reputation_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.86</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="output-schema">Output Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan_007&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;ranked_experts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;expert_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exp_441&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;fit_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.89</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Strong domain match&quot;</span><span class="p">},</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;expert_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;exp_208&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;fit_score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.81</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fast turnaround&quot;</span><span class="p">}</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="matching-workflow">Matching Workflow</h2>
-<h3 id="1-requirement-extraction">1) Requirement Extraction</h3>
+<p><code>LLMExecutor.run()</code> reads this config and wraps each model attempt with the specified retry policy. Tasks call <code>llm_executor.run()</code> once — no local retry loops needed.</p>
+<p><strong>Pros:</strong> Centralized, configurable, consistent.<br />
+<strong>Cons:</strong> Requires distinguishing retriable errors (transient) from non-retriable ones (schema failure, bad prompt). Schema failures should NOT be retried blindly — they need a different prompt/schema, not the same call again.</p>
+<hr />
+<h3 id="option-2-luigi-resume-as-the-resilience-mechanism">Option 2: Luigi resume as the resilience mechanism</h3>
+<p>Instead of retrying individual LLM calls, lean into Luigi's existing task-level resume:</p>
 <ul>
-<li>Identify required domains, claim types, and regulatory context.</li>
-<li>Tag the plan with complexity and risk tiers.</li>
+<li>If a task fails, Luigi marks it failed and stops.</li>
+<li>Re-running the pipeline resumes from the last successful task (Luigi checks output file existence).</li>
+<li>The failed task retries from scratch with the same or updated config.</li>
 </ul>
-<h3 id="2-candidate-retrieval">2) Candidate Retrieval</h3>
+<p>This is already documented in MEMORY.md ("Luigi Resume Pattern") and used in practice.</p>
+<p><strong>How to make this work better:</strong>
+- Ensure all tasks write partial progress to output files where possible (already true for most tasks).
+- Add a <code>--retry-failed</code> flag to the pipeline runner that re-runs only failed tasks.
+- Tasks should be idempotent: same input + same config = same output.</p>
+<p><strong>Pros:</strong> No new retry code. Uses battle-tested Luigi infrastructure. Failures are explicit and logged.<br />
+<strong>Cons:</strong> Each retry requires a full pipeline re-run invocation. Not suitable for per-call transient errors (network blip, brief rate limit).</p>
+<hr />
+<h3 id="option-3-two-tier-resilience-recommended">Option 3: Two-tier resilience (recommended)</h3>
+<p>Combine both approaches:</p>
+<p><strong>Tier 1 — <code>llm_executor.py</code> handles transient errors:</strong>
+- Short retry (2–3 attempts) for network/timeout errors only.
+- Configurable via LLM config file.
+- Does NOT retry schema/validation failures.</p>
+<p><strong>Tier 2 — Luigi resume handles task-level failures:</strong>
+- If all LLM attempts fail (schema error, model unavailable), task raises and Luigi marks it failed.
+- Re-run pipeline → Luigi resumes from failed task.
+- Operator can swap model config between runs to address systematic failures.</p>
+<p><strong>Tasks themselves:</strong> No local retry loops. One <code>llm_executor.run()</code> call per operation. Compact-history fallback (as in <code>DeduplicateLeversTask</code>) is task-specific logic for context management, not a retry mechanism.</p>
+<hr />
+<h2 id="context-overflow-handling-separate-from-retries">Context Overflow Handling (separate from retries)</h2>
+<p><code>DeduplicateLeversTask</code> introduced compact-history fallback for context window overflow. This is not a retry — it's a prompt restructuring. The distinction matters:</p>
 <ul>
-<li>Query registry by domain and geography.</li>
-<li>Filter by minimum credentials and availability.</li>
-<li>Exclude conflicts of interest.</li>
+<li><strong>Retry:</strong> Same prompt, same schema, try again. Appropriate for transient errors.</li>
+<li><strong>Prompt restructuring:</strong> Different prompt (compacted context), same schema. Appropriate for context overflow.</li>
 </ul>
-<h3 id="3-fit-scoring">3) Fit Scoring</h3>
-<ul>
-<li>Compute fit score and provide reason codes.</li>
-<li>Allow human override when the plan is high-stakes.</li>
-</ul>
-<h3 id="4-assignment">4) Assignment</h3>
-<ul>
-<li>Auto-assign top experts or present ranked list to reviewer.</li>
-<li>Track acceptance and response latency.</li>
-</ul>
-<h2 id="integration-points">Integration Points</h2>
-<ul>
-<li>Feeds into multi-stage verification workflow.</li>
-<li>Uses reputation scores from expert marketplace.</li>
-<li>Supports governance and conflict-of-interest checks.</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>Reduced time to match experts.</li>
-<li>Higher verification completion rates.</li>
-<li>Improved investor confidence in verification process.</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>Incomplete expert data: mitigate with periodic profile verification.</li>
-<li>Cost bias against high-quality experts: allow weighted trade-offs.</li>
-<li>Bias in reputation scoring: normalize by domain and sample size.</li>
-</ul>
-<h2 id="future-enhancements">Future Enhancements</h2>
-<ul>
-<li>External credential validation integration.</li>
-<li>Automated discovery from publications and patents.</li>
-<li>Adaptive scoring by project complexity.</li>
-</ul>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-expert-ontology-data-connectors-23-weeks">Phase A — Expert Ontology + Data Connectors (2–3 weeks)</h3>
+<p>This distinction should be preserved in any future <code>llm_executor</code> design. Prompt restructuring logic stays in the task; transient error retries move to <code>llm_executor</code>.</p>
+<hr />
+<h2 id="recommended-next-steps">Recommended Next Steps</h2>
 <ol>
-<li>Define a normalized expert ontology:</li>
-<li>domains/subdomains</li>
-<li>credential classes</li>
-<li>region/jurisdiction tags</li>
-<li>project-type experience tags</li>
-<li>Build ingestion connectors for curated sources (registries, publications, procurement records, verified profiles).</li>
-<li>Add entity resolution to deduplicate the same expert across sources.</li>
+<li>Add retry config schema to <code>llm_config</code> (transient errors only, configurable attempts + backoff).</li>
+<li>Implement in <code>LLMExecutor.run()</code> with error classification (transient vs. structural).</li>
+<li>Document Luigi resume as the standard recovery path for structural failures.</li>
+<li>Remove per-task retry loops as each task is updated (follow-on PRs).</li>
 </ol>
-<h3 id="phase-b-fit-scoring-service-2-weeks">Phase B — Fit Scoring Service (2 weeks)</h3>
-<ol>
-<li>Implement feature extraction:</li>
-<li>domain similarity to plan</li>
-<li>project similarity to past verified work</li>
-<li>jurisdiction compatibility</li>
-<li>credential strength and recency</li>
-<li>availability signals</li>
-<li>Implement weighted scoring with configurable policy weights per domain.</li>
-<li>Emit ranked shortlist with per-expert rationale and confidence.</li>
-</ol>
-<h3 id="phase-c-user-workflow-outreach-2-weeks">Phase C — User Workflow + Outreach (2 weeks)</h3>
-<ol>
-<li>Add expert shortlist panel in plan UI.</li>
-<li>Generate outreach packets from plan context (scope, constraints, expected review role).</li>
-<li>Track responses and status transitions (invited, accepted, declined, completed).</li>
-</ol>
-<h3 id="data-model-additions">Data model additions</h3>
+<hr />
+<h2 id="references">References</h2>
 <ul>
-<li><code>experts</code></li>
-<li><code>expert_profiles</code></li>
-<li><code>expert_source_records</code></li>
-<li><code>expert_fit_scores</code></li>
-<li><code>expert_outreach_events</code></li>
-</ul>
-<h3 id="validation-checklist">Validation checklist</h3>
-<ul>
-<li>Dedup precision on merged profiles</li>
-<li>Ranking quality judged by human reviewers</li>
-<li>Time-to-first-accepted-expert</li>
-<li>Coverage of required review domains per plan</li>
+<li><code>worker_plan/worker_plan_internal/llm_util/llm_executor.py</code> — current fallback chain implementation</li>
+<li><code>worker_plan/worker_plan_internal/lever/deduplicate_levers.py</code> — example of per-task compact fallback (PR #198)</li>
+<li>Luigi resume pattern — documented in project MEMORY.md</li>
+<li><code>SPEED_VS_DETAIL</code> config — precedent for pipeline-level behavioral config</li>
 </ul>
 
 
@@ -6218,9 +5795,6 @@
 
 
 
-
-  
-  
 
 
 
