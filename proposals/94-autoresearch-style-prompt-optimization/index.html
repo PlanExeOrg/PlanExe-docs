@@ -9,32 +9,34 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-      
-        <link rel="canonical" href="https://docs.planexe.org/prompt_writing_guide/">
-      
-      
-        <link rel="prev" href="../getting_started/">
+        <meta name="author" content="Simon Strandgaard (with Claude)">
       
       
-        <link rel="next" href="../plan_output_anatomy/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/94-autoresearch-style-prompt-optimization/">
+      
+      
+        <link rel="prev" href="../93-local-model-roadmap/">
+      
+      
+        <link rel="next" href="../currency-service/">
       
       
         
       
       
-      <link rel="icon" href="../assets/favicon.png">
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Prompt writing guide - PlanExe Documentation</title>
+        <title>Autoresearch-Style Autonomous Prompt Optimization - PlanExe Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,11 +55,11 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/copy-all.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/copy-all.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/nav-status.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/nav-status.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -75,17 +77,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Prompt writing guide - PlanExe Documentation" />
+<meta property="og:title" content="Autoresearch-Style Autonomous Prompt Optimization - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/prompt_writing_guide.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/94-autoresearch-style-prompt-optimization.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/prompt_writing_guide/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/94-autoresearch-style-prompt-optimization/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Prompt writing guide - PlanExe Documentation" />
+<meta property="twitter:title" content="Autoresearch-Style Autonomous Prompt Optimization - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/prompt_writing_guide.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/94-autoresearch-style-prompt-optimization.png" />
 </head>
   
   
@@ -105,7 +107,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prompt-writing-guide" class="md-skip">
+        <a href="#autoresearch-style-autonomous-prompt-optimization" class="md-skip">
           Skip to content
         </a>
       
@@ -123,7 +125,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://planexe.org" title="PlanExe Documentation" class="md-header__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -140,7 +142,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Prompt writing guide
+              Autoresearch-Style Autonomous Prompt Optimization
             
           </span>
         </div>
@@ -243,13 +245,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href=".." class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
           
   
   
@@ -269,7 +269,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../mcp/mcp_welcome/" class="md-tabs__link">
+        <a href="../../mcp/mcp_welcome/" class="md-tabs__link">
           
   
   
@@ -285,11 +285,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../plan/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../plan/" class="md-tabs__link">
           
   
   
@@ -331,7 +333,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://planexe.org" title="PlanExe Documentation" class="md-nav__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo.svg" alt="logo">
 
     </a>
     PlanExe Documentation
@@ -355,29 +357,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
   
@@ -395,7 +392,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -413,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -441,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../start_here/" class="md-nav__link">
+      <a href="../../start_here/" class="md-nav__link">
         
   
   
@@ -469,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started/" class="md-nav__link">
+      <a href="../../getting_started/" class="md-nav__link">
         
   
   
@@ -494,37 +491,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Prompt writing guide
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../prompt_writing_guide/" class="md-nav__link">
         
   
   
@@ -540,98 +510,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-a-good-prompt-includes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What a good prompt includes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#good-vs-weak-prompts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Good vs. weak prompts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#budget-and-money" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Budget and money
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Budget and money">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#budget-mistakes-to-avoid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Budget mistakes to avoid
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-mistakes-to-avoid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common mistakes to avoid
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -644,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plan_output_anatomy/" class="md-nav__link">
+      <a href="../../plan_output_anatomy/" class="md-nav__link">
         
   
   
@@ -672,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../costs_and_models/" class="md-nav__link">
+      <a href="../../costs_and_models/" class="md-nav__link">
         
   
   
@@ -700,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   
@@ -728,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../statistics/" class="md-nav__link">
+      <a href="../../statistics/" class="md-nav__link">
         
   
   
@@ -813,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/mcp_welcome/" class="md-nav__link">
+      <a href="../../mcp/mcp_welcome/" class="md-nav__link">
         
   
   
@@ -841,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/mcp_setup/" class="md-nav__link">
+      <a href="../../mcp/mcp_setup/" class="md-nav__link">
         
   
   
@@ -869,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/mcp_registry/" class="md-nav__link">
+      <a href="../../mcp/mcp_registry/" class="md-nav__link">
         
   
   
@@ -897,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/inspector/" class="md-nav__link">
+      <a href="../../mcp/inspector/" class="md-nav__link">
         
   
   
@@ -925,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/claude/" class="md-nav__link">
+      <a href="../../mcp/claude/" class="md-nav__link">
         
   
   
@@ -953,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/cursor/" class="md-nav__link">
+      <a href="../../mcp/cursor/" class="md-nav__link">
         
   
   
@@ -981,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/codex/" class="md-nav__link">
+      <a href="../../mcp/codex/" class="md-nav__link">
         
   
   
@@ -1009,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/antigravity/" class="md-nav__link">
+      <a href="../../mcp/antigravity/" class="md-nav__link">
         
   
   
@@ -1037,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/windsurf/" class="md-nav__link">
+      <a href="../../mcp/windsurf/" class="md-nav__link">
         
   
   
@@ -1065,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/lm_studio/" class="md-nav__link">
+      <a href="../../mcp/lm_studio/" class="md-nav__link">
         
   
   
@@ -1093,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/mcp_details/" class="md-nav__link">
+      <a href="../../mcp/mcp_details/" class="md-nav__link">
         
   
   
@@ -1121,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/mcp_troubleshooting/" class="md-nav__link">
+      <a href="../../mcp/mcp_troubleshooting/" class="md-nav__link">
         
   
   
@@ -1149,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/planexe_mcp_interface/" class="md-nav__link">
+      <a href="../../mcp/planexe_mcp_interface/" class="md-nav__link">
         
   
   
@@ -1181,24 +1059,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1216,7 +1099,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1234,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plan/" class="md-nav__link">
+      <a href="../../plan/" class="md-nav__link">
         
   
   
@@ -1262,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
+      <a href="../../docker/" class="md-nav__link">
         
   
   
@@ -1290,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install_developer/" class="md-nav__link">
+      <a href="../../install_developer/" class="md-nav__link">
         
   
   
@@ -1318,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../oauth/" class="md-nav__link">
+      <a href="../../oauth/" class="md-nav__link">
         
   
   
@@ -1346,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../llm_config/" class="md-nav__link">
+      <a href="../../llm_config/" class="md-nav__link">
         
   
   
@@ -1374,7 +1257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../token_counting/" class="md-nav__link">
+      <a href="../../token_counting/" class="md-nav__link">
         
   
   
@@ -1452,7 +1335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/open_dir_server/" class="md-nav__link">
+      <a href="../../developer/open_dir_server/" class="md-nav__link">
         
   
   
@@ -1480,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/worker_plan/" class="md-nav__link">
+      <a href="../../developer/worker_plan/" class="md-nav__link">
         
   
   
@@ -1508,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/frontend_single_user/" class="md-nav__link">
+      <a href="../../developer/frontend_single_user/" class="md-nav__link">
         
   
   
@@ -1536,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/database_postgres/" class="md-nav__link">
+      <a href="../../developer/database_postgres/" class="md-nav__link">
         
   
   
@@ -1564,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/worker_plan_database/" class="md-nav__link">
+      <a href="../../developer/worker_plan_database/" class="md-nav__link">
         
   
   
@@ -1592,7 +1475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/frontend_multi_user/" class="md-nav__link">
+      <a href="../../developer/frontend_multi_user/" class="md-nav__link">
         
   
   
@@ -1620,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local/" class="md-nav__link">
         
   
   
@@ -1648,7 +1531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/mcp_cloud/" class="md-nav__link">
+      <a href="../../developer/mcp_cloud/" class="md-nav__link">
         
   
   
@@ -1734,7 +1617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai_providers/openrouter/" class="md-nav__link">
+      <a href="../../ai_providers/openrouter/" class="md-nav__link">
         
   
   
@@ -1762,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai_providers/ollama/" class="md-nav__link">
+      <a href="../../ai_providers/ollama/" class="md-nav__link">
         
   
   
@@ -1790,7 +1673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai_providers/lm_studio/" class="md-nav__link">
+      <a href="../../ai_providers/lm_studio/" class="md-nav__link">
         
   
   
@@ -1818,7 +1701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai_providers/mistral/" class="md-nav__link">
+      <a href="../../ai_providers/mistral/" class="md-nav__link">
         
   
   
@@ -1854,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../status/" class="md-nav__link">
+      <a href="../../status/" class="md-nav__link">
         
   
   
@@ -1882,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../railway/" class="md-nav__link">
+      <a href="../../railway/" class="md-nav__link">
         
   
   
@@ -1910,7 +1793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment_hosting/" class="md-nav__link">
+      <a href="../../deployment_hosting/" class="md-nav__link">
         
   
   
@@ -1938,7 +1821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docs_style_guide/" class="md-nav__link">
+      <a href="../../docs_style_guide/" class="md-nav__link">
         
   
   
@@ -2016,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting_stuck_pipeline/" class="md-nav__link">
+      <a href="../../troubleshooting_stuck_pipeline/" class="md-nav__link">
         
   
   
@@ -2049,6 +1932,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2059,11 +1944,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" checked>
         
           
           <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
@@ -2084,7 +1969,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_14">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2102,7 +1987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/01-agent-smart-routing/" class="md-nav__link">
+      <a href="../01-agent-smart-routing/" class="md-nav__link">
         
   
   
@@ -2137,7 +2022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/02-plans-as-LLM-templates/" class="md-nav__link">
+      <a href="../02-plans-as-LLM-templates/" class="md-nav__link">
         
   
   
@@ -2172,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/03-distributed-plan-execution/" class="md-nav__link">
+      <a href="../03-distributed-plan-execution/" class="md-nav__link">
         
   
   
@@ -2207,7 +2092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/04-plan-explain-as-API-service/" class="md-nav__link">
+      <a href="../04-plan-explain-as-API-service/" class="md-nav__link">
         
   
   
@@ -2242,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/05-semantic-plan-search-graph/" class="md-nav__link">
+      <a href="../05-semantic-plan-search-graph/" class="md-nav__link">
         
   
   
@@ -2277,7 +2162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/06-adopt-on-the-fly/" class="md-nav__link">
+      <a href="../06-adopt-on-the-fly/" class="md-nav__link">
         
   
   
@@ -2305,7 +2190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/07-elo-ranking/" class="md-nav__link">
+      <a href="../07-elo-ranking/" class="md-nav__link">
         
   
   
@@ -2340,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/08-ui-for-editing-plan/" class="md-nav__link">
+      <a href="../08-ui-for-editing-plan/" class="md-nav__link">
         
   
   
@@ -2375,7 +2260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/1-triage/" class="md-nav__link">
+      <a href="../1-triage/" class="md-nav__link">
         
   
   
@@ -2403,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/11-investor-thesis-matching-engine/" class="md-nav__link">
+      <a href="../11-investor-thesis-matching-engine/" class="md-nav__link">
         
   
   
@@ -2438,7 +2323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/12-evidence-based-founder-execution-index/" class="md-nav__link">
+      <a href="../12-evidence-based-founder-execution-index/" class="md-nav__link">
         
   
   
@@ -2473,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/13-portfolio-aware-capital-allocation/" class="md-nav__link">
+      <a href="../13-portfolio-aware-capital-allocation/" class="md-nav__link">
         
   
   
@@ -2508,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/14-confidence-weighted-funding-auctions/" class="md-nav__link">
+      <a href="../14-confidence-weighted-funding-auctions/" class="md-nav__link">
         
   
   
@@ -2543,7 +2428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/15-outcome-feedback-and-model-governance/" class="md-nav__link">
+      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
         
   
   
@@ -2578,7 +2463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
+      <a href="../16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
         
   
   
@@ -2613,7 +2498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/17-plugin-adaptation-lifecycle/" class="md-nav__link">
+      <a href="../17-plugin-adaptation-lifecycle/" class="md-nav__link">
         
   
   
@@ -2648,7 +2533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
+      <a href="../18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
         
   
   
@@ -2683,7 +2568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
+      <a href="../19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
         
   
   
@@ -2718,7 +2603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
+      <a href="../20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
         
   
   
@@ -2753,7 +2638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/2026-02-26-human-utility-show-pedigree/" class="md-nav__link">
+      <a href="../2026-02-26-human-utility-show-pedigree/" class="md-nav__link">
         
   
   
@@ -2781,7 +2666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/2026-02-26-lobster-museum-donation-routing/" class="md-nav__link">
+      <a href="../2026-02-26-lobster-museum-donation-routing/" class="md-nav__link">
         
   
   
@@ -2809,7 +2694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/2026-03-07-llm-config-thinking-control/" class="md-nav__link">
+      <a href="../2026-03-07-llm-config-thinking-control/" class="md-nav__link">
         
   
   
@@ -2837,7 +2722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/2026-03-07-luigi-resume-enhancements/" class="md-nav__link">
+      <a href="../2026-03-07-luigi-resume-enhancements/" class="md-nav__link">
         
   
   
@@ -2865,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/2026-03-07-pipeline-hardening-roadmap-local-model-reliability/" class="md-nav__link">
+      <a href="../2026-03-07-pipeline-hardening-roadmap-local-model-reliability/" class="md-nav__link">
         
   
   
@@ -2893,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/2026-03-07-pipeline-intelligence-layer/" class="md-nav__link">
+      <a href="../2026-03-07-pipeline-intelligence-layer/" class="md-nav__link">
         
   
   
@@ -2921,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/21-expert-discovery-and-fit-scoring/" class="md-nav__link">
+      <a href="../21-expert-discovery-and-fit-scoring/" class="md-nav__link">
         
   
   
@@ -2956,7 +2841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/22-multi-stage-verification-workflow/" class="md-nav__link">
+      <a href="../22-multi-stage-verification-workflow/" class="md-nav__link">
         
   
   
@@ -2991,7 +2876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
+      <a href="../23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
         
   
   
@@ -3026,7 +2911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/24-cross-border-project-verification-framework/" class="md-nav__link">
+      <a href="../24-cross-border-project-verification-framework/" class="md-nav__link">
         
   
   
@@ -3061,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/25-verification-incentives-governance-and-liability/" class="md-nav__link">
+      <a href="../25-verification-incentives-governance-and-liability/" class="md-nav__link">
         
   
   
@@ -3096,7 +2981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
+      <a href="../26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
         
   
   
@@ -3131,7 +3016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/27-multi-angle-topic-verification-engine/" class="md-nav__link">
+      <a href="../27-multi-angle-topic-verification-engine/" class="md-nav__link">
         
   
   
@@ -3166,7 +3051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/28-autonomous-bid-factory-orchestration/" class="md-nav__link">
+      <a href="../28-autonomous-bid-factory-orchestration/" class="md-nav__link">
         
   
   
@@ -3201,7 +3086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
+      <a href="../29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
         
   
   
@@ -3236,7 +3121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
+      <a href="../30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
         
   
   
@@ -3271,7 +3156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/31-token-counting-and-cost-transparency/" class="md-nav__link">
+      <a href="../31-token-counting-and-cost-transparency/" class="md-nav__link">
         
   
   
@@ -3306,7 +3191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
+      <a href="../32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
         
   
   
@@ -3341,7 +3226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/33-cost-breakdown-structure-cbs/" class="md-nav__link">
+      <a href="../33-cost-breakdown-structure-cbs/" class="md-nav__link">
         
   
   
@@ -3376,7 +3261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/34-finance-top-down-estimation/" class="md-nav__link">
+      <a href="../34-finance-top-down-estimation/" class="md-nav__link">
         
   
   
@@ -3411,7 +3296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
+      <a href="../35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
         
   
   
@@ -3446,7 +3331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
+      <a href="../36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
         
   
   
@@ -3481,7 +3366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
+      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
         
   
   
@@ -3516,7 +3401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
+      <a href="../38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
         
   
   
@@ -3551,7 +3436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
+      <a href="../39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
         
   
   
@@ -3586,7 +3471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
+      <a href="../40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
         
   
   
@@ -3621,7 +3506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/41-autonomous-execution-of-plan/" class="md-nav__link">
+      <a href="../41-autonomous-execution-of-plan/" class="md-nav__link">
         
   
   
@@ -3656,7 +3541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/42-evidence-traceability-ledger/" class="md-nav__link">
+      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
         
   
   
@@ -3691,7 +3576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/43-assumption-drift-monitor/" class="md-nav__link">
+      <a href="../43-assumption-drift-monitor/" class="md-nav__link">
         
   
   
@@ -3726,7 +3611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/44-investor-grade-audit-pack-generator/" class="md-nav__link">
+      <a href="../44-investor-grade-audit-pack-generator/" class="md-nav__link">
         
   
   
@@ -3761,7 +3646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/45-counterfactual-scenario-explorer/" class="md-nav__link">
+      <a href="../45-counterfactual-scenario-explorer/" class="md-nav__link">
         
   
   
@@ -3796,7 +3681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/46-execution-readiness-scoring/" class="md-nav__link">
+      <a href="../46-execution-readiness-scoring/" class="md-nav__link">
         
   
   
@@ -3831,7 +3716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/47-openclaw-agent-skill-integration/" class="md-nav__link">
+      <a href="../47-openclaw-agent-skill-integration/" class="md-nav__link">
         
   
   
@@ -3866,7 +3751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/48-moltbook-reputation-bridge/" class="md-nav__link">
+      <a href="../48-moltbook-reputation-bridge/" class="md-nav__link">
         
   
   
@@ -3901,7 +3786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
+      <a href="../49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
         
   
   
@@ -3936,7 +3821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/50-agent-to-agent-payment-gateway/" class="md-nav__link">
+      <a href="../50-agent-to-agent-payment-gateway/" class="md-nav__link">
         
   
   
@@ -3971,7 +3856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/51-decentralized-planexe-survivability/" class="md-nav__link">
+      <a href="../51-decentralized-planexe-survivability/" class="md-nav__link">
         
   
   
@@ -4006,7 +3891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/52-mcp-oauth/" class="md-nav__link">
+      <a href="../52-mcp-oauth/" class="md-nav__link">
         
   
   
@@ -4041,7 +3926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/53-uuid-only-task-id/" class="md-nav__link">
+      <a href="../53-uuid-only-task-id/" class="md-nav__link">
         
   
   
@@ -4076,7 +3961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/54-agent-safety-trusted-information/" class="md-nav__link">
+      <a href="../54-agent-safety-trusted-information/" class="md-nav__link">
         
   
   
@@ -4104,7 +3989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
+      <a href="../55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
         
   
   
@@ -4139,7 +4024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
+      <a href="../56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
         
   
   
@@ -4174,7 +4059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
+      <a href="../57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
         
   
   
@@ -4209,7 +4094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/58-boost-initial-prompt/" class="md-nav__link">
+      <a href="../58-boost-initial-prompt/" class="md-nav__link">
         
   
   
@@ -4244,7 +4129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
+      <a href="../59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
         
   
   
@@ -4279,7 +4164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/60-plan-to-repo/" class="md-nav__link">
+      <a href="../60-plan-to-repo/" class="md-nav__link">
         
   
   
@@ -4314,7 +4199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/61-post-plan-agent-swarm/" class="md-nav__link">
+      <a href="../61-post-plan-agent-swarm/" class="md-nav__link">
         
   
   
@@ -4342,7 +4227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/62-agent-first-frontend-discoverability/" class="md-nav__link">
+      <a href="../62-agent-first-frontend-discoverability/" class="md-nav__link">
         
   
   
@@ -4370,7 +4255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/63-luigi-agent-integration/" class="md-nav__link">
+      <a href="../63-luigi-agent-integration/" class="md-nav__link">
         
   
   
@@ -4398,7 +4283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/64-post-plan-orchestration-layer/" class="md-nav__link">
+      <a href="../64-post-plan-orchestration-layer/" class="md-nav__link">
         
   
   
@@ -4426,7 +4311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/65-git-state-machine-enrichment/" class="md-nav__link">
+      <a href="../65-git-state-machine-enrichment/" class="md-nav__link">
         
   
   
@@ -4454,7 +4339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/66-post-plan-enrichment-swarm/" class="md-nav__link">
+      <a href="../66-post-plan-enrichment-swarm/" class="md-nav__link">
         
   
   
@@ -4489,7 +4374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/67-buildinpublic-twitter-automation/" class="md-nav__link">
+      <a href="../67-buildinpublic-twitter-automation/" class="md-nav__link">
         
   
   
@@ -4517,7 +4402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/68-domain-aware-plan-ranking-engine/" class="md-nav__link">
+      <a href="../68-domain-aware-plan-ranking-engine/" class="md-nav__link">
         
   
   
@@ -4552,7 +4437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/69-arcgentica-agent-patterns/" class="md-nav__link">
+      <a href="../69-arcgentica-agent-patterns/" class="md-nav__link">
         
   
   
@@ -4587,7 +4472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/70-fermi-sanity-check-validation-gate/" class="md-nav__link">
+      <a href="../70-fermi-sanity-check-validation-gate/" class="md-nav__link">
         
   
   
@@ -4615,7 +4500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
+      <a href="../70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
         
   
   
@@ -4643,7 +4528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/71-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
+      <a href="../71-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
         
   
   
@@ -4671,7 +4556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/71-strategy-auditor/" class="md-nav__link">
+      <a href="../71-strategy-auditor/" class="md-nav__link">
         
   
   
@@ -4699,7 +4584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/72-ai-replacing-c-level-roles/" class="md-nav__link">
+      <a href="../72-ai-replacing-c-level-roles/" class="md-nav__link">
         
   
   
@@ -4727,7 +4612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/72-complexity-assessment-bubba-haiku/" class="md-nav__link">
+      <a href="../72-complexity-assessment-bubba-haiku/" class="md-nav__link">
         
   
   
@@ -4755,7 +4640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/72-complexity-assessment-larry-sonnet/" class="md-nav__link">
+      <a href="../72-complexity-assessment-larry-sonnet/" class="md-nav__link">
         
   
   
@@ -4783,7 +4668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
+      <a href="../73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
         
   
   
@@ -4811,7 +4696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/73-task-complexity-routing/" class="md-nav__link">
+      <a href="../73-task-complexity-routing/" class="md-nav__link">
         
   
   
@@ -4839,7 +4724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/74-model-routing-ux-modes/" class="md-nav__link">
+      <a href="../74-model-routing-ux-modes/" class="md-nav__link">
         
   
   
@@ -4867,7 +4752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/74-rename-taskitem-to-planitem/" class="md-nav__link">
+      <a href="../74-rename-taskitem-to-planitem/" class="md-nav__link">
         
   
   
@@ -4895,7 +4780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/75-post-rename-cleanup-issues/" class="md-nav__link">
+      <a href="../75-post-rename-cleanup-issues/" class="md-nav__link">
         
   
   
@@ -4923,7 +4808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/76-x402-a2a-payment-roadmap/" class="md-nav__link">
+      <a href="../76-x402-a2a-payment-roadmap/" class="md-nav__link">
         
   
   
@@ -4951,7 +4836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/77-cache-aware-model-handoff/" class="md-nav__link">
+      <a href="../77-cache-aware-model-handoff/" class="md-nav__link">
         
   
   
@@ -4979,7 +4864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/77-ccusage-real-data-analysis/" class="md-nav__link">
+      <a href="../77-ccusage-real-data-analysis/" class="md-nav__link">
         
   
   
@@ -5007,7 +4892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/78-planexe-growth-awareness-strategy/" class="md-nav__link">
+      <a href="../78-planexe-growth-awareness-strategy/" class="md-nav__link">
         
   
   
@@ -5035,7 +4920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/79-multiple-api-keys/" class="md-nav__link">
+      <a href="../79-multiple-api-keys/" class="md-nav__link">
         
   
   
@@ -5063,7 +4948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/80-zero-downtime-railway-deployment/" class="md-nav__link">
+      <a href="../80-zero-downtime-railway-deployment/" class="md-nav__link">
         
   
   
@@ -5091,7 +4976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/81-mcp-api-key-validation/" class="md-nav__link">
+      <a href="../81-mcp-api-key-validation/" class="md-nav__link">
         
   
   
@@ -5119,7 +5004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/82-measure-drift-proposal/" class="md-nav__link">
+      <a href="../82-measure-drift-proposal/" class="md-nav__link">
         
   
   
@@ -5147,7 +5032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/83-measure-drift-specification/" class="md-nav__link">
+      <a href="../83-measure-drift-specification/" class="md-nav__link">
         
   
   
@@ -5175,7 +5060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/84-business-idea-proposal/" class="md-nav__link">
+      <a href="../84-business-idea-proposal/" class="md-nav__link">
         
   
   
@@ -5203,7 +5088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/84-drift-measurement-pseudocode-impl/" class="md-nav__link">
+      <a href="../84-drift-measurement-pseudocode-impl/" class="md-nav__link">
         
   
   
@@ -5231,7 +5116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/85-business-idea-specification/" class="md-nav__link">
+      <a href="../85-business-idea-specification/" class="md-nav__link">
         
   
   
@@ -5259,7 +5144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/85-pipeline-benchmark-prompts/" class="md-nav__link">
+      <a href="../85-pipeline-benchmark-prompts/" class="md-nav__link">
         
   
   
@@ -5287,7 +5172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/86-agent-optimized-pipeline/" class="md-nav__link">
+      <a href="../86-agent-optimized-pipeline/" class="md-nav__link">
         
   
   
@@ -5315,7 +5200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/87-plan-resume-mcp-tool/" class="md-nav__link">
+      <a href="../87-plan-resume-mcp-tool/" class="md-nav__link">
         
   
   
@@ -5343,7 +5228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/93-local-model-roadmap/" class="md-nav__link">
+      <a href="../93-local-model-roadmap/" class="md-nav__link">
         
   
   
@@ -5368,10 +5253,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../proposals/94-autoresearch-style-prompt-optimization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    94 autoresearch style prompt optimization
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -5394,6 +5313,269 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background-the-autoresearch-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background: The Autoresearch Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-fits-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Fits PlanExe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-mode-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Mode System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-exploration-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Exploration Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-per-task-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring: Per-Task Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-agent-modifies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Agent Modifies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-prompt-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Prompt Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-programmd-equivalent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The program.md Equivalent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-proposal-59" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with Proposal 59
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phased-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phased Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phased Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-0-minimal-loop-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0: Minimal Loop (days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-autonomous-exploration-1-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Autonomous Exploration (1-2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-multi-task-coverage-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Multi-Task Coverage (weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-connect-to-promotion-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Connect to Promotion Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5406,7 +5588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/currency-service/" class="md-nav__link">
+      <a href="../currency-service/" class="md-nav__link">
         
   
   
@@ -5434,7 +5616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/domain-aware-normalizer/" class="md-nav__link">
+      <a href="../domain-aware-normalizer/" class="md-nav__link">
         
   
   
@@ -5462,7 +5644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/llm-executor-retry-improvements/" class="md-nav__link">
+      <a href="../llm-executor-retry-improvements/" class="md-nav__link">
         
   
   
@@ -5490,7 +5672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/llm-thinking-mode-middleware/" class="md-nav__link">
+      <a href="../llm-thinking-mode-middleware/" class="md-nav__link">
         
   
   
@@ -5518,7 +5700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/resource-cost-data/" class="md-nav__link">
+      <a href="../resource-cost-data/" class="md-nav__link">
         
   
   
@@ -5546,7 +5728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proposals/usage-metrics-local-runs/" class="md-nav__link">
+      <a href="../usage-metrics-local-runs/" class="md-nav__link">
         
   
   
@@ -5609,10 +5791,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-a-good-prompt-includes" class="md-nav__link">
+  <a href="#pitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What a good prompt includes
+        Pitch
       
     </span>
   </a>
@@ -5620,10 +5802,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#good-vs-weak-prompts" class="md-nav__link">
+  <a href="#background-the-autoresearch-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Good vs. weak prompts
+        Background: The Autoresearch Pattern
       
     </span>
   </a>
@@ -5631,10 +5813,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-structure" class="md-nav__link">
+  <a href="#why-this-fits-planexe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended structure
+        Why This Fits PlanExe
       
     </span>
   </a>
@@ -5642,22 +5824,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#budget-and-money" class="md-nav__link">
+  <a href="#proposal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Budget and money
+        Proposal
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Budget and money">
+    <nav class="md-nav" aria-label="Proposal">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#budget-mistakes-to-avoid" class="md-nav__link">
+  <a href="#two-mode-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Budget mistakes to avoid
+        Two-Mode System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-exploration-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Exploration Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-per-task-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring: Per-Task Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-agent-modifies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Agent Modifies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-prompt-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference Prompt Set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-programmd-equivalent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The program.md Equivalent
       
     </span>
   </a>
@@ -5670,10 +5918,115 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+  <a href="#integration-with-proposal-59" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common mistakes to avoid
+        Integration with Proposal 59
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phased-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phased Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phased Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-0-minimal-loop-days" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0: Minimal Loop (days)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-autonomous-exploration-1-2-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Autonomous Exploration (1-2 weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-multi-task-coverage-weeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Multi-Task Coverage (weeks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-connect-to-promotion-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Connect to Promotion Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success Metrics
       
     </span>
   </a>
@@ -5700,67 +6053,234 @@
   
 
 
-<h1 id="prompt-writing-guide">Prompt writing guide</h1>
-<p>PlanExe creates better plans when the input prompt is detailed and specific. Aim for 300–800 words.</p>
+<h1 id="autoresearch-style-autonomous-prompt-optimization">Autoresearch-Style Autonomous Prompt Optimization</h1>
+<p><strong>Author:</strong> Simon Strandgaard (with Claude)
+<strong>Date:</strong> 2026-03-09
+<strong>Status:</strong> Proposal
+<strong>Tags:</strong> <code>prompting</code>, <code>automation</code>, <code>autoresearch</code>, <code>ab-testing</code>, <code>autonomous-agent</code></p>
 <hr />
-<h2 id="what-a-good-prompt-includes">What a good prompt includes</h2>
+<h2 id="pitch">Pitch</h2>
+<p>Adapt the autoresearch pattern (Karpathy, 2026) for PlanExe: an autonomous agent that loops overnight, modifying prompt templates one at a time, regenerating only the affected Luigi task output, scoring the result, and keeping or reverting. Wake up to hundreds of tested prompt variants and a log of what worked.</p>
+<p>This proposal complements proposal 59 (Prompt Optimizing with A/B Testing) by adding an autonomous exploration phase that feeds pre-tested candidates into the structured promotion pipeline.</p>
+<h2 id="background-the-autoresearch-pattern">Background: The Autoresearch Pattern</h2>
+<p>Autoresearch is a tight autonomous improvement loop for ML training:</p>
+<ol>
+<li>Agent modifies one file (<code>train.py</code>)</li>
+<li>Runs a fixed 5-minute training experiment</li>
+<li>Evaluates against a single metric (<code>val_bpb</code>)</li>
+<li>Keeps the change if improved, reverts if not</li>
+<li>Logs the result and repeats indefinitely</li>
+</ol>
+<p>Key properties: single metric, fixed time budget, single modification scope, git-based versioning, no human in the loop during exploration.</p>
+<h2 id="why-this-fits-planexe">Why This Fits PlanExe</h2>
+<p>PlanExe's Luigi pipeline makes this pattern unusually practical for a document-generation system:</p>
 <ul>
-<li><strong>Goal and scope</strong>: what you want, and what you explicitly do not want.</li>
-<li><strong>Audience</strong>: who the plan is for (customers, users, stakeholders).</li>
-<li><strong>Constraints</strong>: budget, timeline, geography.</li>
-<li><strong>Location(s)</strong>: country/region/city. If you have it, include the exact street address. Regulations and feasibility change by location.</li>
-<li><strong>Success criteria</strong>: what success looks like, and how it is measured.</li>
-<li><strong>Resources</strong>: team size, skills, existing assets, tools.</li>
+<li><strong>Luigi resumability</strong>: Delete one task's output, re-run the pipeline, and only that task regenerates. Upstream tasks are cached. This turns a 15-minute, 60+ LLM call pipeline into a 1-20 LLM call experiment taking seconds to minutes.</li>
+<li><strong>Isolated prompt templates</strong>: Each Luigi task has a self-contained prompt template. Changing one prompt is a single-variable experiment by construction.</li>
+<li><strong>Structured output</strong>: Task outputs are JSON/Markdown with predictable structure, making automated scoring feasible.</li>
+<li><strong>Existing infrastructure</strong>: Prompt corpora (<code>simple_plan_prompts.jsonl</code>), diagnostics modules, and the redline-gate pattern already provide building blocks.</li>
 </ul>
-<hr />
-<h2 id="good-vs-weak-prompts">Good vs. weak prompts</h2>
-<p><strong>Weak</strong></p>
-<blockquote>
-<p>Construct a bridge.</p>
-</blockquote>
-<p><strong>Better</strong></p>
-<blockquote>
-<p>Construct a bridge between Spain and Morocco across the Strait of Gibraltar. Target a feasibility‑to‑groundbreak timeline of 5 years with a total budget range of 8–12B EUR. The plan should cover geotechnical surveys, environmental impact assessments, maritime traffic coordination, and cross‑border permitting. Include options for rail + road, and describe staging for phase 1 (single rail) and phase 2 (road expansion). Exclude toll‑system design and focus on structural, logistics, and governance planning.</p>
-</blockquote>
-<hr />
-<h2 id="recommended-structure">Recommended structure</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Goal:
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Context / background:
+<h2 id="proposal">Proposal</h2>
+<h3 id="two-mode-system">Two-Mode System</h3>
+<p><strong>Mode 1: Autonomous Exploration (autoresearch-style)</strong></p>
+<p>An agent loops autonomously, proposing and testing prompt modifications at high volume. This is fast, greedy, and optimizes for discovery. Runs overnight or over weekends.</p>
+<p><strong>Mode 2: Structured Promotion (proposal 59-style)</strong></p>
+<p>Take the best candidates from exploration, run them through multi-model A/B testing with Elo tracking and regression guards before merging into the baseline. This is slow, conservative, and optimizes for trust.</p>
+<p>Exploration feeds promotion. The agent surfaces candidates; the promotion pipeline validates them.</p>
+<h3 id="the-exploration-loop">The Exploration Loop</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SETUP:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1. Run full pipeline once on N reference prompts (baseline)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Record baseline scores per task per prompt
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Target users / customers:
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Scope (in/out):
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Constraints (budget, timeline, geography):
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Location(s):
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Success criteria:
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Team / resources available:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>LOOP:
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>1. Select a target Luigi task
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>2. Read the current prompt template and recent task outputs
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>3. Identify a weakness or improvement hypothesis
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>4. Modify the prompt template (one change only)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>5. git commit with description of the hypothesis
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>6. For each reference prompt:
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   a. Delete the target task&#39;s output file
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>   b. Re-run pipeline (Luigi regenerates only that task)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>   c. Score the regenerated output
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>7. Compute average score delta vs baseline
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>8. If improved: keep commit, update baseline scores
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>9. If equal or worse: git revert, log failure mode
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>10. Append result to results.tsv
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>11. Go to 1
 </code></pre></div>
-<hr />
-<h2 id="budget-and-money">Budget and money</h2>
-<p>Budget can be natural language. Examples:</p>
+<h3 id="scoring-per-task-evaluation">Scoring: Per-Task Evaluation</h3>
+<p>Since only one task output changes per experiment, the LLM-as-judge problem is scoped to comparing two versions of a single document (e.g., two SWOT analyses, two risk registers). This is far more reliable than holistic plan scoring.</p>
+<p>Per-task rubric (scored 1-10 by judge LLM):</p>
 <ul>
-<li>A range: “$200k–$400k total.”</li>
-<li>Phased: “$10M for phase 1, $5M for phase 2.”</li>
-<li>With constraints: “Capex only, exclude staffing.”</li>
-<li>Use standard currencies (EUR, DKK, RUB, BRL, etc.). Crypto budgets (BTC, ETH) are not supported.</li>
+<li><strong>Specificity</strong>: Are items concrete and grounded in the project context?</li>
+<li><strong>Actionability</strong>: Can someone act on this output directly?</li>
+<li><strong>Completeness</strong>: Are obvious aspects covered without major gaps?</li>
+<li><strong>Internal consistency</strong>: Does the output align with upstream pipeline context?</li>
+<li><strong>Conciseness</strong>: Is the output free of filler and redundancy?</li>
 </ul>
-<h3 id="budget-mistakes-to-avoid">Budget mistakes to avoid</h3>
+<p>Composite score: weighted average, configurable per task type.</p>
+<p>For additional robustness, use pairwise comparison ("Which version is better and why?") alongside absolute scoring to reduce judge bias.</p>
+<h3 id="what-the-agent-modifies">What the Agent Modifies</h3>
+<p>The agent modifies prompt templates inside Luigi task classes in <code>worker_plan_internal/</code>. Types of modifications:</p>
 <ul>
-<li>Setting the budget to 0/none/N/A when the goal is serious and requires resources.</li>
-<li>Using a currency code as the budget value (e.g., budget = DKK) instead of a real budget.</li>
+<li>Rephrase instructions for clarity</li>
+<li>Add or remove constraints</li>
+<li>Change output structure requirements</li>
+<li>Adjust tone/specificity instructions</li>
+<li>Add few-shot examples</li>
+<li>Remove redundant instructions (simplification)</li>
 </ul>
-<hr />
-<h2 id="common-mistakes-to-avoid">Common mistakes to avoid</h2>
+<p>The agent should also be able to propose simplifications. Following the autoresearch principle: if removing lines produces equal or better output, the removal is an improvement.</p>
+<h3 id="reference-prompt-set">Reference Prompt Set</h3>
+<p>A fixed set of 3-5 diverse plan prompts used for all experiments:</p>
 <ul>
-<li>Being too vague (one sentence).</li>
-<li>Missing constraints (budget, time, scope).</li>
-<li>Leaving out the location(s), which makes regulations and feasibility assumptions unreliable.</li>
-<li>Conflicting requirements (e.g., “launch in 2 weeks” + “enterprise compliance”).</li>
+<li>A simple personal project (e.g., "Organize a neighborhood cleanup day")</li>
+<li>A business venture (e.g., "Launch a B2B SaaS for invoice automation")</li>
+<li>A complex initiative (e.g., "Establish a regional renewable energy cooperative")</li>
+<li>An edge case (e.g., a vague or contradictory prompt)</li>
+</ul>
+<p>These must be stable across all experiments to ensure comparability. Periodically refresh with a hidden holdout set to detect overfitting.</p>
+<h3 id="results-tracking">Results Tracking</h3>
+<p><code>results.tsv</code> — one row per experiment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>commit  task    avg_score   baseline_score  delta   status  description
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>a1b2c3d SWOTAnalysisTask    7.8 7.2 +0.6    keep    added industry-specific angle constraint
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>d4e5f6g ExpertReviewTask    6.5 6.9 -0.4    discard over-constrained format reduced depth
+</code></pre></div>
+<h3 id="the-programmd-equivalent">The program.md Equivalent</h3>
+<p>A Markdown file (e.g., <code>prompt_research_program.md</code>) that instructs the agent. The human iterates on this file to steer the agent's research strategy. Example contents:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gu">## Current Focus</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Improve tasks in the strategic analysis stage (SWOT, Expert Review,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Premortem). These show the most variance in quality across prompts.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="gu">## Priorities</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">1.</span> Reduce generic/boilerplate content in SWOT outputs
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">2.</span> Improve risk specificity in Premortem task
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">3.</span> Expert Review should reference upstream assumptions
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="gu">## Constraints</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">-</span><span class="w"> </span>Do not modify prepare.py or pipeline structure
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">-</span><span class="w"> </span>One prompt change per experiment
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="k">-</span><span class="w"> </span>Always test on all reference prompts before deciding
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">-</span><span class="w"> </span>Keep prompt changes small and reversible
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="gu">## What Has Worked</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">-</span><span class="w"> </span>Adding &quot;be specific to this project, avoid generic advice&quot;
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  consistently improves scores
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="k">-</span><span class="w"> </span>Referencing upstream context (e.g., &quot;given the assumptions above&quot;)
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>  improves consistency scores
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="gu">## What Has Not Worked</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">-</span><span class="w"> </span>Adding many few-shot examples increases cost without clear benefit
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="k">-</span><span class="w"> </span>Over-constraining output format reduces depth
+</code></pre></div>
+<h2 id="integration-with-proposal-59">Integration with Proposal 59</h2>
+<p>This proposal and proposal 59 serve different purposes in the same system:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>This proposal (exploration)</th>
+<th>Proposal 59 (promotion)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Goal</td>
+<td>Discover promising variants</td>
+<td>Validate and ship variants</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Hundreds of experiments/night</td>
+<td>Days per decision</td>
+</tr>
+<tr>
+<td>Rigor</td>
+<td>Greedy, single-metric</td>
+<td>Multi-model, multi-domain, Elo</td>
+</tr>
+<tr>
+<td>Agent role</td>
+<td>Fully autonomous</td>
+<td>Human-gated</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>results.tsv + git history</td>
+<td>Structured experiment artifacts</td>
+</tr>
+</tbody>
+</table>
+<p>Workflow: Exploration finds top candidates -&gt; Promotion validates them -&gt; Merge into baseline.</p>
+<h2 id="phased-implementation">Phased Implementation</h2>
+<h3 id="phase-0-minimal-loop-days">Phase 0: Minimal Loop (days)</h3>
+<ul>
+<li>Target 1 Luigi task</li>
+<li>1 reference prompt</li>
+<li>1 LLM for generation, 1 for judging</li>
+<li>Simple score (single number from judge)</li>
+<li><code>results.tsv</code> tracking</li>
+<li>Agent loops manually (human triggers each iteration)</li>
+<li>Goal: validate that the scoring signal is meaningful</li>
+</ul>
+<h3 id="phase-1-autonomous-exploration-1-2-weeks">Phase 1: Autonomous Exploration (1-2 weeks)</h3>
+<ul>
+<li>Expand to 3-5 reference prompts</li>
+<li>Agent loops autonomously with <code>program.md</code>-style instructions</li>
+<li>Git commit/revert workflow</li>
+<li>Cover 5-10 Luigi tasks</li>
+<li>Goal: first overnight run producing actionable results</li>
+</ul>
+<h3 id="phase-2-multi-task-coverage-weeks">Phase 2: Multi-Task Coverage (weeks)</h3>
+<ul>
+<li>Extend to all scorable Luigi tasks</li>
+<li>Task-specific rubrics</li>
+<li>Agent can choose which task to target based on score gaps</li>
+<li>Goal: systematic coverage of the full pipeline</li>
+</ul>
+<h3 id="phase-3-connect-to-promotion-pipeline">Phase 3: Connect to Promotion Pipeline</h3>
+<ul>
+<li>Feed exploration winners into proposal 59's A/B matrix</li>
+<li>Multi-model validation before merging</li>
+<li>Elo tracking for long-term quality trends</li>
+<li>Goal: end-to-end prompt improvement pipeline</li>
+</ul>
+<h2 id="cost-considerations">Cost Considerations</h2>
+<p>Per experiment (1 task, 1 reference prompt):
+- 1-20 LLM calls for regeneration (depending on task complexity)
+- 1 LLM call for judge scoring
+- Total: ~2-21 LLM calls</p>
+<p>Per overnight run (assuming 3 reference prompts, 8 hours, ~2 min per experiment):
+- ~240 experiments
+- ~5,000-15,000 LLM calls
+- Cost depends on model choice</p>
+<p>Mitigation:
+- Use cheaper models (e.g., Haiku) for exploration generation
+- Use a stronger model (e.g., Opus) only for judging
+- Validate winners with full-cost models in the promotion phase
+- Start with Phase 0 to confirm signal before scaling up</p>
+<h2 id="risks">Risks</h2>
+<ul>
+<li><strong>Judge instability</strong>: LLM-as-judge scores may be noisy. Mitigate with pairwise comparison and averaging across reference prompts.</li>
+<li><strong>Overfitting to reference prompts</strong>: Prompts may be optimized for the test set. Mitigate with periodic holdout refresh.</li>
+<li><strong>Simplification bias</strong>: Agent may converge on shorter prompts that score well but lose nuance. Mitigate by including completeness in the rubric.</li>
+<li><strong>Cost runaway</strong>: Overnight runs with expensive models add up. Mitigate by starting with cheap models and capping experiment count.</li>
+<li><strong>Cascading effects</strong>: Improving one task's prompt may degrade downstream tasks that depended on the previous output style. Mitigate by scoring downstream tasks as well for kept changes.</li>
+</ul>
+<h2 id="open-questions">Open Questions</h2>
+<ul>
+<li>Should the agent be allowed to modify pipeline structure (add/remove tasks), or only prompt templates?</li>
+<li>What is the minimum number of reference prompts needed for a reliable signal?</li>
+<li>Should exploration runs use the same LLM as production, or is a cheaper proxy acceptable?</li>
+<li>How do we detect and handle cascading effects on downstream tasks?</li>
+<li>Can the agent generate its own improvement hypotheses from analyzing low-scoring outputs, or should hypotheses come from the human-written program.md?</li>
+</ul>
+<h2 id="success-metrics">Success Metrics</h2>
+<ul>
+<li>Number of prompt improvements discovered and promoted per week</li>
+<li>Average quality score improvement across benchmark suite after promotion</li>
+<li>Reduction in human time spent on manual prompt iteration</li>
+<li>Stability of improvements across LLM providers (measured via proposal 59's multi-model testing)</li>
 </ul>
 
 
@@ -5822,12 +6342,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../assets/javascripts/copy-all.js"></script>
+        <script src="../../assets/javascripts/copy-all.js"></script>
       
     
   </body>
