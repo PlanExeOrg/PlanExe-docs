@@ -1797,10 +1797,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#171-plan_list-or-plan_recent" class="md-nav__link">
+  <a href="#171-plan_list-implemented" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.1 plan_list (or plan_recent)
+        ~~17.1 plan_list~~ (IMPLEMENTED)
       
     </span>
   </a>
@@ -7022,10 +7022,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#171-plan_list-or-plan_recent" class="md-nav__link">
+  <a href="#171-plan_list-implemented" class="md-nav__link">
     <span class="md-ellipsis">
       
-        17.1 plan_list (or plan_recent)
+        ~~17.1 plan_list~~ (IMPLEMENTED)
       
     </span>
   </a>
@@ -7681,13 +7681,8 @@ Concurrency is a client-side coordination concern.</p>
 <hr />
 <h2 id="17-future-tools-high-leverage-low-complexity">17. Future Tools (High-Leverage, Low-Complexity)</h2>
 <p>The following tools remove common UX friction without expanding the core model.</p>
-<h3 id="171-plan_list-or-plan_recent">17.1 plan_list (or plan_recent)</h3>
-<p>Return a short list of recent plans so agents can recover if they lost a plan_id.</p>
-<p><strong>Notes</strong></p>
-<ul>
-<li>Default limit: 5–10 plans.</li>
-<li>Include plan_id, created_at, state, and prompt summary.</li>
-</ul>
+<h3 id="171-plan_list-implemented">~~17.1 plan_list~~ (IMPLEMENTED)</h3>
+<p>Implemented. Returns up to 50 plans newest-first, each with plan_id, state, progress_percentage, created_at, and prompt_excerpt. Default limit: 10.</p>
 <h3 id="172-plan_wait">17.2 plan_wait</h3>
 <p>Blocking helper that polls internally until the plan completes or times out. Returns the final plan_status payload plus suggested next steps.</p>
 <p><strong>Notes</strong></p>
