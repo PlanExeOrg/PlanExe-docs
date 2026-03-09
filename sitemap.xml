@@ -205,6 +205,10 @@
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
+         <loc>https://docs.planexe.org/proposals/00-triage/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
          <loc>https://docs.planexe.org/proposals/01-agent-smart-routing/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
@@ -237,11 +241,51 @@
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/1-triage/</loc>
+         <loc>https://docs.planexe.org/proposals/100-lobster-museum-donation-routing/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/101-luigi-resume-enhancements/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/102-pipeline-intelligence-layer/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/103-pipeline-hardening-roadmap-local-model-reliability/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/104-llm-config-thinking-control/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/105-currency-service/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/106-resource-cost-data/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/107-domain-aware-normalizer/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/108-llm-thinking-mode-middleware/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/109-llm-executor-retry-improvements/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/11-investor-thesis-matching-engine/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/110-usage-metrics-local-runs/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
@@ -278,30 +322,6 @@
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/20-plugin-hub-discovery-ranking-and-reuse/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/2026-02-26-human-utility-show-pedigree/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/2026-02-26-lobster-museum-donation-routing/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/2026-03-07-llm-config-thinking-control/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/2026-03-07-luigi-resume-enhancements/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/2026-03-07-pipeline-hardening-roadmap-local-model-reliability/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/2026-03-07-pipeline-intelligence-layer/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
@@ -501,15 +521,7 @@
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/70-fermi-sanity-check-validation-gate/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/70-mcp-interface-evaluation-and-roadmap/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/71-model-routing-postmortem-simon-26feb2026/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
@@ -521,23 +533,7 @@
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/72-complexity-assessment-bubba-haiku/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/72-complexity-assessment-larry-sonnet/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/73-rename-task-prefix-in-mcp-tools/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/73-task-complexity-routing/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/74-model-routing-ux-modes/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
@@ -550,10 +546,6 @@
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/76-x402-a2a-payment-roadmap/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/77-cache-aware-model-handoff/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
@@ -589,15 +581,7 @@
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/84-drift-measurement-pseudocode-impl/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/85-business-idea-specification/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/85-pipeline-benchmark-prompts/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
@@ -609,6 +593,26 @@
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
+         <loc>https://docs.planexe.org/proposals/88-fermi-sanity-check-validation-gate/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/89-model-routing-postmortem-simon-26feb2026/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/90-complexity-assessment-bubba-haiku/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/91-complexity-assessment-larry-sonnet/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/92-task-complexity-routing/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
          <loc>https://docs.planexe.org/proposals/93-local-model-roadmap/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
@@ -617,31 +621,27 @@
          <lastmod>2026-03-09</lastmod>
     </url>
     <url>
+         <loc>https://docs.planexe.org/proposals/95-model-routing-ux-modes/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/96-cache-aware-model-handoff/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/97-drift-measurement-pseudocode-impl/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/98-pipeline-benchmark-prompts/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/99-human-utility-show-pedigree/</loc>
+         <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
          <loc>https://docs.planexe.org/proposals/AGENTS/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/currency-service/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/domain-aware-normalizer/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/llm-executor-retry-improvements/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/llm-thinking-mode-middleware/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/resource-cost-data/</loc>
-         <lastmod>2026-03-09</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/usage-metrics-local-runs/</loc>
          <lastmod>2026-03-09</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,7041 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/00-triage/">
+      
+      
+        <link rel="prev" href="../../troubleshooting_stuck_pipeline/">
+      
+      
+        <link rel="next" href="../01-agent-smart-routing/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>00 triage - PlanExe Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/copy-all.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/nav-status.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-2F6NE7JWTR"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-2F6NE7JWTR",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-2F6NE7JWTR",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="00 triage - PlanExe Documentation" />
+<meta property="og:description" content="From a single goal statement to a full strategic plan." />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/00-triage.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/00-triage/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="00 triage - PlanExe Documentation" />
+<meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/00-triage.png" />
+</head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#planexe-proposal-triage-8020-analysis-strategic-gaps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://planexe.org" title="PlanExe Documentation" class="md-header__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PlanExe Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              00 triage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PlanExeOrg/PlanExe" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PlanExeOrg/PlanExe
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mcp/mcp_welcome/" class="md-tabs__link">
+          
+  
+  
+  MCP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../plan/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://planexe.org" title="PlanExe Documentation" class="md-nav__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    PlanExe Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PlanExeOrg/PlanExe" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PlanExeOrg/PlanExe
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../start_here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt_writing_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt writing guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plan_output_anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan output anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../costs_and_models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Costs and models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_welcome/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP registry publishing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/inspector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Inspector
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/claude/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/cursor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cursor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/codex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/antigravity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antigravity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/windsurf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windsurf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/lm_studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP details
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/mcp_troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/planexe_mcp_interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PlanExe MCP interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAuth setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../llm_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../token_counting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token counting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Components
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/open_dir_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    open_dir_server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/worker_plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    worker_plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/frontend_single_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frontend_single_user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/database_postgres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    database_postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/worker_plan_database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    worker_plan_database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/frontend_multi_user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    frontend_multi_user
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/mcp_local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp_local
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/mcp_cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp_cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI providers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI providers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/openrouter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenRouter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/ollama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ollama
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/lm_studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LM Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai_providers/mistral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mistral
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../status/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../railway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Railway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment_hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment and hosting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docs_style_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docs style guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting_stuck_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stuck pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proposals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proposals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 triage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    00 triage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-leverage-proposals-the-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Leverage Proposals (The 20%)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuse-opportunities-adjacent-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reuse Opportunities &amp; Adjacent Clusters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reuse Opportunities &amp; Adjacent Clusters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proposal-pairs-that-share-heuristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposal Pairs That Share Heuristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-cluster-interconnected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Cluster (Interconnected)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8020-quick-wins-parameter-tweaks-no-rewrites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        80:20 Quick Wins (Parameter Tweaks, No Rewrites)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="80:20 Quick Wins (Parameter Tweaks, No Rewrites)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#category-1-ranking-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 1: Ranking Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-2-dag-distribution-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 2: DAG &amp; Distribution Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-3-alignment-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 3: Alignment &amp; Terminology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secondthird-order-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second/Third Order Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Second/Third Order Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-1st-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct (1st Order)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2nd-order-downstream-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2nd Order (Downstream Reliability)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3rd-order-strategic-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3rd Order (Strategic Implications)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-gaps-in-existing-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Gaps in Existing Proposals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Gaps in Existing Proposals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gap-1-execution-feedback-loop-missing-entirely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 1: Execution Feedback Loop (Missing Entirely)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-2-cost-estimation-validation-order-of-magnitude-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 2: Cost Estimation Validation (Order-of-Magnitude Reconciliation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-3-stakeholder-alignment-pre-plan-assumption-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 3: Stakeholder Alignment Pre-Plan (Assumption Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-4-plan-complexity-budgeting-dont-over-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 4: Plan Complexity Budgeting (Don't Over-Plan)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-5-software-plan-specialization-code-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 5: Software Plan Specialization (Code Bridge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-proposals-should-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Proposals (Should Exist)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategic-questions-simon-might-not-be-asking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategic Questions Simon Might Not Be Asking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strategic Questions Simon Might Not Be Asking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-unit-economics-of-plan-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Unit Economics of Plan Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-data-moat-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Data Moat Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-competitive-positioning-vs-consulting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Competitive Positioning vs. Consulting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-megaproject-scalability-10-year-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Megaproject Scalability (10-Year Plans)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-margin-structure-cost-reduction-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: Margin Structure &amp; Cost Reduction Curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-tasks-we-can-execute-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relevant Tasks We Can Execute Now
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevant Tasks We Can Execute Now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-proposal-dependency-graph-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Proposal Dependency Graph (Executable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-estimation-reconciliation-fermisanitycheck-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Estimation Reconciliation (FermiSanityCheck Extension)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-proposal-sizing-matrix-quick-win-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Proposal Sizing Matrix (Quick Win Inventory)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-fermisanitycheck-implementation-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: FermiSanityCheck Implementation (Core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-validation-observability-dashboard-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5: Validation Observability Dashboard (Reporting)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-stakeholder-assumption-validation-ui-pre-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6: Stakeholder Assumption Validation UI (Pre-Plan)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-complexity-gating-implementation-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7: Complexity Gating Implementation (Cost Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-execution-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Execution Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Execution Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-this-week-stabilization-fermi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 (This Week): Stabilization + Fermi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-next-week-quick-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 (Next Week): Quick Wins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-week-after-strategic-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 (Week After): Strategic Proposals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-Off
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-agent-smart-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 agent smart routing
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-plans-as-LLM-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 plans as LLM templates
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-distributed-plan-execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 distributed plan execution
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-plan-explain-as-API-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 plan explain as API service
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-semantic-plan-search-graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 semantic plan search graph
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-adopt-on-the-fly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 adopt on the fly
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-elo-ranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 elo ranking
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-ui-for-editing-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 ui for editing plan
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--in-progress"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../100-lobster-museum-donation-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    100 lobster museum donation routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../101-luigi-resume-enhancements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    101 luigi resume enhancements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../102-pipeline-intelligence-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    102 pipeline intelligence layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../103-pipeline-hardening-roadmap-local-model-reliability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    103 pipeline hardening roadmap local model reliability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../104-llm-config-thinking-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    104 llm config thinking control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../105-currency-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    105 currency service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../106-resource-cost-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    106 resource cost data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../107-domain-aware-normalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    107 domain aware normalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../108-llm-thinking-mode-middleware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    108 llm thinking mode middleware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../109-llm-executor-retry-improvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    109 llm executor retry improvements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-investor-thesis-matching-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 investor thesis matching engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../110-usage-metrics-local-runs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    110 usage metrics local runs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-evidence-based-founder-execution-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 evidence based founder execution index
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-portfolio-aware-capital-allocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 portfolio aware capital allocation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-confidence-weighted-funding-auctions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 confidence weighted funding auctions
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 outcome feedback and model governance
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 on demand plugin synthesis hub
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-plugin-adaptation-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 plugin adaptation lifecycle
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 plugin benchmarking coverage harness
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 plugin safety governance for runtime loading
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 plugin hub discovery ranking and reuse
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-expert-discovery-and-fit-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 expert discovery and fit scoring
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-multi-stage-verification-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 multi stage verification workflow
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 expert collaboration marketplace and reputation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-cross-border-project-verification-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 cross border project verification framework
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-verification-incentives-governance-and-liability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 verification incentives governance and liability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 news intake and opportunity sensing grid
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-multi-angle-topic-verification-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 multi angle topic verification engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../28-autonomous-bid-factory-orchestration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 autonomous bid factory orchestration
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29 elo ranked bid selection and escalation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30 autonomous bid governance risk and ethics
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../31-token-counting-and-cost-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31 token counting and cost transparency
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32 gantt parallelization and fast tracking
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../33-cost-breakdown-structure-cbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33 cost breakdown structure cbs
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../34-finance-top-down-estimation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34 finance top down estimation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35 finance bottom up estimation and reconciliation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36 monte carlo plan success probability engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37 cashflow and funding stress monte carlo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38 risk propagation network and failure modes
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39 frontier research gap mapper for megaprojects
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    40 three hypotheses engine for unsolved challenges
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../41-autonomous-execution-of-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    41 autonomous execution of plan
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    42 evidence traceability ledger
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../43-assumption-drift-monitor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    43 assumption drift monitor
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../44-investor-grade-audit-pack-generator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    44 investor grade audit pack generator
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../45-counterfactual-scenario-explorer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    45 counterfactual scenario explorer
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../46-execution-readiness-scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    46 execution readiness scoring
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../47-openclaw-agent-skill-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    47 openclaw agent skill integration
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../48-moltbook-reputation-bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    48 moltbook reputation bridge
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    49 distributed physical task dispatch protocol
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../50-agent-to-agent-payment-gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    50 agent to agent payment gateway
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../51-decentralized-planexe-survivability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    51 decentralized planexe survivability
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../52-mcp-oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    52 mcp oauth
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../53-uuid-only-task-id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    53 uuid only task id
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../54-agent-safety-trusted-information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    54 agent safety trusted information
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    55 taskitem activity log decomposition and secure downloads
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--completed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    56 adversarial red team reality check for plans
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    57 banned words and lever realism guardrails
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../58-boost-initial-prompt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    58 boost initial prompt
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    59 prompt optimizing with ab testing
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../60-plan-to-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    60 plan to repo
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../61-post-plan-agent-swarm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    61 post plan agent swarm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../62-agent-first-frontend-discoverability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    62 agent first frontend discoverability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../63-luigi-agent-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    63 luigi agent integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../64-post-plan-orchestration-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    64 post plan orchestration layer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../65-git-state-machine-enrichment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    65 git state machine enrichment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../66-post-plan-enrichment-swarm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    66 post plan enrichment swarm
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../67-buildinpublic-twitter-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    67 buildinpublic twitter automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../68-domain-aware-plan-ranking-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    68 domain aware plan ranking engine
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../69-arcgentica-agent-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    69 arcgentica agent patterns
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    70 mcp interface evaluation and roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../71-strategy-auditor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    71 strategy auditor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../72-ai-replacing-c-level-roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    72 ai replacing c level roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    73 rename task prefix in mcp tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../74-rename-taskitem-to-planitem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    74 rename taskitem to planitem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-post-rename-cleanup-issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    75 post rename cleanup issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../76-x402-a2a-payment-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    76 x402 a2a payment roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../77-ccusage-real-data-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    77 ccusage real data analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../78-planexe-growth-awareness-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    78 planexe growth awareness strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../79-multiple-api-keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    79 multiple api keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../80-zero-downtime-railway-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    80 zero downtime railway deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../81-mcp-api-key-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    81 mcp api key validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../82-measure-drift-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    82 measure drift proposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../83-measure-drift-specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    83 measure drift specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../84-business-idea-proposal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    84 business idea proposal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../85-business-idea-specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    85 business idea specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../86-agent-optimized-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    86 agent optimized pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../87-plan-resume-mcp-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    87 plan resume mcp tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../88-fermi-sanity-check-validation-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    88 fermi sanity check validation gate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../89-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    89 model routing postmortem simon 26feb2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../90-complexity-assessment-bubba-haiku/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    90 complexity assessment bubba haiku
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../91-complexity-assessment-larry-sonnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    91 complexity assessment larry sonnet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../92-task-complexity-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    92 task complexity routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../93-local-model-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    93 local model roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../94-autoresearch-style-prompt-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    94 autoresearch style prompt optimization
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--proposal"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../95-model-routing-ux-modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    95 model routing ux modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../96-cache-aware-model-handoff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    96 cache aware model handoff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97-drift-measurement-pseudocode-impl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    97 drift measurement pseudocode impl
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98-pipeline-benchmark-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    98 pipeline benchmark prompts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../99-human-utility-show-pedigree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    99 human utility show pedigree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-leverage-proposals-the-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Leverage Proposals (The 20%)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuse-opportunities-adjacent-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reuse Opportunities &amp; Adjacent Clusters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reuse Opportunities &amp; Adjacent Clusters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proposal-pairs-that-share-heuristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposal Pairs That Share Heuristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-cluster-interconnected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Cluster (Interconnected)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8020-quick-wins-parameter-tweaks-no-rewrites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        80:20 Quick Wins (Parameter Tweaks, No Rewrites)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="80:20 Quick Wins (Parameter Tweaks, No Rewrites)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#category-1-ranking-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 1: Ranking Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-2-dag-distribution-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 2: DAG &amp; Distribution Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#category-3-alignment-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category 3: Alignment &amp; Terminology
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secondthird-order-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Second/Third Order Effects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Second/Third Order Effects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-1st-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct (1st Order)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2nd-order-downstream-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2nd Order (Downstream Reliability)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3rd-order-strategic-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3rd Order (Strategic Implications)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-gaps-in-existing-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical Gaps in Existing Proposals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Critical Gaps in Existing Proposals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gap-1-execution-feedback-loop-missing-entirely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 1: Execution Feedback Loop (Missing Entirely)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-2-cost-estimation-validation-order-of-magnitude-reconciliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 2: Cost Estimation Validation (Order-of-Magnitude Reconciliation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-3-stakeholder-alignment-pre-plan-assumption-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 3: Stakeholder Alignment Pre-Plan (Assumption Validation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-4-plan-complexity-budgeting-dont-over-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 4: Plan Complexity Budgeting (Don't Over-Plan)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gap-5-software-plan-specialization-code-bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gap 5: Software Plan Specialization (Code Bridge)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#missing-proposals-should-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Proposals (Should Exist)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#strategic-questions-simon-might-not-be-asking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategic Questions Simon Might Not Be Asking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Strategic Questions Simon Might Not Be Asking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1-unit-economics-of-plan-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 1: Unit Economics of Plan Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2-data-moat-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 2: Data Moat Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3-competitive-positioning-vs-consulting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 3: Competitive Positioning vs. Consulting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4-megaproject-scalability-10-year-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 4: Megaproject Scalability (10-Year Plans)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-5-margin-structure-cost-reduction-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Question 5: Margin Structure &amp; Cost Reduction Curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-tasks-we-can-execute-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relevant Tasks We Can Execute Now
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevant Tasks We Can Execute Now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-proposal-dependency-graph-executable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 1: Proposal Dependency Graph (Executable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-estimation-reconciliation-fermisanitycheck-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 2: Estimation Reconciliation (FermiSanityCheck Extension)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-proposal-sizing-matrix-quick-win-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 3: Proposal Sizing Matrix (Quick Win Inventory)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-fermisanitycheck-implementation-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 4: FermiSanityCheck Implementation (Core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-validation-observability-dashboard-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 5: Validation Observability Dashboard (Reporting)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-stakeholder-assumption-validation-ui-pre-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 6: Stakeholder Assumption Validation UI (Pre-Plan)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-complexity-gating-implementation-cost-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task 7: Complexity Gating Implementation (Cost Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-execution-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Execution Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Execution Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-this-week-stabilization-fermi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 (This Week): Stabilization + Fermi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-next-week-quick-wins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 (Next Week): Quick Wins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-week-after-strategic-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 (Week After): Strategic Proposals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-Off
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="planexe-proposal-triage-8020-analysis-strategic-gaps">PlanExe Proposal Triage — 80:20 Analysis &amp; Strategic Gaps</h1>
+<p><strong>Date:</strong> 26 February 2026<br />
+<strong>Authors:</strong> Larry + Egon<br />
+<strong>Status:</strong> Ready for Review &amp; Discussion  </p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Simon asked us to triage the proposal space with an 80:20 lens. This document captures:</p>
+<ol>
+<li><strong>Which proposals deliver outsized value</strong> — the 20% that unlock 80% of the architecture</li>
+<li><strong>Related proposals nearby in the graph</strong> — which ones can reuse artifacts or reasoning</li>
+<li><strong>High-leverage parameter tweaks</strong> — code tweaks and second/third order effects</li>
+<li><strong>Critical gaps</strong> — what's missing that should be proposed</li>
+<li><strong>Relevant questions</strong> — what Simon might not be asking yet</li>
+<li><strong>Actionable tasks</strong> — what we can execute proactively</li>
+</ol>
+<p>We focused on recent proposals ("67+" cluster) plus the validation/orchestration story that <strong>FermiSanityCheck</strong> will unlock.</p>
+<hr />
+<h2 id="high-leverage-proposals-the-20">High-Leverage Proposals (The 20%)</h2>
+<p>These 5-7 proposals drive 80% of architectural value:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Lines</th>
+<th>Why It Matters</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>07</strong></td>
+<td>Elo Ranking System</td>
+<td>1,751</td>
+<td>Core ranking mechanism for comparing plan quality across all downstream use cases</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td><strong>63-66</strong></td>
+<td>Orchestration Cluster (Luigi integration, post-plan orchestration, enrichment swarm)</td>
+<td>2,000+</td>
+<td>Controls how PlanExe schedules, retries, and enriches the Luigi DAG. Any new validation task (like FermiSanityCheck) ripples here</td>
+<td>Critical Path</td>
+</tr>
+<tr>
+<td><strong>62</strong></td>
+<td>Agent-First Frontend Discoverability</td>
+<td>609</td>
+<td>Defines agent UX; depends on ranking (#07) and validation signals</td>
+<td>Interface</td>
+</tr>
+<tr>
+<td><strong>69</strong></td>
+<td>Arcgentica Agent Patterns</td>
+<td>279</td>
+<td>Hardens PlanExe via recursion + typed returns + soft eval; now references FermiSanityCheck</td>
+<td>Hardening</td>
+</tr>
+<tr>
+<td><strong>41</strong></td>
+<td>Autonomous Execution of Plan</td>
+<td>200+</td>
+<td>Distributed execution of plans; feeds back to ranking and reporting</td>
+<td>Execution</td>
+</tr>
+<tr>
+<td><strong>05</strong></td>
+<td>Semantic Plan Search Graph</td>
+<td>200+</td>
+<td>Retrieval and discoverability; powers agent discovery (#62)</td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+<p><strong>These interlock around:</strong> Planning quality signals (#07, #69, FermiSanityCheck) → Orchestration (#63-66) → Interfaces (#62, #41, #05).</p>
+<hr />
+<h2 id="reuse-opportunities-adjacent-clusters">Reuse Opportunities &amp; Adjacent Clusters</h2>
+<h3 id="proposal-pairs-that-share-heuristics">Proposal Pairs That Share Heuristics</h3>
+<p><strong>#07 Elo Ranking + #62 Agent-First Frontend</strong>
+- Both score/rank plans but likely with independent heuristics
+- <strong>Quick win:</strong> Extract ranking weights (cost, feasibility, confidence) to shared module
+- Both proposals reference the same quality signals
+- FermiSanityCheck flags become features in both scoring systems</p>
+<p><strong>#38 Risk Propagation Network + #44 Investor Grade Audit Pack</strong>
+- Both model risk but likely with different terminology
+- <strong>Quick win:</strong> Create unified <code>RiskModel</code> Pydantic schema; both consume it
+- Eliminates duplicate code, improves consistency
+- Single source of truth for risk visualization</p>
+<h3 id="validation-cluster-interconnected">Validation Cluster (Interconnected)</h3>
+<p><strong>#69 Arcgentica + #56 Adversarial Red Team + #43 Assumption Drift Monitor</strong>
+- FermiSanityCheck = front-line validation (quantitative grounding)
+- Red-team (#56) = logic/feasibility check (qualitative, adversarial)
+- Drift monitor (#43) = tracking invalidation over time
+- All three consume validation_report.json and escalate to human review</p>
+<p><strong>#63-66 Orchestration Cluster (Internal Coherence)</strong>
+- #63 (Luigi integration), #64 (post-plan orchestration), #66 (enrichment swarm) all touch DAG
+- Currently unclear how they fit together
+- <strong>Quick win:</strong> Add relationship map to each showing dependencies and integration points</p>
+<hr />
+<h2 id="8020-quick-wins-parameter-tweaks-no-rewrites">80:20 Quick Wins (Parameter Tweaks, No Rewrites)</h2>
+<h3 id="category-1-ranking-tuning">Category 1: Ranking Tuning</h3>
+<p><strong>#07 Elo Ranking: Adjust Scoring Weights</strong>
+- <strong>Current:</strong> Unknown weighting between cost, feasibility, risk, confidence
+- <strong>Quick win:</strong> Expose weights as configurable; test 3 profiles (cost-optimized, risk-minimized, time-critical)
+- <strong>Effort:</strong> 2-4 hours
+- <strong>Impact:</strong> Same engine serves different user priorities; agents can ask "what's your priority?"
+- <strong>Integration:</strong> FermiSanityCheck confidence becomes a penalty/bonus in ranking</p>
+<p><strong>#07 + #62: Share Ranking Heuristics</strong>
+- <strong>Current:</strong> Likely duplicated ranking logic across ranking (#07) and UI discovery (#62)
+- <strong>Quick win:</strong> Extract heuristics to shared module
+- <strong>Effort:</strong> 2-3 hours
+- <strong>Impact:</strong> Consistent rankings across all surfaces; single source of truth</p>
+<h3 id="category-2-dag-distribution-tuning">Category 2: DAG &amp; Distribution Tuning</h3>
+<p><strong>#32 Gantt Parallelization: Parameterize Lane Constraints</strong>
+- <strong>Current:</strong> Unknown lane count, cost thresholds
+- <strong>Quick win:</strong> Make lane count, parallel cost ceiling, task-splitting configurable
+- <strong>Effort:</strong> 1-2 hours
+- <strong>Impact:</strong> One algorithm covers 80% of Gantt use cases (startup vs. enterprise scale)
+- <strong>Integration:</strong> Reuse FermiSanityCheck heuristics for duration plausibility</p>
+<p><strong>#36-37 Monte Carlo: Adjust Distribution Models</strong>
+- <strong>Current:</strong> Likely simple distributions for uncertainty
+- <strong>Quick win:</strong> Expose distribution type (uniform, normal, triangular) per cost category
+- <strong>Effort:</strong> 1-2 hours
+- <strong>Impact:</strong> More realistic cost/timeline distributions without rewriting</p>
+<h3 id="category-3-alignment-terminology">Category 3: Alignment &amp; Terminology</h3>
+<p><strong>#38 + #44: Risk Terminology Unification</strong>
+- <strong>Current:</strong> Both define risk differently
+- <strong>Quick win:</strong> Create shared <code>RiskModel</code> schema; both reference it
+- <strong>Effort:</strong> 2-3 hours
+- <strong>Impact:</strong> Eliminate duplicate code, improve consistency, enable shared visualization</p>
+<p><strong>#63-66: Orchestration Relationship Mapping</strong>
+- <strong>Current:</strong> Three proposals all touch orchestration; unclear how they fit
+- <strong>Quick win:</strong> Add "Relationship Map" section to each showing integration order
+- <strong>Effort:</strong> 1 hour
+- <strong>Impact:</strong> Clear implementation order, reduced confusion</p>
+<hr />
+<h2 id="secondthird-order-effects">Second/Third Order Effects</h2>
+<h3 id="direct-1st-order">Direct (1st Order)</h3>
+<ul>
+<li><strong>FermiSanityCheck validates quantified claims</strong> immediately after MakeAssumptions</li>
+<li>Prevents garbage-in → garbage-out in downstream tasks</li>
+<li>Reduces manual Simon review overhead</li>
+</ul>
+<h3 id="2nd-order-downstream-reliability">2nd Order (Downstream Reliability)</h3>
+<ul>
+<li><strong>#36-37 Monte Carlo:</strong> With validated bounds, success probability distributions are grounded in evidence, not guesses</li>
+<li><strong>#38 Risk Propagation:</strong> With better assumptions, risk models catch <em>real</em> threats</li>
+<li><strong>#41 Autonomous Execution:</strong> Plans with validated assumptions have higher real-world success</li>
+<li><strong>#43 Assumption Drift:</strong> Baseline assumptions are now credible; drift detection has a trustworthy reference</li>
+<li><strong>#44 Investor Audit:</strong> Reports cite evidence-backed numbers → credibility increases</li>
+<li><strong>#07 Ranking:</strong> FermiSanityCheck confidence becomes a scoring feature; better plans rank higher</li>
+</ul>
+<h3 id="3rd-order-strategic-implications">3rd Order (Strategic Implications)</h3>
+<p>Once assumptions are validated + execution tracked + drift monitored:</p>
+<ul>
+<li><strong>PlanExe becomes a learning system</strong></li>
+<li>Early execution failures → identify assumption gaps → improve MakeAssumptions prompts</li>
+<li>Drift detection → trigger re-planning before catastrophic failure</li>
+<li>
+<p>Execution feedback → inform future FermiSanityCheck heuristics</p>
+</li>
+<li>
+<p><strong>Trust compounding:</strong> Validated → Executed → Monitored → Improved → Trusted (virtuous cycle)</p>
+</li>
+<li>
+<p><strong>Competitive moat:</strong> If execution feedback loops work, PlanExe plans become <em>more valuable over time</em> (vs. one-shot consulting)</p>
+</li>
+<li>
+<p><strong>Validation observability:</strong> Dashboard tracking how many plans pass/fail FermiSanityCheck each week; historical trends inform product roadmap</p>
+</li>
+</ul>
+<hr />
+<h2 id="critical-gaps-in-existing-proposals">Critical Gaps in Existing Proposals</h2>
+<h3 id="gap-1-execution-feedback-loop-missing-entirely">Gap 1: Execution Feedback Loop (Missing Entirely)</h3>
+<p><strong>What's missing:</strong>
+- #41 (Autonomous Execution) says "run the plan" but doesn't specify how execution metrics feed back into planning
+- #43 (Assumption Drift) says "monitor" but doesn't spec <em>when</em> to re-plan vs. <em>when</em> to adjust-on-the-fly</p>
+<p><strong>Impact:</strong> Without feedback, PlanExe is write-once (create, execute, done). With feedback, it's learning (create, execute, learn, re-plan).</p>
+<p><strong>Recommendation:</strong> Create <strong>#55 Execution Feedback Loop</strong> proposal defining:
+- KPI tracking during execution (% of plan met, timeline vs. actual, cost vs. actual)
+- Criteria for "assumption invalidated" (what % deviation triggers re-plan?)
+- Re-planning strategy (full re-plan vs. localized fix?)
+- Feedback → prompt improvement (how execution data improves future MakeAssumptions)</p>
+<hr />
+<h3 id="gap-2-cost-estimation-validation-order-of-magnitude-reconciliation">Gap 2: Cost Estimation Validation (Order-of-Magnitude Reconciliation)</h3>
+<p><strong>What's missing:</strong>
+- #34 (Finance top-down) and #35 (bottom-up) estimate costs but don't validate against each other
+- No proposal says "if top-down ≠ bottom-up by &gt;2×, escalate to human"</p>
+<p><strong>Impact:</strong> Cost overruns (most common plan failure) aren't caught early.</p>
+<p><strong>Recommendation:</strong> Extend FermiSanityCheck to <strong>estimation reconciliation</strong>:
+- Extract top-down and bottom-up cost estimates
+- Flag if diverge by &gt;50% (signal of missing scope or hidden assumptions)
+- Do the same for timeline</p>
+<hr />
+<h3 id="gap-3-stakeholder-alignment-pre-plan-assumption-validation">Gap 3: Stakeholder Alignment Pre-Plan (Assumption Validation)</h3>
+<p><strong>What's missing:</strong>
+- MakeAssumptions generates assumptions but doesn't validate with stakeholders first
+- Risk: plan is based on wrong assumptions; stakeholders reject after weeks of work</p>
+<p><strong>Impact:</strong> Wasted plan generation effort + stakeholder friction.</p>
+<p><strong>Recommendation:</strong> Create <strong>#57 Assumption Validation with Stakeholders</strong> proposal:
+- After MakeAssumptions, surface top 5 assumptions for stakeholder thumbs-up/down
+- If 2+ rejected, re-generate before investing in full plan
+- Saves 90% of downstream rework</p>
+<hr />
+<h3 id="gap-4-plan-complexity-budgeting-dont-over-plan">Gap 4: Plan Complexity Budgeting (Don't Over-Plan)</h3>
+<p><strong>What's missing:</strong>
+- No proposal caps plan complexity
+- Risk: 3-month projects get 50 WBS tasks + governance phases (overkill)</p>
+<p><strong>Impact:</strong> High plan generation cost + user friction for simple projects.</p>
+<p><strong>Recommendation:</strong> Create <strong>#58 Complexity-Gated Pipeline</strong> proposal:
+- After MakeAssumptions, estimate project complexity (cost × duration × stakeholders)
+- Route simple projects → "fast track" (WBS only, no expert review)
+- Route medium → "standard" (WBS + governance)
+- Route complex → "full" (everything)
+- Reduces cost/time for 60% of plans by 70%</p>
+<hr />
+<h3 id="gap-5-software-plan-specialization-code-bridge">Gap 5: Software Plan Specialization (Code Bridge)</h3>
+<p><strong>What's missing:</strong>
+- PlanExe optimized for business/organizational plans
+- Software projects need code-specific artifacts (architecture, API contracts, testing, deployment)
+- #06 (Adopt on the fly) tries but doesn't go deep</p>
+<p><strong>Impact:</strong> Software founders get generic business plans, not actionable dev roadmaps.</p>
+<p><strong>Recommendation:</strong> Create <strong>#59 Software Plan Specialization</strong> proposal:
+- Detect "this is a software project" in MakeAssumptions
+- Route through software-specific WBS (architecture → MVP → iteration)
+- Generate deployment checklist, testing strategy, tech debt budget
+- Integrate with code search/LODA for architectural patterns</p>
+<hr />
+<h2 id="missing-proposals-should-exist">Missing Proposals (Should Exist)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Why Needed</th>
+<th>Effort</th>
+<th>Leverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>55</strong></td>
+<td>Execution Feedback Loop</td>
+<td>Close the learn-from-execution cycle</td>
+<td>High</td>
+<td><strong>High</strong> (enables learning moat)</td>
+</tr>
+<tr>
+<td><strong>56</strong></td>
+<td>Adversarial Red-Team Reality Check</td>
+<td>Questions assumptions from hostile angle</td>
+<td>High</td>
+<td><strong>Medium</strong> (complements Fermi)</td>
+</tr>
+<tr>
+<td><strong>57</strong></td>
+<td>Assumption Validation with Stakeholders</td>
+<td>De-risk assumptions early</td>
+<td>Medium</td>
+<td><strong>High</strong> (saves 80% rework)</td>
+</tr>
+<tr>
+<td><strong>58</strong></td>
+<td>Complexity-Gated Pipeline</td>
+<td>Don't over-engineer simple projects</td>
+<td>Medium</td>
+<td><strong>High</strong> (70% cost reduction for 60% of plans)</td>
+</tr>
+<tr>
+<td><strong>59</strong></td>
+<td>Software Plan Specialization</td>
+<td>Bridge PlanExe ↔ code</td>
+<td>High</td>
+<td><strong>Medium</strong> (critical for dev teams)</td>
+</tr>
+<tr>
+<td><strong>60</strong></td>
+<td>Plan Versioning &amp; Comparison</td>
+<td>Track assumption/scope changes</td>
+<td>Low</td>
+<td><strong>Medium</strong> (useful for ongoing projects)</td>
+</tr>
+<tr>
+<td><strong>61</strong></td>
+<td>Validation Observability Dashboard</td>
+<td>Real-time view of live plans</td>
+<td>Medium</td>
+<td><strong>Medium</strong> (stakeholder trust)</td>
+</tr>
+<tr>
+<td><strong>62</strong></td>
+<td>Aggregate Data Strategy</td>
+<td>How to retain/use execution data</td>
+<td>High</td>
+<td><strong>High</strong> (data moat)</td>
+</tr>
+<tr>
+<td><strong>63</strong></td>
+<td>Competitive Positioning</td>
+<td>vs. manual consulting</td>
+<td>Medium</td>
+<td><strong>High</strong> (informs GTM)</td>
+</tr>
+<tr>
+<td><strong>64</strong></td>
+<td>Megaproject Scalability</td>
+<td>10-year plans with quarterly re-planning</td>
+<td>High</td>
+<td><strong>Medium</strong> (TAM expansion)</td>
+</tr>
+<tr>
+<td><strong>65</strong></td>
+<td>Cost Reduction Curve</td>
+<td>Margin improvement with scale</td>
+<td>Medium</td>
+<td><strong>High</strong> (profitability)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="strategic-questions-simon-might-not-be-asking">Strategic Questions Simon Might Not Be Asking</h2>
+<h3 id="question-1-unit-economics-of-plan-generation">Question 1: Unit Economics of Plan Generation</h3>
+<p><strong>Context:</strong> Proposals discuss implementation effort but don't tie to revenue.</p>
+<p><strong>Unanswered:</strong>
+- How much does a plan cost to generate (tokens, compute)?
+- How much value does a plan create for users (time saved, better decisions)?
+- At what project size does PlanExe ROI break even?
+- Does ROI flip at $100k vs. $1M vs. $100M projects?</p>
+<p><strong>Why it matters:</strong>
+- If generating a plan costs $500 in API calls, you need $5k+ project value to be worthwhile
+- Determines TAM and go-to-market strategy
+- Affects which proposals are worth building (e.g., #58 Complexity-Gating becomes <em>essential</em>)</p>
+<p><strong>Recommendation:</strong> Create cost accounting for plan generation (token count per task, cost breakdown). Model unit economics by project size. Use that to prioritize proposals.</p>
+<hr />
+<h3 id="question-2-data-moat-strategy">Question 2: Data Moat Strategy</h3>
+<p><strong>Context:</strong> PlanExe collects execution data (via #41-43), but there's no proposal about what to do with it.</p>
+<p><strong>Unanswered:</strong>
+- Do you retain execution data? How long?
+- Can you compare user outcomes to benchmarks ("your project ran 10% over budget; industry is 15% over")?
+- Can you use aggregate data to improve MakeAssumptions? (e.g., "e-commerce projects have 3× cost overruns → adjust baselines")
+- Is data a defensible moat, or just overhead?</p>
+<p><strong>Why it matters:</strong>
+- If you have a moat, PlanExe gets <em>better over time</em> (vs. static)
+- Justifies continued investment in execution feedback loops
+- Competitors can't easily copy without historical data</p>
+<p><strong>Recommendation:</strong> Create <strong>#62 Aggregate Data Strategy</strong> proposal defining what data to retain, how to anonymize for benchmarking, how aggregate insights improve plan quality.</p>
+<hr />
+<h3 id="question-3-competitive-positioning-vs-consulting">Question 3: Competitive Positioning vs. Consulting</h3>
+<p><strong>Context:</strong> A human consultant also creates plans; they're just slower and more expensive.</p>
+<p><strong>Unanswered:</strong>
+- What does PlanExe do <em>better</em> than human consulting?
+- Speed (same quality, faster)? Comprehensiveness? Consistency? Complement?
+- If PlanExe is "fast but lower quality," TAM = small projects only
+- If "same quality, faster, cheaper," direct displacement (larger TAM)
+- If "complement," revenue model is add-on (lower ceiling)</p>
+<p><strong>Why it matters:</strong> Informs go-to-market messaging and TAM sizing.</p>
+<p><strong>Recommendation:</strong> Create <strong>#63 Competitive Positioning</strong> proposal defining quality bar vs. manual, competitive advantages, and strategic positioning.</p>
+<hr />
+<h3 id="question-4-megaproject-scalability-10-year-plans">Question 4: Megaproject Scalability (10-Year Plans)</h3>
+<p><strong>Context:</strong> Most proposals assume 6-24 month projects.</p>
+<p><strong>Unanswered:</strong>
+- Can PlanExe generate 10-year plans with quarterly re-planning?
+- Can it handle strategic pivots (market shifts → re-scope everything)?
+- Can it track across 40+ quarterly re-plans?</p>
+<p><strong>Why it matters:</strong>
+- If yes, TAM includes infrastructure, government, aerospace (high-value)
+- If no, capped at 2-3 year projects (smaller TAM)</p>
+<p><strong>Recommendation:</strong> Create <strong>#64 Megaproject Scalability</strong> proposal defining quarterly re-plan mechanics, scope change propagation, and cost/token budgets.</p>
+<hr />
+<h3 id="question-5-margin-structure-cost-reduction-curve">Question 5: Margin Structure &amp; Cost Reduction Curve</h3>
+<p><strong>Context:</strong> Early PlanExe usage is expensive (high API calls). Improves with volume?</p>
+<p><strong>Unanswered:</strong>
+- Can caching/retrieval (LODA, semantic search) reduce generation cost?
+- If you've planned 100 SaaS startups, does plan 101 cost 50% less (template reuse)?
+- Does margin improve <em>compound</em> with scale?</p>
+<p><strong>Why it matters:</strong>
+- If margin improves with scale, you have a winner (more volume → cheaper → more volume)
+- If flat, need high volume to be profitable</p>
+<p><strong>Recommendation:</strong> Create <strong>#65 Cost Reduction Curve</strong> proposal modeling token usage plan 1 vs. plan 100, estimating savings from semantic search + template reuse, setting margin targets.</p>
+<hr />
+<h2 id="relevant-tasks-we-can-execute-now">Relevant Tasks We Can Execute Now</h2>
+<h3 id="task-1-proposal-dependency-graph-executable">Task 1: Proposal Dependency Graph (Executable)</h3>
+<p><strong>What:</strong> Build visual/code showing which proposals depend on which.</p>
+<p><strong>Current state:</strong> Unknown.</p>
+<p><strong>Output:</strong> Visual DAG + implementation order.</p>
+<p><strong>Why it matters:</strong> Shows critical paths, which proposals unblock 3+ others.</p>
+<p><strong>Effort:</strong> 4-6 hours.</p>
+<hr />
+<h3 id="task-2-estimation-reconciliation-fermisanitycheck-extension">Task 2: Estimation Reconciliation (FermiSanityCheck Extension)</h3>
+<p><strong>What:</strong> Validate top-down vs. bottom-up cost/time estimates.</p>
+<p><strong>Current state:</strong> FermiSanityCheck validates individual claims; doesn't cross-check.</p>
+<p><strong>Output:</strong> Flag when top-down ≠ bottom-up by &gt;50%; diagnostic suggestions.</p>
+<p><strong>Why it matters:</strong> Cost overruns are #1 plan failure mode.</p>
+<p><strong>Effort:</strong> 2-3 hours (once FermiSanityCheck built).</p>
+<hr />
+<h3 id="task-3-proposal-sizing-matrix-quick-win-inventory">Task 3: Proposal Sizing Matrix (Quick Win Inventory)</h3>
+<p><strong>What:</strong> 2×2 matrix for all 54 proposals: effort (1-10) vs. impact (1-10).</p>
+<p><strong>Current state:</strong> Unknown.</p>
+<p><strong>Output:</strong> Top-left quadrant (low effort, high impact) = quick wins to tackle first.</p>
+<p><strong>Why it matters:</strong> Transparent prioritization; efficient resource allocation.</p>
+<p><strong>Effort:</strong> 3-4 hours.</p>
+<hr />
+<h3 id="task-4-fermisanitycheck-implementation-core">Task 4: FermiSanityCheck Implementation (Core)</h3>
+<p><strong>What:</strong> Build the Luigi task + QuantifiedAssumption schema + validation report.</p>
+<p><strong>Current state:</strong> Plan approved; awaiting implementation.</p>
+<p><strong>Output:</strong> Validated assumptions + validation_report.json.</p>
+<p><strong>Why it matters:</strong> Gates quality of all downstream tasks.</p>
+<p><strong>Effort:</strong> 5-6 hours (Egon data model + Larry validation logic + integration).</p>
+<hr />
+<h3 id="task-5-validation-observability-dashboard-reporting">Task 5: Validation Observability Dashboard (Reporting)</h3>
+<p><strong>What:</strong> Dashboard showing FermiSanityCheck pass/fail rates, trends, failure categories.</p>
+<p><strong>Current state:</strong> Not built.</p>
+<p><strong>Output:</strong> Weekly reports: "80 plans passed, 12 failed quantitative grounding, top 3 failure modes: ___".</p>
+<p><strong>Why it matters:</strong> Tracks product health; informs what assumptions users typically miss.</p>
+<p><strong>Effort:</strong> 4-6 hours (once FermiSanityCheck live).</p>
+<hr />
+<h3 id="task-6-stakeholder-assumption-validation-ui-pre-plan">Task 6: Stakeholder Assumption Validation UI (Pre-Plan)</h3>
+<p><strong>What:</strong> After MakeAssumptions, surface top 5 assumptions for stakeholder sign-off.</p>
+<p><strong>Current state:</strong> Not built.</p>
+<p><strong>Output:</strong> "Please confirm these 5 assumptions" → yes/no/discuss → re-run if rejected.</p>
+<p><strong>Why it matters:</strong> De-risks expensive full plan generation; increases stakeholder buy-in.</p>
+<p><strong>Effort:</strong> 3-4 hours.</p>
+<hr />
+<h3 id="task-7-complexity-gating-implementation-cost-optimization">Task 7: Complexity Gating Implementation (Cost Optimization)</h3>
+<p><strong>What:</strong> Route simple projects through fast-track, complex through full.</p>
+<p><strong>Current state:</strong> Not built.</p>
+<p><strong>Output:</strong> Complexity score function + route definitions (fast/standard/full).</p>
+<p><strong>Why it matters:</strong> Reduces cost 70% for 60% of plans.</p>
+<p><strong>Effort:</strong> 4-6 hours.</p>
+<hr />
+<h2 id="recommended-execution-path">Recommended Execution Path</h2>
+<h3 id="phase-1-this-week-stabilization-fermi">Phase 1 (This Week): Stabilization + Fermi</h3>
+<ol>
+<li>Implement FermiSanityCheck (Larry + Egon, ~5-6 hours)</li>
+<li>Create Proposal Sizing Matrix (1 of us, ~3-4 hours)</li>
+<li>Build Proposal Dependency Graph (1 of us, ~4-6 hours)</li>
+</ol>
+<p><strong>Goal:</strong> Clear picture of high-leverage vs. nice-to-have.</p>
+<h3 id="phase-2-next-week-quick-wins">Phase 2 (Next Week): Quick Wins</h3>
+<ol>
+<li>Parameterize #07 Elo-Ranking weights (~2-4 hours)</li>
+<li>Merge #38 + #44 Risk terminology (~2-3 hours)</li>
+<li>Document #63-66 relationships (~1 hour)</li>
+</ol>
+<p><strong>Goal:</strong> Deliver 80:20 impact without big rewrites.</p>
+<h3 id="phase-3-week-after-strategic-proposals">Phase 3 (Week After): Strategic Proposals</h3>
+<ol>
+<li>Write #55 (Execution Feedback Loop)</li>
+<li>Write #57 (Stakeholder Assumption Validation)</li>
+<li>Write #58 (Complexity-Gated Pipeline)</li>
+</ol>
+<p><strong>Goal:</strong> Fill critical gaps; unlock learning/scalability.</p>
+<hr />
+<h2 id="sign-off">Sign-Off</h2>
+<ul>
+<li>[ ] Simon: Priorities approved?</li>
+<li>[ ] Simon: Any gaps or unanswered questions?</li>
+<li>[ ] Larry/Egon: Ready to execute Phase 1?</li>
+</ul>
+<hr />
+<p><em>This triage is a living document. Updates as Simon provides feedback or new context emerges.</em></p>
+<hr />
+<p><strong>Appendix: Full Proposal List (For Reference)</strong></p>
+<p>All 54 + new proposals organized by theme:</p>
+<p><strong>Core Pipeline (1-8):</strong> 01-agent-smart-routing, 02-plans-as-LLM-templates, 03-distributed-plan-execution, 04-plan-explain-as-API-service, 05-semantic-plan-search-graph, 06-adopt-on-the-fly, 07-elo-ranking, 08-ui-for-editing-plan</p>
+<p><strong>Capital/Investors (11-15):</strong> 11-investor-thesis-matching-engine, 12-evidence-based-founder-execution-index, 13-portfolio-aware-capital-allocation, 14-confidence-weighted-funding-auctions, 15-outcome-feedback-and-model-governance</p>
+<p><strong>Plugins (16-20):</strong> 16-on-demand-plugin-synthesis-hub, 17-plugin-adaptation-lifecycle, 18-plugin-benchmarking-coverage-harness, 19-plugin-safety-governance-for-runtime-loading, 20-plugin-hub-discovery-ranking-and-reuse</p>
+<p><strong>Experts/Verification (21-30):</strong> 21-expert-discovery-and-fit-scoring, 22-multi-stage-verification-workflow, 23-expert-collaboration-marketplace-and-reputation, 24-cross-border-project-verification-framework, 25-verification-incentives-governance-and-liability, 26-news-intake-and-opportunity-sensing-grid, 27-multi-angle-topic-verification-engine, 28-autonomous-bid-factory-orchestration, 29-elo-ranked-bid-selection-and-escalation, 30-autonomous-bid-governance-risk-and-ethics</p>
+<p><strong>Finance/Estimation (31-37):</strong> 31-token-counting-and-cost-transparency, 32-gantt-parallelization-and-fast-tracking, 33-cost-breakdown-structure-cbs, 34-finance-top-down-estimation, 35-finance-bottom-up-estimation-and-reconciliation, 36-monte-carlo-plan-success-probability-engine, 37-cashflow-and-funding-stress-monte-carlo</p>
+<p><strong>Risk/Analysis (38-46):</strong> 38-risk-propagation-network-and-failure-modes, 39-frontier-research-gap-mapper-for-megaprojects, 40-three-hypotheses-engine-for-unsolved-challenges, 41-autonomous-execution-of-plan, 42-evidence-traceability-ledger, 43-assumption-drift-monitor, 44-investor-grade-audit-pack-generator, 45-counterfactual-scenario-explorer, 46-execution-readiness-scoring</p>
+<p><strong>Infrastructure (47-54):</strong> 47-openclaw-agent-skill-integration, 48-moltbook-reputation-bridge, 49-distributed-physical-task-dispatch-protocol, 50-agent-to-agent-payment-gateway, 51-decentralized-planexe-survivability, 52-mcp-oauth, 53-uuid-only-task-id, 54-agent-safety-trusted-information</p>
+<p><strong>New Proposals (To Be Created):</strong> 55-execution-feedback-loop, 56-adversarial-red-team-reality-check, 57-assumption-validation-with-stakeholders, 58-complexity-gated-pipeline, 59-software-plan-specialization, 60-plan-versioning-and-comparison, 61-validation-observability-dashboard, 62-aggregate-data-strategy, 63-competitive-positioning, 64-megaproject-scalability, 65-cost-reduction-curve</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/copy-all.js"></script>
+      
+    
+  </body>
+</html>
