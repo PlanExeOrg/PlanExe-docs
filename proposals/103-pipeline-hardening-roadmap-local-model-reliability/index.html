@@ -2485,6 +2485,100 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#14-local-model-testing-findings-llama_index-silent-prompt-truncation-march-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Local model testing findings: llama_index silent prompt truncation (March 2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Local model testing findings: llama_index silent prompt truncation (March 2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-cause-llama_index-default-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root cause: llama_index default constants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-failure-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The failure mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-insight-num_output-does-not-limit-model-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical insight: num_output does NOT limit model output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks-most-vulnerable-to-silent-truncation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tasks most vulnerable to silent truncation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-to-this-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to this roadmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6231,6 +6325,100 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#14-local-model-testing-findings-llama_index-silent-prompt-truncation-march-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Local model testing findings: llama_index silent prompt truncation (March 2026)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 Local model testing findings: llama_index silent prompt truncation (March 2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-cause-llama_index-default-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root cause: llama_index default constants
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-failure-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The failure mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-insight-num_output-does-not-limit-model-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Critical insight: num_output does NOT limit model output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks-most-vulnerable-to-silent-truncation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tasks most vulnerable to silent truncation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detection-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-to-this-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to this roadmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6839,6 +7027,39 @@ Reviewers: neoneye, Bubba</p>
 <li><strong>Schema echo</strong> (model repeats schema shape/descriptions, not values).  </li>
 <li><strong>Code-path assumption bugs</strong> (<code>KeyError</code> on non-API path).</li>
 </ol>
+<h3 id="14-local-model-testing-findings-llama_index-silent-prompt-truncation-march-2026">1.4 Local model testing findings: llama_index silent prompt truncation (March 2026)</h3>
+<h4 id="root-cause-llama_index-default-constants">Root cause: llama_index default constants</h4>
+<p>Testing on Mac Mini M4 Pro (March 4-6, 2026) with qwen/qwen3.5-35b-a3b via LM Studio revealed the underlying cause of silent structured-output failures:</p>
+<p><strong>File</strong>: <code>llama_index/core/constants.py</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">DEFAULT_CONTEXT_WINDOW</span> <span class="o">=</span> <span class="mi">3900</span>  <span class="c1"># applies to ALL OpenAILike models unless overridden</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">DEFAULT_NUM_OUTPUT</span> <span class="o">=</span> <span class="mi">256</span>       <span class="c1"># affects PromptHelper budget, NOT model output limit</span>
+</code></pre></div></p>
+<p>These defaults apply to <strong>all OpenAILike models</strong> unless explicitly overridden in the model config. The <code>PromptHelper</code> computes:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>available_prompt_budget = context_window - num_output = 3900 - 256 = 3644 tokens
+</code></pre></div></p>
+<h4 id="the-failure-mode">The failure mode</h4>
+<p><code>DeduplicateLeversTask</code> input was ~8,400 tokens. With the default budget of 3644 tokens, the prompt was <strong>silently truncated to 3644 tokens</strong> before being sent to the model. The model received a mangled, mid-sentence prompt, produced thinking text instead of valid JSON, and the pipeline failed with <code>ValueError: Could not extract json string</code>.</p>
+<p>This is <strong>silent</strong> — no warning, no log entry, no error at truncation time. The failure manifests downstream as a JSON extraction error, making it extremely hard to diagnose.</p>
+<h4 id="critical-insight-num_output-does-not-limit-model-output">Critical insight: <code>num_output</code> does NOT limit model output</h4>
+<p>A common misunderstanding: setting <code>num_output: 4096</code> does NOT cap the model's actual output length. The LM Studio API generates freely (10K+ tokens observed). The limit ONLY affects llama_index's internal <code>PromptHelper</code> budget calculation for <strong>input</strong> truncation. This is the root cause of misdiagnosis.</p>
+<h4 id="the-fix">The fix</h4>
+<p>Add explicit overrides to each LM Studio model entry in <code>llm_config/custom.json</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;context_window&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8192</span><span class="p">,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&quot;num_output&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4096</span>
+</code></pre></div></p>
+<p>This expands the available prompt budget from 3644 to 4096 tokens, accommodating tasks with large combined inputs. For models with larger context windows (e.g., 32K), use <code>context_window: 32768, num_output: 4096</code>.</p>
+<h4 id="tasks-most-vulnerable-to-silent-truncation">Tasks most vulnerable to silent truncation</h4>
+<p>Tasks with large combined inputs (multiple prior outputs concatenated):
+- <code>DeduplicateLeversTask</code> — ~8,400 tokens input (confirmed failure point)
+- <code>PremortemTask</code> / <code>ReviewPlanTask</code> / <code>QuestionsAndAnswersTask</code> — 10-12 docs concatenated
+- <code>GovernancePhase4-6</code> — accumulating context chain</p>
+<h4 id="detection-method">Detection method</h4>
+<p>To verify if your deployment is vulnerable:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>grep<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;DEFAULT_CONTEXT_WINDOW\|DEFAULT_NUM_OUTPUT&quot;</span><span class="w"> </span><span class="k">$(</span>pip<span class="w"> </span>show<span class="w"> </span>llama-index-core<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Location<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39; &#39;</span><span class="w"> </span>-f2<span class="k">)</span>/llama_index/core/constants.py
+</code></pre></div></p>
+<p>If values are 3900/256 and your model config doesn't override them, you're vulnerable to silent truncation.</p>
+<h4 id="relationship-to-this-roadmap">Relationship to this roadmap</h4>
+<p>Silent truncation is exactly the class of mid-pipeline failures that the containment and telemetry work packages (WP-1, WP-2, WP-3) are designed to catch and surface. By adding structured failure logging (WP-3), future truncation events will be diagnosable instantly. By adding a preflight smoke test (WP-5), bad model profiles can be caught before expensive full-pipeline runs.</p>
 <hr />
 <h2 id="2-guardrails-and-merge-policy">2) Guardrails and merge policy</h2>
 <h3 id="21-scope-guard-mandatory">2.1 Scope guard (mandatory)</h3>
@@ -6868,10 +7089,10 @@ Reviewers: neoneye, Bubba</p>
 - make <code>combined_summary</code> default to <code>""</code>
 - make <code>go_no_go_recommendation</code> default to <code>""</code></p>
 <h3 id="example-patch-shape">Example patch shape</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ExpertDetails</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">feedback</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">FeedbackItem</span><span class="p">]</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">combined_summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">go_no_go_recommendation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ExpertDetails</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">feedback</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">FeedbackItem</span><span class="p">]</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">combined_summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">go_no_go_recommendation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="acceptance-criteria">Acceptance criteria</h3>
 <ul>
@@ -6907,12 +7128,12 @@ Reviewers: neoneye, Bubba</p>
    - “Do not remove valid fields already present.”
 3. Append suffix only for retry attempts (attempt &gt; 1).</p>
 <h3 id="retry-instruction-template-exact">Retry instruction template (exact)</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Validation failed for schema: {schema_name}.
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Fix the JSON by correcting only these issues:
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>- Missing fields: {missing_fields_csv}
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>- Invalid fields/types: {invalid_fields_csv}
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Return ONE JSON object only, no markdown, no explanation.
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Preserve all previously valid fields.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Validation failed for schema: {schema_name}.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Fix the JSON by correcting only these issues:
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>- Missing fields: {missing_fields_csv}
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>- Invalid fields/types: {invalid_fields_csv}
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Return ONE JSON object only, no markdown, no explanation.
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Preserve all previously valid fields.
 </code></pre></div>
 <h3 id="implementation-notes">Implementation notes</h3>
 <ul>
@@ -6946,15 +7167,15 @@ Reviewers: neoneye, Bubba</p>
 - <code>token_metrics_snapshot</code> (if available)</p>
 <h3 id="log-format">Log format</h3>
 <p>Prefer structured JSON log line, example:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;structured_parse_failure&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;task_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PreProjectAssessmentTask&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;schema_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ExpertDetails&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;attempt_index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&quot;missing_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;combined_summary&quot;</span><span class="p">],</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">&quot;invalid_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;feedback[2].description:type&quot;</span><span class="p">],</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">&quot;model_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qwen/qwen3.5-35b-a3b&quot;</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;structured_parse_failure&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;task_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PreProjectAssessmentTask&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;schema_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ExpertDetails&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="nt">&quot;attempt_index&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="nt">&quot;missing_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;combined_summary&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">&quot;invalid_fields&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;feedback[2].description:type&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">&quot;model_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qwen/qwen3.5-35b-a3b&quot;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="acceptance-criteria_2">Acceptance criteria</h3>
 <ul>
