@@ -1822,6 +1822,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#thinking-tokens-and-reasoning-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking Tokens and Reasoning Content
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thinking Tokens and Reasoning Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-gotcha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gotcha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5756,6 +5806,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#thinking-tokens-and-reasoning-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thinking Tokens and Reasoning Content
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thinking Tokens and Reasoning Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-gotcha" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Gotcha
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5842,6 +5942,35 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">1234</span>:localhost:1234<span class="w"> </span>user@remote-host
 </code></pre></div>
 <p>Then set <code>base_url</code> to <code>http://localhost:1234</code> while the tunnel is running.</p>
+<h2 id="thinking-tokens-and-reasoning-content">Thinking Tokens and Reasoning Content</h2>
+<p>Some advanced models (like Qwen3.5 with extended thinking) can be configured in LM Studio to emit <strong>thinking tokens</strong> — internal chain-of-thought reasoning that doesn't appear in the final output.</p>
+<h3 id="the-gotcha">The Gotcha</h3>
+<p>When thinking tokens are enabled:
+- The model may return <code>reasoning_content</code> (internal reasoning) but <code>content: null</code> (final output empty)
+- llama_index's standard <code>OpenAILike</code> class only reads <code>content</code>, causing a crash if it's None</p>
+<h3 id="solution">Solution</h3>
+<p>Use the <code>ThinkingAwareOpenAILike</code> class instead of <code>OpenAILike</code> in your config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;lmstudio-qwen3.5-9b-with-thinking&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ThinkingAwareOpenAILike&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qwen/qwen3.5-9b&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="nt">&quot;api_base&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://127.0.0.1:1234/v1&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;lm-studio&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.55</span><span class="p">,</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">600.0</span><span class="p">,</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="nt">&quot;is_function_calling_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nt">&quot;is_chat_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="nt">&quot;context_window&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32768</span><span class="p">,</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="nt">&quot;max_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4096</span><span class="p">,</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="nt">&quot;should_use_structured_outputs&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">}</span>
+</code></pre></div>
+<p><code>ThinkingAwareOpenAILike</code> safely handles both:
+1. <strong>With thinking:</strong> Falls back to <code>reasoning_content</code> if <code>content</code> is null
+2. <strong>Without thinking:</strong> Works exactly like <code>OpenAILike</code> for normal responses</p>
+<h3 id="best-practice">Best Practice</h3>
+<p>If you're enabling thinking in LM Studio (e.g., via the Developer preset), always use <code>ThinkingAwareOpenAILike</code> to avoid crashes. See <a href="https://github.com/PlanExeOrg/PlanExe/pull/228">issue #228</a> for technical details.</p>
 <hr />
 <h2 id="next-steps">Next steps</h2>
 <ul>
