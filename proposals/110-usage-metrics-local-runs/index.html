@@ -2876,6 +2876,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#follow-up-error-classification-pr-236" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow-up: Error Classification (PR #236)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-up-error-traceability-pr-237" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow-up: Error Traceability (PR #237)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6054,6 +6076,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#follow-up-error-classification-pr-236" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow-up: Error Classification (PR #236)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-up-error-traceability-pr-237" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow-up: Error Traceability (PR #237)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6340,6 +6384,69 @@ with access to the real response.</p>
 <li><strong>Thinking tokens</strong>: Recorded when available (e.g. from OpenRouter reasoning models). <code>null</code> for providers that don't expose them.</li>
 <li><strong>Retention on resume</strong>: Appended. A resumed run adds only the new calls alongside the restored snapshot's existing metrics.</li>
 </ol>
+<hr />
+<h2 id="follow-up-error-classification-pr-236">Follow-up: Error Classification (PR #236)</h2>
+<p>Raw Python exception strings in the <code>"error"</code> field were verbose and could leak raw model output.
+PR #236 added <code>classify_error()</code> to replace them with short category labels:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Matches on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invalid_json</code></td>
+<td>"json", "validation error", "pydantic"</td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>"timeout", "timed out"</td>
+</tr>
+<tr>
+<td><code>empty_response</code></td>
+<td>"empty", "none", "no response"</td>
+</tr>
+<tr>
+<td><code>connection_error</code></td>
+<td>"connection", "connect", "dns", "network"</td>
+</tr>
+<tr>
+<td><code>rate_limit</code></td>
+<td>"rate limit", "429", "too many requests"</td>
+</tr>
+<tr>
+<td><code>auth_error</code></td>
+<td>"auth", "401", "403", "unauthorized", "forbidden"</td>
+</tr>
+<tr>
+<td><code>server_error</code></td>
+<td>"500", "502", "503", "504", "server error", "internal server"</td>
+</tr>
+<tr>
+<td><code>model_not_found</code></td>
+<td>"model not found", "not found", "404"</td>
+</tr>
+<tr>
+<td><code>unknown</code></td>
+<td>fallback — raw message preserved in <code>error_detail</code> (truncated to 200 chars)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="follow-up-error-traceability-pr-237">Follow-up: Error Traceability (PR #237)</h2>
+<p>All 38 call sites that raised <code>ValueError("LLM chat interaction failed.")</code> were converted to
+<code>LLMChatError</code> (see <a href="../113-llm-error-traceability/">proposal 113</a>). This:</p>
+<ul>
+<li><strong>Preserves the root cause</strong> in <code>str(LLMChatError)</code>, so <code>classify_error()</code> categorizes correctly
+  (previously all were <code>"unknown"</code>).</li>
+<li><strong>Adds <code>error_id</code></strong> (12-char UUID) to both log output and the JSONL row, enabling cross-referencing.</li>
+</ul>
+<p>Example failure row after both PRs:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-10T19:50:18.821350&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter-gemini-2.0-flash-001&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;duration_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.391</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid_json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;error_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4c2a64973bcd&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>A user can <code>grep 4c2a64973bcd</code> in the logs to find the full traceback.</p>
 
 
 

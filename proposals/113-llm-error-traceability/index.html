@@ -2767,22 +2767,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#design" class="md-nav__link">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Design
+        Implementation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Design">
+    <nav class="md-nav" aria-label="Implementation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-introduce-llmchaterror-exception" class="md-nav__link">
+  <a href="#1-llmchaterror-exception" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Introduce LLMChatError exception
+        1. LLMChatError exception
       
     </span>
   </a>
@@ -2790,10 +2790,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-update-the-36-call-sites" class="md-nav__link">
+  <a href="#2-updated-call-sites-38-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Update the 36 call sites
+        2. Updated call sites (38 files)
       
     </span>
   </a>
@@ -2801,10 +2801,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-record-error_id-in-usage_metricsjsonl" class="md-nav__link">
+  <a href="#3-error_id-in-usage_metricsjsonl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Record error_id in usage_metrics.jsonl
+        3. error_id in usage_metrics.jsonl
       
     </span>
   </a>
@@ -2812,10 +2812,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-example-output" class="md-nav__link">
+  <a href="#4-verified-output" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Example output
+        4. Verified output
       
     </span>
   </a>
@@ -2828,32 +2828,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#migration-valueerror-to-llmchaterror" class="md-nav__link">
+  <a href="#files-changed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Migration: ValueError to LLMChatError
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#files-to-modify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Files to modify
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verification
+        Files changed
       
     </span>
   </a>
@@ -5772,22 +5750,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#design" class="md-nav__link">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Design
+        Implementation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Design">
+    <nav class="md-nav" aria-label="Implementation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-introduce-llmchaterror-exception" class="md-nav__link">
+  <a href="#1-llmchaterror-exception" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Introduce LLMChatError exception
+        1. LLMChatError exception
       
     </span>
   </a>
@@ -5795,10 +5773,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-update-the-36-call-sites" class="md-nav__link">
+  <a href="#2-updated-call-sites-38-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Update the 36 call sites
+        2. Updated call sites (38 files)
       
     </span>
   </a>
@@ -5806,10 +5784,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-record-error_id-in-usage_metricsjsonl" class="md-nav__link">
+  <a href="#3-error_id-in-usage_metricsjsonl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Record error_id in usage_metrics.jsonl
+        3. error_id in usage_metrics.jsonl
       
     </span>
   </a>
@@ -5817,10 +5795,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-example-output" class="md-nav__link">
+  <a href="#4-verified-output" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Example output
+        4. Verified output
       
     </span>
   </a>
@@ -5833,32 +5811,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#migration-valueerror-to-llmchaterror" class="md-nav__link">
+  <a href="#files-changed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Migration: ValueError to LLMChatError
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#files-to-modify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Files to modify
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verification" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verification
+        Files changed
       
     </span>
   </a>
@@ -5899,123 +5855,95 @@
 <h1 id="proposal-llm-error-traceability-via-error-uuids">Proposal: LLM Error Traceability via Error UUIDs</h1>
 <p><strong>Author:</strong> neoneye
 <strong>Date:</strong> 2026-03-10
-<strong>Status:</strong> Draft</p>
+<strong>Status:</strong> Implemented (PR #237)</p>
 <hr />
 <h2 id="problem">Problem</h2>
-<p>When an LLM call fails inside a pipeline task, the exception is caught and re-raised as a generic <code>ValueError</code>:</p>
+<p>When an LLM call fails inside a pipeline task, the exception was caught and re-raised as a generic <code>ValueError</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM chat interaction failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;LLM chat interaction failed.&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;LLM chat interaction failed.&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 </code></pre></div>
-<p>This pattern appears in <strong>36 files</strong> across the codebase. By the time <code>LLMExecutor</code> catches the re-raised <code>ValueError</code>, <code>str(e)</code> is the fixed string <code>"LLM chat interaction failed."</code> — the root cause (timeout, auth error, invalid JSON, etc.) is lost.</p>
-<p>PR #236 added <code>classify_error()</code> to categorize error strings into short labels for <code>usage_metrics.jsonl</code>. But because the original exception is masked, these errors all classify as <code>"unknown"</code> with <code>error_detail: "LLM chat interaction failed."</code> — defeating the purpose of classification.</p>
-<p>The root cause <em>is</em> logged via <code>logger.error(..., exc_info=True)</code>, but there is no way to correlate a log line with a specific row in <code>usage_metrics.jsonl</code>.</p>
+<p>This pattern appeared in <strong>38 files</strong> across the codebase. By the time <code>LLMExecutor</code> caught the re-raised <code>ValueError</code>, <code>str(e)</code> was the fixed string <code>"LLM chat interaction failed."</code> — the root cause (timeout, auth error, invalid JSON, etc.) was lost.</p>
+<p>PR #236 added <code>classify_error()</code> to categorize error strings into short labels for <code>usage_metrics.jsonl</code>. But because the original exception was masked, these errors all classified as <code>"unknown"</code> with <code>error_detail: "LLM chat interaction failed."</code> — defeating the purpose of classification.</p>
+<p>The root cause <em>was</em> logged via <code>logger.error(..., exc_info=True)</code>, but there was no way to correlate a log line with a specific row in <code>usage_metrics.jsonl</code>.</p>
 <hr />
 <h2 id="goals">Goals</h2>
 <ol>
 <li><strong>Preserve the root cause</strong> so <code>classify_error()</code> can categorize it correctly.</li>
 <li><strong>Correlate metrics with logs</strong> so a user can look up the full traceback for any failed metric row.</li>
-<li><strong>Keep the change mechanical</strong> — the 36 call sites should all follow the same pattern.</li>
+<li><strong>Keep the change mechanical</strong> — the call sites should all follow the same pattern.</li>
 <li><strong>No behaviour change</strong> — callers that catch <code>ValueError</code> must continue to work.</li>
 </ol>
 <hr />
-<h2 id="design">Design</h2>
-<h3 id="1-introduce-llmchaterror-exception">1. Introduce <code>LLMChatError</code> exception</h3>
-<p>Replace the generic <code>ValueError</code> with a dedicated exception that carries structured context:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># worker_plan/worker_plan_internal/llm_util/llm_errors.py</span>
+<h2 id="implementation">Implementation</h2>
+<h3 id="1-llmchaterror-exception">1. <code>LLMChatError</code> exception</h3>
+<p>A dedicated exception that carries structured context, defined in
+<code>worker_plan/worker_plan_internal/llm_util/llm_errors.py</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMChatError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when an LLM chat interaction fails.</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">    Carries the root-cause exception and a unique error_id for</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">    cross-referencing log entries with usage_metrics.jsonl rows.</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cause</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">error_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cause</span> <span class="o">=</span> <span class="n">cause</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">error_id</span> <span class="o">=</span> <span class="n">error_id</span> <span class="ow">or</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">[:</span><span class="mi">12</span><span class="p">]</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM chat interaction failed [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">error_id</span><span class="si">}</span><span class="s2">]: </span><span class="si">{</span><span class="n">cause</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMChatError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when an LLM chat interaction fails.</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">    Carries the root-cause exception and a unique error_id for</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">    cross-referencing log entries with usage_metrics.jsonl rows.</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">    Extends ValueError for backward compatibility with existing</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sd">    except ValueError catch sites.</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cause</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">error_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cause</span> <span class="o">=</span> <span class="n">cause</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">error_id</span> <span class="o">=</span> <span class="n">error_id</span> <span class="ow">or</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">[:</span><span class="mi">12</span><span class="p">]</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="ow">or</span> <span class="s2">&quot;LLM chat interaction failed&quot;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">error_id</span><span class="si">}</span><span class="s2">]: </span><span class="si">{</span><span class="n">cause</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>Key properties:
-- <code>str(LLMChatError)</code> now includes the root cause, so <code>classify_error()</code> works correctly.
+- <code>str(LLMChatError)</code> includes the root cause, so <code>classify_error()</code> categorizes correctly.
 - <code>error_id</code> is a short UUID (12 hex chars) printed in both the log and the metric row.
-- Subclasses <code>Exception</code> (not <code>ValueError</code>), but see migration notes below.</p>
-<h3 id="2-update-the-36-call-sites">2. Update the 36 call sites</h3>
-<p>Each call site changes from:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM chat interaction failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;LLM chat interaction failed.&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;LLM chat interaction failed.&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+- <code>message</code> allows callers to distinguish between numbered interactions (e.g. interaction 1 vs 2).
+- Extends <code>ValueError</code> for backward compatibility with existing catch sites.</p>
+<h3 id="2-updated-call-sites-38-files">2. Updated call sites (38 files)</h3>
+<p>The standard pattern (30 files):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.llm_util.llm_errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLMChatError</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">llm_error</span> <span class="o">=</span> <span class="n">LLMChatError</span><span class="p">(</span><span class="n">cause</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM chat interaction failed [</span><span class="si">{</span><span class="n">llm_error</span><span class="o">.</span><span class="n">error_id</span><span class="si">}</span><span class="s2">]: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM chat interaction failed [</span><span class="si">{</span><span class="n">llm_error</span><span class="o">.</span><span class="n">error_id</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">raise</span> <span class="n">llm_error</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 </code></pre></div>
-<p>To:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.llm_util.llm_errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLMChatError</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">llm_error</span> <span class="o">=</span> <span class="n">LLMChatError</span><span class="p">(</span><span class="n">cause</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM chat interaction failed [</span><span class="si">{</span><span class="n">llm_error</span><span class="o">.</span><span class="n">error_id</span><span class="si">}</span><span class="s2">]: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;LLM chat interaction failed [</span><span class="si">{</span><span class="n">llm_error</span><span class="o">.</span><span class="n">error_id</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">raise</span> <span class="n">llm_error</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+<p>For files with numbered interactions (e.g. <code>expert_finder.py</code>, <code>questions_answers.py</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">llm_error</span> <span class="o">=</span> <span class="n">LLMChatError</span><span class="p">(</span><span class="n">cause</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;LLM chat interaction 2 failed&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">llm_error</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">llm_error</span><span class="o">.</span><span class="n">error_id</span><span class="si">}</span><span class="s2">]: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">llm_error</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">llm_error</span><span class="o">.</span><span class="n">error_id</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">raise</span> <span class="n">llm_error</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
 </code></pre></div>
-<p>This is mechanical — every site follows the same 4-line pattern.</p>
-<h3 id="3-record-error_id-in-usage_metricsjsonl">3. Record <code>error_id</code> in <code>usage_metrics.jsonl</code></h3>
-<p>In <code>record_usage_metric()</code>, accept an optional <code>error_id</code> parameter:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">record_usage_metric</span><span class="p">(</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="o">...</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">error_message</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">error_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="o">...</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="o">...</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="k">if</span> <span class="n">error_message</span><span class="p">:</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="n">category</span> <span class="o">=</span> <span class="n">classify_error</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="n">record</span><span class="p">[</span><span class="s2">&quot;error&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">category</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="k">if</span> <span class="n">category</span> <span class="o">==</span> <span class="s2">&quot;unknown&quot;</span><span class="p">:</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            <span class="n">record</span><span class="p">[</span><span class="s2">&quot;error_detail&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">error_message</span><span class="p">[:</span><span class="mi">200</span><span class="p">]</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="k">if</span> <span class="n">error_id</span><span class="p">:</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>            <span class="n">record</span><span class="p">[</span><span class="s2">&quot;error_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">error_id</span>
+<h3 id="3-error_id-in-usage_metricsjsonl">3. <code>error_id</code> in <code>usage_metrics.jsonl</code></h3>
+<p><code>record_usage_metric()</code> accepts an optional <code>error_id</code> parameter.
+<code>LLMExecutor._record_attempt_token_metrics()</code> extracts the <code>error_id</code> from the exception:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">error_id</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">exception</span><span class="p">,</span> <span class="s2">&quot;error_id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">if</span> <span class="n">exception</span> <span class="k">else</span> <span class="kc">None</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">record_usage_metric</span><span class="p">(</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="n">model</span><span class="o">=</span><span class="n">llm_model_name</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="n">duration_seconds</span><span class="o">=</span><span class="n">duration</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="n">success</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">error_message</span><span class="o">=</span><span class="n">error_message</span><span class="p">,</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">error_id</span><span class="o">=</span><span class="n">error_id</span><span class="p">,</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="p">)</span>
 </code></pre></div>
-<p>In <code>LLMExecutor._record_attempt_token_metrics()</code>, extract the <code>error_id</code> from the exception when available:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">error_id</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="s2">&quot;error_id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">if</span> <span class="n">exc</span> <span class="k">else</span> <span class="kc">None</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">record_usage_metric</span><span class="p">(</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="n">model</span><span class="o">=</span><span class="n">llm_model_name</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">duration_seconds</span><span class="o">=</span><span class="n">duration</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">success</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="n">error_message</span><span class="o">=</span><span class="n">error_message</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="n">error_id</span><span class="o">=</span><span class="n">error_id</span><span class="p">,</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="p">)</span>
-</code></pre></div>
-<h3 id="4-example-output">4. Example output</h3>
+<h3 id="4-verified-output">4. Verified output</h3>
 <p><strong>Log output:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ERROR LLM chat interaction failed [a3f1b9c2d4e5]: 1 validation error for ...
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Traceback (most recent call last):
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  ...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ERROR LLM chat interaction failed [4c2a64973bcd]: 1 validation error for ...
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Traceback (most recent call last):
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  ...
 </code></pre></div></p>
 <p><strong>usage_metrics.jsonl row:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-10T17:16:17&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter-gemini-2.0-flash-001&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nt">&quot;duration_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">24.839</span><span class="p">,</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid_json&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="nt">&quot;error_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a3f1b9c2d4e5&quot;</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-10T19:50:18.821350&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter-gemini-2.0-flash-001&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;duration_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.391</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;invalid_json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;error_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4c2a64973bcd&quot;</span><span class="p">}</span>
 </code></pre></div></p>
-<p>A user can now <code>grep a3f1b9c2d4e5</code> in the logs to find the full traceback.</p>
+<p>A user can now <code>grep 4c2a64973bcd</code> in the logs to find the full traceback.</p>
 <hr />
-<h2 id="migration-valueerror-to-llmchaterror">Migration: <code>ValueError</code> to <code>LLMChatError</code></h2>
-<p><code>LLMChatError</code> extends <code>Exception</code>, not <code>ValueError</code>. Any code that catches <code>ValueError</code> from LLM calls would break. There are two migration strategies:</p>
-<p><strong>Option A: Temporary dual inheritance (recommended)</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">LLMChatError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="o">...</span>
-</code></pre></div>
-<p>This keeps backward compatibility. A follow-up PR can grep for <code>except ValueError</code> near LLM calls and migrate them to <code>except LLMChatError</code>, then remove the <code>ValueError</code> base class.</p>
-<p><strong>Option B: Big-bang migration</strong></p>
-<p>Change <code>LLMChatError</code> to extend <code>Exception</code> and update all <code>except ValueError</code> catch sites in the same PR. Riskier but cleaner.</p>
-<hr />
-<h2 id="files-to-modify">Files to modify</h2>
+<h2 id="files-changed">Files changed</h2>
 <table>
 <thead>
 <tr>
@@ -6026,11 +5954,11 @@
 <tbody>
 <tr>
 <td><code>worker_plan/worker_plan_internal/llm_util/llm_errors.py</code></td>
-<td><strong>New file.</strong> <code>LLMChatError</code> exception class.</td>
+<td><strong>New.</strong> <code>LLMChatError</code> exception class with <code>cause</code>, <code>error_id</code>, <code>message</code>.</td>
 </tr>
 <tr>
 <td><code>worker_plan/worker_plan_internal/llm_util/usage_metrics.py</code></td>
-<td>Add <code>error_id</code> parameter to <code>record_usage_metric()</code>.</td>
+<td>Added <code>error_id</code> parameter to <code>record_usage_metric()</code>.</td>
 </tr>
 <tr>
 <td><code>worker_plan/worker_plan_internal/llm_util/llm_executor.py</code></td>
@@ -6041,23 +5969,19 @@
 <td>Mechanical replacement with <code>LLMChatError</code>.</td>
 </tr>
 <tr>
-<td><code>worker_plan/tests/test_usage_metrics.py</code></td>
-<td>Add tests for <code>error_id</code> field.</td>
+<td>2 files with <code>raise ValueError("LLM chat interaction N failed.")</code></td>
+<td>Replaced with <code>LLMChatError(cause=e, message=...)</code>.</td>
 </tr>
 <tr>
 <td><code>worker_plan/tests/test_llm_errors.py</code></td>
-<td><strong>New file.</strong> Tests for <code>LLMChatError</code>.</td>
+<td><strong>New.</strong> 8 tests for <code>LLMChatError</code>.</td>
+</tr>
+<tr>
+<td><code>worker_plan/tests/test_usage_metrics.py</code></td>
+<td>Added tests for <code>error_id</code> field and <code>LLMChatError</code> integration.</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="verification">Verification</h2>
-<ol>
-<li>Run existing tests — nothing should break if Option A (dual inheritance) is used.</li>
-<li>Run a plan with a model that triggers errors — verify <code>error_id</code> appears in both log and JSONL.</li>
-<li>Grep for <code>error_id</code> in the log — confirm it matches the JSONL row.</li>
-<li>Verify <code>classify_error()</code> now correctly categorizes errors that were previously <code>"unknown"</code>.</li>
-</ol>
 <hr />
 <h2 id="out-of-scope">Out of scope</h2>
 <ul>
