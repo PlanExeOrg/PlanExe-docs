@@ -2794,13 +2794,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#open-questions" class="md-nav__link">
+  <a href="#implementation-notes-pr-219" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Open Questions
+        Implementation Notes (PR #219)
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Implementation Notes (PR #219)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-format-jsonl-not-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File format: JSONL, not JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recording-source-llama_index-instrumentation-not-llmexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recording source: llama_index instrumentation, not LLMExecutor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-field-includes-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model field includes provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolved-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolved open questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5872,13 +5944,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#open-questions" class="md-nav__link">
+  <a href="#implementation-notes-pr-219" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Open Questions
+        Implementation Notes (PR #219)
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Implementation Notes (PR #219)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-format-jsonl-not-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File format: JSONL, not JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recording-source-llama_index-instrumentation-not-llmexecutor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recording source: llama_index instrumentation, not LLMExecutor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-field-includes-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model field includes provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolved-open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolved open questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5905,7 +6049,7 @@
 <h1 id="proposal-usage-metrics-for-local-runs-no-database-required">Proposal: Usage Metrics for Local Runs (No Database Required)</h1>
 <p><strong>Author:</strong> Bubba (VoynichLabs)<br />
 <strong>Date:</strong> 2026-03-08<br />
-<strong>Status:</strong> Proposal</p>
+<strong>Status:</strong> Implemented (PR #219)</p>
 <hr />
 <h2 id="problem">Problem</h2>
 <p>PlanExe has solid token-counting infrastructure (<code>token_counter.py</code>, <code>token_instrumentation.py</code>,
@@ -6109,26 +6253,64 @@ variations.</p>
   to understand what happened.</li>
 </ul>
 <hr />
-<h2 id="open-questions">Open Questions</h2>
+<h2 id="implementation-notes-pr-219">Implementation Notes (PR #219)</h2>
+<p>The final implementation diverges from Option A above in several ways:</p>
+<h3 id="file-format-jsonl-not-json">File format: JSONL, not JSON</h3>
+<p><code>usage_metrics.jsonl</code> uses one JSON object per line (append-only). This avoids the need for
+atomic rename or in-memory accumulation — each LLM call appends a single line. Thread-safe
+by nature since each write is a short append to a file handle.</p>
+<h3 id="recording-source-llama_index-instrumentation-not-llmexecutor">Recording source: llama_index instrumentation, not LLMExecutor</h3>
+<p>Successful calls are recorded by <code>TrackActivity</code> (the llama_index <code>BaseEventHandler</code>) which
+receives the actual <code>ChatResponse</code> with full token counts, cost, and <code>provider:model</code> info.
+<code>LLMExecutor._record_attempt_token_metrics()</code> only records <strong>failures</strong>, since instrumentation
+end events are not emitted when the LLM call fails.</p>
+<p>This was necessary because <code>execute_function(llm)</code> returns the processed result (a Pydantic
+model or string), not the raw <code>ChatResponse</code>. The instrumentation layer is the only place
+with access to the real response.</p>
+<h3 id="model-field-includes-provider">Model field includes provider</h3>
+<p>The <code>model</code> field contains the full <code>provider:model</code> string (e.g.
+<code>Google AI Studio:google/gemini-2.0-flash-001</code>), matching <code>activity_overview.json</code>.</p>
+<h3 id="example-output">Example output</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-10T13:36:48.250446&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Google AI Studio:google/gemini-2.0-flash-001&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;duration_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.879</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;input_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5316</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;output_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">643</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;cost_usd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0007888</span><span class="p">}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-10T13:36:53.554864&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Google:google/gemini-2.0-flash-001&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;duration_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.237</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;input_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8877</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;output_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">562</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;cost_usd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0011125</span><span class="p">}</span>
+</code></pre></div>
+<h3 id="key-files">Key files</h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>worker_plan/worker_plan_internal/llm_util/usage_metrics.py</code></td>
+<td>Core module: <code>set_usage_metrics_path()</code>, <code>record_usage_metric()</code></td>
+</tr>
+<tr>
+<td><code>worker_plan/worker_plan_internal/llm_util/track_activity.py</code></td>
+<td>Records successful calls via <code>_record_file_usage_metric()</code></td>
+</tr>
+<tr>
+<td><code>worker_plan/worker_plan_internal/llm_util/llm_executor.py</code></td>
+<td>Records failed calls only</td>
+</tr>
+<tr>
+<td><code>worker_plan/worker_plan_internal/plan/run_plan_pipeline.py</code></td>
+<td>Sets/clears metrics path around pipeline execution</td>
+</tr>
+<tr>
+<td><code>worker_plan/worker_plan_api/filenames.py</code></td>
+<td><code>USAGE_METRICS_JSONL</code> constant</td>
+</tr>
+</tbody>
+</table>
+<h3 id="resolved-open-questions">Resolved open questions</h3>
 <ol>
-<li>
-<p><strong>Ollama field mapping</strong>: <code>prompt_eval_count</code> / <code>eval_count</code> vs <code>prompt_tokens</code> /
-   <code>completion_tokens</code> — should <code>extract_token_count()</code> add an Ollama-specific branch, or
-   should the Ollama LLM adapter normalize field names before returning?</p>
-</li>
-<li>
-<p><strong>Thread safety</strong>: Luigi runs tasks in parallel workers. The appender needs an
-   <code>fcntl.flock()</code> or atomic rename approach to avoid corruption under concurrent writes.</p>
-</li>
-<li>
-<p><strong>Thinking tokens for local models</strong>: Qwen 3 thinking tokens are stripped before the
-   response reaches llama_index (LM Studio does not expose them separately). The
-   <code>thinking_tokens</code> field will be <code>null</code> for local runs — acceptable for now.</p>
-</li>
-<li>
-<p><strong>Retention</strong>: Should <code>usage_metrics.json</code> be overwritten on resume (Luigi skip-completed
-   behavior) or appended? Appending is safer — a resumed run adds only the new calls.</p>
-</li>
+<li><strong>Ollama field mapping</strong>: Handled by <code>extract_token_count()</code> and <code>TrackActivity._extract_token_usage()</code> which already support multiple field name variations.</li>
+<li><strong>Thread safety</strong>: JSONL append-per-line is safe for concurrent Luigi workers.</li>
+<li><strong>Thinking tokens</strong>: Recorded when available (e.g. from OpenRouter reasoning models). <code>null</code> for providers that don't expose them.</li>
+<li><strong>Retention on resume</strong>: Appended. A resumed run adds only the new calls alongside the restored snapshot's existing metrics.</li>
 </ol>
 
 
