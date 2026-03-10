@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry the Laptop Lobster">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/112-end-to-end-test-plan/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/15-outcome-feedback-and-model-governance/">
+        <link rel="prev" href="../111-promising-directions/">
       
       
-        <link rel="prev" href="../14-confidence-weighted-funding-auctions/">
-      
-      
-        <link rel="next" href="../16-on-demand-plugin-synthesis-hub/">
+        <link rel="next" href="../12-evidence-based-founder-execution-index/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Outcome Feedback Loop and Model Governance for Investor Matching - PlanExe Documentation</title>
+        <title>112 end to end test plan - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Outcome Feedback Loop and Model Governance for Investor Matching - PlanExe Documentation" />
+<meta property="og:title" content="112 end to end test plan - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/15-outcome-feedback-and-model-governance.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/112-end-to-end-test-plan.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/15-outcome-feedback-and-model-governance/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/112-end-to-end-test-plan/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Outcome Feedback Loop and Model Governance for Investor Matching - PlanExe Documentation" />
+<meta property="twitter:title" content="112 end to end test plan - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/15-outcome-feedback-and-model-governance.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/112-end-to-end-test-plan.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#outcome-feedback-loop-and-model-governance-for-investor-matching" class="md-skip">
+        <a href="#end-to-end-test-plan-docker-optional-llm-access" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Outcome Feedback Loop and Model Governance for Investor Matching
+              112 end to end test plan
             
           </span>
         </div>
@@ -2656,10 +2654,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../112-end-to-end-test-plan/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    112 end to end test plan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2675,6 +2700,181 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests-that-do-not-require-llm-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests that do NOT require LLM access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tests that do NOT require LLM access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pipeline-version-mismatch-on-resume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Pipeline version mismatch on resume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pipeline-version-mismatch-on-resume-legacy-plan-no-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pipeline version mismatch on resume — legacy plan (no version)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-resume-with-matching-pipeline-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Resume with matching pipeline version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-resume-a-non-failed-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Resume a non-failed plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-retry-clears-artifacts-resume-preserves-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Retry clears artifacts, resume preserves them
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests-that-require-llm-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests that require LLM access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tests that require LLM access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#6-full-plan-create-to-completion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Full plan create to completion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-resume-after-mid-generation-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resume after mid-generation failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-multiple-resumes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Multiple resumes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-plan-list-reflects-resume-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Plan list reflects resume state
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2789,44 +2989,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    15 outcome feedback and model governance
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
         
   
   
@@ -2849,225 +3015,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TL;DR
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-outcome-telemetry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Outcome Telemetry
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-evaluation-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Evaluation Framework
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-governance-transparency" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Governance + Transparency
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-outcome-telemetry-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Outcome Telemetry Contract
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-governance-evaluation-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Governance Evaluation Loop
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-governance-board-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Governance Board Outputs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation Checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5803,10 +5750,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Context
       
     </span>
   </a>
@@ -5814,66 +5761,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
+  <a href="#tests-that-do-not-require-llm-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        TL;DR
+        Tests that do NOT require LLM access
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
+    <nav class="md-nav" aria-label="Tests that do NOT require LLM access">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-1-outcome-telemetry" class="md-nav__link">
+  <a href="#1-pipeline-version-mismatch-on-resume" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 1: Outcome Telemetry
+        1. Pipeline version mismatch on resume
       
     </span>
   </a>
@@ -5881,10 +5784,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-2-evaluation-framework" class="md-nav__link">
+  <a href="#2-pipeline-version-mismatch-on-resume-legacy-plan-no-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 2: Evaluation Framework
+        2. Pipeline version mismatch on resume — legacy plan (no version)
       
     </span>
   </a>
@@ -5892,10 +5795,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-3-governance-transparency" class="md-nav__link">
+  <a href="#3-resume-with-matching-pipeline-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 3: Governance + Transparency
+        3. Resume with matching pipeline version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-resume-a-non-failed-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Resume a non-failed plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-retry-clears-artifacts-resume-preserves-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Retry clears artifacts, resume preserves them
       
     </span>
   </a>
@@ -5908,55 +5833,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
+  <a href="#tests-that-require-llm-access" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Success Metrics
+        Tests that require LLM access
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+    <nav class="md-nav" aria-label="Tests that require LLM access">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-a-outcome-telemetry-contract" class="md-nav__link">
+  <a href="#6-full-plan-create-to-completion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase A — Outcome Telemetry Contract
+        6. Full plan create to completion
       
     </span>
   </a>
@@ -5964,10 +5856,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-b-governance-evaluation-loop" class="md-nav__link">
+  <a href="#7-resume-after-mid-generation-failure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase B — Governance Evaluation Loop
+        7. Resume after mid-generation failure
       
     </span>
   </a>
@@ -5975,10 +5867,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-c-governance-board-outputs" class="md-nav__link">
+  <a href="#8-multiple-resumes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase C — Governance Board Outputs
+        8. Multiple resumes
       
     </span>
   </a>
@@ -5986,10 +5878,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
+  <a href="#9-plan-list-reflects-resume-state" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Validation Checklist
+        9. Plan list reflects resume state
       
     </span>
   </a>
@@ -5998,6 +5890,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation notes
+      
+    </span>
+  </a>
   
 </li>
       
@@ -6021,188 +5924,102 @@
   
 
 
-<h1 id="outcome-feedback-loop-and-model-governance-for-investor-matching">Outcome Feedback Loop and Model Governance for Investor Matching</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-10<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>feedback-loop</code>, <code>governance</code>, <code>mlops</code>, <code>evaluation</code>, <code>roi</code></p>
+<h1 id="end-to-end-test-plan-docker-optional-llm-access">End-to-end test plan (Docker + optional LLM access)</h1>
+<h2 id="context">Context</h2>
+<p>Unit tests mock the database and external calls. They verify wiring but not the actual behavior of the full stack. End-to-end tests run against the real Docker services (database, worker, MCP server) and optionally invoke LLMs. They are slow, non-deterministic (when LLMs are involved), and costly — so they should be run selectively, not on every commit.</p>
+<p>This proposal catalogs the end-to-end test scenarios that would provide the most confidence, grouped by whether they require LLM access.</p>
 <hr />
-<h2 id="pitch">Pitch</h2>
-<p>Close the loop between predicted and realized investment outcomes so the matching system continuously improves ROI accuracy, fairness, and trustworthiness.</p>
-<h2 id="tldr">TL;DR</h2>
+<h2 id="tests-that-do-not-require-llm-access">Tests that do NOT require LLM access</h2>
+<p>These tests exercise the MCP server, database, and worker interactions without invoking any LLM. They are deterministic and cheap.</p>
+<h3 id="1-pipeline-version-mismatch-on-resume">1. Pipeline version mismatch on resume</h3>
+<p><strong>Goal:</strong> Verify that <code>plan_resume</code> rejects a snapshot created by a different pipeline version.</p>
+<p><strong>Steps:</strong>
+1. Create a plan via <code>plan_create</code>.
+2. Let the worker pick it up and fail it (e.g. via <code>plan_stop</code> shortly after start, or by configuring an invalid LLM model).
+3. Manually update <code>PIPELINE_VERSION</code> in the database parameters to a different value (or patch the constant before resuming).
+4. Call <code>plan_resume</code>.
+5. Assert: MCP returns <code>PIPELINE_VERSION_MISMATCH</code> error.</p>
+<p><strong>Variant — worker-side check:</strong>
+1. Bypass the MCP-layer check (e.g. manually set <code>parameters["pipeline_version"]</code> to match current).
+2. But ensure the <code>001-3-planexe_metadata.json</code> in the zip snapshot has a different version.
+3. Let the worker pick up the resumed plan.
+4. Assert: worker sets plan to failed with progress_message containing "Not resumable".</p>
+<h3 id="2-pipeline-version-mismatch-on-resume-legacy-plan-no-version">2. Pipeline version mismatch on resume — legacy plan (no version)</h3>
+<p><strong>Goal:</strong> Verify that plans created before pipeline versioning cannot be resumed.</p>
+<p><strong>Steps:</strong>
+1. Create a plan and let it fail.
+2. Remove <code>pipeline_version</code> from the plan's parameters in the database.
+3. Call <code>plan_resume</code>.
+4. Assert: MCP returns <code>PIPELINE_VERSION_MISMATCH</code> error.</p>
+<h3 id="3-resume-with-matching-pipeline-version">3. Resume with matching pipeline version</h3>
+<p><strong>Goal:</strong> Verify that <code>plan_resume</code> accepts a snapshot with matching pipeline version and requeues it.</p>
+<p><strong>Steps:</strong>
+1. Create a plan via <code>plan_create</code>.
+2. Let the worker start, then stop it via <code>plan_stop</code>.
+3. Confirm plan is in <code>failed</code> state with <code>plan_status</code>.
+4. Call <code>plan_resume</code>.
+5. Assert: returns successfully with <code>state: "pending"</code> and <code>resume_count: 1</code>.</p>
+<h3 id="4-resume-a-non-failed-plan">4. Resume a non-failed plan</h3>
+<p><strong>Goal:</strong> Verify <code>plan_resume</code> rejects plans that are not in failed state.</p>
+<p><strong>Steps:</strong>
+1. Create a plan via <code>plan_create</code> (will be in <code>pending</code> state).
+2. Call <code>plan_resume</code> immediately.
+3. Assert: returns <code>PLAN_NOT_RESUMABLE</code> error.</p>
+<h3 id="5-retry-clears-artifacts-resume-preserves-them">5. Retry clears artifacts, resume preserves them</h3>
+<p><strong>Goal:</strong> Verify the fundamental difference between <code>plan_retry</code> and <code>plan_resume</code>.</p>
+<p><strong>Steps:</strong>
+1. Create a plan and let it partially complete before stopping.
+2. Record the list of intermediary files via <code>plan_status</code>.
+3. Call <code>plan_retry</code> — verify the plan is reset to pending with no prior artifacts.
+4. Let it partially complete again and stop.
+5. Call <code>plan_resume</code> — verify the plan is reset to pending with prior artifacts preserved.</p>
+<hr />
+<h2 id="tests-that-require-llm-access">Tests that require LLM access</h2>
+<p>These tests invoke real LLMs and are non-deterministic, slow (~10-20 min per plan), and incur cost. Run sparingly.</p>
+<h3 id="6-full-plan-create-to-completion">6. Full plan create to completion</h3>
+<p><strong>Goal:</strong> Smoke test the happy path end-to-end.</p>
+<p><strong>Steps:</strong>
+1. Call <code>example_prompts</code> to get a sample prompt.
+2. Call <code>plan_create</code> with the sample prompt and <code>model_profile: "baseline"</code>.
+3. Poll <code>plan_status</code> until <code>completed</code>.
+4. Call <code>plan_file_info</code> with <code>artifact: "report"</code> — assert <code>download_url</code> is present.
+5. Call <code>plan_file_info</code> with <code>artifact: "zip"</code> — assert <code>download_url</code> is present.
+6. Download the report and verify it is valid HTML containing expected sections.
+7. Download the zip and verify <code>001-3-planexe_metadata.json</code> is present with correct <code>pipeline_version</code>.</p>
+<h3 id="7-resume-after-mid-generation-failure">7. Resume after mid-generation failure</h3>
+<p><strong>Goal:</strong> Verify that resume actually skips completed steps and finishes the plan.</p>
+<p><strong>Steps:</strong>
+1. Create a plan and let it run until ~50% progress.
+2. Call <code>plan_stop</code>.
+3. Wait for plan to reach <code>failed</code> state.
+4. Record <code>steps_completed</code> from <code>plan_status</code>.
+5. Call <code>plan_resume</code>.
+6. Poll <code>plan_status</code> until <code>completed</code>.
+7. Assert: the plan completed successfully and the final report is valid.
+8. Assert: <code>resume_count</code> is 1 in the response.</p>
+<h3 id="8-multiple-resumes">8. Multiple resumes</h3>
+<p><strong>Goal:</strong> Verify that a plan can be resumed more than once.</p>
+<p><strong>Steps:</strong>
+1. Create a plan and stop it at ~30% progress.
+2. Resume and stop it again at ~60% progress.
+3. Resume a second time and let it complete.
+4. Assert: <code>resume_count</code> is 2.
+5. Assert: the final report is valid.</p>
+<h3 id="9-plan-list-reflects-resume-state">9. Plan list reflects resume state</h3>
+<p><strong>Goal:</strong> Verify that <code>plan_list</code> correctly shows plans that have been resumed.</p>
+<p><strong>Steps:</strong>
+1. Create two plans — let one complete normally and stop the other.
+2. Resume the stopped plan.
+3. Call <code>plan_list</code>.
+4. Assert: both plans appear with correct states and progress.</p>
+<hr />
+<h2 id="implementation-notes">Implementation notes</h2>
 <ul>
-<li>
-<p>Track each recommendation from match to long-term outcome.</p>
-</li>
-<li>
-<p>Compare predicted ROI/risk to realized performance.</p>
-</li>
-<li>
-<p>Retrain models with strict governance, versioning, and rollback.</p>
-</li>
-<li>
-<p>Publish model health dashboards for investors and operators.</p>
-</li>
-</ul>
-<h2 id="problem">Problem</h2>
-<p>Without outcome feedback, matching systems drift and confidence erodes:</p>
-<ul>
-<li>
-<p>Predictions can become stale as markets change.</p>
-</li>
-<li>
-<p>Biases persist unnoticed.</p>
-</li>
-<li>
-<p>Users cannot audit whether model recommendations are actually improving returns.</p>
-</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Implement an <strong>Outcome Intelligence Layer</strong> that:</p>
-<ol>
-<li>
-<p>Captures lifecycle events (funded, milestones hit/missed, follow-on rounds, exits, write-downs)</p>
-</li>
-<li>
-<p>Measures calibration and error by cohort, sector, and stage</p>
-</li>
-<li>
-<p>Triggers retraining when quality degrades</p>
-</li>
-<li>
-<p>Enforces governance gates before new model deployment</p>
-</li>
-</ol>
-<h2 id="architecture">Architecture</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────────────┐
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│ Matching &amp; Recommendation    │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│ - Plan↔Investor rankings     │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│ - Predicted ROI + risk       │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└──────────────┬───────────────┘
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>               │ emits events
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>               ▼
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>┌──────────────────────────────┐
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│ Outcome Event Store          │
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│ - Funding events             │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│ - Milestone outcomes         │
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│ - Valuation updates          │
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>└──────────────┬───────────────┘
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>               │
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>               ▼
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>┌──────────────────────────────┐
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│ Evaluation &amp; Drift Monitor   │
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│ - Calibration                │
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│ - Bias / fairness checks     │
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│ - Segment error analysis     │
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>└──────────────┬───────────────┘
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>               │
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>               ▼
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>┌──────────────────────────────┐
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│ MLOps Governance Pipeline    │
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│ - Candidate model testing    │
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│ - Human approval gates       │
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│ - Versioned rollout/rollback │
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>└──────────────────────────────┘
-</code></pre></div>
-<h2 id="implementation">Implementation</h2>
-<h3 id="phase-1-outcome-telemetry">Phase 1: Outcome Telemetry</h3>
-<ul>
-<li>
-<p>Add immutable event log keyed by recommendation ID.</p>
-</li>
-<li>
-<p>Define canonical outcome windows (3/6/12/24/36 months).</p>
-</li>
-<li>
-<p>Attach confidence bands at recommendation time for later calibration checks.</p>
-</li>
-</ul>
-<h3 id="phase-2-evaluation-framework">Phase 2: Evaluation Framework</h3>
-<ul>
-<li>
-<p>Track metrics by cohort:</p>
-</li>
-<li>
-<p>calibration error, rank correlation with realized returns, false-positive funding recommendations.</p>
-</li>
-<li>
-<p>Detect drift in market regime and feature distributions.</p>
-</li>
-<li>
-<p>Run shadow-mode candidate models continuously.</p>
-</li>
-</ul>
-<h3 id="phase-3-governance-transparency">Phase 3: Governance + Transparency</h3>
-<ul>
-<li>
-<p>Require deployment gates:</p>
-</li>
-<li>
-<p>minimum calibration improvement, no fairness regression, reproducible training artifact.</p>
-</li>
-<li>
-<p>Publish model cards and changelogs.</p>
-</li>
-<li>
-<p>Support one-click rollback to previous stable model.</p>
-</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>
-<p><strong>Calibration Error:</strong> -25% within 2 quarters.</p>
-</li>
-<li>
-<p><strong>Ranking Quality:</strong> Higher Spearman correlation between predicted and realized ROI.</p>
-</li>
-<li>
-<p><strong>Fairness Stability:</strong> No significant degradation across geography/sector/founder-background slices.</p>
-</li>
-<li>
-<p><strong>Trust Metric:</strong> Increased investor acceptance of top recommendations.</p>
-</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>
-<p><strong>Long feedback cycles in venture outcomes</strong> → Use intermediate leading indicators and survival analysis.</p>
-</li>
-<li>
-<p><strong>Attribution ambiguity</strong> → Separate model recommendation quality from post-investment support effects.</p>
-</li>
-<li>
-<p><strong>Privacy and compliance</strong> → Differential access control and auditable data lineage.</p>
-</li>
-<li>
-<p><strong>Operational overhead</strong> → Automate evaluation and gating workflows.</p>
-</li>
-</ul>
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>A matching engine is only valuable if it stays correct over time. Governance plus feedback transforms it from a static ranking tool into a reliable capital allocation system that compounds ROI advantage.</p>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-outcome-telemetry-contract">Phase A — Outcome Telemetry Contract</h3>
-<ol>
-<li>Define standardized outcome schema (win/loss, cost variance, schedule variance, quality outcome).</li>
-<li>Build ingestion endpoints and integrity checks.</li>
-<li>Add outcome confidence and source provenance fields.</li>
-</ol>
-<h3 id="phase-b-governance-evaluation-loop">Phase B — Governance Evaluation Loop</h3>
-<ol>
-<li>Compare model predictions vs realized outcomes.</li>
-<li>Flag drift and underperforming model components.</li>
-<li>Trigger review workflows for retraining or policy changes.</li>
-</ol>
-<h3 id="phase-c-governance-board-outputs">Phase C — Governance Board Outputs</h3>
-<ol>
-<li>Generate periodic model health reports.</li>
-<li>Maintain change logs for model updates and rationale.</li>
-<li>Require signoff on high-impact model policy changes.</li>
-</ol>
-<h3 id="validation-checklist">Validation Checklist</h3>
-<ul>
-<li>Outcome ingestion completeness</li>
-<li>Drift detection sensitivity/specificity</li>
-<li>Governance decision turnaround SLAs</li>
+<li>These tests should live in a dedicated directory (e.g. <code>tests/e2e/</code>) separate from unit tests.</li>
+<li>They require <code>docker compose up</code> with healthy <code>mcp_cloud</code>, <code>worker_plan_database</code>, and <code>database_postgres</code> services.</li>
+<li>LLM tests require valid model configuration (e.g. baseline profile with at least one available model).</li>
+<li>Consider a pytest marker (e.g. <code>@pytest.mark.e2e</code> and <code>@pytest.mark.e2e_llm</code>) to separate no-LLM from LLM tests.</li>
+<li>Non-LLM tests could run in CI on every PR. LLM tests should be triggered manually or on a schedule.</li>
 </ul>
 
 
@@ -6210,9 +6027,6 @@
 
 
 
-
-  
-  
 
 
 
