@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry the Laptop Lobster">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/114-mcp-interface-feedback-stress-test/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/26-news-intake-and-opportunity-sensing-grid/">
+        <link rel="prev" href="../113-llm-error-traceability/">
       
       
-        <link rel="prev" href="../25-verification-incentives-governance-and-liability/">
-      
-      
-        <link rel="next" href="../27-multi-angle-topic-verification-engine/">
+        <link rel="next" href="../12-evidence-based-founder-execution-index/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>News Intake + Opportunity Sensing Grid for Autonomous Bidding - PlanExe Documentation</title>
+        <title>114 mcp interface feedback stress test - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="News Intake + Opportunity Sensing Grid for Autonomous Bidding - PlanExe Documentation" />
+<meta property="og:title" content="114 mcp interface feedback stress test - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/26-news-intake-and-opportunity-sensing-grid.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/114-mcp-interface-feedback-stress-test.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/26-news-intake-and-opportunity-sensing-grid/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/114-mcp-interface-feedback-stress-test/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="News Intake + Opportunity Sensing Grid for Autonomous Bidding - PlanExe Documentation" />
+<meta property="twitter:title" content="114 mcp interface feedback stress test - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/26-news-intake-and-opportunity-sensing-grid.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/114-mcp-interface-feedback-stress-test.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#news-intake-opportunity-sensing-grid-for-autonomous-bidding" class="md-skip">
+        <a href="#proposal-114-mcp-interface-issues-from-10-plan-agent-stress-test" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              News Intake + Opportunity Sensing Grid for Autonomous Bidding
+              114 mcp interface feedback stress test
             
           </span>
         </div>
@@ -2712,10 +2710,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../114-mcp-interface-feedback-stress-test/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    114 mcp interface feedback stress test
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2731,6 +2756,186 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i1-failed-state-conflates-user-stop-and-actual-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I1 — failed state conflates user-stop and actual failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i2-no-failure-diagnostics-in-plan_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I2 — No failure diagnostics in plan_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i3-no-plan-deletion-or-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I3 — No plan deletion or cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i4-no-idempotency-guard-on-plan_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I4 — No idempotency guard on plan_create
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i5-sse-events-carry-no-structured-progress-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I5 — SSE events carry no structured progress data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i6-download-url-expiry-15-minutes-is-too-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I6 — Download URL expiry (15 minutes) is too short
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i7-no-stalled-plan-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I7 — No stalled-plan detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i8-no-plan_wait-tool-for-agents-without-shell-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I8 — No plan_wait tool for agents without shell access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i9-prompt-iteration-has-no-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I9 — Prompt iteration has no memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cross-reference-with-existing-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cross-Reference with Existing Proposals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-overlap-with-proposal-70-mcp-interface-evaluation-and-roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Overlap with Proposal 70 (MCP Interface Evaluation and Roadmap)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-suggested-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Suggested Priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3230,44 +3435,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    26 news intake and opportunity sensing grid
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
         
   
   
@@ -3290,352 +3461,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Goals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#source-categories-to-monitor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Source Categories To Monitor
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opportunity-scoring-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Opportunity Scoring Model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ingestion-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ingestion Rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-generation-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prompt Generation Strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#human-in-the-loop-thresholds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Human-in-the-Loop Thresholds
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Scenarios
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Scenarios">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-denmark-government-project-announcement-time-boxed-bid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A) Denmark Government Project Announcement (Time-Boxed Bid)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-company-layoffs-indicate-distress-and-need-for-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B) Company Layoffs Indicate Distress and Need for Help
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-researcher-whitepaper-with-potential-productization" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        C) Researcher Whitepaper With Potential Productization
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-roadmap" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Roadmap
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Roadmap">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-ingestion-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Ingestion + Schema
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-scoring-prompting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Scoring + Prompting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-operational-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Operational Integration
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-source-registry-and-ingestion-backbone-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Source Registry and Ingestion Backbone (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-classification-enrichment-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Classification + Enrichment (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-opportunity-scoring-prompt-generation-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Opportunity Scoring + Prompt Generation (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-monitoring-qa-1-week" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Monitoring + QA (1 week)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5986,10 +5811,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#1-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        1. Context
       
     </span>
   </a>
@@ -5997,132 +5822,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why" class="md-nav__link">
+  <a href="#2-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why
+        2. Issues
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Goals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#source-categories-to-monitor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Source Categories To Monitor
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Schema
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opportunity-scoring-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Opportunity Scoring Model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ingestion-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ingestion Rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-generation-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prompt Generation Strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#human-in-the-loop-thresholds" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Human-in-the-Loop Thresholds
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-scenarios" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Scenarios
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Scenarios">
+    <nav class="md-nav" aria-label="2. Issues">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-denmark-government-project-announcement-time-boxed-bid" class="md-nav__link">
+  <a href="#i1-failed-state-conflates-user-stop-and-actual-failure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A) Denmark Government Project Announcement (Time-Boxed Bid)
+        I1 — failed state conflates user-stop and actual failure
       
     </span>
   </a>
@@ -6130,10 +5845,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#b-company-layoffs-indicate-distress-and-need-for-help" class="md-nav__link">
+  <a href="#i2-no-failure-diagnostics-in-plan_status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B) Company Layoffs Indicate Distress and Need for Help
+        I2 — No failure diagnostics in plan_status
       
     </span>
   </a>
@@ -6141,10 +5856,76 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#c-researcher-whitepaper-with-potential-productization" class="md-nav__link">
+  <a href="#i3-no-plan-deletion-or-cleanup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        C) Researcher Whitepaper With Potential Productization
+        I3 — No plan deletion or cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i4-no-idempotency-guard-on-plan_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I4 — No idempotency guard on plan_create
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i5-sse-events-carry-no-structured-progress-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I5 — SSE events carry no structured progress data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i6-download-url-expiry-15-minutes-is-too-short" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I6 — Download URL expiry (15 minutes) is too short
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i7-no-stalled-plan-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I7 — No stalled-plan detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i8-no-plan_wait-tool-for-agents-without-shell-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I8 — No plan_wait tool for agents without shell access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i9-prompt-iteration-has-no-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I9 — Prompt iteration has no memory
       
     </span>
   </a>
@@ -6157,10 +5938,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
+  <a href="#3-cross-reference-with-existing-proposals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Success Metrics
+        3. Cross-Reference with Existing Proposals
       
     </span>
   </a>
@@ -6168,10 +5949,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
+  <a href="#4-overlap-with-proposal-70-mcp-interface-evaluation-and-roadmap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Risks
+        4. Overlap with Proposal 70 (MCP Interface Evaluation and Roadmap)
       
     </span>
   </a>
@@ -6179,135 +5960,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation-roadmap" class="md-nav__link">
+  <a href="#5-suggested-priority" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation Roadmap
+        5. Suggested Priority
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Implementation Roadmap">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-ingestion-schema" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Ingestion + Schema
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-scoring-prompting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Scoring + Prompting
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-operational-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Operational Integration
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-source-registry-and-ingestion-backbone-23-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Source Registry and Ingestion Backbone (2–3 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-classification-enrichment-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Classification + Enrichment (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-opportunity-scoring-prompt-generation-2-weeks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Opportunity Scoring + Prompt Generation (2 weeks)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-d-monitoring-qa-1-week" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase D — Monitoring + QA (1 week)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-model-additions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data model additions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6331,255 +5990,305 @@
   
 
 
-<h1 id="news-intake-opportunity-sensing-grid-for-autonomous-bidding">News Intake + Opportunity Sensing Grid for Autonomous Bidding</h1>
-<h2 id="pitch">Pitch</h2>
-<p>Build a continuous news-intake grid that detects project opportunities (bridge, IT infrastructure, utilities, public procurement) and turns them into structured planning prompts at scale. The grid should convert weak signals into structured opportunities, rank them by urgency and bidability, and feed a planning engine with the right context for fast, defensible responses.</p>
-<h2 id="why">Why</h2>
-<p>If an autonomous AI organization generates ~1000 plans/day, the bottleneck is not planning - it is <strong>finding high-value opportunities early</strong> and classifying them correctly.</p>
-<h2 id="goals">Goals</h2>
-<ul>
-<li>Detect real opportunities before the average bidder.</li>
-<li>Convert noisy, unstructured announcements into a consistent <code>opportunity_event</code>.</li>
-<li>Score urgency, bidability, strategic fit, and evidence quality.</li>
-<li>Generate ready-to-plan prompts with no missing critical inputs.</li>
-<li>Maintain auditability so humans can trust automated detection.</li>
-</ul>
-<h2 id="proposal">Proposal</h2>
-<p>Implement a multi-source intake pipeline:</p>
-<ol>
-<li>Ingest signals from procurement feeds, industry media, government notices, and infrastructure newsletters.</li>
-<li>Normalize each item to an <code>opportunity_event</code> schema.</li>
-<li>Score urgency + bidability + strategic fit.</li>
-<li>Auto-generate candidate prompts for plan creation.</li>
-</ol>
-<h2 id="source-categories-to-monitor">Source Categories To Monitor</h2>
-<ul>
-<li>Public procurement portals (national + regional)</li>
-<li>Government transport/infrastructure bulletins</li>
-<li>Utility/telecom modernization notices</li>
-<li>Construction/engineering trade publications</li>
-<li>Press wires (major project announcements)</li>
-<li>Local/regional news for early non-centralized opportunities</li>
-</ul>
-<h2 id="system-architecture">System Architecture</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Signal Ingestion
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  -&gt; Feeds, portals, news
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  -&gt; Alerts, newsletters
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  -&gt; Press releases
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Parsing + Normalization
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  -&gt; Language detection
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  -&gt; Entity extraction
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  -&gt; Standardized schema
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Opportunity Scoring
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  -&gt; Urgency
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  -&gt; Bidability
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  -&gt; Strategic fit
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  -&gt; Evidence quality
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>Prompt Generator
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  -&gt; PlanExe prompt draft
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  -&gt; Missing info checklist
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  -&gt; Suggested next actions
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>Review + Dispatch
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  -&gt; Human-in-the-loop
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  -&gt; Auto-plan threshold
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  -&gt; CRM / bidding workflow
+<h1 id="proposal-114-mcp-interface-issues-from-10-plan-agent-stress-test">Proposal 114: MCP Interface Issues from 10-Plan Agent Stress Test</h1>
+<p><strong>Date:</strong> 2026-03-11
+<strong>Status:</strong> Proposal
+<strong>Source:</strong> Feedback from Claude (Opus 4.6) after a 10-plan stress-testing session operated through Claude Code CLI.
+<strong>Scope:</strong> MCP interface design, observability, and lifecycle management. Does not cover plan content quality or pipeline output improvements.</p>
+<hr />
+<h2 id="1-context">1. Context</h2>
+<p>A 10-plan stress test was conducted through Claude Code CLI using the PlanExe MCP interface.</p>
+<p>The testing surfaced concrete MCP interface friction points that affect agent operators — issues with state management, observability, lifecycle hygiene, and workflow ergonomics. This proposal catalogues the MCP-specific issues and maps them against existing proposals.</p>
+<hr />
+<h2 id="2-issues">2. Issues</h2>
+<h3 id="i1-failed-state-conflates-user-stop-and-actual-failure">I1 — <code>failed</code> state conflates user-stop and actual failure</h3>
+<p><strong>Problem:</strong> When <code>plan_stop</code> is called, the plan transitions to <code>failed</code>. When a worker crashes, it also transitions to <code>failed</code>. The agent operator cannot distinguish between:
+- User-initiated stop (nothing went wrong)
+- Actual failure (network drop, model error, worker crash)</p>
+<p>This matters because the correct response differs: user stop suggests <code>plan_resume</code>; actual failure may need <code>plan_retry</code> or investigation.</p>
+<p><strong>Overlap:</strong> Proposal 87 (plan_resume) acknowledges this in §4 ("A future improvement could introduce a distinct <code>stopped</code> state") but defers it as out of scope.</p>
+<p><strong>Options:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Breaking change?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. New <code>stopped</code> state</td>
+<td><code>plan_stop</code> → <code>stopped</code>, worker crash → <code>failed</code></td>
+<td>Yes (new enum value in API responses)</td>
+</tr>
+<tr>
+<td>B. <code>stop_reason</code> field</td>
+<td>Keep <code>failed</code> but add <code>stop_reason</code>: <code>"user_requested"</code>, <code>"worker_crash"</code>, <code>"timeout"</code>, <code>"model_error"</code>, <code>null</code></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Option B is less disruptive and can be added to <code>plan_status</code> without changing state enum values.</p>
+<p><strong>Affected files:</strong> <code>mcp_cloud/db_queries.py</code>, <code>mcp_cloud/handlers.py</code> (plan_status response), DB model (new column or use existing <code>parameters</code> JSONB).</p>
+<hr />
+<h3 id="i2-no-failure-diagnostics-in-plan_status">I2 — No failure diagnostics in <code>plan_status</code></h3>
+<p><strong>Priority: High — identified as the single biggest observability gap.</strong></p>
+<p><strong>Problem:</strong> When a plan fails, <code>plan_status</code> returns <code>state: "failed"</code> with no <code>failure_reason</code>, <code>last_error</code>, or <code>failed_step</code> field. The agent can only tell the user "it failed" without explaining why.</p>
+<p>During the stress test, Plan 1 (20f1cfac) stalled at 5.5% with zero diagnostic information. The operator had no way to determine if it was a content refusal, a model error, or a worker crash.</p>
+<p><strong>Overlap:</strong> Proposal 113 (LLM Error Traceability) preserves errors in usage metrics logs but does not surface them in <code>plan_status</code> responses to the MCP consumer.</p>
+<p><strong>Proposed addition to <code>plan_status</code> response (on failure):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;failed&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;failure_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;model_error&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;failed_step&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;016-expert_criticism&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;last_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter-gemini-2.0-flash-001 returned invalid_json&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="core-schema">Core Schema</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;event_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bridge|it_infra|energy|...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;estimated_budget&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;deadline_hint&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;procurement_stage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pre_notice|rfp|tender|award&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;buyer_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;government|sovereign|enterprise|ngo&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;contract_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fixed|cost_plus|ppp|concession&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;da|en|pt|...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="nt">&quot;evidence_quality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;weak|medium|strong&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nt">&quot;source_freshness_hours&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nt">&quot;signals&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;...&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="nt">&quot;raw_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">}</span>
+<p><strong>Implementation path:</strong> The worker already logs errors internally. When transitioning to <code>failed</code>, write <code>failure_reason</code>, <code>failed_step</code>, and <code>last_error</code> to the plan's DB record (e.g. in the <code>parameters</code> JSONB column or new dedicated columns). <code>plan_status</code> handler surfaces these fields when <code>state == "failed"</code>.</p>
+<p><strong>Affected files:</strong> <code>worker_plan_database/app.py</code> (error capture on failure), <code>mcp_cloud/db_queries.py</code> (store failure info), <code>mcp_cloud/handlers.py</code> (include in plan_status response).</p>
+<hr />
+<h3 id="i3-no-plan-deletion-or-cleanup">I3 — No plan deletion or cleanup</h3>
+<p><strong>Problem:</strong> Stopped and failed plans persist in <code>plan_list</code> indefinitely. After 10 plans, the list becomes noisy. There is no way to clean up test runs, abandoned plans, or experiments.</p>
+<p><strong>Proposed solutions (pick one or both):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plan_delete</code></td>
+<td>Permanently remove a plan from the user's list. Only allowed for terminal states (<code>failed</code>, <code>completed</code>).</td>
+</tr>
+<tr>
+<td><code>plan_archive</code></td>
+<td>Soft-delete: plan is hidden from <code>plan_list</code> but remains in DB for auditing.</td>
+</tr>
+</tbody>
+</table>
+<p><code>plan_archive</code> is safer for a billing system where plan records may need to be retained.</p>
+<p><strong>Affected files:</strong> <code>mcp_cloud/db_queries.py</code>, <code>mcp_cloud/handlers.py</code>, <code>mcp_cloud/schemas.py</code>, <code>mcp_cloud/tool_models.py</code>.</p>
+<hr />
+<h3 id="i4-no-idempotency-guard-on-plan_create">I4 — No idempotency guard on <code>plan_create</code></h3>
+<p><strong>Problem:</strong> If the user double-clicks or the agent accidentally submits twice, two identical plans are created. Each <code>plan_create</code> call generates a new <code>plan_id</code> with no server-side deduplication.</p>
+<p><strong>Proposed fix:</strong> Add an optional <code>request_id</code> (client-generated UUID) parameter to <code>plan_create</code>. The server checks if a plan with the same <code>request_id</code> already exists for this user:
+- If yes: return the existing <code>plan_id</code> (idempotent response)
+- If no: create a new plan</p>
+<p>This is a standard idempotency pattern (Stripe, AWS, etc.) and does not change behavior for clients that omit <code>request_id</code>.</p>
+<p><strong>Affected files:</strong> <code>mcp_cloud/tool_models.py</code> (new optional field), <code>mcp_cloud/db_queries.py</code> (lookup by request_id before insert), DB model (new indexed column).</p>
+<hr />
+<h3 id="i5-sse-events-carry-no-structured-progress-data">I5 — SSE events carry no structured progress data</h3>
+<p><strong>Problem:</strong> The SSE stream works as a completion detector but events are opaque — no <code>step_name</code> or <code>progress_percentage</code> in event payloads. To get progress, the agent must poll <code>plan_status</code> separately, making SSE useful only as a "done" signal.</p>
+<p><strong>Overlap:</strong> Proposal 70 §5.1 (SSE progress streaming) is implemented but events only trigger on state/progress changes without rich payload.</p>
+<p><strong>Proposed enrichment of SSE <code>status</code> events:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>event: status
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>data: {&quot;state&quot;:&quot;processing&quot;,&quot;progress_percentage&quot;:42.0,&quot;current_step&quot;:&quot;016-expert_criticism&quot;,&quot;steps_completed&quot;:16,&quot;steps_total&quot;:38}
 </code></pre></div>
-<h2 id="opportunity-scoring-model">Opportunity Scoring Model</h2>
-<p>The grid should compute a composite <code>OpportunityScore</code> for each event, making sure each sub-score is explainable:</p>
-<ul>
-<li><strong>Urgency (0-100):</strong> deadline proximity, scarcity of time to respond, and stage (RFP vs pre-notice).</li>
-<li><strong>Bidability (0-100):</strong> contract clarity, budget signal, likely fit to internal capabilities, and compliance feasibility.</li>
-<li><strong>Strategic Fit (0-100):</strong> overlap with thesis, geography, portfolio gaps, and margin potential.</li>
-<li><strong>Evidence Quality (0-100):</strong> source credibility, corroboration, and clarity of requirements.</li>
-</ul>
-<p><strong>Example composite formula:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>OpportunityScore =
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  0.35*Urgency +
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  0.30*Bidability +
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  0.25*StrategicFit +
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  0.10*EvidenceQuality
+<p>This would eliminate the need for <code>plan_status</code> polling entirely when SSE is available.</p>
+<p><strong>Affected files:</strong> <code>mcp_cloud/sse.py</code> (enrich event payloads).</p>
+<hr />
+<h3 id="i6-download-url-expiry-15-minutes-is-too-short">I6 — Download URL expiry (15 minutes) is too short</h3>
+<p><strong>Problem:</strong> When a user takes time reviewing results before downloading, the signed download URL expires silently. Calling <code>plan_file_info</code> again works, but the 15-minute window creates unnecessary friction.</p>
+<p><strong>Proposed fix:</strong> Extend default TTL from 15 to 30–60 minutes. Make it configurable via <code>PLANEXE_DOWNLOAD_TOKEN_TTL_SECONDS</code> environment variable.</p>
+<p><strong>Affected files:</strong> <code>mcp_cloud/download_tokens.py</code> (change default TTL constant, add env var override).</p>
+<hr />
+<h3 id="i7-no-stalled-plan-detection">I7 — No stalled-plan detection</h3>
+<p><strong>Problem:</strong> Plan 1 (20f1cfac) stayed at 5.5% for multiple status checks with no indication of whether it was still working, stuck, or had silently failed. There is no <code>stalled_since</code> timestamp or heartbeat indicator in <code>plan_status</code>.</p>
+<p><strong>Overlap:</strong> Proposal 87 §8 proposes <code>current_task</code> and <code>last_llm_call_at</code> fields — these would partially address this, but there is no explicit stall detection.</p>
+<p><strong>Proposed additions to <code>plan_status</code>:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>last_progress_at</code></td>
+<td>ISO 8601 timestamp of the last progress update. Enables the agent to compute time-since-last-progress and decide whether to wait, resume, or retry.</td>
+</tr>
+<tr>
+<td><code>last_llm_call_at</code></td>
+<td>ISO 8601 timestamp of the most recent LLM call. A gap &gt; 5 minutes with no progress change is a strong stall signal.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Affected files:</strong> <code>worker_plan_database/app.py</code> (write timestamps on progress), DB model (new timestamp columns), <code>mcp_cloud/handlers.py</code> (include in response).</p>
+<hr />
+<h3 id="i8-no-plan_wait-tool-for-agents-without-shell-access">I8 — No <code>plan_wait</code> tool for agents without shell access</h3>
+<p><strong>Problem:</strong> The recommended SSE monitoring pattern (<code>curl -N &lt;sse_url&gt;</code>) requires Bash tool access. Agents running in pure MCP client environments (no shell) can only poll <code>plan_status</code>. A blocking <code>plan_wait</code> tool would let these agents simply wait for completion.</p>
+<p><strong>Proposed tool:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>plan_wait(plan_id, timeout_seconds=1200): Blocks until the plan reaches a terminal state
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>(completed, failed) or the timeout expires. Returns the final plan_status response.
 </code></pre></div>
-<p>Also compute a <strong>Missing Info Penalty</strong> that flags items requiring clarification before a plan can be generated.</p>
-<h2 id="ingestion-rules">Ingestion Rules</h2>
-<ul>
-<li>Prefer authoritative sources (procurement portals, official notices) over reprints.</li>
-<li>Apply deduplication using <code>event_id</code> + fuzzy similarity on title/location/budget.</li>
-<li>Track <code>source_freshness_hours</code> to avoid stale opportunities.</li>
-<li>Capture original text for auditability.</li>
-</ul>
-<h2 id="prompt-generation-strategy">Prompt Generation Strategy</h2>
-<p>For each qualified event:</p>
-<ol>
-<li>Generate a <strong>PlanExe prompt</strong> with minimal rework needed.</li>
-<li>Attach a <strong>missing-info checklist</strong> with deadlines and dependencies.</li>
-<li>Attach <strong>recommended next actions</strong> (e.g., request tender docs, schedule site visit).</li>
-</ol>
-<p>The prompt should include structured facts and explicit unknowns. This prevents hallucinated assumptions from contaminating the plan.</p>
-<h2 id="human-in-the-loop-thresholds">Human-in-the-Loop Thresholds</h2>
-<p>Define three levels:</p>
-<ul>
-<li><strong>Auto-Plan:</strong> high score + strong evidence + clear requirements.</li>
-<li><strong>Review Required:</strong> medium score or incomplete data.</li>
-<li><strong>Discard:</strong> low score or weak evidence signal.</li>
-</ul>
-<p>This allows the system to scale while avoiding wasted planning cycles.</p>
-<h2 id="example-scenarios">Example Scenarios</h2>
-<h3 id="a-denmark-government-project-announcement-time-boxed-bid">A) Denmark Government Project Announcement (Time-Boxed Bid)</h3>
-<p><strong>Signal:</strong> Danish government announces a cross-border infrastructure project. Bidders have <code>X</code> weeks to respond.</p>
-<p><strong>Sensing grid outcome:</strong></p>
-<ul>
-<li>Detects an official notice (authoritative source).</li>
-<li>Assigns high urgency due to strict deadline.</li>
-<li>Identifies buyer as government with procurement compliance requirements.</li>
-<li>Generates a PlanExe prompt with a procurement checklist and translation note.</li>
-</ul>
-<p><strong>Prompt output excerpt (conceptual):</strong></p>
-<ul>
-<li>Domain: transport infrastructure</li>
-<li>Region: Denmark + neighboring country</li>
-<li>Deadline: <code>X weeks</code> from notice date</li>
-<li>Contract: likely PPP or fixed-price</li>
-<li>Missing info: tender docs, pre-qualification criteria, environmental review status</li>
-</ul>
-<h3 id="b-company-layoffs-indicate-distress-and-need-for-help">B) Company Layoffs Indicate Distress and Need for Help</h3>
-<p><strong>Signal:</strong> News reports a company has laid off a large percentage of staff.</p>
-<p><strong>Sensing grid outcome:</strong></p>
-<ul>
-<li>Detects layoffs + revenue pressure + restructuring language.</li>
-<li>Flags opportunity for turnaround services or partnership.</li>
-<li>Classifies as enterprise-private sector (non-procurement).</li>
-<li>Assigns medium urgency (short window to engage before competitors).</li>
-</ul>
-<p><strong>Prompt output excerpt (conceptual):</strong></p>
-<ul>
-<li>Domain: operational turnaround / cost reduction</li>
-<li>Region: company HQ + key operational sites</li>
-<li>Evidence: news sources only (weak to medium)</li>
-<li>Missing info: financials, contractability, decision makers</li>
-</ul>
-<h3 id="c-researcher-whitepaper-with-potential-productization">C) Researcher Whitepaper With Potential Productization</h3>
-<p><strong>Signal:</strong> A researcher publishes a whitepaper and invites collaboration.</p>
-<p><strong>Sensing grid outcome:</strong></p>
-<ul>
-<li>Classifies as early-stage, pre-commercial.</li>
-<li>Scores strategic fit based on domain match and novelty.</li>
-<li>Low urgency but high potential value.</li>
-<li>Generates a PlanExe prompt focused on proof-of-concept and commercialization.</li>
-</ul>
-<p><strong>Prompt output excerpt (conceptual):</strong></p>
-<ul>
-<li>Domain: deep tech / research commercialization</li>
-<li>Region: researcher's institution</li>
-<li>Evidence: paper + citations (medium evidence)</li>
-<li>Missing info: IP ownership, licensing terms, target market</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>Opportunity recall vs known project announcements</li>
-<li>Time-to-detection after first public signal</li>
-<li>% opportunities converted to high-quality planning prompts</li>
-<li>Precision@N: % of top-ranked items that lead to viable plans</li>
-<li>Time saved per bid cycle vs manual sourcing</li>
-<li>Conversion rate from opportunity to funded project</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li><strong>False positives:</strong> wasted planning cycles. Mitigate with evidence scoring and review gates.</li>
-<li><strong>False negatives:</strong> missed high-value opportunities. Mitigate by widening sources and alert thresholds.</li>
-<li><strong>Source bias:</strong> over-reliance on English or major outlets. Mitigate with multilingual ingestion.</li>
-<li><strong>Gaming or PR spin:</strong> misleading announcements. Mitigate via cross-source verification.</li>
-</ul>
-<h2 id="implementation-roadmap">Implementation Roadmap</h2>
-<h3 id="phase-1-ingestion-schema">Phase 1: Ingestion + Schema</h3>
-<ul>
-<li>Build connectors for procurement feeds and major news sources.</li>
-<li>Implement entity extraction and schema normalization.</li>
-<li>Basic scoring heuristics and deduplication.</li>
-</ul>
-<h3 id="phase-2-scoring-prompting">Phase 2: Scoring + Prompting</h3>
-<ul>
-<li>Train scoring logic on historical outcomes.</li>
-<li>Add missing-info checklist generation.</li>
-<li>Integrate with PlanExe prompt creation.</li>
-</ul>
-<h3 id="phase-3-operational-integration">Phase 3: Operational Integration</h3>
-<ul>
-<li>Human-in-the-loop review interface.</li>
-<li>CRM and bidding workflow dispatch.</li>
-<li>Feedback loop from bid outcomes to scoring.</li>
-</ul>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-source-registry-and-ingestion-backbone-23-weeks">Phase A — Source Registry and Ingestion Backbone (2–3 weeks)</h3>
-<ol>
-<li>Build source registry with trust tiers and refresh cadences.</li>
-<li>Implement ingestion adapters (RSS/API/web-scrape where allowed).</li>
-<li>Normalize raw events into <code>opportunity_event</code> schema.</li>
-</ol>
-<h3 id="phase-b-classification-enrichment-2-weeks">Phase B — Classification + Enrichment (2 weeks)</h3>
-<ol>
-<li>Classify domain, region, and project-type using hybrid rules + LLM.</li>
-<li>Enrich with estimated budget/deadline/issuer confidence signals.</li>
-<li>Deduplicate multi-source events into canonical opportunity records.</li>
-</ol>
-<h3 id="phase-c-opportunity-scoring-prompt-generation-2-weeks">Phase C — Opportunity Scoring + Prompt Generation (2 weeks)</h3>
-<ol>
-<li>Implement scoring model (urgency, bidability, strategic fit).</li>
-<li>Generate planning prompts from top opportunities.</li>
-<li>Add queue policy for daily volume and domain diversity.</li>
-</ol>
-<h3 id="phase-d-monitoring-qa-1-week">Phase D — Monitoring + QA (1 week)</h3>
-<ol>
-<li>Add source health dashboard and ingestion latency alerts.</li>
-<li>Add false-positive feedback loop from downstream verification outcomes.</li>
-<li>Add replay tooling for ingestion incidents.</li>
-</ol>
-<h3 id="data-model-additions">Data model additions</h3>
-<ul>
-<li><code>news_sources</code></li>
-<li><code>opportunity_events_raw</code></li>
-<li><code>opportunity_events_canonical</code></li>
-<li><code>opportunity_scores</code></li>
-<li><code>opportunity_prompt_queue</code></li>
-</ul>
-<h3 id="validation-checklist">Validation checklist</h3>
-<ul>
-<li>Detection latency vs known announcements</li>
-<li>Dedup precision/recall</li>
-<li>Prompt conversion rate to useful plans</li>
-<li>Source reliability drift monitoring</li>
-</ul>
+<p><strong>Implementation:</strong> Server-side long-poll using the existing SSE infrastructure. The handler subscribes to the plan's state changes and returns when terminal or timeout.</p>
+<p><strong>Consideration:</strong> Long-running HTTP requests may conflict with proxy/load-balancer timeouts. Default timeout should be ≤ 20 minutes. May need to be implemented as repeated short polls on the server side with a single response.</p>
+<p><strong>Affected files:</strong> <code>mcp_cloud/handlers.py</code>, <code>mcp_cloud/schemas.py</code>, <code>mcp_cloud/tool_models.py</code>.</p>
+<hr />
+<h3 id="i9-prompt-iteration-has-no-memory">I9 — Prompt iteration has no memory</h3>
+<p><strong>Problem:</strong> Each <code>plan_create</code> is independent. When iterating on a prompt (e.g. refining "The Game" movie remake across 4 variations), there is no way to link plans or diff their prompts. The agent must manually track the relationship between plans.</p>
+<p><strong>Proposed fix:</strong> Add an optional <code>parent_plan_id</code> parameter to <code>plan_create</code>. When set:
+- The new plan is linked to its parent in the DB
+- <code>plan_list</code> can optionally filter by lineage
+- <code>plan_status</code> includes <code>parent_plan_id</code> in the response</p>
+<p>This enables prompt iteration tracking without changing existing behavior for plans created without a parent.</p>
+<p><strong>Affected files:</strong> <code>mcp_cloud/tool_models.py</code> (new optional field), <code>mcp_cloud/db_queries.py</code> (store parent reference), DB model (new nullable column).</p>
+<hr />
+<h2 id="3-cross-reference-with-existing-proposals">3. Cross-Reference with Existing Proposals</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Existing Proposal</th>
+<th>Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I1 (stopped vs failed)</td>
+<td>87 §4 (deferred)</td>
+<td>Needs its own decision — Option A vs B</td>
+</tr>
+<tr>
+<td>I2 (failure diagnostics)</td>
+<td>113 (logs only)</td>
+<td>Not surfaced to MCP consumer</td>
+</tr>
+<tr>
+<td>I3 (plan_delete)</td>
+<td>None</td>
+<td>New</td>
+</tr>
+<tr>
+<td>I4 (idempotency)</td>
+<td>None</td>
+<td>New</td>
+</tr>
+<tr>
+<td>I5 (rich SSE events)</td>
+<td>70 §5.1 (basic SSE done)</td>
+<td>Events lack structured data</td>
+</tr>
+<tr>
+<td>I6 (download TTL)</td>
+<td>70 §4 (tokens done)</td>
+<td>TTL too short, not configurable</td>
+</tr>
+<tr>
+<td>I7 (stall detection)</td>
+<td>87 §8 (partial)</td>
+<td>No explicit stall timestamps</td>
+</tr>
+<tr>
+<td>I8 (plan_wait)</td>
+<td>None</td>
+<td>New</td>
+</tr>
+<tr>
+<td>I9 (prompt iteration)</td>
+<td>None</td>
+<td>New</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-overlap-with-proposal-70-mcp-interface-evaluation-and-roadmap">4. Overlap with Proposal 70 (MCP Interface Evaluation and Roadmap)</h2>
+<p>Several items here refine or extend issues already tracked in Proposal 70's checklist:</p>
+<table>
+<thead>
+<tr>
+<th>This Proposal</th>
+<th>Proposal 70 Item</th>
+<th>Relationship</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I2 (failure diagnostics)</td>
+<td>70 §5.6 (pipeline stage names)</td>
+<td>Complementary — 70 focuses on progress UX, I2 focuses on failure UX</td>
+</tr>
+<tr>
+<td>I5 (rich SSE)</td>
+<td>70 §5.1 (SSE implemented)</td>
+<td>Extension — SSE works but events are thin</td>
+</tr>
+<tr>
+<td>I6 (download TTL)</td>
+<td>70 (signed tokens done)</td>
+<td>Refinement — increase TTL</td>
+</tr>
+</tbody>
+</table>
+<p>If accepted, I1–I4 and I7–I9 should be added to Proposal 70's quick-win checklist as new line items.</p>
+<hr />
+<h2 id="5-suggested-priority">5. Suggested Priority</h2>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Issues</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>I2 (failure diagnostics)</td>
+<td>Biggest observability gap. Agent cannot help users debug failures without this.</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>I1 (stopped vs failed)</td>
+<td>Small change (Option B), high diagnostic value. Prerequisite for good plan_resume UX.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>I7 (stall detection)</td>
+<td>Prevents agents from waiting indefinitely on stuck plans.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>I6 (download TTL)</td>
+<td>Low effort, reduces friction.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>I5 (rich SSE events)</td>
+<td>Eliminates polling for SSE-capable clients.</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>I3 (plan_delete)</td>
+<td>Hygiene for multi-plan sessions.</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>I4 (idempotency)</td>
+<td>Defensive, important for production but not urgent.</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>I8 (plan_wait)</td>
+<td>Nice-to-have for shell-less agents.</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>I9 (prompt iteration)</td>
+<td>Nice-to-have for iteration workflows.</td>
+</tr>
+</tbody>
+</table>
 
 
 
 
 
 
-
-  
-  
 
 
 
