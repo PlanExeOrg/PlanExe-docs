@@ -5839,12 +5839,12 @@
 <tr>
 <td><strong>87</strong></td>
 <td>Plan Resume MCP Tool</td>
-<td>Agents recover from failures without restarting the full pipeline. Luigi already supports resume — needs DB flag + worker logic</td>
+<td>✅ <strong>Implemented</strong>. <code>plan_resume</code> MCP tool lets agents recover from failures without restarting the full pipeline. Includes pipeline version checking and zip snapshot restore</td>
 </tr>
 <tr>
 <td><strong>109</strong></td>
 <td>LLM Executor Retry Improvements</td>
-<td>Structured retry logic for transient failures. Agents shouldn't need to implement their own retry wrappers</td>
+<td>✅ <strong>Implemented (PR #220)</strong>. <code>RetryConfig</code> with exponential backoff for transient errors (rate limits, timeouts, connection failures). <code>is_transient_error()</code> classifies exceptions; permanent errors fall through to next model immediately. Agents no longer need their own retry wrappers</td>
 </tr>
 <tr>
 <td><strong>102</strong></td>
@@ -6004,8 +6004,8 @@
 <hr />
 <h2 id="recommended-sequence">Recommended Sequence</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Phase 1: Reliable foundation         (now)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ├─ #87  Plan resume
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├─ #109 Retry improvements
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ├─ #87  Plan resume ✅
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├─ #109 Retry improvements ✅ (PR #220)
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├─ #102 Error-feedback retries
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  ├─ #110 Usage metrics ✅ (PR #219, #236, #237)
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ├─ #113 Error traceability ✅ (PR #237)

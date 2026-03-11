@@ -2609,33 +2609,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problems-with-the-current-approach" class="md-nav__link">
+  <a href="#implementation-option-3-two-tier-resilience" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problems with the Current Approach
+        Implementation (Option 3: Two-tier resilience)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Improvements
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Proposed Improvements">
+    <nav class="md-nav" aria-label="Implementation (Option 3: Two-tier resilience)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#option-1-config-driven-retry-in-llm_executorpy" class="md-nav__link">
+  <a href="#tier-1-llmexecutor-handles-transient-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 1: Config-driven retry in llm_executor.py
+        Tier 1 — LLMExecutor handles transient errors
       
     </span>
   </a>
@@ -2643,10 +2632,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-2-luigi-resume-as-the-resilience-mechanism" class="md-nav__link">
+  <a href="#tier-2-luigi-resume-handles-task-level-failures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 2: Luigi resume as the resilience mechanism
+        Tier 2 — Luigi resume handles task-level failures
       
     </span>
   </a>
@@ -2654,10 +2643,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-3-two-tier-resilience-recommended" class="md-nav__link">
+  <a href="#integration-with-related-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 3: Two-tier resilience (recommended)
+        Integration with related features
       
     </span>
   </a>
@@ -2681,10 +2670,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-next-steps" class="md-nav__link">
+  <a href="#future-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended Next Steps
+        Future Work
       
     </span>
   </a>
@@ -5739,33 +5728,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problems-with-the-current-approach" class="md-nav__link">
+  <a href="#implementation-option-3-two-tier-resilience" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problems with the Current Approach
+        Implementation (Option 3: Two-tier resilience)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Improvements
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Proposed Improvements">
+    <nav class="md-nav" aria-label="Implementation (Option 3: Two-tier resilience)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#option-1-config-driven-retry-in-llm_executorpy" class="md-nav__link">
+  <a href="#tier-1-llmexecutor-handles-transient-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 1: Config-driven retry in llm_executor.py
+        Tier 1 — LLMExecutor handles transient errors
       
     </span>
   </a>
@@ -5773,10 +5751,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-2-luigi-resume-as-the-resilience-mechanism" class="md-nav__link">
+  <a href="#tier-2-luigi-resume-handles-task-level-failures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 2: Luigi resume as the resilience mechanism
+        Tier 2 — Luigi resume handles task-level failures
       
     </span>
   </a>
@@ -5784,10 +5762,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-3-two-tier-resilience-recommended" class="md-nav__link">
+  <a href="#integration-with-related-features" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 3: Two-tier resilience (recommended)
+        Integration with related features
       
     </span>
   </a>
@@ -5811,10 +5789,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-next-steps" class="md-nav__link">
+  <a href="#future-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended Next Steps
+        Future Work
       
     </span>
   </a>
@@ -5853,88 +5831,56 @@
 
 
 <h1 id="proposal-llmexecutor-retry-resilience-improvements">Proposal: LLMExecutor Retry &amp; Resilience Improvements</h1>
-<p><strong>Status:</strong> Draft<br />
-<strong>Author:</strong> Bubba + Egon<br />
-<strong>Related PRs:</strong> #198 (DeduplicateLeversTask per-lever decomposition)</p>
+<p><strong>Status:</strong> Implemented
+<strong>Author:</strong> Bubba + Egon
+<strong>Related PRs:</strong> #198 (DeduplicateLeversTask per-lever decomposition), #220 (implementation)</p>
 <hr />
 <h2 id="background">Background</h2>
-<p><code>llm_executor.py</code> currently implements a fallback chain: when one LLM fails, it tries the next configured LLM in sequence. This handles model-level failures well.</p>
-<p>Several tasks (e.g., <code>DeduplicateLeversTask</code>, <code>ReviewPlanTask</code>) have added their own local retry loops on top of <code>llm_executor.run()</code>. This creates duplicated, inconsistent retry logic scattered across task files.</p>
+<p><code>llm_executor.py</code> implements a fallback chain: when one LLM fails, it tries the next configured LLM in sequence. This handles model-level failures well.</p>
+<p>Several tasks (e.g., <code>DeduplicateLeversTask</code>, <code>ReviewPlanTask</code>) had added their own local retry loops on top of <code>llm_executor.run()</code>, creating duplicated, inconsistent retry logic scattered across task files.</p>
 <p>neoneye's design direction (from PR #198 review): <strong>retry logic belongs in <code>llm_executor.py</code>, not in individual tasks.</strong></p>
 <hr />
-<h2 id="problems-with-the-current-approach">Problems with the Current Approach</h2>
-<ol>
-<li><strong>Duplicated retry logic</strong> — Each task that needs retries implements its own loop with its own backoff, attempt counts, and error handling.</li>
-<li><strong>Hardcoded attempt counts</strong> — <code>max_retries = 3</code> appears in task files, not configurable without code changes.</li>
-<li><strong>Inconsistent error handling</strong> — Some tasks retry on all exceptions, others on specific ones. No shared policy.</li>
-<li><strong>No coordination with Luigi resume</strong> — If a task fails mid-pipeline, Luigi can resume from the last successful task. But per-call retries inside a task don't benefit from Luigi's resume mechanism.</li>
-</ol>
-<hr />
-<h2 id="proposed-improvements">Proposed Improvements</h2>
-<h3 id="option-1-config-driven-retry-in-llm_executorpy">Option 1: Config-driven retry in <code>llm_executor.py</code></h3>
-<p>Add retry configuration to the LLM config file (e.g., <code>llm_config/custom.json</code>):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;retry&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;max_attempts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;backoff_seconds&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;retry_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rate_limit&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;connection_error&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+<h2 id="implementation-option-3-two-tier-resilience">Implementation (Option 3: Two-tier resilience)</h2>
+<p>PR #220 implemented the recommended two-tier approach.</p>
+<h3 id="tier-1-llmexecutor-handles-transient-errors">Tier 1 — <code>LLMExecutor</code> handles transient errors</h3>
+<p><code>RetryConfig</code> dataclass controls per-model retry behaviour:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">RetryConfig</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">max_retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span>          <span class="c1"># retries per model (0 = no retries)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">base_delay</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span>       <span class="c1"># seconds</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">max_delay</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">30.0</span>       <span class="c1"># seconds</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">backoff_multiplier</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.0</span>
 </code></pre></div>
-<p><code>LLMExecutor.run()</code> reads this config and wraps each model attempt with the specified retry policy. Tasks call <code>llm_executor.run()</code> once — no local retry loops needed.</p>
-<p><strong>Pros:</strong> Centralized, configurable, consistent.<br />
-<strong>Cons:</strong> Requires distinguishing retriable errors (transient) from non-retriable ones (schema failure, bad prompt). Schema failures should NOT be retried blindly — they need a different prompt/schema, not the same call again.</p>
-<hr />
-<h3 id="option-2-luigi-resume-as-the-resilience-mechanism">Option 2: Luigi resume as the resilience mechanism</h3>
-<p>Instead of retrying individual LLM calls, lean into Luigi's existing task-level resume:</p>
+<p><code>is_transient_error()</code> classifies exceptions by matching error strings against known transient patterns (rate limits, timeouts, connection errors, 5xx status codes). Only transient errors trigger retries — permanent errors (auth failures, validation errors, schema mismatches) immediately fall through to the next model.</p>
+<p>The retry loop uses exponential backoff: 1s, 2s, 4s, ... capped at <code>max_delay</code>.</p>
+<h3 id="tier-2-luigi-resume-handles-task-level-failures">Tier 2 — Luigi resume handles task-level failures</h3>
+<p>If all LLM attempts and retries are exhausted, the task raises and Luigi marks it failed. Re-running the pipeline resumes from the failed task. The operator can swap model config between runs to address systematic failures.</p>
+<h3 id="integration-with-related-features">Integration with related features</h3>
 <ul>
-<li>If a task fails, Luigi marks it failed and stops.</li>
-<li>Re-running the pipeline resumes from the last successful task (Luigi checks output file existence).</li>
-<li>The failed task retries from scratch with the same or updated config.</li>
+<li><strong>LLMChatError (#237):</strong> Tasks wrap LLM exceptions in <code>LLMChatError</code> with unique <code>error_id</code> for traceability. <code>is_transient_error()</code> works through the wrapper because <code>LLMChatError.__str__()</code> preserves the original cause text.</li>
+<li><strong>Usage metrics (#110):</strong> Failed attempts are recorded to <code>usage_metrics.jsonl</code> with error classification and <code>error_id</code>. Successful attempts are recorded by <code>TrackActivity</code> instrumentation.</li>
+<li><strong>Pipeline stop:</strong> <code>PipelineStopRequested</code> is never retried — it propagates immediately.</li>
 </ul>
-<p>This is already documented in MEMORY.md ("Luigi Resume Pattern") and used in practice.</p>
-<p><strong>How to make this work better:</strong>
-- Ensure all tasks write partial progress to output files where possible (already true for most tasks).
-- Add a <code>--retry-failed</code> flag to the pipeline runner that re-runs only failed tasks.
-- Tasks should be idempotent: same input + same config = same output.</p>
-<p><strong>Pros:</strong> No new retry code. Uses battle-tested Luigi infrastructure. Failures are explicit and logged.<br />
-<strong>Cons:</strong> Each retry requires a full pipeline re-run invocation. Not suitable for per-call transient errors (network blip, brief rate limit).</p>
-<hr />
-<h3 id="option-3-two-tier-resilience-recommended">Option 3: Two-tier resilience (recommended)</h3>
-<p>Combine both approaches:</p>
-<p><strong>Tier 1 — <code>llm_executor.py</code> handles transient errors:</strong>
-- Short retry (2–3 attempts) for network/timeout errors only.
-- Configurable via LLM config file.
-- Does NOT retry schema/validation failures.</p>
-<p><strong>Tier 2 — Luigi resume handles task-level failures:</strong>
-- If all LLM attempts fail (schema error, model unavailable), task raises and Luigi marks it failed.
-- Re-run pipeline → Luigi resumes from failed task.
-- Operator can swap model config between runs to address systematic failures.</p>
-<p><strong>Tasks themselves:</strong> No local retry loops. One <code>llm_executor.run()</code> call per operation. Compact-history fallback (as in <code>DeduplicateLeversTask</code>) is task-specific logic for context management, not a retry mechanism.</p>
 <hr />
 <h2 id="context-overflow-handling-separate-from-retries">Context Overflow Handling (separate from retries)</h2>
-<p><code>DeduplicateLeversTask</code> introduced compact-history fallback for context window overflow. This is not a retry — it's a prompt restructuring. The distinction matters:</p>
+<p><code>DeduplicateLeversTask</code> uses compact-history fallback for context window overflow. This is not a retry — it's a prompt restructuring. The distinction matters:</p>
 <ul>
-<li><strong>Retry:</strong> Same prompt, same schema, try again. Appropriate for transient errors.</li>
-<li><strong>Prompt restructuring:</strong> Different prompt (compacted context), same schema. Appropriate for context overflow.</li>
+<li><strong>Retry:</strong> Same prompt, same schema, try again. Appropriate for transient errors. Handled by <code>LLMExecutor</code>.</li>
+<li><strong>Prompt restructuring:</strong> Different prompt (compacted context), same schema. Appropriate for context overflow. Stays in the task.</li>
 </ul>
-<p>This distinction should be preserved in any future <code>llm_executor</code> design. Prompt restructuring logic stays in the task; transient error retries move to <code>llm_executor</code>.</p>
 <hr />
-<h2 id="recommended-next-steps">Recommended Next Steps</h2>
-<ol>
-<li>Add retry config schema to <code>llm_config</code> (transient errors only, configurable attempts + backoff).</li>
-<li>Implement in <code>LLMExecutor.run()</code> with error classification (transient vs. structural).</li>
-<li>Document Luigi resume as the standard recovery path for structural failures.</li>
-<li>Remove per-task retry loops as each task is updated (follow-on PRs).</li>
-</ol>
+<h2 id="future-work">Future Work</h2>
+<ul>
+<li>Config-driven retry settings via <code>llm_config/custom.json</code> (currently hardcoded defaults).</li>
+<li>Remove remaining per-task retry loops as each task is updated (follow-on PRs).</li>
+</ul>
 <hr />
 <h2 id="references">References</h2>
 <ul>
-<li><code>worker_plan/worker_plan_internal/llm_util/llm_executor.py</code> — current fallback chain implementation</li>
+<li><code>worker_plan/worker_plan_internal/llm_util/llm_executor.py</code> — retry logic and <code>RetryConfig</code></li>
+<li><code>worker_plan/worker_plan_internal/llm_util/llm_errors.py</code> — <code>LLMChatError</code> with error traceability</li>
+<li><code>worker_plan/worker_plan_internal/llm_util/usage_metrics.py</code> — file-based usage metrics</li>
 <li><code>worker_plan/worker_plan_internal/lever/deduplicate_levers.py</code> — example of per-task compact fallback (PR #198)</li>
-<li>Luigi resume pattern — documented in project MEMORY.md</li>
-<li><code>SPEED_VS_DETAIL</code> config — precedent for pipeline-level behavioral config</li>
 </ul>
 
 
