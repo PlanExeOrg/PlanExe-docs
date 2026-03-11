@@ -29,6 +29,7 @@ nav:
     - MCP details: mcp/mcp_details.md
     - MCP troubleshooting: mcp/mcp_troubleshooting.md
     - PlanExe MCP interface: mcp/planexe_mcp_interface.md
+    - Autonomous agent guide: mcp/autonomous_agent_guide.md
   - Development:
     - Developer plan: plan.md
     - Docker: docker.md
