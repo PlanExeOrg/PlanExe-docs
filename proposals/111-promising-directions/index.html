@@ -5954,12 +5954,12 @@
 <tr>
 <td><strong>86</strong></td>
 <td>Agent-Optimized Pipeline</td>
-<td>Removes the 5 key friction points for autonomous agent use: human approval gate, no agent prompt examples, poll intervals tuned for humans, no machine-readable output, no autonomous agent setup docs</td>
+<td>✅ <strong>Implemented (PR #223)</strong>. Autonomous agent guide and agent-oriented prompts. Removes key friction points for autonomous agent use</td>
 </tr>
 <tr>
 <td><strong>62</strong></td>
 <td>Agent-First Frontend Discoverability</td>
-<td><code>llms.txt</code>, <code>/.well-known/mcp.json</code>, agent-readable README — standard discovery protocols so agents find PlanExe without human guidance</td>
+<td>✅ <strong>Implemented (PR #224)</strong>. <code>robots.txt</code> and README agent discoverability section — standard discovery protocols so agents find PlanExe without human guidance</td>
 </tr>
 <tr>
 <td><strong>110</strong></td>
@@ -5974,7 +5974,7 @@
 <tr>
 <td><strong>114-I4</strong></td>
 <td>Idempotency Guard on <code>plan_create</code></td>
-<td>No deduplication — double-submit creates two identical plans. Optional <code>request_id</code> parameter enables standard idempotency (Stripe/AWS pattern)</td>
+<td>✅ <strong>Implemented (PR #242)</strong>. Server-side auto-dedup on <code>(user_id, prompt, model_profile)</code> within configurable time window (default 10 min)</td>
 </tr>
 <tr>
 <td><strong>114-I5</strong></td>
@@ -6017,7 +6017,7 @@
 <tr>
 <td><strong>58</strong></td>
 <td>Boost Initial Prompt</td>
-<td>Single LLM call to strengthen weak prompts before pipeline runs. Especially valuable for agent-originated prompts, which may be terse or overly technical</td>
+<td>⚙️ <strong>Open PR #222</strong>. Single LLM call to strengthen weak prompts before pipeline runs. Especially valuable for agent-originated prompts, which may be terse or overly technical</td>
 </tr>
 <tr>
 <td><strong>42</strong></td>
@@ -6042,7 +6042,7 @@
 <tr>
 <td><strong>88</strong></td>
 <td>Fermi Sanity Check Validation Gate</td>
-<td>Rule-based guard on every assumption: bounds present, span ratio sane, evidence for low-confidence claims. First line of defense before expensive downstream processing</td>
+<td>⚙️ <strong>Open PR #225</strong>. Rule-based guard on every assumption: bounds present, span ratio sane, evidence for low-confidence claims. First line of defense before expensive downstream processing</td>
 </tr>
 </tbody>
 </table>
@@ -6061,12 +6061,12 @@
 <tr>
 <td><strong>94</strong></td>
 <td>Autoresearch-Style Prompt Optimization</td>
-<td>Autonomous overnight loops: agent modifies one prompt, re-runs one task, scores, keeps or reverts. Hundreds of experiments per night exploiting Luigi resumability</td>
+<td>⚙️ <strong>Open PR #226</strong> (LLM-as-judge foundation). Autonomous overnight loops: agent modifies one prompt, re-runs one task, scores, keeps or reverts. Hundreds of experiments per night exploiting Luigi resumability</td>
 </tr>
 <tr>
 <td><strong>59</strong></td>
 <td>Prompt Optimizing with A/B Testing</td>
-<td>Structured promotion pipeline: multi-model A/B matrix, Elo tracking, regression guards. Validates candidates discovered by #94 before merging into baseline</td>
+<td>⚙️ <strong>Open PR #227</strong> (A/B experiment runner). Structured promotion pipeline: multi-model A/B matrix, Elo tracking, regression guards. Validates candidates discovered by #94 before merging into baseline</td>
 </tr>
 </tbody>
 </table>
@@ -6104,25 +6104,25 @@
 <p><strong>#41 is the most transformative proposal</strong> — but it only works if the quality gates (#42, #43, #56, #88) prevent automation from multiplying bad plans.</p>
 <hr />
 <h2 id="recommended-sequence">Recommended Sequence</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Phase 1: Reliable foundation         (now)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Phase 1: Reliable foundation         (nearly complete)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ├─ #87  Plan resume ✅
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├─ #109 Retry improvements ✅ (PR #220)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├─ #102 Error-feedback retries ⚙️ (PR #221, foundation only)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├─ #102 Error-feedback retries ⚙️ (PR #221, foundation only — tasks not yet wired)
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  ├─ #110 Usage metrics ✅ (PR #219, #236, #237)
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ├─ #113 Error traceability ✅ (PR #237)
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ├─ #58  Prompt boost
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ├─ #114-I1 Stopped vs failed state
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  ├─ #114-I2 Failure diagnostics in plan_status
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ├─ #58  Prompt boost ⚙️ (open PR #222)
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ├─ #114-I1 Stopped vs failed state        ← next priority
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  ├─ #114-I2 Failure diagnostics in plan_status  ← next priority (biggest gap)
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  └─ #114-I7 Stalled-plan detection
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Phase 2: Agent-native interface       (next)
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  ├─ #86  Remove agent friction points
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  ├─ #62  Discovery protocols
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  ├─ #88  Fermi validation gate
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  ├─ #86  Remove agent friction points ✅ (PR #223)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  ├─ #62  Discovery protocols ✅ (PR #224)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  ├─ #88  Fermi validation gate ⚙️ (open PR #225)
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  ├─ #114-I3 Plan delete/archive
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  ├─ #114-I5 Rich SSE event payloads
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  ├─ #114-I6 Download URL TTL extension
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  ├─ #114-I4 Idempotency guard
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  ├─ #114-I4 Idempotency guard ✅ (PR #242)
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  ├─ #114-I8 plan_wait tool
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  └─ #114-I9 Prompt iteration linking
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
@@ -6133,8 +6133,8 @@
 <a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  └─ #57  Banned words / lever realism
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>Phase 4: Self-improving pipeline      (concurrent with 3)
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>  ├─ #94  Autoresearch prompt optimization
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  └─ #59  A/B testing promotion
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>  ├─ #94  Autoresearch prompt optimization ⚙️ (open PR #226 foundation, PR #227 runner)
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  └─ #59  A/B testing promotion ⚙️ (open PR #227)
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
 <a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>Phase 5: Autonomous execution         (after quality gates)
 <a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>  ├─ #41  Plan execution engine
