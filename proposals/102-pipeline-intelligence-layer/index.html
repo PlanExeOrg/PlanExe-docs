@@ -2453,10 +2453,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#current-behavior" class="md-nav__link">
+  <a href="#current-behavior-before-pr-221" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current behavior
+        Current behavior (before PR #221)
       
     </span>
   </a>
@@ -5991,10 +5991,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#current-behavior" class="md-nav__link">
+  <a href="#current-behavior-before-pr-221" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current behavior
+        Current behavior (before PR #221)
       
     </span>
   </a>
@@ -6287,7 +6287,15 @@
 <p>This proposal is about giving the pipeline a real feedback loop.</p>
 <hr />
 <h2 id="1-error-feedback-retries">1. Error-Feedback Retries</h2>
-<h3 id="current-behavior">Current behavior</h3>
+<p><strong>Status:</strong> Foundation implemented (PR #221). <code>LLMExecutor</code> now extracts structured
+Pydantic validation feedback and exposes it via <code>validation_feedback</code> so callers
+can inject it into the next prompt. The <code>max_validation_retries</code> parameter
+controls how many times the same model is retried on validation errors before
+falling through to the next model.</p>
+<p><strong>Remaining work:</strong> Individual tasks need to read <code>executor.validation_feedback</code>
+inside their <code>execute_function</code> and append the correction message to the prompt.
+The infrastructure is ready; the per-task wiring is not yet done.</p>
+<h3 id="current-behavior-before-pr-221">Current behavior (before PR #221)</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Attempt 1: send prompt → model omits holistic_profile_of_the_plan → Pydantic fails
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Attempt 2: send identical prompt → model omits holistic_profile_of_the_plan → Pydantic fails
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Attempt 3: exhausted → pipeline dies

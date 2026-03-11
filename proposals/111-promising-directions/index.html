@@ -5905,7 +5905,7 @@
 <tr>
 <td><strong>102</strong></td>
 <td>Pipeline Intelligence Layer</td>
-<td>Error-feedback retries — the LLM gets its own error message and retries with an adjusted approach. Eliminates a class of silent failures</td>
+<td>⚙️ <strong>Foundation implemented (PR #221)</strong>. <code>LLMExecutor</code> extracts structured Pydantic validation feedback and exposes it via <code>validation_feedback</code> property; <code>max_validation_retries</code> controls per-model retry count. Remaining: wire individual tasks to inject feedback into prompts</td>
 </tr>
 <tr>
 <td><strong>103</strong></td>
@@ -6107,7 +6107,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Phase 1: Reliable foundation         (now)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ├─ #87  Plan resume ✅
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├─ #109 Retry improvements ✅ (PR #220)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├─ #102 Error-feedback retries
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  ├─ #102 Error-feedback retries ⚙️ (PR #221, foundation only)
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  ├─ #110 Usage metrics ✅ (PR #219, #236, #237)
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ├─ #113 Error traceability ✅ (PR #237)
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ├─ #58  Prompt boost
