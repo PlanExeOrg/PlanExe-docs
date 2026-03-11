@@ -6043,7 +6043,8 @@
 - <code>pending</code> → Plan is queued
 - <code>processing</code> → Pipeline is running
 - <code>completed</code> → Report is ready
-- <code>failed</code> → Terminal error (use <code>plan_resume</code> or <code>plan_retry</code>)</p>
+- <code>failed</code> → Terminal error (use <code>plan_resume</code> or <code>plan_retry</code>)
+- <code>stopped</code> → User called <code>plan_stop</code> (use <code>plan_resume</code> to continue or <code>plan_retry</code> to restart)</p>
 <h3 id="step-6-handle-failures">Step 6: Handle failures</h3>
 <p>If a plan fails mid-pipeline:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Call: plan_resume(plan_id=&quot;...&quot;)  # Continue from where it stopped

@@ -7284,7 +7284,7 @@
 <p>Implementors should expose the following to agents so they understand what PlanExe does:</p>
 <ul>
 <li><strong>What:</strong> PlanExe turns a plain-English goal into a strategic project-plan draft (20+ sections) in ~10–20 min. Sections include executive summary, interactive Gantt charts, investor pitch, SWOT, governance, team profiles, work breakdown, scenario comparison, expert criticism, and adversarial sections (premortem, self-audit, premise attacks) that stress-test the plan. The output is a draft to refine, not an executable or final document — but it surfaces hard questions the prompter may not have considered.</li>
-<li><strong>Required interaction order:</strong> Call <code>example_plans</code> (optional) and <code>example_prompts</code> first. Optional before <code>plan_create</code>: call <code>model_profiles</code> to inspect profile guidance and available models in each profile. Then complete a non-tool step: formulate a detailed prompt as flowing prose (not structured markdown), typically ~300-800 words, using the examples as a baseline; include objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria; get user approval. Only after approval, call <code>plan_create</code>. Then poll <code>plan_status</code> (about every 5 minutes); use <code>plan_download</code> (mcp_local helper) or <code>plan_file_info</code> (mcp_cloud tool) when complete (<code>pending</code>/<code>processing</code> = keep polling, <code>completed</code> = download now, <code>failed</code> = terminal). If a plan fails before completing all steps, call <code>plan_resume</code> to continue from where it left off without discarding completed work. Use <code>plan_retry</code> for a full restart (plan must be in failed state). Both accept the failed <code>plan_id</code> and optional <code>model_profile</code> (default <code>baseline</code>). To stop, call <code>plan_stop</code> with the <code>plan_id</code> from <code>plan_create</code>.</li>
+<li><strong>Required interaction order:</strong> Call <code>example_plans</code> (optional) and <code>example_prompts</code> first. Optional before <code>plan_create</code>: call <code>model_profiles</code> to inspect profile guidance and available models in each profile. Then complete a non-tool step: formulate a detailed prompt as flowing prose (not structured markdown), typically ~300-800 words, using the examples as a baseline; include objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria; get user approval. Only after approval, call <code>plan_create</code>. Then poll <code>plan_status</code> (about every 5 minutes); use <code>plan_download</code> (mcp_local helper) or <code>plan_file_info</code> (mcp_cloud tool) when complete (<code>pending</code>/<code>processing</code> = keep polling, <code>completed</code> = download now, <code>failed</code> = terminal error, <code>stopped</code> = user called plan_stop). If a plan fails or is stopped before completing all steps, call <code>plan_resume</code> to continue from where it left off without discarding completed work. Use <code>plan_retry</code> for a full restart (plan must be in failed or stopped state). Both accept the <code>plan_id</code> and optional <code>model_profile</code> (default <code>baseline</code>). To stop, call <code>plan_stop</code> with the <code>plan_id</code> from <code>plan_create</code>.</li>
 <li><strong>Output:</strong> Self-contained interactive HTML report (~700KB) with collapsible sections and interactive Gantt charts — open in a browser. The zip contains the intermediary pipeline files (md, json, csv) that fed the report.</li>
 </ul>
 <h3 id="13-scope-of-this-document">1.3 Scope of this document</h3>
@@ -7335,10 +7335,10 @@
 <h3 id="31-mcp-tools-vs-mcp-tasks-run-as-task">3.1 MCP tools vs MCP tasks ("Run as task")</h3>
 <p>The MCP specification defines two different mechanisms:</p>
 <ul>
-<li><strong>MCP tools</strong> (e.g. plan_create, plan_status, plan_stop, plan_retry, plan_resume): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls plan_create → receives plan_id → polls plan_status → optionally calls plan_resume or plan_retry on failed → uses plan_file_info (and optionally plan_download via mcp_local). This document specifies those tools.</li>
+<li><strong>MCP tools</strong> (e.g. plan_create, plan_status, plan_stop, plan_retry, plan_resume): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls plan_create → receives plan_id → polls plan_status → optionally calls plan_resume or plan_retry on failed/stopped → uses plan_file_info (and optionally plan_download via mcp_local). This document specifies those tools.</li>
 <li><strong>MCP tasks protocol</strong> ("Run as task" in some UIs): a separate mechanism where the client can run a tool "as a task" using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.</li>
 </ul>
-<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. Intended flow: optionally call <code>example_plans</code>; call <code>example_prompts</code>; optionally call <code>model_profiles</code>; perform the non-tool prompt drafting/approval step; call <code>plan_create</code>; poll <code>plan_status</code>; if failed call <code>plan_resume</code> to continue or <code>plan_retry</code> for a full restart (optional); then call <code>plan_file_info</code> (or <code>plan_download</code> via mcp_local) when completed.</p>
+<p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. Intended flow: optionally call <code>example_plans</code>; call <code>example_prompts</code>; optionally call <code>model_profiles</code>; perform the non-tool prompt drafting/approval step; call <code>plan_create</code>; poll <code>plan_status</code>; if failed or stopped call <code>plan_resume</code> to continue or <code>plan_retry</code> for a full restart (optional); then call <code>plan_file_info</code> (or <code>plan_download</code> via mcp_local) when completed.</p>
 <hr />
 <h2 id="4-system-model">4. System Model</h2>
 <h3 id="41-core-entities">4.1 Core entities</h3>
@@ -7355,7 +7355,7 @@
 <p>A single execution attempt inside a plan.</p>
 <p><strong>Key properties</strong></p>
 <ul>
-<li>state: pending | processing | completed | failed</li>
+<li>state: pending | processing | completed | failed | stopped</li>
 <li>progress_percentage: computed progress percentage (float)</li>
 <li>started_at, ended_at</li>
 </ul>
@@ -7386,13 +7386,16 @@
 <li>processing (picked up by a worker)</li>
 <li>completed</li>
 <li>failed</li>
+<li>stopped (user called <code>plan_stop</code>)</li>
 </ul>
 <h3 id="52-allowed-transitions">5.2 Allowed transitions</h3>
 <ul>
 <li>pending → processing when picked up by a worker</li>
 <li>processing → completed via normal success</li>
 <li>processing → failed via error</li>
+<li>processing → stopped via <code>plan_stop</code></li>
 <li>failed → pending when <code>plan_retry</code> or <code>plan_resume</code> is accepted</li>
+<li>stopped → pending when <code>plan_retry</code> or <code>plan_resume</code> is accepted</li>
 </ul>
 <h3 id="53-invalid-transitions">5.3 Invalid transitions</h3>
 <ul>
@@ -7549,10 +7552,11 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <li><code>processing</code>: picked up by a worker and in progress. Keep polling.</li>
 <li><code>completed</code>: terminal success. Download artifacts now.</li>
 <li><code>failed</code>: terminal error. Do not keep polling for completion.</li>
+<li><code>stopped</code>: user called <code>plan_stop</code>. Consider <code>plan_resume</code> to continue or <code>plan_retry</code> to restart.</li>
 </ul>
 <p><strong>Terminal states</strong></p>
 <ul>
-<li><code>completed</code>, <code>failed</code></li>
+<li><code>completed</code>, <code>failed</code>, <code>stopped</code></li>
 </ul>
 <p><strong>Response</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
@@ -7634,7 +7638,7 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <hr />
 <h3 id="66-plan_resume">6.6 plan_resume</h3>
 <p>Resume a failed plan without discarding completed intermediary files. Plan generation restarts from the first incomplete step, skipping all steps that already produced output files.</p>
-<p>Use <code>plan_resume</code> when <code>plan_status</code> shows <code>failed</code> and plan generation was interrupted before completing all steps (network drop, timeout, <code>plan_stop</code>, worker crash). For a full restart or to change <code>model_profile</code>, use <code>plan_retry</code> instead.</p>
+<p>Use <code>plan_resume</code> when <code>plan_status</code> shows <code>failed</code> or <code>stopped</code> and plan generation was interrupted before completing all steps (network drop, timeout, <code>plan_stop</code>, worker crash). For a full restart or to change <code>model_profile</code>, use <code>plan_retry</code> instead.</p>
 <p><strong>Request</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
@@ -7753,7 +7757,7 @@ Concurrency is a client-side coordination concern.</p>
 <p>Additional semantics:</p>
 <ul>
 <li>Every <code>plan_create</code> call creates a new independent plan with a new <code>plan_id</code>.</li>
-<li><code>plan_retry</code> and <code>plan_resume</code> reuse the existing failed <code>plan_id</code> (they do not create a new plan id).</li>
+<li><code>plan_retry</code> and <code>plan_resume</code> reuse the existing failed or stopped <code>plan_id</code> (they do not create a new plan id).</li>
 <li>The server does not deduplicate “same prompt” requests into a single shared plan.</li>
 <li>Keep your own plan registry/client state if you run multiple plans concurrently.</li>
 </ul>
@@ -7790,8 +7794,8 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>INVALID_TOOL</code>: unknown MCP tool name.</li>
 <li><code>INTERNAL_ERROR</code>: uncaught server error.</li>
 <li><code>PLAN_NOT_FOUND</code>: plan_id not found.</li>
-<li><code>PLAN_NOT_FAILED</code>: plan_retry called for a plan that is not in failed state.</li>
-<li><code>PLAN_NOT_RESUMABLE</code>: plan_resume called for a plan that is not in failed state.</li>
+<li><code>PLAN_NOT_FAILED</code>: plan_retry called for a plan that is not in failed or stopped state.</li>
+<li><code>PLAN_NOT_RESUMABLE</code>: plan_resume called for a plan that is not in failed or stopped state.</li>
 <li><code>PIPELINE_VERSION_MISMATCH</code>: plan_resume snapshot was created by a different pipeline version; use plan_retry instead.</li>
 <li><code>INVALID_USER_API_KEY</code>: provided user_api_key is invalid.</li>
 <li><code>USER_API_KEY_REQUIRED</code>: deployment requires user_api_key for plan_create.</li>
@@ -7816,8 +7820,8 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>USER_API_KEY_REQUIRED</code></li>
 <li><code>INSUFFICIENT_CREDITS</code></li>
 <li><code>INVALID_TOOL</code></li>
-<li>For <code>PLAN_NOT_FAILED</code>: call <code>plan_retry</code> only after <code>plan_status.state == failed</code>.</li>
-<li>For <code>PLAN_NOT_RESUMABLE</code>: call <code>plan_resume</code> only after <code>plan_status.state == failed</code>.</li>
+<li>For <code>PLAN_NOT_FAILED</code>: call <code>plan_retry</code> only after <code>plan_status.state</code> is <code>failed</code> or <code>stopped</code>.</li>
+<li>For <code>PLAN_NOT_RESUMABLE</code>: call <code>plan_resume</code> only after <code>plan_status.state</code> is <code>failed</code> or <code>stopped</code>.</li>
 <li>For <code>PIPELINE_VERSION_MISMATCH</code>: the snapshot is incompatible with the current pipeline; use <code>plan_retry</code> for a clean restart.</li>
 <li>For <code>PLAN_NOT_FOUND</code>: verify plan_id source and stop polling that id.</li>
 <li>For <code>generation_failed</code>: treat as terminal failure and surface plan progress_message to user.</li>

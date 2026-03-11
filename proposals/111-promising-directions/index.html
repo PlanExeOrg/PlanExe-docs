@@ -5925,17 +5925,22 @@
 <tr>
 <td><strong>114-I1</strong></td>
 <td>Stopped vs Failed State</td>
-<td><code>plan_stop</code> and worker crashes both produce <code>failed</code> — agents can't distinguish user-initiated stops from actual errors. Add <code>stop_reason</code> field or a new <code>stopped</code> state</td>
+<td>✅ <strong>Implemented</strong>. Dedicated <code>PlanState.stopped</code> enum value — <code>plan_stop</code> transitions to <code>stopped</code>, not <code>failed</code>. Agents can now distinguish user-initiated stops from actual errors. <code>plan_retry</code> and <code>plan_resume</code> accept both <code>failed</code> and <code>stopped</code></td>
 </tr>
 <tr>
 <td><strong>114-I2</strong></td>
 <td>Failure Diagnostics in <code>plan_status</code></td>
-<td>When a plan fails, no <code>failure_reason</code>, <code>failed_step</code>, or <code>last_error</code> is returned. Biggest observability gap — agents can only say "it failed" without explaining why. Extends #113 to the MCP consumer surface</td>
+<td>When a plan fails, no <code>failure_reason</code>, <code>failed_step</code>, <code>last_error</code>, or <code>recoverable</code> flag is returned. Biggest observability gap — agents can only say "it failed" without explaining why or recommending resume vs retry. Extends #113 to the MCP consumer surface</td>
 </tr>
 <tr>
 <td><strong>114-I7</strong></td>
 <td>Stalled-Plan Detection</td>
 <td>No <code>last_progress_at</code> or <code>last_llm_call_at</code> timestamps. Agents can't distinguish "slow step" from "stuck worker". Complements #87 §8</td>
+</tr>
+<tr>
+<td><strong>114-I10</strong></td>
+<td>Silent Partial Failures in Completed Plans</td>
+<td>A plan can reach <code>completed</code> with empty or stub-quality sections (e.g. 2/8 experts responding). No <code>quality_summary</code> in <code>plan_status</code> — agents can't tell if <code>completed</code> means "all sections produced quality output" or just "all steps ran." Trust gap for autonomous workflows</td>
 </tr>
 </tbody>
 </table>
@@ -6111,35 +6116,36 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  ├─ #110 Usage metrics ✅ (PR #219, #236, #237)
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ├─ #113 Error traceability ✅ (PR #237)
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ├─ #58  Prompt boost ⚙️ (open PR #222)
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ├─ #114-I1 Stopped vs failed state        ← next priority
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ├─ #114-I1 Stopped vs failed state ✅
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  ├─ #114-I2 Failure diagnostics in plan_status  ← next priority (biggest gap)
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  └─ #114-I7 Stalled-plan detection
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Phase 2: Agent-native interface       (next)
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  ├─ #86  Remove agent friction points ✅ (PR #223)
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  ├─ #62  Discovery protocols ✅ (PR #224)
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  ├─ #88  Fermi validation gate ⚙️ (open PR #225)
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  ├─ #114-I3 Plan delete/archive
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  ├─ #114-I5 Rich SSE event payloads
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  ├─ #114-I6 Download URL TTL extension
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  ├─ #114-I4 Idempotency guard ✅ (PR #242)
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  ├─ #114-I8 plan_wait tool
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  └─ #114-I9 Prompt iteration linking
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>Phase 3: Automated quality            (then)
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  ├─ #42  Evidence traceability
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  ├─ #43  Assumption drift monitor
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  ├─ #56  Adversarial red-team
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  └─ #57  Banned words / lever realism
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>Phase 4: Self-improving pipeline      (concurrent with 3)
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>  ├─ #94  Autoresearch prompt optimization ⚙️ (open PR #226 foundation, PR #227 runner)
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  └─ #59  A/B testing promotion ⚙️ (open PR #227)
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>Phase 5: Autonomous execution         (after quality gates)
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>  ├─ #41  Plan execution engine
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>  ├─ #60-66 Agent swarm
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>  └─ #92  Model routing
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  ├─ #114-I7 Stalled-plan detection
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  └─ #114-I10 Silent partial failures in completed plans
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Phase 2: Agent-native interface       (next)
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  ├─ #86  Remove agent friction points ✅ (PR #223)
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>  ├─ #62  Discovery protocols ✅ (PR #224)
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  ├─ #88  Fermi validation gate ⚙️ (open PR #225)
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  ├─ #114-I3 Plan delete/archive
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>  ├─ #114-I5 Rich SSE event payloads
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  ├─ #114-I6 Download URL TTL extension
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  ├─ #114-I4 Idempotency guard ✅ (PR #242)
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  ├─ #114-I8 plan_wait tool
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  └─ #114-I9 Prompt iteration linking
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>Phase 3: Automated quality            (then)
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  ├─ #42  Evidence traceability
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>  ├─ #43  Assumption drift monitor
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  ├─ #56  Adversarial red-team
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>  └─ #57  Banned words / lever realism
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>Phase 4: Self-improving pipeline      (concurrent with 3)
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  ├─ #94  Autoresearch prompt optimization ⚙️ (open PR #226 foundation, PR #227 runner)
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>  └─ #59  A/B testing promotion ⚙️ (open PR #227)
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>Phase 5: Autonomous execution         (after quality gates)
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>  ├─ #41  Plan execution engine
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>  ├─ #60-66 Agent swarm
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>  └─ #92  Model routing
 </code></pre></div>
 <p>Each phase enables the next. Skipping to Phase 5 without Phase 3 means agents execute unchecked plans at scale — the worst outcome.</p>
 <hr />

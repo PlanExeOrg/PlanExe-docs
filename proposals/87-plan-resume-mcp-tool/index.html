@@ -6198,7 +6198,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> <code>plan_stop</code> currently transitions to <code>failed</code>. A future improvement could introduce a distinct <code>stopped</code> state to disambiguate user-initiated halts from error failures (out of scope for this proposal).</p>
+<p><strong>Note:</strong> <code>plan_stop</code> now transitions to the dedicated <code>stopped</code> state (implemented in Proposal 114-I1, Option A), disambiguating user-initiated halts from error failures.</p>
 <hr />
 <h2 id="5-implementation-spec">5. Implementation Spec</h2>
 <h3 id="51-new-mcp-tool-plan_resume">5.1 New MCP tool: <code>plan_resume</code></h3>
@@ -6380,7 +6380,7 @@
 <hr />
 <h2 id="9-out-of-scope">9. Out of Scope</h2>
 <ul>
-<li>Introducing a distinct <code>stopped</code> state (separate from <code>failed</code>) — deferred</li>
+<li>~~Introducing a distinct <code>stopped</code> state (separate from <code>failed</code>)~~ — implemented (Proposal 114-I1)</li>
 <li>Progress scrubbing on resume (reporting accurate % based on remaining tasks) — deferred</li>
 <li><code>plan_resume</code> for <code>mcp_local</code> (local HTTP worker via <code>worker_plan/app.py</code>) — the HTTP worker already supports this via <code>submit_or_retry="retry"</code>; a follow-on can wire it up</li>
 <li>Resume after partial artifact upload failure — deferred</li>
