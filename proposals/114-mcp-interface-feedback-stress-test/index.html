@@ -6073,12 +6073,13 @@
 <p><strong>Affected files:</strong> <code>mcp_cloud/db_queries.py</code>, <code>mcp_cloud/handlers.py</code>, <code>mcp_cloud/schemas.py</code>, <code>mcp_cloud/tool_models.py</code>.</p>
 <hr />
 <h3 id="i4-no-idempotency-guard-on-plan_create">I4 — No idempotency guard on <code>plan_create</code></h3>
+<p><strong>Status:</strong> Implemented (PR #242).</p>
 <p><strong>Problem:</strong> If the user double-clicks or the agent accidentally submits twice, two identical plans are created. Each <code>plan_create</code> call generates a new <code>plan_id</code> with no server-side deduplication.</p>
-<p><strong>Proposed fix:</strong> Add an optional <code>request_id</code> (client-generated UUID) parameter to <code>plan_create</code>. The server checks if a plan with the same <code>request_id</code> already exists for this user:
-- If yes: return the existing <code>plan_id</code> (idempotent response)
-- If no: create a new plan</p>
-<p>This is a standard idempotency pattern (Stripe, AWS, etc.) and does not change behavior for clients that omit <code>request_id</code>.</p>
-<p><strong>Affected files:</strong> <code>mcp_cloud/tool_models.py</code> (new optional field), <code>mcp_cloud/db_queries.py</code> (lookup by request_id before insert), DB model (new indexed column).</p>
+<p><strong>Original proposal:</strong> Add an optional <code>request_id</code> (client-generated UUID) parameter to <code>plan_create</code>. The server checks if a plan with the same <code>request_id</code> already exists for this user. This is a standard idempotency pattern (Stripe, AWS, etc.).</p>
+<p><strong>Why <code>request_id</code> was not adopted:</strong> The primary MCP consumers are LLM agents. LLMs cannot generate UUIDs natively — they would need an extra tool call just to produce the idempotency key, adding friction to the exact workflow it's meant to protect. A mechanism that requires client cooperation is a poor fit when the clients are language models.</p>
+<p><strong>Implemented approach:</strong> Automatic server-side dedup. Before inserting a new plan, <code>_create_plan_sync</code> queries for an existing <code>pending</code>/<code>processing</code> plan matching <code>(user_id, prompt, model_profile)</code> created within a configurable time window (default 10 minutes, env <code>PLANEXE_DEDUP_WINDOW_SECONDS</code>). If found, the existing plan is returned with <code>deduplicated: true</code> instead of creating a new one. No schema migration needed — uses existing columns. Set <code>PLANEXE_DEDUP_WINDOW_SECONDS=0</code> to disable.</p>
+<p><strong>Known limitation:</strong> There is a TOCTOU race — if two identical requests arrive concurrently and both pass the dedup check before either commits, a duplicate plan is created. This is accepted; the cost is wasted tokens for one extra plan, which is not worth the complexity of a database-level lock or migration to fix.</p>
+<p><strong>Affected files:</strong> <code>mcp_cloud/db_queries.py</code> (<code>_find_recent_duplicate_plan</code>, <code>_create_plan_sync</code>), <code>mcp_cloud/tool_models.py</code> (<code>deduplicated</code> field on <code>PlanCreateOutput</code>), <code>mcp_cloud/schemas.py</code> (description and <code>idempotentHint</code>), <code>mcp_cloud/app.py</code> (re-export).</p>
 <hr />
 <h3 id="i5-sse-events-carry-no-structured-progress-data">I5 — SSE events carry no structured progress data</h3>
 <p><strong>Problem:</strong> The SSE stream works as a completion detector but events are opaque — no <code>step_name</code> or <code>progress_percentage</code> in event payloads. To get progress, the agent must poll <code>plan_status</code> separately, making SSE useful only as a "done" signal.</p>
@@ -6166,7 +6167,7 @@
 <tr>
 <td>I4 (idempotency)</td>
 <td>None</td>
-<td>New</td>
+<td><strong>Implemented</strong> (PR #242)</td>
 </tr>
 <tr>
 <td>I5 (rich SSE events)</td>
@@ -6267,9 +6268,9 @@
 <td>Hygiene for multi-plan sessions.</td>
 </tr>
 <tr>
-<td>P3</td>
-<td>I4 (idempotency)</td>
-<td>Defensive, important for production but not urgent.</td>
+<td>~~P3~~</td>
+<td>~~I4 (idempotency)~~</td>
+<td><strong>Implemented</strong> (PR #242). Server-side auto-dedup on <code>(user_id, prompt, model_profile)</code> within a time window.</td>
 </tr>
 <tr>
 <td>P3</td>
