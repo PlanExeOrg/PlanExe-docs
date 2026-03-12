@@ -1109,6 +1109,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="plan_status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failure-diagnostics-on-failed-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failure diagnostics (on failed state)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6023,6 +6040,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="plan_status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#failure-diagnostics-on-failed-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failure diagnostics (on failed state)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -6329,8 +6363,43 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <li><code>pending</code>: queued and waiting for a worker, keep polling.</li>
 <li><code>processing</code>: picked up by a worker, keep polling.</li>
 <li><code>completed</code>: terminal success, proceed to download.</li>
-<li><code>failed</code>: terminal error.</li>
+<li><code>stopped</code>: user called <code>plan_stop</code>. Use <code>plan_resume</code> to continue or <code>plan_retry</code> to restart.</li>
+<li><code>failed</code>: terminal error. Check failure diagnostics to decide next action.</li>
 </ul>
+<h4 id="failure-diagnostics-on-failed-state">Failure diagnostics (on <code>failed</code> state)</h4>
+<p>When a plan is in the <code>failed</code> state, the response includes a consolidated <code>error</code> dict:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error.failure_reason</code></td>
+<td><code>string?</code></td>
+<td>Category: <code>generation_error</code>, <code>worker_error</code>, <code>inactivity_timeout</code>, <code>internal_error</code>, <code>version_mismatch</code></td>
+</tr>
+<tr>
+<td><code>error.failed_step</code></td>
+<td><code>string?</code></td>
+<td>Pipeline step active at failure (e.g. <code>016-expert_criticism</code>)</td>
+</tr>
+<tr>
+<td><code>error.message</code></td>
+<td><code>string?</code></td>
+<td>Human-readable error message (max 256 chars)</td>
+</tr>
+<tr>
+<td><code>error.recoverable</code></td>
+<td><code>bool?</code></td>
+<td><code>true</code> → <code>plan_resume</code> may work; <code>false</code> → use <code>plan_retry</code></td>
+</tr>
+</tbody>
+</table>
+<p>These fields are <code>null</code> for legacy plans that failed before this feature was added. The <code>error</code> dict is absent for non-failed states.</p>
 <h3 id="plan_stop">plan_stop</h3>
 <p>Request an active plan to stop.</p>
 <p>Example prompt:

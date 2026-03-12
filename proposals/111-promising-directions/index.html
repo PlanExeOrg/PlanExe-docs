@@ -5930,7 +5930,7 @@
 <tr>
 <td><strong>114-I2</strong></td>
 <td>Failure Diagnostics in <code>plan_status</code></td>
-<td>When a plan fails, no <code>failure_reason</code>, <code>failed_step</code>, <code>last_error</code>, or <code>recoverable</code> flag is returned. Biggest observability gap — agents can only say "it failed" without explaining why or recommending resume vs retry. Extends #113 to the MCP consumer surface</td>
+<td>✅ <strong>Implemented</strong>. Four DB columns (<code>failure_reason</code>, <code>failed_step</code>, <code>error_message</code>, <code>recoverable</code>) populated by worker on failure. <code>plan_status</code> returns a consolidated <code>error</code> dict (keys: <code>failure_reason</code>, <code>failed_step</code>, <code>message</code>, <code>recoverable</code>) only for failed plans — non-failed plans omit <code>error</code> entirely. The <code>recoverable</code> flag lets agents immediately suggest <code>plan_resume</code> vs <code>plan_retry</code>. Migration renames the legacy <code>last_error</code> column to <code>error_message</code> with existence checks to avoid noisy PostgreSQL logs. Diagnostics reset on retry/resume</td>
 </tr>
 <tr>
 <td><strong>114-I7</strong></td>
@@ -6132,7 +6132,7 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  ├─ #113 Error traceability ✅ (PR #237)
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ├─ #58  Prompt boost ⚙️ (open PR #222)
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ├─ #114-I1 Stopped vs failed state ✅
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  ├─ #114-I2 Failure diagnostics in plan_status  ← next priority (biggest gap)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  ├─ #114-I2 Failure diagnostics in plan_status ✅
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  ├─ #114-I5 MCP notifications for agents  ← P1 (v3 correction: SSE wrong for agents)
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  ├─ #114-I7 Stalled-plan detection
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  ├─ #114-I10 Silent partial failures in completed plans

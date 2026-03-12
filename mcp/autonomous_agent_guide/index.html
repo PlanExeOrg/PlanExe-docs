@@ -6046,12 +6046,40 @@
 - <code>failed</code> → Terminal error (use <code>plan_resume</code> or <code>plan_retry</code>)
 - <code>stopped</code> → User called <code>plan_stop</code> (use <code>plan_resume</code> to continue or <code>plan_retry</code> to restart)</p>
 <h3 id="step-6-handle-failures">Step 6: Handle failures</h3>
-<p>If a plan fails mid-pipeline:</p>
+<p>When <code>plan_status</code> returns <code>state: "failed"</code>, check the <code>error</code> dict for failure diagnostics:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error.failure_reason</code></td>
+<td>Category: <code>generation_error</code>, <code>worker_error</code>, <code>inactivity_timeout</code>, <code>internal_error</code>, <code>version_mismatch</code></td>
+</tr>
+<tr>
+<td><code>error.failed_step</code></td>
+<td>Pipeline step that was active when the failure occurred</td>
+</tr>
+<tr>
+<td><code>error.message</code></td>
+<td>Human-readable error message</td>
+</tr>
+<tr>
+<td><code>error.recoverable</code></td>
+<td><code>true</code> → try <code>plan_resume</code>; <code>false</code> → use <code>plan_retry</code></td>
+</tr>
+</tbody>
+</table>
+<p>If <code>recoverable</code> is <code>true</code>, resume first (preserves progress):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Call: plan_resume(plan_id=&quot;...&quot;)  # Continue from where it stopped
 </code></pre></div>
-<p>If you want a full restart:</p>
+<p>If <code>recoverable</code> is <code>false</code> or resume fails, do a full restart:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Call: plan_retry(plan_id=&quot;...&quot;)   # Discard all progress, start fresh
 </code></pre></div>
+<p>If diagnostics are <code>null</code> (legacy plan), default to trying <code>plan_resume</code> first, then <code>plan_retry</code>.</p>
 <h3 id="step-7-retrieve-output">Step 7: Retrieve output</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Call: plan_file_info(plan_id=&quot;...&quot;, artifact=&quot;report&quot;)
 </code></pre></div>
@@ -6067,7 +6095,7 @@
 <tbody>
 <tr>
 <td><code>plan_status</code> returns <code>failed</code></td>
-<td>Call <code>plan_resume</code> first (preserves progress). If that fails, call <code>plan_retry</code>.</td>
+<td>Check <code>recoverable</code> field: if <code>true</code>, call <code>plan_resume</code> (preserves progress); if <code>false</code>, call <code>plan_retry</code>. If diagnostics are <code>null</code>, try <code>plan_resume</code> first, then <code>plan_retry</code>.</td>
 </tr>
 <tr>
 <td><code>plan_status</code> stays <code>pending</code> &gt; 5 min</td>

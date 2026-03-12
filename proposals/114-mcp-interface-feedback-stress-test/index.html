@@ -6296,7 +6296,7 @@
 
 <h1 id="proposal-114-mcp-interface-issues-from-10-plan-agent-stress-test">Proposal 114: MCP Interface Issues from 10-Plan Agent Stress Test</h1>
 <p><strong>Date:</strong> 2026-03-11
-<strong>Status:</strong> Proposal (I1, I4 implemented; remainder open)
+<strong>Status:</strong> Proposal (I1, I2, I4 implemented; remainder open)
 <strong>Source:</strong> Feedback from Claude (Opus 4.6) after three stress-testing sessions (13 plans total) operated through Claude Code CLI.
 <strong>Scope:</strong> MCP interface design, observability, and lifecycle management. Does not cover plan content quality or pipeline output improvements.</p>
 <hr />
@@ -6344,22 +6344,31 @@
 <p><strong>Affected files:</strong> <code>database_api/model_planitem.py</code>, <code>mcp_cloud/db_setup.py</code>, <code>worker_plan_database/app.py</code>, <code>mcp_cloud/db_queries.py</code>, <code>mcp_cloud/handlers.py</code>, <code>mcp_cloud/sse.py</code>, <code>mcp_cloud/tool_models.py</code>, <code>mcp_cloud/schemas.py</code>, <code>mcp_local/planexe_mcp_local.py</code>, <code>frontend_multi_user/src/app.py</code>, <code>frontend_multi_user/src/planexe_modelviews.py</code>, <code>frontend_multi_user/templates/plan_iframe.html</code>, <code>frontend_multi_user/templates/run_via_database.html</code>, <code>frontend_multi_user/templates/index.html</code>, <code>frontend_multi_user/templates/account.html</code>, <code>mcp_cloud/tests/test_plan_status_tool.py</code>, <code>docs/mcp/planexe_mcp_interface.md</code>, <code>docs/mcp/autonomous_agent_guide.md</code>, <code>docs/proposals/87-plan-resume-mcp-tool.md</code>, <code>docs/proposals/111-promising-directions.md</code>.</p>
 <hr />
 <h3 id="i2-no-failure-diagnostics-in-plan_status">I2 — No failure diagnostics in <code>plan_status</code></h3>
+<p><strong>Status:</strong> Implemented. Four new nullable columns on <code>PlanItem</code> (<code>failure_reason</code>, <code>failed_step</code>, <code>error_message</code>, <code>recoverable</code>) populated by the worker on failure and surfaced in <code>plan_status</code> responses inside a consolidated <code>error</code> dict. Diagnostics are reset on retry/resume.</p>
 <p><strong>Priority: High — identified as the single biggest observability gap.</strong></p>
-<p><strong>Problem:</strong> When a plan fails, <code>plan_status</code> returns <code>state: "failed"</code> with no <code>failure_reason</code>, <code>last_error</code>, or <code>failed_step</code> field. The agent can only tell the user "it failed" without explaining why.</p>
+<p><strong>Problem:</strong> When a plan fails, <code>plan_status</code> returns <code>state: "failed"</code> with no <code>failure_reason</code>, <code>error_message</code>, or <code>failed_step</code> field. The agent can only tell the user "it failed" without explaining why.</p>
 <p>During the stress test, Plan 1 (20f1cfac) stalled at 5.5% with zero diagnostic information. The operator had no way to determine if it was a content refusal, a model error, or a worker crash.</p>
 <p><strong>Overlap:</strong> Proposal 113 (LLM Error Traceability) preserves errors in usage metrics logs but does not surface them in <code>plan_status</code> responses to the MCP consumer.</p>
-<p><strong>Proposed addition to <code>plan_status</code> response (on failure):</strong></p>
+<p><strong>Implemented response shape (on failure):</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;failed&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;failure_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;model_error&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;failed_step&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;016-expert_criticism&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;last_error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter-gemini-2.0-flash-001 returned invalid_json&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;recoverable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;failure_reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;generation_error&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;failed_step&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;016-expert_criticism&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LLM provider returned 503&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;recoverable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
 </code></pre></div>
-<p>The <code>recoverable</code> boolean would let the agent immediately suggest <code>plan_resume</code> (transient/recoverable) vs <code>plan_retry</code> (fundamental/non-recoverable) without guessing.</p>
-<p><strong>Implementation path:</strong> The worker already logs errors internally. When transitioning to <code>failed</code>, write <code>failure_reason</code>, <code>failed_step</code>, <code>last_error</code>, and <code>recoverable</code> to the plan's DB record (e.g. in the <code>parameters</code> JSONB column or new dedicated columns). <code>plan_status</code> handler surfaces these fields when <code>state == "failed"</code>.</p>
-<p><strong>Affected files:</strong> <code>worker_plan_database/app.py</code> (error capture on failure), <code>mcp_cloud/db_queries.py</code> (store failure info), <code>mcp_cloud/handlers.py</code> (include in plan_status response).</p>
+<p>The <code>recoverable</code> boolean lets the agent immediately suggest <code>plan_resume</code> (transient/recoverable) vs <code>plan_retry</code> (fundamental/non-recoverable) without guessing.</p>
+<p><strong><code>failure_reason</code> values:</strong>
+- <code>generation_error</code> — pipeline step failed (recoverable)
+- <code>worker_error</code> — unhandled exception in worker (recoverable)
+- <code>inactivity_timeout</code> — stop flag detected without user request (recoverable)
+- <code>internal_error</code> — pipeline completed but no report produced (not recoverable)
+- <code>version_mismatch</code> — resume attempted with incompatible pipeline version (not recoverable)</p>
+<p><strong>Implementation:</strong> Four dedicated nullable columns on <code>PlanItem</code>: <code>failure_reason</code>, <code>failed_step</code>, <code>error_message</code>, <code>recoverable</code>. The column was originally named <code>last_error</code> and renamed to <code>error_message</code> to match the consolidated <code>error.message</code> field in the MCP response. Migration functions in all three services (mcp_cloud, worker_plan_database, frontend_multi_user) check column existence via <code>sqlalchemy.inspect</code> before attempting the rename — this avoids noisy PostgreSQL ERROR logs on restarts where the rename already succeeded. The worker populates them via <code>_update_failure_diagnostics()</code> at three failure paths: normal pipeline failure, unhandled exception, and version mismatch on resume. The <code>plan_status</code> handler consolidates these into a single <code>error</code> dict (with keys <code>failure_reason</code>, <code>failed_step</code>, <code>message</code>, <code>recoverable</code>) only when <code>state == "failed"</code> — non-failed plans omit the <code>error</code> field entirely. Diagnostics are cleared on <code>plan_retry</code> and <code>plan_resume</code>. The frontend displays diagnostics in the failure trace panel and the admin bulk-fail form uses the renamed field.</p>
+<p><strong>Affected files:</strong> <code>database_api/model_planitem.py</code>, <code>mcp_cloud/db_setup.py</code>, <code>mcp_cloud/db_queries.py</code>, <code>mcp_cloud/handlers.py</code>, <code>mcp_cloud/tool_models.py</code>, <code>mcp_cloud/schemas.py</code>, <code>mcp_cloud/tests/test_plan_status_tool.py</code>, <code>mcp_cloud/README.md</code>, <code>mcp_local/README.md</code>, <code>worker_plan_database/app.py</code>, <code>frontend_multi_user/src/app.py</code>, <code>frontend_multi_user/src/planexe_modelviews.py</code>, <code>frontend_multi_user/templates/admin/bulk_change_to_failed.html</code>, <code>frontend_multi_user/templates/plan_iframe.html</code>, <code>docs/mcp/planexe_mcp_interface.md</code>, <code>docs/mcp/mcp_details.md</code>, <code>docs/mcp/autonomous_agent_guide.md</code>.</p>
 <hr />
 <h3 id="i3-no-plan-deletion-or-cleanup">I3 — No plan deletion or cleanup</h3>
 <p><strong>Problem:</strong> Stopped and failed plans persist in <code>plan_list</code> indefinitely. After 10 plans, the list becomes noisy. There is no way to clean up test runs, abandoned plans, or experiments.</p>
@@ -6543,7 +6552,7 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 <tr>
 <td>I2 (failure diagnostics)</td>
 <td>113 (logs only)</td>
-<td>Not surfaced to MCP consumer</td>
+<td><strong>Implemented</strong> — surfaced to MCP consumer</td>
 </tr>
 <tr>
 <td>I3 (plan_delete)</td>
@@ -6649,9 +6658,9 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 </thead>
 <tbody>
 <tr>
-<td>P1</td>
-<td>I2 (failure diagnostics)</td>
-<td>Biggest observability gap. Agent cannot help users debug failures without this.</td>
+<td>~~P1~~</td>
+<td>~~I2 (failure diagnostics)~~</td>
+<td><strong>Implemented</strong>. Four DB columns populated by worker, surfaced in <code>plan_status</code>, displayed in frontend.</td>
 </tr>
 <tr>
 <td>~~P1~~</td>
@@ -6813,8 +6822,8 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 <td>Failure diagnostics</td>
 <td>Missing</td>
 <td>Still missing</td>
-<td>Still missing</td>
-<td>Unchanged</td>
+<td><strong>Implemented</strong></td>
+<td>Fixed</td>
 </tr>
 <tr>
 <td>Silent partial failures</td>

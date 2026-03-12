@@ -5903,7 +5903,8 @@ proxy forwards tool calls over HTTP and downloads artifacts from <code>/download
 <p><code>plan_status</code> caller contract:
 - <code>pending</code> / <code>processing</code>: keep polling.
 - <code>completed</code>: terminal success, download is ready.
-- <code>failed</code>: terminal error.</p>
+- <code>stopped</code>: user called <code>plan_stop</code>. Use <code>plan_resume</code> to continue or <code>plan_retry</code> to restart.
+- <code>failed</code>: terminal error. Response includes an <code>error</code> dict with failure diagnostics (<code>error.failure_reason</code>, <code>error.failed_step</code>, <code>error.message</code>, <code>error.recoverable</code>) when available. If <code>error.recoverable</code> is <code>true</code>, try <code>plan_resume</code>; if <code>false</code>, use <code>plan_retry</code>.</p>
 <p>Concurrency semantics:
 - Each <code>plan_create</code> call creates a new <code>plan_id</code>.
 - <code>plan_retry</code> reuses the same failed <code>plan_id</code>.
