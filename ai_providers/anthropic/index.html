@@ -1705,6 +1705,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#authentication-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#option-a-standard-api-key" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1714,12 +1726,28 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#option-b-claude-code-oauth-token-claude-promax-subscribers" class="md-nav__link">
     <span class="md-ellipsis">
       
         Option B — Claude Code OAuth token (Claude Pro/Max subscribers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a model
       
     </span>
   </a>
@@ -1738,21 +1766,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#extended-thinking" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-a-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing a model
+        Extended thinking
       
     </span>
   </a>
@@ -5868,6 +5885,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#authentication-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#option-a-standard-api-key" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5877,12 +5906,28 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#option-b-claude-code-oauth-token-claude-promax-subscribers" class="md-nav__link">
     <span class="md-ellipsis">
       
         Option B — Claude Code OAuth token (Claude Pro/Max subscribers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a model
       
     </span>
   </a>
@@ -5901,21 +5946,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#extended-thinking" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-a-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing a model
+        Extended thinking
       
     </span>
   </a>
@@ -5989,16 +6023,17 @@
 </tbody>
 </table>
 <p>The Claude Code OAuth path lets you use PlanExe without a separate API billing account — if you already pay for Claude Pro or Max, you can generate a token and use it directly.</p>
-<h2 id="option-a-standard-api-key">Option A — Standard API key</h2>
+<h2 id="authentication-setup">Authentication setup</h2>
+<h3 id="option-a-standard-api-key">Option A — Standard API key</h3>
 <ol>
 <li>Sign up at <a href="https://console.anthropic.com/">console.anthropic.com</a> and add API credits.</li>
 <li>Generate an API key from the Console.</li>
-<li>Copy <code>.env.docker-example</code> to <code>.env</code> and add:
+<li>Add to your <code>.env</code>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ANTHROPIC_API_KEY=sk-ant-api...
 </code></pre></div></li>
 </ol>
-<h2 id="option-b-claude-code-oauth-token-claude-promax-subscribers">Option B — Claude Code OAuth token (Claude Pro/Max subscribers)</h2>
-<p>If you have a Claude Pro or Max subscription, you can use <code>claude setup-token</code> to generate an OAuth token that works in place of an API key.</p>
+<h3 id="option-b-claude-code-oauth-token-claude-promax-subscribers">Option B — Claude Code OAuth token (Claude Pro/Max subscribers)</h3>
+<p>If you have a Claude Pro or Max subscription, you can generate an OAuth token that works in place of an API key.</p>
 <p><strong>Requirements:</strong>
 - <a href="https://docs.anthropic.com/en/docs/claude-code/getting-started">Claude Code</a> installed (<code>npm install -g @anthropic-ai/claude-code</code>)
 - Active Claude Pro or Max subscription</p>
@@ -6011,15 +6046,70 @@
 This outputs a token starting with <code>sk-ant-oat</code>.</p>
 </li>
 <li>
-<p>Copy <code>.env.docker-example</code> to <code>.env</code> and add:
+<p>Add to your <code>.env</code>:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ANTHROPIC_API_KEY=sk-ant-oat01--...
 </code></pre></div></p>
 </li>
 </ol>
-<p>PlanExe auto-detects the <code>sk-ant-oat</code> prefix and switches to the correct <code>Authorization: Bearer</code> auth scheme with the required <code>anthropic-beta: oauth-2025-04-20</code> header. No other changes needed.</p>
+<p>PlanExe auto-detects the <code>sk-ant-oat</code> prefix and switches to the correct Bearer auth scheme automatically. No other changes needed.</p>
 <blockquote>
 <p><strong>Note:</strong> OAuth tokens may expire. If you get 401 errors, run <code>claude setup-token</code> again to refresh.</p>
 </blockquote>
+<hr />
+<h2 id="choosing-a-model">Choosing a model</h2>
+<p>PlanExe makes 60–100+ LLM calls per plan. Choose based on your priority:</p>
+<table>
+<thead>
+<tr>
+<th>Config ID</th>
+<th>Model</th>
+<th>Speed</th>
+<th>Cost (est. per plan)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>anthropic-claude-haiku-4-5</code></td>
+<td>Haiku 4.5</td>
+<td>Fastest</td>
+<td>&lt; $0.50</td>
+<td>Best default for most users</td>
+</tr>
+<tr>
+<td><code>anthropic-claude-sonnet-4-6</code></td>
+<td>Sonnet 4.6</td>
+<td>Medium</td>
+<td>~$2–5</td>
+<td>Better quality than Haiku</td>
+</tr>
+<tr>
+<td><code>anthropic-claude-sonnet-4-6-thinking</code></td>
+<td>Sonnet 4.6 + thinking</td>
+<td>Slow</td>
+<td>~$5–15</td>
+<td>Extended reasoning per call</td>
+</tr>
+<tr>
+<td><code>anthropic-claude-opus-4-6</code></td>
+<td>Opus 4.6</td>
+<td>Slow</td>
+<td>~$15–40</td>
+<td>Highest quality, highest cost</td>
+</tr>
+<tr>
+<td><code>anthropic-claude-opus-4-6-thinking</code></td>
+<td>Opus 4.6 + thinking</td>
+<td>Very slow</td>
+<td>~$30–80+</td>
+<td>Maximum quality, use sparingly</td>
+</tr>
+</tbody>
+</table>
+<p>For pinned versions (reproducible results), use:
+- <code>anthropic-claude-haiku-4-5-pinned</code> — locked to <code>claude-haiku-4-5-20251001</code>
+- <code>anthropic-claude-sonnet-4-5</code> — locked to <code>claude-sonnet-4-5</code></p>
+<hr />
 <h2 id="quickstart-docker">Quickstart (Docker)</h2>
 <ol>
 <li>Install Docker (with Docker Compose).</li>
@@ -6027,7 +6117,7 @@ This outputs a token starting with <code>sk-ant-oat</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git clone https://github.com/PlanExeOrg/PlanExe.git
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cd PlanExe
 </code></pre></div></li>
-<li>Copy <code>.env.docker-example</code> to <code>.env</code> and set your key (API key or OAuth token — either format works):
+<li>Copy <code>.env.docker-example</code> to <code>.env</code> and configure:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ANTHROPIC_API_KEY=sk-ant-...
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>DEFAULT_LLM=anthropic-claude-haiku-4-5
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>PLANEXE_MODEL_PROFILE=custom
@@ -6038,49 +6128,29 @@ This outputs a token starting with <code>sk-ant-oat</code>.</p>
 </code></pre></div></li>
 <li>Open http://localhost:7860 and submit a prompt.</li>
 </ol>
-<h2 id="configuration">Configuration</h2>
-<p>PlanExe includes <code>llm_config/anthropic_claude.json</code> with two ready-to-use entries:</p>
-<table>
-<thead>
-<tr>
-<th>Config ID</th>
-<th>Model</th>
-<th>Speed</th>
-<th>Cost</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>anthropic-claude-sonnet-4-5</code></td>
-<td>claude-sonnet-4-5</td>
-<td>Medium</td>
-<td>~$3/$15 per M tokens</td>
-</tr>
-<tr>
-<td><code>anthropic-claude-haiku-4-5</code></td>
-<td>claude-haiku-4-5</td>
-<td>Fast</td>
-<td>~$0.25/$1.25 per M tokens</td>
-</tr>
-</tbody>
-</table>
-<p>For most PlanExe runs, <strong>haiku</strong> is the right choice — it's fast, cheap, and handles PlanExe's structured output requirements well.</p>
-<p>To use this config:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PLANEXE_MODEL_PROFILE=custom
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>PLANEXE_LLM_CONFIG_CUSTOM_FILENAME=anthropic_claude.json
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>DEFAULT_LLM=anthropic-claude-haiku-4-5
+<p>To switch models, change <code>DEFAULT_LLM</code> in <code>.env</code> to any config ID from the table above, then restart:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker compose restart worker_plan frontend_single_user
 </code></pre></div></p>
-<h2 id="choosing-a-model">Choosing a model</h2>
-<p>PlanExe makes 60–100+ LLM calls per plan. Claude Haiku is recommended for cost-effective runs. Claude Sonnet produces higher-quality output but costs roughly 10× more per run.</p>
+<hr />
+<h2 id="extended-thinking">Extended thinking</h2>
+<p>Some entries in <code>anthropic_claude.json</code> enable <a href="https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking">extended thinking</a>. These use a <code>thinking_dict</code> in the config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&quot;thinking_dict&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;budget_tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">}</span>
+</code></pre></div>
+<p><code>budget_tokens</code> controls how many tokens Claude can use for internal reasoning before writing its answer. Higher = slower + more expensive, but better structured output on complex tasks.</p>
+<p><strong>Trade-offs for PlanExe:</strong>
+- PlanExe runs 60–100+ calls per plan — thinking multiplies both cost and latency significantly
+- For most plans, Haiku or Sonnet without thinking produces good results
+- Use thinking variants only when plan quality is the top priority</p>
+<hr />
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p><strong>401 Unauthorized</strong>
 - API key: check that <code>ANTHROPIC_API_KEY</code> is set correctly in <code>.env</code>.
 - OAuth token: run <code>claude setup-token</code> again — tokens expire.</p>
 <p><strong>400 credit balance too low</strong>
 - API key path: add credits at <a href="https://console.anthropic.com/">console.anthropic.com</a>.
-- OAuth token path: OAuth tokens authenticate you but API calls still consume credits from your Anthropic account. If your account has no credits, top up at the Console.</p>
+- OAuth token path: OAuth tokens authenticate you, but API calls still consume credits from your Anthropic account. Top up at the Console if needed.</p>
 <p><strong>Check worker logs:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker compose logs -f worker_plan
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker compose logs -f worker_plan
 </code></pre></div></p>
 <p>Report issues on <a href="https://planexe.org/discord">Discord</a>. Include your OS, hardware, and the error from <code>log.txt</code> in the output directory.</p>
 <hr />
