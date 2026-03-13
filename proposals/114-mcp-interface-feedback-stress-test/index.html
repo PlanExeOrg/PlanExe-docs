@@ -5935,6 +5935,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp-interface-perception-v4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mcp interface perception v4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6404,6 +6432,16 @@
 <p><strong>Affected files:</strong> <code>mcp_cloud/db_queries.py</code> (<code>_find_recent_duplicate_plan</code>, <code>_create_plan_sync</code>), <code>mcp_cloud/tool_models.py</code> (<code>deduplicated</code> field on <code>PlanCreateOutput</code>), <code>mcp_cloud/schemas.py</code> (description and <code>idempotentHint</code>), <code>mcp_cloud/app.py</code> (re-export).</p>
 <hr />
 <h3 id="i5-sse-is-the-wrong-mechanism-for-mcp-agents">I5 — SSE is the wrong mechanism for MCP agents</h3>
+<p><strong>Status:</strong> Implemented and reverted. A <code>monitor</code> boolean parameter was added to <code>plan_create</code>, <code>plan_retry</code>, and <code>plan_resume</code> using the MCP SDK's <code>ctx.report_progress()</code> and <code>ctx.info()</code> APIs. The server sent <code>notifications/progress</code> and <code>notifications/message</code> correctly, but v4 real-world testing revealed that Claude Code — PlanExe's primary MCP consumer — silently drops both notification types. Claude Code only supports <code>list_changed</code> notifications (for refreshing tool/resource definitions). Since no current MCP client can consume the notifications, the implementation was reverted as unused code.</p>
+<p><strong>v4 real-world testing (March 2026):</strong> A <code>monitor=true</code> parameter was implemented and tested. Claude Code tested <code>monitor=true</code> on <code>plan_resume</code>. The resume succeeded and the plan completed, but zero notifications were received. Investigation showed that Claude Code only supports <code>list_changed</code> MCP notifications (for refreshing tool/resource definitions). It does not handle <code>notifications/progress</code> or <code>notifications/message</code> — they are silently dropped. The server was sending notifications correctly; the gap is on the client side. The implementation was reverted as unused code — no MCP client can consume it today. See <code>docs/proposals/mcp-interface-perception-v4.md</code> for the full agent feedback.</p>
+<p><strong>Corrected priority ranking (from v4 agent feedback):</strong></p>
+<ol>
+<li>Polling <code>plan_status</code> — reliable, works everywhere, recommended default</li>
+<li><code>plan_wait</code> blocking tool (see I8) — would eliminate polling for agents without notification support</li>
+<li>MCP notifications — correct long-term solution, blocked by client support (revisit when clients add <code>notifications/progress</code> handling)</li>
+<li>SSE — only useful for non-agent consumers (browser UIs, dashboards)</li>
+<li>HTTP webhooks — only useful for server-to-server</li>
+</ol>
 <p><strong>Updated in v3:</strong> The original framing ("SSE events lack structured data") missed the deeper problem. SSE is designed for real-time UI clients, not turn-based agents.</p>
 <p><strong>Problem:</strong> The agent's SSE monitoring pattern across all 13 plans was:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl -N -s &lt;sse_url&gt; 2&gt;&amp;1 | tail -5   # run in background
@@ -6414,25 +6452,22 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 - "Richer SSE events with progress data" — useless, since event content is never read
 - "Webhooks" — HTTP callbacks, but CLI agents have no endpoint to register
 - "SSE heartbeat pings" — would only help if the pattern itself were sound</p>
-<p><strong>What would actually help MCP agents (corrected priority):</strong></p>
+<p><strong>What would actually help MCP agents (corrected in v3, re-corrected in v4):</strong></p>
+<p>The v3 priority ranking assumed MCP clients would surface progress notifications. Real-world testing in v4 showed this is not the case (Claude Code silently drops them). See corrected priority ranking above.</p>
 <ol>
 <li>
-<p><strong>MCP notifications (best fit):</strong> The MCP protocol supports server-to-client notifications over the existing connection. If PlanExe sent a notification on terminal state:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;notifications/plan_state_changed&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;completed&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;progress_percentage&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">}}</span>
-</code></pre></div>
-   Claude Code would receive it as an event in the conversation. No SSE, no polling, no webhook endpoint. The connection already exists — use it.</p>
+<p><strong>Polling <code>plan_status</code> (works everywhere):</strong> The primary method. Reliable across all clients and transports.</p>
 </li>
 <li>
-<p><strong><code>plan_wait</code> blocking tool (fallback):</strong> See I8.</p>
+<p><strong><code>plan_wait</code> blocking tool:</strong> See I8. Would eliminate polling for agents without notification support.</p>
 </li>
 <li>
-<p><strong>Polling <code>plan_status</code> (always works):</strong> The current fallback. Inelegant but reliable across both local and remote servers.</p>
+<p><strong>MCP notifications:</strong> Correct long-term solution, but blocked by client support. Revisit when MCP clients add <code>notifications/progress</code> and <code>notifications/message</code> handling.</p>
 </li>
 <li>
-<p><strong>SSE (for non-MCP real-time clients only):</strong> Keep SSE for browser UIs, streaming dashboards, and CLI scripts that can consume events in real time. Stop recommending it to MCP agents in tool descriptions.</p>
+<p><strong>SSE (for non-MCP real-time clients only):</strong> Keep SSE for browser UIs, streaming dashboards, and CLI scripts that can consume events in real time. Do not recommend to MCP agents.</p>
 </li>
 </ol>
-<p><strong>Practical recommendation:</strong> Remove <code>sse_url</code> from <code>plan_create</code> responses once MCP notifications are working. If a future web UI needs SSE, add a dedicated endpoint at that point.</p>
 <p><strong>Overlap:</strong> Proposal 70 §5.1 (SSE progress streaming) is implemented but serves the wrong consumer type for agent use cases.</p>
 <p><strong>Affected files:</strong> <code>mcp_cloud/sse.py</code>, <code>mcp_cloud/schemas.py</code> (tool description update to stop recommending SSE to agents), <code>mcp_cloud/handlers.py</code> (MCP notification support).</p>
 <hr />
@@ -6468,8 +6503,8 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 <h3 id="i8-no-plan_wait-tool-for-agents-without-shell-access">I8 — No <code>plan_wait</code> tool for agents without shell access</h3>
 <p><strong>Problem:</strong> The recommended SSE monitoring pattern (<code>curl -N &lt;sse_url&gt;</code>) requires Bash tool access. Agents running in pure MCP client environments (no shell) can only poll <code>plan_status</code>. A blocking <code>plan_wait</code> tool would let these agents simply wait for completion.</p>
 <p><strong>Proposed tool:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>plan_wait(plan_id, timeout_seconds=1200): Blocks until the plan reaches a terminal state
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>(completed, failed, stopped) or the timeout expires. Returns the final plan_status response.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>plan_wait(plan_id, timeout_seconds=1200): Blocks until the plan reaches a terminal state
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>(completed, failed, stopped) or the timeout expires. Returns the final plan_status response.
 </code></pre></div>
 <p><strong>Implementation:</strong> Server-side long-poll using the existing SSE infrastructure. The handler subscribes to the plan's state changes and returns when terminal or timeout.</p>
 <p><strong>Consideration:</strong> Long-running HTTP requests may conflict with proxy/load-balancer timeouts. Default timeout should be ≤ 20 minutes. May need to be implemented as repeated short polls on the server side with a single response.</p>
@@ -6488,13 +6523,13 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 <p><strong>Problem:</strong> A plan can reach <code>completed</code> with sections that are empty or stub-quality (e.g. 6/8 experts returning no feedback in the expert criticism step). There is no signal in <code>plan_status</code> or <code>plan_file_info</code> that the output has quality gaps. The agent has to read individual files to discover this. <code>completed</code> means "all 110 steps ran" — not "all sections produced quality output."</p>
 <p>This is a trust gap: the agent cannot confidently tell the user "your plan is ready" without caveats, because it has no visibility into per-section quality.</p>
 <p><strong>Proposed addition:</strong> A <code>quality_summary</code> in the completed plan status or file info:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;sections_complete&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;sections_partial&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;partial_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;016-expert_criticism&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;note&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2/8 experts provided feedback&quot;</span><span class="p">}</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;sections_complete&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;sections_partial&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;partial_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;step&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;016-expert_criticism&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;note&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2/8 experts provided feedback&quot;</span><span class="p">}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Implementation path:</strong> The worker already knows which steps produced output. A post-pipeline validation pass could check key sections for minimum output quality (e.g. non-empty, expected structure present) and write a summary to the DB. <code>plan_status</code> surfaces it when <code>state == "completed"</code>.</p>
 <p><strong>Affected files:</strong> <code>worker_plan_database/app.py</code> (quality validation pass), DB model (quality summary column), <code>mcp_cloud/handlers.py</code> (include in completed plan_status response).</p>
@@ -6507,14 +6542,14 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 - SSE monitoring patterns that work on local may fail on remote
 - Speed expectations differ (local ~13 min, remote ~28 min for baseline plans)</p>
 <p><strong>Proposed fix:</strong> <code>plan_status</code> could include a <code>server</code> or <code>endpoint</code> field so the agent always knows which backend it's talking to. Alternatively, <code>plan_create</code> could return a <code>server_info</code> object with capabilities:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;server_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;server_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe-remote-prod&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;sse_reliable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;files_visible_during_processing&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;expected_speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;slow&quot;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;server_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;server_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;planexe-remote-prod&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;sse_reliable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;files_visible_during_processing&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">&quot;expected_speed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;slow&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Affected files:</strong> <code>mcp_cloud/handlers.py</code>, <code>mcp_cloud/tool_models.py</code>, <code>mcp_local/planexe_mcp_local.py</code>.</p>
 <hr />
