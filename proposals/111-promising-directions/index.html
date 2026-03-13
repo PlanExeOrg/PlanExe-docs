@@ -5725,34 +5725,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mcp-interface-perception-v4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    mcp interface perception v4
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -6021,8 +5993,8 @@
 </tr>
 <tr>
 <td><strong>114-I5</strong></td>
-<td>SSE Wrong for Agents; MCP Notifications Needed</td>
-<td><strong>Corrected in v3.</strong> SSE is designed for real-time UI clients, not turn-based agents. The agent never read SSE event content — it abused connection close as a binary "done" signal, which failed on remote (stream dropped at ~48%). MCP notifications over the existing connection are the correct mechanism; <code>plan_wait</code> (I8) is the fallback. SSE should only be recommended to non-MCP consumers. <strong>Promoted to P1</strong></td>
+<td>SSE Wrong for Agents; MCP Notifications Deprioritized</td>
+<td><strong>Corrected in v3, re-corrected in v4.</strong> SSE is designed for real-time UI clients, not turn-based agents — the agent abused connection close as a binary "done" signal. v3 proposed MCP notifications as the replacement. v4 tested <code>monitor=true</code> (implemented and reverted): Claude Code silently drops <code>notifications/progress</code> and <code>notifications/message</code> — it only supports <code>list_changed</code>. No current MCP client can consume progress notifications. <strong>Practical priority:</strong> (1) polling <code>plan_status</code> — works everywhere, (2) <code>plan_wait</code> blocking tool (I8) — would eliminate polling, (3) MCP notifications — correct long-term solution, blocked by client support. SSE remains useful as a local completion detector for non-agent consumers</td>
 </tr>
 <tr>
 <td><strong>114-I6</strong></td>
@@ -6032,7 +6004,7 @@
 <tr>
 <td><strong>114-I8</strong></td>
 <td><code>plan_wait</code> Tool</td>
-<td><strong>Upgraded from P3 to P2 in v3.</strong> Validated as the correct fallback when MCP notifications (I5) aren't available. A blocking <code>plan_wait(plan_id, timeout)</code> tool returns final status on completion — replaces both SSE monitoring and follow-up <code>plan_status</code> in a single call</td>
+<td><strong>Upgraded from P3 to P2.</strong> The most practical improvement for agents today, given that MCP notifications are blocked by client support (I5). A blocking <code>plan_wait(plan_id, timeout)</code> tool returns final status on completion — replaces both SSE monitoring and polling <code>plan_status</code> in a single call</td>
 </tr>
 <tr>
 <td><strong>114-I9</strong></td>
@@ -6161,7 +6133,7 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ├─ #58  Prompt boost ⚙️ (open PR #222)
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  ├─ #114-I1 Stopped vs failed state ✅
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  ├─ #114-I2 Failure diagnostics in plan_status ✅
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  ├─ #114-I5 MCP notifications for agents  ← P1 (v3 correction: SSE wrong for agents)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  ├─ #114-I5 MCP notifications for agents  ← deprioritized (v4: Claude Code can&#39;t consume them; polling is primary)
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  ├─ #114-I7 Stalled-plan detection
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  ├─ #114-I10 Silent partial failures in completed plans
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  └─ #114-I12 Remote files visibility during processing
@@ -6173,7 +6145,7 @@
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  ├─ #114-I3 Plan delete/archive
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  ├─ #114-I6 Download URL TTL extension
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>  ├─ #114-I4 Idempotency guard ✅ (PR #242)
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  ├─ #114-I8 plan_wait tool (upgraded P2 — fallback for MCP notifications)
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>  ├─ #114-I8 plan_wait tool (P2 — primary polling alternative now that MCP notifications are blocked)
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  ├─ #114-I9 Prompt iteration linking
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>  ├─ #114-I11 Server identity in responses
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>  └─ #114-I13 Remote SSE reliability (if SSE kept for non-agent consumers)
