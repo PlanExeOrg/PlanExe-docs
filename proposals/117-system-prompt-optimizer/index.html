@@ -2913,6 +2913,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#status-2026-03-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status (2026-03-13)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status (2026-03-13)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stage-1-one-improvement-iteration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5824,6 +5874,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#status-2026-03-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status (2026-03-13)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Status (2026-03-13)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#done" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Done
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not Started
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#stage-1-one-improvement-iteration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5882,6 +5982,36 @@ By first starting optimizing the earliest system prompt, when that consistently 
 older system prompts, then it's a keeper. Then move on to the next system prompt in the luigi pipeline.
 By the end of this prompt optimization, the overall plan quality should have been improved.</p>
 <p>I want to track metrics for how much improvement have happened.</p>
+<h2 id="status-2026-03-13">Status (2026-03-13)</h2>
+<h3 id="done">Done</h3>
+<ul>
+<li><strong>Data repo created</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab">PlanExe-prompt-lab</a> — holds baseline data, optimization run artifacts, and scores.</li>
+<li><strong>Baseline data populated</strong>: 5 train plans and 9 verify plans extracted from zips into <code>baseline/train/</code> and <code>baseline/verify/</code>. Each plan contains ~175-189 files covering the full pipeline output.</li>
+<li><strong><code>dataset.json</code></strong> defines the train/verify split with zip filenames.</li>
+<li><strong><code>populate_baseline.py</code></strong> script automates ingesting baseline data from local paths or URLs.</li>
+<li><strong>Directory structure</strong> for <code>runs/</code>, <code>scores/</code>, and <code>full_plan_comparisons/</code> is in place (empty, awaiting optimizer).</li>
+</ul>
+<h3 id="not-started">Not Started</h3>
+<ul>
+<li><strong><code>prompt_optimizer/</code> package in PlanExe</strong> — no optimizer code exists yet.</li>
+<li><strong>Evaluator prompt</strong> — no scoring rubric or comparison prompt written.</li>
+<li><strong>Candidate generator</strong> — no mechanism for producing prompt variants.</li>
+<li><strong>Runner / Scorer / CLI</strong> — none of the optimization loop machinery exists.</li>
+</ul>
+<h3 id="next-steps">Next Steps</h3>
+<ol>
+<li><strong>Design the evaluator prompt and scoring rubric.</strong> This is the foundation. Define concrete dimensions (completeness, specificity, actionability, structure) and a numeric scale. Version-control it alongside the system prompts.</li>
+<li><strong>Pick the first pipeline step to optimize.</strong> Something early (e.g., <code>002-3-premise_attack</code> or <code>002-10-potential_levers</code>) since downstream steps depend on upstream quality.</li>
+<li><strong>Build the optimizer engine</strong> in <code>prompt_optimizer/</code>:</li>
+<li><code>runner.py</code> — reruns a single pipeline step with a candidate prompt against training plans.</li>
+<li><code>evaluator.py</code> — calls a pinned reasoning model to score/compare outputs.</li>
+<li><code>candidate_generator.py</code> — produces prompt variants (LLM rewrites, structured mutations).</li>
+<li><code>optimizer.py</code> — orchestrates the train/verify loop.</li>
+<li><code>cli.py</code> — CLI entry point.</li>
+<li><strong>Pin the reasoning model</strong> for evaluation so scores are reproducible across runs.</li>
+<li><strong>Run baseline scoring</strong> — score the current prompts to establish a numeric starting point.</li>
+<li><strong>Add regression detection</strong> — after optimizing one step, re-run downstream steps to check for cascade regressions before committing.</li>
+</ol>
 <h2 id="stage-1-one-improvement-iteration">Stage 1 - one improvement iteration</h2>
 <p>Here is how one iteration is going to be:
 Optimize one system prompt for a single step in the luigi pipeline in run_plan_pipeline.py
@@ -5890,8 +6020,8 @@ Alter the system prompt of a named task in the pipeline.
 For MODEL_LIST, loop through the models, (these are LLMs without reasoning):
 - It's very expensive to run the full pipeline. So I only want to rerun the luigi pipeline for that just step, see if the new system prompt does a better job than the reference plan.
 - Capture the output.</p>
-<p>Have a reasoning model do a comparison of the captured outputs. 
-If it does better than the original prompt then it’s a candidate for keeping.
+<p>Have a reasoning model do a comparison of the captured outputs.
+If it does better than the original prompt then it's a candidate for keeping.
 If it does does worse than the original prompt then write it to a failed attempt log.
 Find prompts that consistently yield better outputs than the original prompt.
 Store the feedback.</p>
@@ -5904,13 +6034,11 @@ Commit improvement stats.</p>
 <p>Run "one improvement iteration" multiple times, until there score isn't improving significantly.</p>
 <h2 id="stage-3-next-item-in-the-luigi-pipeline">Stage 3 - next item in the luigi pipeline</h2>
 <p>As more upstream tasks gets optimized, then move on to further downstream tasks.</p>
-<p>From time to time regenerate full plan, and have a reasoning model compare how 
+<p>From time to time regenerate full plan, and have a reasoning model compare how
 much better or worse is the new full plan is over various KPIs.</p>
 <h1 id="dataset">Dataset</h1>
 <p>Config json file that contains the "dataset train" and "dataset verify".</p>
-<p>Within this dir is contained lots of zip files
-/Users/neoneye/git/PlanExe-web
-I don't want a hardcoded system path. It must be an envvar.</p>
+<p>The dataset lives in the <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab">PlanExe-prompt-lab</a> repository.</p>
 <p>These zip files are what PlanExe currently outputs, so these are the "baseline" to compare with.</p>
 <h2 id="dataset-train">Dataset train</h2>
 <p>20260310_hong_kong_game.zip
@@ -6006,77 +6134,90 @@ You mention "it's very expensive to run the full pipeline." What about the cost 
 </code></pre></div>
 <p>This keeps the optimizer close to the code it's modifying — it needs to import pipeline tasks,
 swap prompts, and run individual steps.</p>
-<h2 id="repo-2-planexe-prompt-lab-new-data-repo">Repo 2: <code>PlanExe-prompt-lab</code> (new — data repo)</h2>
+<h2 id="repo-2-planexe-prompt-lab-data-repo">Repo 2: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab"><code>PlanExe-prompt-lab</code></a> (data repo)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>README.md
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>dataset.json                        # train/verify split definition
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>baseline/                           # current outputs (unzipped from dataset zips)
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  train/
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    hong_kong_game/
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>      001-start_time.json
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>      002-identify_purpose.json
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      ...
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      030-report.html
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    gta_game/
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      ...
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    silo/
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>      ...
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    parasomnia_research_unit/
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>      ...
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    sovereign_identity/
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>      ...
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>  verify/
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    crate_recovery_campaign/
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>      ...
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    nuuk_clay_workshop/
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>      ...
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    (7 more plans)
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>runs/                               # optimization run outputs
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>  2026-03-13_identify_purpose/
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>    meta.json                       # which step, which base prompt, model list
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    candidates/
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>      candidate_01.txt              # candidate prompt text
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>      candidate_02.txt
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>      ...
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    outputs/
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>      candidate_01/
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        hong_kong_game.json         # output from running this candidate
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        gta_game.json
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        ...
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>      candidate_02/
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>        ...
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    evaluations/
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>      candidate_01/
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        hong_kong_game_eval.json    # reasoning model&#39;s comparison + score
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        ...
-<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>    summary.json                    # ranked candidates, aggregate scores
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    failed_attempts.log
-<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
-<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>  2026-03-14_make_assumptions/
-<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>    ...
-<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>
-<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>scores/                             # longitudinal tracking
-<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>  scoreboard.csv                    # step, date, baseline_score, best_score, delta
-<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>  history.json                      # full history for charting
-<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>full_plan_comparisons/              # Stage 3 periodic full-plan regenerations
-<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>  2026-03-20/
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    hong_kong_game/
-<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>      030-report.html
-<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    kpi_comparison.json
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>populate_baseline.py                # script to populate baseline from zip files
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>baseline/                           # current outputs (extracted from dataset zips)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>  train/
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    20260310_hong_kong_game/
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>      001-1-start_time.json
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      001-2-plan.txt
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      ...
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      030-report.html
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    20250329_gta_game/
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>      ...
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    20250321_silo/
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>      ...
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    20260311_parasomnia_research_unit/
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>      ...
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    20260308_sovereign_identity/
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>      ...
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  verify/
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    20260303_crate_recovery_campaign/
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>      ...
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    20260215_nuuk_clay_workshop/
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>      ...
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    (7 more plans)
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>runs/                               # optimization run outputs
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>  2026-03-13_identify_purpose/
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    meta.json                       # which step, which base prompt, model list
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    candidates/
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>      candidate_01.txt              # candidate prompt text
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>      candidate_02.txt
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>      ...
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>    outputs/
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>      candidate_01/
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        hong_kong_game.json         # output from running this candidate
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        gta_game.json
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        ...
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>      candidate_02/
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        ...
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    evaluations/
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>      candidate_01/
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        hong_kong_game_eval.json    # reasoning model&#39;s comparison + score
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        ...
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    summary.json                    # ranked candidates, aggregate scores
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    failed_attempts.log
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>  2026-03-14_make_assumptions/
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    ...
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>scores/                             # longitudinal tracking
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>  scoreboard.csv                    # step, date, baseline_score, best_score, delta
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>  history.json                      # full history for charting
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>full_plan_comparisons/              # Stage 3 periodic full-plan regenerations
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>  2026-03-20/
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>    hong_kong_game/
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>      030-report.html
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>    kpi_comparison.json
 </code></pre></div>
 <h2 id="connecting-the-two-repos">Connecting the two repos</h2>
-<p><code>dataset.json</code> ties the two repos together:</p>
+<p><code>dataset.json</code> defines the train/verify split. The <code>populate_baseline.py</code> script reads this file and extracts the zips into <code>baseline/</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;dataset_dir_env&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLANEXE_DATASET_DIR&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replace the zip files with your own. Run the populate_baseline.py script to populate the baseline/ directory.&quot;</span><span class="p">,</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;train&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hong_kong_game&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;zip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20260310_hong_kong_game.zip&quot;</span><span class="p">}</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">&quot;verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;crate_recovery_campaign&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;zip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20260303_crate_recovery_campaign.zip&quot;</span><span class="p">}</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="s2">&quot;20260310_hong_kong_game.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="s2">&quot;20250329_gta_game.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="s2">&quot;20250321_silo.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="s2">&quot;20260311_parasomnia_research_unit.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="s2">&quot;20260308_sovereign_identity.zip&quot;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">&quot;verify&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="s2">&quot;20260303_crate_recovery_campaign.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="s2">&quot;20260215_nuuk_clay_workshop.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="s2">&quot;20260202_heatwave_resilience.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="s2">&quot;20260201_media_rescue.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="s2">&quot;20260201_yellowstone_evacuation.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="s2">&quot;20260131_clear_english.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="s2">&quot;20260129_euro_adoption.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="s2">&quot;20260114_cbc_validation.zip&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="s2">&quot;20251101_e_bus_security.zip&quot;</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="why-this-split">Why this split</h2>
 <ul>
@@ -6085,8 +6226,6 @@ swap prompts, and run individual steps.</p>
 <li>The data repo is a full audit trail — every candidate, evaluation, and score is committed.</li>
 <li><code>scoreboard.csv</code> gives the metrics tracking at a glance.</li>
 </ul>
-<h2 id="env-var">Env var</h2>
-<p>The optimizer reads <code>PLANEXE_PROMPT_LAB_DIR</code> (path to the data repo checkout) — no hardcoded paths.</p>
 <h2 id="feedback-from-bubba-2026-03-13">Feedback from Bubba (2026-03-13)</h2>
 <h3 id="additional-questions-gaps">Additional Questions &amp; Gaps</h3>
 <p><strong>Evaluation prompt is itself a prompt — it needs the same rigor.</strong>
