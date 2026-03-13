@@ -1123,6 +1123,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stall-detection-timinglast_progress_at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stall detection (timing.last_progress_at)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6054,6 +6065,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#stall-detection-timinglast_progress_at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stall detection (timing.last_progress_at)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6400,6 +6422,9 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 </tbody>
 </table>
 <p>These fields are <code>null</code> for legacy plans that failed before this feature was added. The <code>error</code> dict is absent for non-failed states.</p>
+<h4 id="stall-detection-timinglast_progress_at">Stall detection (<code>timing.last_progress_at</code>)</h4>
+<p>The <code>timing.last_progress_at</code> field is an ISO 8601 timestamp of the most recent worker progress update. It is <code>null</code> until the worker writes its first progress update, and resets to <code>null</code> on <code>plan_retry</code>.</p>
+<p>Use it to detect stalled plans: if <code>last_progress_at</code> has not changed for &gt; 10 minutes while the plan is <code>processing</code>, the worker is likely stuck. Call <code>plan_stop</code> followed by <code>plan_retry</code>. Fall back to <code>files[].updated_at</code> timestamps if <code>last_progress_at</code> is <code>null</code> (legacy plans).</p>
 <h3 id="plan_stop">plan_stop</h3>
 <p>Request an active plan to stop.</p>
 <p>Example prompt:

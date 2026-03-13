@@ -5935,7 +5935,7 @@
 <tr>
 <td><strong>114-I7</strong></td>
 <td>Stalled-Plan Detection</td>
-<td>No <code>last_progress_at</code> or <code>last_llm_call_at</code> timestamps. Agents can't distinguish "slow step" from "stuck worker". Complements #87 §8</td>
+<td>⚙️ <strong>Partially implemented.</strong> <code>timing.last_progress_at</code> added to <code>plan_status</code> — agents can compute time-since-last-progress to detect stalls. <code>last_llm_call_at</code> deferred (requires LLM executor integration)</td>
 </tr>
 <tr>
 <td><strong>114-I10</strong></td>

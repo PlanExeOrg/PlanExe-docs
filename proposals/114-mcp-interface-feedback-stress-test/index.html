@@ -2890,10 +2890,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#i7-no-stalled-plan-detection" class="md-nav__link">
+  <a href="#i7-no-stalled-plan-detection-partially-implemented" class="md-nav__link">
     <span class="md-ellipsis">
       
-        I7 — No stalled-plan detection
+        I7 — No stalled-plan detection (partially implemented)
       
     </span>
   </a>
@@ -6138,10 +6138,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#i7-no-stalled-plan-detection" class="md-nav__link">
+  <a href="#i7-no-stalled-plan-detection-partially-implemented" class="md-nav__link">
     <span class="md-ellipsis">
       
-        I7 — No stalled-plan detection
+        I7 — No stalled-plan detection (partially implemented)
       
     </span>
   </a>
@@ -6593,7 +6593,7 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 <p><strong>Proposed fix:</strong> Extend default TTL from 15 to 30–60 minutes. Make it configurable via <code>PLANEXE_DOWNLOAD_TOKEN_TTL_SECONDS</code> environment variable.</p>
 <p><strong>Affected files:</strong> <code>mcp_cloud/download_tokens.py</code> (change default TTL constant, add env var override).</p>
 <hr />
-<h3 id="i7-no-stalled-plan-detection">I7 — No stalled-plan detection</h3>
+<h3 id="i7-no-stalled-plan-detection-partially-implemented">I7 — No stalled-plan detection <em>(partially implemented)</em></h3>
 <p><strong>Problem:</strong> Plan 1 (20f1cfac) stayed at 5.5% for multiple status checks with no indication of whether it was still working, stuck, or had silently failed. There is no <code>stalled_since</code> timestamp or heartbeat indicator in <code>plan_status</code>.</p>
 <p><strong>Overlap:</strong> Proposal 87 §8 proposes <code>current_task</code> and <code>last_llm_call_at</code> fields — these would partially address this, but there is no explicit stall detection.</p>
 <p><strong>Proposed additions to <code>plan_status</code>:</strong></p>
@@ -6602,20 +6602,24 @@ The agent never reads SSE event content. It waits for <code>curl</code> to exit 
 <tr>
 <th>Field</th>
 <th>Description</th>
+<th>Status</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>last_progress_at</code></td>
 <td>ISO 8601 timestamp of the last progress update. Enables the agent to compute time-since-last-progress and decide whether to wait, resume, or retry.</td>
+<td>✅ Implemented</td>
 </tr>
 <tr>
 <td><code>last_llm_call_at</code></td>
 <td>ISO 8601 timestamp of the most recent LLM call. A gap &gt; 5 minutes with no progress change is a strong stall signal.</td>
+<td>Deferred</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Affected files:</strong> <code>worker_plan_database/app.py</code> (write timestamps on progress), DB model (new timestamp columns), <code>mcp_cloud/handlers.py</code> (include in response).</p>
+<p><strong>Implementation note:</strong> <code>last_progress_at</code> is written by the worker on every progress update and returned in <code>plan_status</code> under <code>timing.last_progress_at</code>. It resets to <code>null</code> on <code>plan_retry</code> and is preserved on <code>plan_resume</code>. <code>last_llm_call_at</code> is deferred — it requires deeper integration with the LLM executor layer.</p>
 <hr />
 <h3 id="i8-no-plan_wait-tool-for-agents-without-shell-access">I8 — No <code>plan_wait</code> tool for agents without shell access</h3>
 <p><strong>Problem:</strong> The recommended SSE monitoring pattern (<code>curl -N &lt;sse_url&gt;</code>) requires Bash tool access. Agents running in pure MCP client environments (no shell) can only poll <code>plan_status</code>. A blocking <code>plan_wait</code> tool would let these agents simply wait for completion.</p>

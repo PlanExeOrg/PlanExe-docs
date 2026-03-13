@@ -6102,8 +6102,8 @@
 <td>Worker may be down. Report to user.</td>
 </tr>
 <tr>
-<td><code>plan_status</code> stays <code>processing</code> with no file changes &gt; 20 min</td>
-<td>Plan likely stalled. Call <code>plan_stop</code>, then <code>plan_retry</code>.</td>
+<td><code>plan_status</code> <code>timing.last_progress_at</code> unchanged &gt; 10 min</td>
+<td>Plan likely stalled. Call <code>plan_stop</code>, then <code>plan_retry</code>. Fall back to file <code>updated_at</code> timestamps if <code>last_progress_at</code> is <code>null</code>.</td>
 </tr>
 <tr>
 <td>Lost <code>plan_id</code></td>
