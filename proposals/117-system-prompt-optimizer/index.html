@@ -6059,6 +6059,28 @@ swap prompts, and run individual steps.</p>
 </ul>
 <h2 id="env-var">Env var</h2>
 <p>The optimizer reads <code>PLANEXE_PROMPT_LAB_DIR</code> (path to the data repo checkout) — no hardcoded paths.</p>
+<h2 id="feedback-from-bubba-2026-03-13">Feedback from Bubba (2026-03-13)</h2>
+<h3 id="additional-questions-gaps">Additional Questions &amp; Gaps</h3>
+<p><strong>Evaluation prompt is itself a prompt — it needs the same rigor.</strong>
+The reasoning model used for comparison will be guided by an evaluation prompt. That prompt encodes the scoring rubric. If the evaluation prompt is poorly specified, the optimizer will find prompts that score well on the evaluator but don't actually produce better plans. The evaluation prompt should be versioned, reviewed, and held constant across a run (or explicitly varied as a separate experiment).</p>
+<p><strong>Step isolation vs. cascade quality.</strong>
+Optimizing step N in isolation assumes that step N's output quality is a meaningful proxy for end-to-end plan quality. This may not hold: a step N output that scores 5/5 in isolation might feed step N+1 in a way that degrades the downstream result. Recommendation: after each isolated step optimization, run at least one full-pipeline spot check on the best candidate to confirm no downstream regressions before committing.</p>
+<p><strong><code>FAST_BUT_SKIP_DETAILS</code> vs. <code>ALL_DETAILS_BUT_SLOW</code> — which mode for the optimizer?</strong>
+The optimizer reruns individual pipeline steps. Those steps behave differently depending on <code>SPEED_VS_DETAIL</code>. Which mode should the optimizer use? Using <code>FAST_BUT_SKIP_DETAILS</code> is cheaper but may not reflect production output quality. This should be explicit in <code>meta.json</code> and the scoring rubric should account for it.</p>
+<p><strong>Candidate prompt generation is the missing piece.</strong>
+The doc describes the evaluation loop thoroughly but says nothing about how candidate prompts are created. This is the creative/generative step that drives the whole system. Options to consider:
+- LLM-generated rewrites (give the current prompt + failure examples to a reasoning model, ask for 3-5 variants)
+- Manual authoring with structured variation (change one constraint at a time)
+- Mutation from failed-attempts log (learn what patterns correlate with failure)
+The choice here will determine how fast the optimizer converges.</p>
+<h3 id="implementation-suggestion-prompt-diff-in-failed_attemptslog">Implementation Suggestion: Prompt diff in <code>failed_attempts.log</code></h3>
+<p>The <code>failed_attempts.log</code> currently captures that a candidate failed. It should also capture:
+- The diff between the candidate prompt and the base prompt
+- Which specific train plans it failed on (not just aggregate)
+- The evaluator's reasoning (not just the score)</p>
+<p>This turns the failure log into a learning dataset that can feed the next round of candidate generation.</p>
+<h3 id="implementation-suggestion-freeze-the-evaluation-model">Implementation Suggestion: Freeze the evaluation model</h3>
+<p>The reasoning model used for comparison should be pinned to a specific model version (not a rolling alias) for the duration of an optimization run. Model updates can shift evaluation scores without any change to the system prompts being tested. <code>meta.json</code> should record the exact evaluator model used.</p>
 
 
 
