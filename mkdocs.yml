@@ -47,8 +47,8 @@ nav:
       - mcp_local: developer/mcp_local.md
       - mcp_cloud: developer/mcp_cloud.md
     - AI providers:
-      - Anthropic: ai_providers/anthropic.md
       - OpenRouter: ai_providers/openrouter.md
+      - Anthropic: ai_providers/anthropic.md
       - Ollama: ai_providers/ollama.md
       - LM Studio: ai_providers/lm_studio.md
       - Mistral: ai_providers/mistral.md
