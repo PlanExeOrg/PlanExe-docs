@@ -2913,15 +2913,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#status-2026-03-13" class="md-nav__link">
+  <a href="#status-2026-03-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status (2026-03-13)
+        Status (2026-03-14)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Status (2026-03-13)">
+    <nav class="md-nav" aria-label="Status (2026-03-14)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5874,15 +5874,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#status-2026-03-13" class="md-nav__link">
+  <a href="#status-2026-03-14" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status (2026-03-13)
+        Status (2026-03-14)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Status (2026-03-13)">
+    <nav class="md-nav" aria-label="Status (2026-03-14)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5982,7 +5982,7 @@ By first starting optimizing the earliest system prompt, when that consistently 
 older system prompts, then it's a keeper. Then move on to the next system prompt in the luigi pipeline.
 By the end of this prompt optimization, the overall plan quality should have been improved.</p>
 <p>I want to track metrics for how much improvement have happened.</p>
-<h2 id="status-2026-03-13">Status (2026-03-13)</h2>
+<h2 id="status-2026-03-14">Status (2026-03-14)</h2>
 <h3 id="done">Done</h3>
 <ul>
 <li><strong>Data repo created</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab">PlanExe-prompt-lab</a> — holds baseline data, optimization run artifacts, and scores.</li>
@@ -5990,27 +5990,39 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li><strong><code>dataset.json</code></strong> defines the train/verify split with zip filenames.</li>
 <li><strong><code>populate_baseline.py</code></strong> script automates ingesting baseline data from local paths or URLs.</li>
 <li><strong>Directory structure</strong> for <code>runs/</code>, <code>scores/</code>, and <code>full_plan_comparisons/</code> is in place (empty, awaiting optimizer).</li>
+<li><strong><code>prompt_optimizer/</code> runner</strong> (<a href="https://github.com/PlanExeOrg/PlanExe/pull/263">PR #263</a>) — re-executes the <code>IdentifyPotentialLevers</code> step with a candidate system prompt against baseline plans. Features:</li>
+<li>Added optional <code>system_prompt</code> parameter to <code>IdentifyPotentialLevers.execute()</code> (backward-compatible).</li>
+<li>CLI with <code>--system-prompt-file</code>, <code>--baseline-dir</code>/<code>--plan-dir</code>, <code>--model</code>.</li>
+<li><code>--prompt-lab-dir</code> auto-creates runs in <code>history/{counter//100}/{counter%100:02d}_{step}/</code> with auto-incrementing counter.</li>
+<li><code>--output-dir</code> for manual placement (alternative to <code>--prompt-lab-dir</code>).</li>
+<li>Streaming progress: <code>meta.json</code> written at start, <code>events.jsonl</code> for real-time monitoring, <code>outputs.jsonl</code> for per-plan results.</li>
+<li>Per-plan <code>activity_overview.json</code> and <code>usage_metrics.jsonl</code> for token/cost tracking.</li>
+<li>System info (OS, CPU, memory, GPU) captured in <code>meta.json</code>.</li>
+<li>Resume support: re-run the same command to skip completed plans and retry errors.</li>
+<li>Automatic parallelism based on <code>luigi_workers</code> from <code>llm_config/*.json</code> (cloud models get 4 workers, local models get 1).</li>
+<li>Thread-safe: per-thread <code>LLMExecutor</code>, thread-local usage metrics via <code>threading.local()</code>, <code>TrackActivity</code> duplicate-write guard, locked file writes.</li>
+<li>Tested against all 5 training plans with local <code>ollama-llama3.1</code> (sequential) and <code>openrouter-openai-gpt-oss-20b</code> (parallel, 4 workers).</li>
+<li><strong><code>register_prompt.py</code></strong> — extracts the current system prompt for a step and saves it to <code>prompts/{step}/prompt_{index}_{sha256}.txt</code> in the prompt-lab repo. Auto-increments index, skips duplicates by SHA256.</li>
+<li><strong>Thread-safety fixes to <code>worker_plan_internal</code></strong>:</li>
+<li><code>usage_metrics.py</code>: replaced module-level global with <code>threading.local()</code> so each thread gets its own metrics path.</li>
+<li><code>track_activity.py</code>: <code>_record_file_usage_metric</code> guards against duplicate writes when multiple handlers are registered on the shared dispatcher.</li>
 </ul>
 <h3 id="not-started">Not Started</h3>
 <ul>
-<li><strong><code>prompt_optimizer/</code> package in PlanExe</strong> — no optimizer code exists yet.</li>
 <li><strong>Evaluator prompt</strong> — no scoring rubric or comparison prompt written.</li>
 <li><strong>Candidate generator</strong> — no mechanism for producing prompt variants.</li>
-<li><strong>Runner / Scorer / CLI</strong> — none of the optimization loop machinery exists.</li>
+<li><strong>Scorer / Optimizer loop</strong> — no automated train/verify loop.</li>
 </ul>
 <h3 id="next-steps">Next Steps</h3>
 <ol>
-<li><strong>Design the evaluator prompt and scoring rubric.</strong> This is the foundation. Define concrete dimensions (completeness, specificity, actionability, structure) and a numeric scale. Version-control it alongside the system prompts.</li>
-<li><strong>Pick the first pipeline step to optimize.</strong> Something early (e.g., <code>002-3-premise_attack</code> or <code>002-10-potential_levers</code>) since downstream steps depend on upstream quality.</li>
-<li><strong>Build the optimizer engine</strong> in <code>prompt_optimizer/</code>:</li>
-<li><code>runner.py</code> — reruns a single pipeline step with a candidate prompt against training plans.</li>
-<li><code>evaluator.py</code> — calls a pinned reasoning model to score/compare outputs.</li>
-<li><code>candidate_generator.py</code> — produces prompt variants (LLM rewrites, structured mutations).</li>
-<li><code>optimizer.py</code> — orchestrates the train/verify loop.</li>
-<li><code>cli.py</code> — CLI entry point.</li>
+<li><strong>Design the evaluator prompt and scoring rubric.</strong> Define concrete dimensions (completeness, specificity, actionability, structure) and a numeric scale. Version-control it alongside the system prompts.</li>
+<li><strong>Build <code>evaluator.py</code></strong> — calls a pinned reasoning model to score/compare runner outputs against baseline.</li>
+<li><strong>Run baseline scoring</strong> — score the current default prompt outputs to establish a numeric starting point.</li>
+<li><strong>Build <code>candidate_generator.py</code></strong> — produce prompt variants (LLM rewrites, structured mutations).</li>
+<li><strong>Build <code>optimizer.py</code></strong> — orchestrate the train/verify loop (Stage 1-2).</li>
 <li><strong>Pin the reasoning model</strong> for evaluation so scores are reproducible across runs.</li>
-<li><strong>Run baseline scoring</strong> — score the current prompts to establish a numeric starting point.</li>
 <li><strong>Add regression detection</strong> — after optimizing one step, re-run downstream steps to check for cascade regressions before committing.</li>
+<li><strong>Extend runner to other pipeline steps</strong> — the runner is designed for this; each step needs an adapter for input assembly, execute call, output filenames, and step name.</li>
 </ol>
 <h2 id="stage-1-one-improvement-iteration">Stage 1 - one improvement iteration</h2>
 <p>Here is how one iteration is going to be:
@@ -6161,39 +6173,53 @@ swap prompts, and run individual steps.</p>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>      ...
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    (7 more plans)
 <a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>runs/                               # optimization run outputs
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>  2026-03-13_identify_purpose/
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    meta.json                       # which step, which base prompt, model list
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    candidates/
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>      candidate_01.txt              # candidate prompt text
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>      candidate_02.txt
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>      ...
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>    outputs/
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>      candidate_01/
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>        hong_kong_game.json         # output from running this candidate
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        gta_game.json
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        ...
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>      candidate_02/
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        ...
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    evaluations/
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>      candidate_01/
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        hong_kong_game_eval.json    # reasoning model&#39;s comparison + score
-<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        ...
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    summary.json                    # ranked candidates, aggregate scores
-<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    failed_attempts.log
-<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
-<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>  2026-03-14_make_assumptions/
-<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    ...
-<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
-<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>scores/                             # longitudinal tracking
-<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>  scoreboard.csv                    # step, date, baseline_score, best_score, delta
-<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>  history.json                      # full history for charting
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
-<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>full_plan_comparisons/              # Stage 3 periodic full-plan regenerations
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>  2026-03-20/
-<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>    hong_kong_game/
-<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>      030-report.html
-<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>    kpi_comparison.json
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>history/                                      # captured output, global run counter
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>  # Path: history/{counter // 100}/{counter % 100:02d}_{step_name}/
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>  # Counter is auto-incremented: scan history/ for the highest existing
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>  # run number and add 1. No counter file needed.
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>  # Runs for different steps are interleaved chronologically.
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>  0/                                          # runs 0-99
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>  1/                                          # runs 100-199
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>  2/                                          # runs 200-299
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    00_identify_purpose/                      # run 200
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>    01_identify_potential_levers/              # run 201
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    02_identify_potential_levers/              # run 202
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>      meta.json                                # which step, which system prompt, what model used
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>      events.jsonl
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>      outputs.jsonl
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>      outputs/
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        20250321_silo/
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>          002-9-potential_levers_raw.json
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>          002-10-potential_levers.json
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>          activity_overview.json
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>          usage_metrics.jsonl
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>        20260310_hong_kong_game/
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>        20260201_media_rescue/
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    03_identify_potential_levers/
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>    ...
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>    98_identify_potential_levers/
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>    99_identify_potential_levers/
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>  3/
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>prompts/
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>  identify_potential_levers/
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    prompt_0_e51751c30bc0c48402ecf759afdb996d8067cd8c5f057d0e242a9d93a856151e.txt      # prompt_index_sha.txt
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>    prompt_1_long-sha-here.txt
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    prompt_2_long-sha-here.txt
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>analysis/
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>  0_identify_purpose/
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>  1_identify_potential_levers/
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>    summary.json                    # ranked candidates, aggregate scores
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>    failed_attempts.log
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>scores/                             # longitudinal tracking
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>  scoreboard.csv                    # step, date, baseline_score, best_score, delta
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>  history.json                      # full history for charting
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>full_plan_comparisons/              # Stage 3 periodic full-plan regenerations
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>  2026-03-20/
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>    hong_kong_game/
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>      030-report.html
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>    kpi_comparison.json
 </code></pre></div>
 <h2 id="connecting-the-two-repos">Connecting the two repos</h2>
 <p><code>dataset.json</code> defines the train/verify split. The <code>populate_baseline.py</code> script reads this file and extracts the zips into <code>baseline/</code>.</p>
