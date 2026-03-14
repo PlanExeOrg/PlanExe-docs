@@ -6006,6 +6006,14 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li><strong>Thread-safety fixes to <code>worker_plan_internal</code></strong>:</li>
 <li><code>usage_metrics.py</code>: replaced module-level global with <code>threading.local()</code> so each thread gets its own metrics path.</li>
 <li><code>track_activity.py</code>: <code>_record_file_usage_metric</code> guards against duplicate writes when multiple handlers are registered on the shared dispatcher.</li>
+<li><strong>Anthropic instrumentation fix</strong> (<a href="https://github.com/PlanExeOrg/PlanExe/pull/264">PR #264</a>):</li>
+<li><strong>Root cause</strong>: <code>llama-index-llms-anthropic</code> overrides <code>structured_predict()</code> and calls <code>self._client.beta.messages.parse()</code> directly, bypassing <code>self.chat()</code>. LlamaIndex instrumentation events (<code>LLMChatEndEvent</code>) never fire, so <code>TrackActivity</code> never writes <code>usage_metrics.jsonl</code> or <code>activity_overview.json</code>.</li>
+<li><strong>Fix</strong>: <code>LLMExecutor._record_attempt_token_metrics()</code> now records basic metrics (model, duration, success) for all calls, not just failures. For Anthropic, this is the only record; for other backends, TrackActivity also writes richer data (token counts, cost).</li>
+<li>Added <code>ANTHROPIC_API_KEY</code> to <code>.env</code> example files and documented Anthropic usage in <code>prompt_optimizer/AGENTS.md</code>.</li>
+<li><strong>Runner tested across 8 models</strong> (history runs 00–09):</li>
+<li>5/5: <code>ollama-llama3.1</code>, <code>openrouter-openai-gpt-oss-20b</code>, <code>openai-gpt-5-nano</code>, <code>openrouter-qwen3-30b-a3b</code>, <code>openrouter-openai-gpt-4o-mini</code>, <code>anthropic-claude-haiku-4-5-pinned</code></li>
+<li>3/5: <code>openrouter-stepfun-step-3-5-flash</code></li>
+<li>0/5: <code>openrouter-z-ai-glm-4-7-flash</code> (returned schema instead of data), <code>openrouter-nvidia-nemotron-3-nano-30b-a3b</code> (empty output)</li>
 </ul>
 <h3 id="not-started">Not Started</h3>
 <ul>
