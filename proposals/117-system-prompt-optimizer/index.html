@@ -6014,19 +6014,30 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li>5/5: <code>ollama-llama3.1</code>, <code>openrouter-openai-gpt-oss-20b</code>, <code>openai-gpt-5-nano</code>, <code>openrouter-qwen3-30b-a3b</code>, <code>openrouter-openai-gpt-4o-mini</code>, <code>anthropic-claude-haiku-4-5-pinned</code></li>
 <li>3/5: <code>openrouter-stepfun-step-3-5-flash</code></li>
 <li>0/5: <code>openrouter-z-ai-glm-4-7-flash</code> (returned schema instead of data), <code>openrouter-nvidia-nemotron-3-nano-30b-a3b</code> (empty output)</li>
+<li><strong>Analysis automation</strong> — two Python scripts in <code>PlanExe-prompt-lab/analysis/</code> that run Claude Code and Codex in parallel:</li>
+<li><strong><code>run_insight.py</code></strong> (phase 1): reads <code>meta.json</code>, builds a prompt referencing <code>AGENTS.md</code> conventions and history runs, produces independent <code>insight_claude.md</code> and <code>insight_codex.md</code> with quantitative metrics, tiered rankings, and labeled hypotheses (H1–H4, C1–C4).</li>
+<li><strong><code>run_code_review.py</code></strong> (phase 2): reads the insight files from phase 1 as context, asks both agents to review PlanExe source code (<code>identify_potential_levers.py</code>, <code>runner.py</code>) for bugs and improvements. Produces <code>code_claude.md</code> and <code>code_codex.md</code> with file:line references traced back to insight findings.</li>
+<li>Conventions documented in <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/blob/main/analysis/AGENTS.md"><code>analysis/AGENTS.md</code></a>.</li>
+<li><strong>First analysis complete</strong> for <code>identify_potential_levers</code> (step 0):</li>
+<li>Insight files identify run 09 (claude-haiku) as best content quality, run 02 (gpt-5-nano) as best structural regularity. 56% overall success rate (28/50 plan-runs). Three models failed completely (schema mismatch, empty output, config error).</li>
+<li>Code review files confirmed a double user-prompt bug in <code>identify_potential_levers.py</code> (the user prompt is sent twice on the first LLM call), template leakage from the prompt example name "Material Adaptation Strategy", and thread-safety issues in <code>runner.py</code>.</li>
 </ul>
 <h3 id="not-started">Not Started</h3>
 <ul>
+<li><strong>Synthesis step</strong> — no agent yet to read all insight + code review files and produce a ranked action plan.</li>
 <li><strong>Evaluator prompt</strong> — no scoring rubric or comparison prompt written.</li>
 <li><strong>Candidate generator</strong> — no mechanism for producing prompt variants.</li>
 <li><strong>Scorer / Optimizer loop</strong> — no automated train/verify loop.</li>
 </ul>
 <h3 id="next-steps">Next Steps</h3>
 <ol>
+<li><strong>Fix the double user-prompt bug</strong> in <code>identify_potential_levers.py</code>. The code pre-loads <code>chat_message_list</code> with <code>[SYSTEM, USER(prompt)]</code>, then the loop appends the same <code>user_prompt</code> again before the first call. This causes call 1 to send the prompt twice, which may explain template leakage and robotic repetition in weaker models. This is a code fix, not a prompt change, so it benefits all models.</li>
+<li><strong>Build synthesis step</strong> — an agent reads <code>meta.json</code>, all <code>insight_*.md</code>, and all <code>code_*.md</code> for a step, resolves disagreements, ranks hypotheses by impact and evidence, and produces a prioritized action plan (prompt edits, code fixes, or both).</li>
+<li><strong>Re-run history after the bug fix</strong> — re-execute the runner on a few models to measure whether fixing the double-prompt bug improves uniqueness and reduces template leakage.</li>
 <li><strong>Design the evaluator prompt and scoring rubric.</strong> Define concrete dimensions (completeness, specificity, actionability, structure) and a numeric scale. Version-control it alongside the system prompts.</li>
 <li><strong>Build <code>evaluator.py</code></strong> — calls a pinned reasoning model to score/compare runner outputs against baseline.</li>
 <li><strong>Run baseline scoring</strong> — score the current default prompt outputs to establish a numeric starting point.</li>
-<li><strong>Build <code>candidate_generator.py</code></strong> — produce prompt variants (LLM rewrites, structured mutations).</li>
+<li><strong>Build <code>candidate_generator.py</code></strong> — produce prompt variants (LLM rewrites, structured mutations), informed by synthesis conclusions and failed-attempt logs.</li>
 <li><strong>Build <code>optimizer.py</code></strong> — orchestrate the train/verify loop (Stage 1-2).</li>
 <li><strong>Pin the reasoning model</strong> for evaluation so scores are reproducible across runs.</li>
 <li><strong>Add regression detection</strong> — after optimizing one step, re-run downstream steps to check for cascade regressions before committing.</li>
