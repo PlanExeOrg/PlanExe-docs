@@ -6097,7 +6097,7 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <ul>
 <li><strong>Data repo</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab">PlanExe-prompt-lab</a> — holds baseline data, run history, registered prompts, and analysis artifacts.</li>
 <li><strong>Baseline data</strong>: 5 train plans × 9 verify plans, extracted from zips into <code>baseline/train/</code> and <code>baseline/verify/</code>.</li>
-<li><strong>Runner</strong> (<code>prompt_optimizer/runner.py</code>): re-executes a single pipeline step with a candidate system prompt against baseline plans. Auto-incrementing history in <code>history/{bucket}/{counter}_{step}/</code>. Supports <code>--system-prompt-file</code>, <code>--model</code>, <code>--prompt-lab-dir</code>, resume, and parallel workers.</li>
+<li><strong>Runner</strong> (<code>self_improve/runner.py</code>): re-executes a single pipeline step with a candidate system prompt against baseline plans. Auto-incrementing history in <code>history/{bucket}/{counter}_{step}/</code>. Supports <code>--system-prompt-file</code>, <code>--model</code>, <code>--prompt-lab-dir</code>, resume, and parallel workers.</li>
 <li><strong>Analysis pipeline</strong> (4 phases in <code>analysis/</code>):</li>
 <li>Phase 0: <code>create_analysis_dir.py</code> — creates analysis dir with unanalyzed runs.</li>
 <li>Phase 1: <code>run_insight.py</code> — Claude Code + Codex in parallel produce independent <code>insight_*.md</code> files with quantitative metrics and PR impact verdicts.</li>
@@ -6447,7 +6447,7 @@ You mention "it's very expensive to run the full pipeline." What about the cost 
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>      ...
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    ...
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>prompt_optimizer/                   # NEW — the optimization engine
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>self_improve/                   # NEW — the optimization engine
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  __init__.py
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  config.py                        # loads dataset config, env vars
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  runner.py                        # reruns a single pipeline step with a candidate prompt
