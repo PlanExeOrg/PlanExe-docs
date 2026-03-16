@@ -2913,15 +2913,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#status-2026-03-15" class="md-nav__link">
+  <a href="#status-2026-03-16" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status (2026-03-15)
+        Status (2026-03-16)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Status (2026-03-15)">
+    <nav class="md-nav" aria-label="Status (2026-03-16)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5929,15 +5929,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#status-2026-03-15" class="md-nav__link">
+  <a href="#status-2026-03-16" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status (2026-03-15)
+        Status (2026-03-16)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Status (2026-03-15)">
+    <nav class="md-nav" aria-label="Status (2026-03-16)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6092,7 +6092,7 @@ By first starting optimizing the earliest system prompt, when that consistently 
 older system prompts, then it's a keeper. Then move on to the next system prompt in the luigi pipeline.
 By the end of this prompt optimization, the overall plan quality should have been improved.</p>
 <p>I want to track metrics for how much improvement have happened.</p>
-<h2 id="status-2026-03-15">Status (2026-03-15)</h2>
+<h2 id="status-2026-03-16">Status (2026-03-16)</h2>
 <h3 id="infrastructure">Infrastructure</h3>
 <ul>
 <li><strong>Data repo</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab">PlanExe-prompt-lab</a> — holds baseline data, run history, registered prompts, and analysis artifacts.</li>
@@ -6121,7 +6121,7 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <tr>
 <td>ollama-llama3.1</td>
 <td>llama</td>
-<td>Working (5/5)</td>
+<td>Working (3-5/5)</td>
 </tr>
 <tr>
 <td>openrouter-openai-gpt-oss-20b</td>
@@ -6144,21 +6144,21 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <td>Working (5/5)</td>
 </tr>
 <tr>
-<td>anthropic-claude-haiku-4-5-pinned</td>
-<td>haiku</td>
-<td>Working (4/5)</td>
+<td>openrouter-gemini-2.0-flash-001</td>
+<td>gemini-flash</td>
+<td>Working (5/5) — added iter 13</td>
 </tr>
 <tr>
-<td>openrouter-nvidia-nemotron-3-nano-30b-a3b</td>
-<td>nemotron</td>
-<td>Broken — 0/5 across all 11 iterations</td>
+<td>anthropic-claude-haiku-4-5-pinned</td>
+<td>haiku</td>
+<td>Working (4-5/5)</td>
 </tr>
 </tbody>
 </table>
-<p>Removed: GLM (PR #266, schema-echoing), StepFun (removed from config).</p>
+<p>Removed: GLM (PR #266, schema-echoing), StepFun (removed from config), nemotron (0/5 all iterations, structural incompatibility).</p>
 <h3 id="iteration-history">Iteration History</h3>
 <p>Currently optimizing: <code>identify_potential_levers</code> (the first step after plan intake).</p>
-<p>88 history runs completed (runs 00–87), 12 analysis rounds (0–11).</p>
+<p>109 history runs completed (runs 00–108), 15 analysis rounds (0–14).</p>
 <table>
 <thead>
 <tr>
@@ -6267,17 +6267,45 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <td>81–87</td>
 <td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/11_identify_potential_levers">analysis/11</a></td>
 </tr>
+<tr>
+<td>12</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/286">#286</a></td>
+<td>Remove max_length=7 hard constraint on levers</td>
+<td>YES</td>
+<td>88–94</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/12_identify_potential_levers">analysis/12</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/289">#289</a></td>
+<td>Add options count and review format validators</td>
+<td>CONDITIONAL</td>
+<td>95–101</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/13_identify_potential_levers">analysis/13</a></td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/292">#292</a></td>
+<td>Recover partial results when a call fails</td>
+<td>YES</td>
+<td>102–108</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/14_identify_potential_levers">analysis/14</a></td>
+</tr>
 </tbody>
 </table>
 <h3 id="key-improvements-so-far">Key Improvements So Far</h3>
-<p>Comparing iteration 0 (baseline) to iteration 9 (best state after the naming template fix):</p>
+<p>Comparing iteration 0 (baseline) to iteration 14 (current state):</p>
 <ul>
-<li><strong>Review format violations</strong>: 67 → ~4</li>
+<li><strong>Review format violations</strong>: 67 → ~4 (enforced by validator since iter 13)</li>
 <li><strong>Consequence chain violations</strong>: 35 → 7</li>
 <li><strong>Bracket placeholder leakage</strong>: ~17 → 0</li>
 <li><strong>Template leakage</strong> (naming suffix): 83–100% → 2–10%</li>
 <li><strong>Cross-call duplication</strong>: eliminated via novelty-aware follow-ups</li>
 <li><strong>Chat-history contamination</strong>: eliminated via fresh context per call</li>
+<li><strong>Validation failures discarding valid levers</strong>: eliminated — <code>max_length=7</code> removed (iter 12), partial result recovery added (iter 14)</li>
+<li><strong>Option count violations</strong>: caught by <code>check_option_count</code> validator (iter 13)</li>
+<li><strong>Overall success rate</strong>: 88.6% → 91.4% (iter 14, partial recovery)</li>
+<li><strong>Gemini-flash baseline comparison</strong>: name uniqueness 71%→100%, cross-call duplication 15→0, consequence richness +40%, option prefix leakage 16→0 (<a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/blob/main/analysis/13_identify_potential_levers/comparison.md">comparison</a>)</li>
 </ul>
 <h3 id="key-lessons-learned">Key Lessons Learned</h3>
 <ol>
@@ -6286,15 +6314,19 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li><strong>Registered prompts vs code prompts.</strong> The runner uses <code>--system-prompt-file</code> from the registered prompt in <code>prompts/</code>, not the <code>SYSTEM_PROMPT</code> constant in Python code. Code-level prompt changes are invisible to experiments until a new prompt file is registered.</li>
 <li><strong>Auto-implementing synthesis recommendations can conflict with user intent.</strong> The <code>run_optimization_iteration.py</code> script auto-applies the top recommendation, but this can conflict with explicit user preferences (e.g., reverting to "exactly 5 levers" when the user wanted 5–7). Use <code>--skip-implement</code> when needed.</li>
 <li><strong>Dual-agent analysis catches real errors.</strong> Codex corrected Claude's success rate miscount in iteration 0. Independent analysis is worth the extra cost.</li>
+<li><strong>Prefer soft prompt guidance over hard Pydantic constraints.</strong> <code>max_length=7</code> on the levers field discarded entire LLM responses when a model returned 8 levers. The downstream dedup step already handles extras. Hard caps waste tokens on retries; soft guidance in the prompt is cheaper and more fault-tolerant.</li>
+<li><strong>Recover partial results rather than failing completely.</strong> When a 3-call loop has call 2 or 3 fail, keeping levers from prior successful calls is better than discarding everything. A single validator rejection should not wipe out 10+ valid levers.</li>
 </ol>
 <h3 id="current-state-of-identify_potential_leverspy">Current State of <code>identify_potential_levers.py</code></h3>
-<p>After 11 iterations, the step has these characteristics:</p>
+<p>After 14 iterations, the step has these characteristics:</p>
 <ul>
-<li>System prompt says "5 to 7 levers per response", schema has <code>min_length=5, max_length=7</code></li>
+<li>System prompt says "5 to 7 levers per response", schema has <code>min_length=5</code> (no <code>max_length</code> — downstream dedup handles extras)</li>
 <li>Follow-up calls use novelty-aware prompts (exclude already-generated lever names)</li>
 <li>Each LLM call gets a fresh context (no chat history accumulation)</li>
 <li>Naming guidance says "avoid formulaic patterns or repeated prefixes" (no template)</li>
-<li>Quality gate: duplicate name filter only (language-agnostic)</li>
+<li>Pydantic validators: <code>check_option_count</code> (exactly 3 options), <code>check_review_format</code> (requires "Controls" + "Weakness:")</li>
+<li>Partial result recovery: if call 2 or 3 fails, keep levers from prior successful calls instead of discarding everything</li>
+<li>Quality gate: duplicate name filter (language-agnostic)</li>
 <li>Registered prompt: <code>prompt_2</code> (aligned with code changes)</li>
 </ul>
 <h3 id="not-started">Not Started</h3>
@@ -6306,9 +6338,11 @@ By the end of this prompt optimization, the overall plan quality should have bee
 </ul>
 <h3 id="next-steps">Next Steps</h3>
 <ol>
-<li><strong>Truncate over-limit lever lists</strong> instead of hard-failing. When a model returns 8 levers (<code>max_length=7</code>), truncate to 7 with a warning instead of discarding the entire response. This fixes haiku's recurring failure mode (1 plan per batch).</li>
-<li><strong>Add negative example for field separation</strong> — <code>consequences</code> and <code>review_lever</code> fields get confused in qwen3 (72% contamination rate in run 85). A concrete bad example in the prompt should reduce this.</li>
-<li><strong>Build a deterministic evaluator</strong> — compute the same metrics the insight agents compute (uniqueness, option count, template leakage, format compliance) without LLM calls. This makes assessment reproducible and fast.</li>
+<li><strong>Fix the <code>review_lever</code> prompt</strong> — replace two-bullet instruction with a single combined example. Weaker models (llama3.1) interpret "Controls..." and "Weakness:..." as two alternative formats and alternate between them, causing call-1 failures. Full cross-agent consensus on this as the dominant remaining reliability issue.</li>
+<li><strong>Change <code>break</code> to <code>continue</code> after call-2 failure</strong> — allow call-3 to run even if call-2 fails. Currently a call-2 failure silently suppresses call-3. Output could double from ~7 to ~14 levers when only call-2 fails.</li>
+<li><strong>Add partial-recovery telemetry</strong> — emit an event in <code>events.jsonl</code> when partial recovery triggers. Currently the <code>break</code> exits silently with no audit trail.</li>
+<li><strong>Fix qwen3 consequence contamination</strong> — ~67% of qwen3 levers copy <code>review_lever</code> text verbatim into <code>consequences</code>. No validator or repair pass touches this yet.</li>
+<li><strong>Build a deterministic evaluator</strong> — compute metrics (uniqueness, option count, template leakage, format compliance) without LLM calls. Makes assessment reproducible and fast.</li>
 <li><strong>Move to the next pipeline step</strong> once <code>identify_potential_levers</code> is stable.</li>
 </ol>
 <h2 id="stage-1-one-improvement-iteration">Stage 1 - one improvement iteration</h2>
