@@ -5857,14 +5857,14 @@
 <h1 id="troubleshooting-a-stuck-pipeline">Troubleshooting a stuck pipeline</h1>
 <p>The gradio app (<code>app_text2plan.py</code>) starts the <code>run_plan_pipeline</code> process via a <code>Popen</code> call. </p>
 <ul>
-<li><strong>Environment</strong>, if the gradio app runs in a slightly different environment than when running via commandline <code>python -m worker_plan_internal.plan.run_plan_pipeline</code>, then the child process may behave differently. I have verified that the parent process and child process runs with the same environment variables.</li>
+<li><strong>Environment</strong>, if the gradio app runs in a slightly different environment than when running via commandline <code>./planexe create_plan</code>, then the child process may behave differently. I have verified that the parent process and child process runs with the same environment variables.</li>
 <li><strong>Buffering</strong>, if the parent process isn't reading stdout/stderr fast enough, the child process may freeze. I have reworked the <code>Popen</code> code so the stdout/stderr goes to <code>/dev/null</code>.</li>
 <li><strong>Other issues</strong>, if the pipeline still hangs, let me know, it may be some issue I'm not aware of.</li>
 </ul>
 <h2 id="manually-resuming-a-stuck-pipeline">Manually resuming a stuck pipeline</h2>
 <p>In the UI copy/paste the run_id that is stuck, eg: <code>20250209_030626</code></p>
 <p>Insert it on commandline, and run the pipeline, like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PROMPT&gt;<span class="w"> </span><span class="nv">RUN_ID</span><span class="o">=</span>20250209_030626<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>worker_plan_internal.plan.run_plan_pipeline
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PROMPT&gt;<span class="w"> </span>./planexe<span class="w"> </span>create_plan<span class="w"> </span>--run-id-dir<span class="w"> </span>/path/to/PlanExe_20250209_030626
 </code></pre></div>
 <h2 id="why-does-the-pipeline-get-stuck">Why does the pipeline get stuck?</h2>
 <p>The <code>log.txt</code> contains the output from the logger with <code>DEBUG</code> level, the most detailed.

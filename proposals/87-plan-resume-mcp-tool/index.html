@@ -6258,7 +6258,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>In order to resume an unfinished run.
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Insert the run_id_dir of the thing you want to resume.
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>If it&#39;s an already finished run, then remove the &quot;999-pipeline_complete.txt&quot; file.
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>PROMPT&gt; RUN_ID_DIR=/absolute/path/to/PlanExe_20250216_150332 python -m worker_plan_internal.plan.run_plan_pipeline
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>PROMPT&gt; ./planexe create_plan --run-id-dir /absolute/path/to/PlanExe_20250216_150332
 </code></pre></div>
 <p>Luigi skips tasks that already have output files. No code changes needed in the pipeline itself — just don't overwrite the existing directory.</p>
 <h3 id="34-worker_plan-http-worker-resume-path">3.4 <code>worker_plan</code> (HTTP worker) resume path</h3>
