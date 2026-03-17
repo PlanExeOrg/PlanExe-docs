@@ -2913,15 +2913,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#status-2026-03-16" class="md-nav__link">
+  <a href="#status-2026-03-17" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status (2026-03-16)
+        Status (2026-03-17)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Status (2026-03-16)">
+    <nav class="md-nav" aria-label="Status (2026-03-17)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5957,15 +5957,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#status-2026-03-16" class="md-nav__link">
+  <a href="#status-2026-03-17" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Status (2026-03-16)
+        Status (2026-03-17)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Status (2026-03-16)">
+    <nav class="md-nav" aria-label="Status (2026-03-17)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6120,18 +6120,19 @@ By first starting optimizing the earliest system prompt, when that consistently 
 older system prompts, then it's a keeper. Then move on to the next system prompt in the luigi pipeline.
 By the end of this prompt optimization, the overall plan quality should have been improved.</p>
 <p>I want to track metrics for how much improvement have happened.</p>
-<h2 id="status-2026-03-16">Status (2026-03-16)</h2>
+<h2 id="status-2026-03-17">Status (2026-03-17)</h2>
 <h3 id="infrastructure">Infrastructure</h3>
 <ul>
 <li><strong>Data repo</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab">PlanExe-prompt-lab</a> — holds baseline data, run history, registered prompts, and analysis artifacts.</li>
 <li><strong>Baseline data</strong>: 5 train plans × 9 verify plans, extracted from zips into <code>baseline/train/</code> and <code>baseline/verify/</code>.</li>
 <li><strong>Runner</strong> (<code>self_improve/runner.py</code>): re-executes a single pipeline step with a candidate system prompt against baseline plans. Auto-incrementing history in <code>history/{bucket}/{counter}_{step}/</code>. Supports <code>--system-prompt-file</code>, <code>--model</code>, <code>--prompt-lab-dir</code>, resume, and parallel workers.</li>
-<li><strong>Analysis pipeline</strong> (4 phases in <code>analysis/</code>):</li>
-<li>Phase 0: <code>create_analysis_dir.py</code> — creates analysis dir with unanalyzed runs.</li>
+<li><strong>Analysis pipeline</strong> (5 phases in <code>analysis/</code>):</li>
+<li>Phase 0: <code>prepare_iteration.py</code> — verifies PR state, resolves prompt, pre-creates history dirs, and writes analysis <code>meta.json</code> with PR info. Replaces the former <code>create_analysis_dir.py</code> + <code>update_meta_pr.py</code>.</li>
 <li>Phase 1: <code>run_insight.py</code> — Claude Code + Codex in parallel produce independent <code>insight_*.md</code> files with quantitative metrics and PR impact verdicts.</li>
 <li>Phase 2: <code>run_code_review.py</code> — both agents review PlanExe source code, producing <code>code_*.md</code> with file:line references.</li>
 <li>Phase 3: <code>run_synthesis.py</code> — single agent reconciles all findings into <code>synthesis.md</code> with top 5 ranked directions.</li>
 <li>Phase 4: <code>run_assessment.py</code> — before/after comparison, metric table, keeper verdict (YES/NO/CONDITIONAL), and evaluation of the synthesis recommendation for the next iteration.</li>
+<li><code>run_analysis.py</code> — orchestrates phases 1–4 sequentially; stops hard on first phase failure.</li>
 <li><strong><code>run_optimization_iteration.py</code></strong> — orchestrates a full loop: implement recommendation → create PR → run experiments → run analysis pipeline. Supports <code>--skip-implement</code>, <code>--skip-runner</code>, <code>--skip-analysis</code>, <code>--models</code>.</li>
 <li><strong>Conventions</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/blob/main/analysis/AGENTS.md"><code>analysis/AGENTS.md</code></a>.</li>
 </ul>
@@ -6186,7 +6187,7 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <p>Removed: GLM (PR #266, schema-echoing), StepFun (removed from config), nemotron (0/5 all iterations, structural incompatibility).</p>
 <h3 id="iteration-history">Iteration History</h3>
 <p>Currently optimizing: <code>identify_potential_levers</code> (the first step after plan intake).</p>
-<p>109 history runs completed (runs 00–108), 15 analysis rounds (0–14).</p>
+<p>24 analysis rounds (0–23).</p>
 <table>
 <thead>
 <tr>
@@ -6319,6 +6320,78 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <td>102–108</td>
 <td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/14_identify_potential_levers">analysis/14</a></td>
 </tr>
+<tr>
+<td>15</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/294">#294</a></td>
+<td>Consolidate review_lever prompt to prevent format alternation</td>
+<td>YES</td>
+<td>09–16</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/15_identify_potential_levers">analysis/15</a></td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/295">#295</a></td>
+<td>Continue loop after call failure instead of breaking</td>
+<td>YES</td>
+<td>17–23</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/16_identify_potential_levers">analysis/16</a></td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/296">#296</a></td>
+<td>Auto-correct review_lever before hard-rejecting</td>
+<td>CONDITIONAL</td>
+<td>24–30</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/17_identify_potential_levers">analysis/17</a></td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/297">#297</a></td>
+<td>Simplify lever prompt to restore content quality</td>
+<td>YES</td>
+<td>31–37</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/18_identify_potential_levers">analysis/18</a></td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/299">#299</a></td>
+<td>Remove bracket placeholders and fragile English-only validator</td>
+<td>CONDITIONAL</td>
+<td>38–45</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/19_identify_potential_levers">analysis/19</a></td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/309">#309</a></td>
+<td>Add option-quality reminder to call-2/3 prompts</td>
+<td>YES</td>
+<td>46–52</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/20_identify_potential_levers">analysis/20</a></td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/313">#313</a></td>
+<td>Add anti-fabrication reminder to call-2/3 prompts</td>
+<td>CONDITIONAL</td>
+<td>53–59</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/21_identify_potential_levers">analysis/21</a></td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/316">#316</a></td>
+<td>Replace two-bullet review_lever prompt with single flowing example</td>
+<td>CONDITIONAL</td>
+<td>60–66</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/22_identify_potential_levers">analysis/22</a></td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/326">#326</a></td>
+<td>Add second review_lever example to break template lock</td>
+<td>KEEP</td>
+<td>67–73</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/23_identify_potential_levers">analysis/23</a></td>
+</tr>
 </tbody>
 </table>
 <h3 id="key-improvements-so-far">Key Improvements So Far</h3>
@@ -6346,16 +6419,18 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li><strong>Recover partial results rather than failing completely.</strong> When a 3-call loop has call 2 or 3 fail, keeping levers from prior successful calls is better than discarding everything. A single validator rejection should not wipe out 10+ valid levers.</li>
 </ol>
 <h3 id="current-state-of-identify_potential_leverspy">Current State of <code>identify_potential_levers.py</code></h3>
-<p>After 14 iterations, the step has these characteristics:</p>
+<p>After 23 iterations, the step has these characteristics:</p>
 <ul>
 <li>System prompt says "5 to 7 levers per response", schema has <code>min_length=5</code> (no <code>max_length</code> — downstream dedup handles extras)</li>
 <li>Follow-up calls use novelty-aware prompts (exclude already-generated lever names)</li>
 <li>Each LLM call gets a fresh context (no chat history accumulation)</li>
 <li>Naming guidance says "avoid formulaic patterns or repeated prefixes" (no template)</li>
-<li>Pydantic validators: <code>check_option_count</code> (exactly 3 options), <code>check_review_format</code> (requires "Controls" + "Weakness:")</li>
+<li>Pydantic validators: <code>check_option_count</code> (exactly 3 options), <code>check_review_format</code> (structural only — min length + no bracket placeholders, language-agnostic)</li>
 <li>Partial result recovery: if call 2 or 3 fails, keep levers from prior successful calls instead of discarding everything</li>
 <li>Quality gate: duplicate name filter (language-agnostic)</li>
-<li>Registered prompt: <code>prompt_2</code> (aligned with code changes)</li>
+<li><code>review_lever</code> prompt uses two structurally distinct examples to prevent template lock</li>
+<li><code>OPTIMIZE_INSTRUCTIONS</code> documents 6 known problems (including template lock)</li>
+<li>Registered prompt: <code>prompt_7</code></li>
 </ul>
 <h3 id="not-started">Not Started</h3>
 <ul>
@@ -6366,10 +6441,8 @@ By the end of this prompt optimization, the overall plan quality should have bee
 </ul>
 <h3 id="next-steps">Next Steps</h3>
 <ol>
-<li><strong>Fix the <code>review_lever</code> prompt</strong> — replace two-bullet instruction with a single combined example. Weaker models (llama3.1) interpret "Controls..." and "Weakness:..." as two alternative formats and alternate between them, causing call-1 failures. Full cross-agent consensus on this as the dominant remaining reliability issue.</li>
-<li><strong>Change <code>break</code> to <code>continue</code> after call-2 failure</strong> — allow call-3 to run even if call-2 fails. Currently a call-2 failure silently suppresses call-3. Output could double from ~7 to ~14 levers when only call-2 fails.</li>
-<li><strong>Add partial-recovery telemetry</strong> — emit an event in <code>events.jsonl</code> when partial recovery triggers. Currently the <code>break</code> exits silently with no audit trail.</li>
-<li><strong>Fix qwen3 consequence contamination</strong> — ~67% of qwen3 levers copy <code>review_lever</code> text verbatim into <code>consequences</code>. No validator or repair pass touches this yet.</li>
+<li><strong>Reduce remaining llama3.1 template lock</strong> — after iteration 23, llama3.1 still shows ~71% template lock on "This lever governs the tension". Consider adding an explicit anti-pattern prohibition.</li>
+<li><strong>Address gpt-5-nano second-example lock</strong> — gpt-5-nano swapped one template lock for another (now copies the second example's format). May need a third structurally distinct example or different approach.</li>
 <li><strong>Build a deterministic evaluator</strong> — compute metrics (uniqueness, option count, template leakage, format compliance) without LLM calls. Makes assessment reproducible and fast.</li>
 <li><strong>Move to the next pipeline step</strong> once <code>identify_potential_levers</code> is stable.</li>
 </ol>
@@ -6556,12 +6629,12 @@ swap prompts, and run individual steps.</p>
 <a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    prompt_2_long-sha-here.txt
 <a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>analysis/
 <a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>  AGENTS.md                         # conventions for analysis artifacts
-<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>  create_analysis_dir.py            # phase 0: create analysis dir with unanalyzed runs
-<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>  run_insight.py                    # phase 1: Claude + Codex insight in parallel
-<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>  run_code_review.py                # phase 2: Claude + Codex code review in parallel
-<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>  run_synthesis.py                  # phase 3: Claude synthesis (single agent)
-<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>  run_assessment.py                 # phase 4: before/after comparison + verdict
-<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>  update_meta_pr.py                 # register PR info in meta.json
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>  prepare_iteration.py              # phase 0: verify PR, resolve prompt, pre-create history dirs
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>  run_analysis.py                   # orchestrates phases 1-4 sequentially
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>  run_insight.py                    # phase 1: Claude + Codex insight in parallel
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>  run_code_review.py                # phase 2: Claude + Codex code review in parallel
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>  run_synthesis.py                  # phase 3: Claude synthesis (single agent)
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>  run_assessment.py                 # phase 4: before/after comparison + verdict
 <a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>  0_identify_potential_levers/      # pre-fix analysis (runs 00-08)
 <a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>    meta.json
 <a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>    insight_claude.md
