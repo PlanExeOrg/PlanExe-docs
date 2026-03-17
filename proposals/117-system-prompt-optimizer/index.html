@@ -6123,11 +6123,11 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <h2 id="status-2026-03-17">Status (2026-03-17)</h2>
 <h3 id="infrastructure">Infrastructure</h3>
 <ul>
-<li><strong>Data repo</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab">PlanExe-prompt-lab</a> — holds baseline data, run history, registered prompts, and analysis artifacts.</li>
+<li><strong>Data repo</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab">PlanExe-prompt-lab</a> — holds baseline data, run history, and analysis artifacts.</li>
 <li><strong>Baseline data</strong>: 5 train plans × 9 verify plans, extracted from zips into <code>baseline/train/</code> and <code>baseline/verify/</code>.</li>
-<li><strong>Runner</strong> (<code>self_improve/runner.py</code>): re-executes a single pipeline step with a candidate system prompt against baseline plans. Auto-incrementing history in <code>history/{bucket}/{counter}_{step}/</code>. Supports <code>--system-prompt-file</code>, <code>--model</code>, <code>--prompt-lab-dir</code>, resume, and parallel workers.</li>
+<li><strong>Runner</strong> (<code>self_improve/runner.py</code>): re-executes a single pipeline step against baseline plans using the system prompt constant from PlanExe's code. Auto-incrementing history in <code>history/{bucket}/{counter}_{step}/</code>. Supports <code>--model</code>, <code>--prompt-lab-dir</code>, resume, and parallel workers.</li>
 <li><strong>Analysis pipeline</strong> (5 phases in <code>analysis/</code>):</li>
-<li>Phase 0: <code>prepare_iteration.py</code> — verifies PR state, resolves prompt, pre-creates history dirs, and writes analysis <code>meta.json</code> with PR info. Replaces the former <code>create_analysis_dir.py</code> + <code>update_meta_pr.py</code>.</li>
+<li>Phase 0: <code>prepare_iteration.py</code> — verifies PR state, pre-creates history dirs, and writes analysis <code>meta.json</code> with PR info. Replaces the former <code>create_analysis_dir.py</code> + <code>update_meta_pr.py</code>.</li>
 <li>Phase 1: <code>run_insight.py</code> — Claude Code + Codex in parallel produce independent <code>insight_*.md</code> files with quantitative metrics and PR impact verdicts.</li>
 <li>Phase 2: <code>run_code_review.py</code> — both agents review PlanExe source code, producing <code>code_*.md</code> with file:line references.</li>
 <li>Phase 3: <code>run_synthesis.py</code> — single agent reconciles all findings into <code>synthesis.md</code> with top 5 ranked directions.</li>
@@ -6412,7 +6412,7 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <ol>
 <li><strong>No hardcoded English keywords in validators.</strong> PlanExe users create plans in many languages. Keyword-based quality gates (checking for "Controls", "Weakness:") break for non-English plans. All validation must be language-agnostic — structural checks, field length ratios, duplicate detection. Iteration 10 was a disaster because of this.</li>
 <li><strong>Don't merge PRs before the verdict.</strong> The correct order is: create PR → run experiments on the branch → run analysis → read verdict → merge only if verdict confirms improvement. Iteration 11 was merged prematurely.</li>
-<li><strong>Registered prompts vs code prompts.</strong> The runner uses <code>--system-prompt-file</code> from the registered prompt in <code>prompts/</code>, not the <code>SYSTEM_PROMPT</code> constant in Python code. Code-level prompt changes are invisible to experiments until a new prompt file is registered.</li>
+<li><strong>The runner always uses the code constant.</strong> There is no external prompt file or CLI override — the prompt is whatever is committed in PlanExe's code at run time.</li>
 <li><strong>Auto-implementing synthesis recommendations can conflict with user intent.</strong> The <code>run_optimization_iteration.py</code> script auto-applies the top recommendation, but this can conflict with explicit user preferences (e.g., reverting to "exactly 5 levers" when the user wanted 5–7). Use <code>--skip-implement</code> when needed.</li>
 <li><strong>Dual-agent analysis catches real errors.</strong> Codex corrected Claude's success rate miscount in iteration 0. Independent analysis is worth the extra cost.</li>
 <li><strong>Prefer soft prompt guidance over hard Pydantic constraints.</strong> <code>max_length=7</code> on the levers field discarded entire LLM responses when a model returned 8 levers. The downstream dedup step already handles extras. Hard caps waste tokens on retries; soft guidance in the prompt is cheaper and more fault-tolerant.</li>
@@ -6430,7 +6430,7 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li>Quality gate: duplicate name filter (language-agnostic)</li>
 <li><code>review_lever</code> prompt uses two structurally distinct examples to prevent template lock</li>
 <li><code>OPTIMIZE_INSTRUCTIONS</code> documents 6 known problems (including template lock)</li>
-<li>Registered prompt: <code>prompt_7</code></li>
+<li>System prompt: <code>IDENTIFY_POTENTIAL_LEVERS_SYSTEM_PROMPT</code> constant in code</li>
 </ul>
 <h3 id="not-started">Not Started</h3>
 <ul>
@@ -6622,46 +6622,41 @@ swap prompts, and run individual steps.</p>
 <a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>    98_identify_potential_levers/
 <a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>    99_identify_potential_levers/
 <a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>  3/
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>prompts/
-<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>  identify_potential_levers/
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    prompt_0_e51751c30bc0c48402ecf759afdb996d8067cd8c5f057d0e242a9d93a856151e.txt      # prompt_index_sha.txt
-<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>    prompt_1_long-sha-here.txt
-<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    prompt_2_long-sha-here.txt
-<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>analysis/
-<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>  AGENTS.md                         # conventions for analysis artifacts
-<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>  prepare_iteration.py              # phase 0: verify PR, resolve prompt, pre-create history dirs
-<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>  run_analysis.py                   # orchestrates phases 1-4 sequentially
-<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>  run_insight.py                    # phase 1: Claude + Codex insight in parallel
-<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>  run_code_review.py                # phase 2: Claude + Codex code review in parallel
-<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>  run_synthesis.py                  # phase 3: Claude synthesis (single agent)
-<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>  run_assessment.py                 # phase 4: before/after comparison + verdict
-<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>  0_identify_potential_levers/      # pre-fix analysis (runs 00-08)
-<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>    meta.json
-<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>    insight_claude.md
-<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>    insight_codex.md
-<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>    code_claude.md
-<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>    code_codex.md
-<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>    synthesis.md
-<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>  1_identify_potential_levers/      # post-fix analysis (runs 09-16, PR #268)
-<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>    meta.json                       # includes pr_url, pr_title, pr_description
-<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>    insight_claude.md
-<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>    insight_codex.md
-<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>    code_claude.md
-<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>    code_codex.md
-<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>    synthesis.md
-<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>    assessment.md                   # verdict: YES/NO/CONDITIONAL
-<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>
-<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>run_optimization_iteration.py       # orchestrates full iteration
-<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>
-<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>scores/                             # longitudinal tracking
-<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>  scoreboard.csv                    # step, date, baseline_score, best_score, delta
-<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>  history.json                      # full history for charting
-<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>
-<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>full_plan_comparisons/              # Stage 3 periodic full-plan regenerations
-<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>  2026-03-20/
-<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>    hong_kong_game/
-<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>      030-report.html
-<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>    kpi_comparison.json
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>analysis/
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>  AGENTS.md                         # conventions for analysis artifacts
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>  prepare_iteration.py              # phase 0: verify PR, pre-create history dirs
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>  run_analysis.py                   # orchestrates phases 1-4 sequentially
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>  run_insight.py                    # phase 1: Claude + Codex insight in parallel
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>  run_code_review.py                # phase 2: Claude + Codex code review in parallel
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>  run_synthesis.py                  # phase 3: Claude synthesis (single agent)
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>  run_assessment.py                 # phase 4: before/after comparison + verdict
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>  0_identify_potential_levers/      # pre-fix analysis (runs 00-08)
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>    meta.json
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>    insight_claude.md
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>    insight_codex.md
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>    code_claude.md
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>    code_codex.md
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>    synthesis.md
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>  1_identify_potential_levers/      # post-fix analysis (runs 09-16, PR #268)
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>    meta.json                       # includes pr_url, pr_title, pr_description
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>    insight_claude.md
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>    insight_codex.md
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>    code_claude.md
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>    code_codex.md
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>    synthesis.md
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>    assessment.md                   # verdict: YES/NO/CONDITIONAL
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>run_optimization_iteration.py       # orchestrates full iteration
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>scores/                             # longitudinal tracking
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>  scoreboard.csv                    # step, date, baseline_score, best_score, delta
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>  history.json                      # full history for charting
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>full_plan_comparisons/              # Stage 3 periodic full-plan regenerations
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>  2026-03-20/
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>    hong_kong_game/
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>      030-report.html
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>    kpi_comparison.json
 </code></pre></div>
 <h2 id="connecting-the-two-repos">Connecting the two repos</h2>
 <p><code>dataset.json</code> defines the train/verify split. The <code>populate_baseline.py</code> script reads this file and extracts the zips into <code>baseline/</code>.</p>
