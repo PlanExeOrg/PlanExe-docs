@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/88-fermi-sanity-check-validation-gate/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/119-lever-pipeline-impl/">
       
       
-        <link rel="prev" href="../87-plan-resume-mcp-tool/">
+        <link rel="prev" href="../118-two-pass-pipeline/">
       
       
-        <link rel="next" href="../89-model-routing-postmortem-simon-26feb2026/">
+        <link rel="next" href="../12-evidence-based-founder-execution-index/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>88 fermi sanity check validation gate - PlanExe Documentation</title>
+        <title>119 lever pipeline impl - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="88 fermi sanity check validation gate - PlanExe Documentation" />
+<meta property="og:title" content="119 lever pipeline impl - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/88-fermi-sanity-check-validation-gate.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/119-lever-pipeline-impl.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/88-fermi-sanity-check-validation-gate/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/119-lever-pipeline-impl/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="88 fermi sanity check validation gate - PlanExe Documentation" />
+<meta property="twitter:title" content="119 lever pipeline impl - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/88-fermi-sanity-check-validation-gate.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/119-lever-pipeline-impl.png" />
 </head>
   
   
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fermisanitycheck-as-the-validation-gate" class="md-skip">
+        <a href="#lever-pipeline-implementation-memo" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              88 fermi sanity check validation gate
+              119 lever pipeline impl
             
           </span>
         </div>
@@ -2906,10 +2906,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../119-lever-pipeline-impl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    119 lever pipeline impl
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2925,6 +2952,186 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bottom-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom line
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-diagnosis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Core diagnosis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-design-principles-for-the-next-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Design principles for the next version
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-stage-by-stage-insights-and-implementation-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Stage-by-stage insights and implementation proposals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Stage-by-stage insights and implementation proposals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-identify_potential_levers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 identify_potential_levers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-deduplicate_levers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 deduplicate_levers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-enrich_levers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 enrich_levers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-vital_few_levers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 vital_few_levers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-recommended-vital-few-scoring-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Recommended vital-few scoring rubric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-proposed-pipeline-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Proposed pipeline changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-suggested-json-schema-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Suggested JSON schema changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-implementation-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Implementation order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-practical-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Practical acceptance criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-final-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Final recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5419,37 +5626,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    88 fermi sanity check validation gate
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../88-fermi-sanity-check-validation-gate/" class="md-nav__link">
         
   
   
@@ -5465,153 +5645,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposal-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposal Scope
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Proposal Scope">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-inputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Inputs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-validation-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Validation Rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Outputs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-extensibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Extensibility
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Metrics
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deliverables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deliverables
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-docs-first" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Docs First
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5974,10 +6007,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#bottom-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary
+        Bottom line
       
     </span>
   </a>
@@ -5985,10 +6018,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#1-core-diagnosis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        1. Core diagnosis
       
     </span>
   </a>
@@ -5996,22 +6029,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposal-scope" class="md-nav__link">
+  <a href="#2-design-principles-for-the-next-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposal Scope
+        2. Design principles for the next version
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Proposal Scope">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-stage-by-stage-insights-and-implementation-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Stage-by-stage insights and implementation proposals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Stage-by-stage insights and implementation proposals">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-inputs" class="md-nav__link">
+  <a href="#31-identify_potential_levers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Inputs
+        3.1 identify_potential_levers
       
     </span>
   </a>
@@ -6019,10 +6063,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-validation-rules" class="md-nav__link">
+  <a href="#32-deduplicate_levers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Validation Rules
+        3.2 deduplicate_levers
       
     </span>
   </a>
@@ -6030,10 +6074,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-outputs" class="md-nav__link">
+  <a href="#33-enrich_levers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Outputs
+        3.3 enrich_levers
       
     </span>
   </a>
@@ -6041,21 +6085,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-extensibility" class="md-nav__link">
+  <a href="#34-vital_few_levers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Extensibility
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Metrics
+        3.4 vital_few_levers
       
     </span>
   </a>
@@ -6068,10 +6101,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deliverables" class="md-nav__link">
+  <a href="#4-recommended-vital-few-scoring-rubric" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deliverables
+        4. Recommended vital-few scoring rubric
       
     </span>
   </a>
@@ -6079,10 +6112,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-docs-first" class="md-nav__link">
+  <a href="#5-proposed-pipeline-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why Docs First
+        5. Proposed pipeline changes
       
     </span>
   </a>
@@ -6090,10 +6123,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#6-suggested-json-schema-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next Steps
+        6. Suggested JSON schema changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-implementation-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Implementation order
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-practical-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Practical acceptance criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-final-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Final recommendation
       
     </span>
   </a>
@@ -6120,59 +6186,139 @@
   
 
 
-<h1 id="fermisanitycheck-as-the-validation-gate">FermiSanityCheck as the Validation Gate</h1>
-<p><strong>Date:</strong> 2026-02-25<br />
-<strong>Authors:</strong> Egon &amp; Larry<br />
-<strong>Status:</strong> Proposal (docs-only — awaiting Simon's review before implementation)<br />
-<strong>Tags:</strong> validation, planexe, strategy  </p>
-<hr />
-<h2 id="summary">Summary</h2>
-<p>FermiSanityCheck is the first rule-based guard that touches every PlanExe assumption. Rather than a plan generator, PlanExe should be the <strong>auditing gate</strong> that agents call before executing assumptions. This proposal explains how the validation module should operate, what signals it emits, and how to keep it extensible for domain-specific heuristics.</p>
-<hr />
-<h2 id="problem">Problem</h2>
-<p>Autonomous agents hallucinate when they accept ungrounded claims: missing bounds, 100× spans, and low-confidence evidence. We already added a prototype <code>fermi_sanity_check.py</code>, but it currently mixes English-only heuristics, hardcoded units, and no documented extensions. Simon highlighted the need for proposals before implementation; we need a clean doc describing the validation gate before touching more code.</p>
-<hr />
-<h2 id="proposal-scope">Proposal Scope</h2>
-<h3 id="1-inputs">1. Inputs</h3>
-<p>Describe the structured <code>QuantifiedAssumption</code> contract (claim, lower/upper, unit, confidence, evidence) and how <code>MakeAssumptions</code> outputs feed it.</p>
-<h3 id="2-validation-rules">2. Validation Rules</h3>
-<p>Outline the core checks:
-- Bounds present and non-contradictory
-- Span ratio ≤ 100× (warn at 50×)
-- Evidence present for low-confidence claims
-- Budget/timeline/team heuristics (domain-agnostic defaults)</p>
-<p>And how they map to signal categories (assumptions, governance, WBS, etc.).</p>
-<h3 id="3-outputs">3. Outputs</h3>
-<p>Define the JSON report (<code>pass/fail</code>, reasons, <code>pass_rate_pct</code>) and Markdown summary, plus how downstream tasks should consume them.</p>
-<h3 id="4-extensibility">4. Extensibility</h3>
-<p>Provide guidance on adding domain profiles (carpenter/dentist/personal), currency/metric conversions, and future keyword lists so the validation gate remains adaptable — <strong>without hardcoding English-specific terms in the core module</strong>.</p>
-<h3 id="5-metrics">5. Metrics</h3>
-<p>Suggest how we will measure success:
-- <code>pass_rate_pct</code> per plan
-- Reduction in downstream review cycles
-- Agent adoption of validation report before task execution</p>
-<hr />
-<h2 id="deliverables">Deliverables</h2>
+<h1 id="lever-pipeline-implementation-memo">Lever Pipeline Implementation Memo</h1>
+<h2 id="bottom-line">Bottom line</h2>
+<p>The pipeline is well decomposed, but it compounds weak abstractions. It is good at generating plausible strategic surface area and then polishing it. It is not yet good enough at enforcing clean ontology, protecting methodological fundamentals, or correcting upstream mistakes before they become authoritative-looking output.</p>
+<h2 id="1-core-diagnosis">1. Core diagnosis</h2>
+<ul>
+<li>The overall stage structure is sane: broad lever generation, consolidation, enrichment, prioritization, then downstream scenario and markdown synthesis.</li>
+<li>The biggest failure mode is inheritance: every downstream stage mostly trusts the previous stage instead of stress-testing it.</li>
+<li>The pipeline over-rewards levers that sound central in generated prose and under-rewards levers that are foundational for validity.</li>
+<li>Methodology levers, execution levers, governance levers, and communications levers are mixed together in one flat list.</li>
+<li>The markdown/report layer currently packages judgment errors instead of catching them.</li>
+</ul>
+<h2 id="2-design-principles-for-the-next-version">2. Design principles for the next version</h2>
 <ol>
-<li>This doc-only PR in <code>docs/proposals/88-fermi-sanity-check-validation-gate.md</code></li>
-<li>A short appendix with example validation reports and sample prompts for hallucination triggers</li>
-<li>A review checklist for Simon: do these checks cover the key failure modes? Are the hooks for downstream tasks clear?</li>
+<li>A lever should be a crisp decision variable, not a topic, workstream, or narrative bundle.</li>
+<li>Deduplication should not only remove overlap; it should also re-level abstraction.</li>
+<li>Methodological validity should outrank visibility, adoption, and communications when selecting the vital few.</li>
+<li>Each stage should either add information or challenge the previous stage. Stages that only paraphrase are dangerous.</li>
+<li>The pipeline should preserve reasons and provenance for why a lever survived, merged, split, or was demoted.</li>
 </ol>
-<hr />
-<h2 id="why-docs-first">Why Docs First</h2>
-<p>The previous implementation attempt (PR #69) was rejected because:
-- Too large (mixed too many concerns)
-- Hardcoded units (English-only heuristics)
-- No proposal approved before implementation</p>
-<p>This proposal isolates the <strong>why and what</strong> from the <strong>how</strong>. Once approved, implementation resumes with a clear mandate and clean scope.</p>
-<hr />
-<h2 id="next-steps">Next Steps</h2>
-<p>Once Simon approves this proposal:
-1. Implementation (FermiSanityCheck module, domain normalizer, DAG wiring) resumes
-2. Each implementation PR stays small and focused on one concern
-3. Domain profiles are a separate proposal (not bundled with validation rules)</p>
-<hr />
-<p><em>Incident reference: <code>swarm-coordination/events/2026/feb/2026-02-25-planexe-implementation-without-proposal-approval.md</code></em></p>
+<h2 id="3-stage-by-stage-insights-and-implementation-proposals">3. Stage-by-stage insights and implementation proposals</h2>
+<h3 id="31-identify_potential_levers">3.1 identify_potential_levers</h3>
+<p><strong>What the current stage gets right</strong>
+- It casts a wide net and produces many genuinely relevant candidate areas.
+- It is good at surfacing second-order risks and tensions in the review field.
+- It is better to over-generate here than to prematurely collapse the space.</p>
+<p><strong>What is going wrong</strong>
+- The output mixes true strategic levers with product features, deliverables, stakeholder tactics, and workstreams.
+- Several candidates are not real decision axes. They are clusters of partially related choices.
+- Some levers are framed as options that are not mutually exclusive, which makes later ranking unstable.
+- Important hidden levers are under-surfaced, especially governance/adjudication, uncertainty thresholds, prompt protocol design, data provenance/versioning, and misuse defense.</p>
+<p><strong>Implementation proposals</strong>
+1. Add an explicit ontology output for each candidate: methodology, execution, governance, dissemination, product, or operations.
+2. Require every candidate lever to declare a decision axis in one sentence using a forced template: “This lever controls X by choosing between A/B/C.”
+3. Add a validation rule that rejects or flags candidates whose options are not mutually exclusive or that blend multiple axes.
+4. Generate hidden missing-lever probes after the first pass. Ask specifically for omitted categories: governance, epistemic safeguards, release policy, red-teaming, measurement protocol, and reproducibility policy.
+5. Store a structured <code>lever_type</code>, <code>decision_axis</code>, <code>option_exclusivity_score</code>, and <code>is_core_strategy_candidate</code> field in the JSON.</p>
+<h3 id="32-deduplicate_levers">3.2 deduplicate_levers</h3>
+<p><strong>What the current stage gets right</strong>
+- It correctly prefers absorb over remove in many cases, which preserves useful detail.
+- It often merges narrow variants into broader, better parent levers.
+- It reduces obvious redundancy and makes the candidate set easier to reason about.</p>
+<p><strong>What is going wrong</strong>
+- The stage is mostly literal overlap reduction. It does not ask whether a surviving item belongs at this strategic layer at all.
+- It keeps too many downstream or presentation-oriented levers as first-class peers of methodological levers.
+- It does not reliably split mushy levers before deduplicating them, so bad abstraction survives.
+- The current keep-if-unsure behavior is safe, but it also preserves junk that should be demoted to another layer.</p>
+<p><strong>Implementation proposals</strong>
+1. Rename the stage conceptually from deduplication to consolidation.
+2. Perform three operations, not one: merge duplicates, split bundled levers, and demote out-of-layer levers.
+3. Add an explicit classification decision for every item: keep-core, keep-secondary, absorb, split, or remove.
+4. Require the stage to compare every lever against both individual levers and the emerging merged clusters.
+5. Produce a machine-readable merge map so downstream stages know lineage, absorbed children, and rationale.</p>
+<h3 id="33-enrich_levers">3.3 enrich_levers</h3>
+<p><strong>What the current stage gets right</strong>
+- It turns raw levers into objects that are readable and usable downstream.
+- Descriptions, synergies, and conflicts help create report-friendly material.
+- The additional fields are useful for human understanding and scenario composition.</p>
+<p><strong>What is going wrong</strong>
+- The stage creates persuasive prose around levers whose abstraction may still be wrong.
+- Generated synergy/conflict text is later treated as evidence of systemic centrality, which creates feedback loops built on invented structure.
+- The stage enriches almost everything in the same way, even though different lever types need different enrichment.
+- There is not enough explicit treatment of validity-critical fields such as uncertainty, measurement assumptions, failure conditions, and publication thresholds.</p>
+<p><strong>Implementation proposals</strong>
+1. Separate narrative enrichment from structural enrichment. Narrative text is useful for reports; structural fields should drive decisions.
+2. Add explicit fields that later stages can score directly: <code>foundationality</code>, <code>validity_risk</code>, <code>feasibility_risk</code>, <code>scope_impact</code>, <code>misuse_risk</code>, <code>governance_dependency</code>, and <code>reversibility</code>.
+3. Generate <code>prerequisites</code>, <code>invalidates_if_wrong</code>, and <code>depends_on</code> fields instead of relying only on free-text synergy/conflict summaries.
+4. Tailor enrichment by lever type. Methodology levers need epistemic-risk fields; execution levers need cost/coordination fields; dissemination levers need adoption/misuse fields.
+5. Require a short “why this is not just a downstream consequence” statement for any lever still marked as core.</p>
+<h3 id="34-vital_few_levers">3.4 vital_few_levers</h3>
+<p><strong>What the current stage gets right</strong>
+- It forces prioritization instead of leaving everything equally important.
+- It tries to use systemic leverage rather than simple surface importance.
+- It is the first stage where the pipeline starts exposing its real strategic taste.</p>
+<p><strong>What is going wrong</strong>
+- The stage currently over-relies on synergy/conflict prose, so levers that sound well-connected are promoted.
+- Visibility, coordination, and outreach effects are overweighted relative to methodological necessity.
+- Foundational but less rhetorically connected levers can be omitted even when they are crucial for validity.
+- The stage picks one flat vital-few list even though the pipeline is mixing different kinds of levers.</p>
+<p><strong>Implementation proposals</strong>
+1. Stop using prose centrality as the main proxy for importance. Use explicit scoring fields from enrichment.
+2. Split selection into two passes: foundational core levers and secondary execution levers.
+3. Add hard veto rules: a non-methodology lever cannot outrank a methodology lever when the methodology lever has higher foundationality and validity risk.
+4. Penalize blurry levers with low decision-axis clarity.
+5. Add an omission audit after selection: list the strongest excluded levers and explain why they did not make the cut.</p>
+<h2 id="4-recommended-vital-few-scoring-rubric">4. Recommended vital-few scoring rubric</h2>
+<p>Use a weighted score that strongly favors validity and foundationality over rhetorical connectedness.
+- Foundationality: 30%
+- Validity risk if wrong: 25%
+- Feasibility/scope constraint power: 15%
+- Irreversibility / path dependence: 10%
+- Governance or misuse dependency: 10%
+- Connectivity: 10% maximum, and only from structured dependencies, not prose alone</p>
+<p>Recommended selection logic:
+1. Rank all keep-core levers by weighted score.
+2. Force at least three methodology/governance levers into the top five unless the project is obviously non-methodological.
+3. Then pick at most one or two execution/dissemination levers that materially change delivery or impact.
+4. Finally run an omission check for any excluded lever with high foundationality or high validity risk.</p>
+<h2 id="5-proposed-pipeline-changes">5. Proposed pipeline changes</h2>
+<ul>
+<li>Add <code>NormalizeLeverOntologyTask</code> between identify_potential_levers and consolidation.</li>
+<li>Replace <code>DeduplicateLeversTask</code> with <code>ConsolidateLeversTask</code> that supports merge, split, and demote.</li>
+<li>Add <code>ScoreLeverStructureTask</code> after enrichment to compute machine-usable scores.</li>
+<li>Replace <code>FocusOnVitalFewLeversTask</code> with <code>SelectFoundationalLeversTask</code> and <code>SelectExecutionLeversTask</code>.</li>
+<li>Add <code>AuditVitalFewSelectionTask</code> before markdown generation to catch missing fundamentals and over-selected downstream levers.</li>
+</ul>
+<h2 id="6-suggested-json-schema-changes">6. Suggested JSON schema changes</h2>
+<ul>
+<li><code>lever_type</code>: methodology | governance | execution | dissemination | product | operations</li>
+<li><code>decision_axis</code>: short sentence describing the controllable choice</li>
+<li><code>clarity_score</code>: 1-5 for how crisp the axis is</li>
+<li><code>core_layer</code>: core | secondary</li>
+<li><code>lineage</code>: parent lever id plus absorbed child ids</li>
+<li><code>foundationality</code>, <code>validity_risk</code>, <code>feasibility_risk</code>, <code>misuse_risk</code>, <code>reversibility</code></li>
+<li><code>depends_on</code>, <code>prerequisites</code>, <code>invalidates_if_wrong</code></li>
+<li><code>selection_rationale</code>: compact machine-readable reason a lever survived or was excluded</li>
+</ul>
+<h2 id="7-implementation-order">7. Implementation order</h2>
+<ol>
+<li>First fix ontology and consolidation. This is the highest-leverage change.</li>
+<li>Then change enrichment so it emits structural scoring fields rather than mostly prose.</li>
+<li>Then redesign vital-few selection around foundationality and validity risk.</li>
+<li>Only after that should report-generation prompts be revised, because presentation is not the core problem.</li>
+</ol>
+<h2 id="8-practical-acceptance-criteria">8. Practical acceptance criteria</h2>
+<ul>
+<li>A bundled lever such as language prioritization is either split or rewritten into a crisp axis before enrichment.</li>
+<li>At least one governance or publication-threshold lever appears when the domain is politically sensitive or high stakes.</li>
+<li>The vital few list can explain why every omitted high-risk methodology lever was excluded.</li>
+<li>Downstream markdown cannot claim that no key dimensions are missing unless an omission audit passes.</li>
+<li>The same weak presentation-oriented lever should not repeatedly outrank foundational methodology levers across similar projects.</li>
+</ul>
+<h2 id="9-final-recommendation">9. Final recommendation</h2>
+<p>Do not treat this as a prompt-tuning problem. The main issue is not wording quality. The main issue is stage responsibility. The early stages need tighter ontology discipline, the middle stages need structural rather than rhetorical enrichment, and the prioritization stage needs to reward validity-preserving decisions more than influential-looking prose. Fix that branch, and a large share of the downstream plan quality should improve automatically.</p>
 
 
 
