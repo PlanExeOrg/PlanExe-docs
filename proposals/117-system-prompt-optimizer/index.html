@@ -6132,7 +6132,7 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li>Phase 2: <code>run_code_review.py</code> — both agents review PlanExe source code, producing <code>code_*.md</code> with file:line references.</li>
 <li>Phase 3: <code>run_synthesis.py</code> — single agent reconciles all findings into <code>synthesis.md</code> with top 5 ranked directions.</li>
 <li>Phase 4: <code>run_assessment.py</code> — before/after comparison, metric table, keeper verdict (YES/NO/CONDITIONAL), and evaluation of the synthesis recommendation for the next iteration.</li>
-<li><code>run_analysis.py</code> — orchestrates phases 1–4 sequentially; stops hard on first phase failure.</li>
+<li><code>run_analysis.py</code> — orchestrates phases 1–4 sequentially with retry support (default 3 attempts per phase, 20 min timeout). Cleans up error marker files before retrying.</li>
 <li><strong><code>run_optimization_iteration.py</code></strong> — orchestrates a full loop: implement recommendation → create PR → run experiments → run analysis pipeline. Supports <code>--skip-implement</code>, <code>--skip-runner</code>, <code>--skip-analysis</code>, <code>--models</code>.</li>
 <li><strong>Conventions</strong>: <a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/blob/main/analysis/AGENTS.md"><code>analysis/AGENTS.md</code></a>.</li>
 </ul>
@@ -6187,7 +6187,7 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <p>Removed: GLM (PR #266, schema-echoing), StepFun (removed from config), nemotron (0/5 all iterations, structural incompatibility).</p>
 <h3 id="iteration-history">Iteration History</h3>
 <p>Currently optimizing: <code>identify_potential_levers</code> (the first step after plan intake).</p>
-<p>27 analysis rounds (0–26).</p>
+<p>30 analysis rounds (0–29).</p>
 <table>
 <thead>
 <tr>
@@ -6416,22 +6416,51 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <td>89–95</td>
 <td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/26_identify_potential_levers">analysis/26</a></td>
 </tr>
+<tr>
+<td>27</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/339">#339</a></td>
+<td>Relax option count validator, raise review min_length to 50, clean up dead code</td>
+<td>YES</td>
+<td>96–02</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/27_identify_potential_levers">analysis/27</a></td>
+</tr>
+<tr>
+<td>28</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/340">#340</a></td>
+<td>Remove template-lock phrase "the options neglect" from example 3, deduplicate field description examples</td>
+<td>CONDITIONAL</td>
+<td>03–09</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/28_identify_potential_levers">analysis/28</a></td>
+</tr>
+<tr>
+<td>29</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe/pull/288">#288</a></td>
+<td>Fix zero cost for OpenAI/Anthropic models via fallback pricing + Anthropic token capture</td>
+<td>YES</td>
+<td>10–16</td>
+<td><a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/tree/main/analysis/29_identify_potential_levers">analysis/29</a></td>
+</tr>
 </tbody>
 </table>
 <h3 id="key-improvements-so-far">Key Improvements So Far</h3>
-<p>Comparing iteration 0 (baseline) to iteration 26 (current state):</p>
+<p>Comparing iteration 0 (baseline) to iteration 29 (current state):</p>
 <ul>
 <li><strong>Review format violations</strong>: 67 → ~4 (enforced by validator since iter 13)</li>
 <li><strong>Consequence chain violations</strong>: 35 → 7</li>
 <li><strong>Bracket placeholder leakage</strong>: ~17 → 0</li>
 <li><strong>Template leakage</strong> (naming suffix): 83–100% → 2–10%</li>
 <li><strong>review_lever template lock</strong>: llama3.1 100% → 0%, qwen3 ~100% → 6% (broken by domain-specific examples in iter 26)</li>
+<li><strong>"The options [verb]" secondary lock</strong>: llama3.1 gta_game 100% → 62.5% (partial fix in iter 28; examples 1 &amp; 2 still use options-as-subject)</li>
 <li><strong>Cross-call duplication</strong>: eliminated via novelty-aware follow-ups</li>
 <li><strong>Chat-history contamination</strong>: eliminated via fresh context per call</li>
 <li><strong>Validation failures discarding valid levers</strong>: eliminated — <code>max_length=7</code> removed (iter 12), partial result recovery added (iter 14)</li>
-<li><strong>Option count violations</strong>: caught by <code>check_option_count</code> validator (iter 13)</li>
+<li><strong>Option count violations</strong>: caught by <code>check_option_count</code> validator (iter 13), relaxed to <code>&lt; 3</code> in iter 27</li>
+<li><strong>review_lever min_length</strong>: raised from 20 to 50 chars (iter 27) — catches stub reviews</li>
 <li><strong>Unused summary field</strong>: removed (iter 25) — eliminated 105 wasted LLM generations per batch</li>
-<li><strong>Overall success rate</strong>: 88.6% → 97.1% (iter 25)</li>
+<li><strong>Duplicate example injection</strong>: field description examples removed (iter 28) — ~150-200 token savings per call</li>
+<li><strong>Consequences contamination</strong>: "A weakness in this approach is that…" in consequences field eliminated (iter 28, downstream of B2 fix)</li>
+<li><strong>Cost tracking</strong>: OpenAI and Anthropic models now report token counts and estimated cost (iter 29)</li>
+<li><strong>Overall success rate</strong>: 88.6% → 97.1% (iter 27)</li>
 <li><strong>Option word count (llama3.1)</strong>: ~7 → ~12 avg words (iter 25)</li>
 <li><strong>Gemini-flash baseline comparison</strong>: name uniqueness 71%→100%, cross-call duplication 15→0, consequence richness +40%, option prefix leakage 16→0 (<a href="https://github.com/PlanExeOrg/PlanExe-prompt-lab/blob/main/analysis/13_identify_potential_levers/comparison.md">comparison</a>)</li>
 </ul>
@@ -6446,9 +6475,11 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li><strong>Recover partial results rather than failing completely.</strong> When a 3-call loop has call 2 or 3 fail, keeping levers from prior successful calls is better than discarding everything. A single validator rejection should not wipe out 10+ valid levers.</li>
 <li><strong>Domain-specific examples break template lock.</strong> Generic examples ("centralization and local autonomy") are portable — models copy them verbatim regardless of plan topic. Domain-specific examples (agriculture, insurance) force models to generate original text. Iteration 26 broke llama3.1 template lock from 100% to 0% with this approach.</li>
 <li><strong>Verify the runner is on the PR branch, not main.</strong> Iteration 24 was invalidated because the runner imported code from main instead of the PR branch. <code>run_optimization_iteration.py</code> now verifies this automatically.</li>
+<li><strong>Fixing one of N copyable examples shifts the lock, not breaks it.</strong> Iteration 28 replaced one of three examples using "the options" as grammatical subject. The lock rate dropped from 100% to 62.5% for call 1, but calls 2-3 retained the pattern at ~100%. The remaining examples are still active lock sources. All must be fixed simultaneously.</li>
+<li><strong>Replacement examples can introduce new regressions.</strong> Iteration 28's replacement example 3 introduced fabricated % claims in llama3.1 consequences ("by at least 20%"). Replacement text must be reviewed for quantitative language that models might copy.</li>
 </ol>
 <h3 id="current-state-of-identify_potential_leverspy">Current State of <code>identify_potential_levers.py</code></h3>
-<p>After 26 iterations, the step has these characteristics:</p>
+<p>After 29 iterations, the step has these characteristics:</p>
 <ul>
 <li>System prompt says "5 to 7 levers per response", schema has <code>min_length=5</code> (no <code>max_length</code> — downstream dedup handles extras)</li>
 <li>Follow-up calls use novelty-aware prompts (exclude already-generated lever names)</li>
@@ -6457,11 +6488,13 @@ By the end of this prompt optimization, the overall plan quality should have bee
 <li>Pydantic validators: <code>check_option_count</code> (exactly 3 options), <code>check_review_format</code> (structural only — min length + no bracket placeholders, language-agnostic)</li>
 <li>Partial result recovery: if call 2 or 3 fails, keep levers from prior successful calls instead of discarding everything</li>
 <li>Quality gate: duplicate name filter (language-agnostic)</li>
-<li><code>review_lever</code> prompt uses three domain-specific non-portable examples (agriculture, urban planning, insurance) to prevent template lock</li>
+<li><code>review_lever</code> prompt uses three domain-specific non-portable examples (agriculture, urban planning, insurance) to prevent template lock; example 3 rewritten to remove "the options neglect" (iter 28)</li>
+<li><code>review_lever</code> field description no longer duplicates system prompt examples (iter 28) — ~150-200 token savings per call</li>
 <li><code>DocumentDetails.summary</code> field removed (unused, wasted tokens)</li>
 <li>Call-2/3 prefix slimmed (no duplicate quality/anti-fabrication reminders)</li>
 <li><code>OPTIMIZE_INSTRUCTIONS</code> documents 6 known problems (including template lock)</li>
 <li>System prompt: <code>IDENTIFY_POTENTIAL_LEVERS_SYSTEM_PROMPT</code> constant in code</li>
+<li><strong>Cost tracking</strong>: fallback pricing registry estimates cost from token counts for OpenAI/Anthropic models; Anthropic httpx hook captures token usage that LlamaIndex discards (iter 29)</li>
 </ul>
 <h3 id="not-started">Not Started</h3>
 <ul>
@@ -6472,10 +6505,8 @@ By the end of this prompt optimization, the overall plan quality should have bee
 </ul>
 <h3 id="next-steps">Next Steps</h3>
 <ol>
-<li><strong>Fix secondary template lock</strong> — after iteration 26, llama3.1 copies subphrases ("The options assume/neglect/overlook/fail") at 76% in hong_kong_game reviews. Fix: strip copyable subphrases from examples and add positive diversity constraint.</li>
-<li><strong>Raise review_lever min_length to 50</strong> — 20-char floor fails to reject 19-char stub reviews ("Sensor Data Sharing"). One-line fix.</li>
-<li><strong>Relax <code>options == 3</code> validator</strong> — change <code>len(v) != 3</code> to <code>len(v) &lt; 3</code>. A lever with 4–5 options is not damaging; discarding the entire call for one 2-option lever is disproportionate.</li>
-<li><strong>Investigate haiku run-95 data integrity</strong> — may have reused cached run-88 outputs (resumable-runs feature doesn't check version/hash).</li>
+<li><strong>Replace all three review_lever examples</strong> — examples 1 and 2 still use "the options" / "none of the options" as grammatical subject, confirmed as active lock sources (gpt-5-nano run 05: "the options neglect"; llama3.1 parasomnia 100% lock rate). Replace all three with critiques whose subject is never options-centric. Ensure no quantitative language to avoid fabricated % regression.</li>
+<li><strong>Fix OPTIMIZE_INSTRUCTIONS self-contradiction</strong> — lines 77-79 praise example 1 as "the correct structural template" while it contains a copyable opener. Fix in same PR as example replacement.</li>
 <li><strong>Build a deterministic evaluator</strong> — compute metrics (uniqueness, option count, template leakage, format compliance) without LLM calls. Makes assessment reproducible and fast.</li>
 <li><strong>Move to the next pipeline step</strong> once <code>identify_potential_levers</code> is stable.</li>
 </ol>
