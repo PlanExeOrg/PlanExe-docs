@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry the Laptop Lobster">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/122-deduplicate-levers/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/15-outcome-feedback-and-model-governance/">
+        <link rel="prev" href="../121-plan-spawns-agents/">
       
       
-        <link rel="prev" href="../14-confidence-weighted-funding-auctions/">
-      
-      
-        <link rel="next" href="../16-on-demand-plugin-synthesis-hub/">
+        <link rel="next" href="../13-portfolio-aware-capital-allocation/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Outcome Feedback Loop and Model Governance for Investor Matching - PlanExe Documentation</title>
+        <title>122 deduplicate levers - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Outcome Feedback Loop and Model Governance for Investor Matching - PlanExe Documentation" />
+<meta property="og:title" content="122 deduplicate levers - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/15-outcome-feedback-and-model-governance.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/122-deduplicate-levers.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/15-outcome-feedback-and-model-governance/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/122-deduplicate-levers/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Outcome Feedback Loop and Model Governance for Investor Matching - PlanExe Documentation" />
+<meta property="twitter:title" content="122 deduplicate levers - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/15-outcome-feedback-and-model-governance.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/122-deduplicate-levers.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#outcome-feedback-loop-and-model-governance-for-investor-matching" class="md-skip">
+        <a href="#proposal-122-deduplicate-levers-architecture-and-improvements" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Outcome Feedback Loop and Model Governance for Investor Matching
+              122 deduplicate levers
             
           </span>
         </div>
@@ -3027,10 +3025,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../122-deduplicate-levers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    122 deduplicate levers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3046,6 +3071,398 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteration-history-iter-44-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iteration History (iter 44-52)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteration History (iter 44-52)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-moved-the-needle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What moved the needle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-didnt-move-the-needle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What didn't move the needle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#current-metrics-iter-52-vs-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current metrics (iter 52 vs baseline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structural-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structural issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-step-conflates-deduplication-with-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The step conflates deduplication with prioritization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-no-explicit-absorption-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. No explicit absorption structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-retention-bias-is-strong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The retention bias is strong
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-no-survivor-overlap-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. No survivor-overlap validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-no-category-balance-awareness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. No category balance awareness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-single-batch-reasoning-is-useful-but-brittle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Single-batch reasoning is useful but brittle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-silent-failure-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Silent failure masking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-user_prompt-field-stores-wrong-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. user_prompt field stores wrong value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-calls_succeeded-hardcoded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. calls_succeeded hardcoded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-minimum-count-threshold-is-too-low" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Minimum count threshold is too low
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improvement-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvement Proposals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improvement Proposals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-incremental-improvements-low-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Incremental improvements (low risk)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-two-pass-architecture-medium-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Two-pass architecture (medium risk)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-cluster-based-deduplication-higher-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Cluster-based deduplication (higher risk)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-d-mechanism-based-deduplication-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option D: Mechanism-based deduplication (research)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#near-term-next-1-2-iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Near-term (next 1-2 iterations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term-next-3-5-iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-term (next 3-5 iterations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-future-consideration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-term (future consideration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lessons Learned">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-9-iterations-of-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From 9 iterations of optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3125,44 +3542,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    15 outcome feedback and model governance
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
         
   
   
@@ -3185,225 +3568,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TL;DR
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-outcome-telemetry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Outcome Telemetry
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-evaluation-framework" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Evaluation Framework
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-governance-transparency" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Governance + Transparency
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-outcome-telemetry-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Outcome Telemetry Contract
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-governance-evaluation-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Governance Evaluation Loop
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-governance-board-outputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Governance Board Outputs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation Checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -6139,10 +6303,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Status
       
     </span>
   </a>
@@ -6150,10 +6314,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
+  <a href="#pipeline-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        TL;DR
+        Pipeline Context
       
     </span>
   </a>
@@ -6161,55 +6325,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#iteration-history-iter-44-52" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        Iteration History (iter 44-52)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
+    <nav class="md-nav" aria-label="Iteration History (iter 44-52)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-1-outcome-telemetry" class="md-nav__link">
+  <a href="#what-moved-the-needle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 1: Outcome Telemetry
+        What moved the needle
       
     </span>
   </a>
@@ -6217,10 +6348,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-2-evaluation-framework" class="md-nav__link">
+  <a href="#what-didnt-move-the-needle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 2: Evaluation Framework
+        What didn't move the needle
       
     </span>
   </a>
@@ -6228,10 +6359,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-3-governance-transparency" class="md-nav__link">
+  <a href="#current-metrics-iter-52-vs-baseline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 3: Governance + Transparency
+        Current metrics (iter 52 vs baseline)
       
     </span>
   </a>
@@ -6244,55 +6375,34 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
+  <a href="#known-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Success Metrics
+        Known Issues
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+    <nav class="md-nav" aria-label="Known Issues">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-a-outcome-telemetry-contract" class="md-nav__link">
+  <a href="#structural-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase A — Outcome Telemetry Contract
+        Structural issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structural issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-step-conflates-deduplication-with-prioritization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The step conflates deduplication with prioritization
       
     </span>
   </a>
@@ -6300,10 +6410,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-b-governance-evaluation-loop" class="md-nav__link">
+  <a href="#2-no-explicit-absorption-structure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase B — Governance Evaluation Loop
+        2. No explicit absorption structure
       
     </span>
   </a>
@@ -6311,10 +6421,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-c-governance-board-outputs" class="md-nav__link">
+  <a href="#3-the-retention-bias-is-strong" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase C — Governance Board Outputs
+        3. The retention bias is strong
       
     </span>
   </a>
@@ -6322,10 +6432,237 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
+  <a href="#4-no-survivor-overlap-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Validation Checklist
+        4. No survivor-overlap validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-no-category-balance-awareness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. No category balance awareness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-single-batch-reasoning-is-useful-but-brittle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Single-batch reasoning is useful but brittle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-silent-failure-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Silent failure masking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-user_prompt-field-stores-wrong-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. user_prompt field stores wrong value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-calls_succeeded-hardcoded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. calls_succeeded hardcoded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-minimum-count-threshold-is-too-low" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Minimum count threshold is too low
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#improvement-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvement Proposals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improvement Proposals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-incremental-improvements-low-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Incremental improvements (low risk)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-two-pass-architecture-medium-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Two-pass architecture (medium risk)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-cluster-based-deduplication-higher-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Cluster-based deduplication (higher risk)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-d-mechanism-based-deduplication-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option D: Mechanism-based deduplication (research)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommendation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#near-term-next-1-2-iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Near-term (next 1-2 iterations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term-next-3-5-iterations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-term (next 3-5 iterations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-future-consideration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-term (future consideration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lessons Learned
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lessons Learned">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-9-iterations-of-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From 9 iterations of optimization
       
     </span>
   </a>
@@ -6357,198 +6694,402 @@
   
 
 
-<h1 id="outcome-feedback-loop-and-model-governance-for-investor-matching">Outcome Feedback Loop and Model Governance for Investor Matching</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-10<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>feedback-loop</code>, <code>governance</code>, <code>mlops</code>, <code>evaluation</code>, <code>roi</code></p>
+<h1 id="proposal-122-deduplicate-levers-architecture-and-improvements">Proposal 122: Deduplicate Levers — Architecture and Improvements</h1>
+<h2 id="status">Status</h2>
+<p><strong>Current state</strong>: PR #375 merged (2026-03-21). Single batch call with
+primary/secondary/remove taxonomy. 3x faster than baseline, all models
+complete successfully. Best iteration: 52.</p>
+<p><strong>This proposal</strong>: documents the iteration journey, known issues, and
+future improvement directions for the deduplicate_levers step.</p>
 <hr />
-<h2 id="pitch">Pitch</h2>
-<p>Close the loop between predicted and realized investment outcomes so the matching system continuously improves ROI accuracy, fairness, and trustworthiness.</p>
-<h2 id="tldr">TL;DR</h2>
-<ul>
-<li>
-<p>Track each recommendation from match to long-term outcome.</p>
-</li>
-<li>
-<p>Compare predicted ROI/risk to realized performance.</p>
-</li>
-<li>
-<p>Retrain models with strict governance, versioning, and rollback.</p>
-</li>
-<li>
-<p>Publish model health dashboards for investors and operators.</p>
-</li>
-</ul>
-<h2 id="problem">Problem</h2>
-<p>Without outcome feedback, matching systems drift and confidence erodes:</p>
-<ul>
-<li>
-<p>Predictions can become stale as markets change.</p>
-</li>
-<li>
-<p>Biases persist unnoticed.</p>
-</li>
-<li>
-<p>Users cannot audit whether model recommendations are actually improving returns.</p>
-</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Implement an <strong>Outcome Intelligence Layer</strong> that:</p>
+<h2 id="pipeline-context">Pipeline Context</h2>
+<p>DeduplicateLevers is step 2 in a 6-step solution-space exploration pipeline:</p>
+<ol>
+<li><strong>IdentifyPotentialLevers</strong> — brainstorms 15-20 raw levers</li>
+<li><strong>DeduplicateLevers</strong> ← this step</li>
+<li><strong>EnrichLevers</strong> — adds description, synergy, and conflict text</li>
+<li><strong>FocusOnVitalFewLevers</strong> — filters down to 4-6 high-impact levers</li>
+<li><strong>ScenarioGeneration</strong> — builds 3 scenarios (aggressive, medium, safe)</li>
+<li><strong>ScenarioSelection</strong> — picks the best-fitting scenario</li>
+</ol>
+<p>Step 1 intentionally over-generates. This step removes near-duplicates,
+filters irrelevant levers, and tags survivors as primary (strategic) or
+secondary (operational). Step 4 handles further filtering.</p>
+<hr />
+<h2 id="iteration-history-iter-44-52">Iteration History (iter 44-52)</h2>
+<p>Nine iterations across five PRs to reach the current state.</p>
+<table>
+<thead>
+<tr>
+<th>Iter</th>
+<th>PR</th>
+<th>Architecture</th>
+<th>Taxonomy</th>
+<th>Verdict</th>
+<th>Key insight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>48</td>
+<td>—</td>
+<td>18 sequential calls</td>
+<td>keep/absorb/remove</td>
+<td>BASELINE</td>
+<td>llama3.1 collapsed 7 levers into "Risk Framing"</td>
+</tr>
+<tr>
+<td>45</td>
+<td>#365</td>
+<td>18 sequential calls</td>
+<td>primary/secondary/absorb/remove (4-way)</td>
+<td>YES (5/7)</td>
+<td>Primary/secondary triage is the real quality gain. <code>remove</code> dead when <code>absorb</code> exists</td>
+</tr>
+<tr>
+<td>49</td>
+<td>#372</td>
+<td>18 sequential calls</td>
+<td>primary/secondary/remove (3-way)</td>
+<td>YES</td>
+<td>All 3 categories exercised. Template-lock identified</td>
+</tr>
+<tr>
+<td>50</td>
+<td>#373</td>
+<td>1 batch call</td>
+<td>Likert scoring (-2 to +2)</td>
+<td>REVERT</td>
+<td>Relevance != deduplication. llama3.1 inverted the scale</td>
+</tr>
+<tr>
+<td>51</td>
+<td>#374</td>
+<td>1 batch call</td>
+<td>primary/secondary/remove</td>
+<td>YES</td>
+<td>Batch + categorical works. llama3.1 timed out 2/5 plans</td>
+</tr>
+<tr>
+<td>52</td>
+<td>#375</td>
+<td>1 batch call</td>
+<td>primary/secondary/remove</td>
+<td>YES (merged)</td>
+<td>Shorter justifications fixed llama3.1 timeout</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-moved-the-needle">What moved the needle</h3>
 <ol>
 <li>
-<p>Captures lifecycle events (funded, milestones hit/missed, follow-on rounds, exits, write-downs)</p>
+<p><strong>Single batch call</strong> (iter 50-52): 18 calls → 1. 3x faster, no
+   position bias, global consistency, simpler code (190 vs 330 lines).</p>
 </li>
 <li>
-<p>Measures calibration and error by cohort, sector, and stage</p>
+<p><strong>Primary/secondary triage</strong> (iter 45+): New downstream signal. Main
+   branch only had <code>keep</code> — no prioritization information.</p>
 </li>
 <li>
-<p>Triggers retraining when quality degrades</p>
-</li>
-<li>
-<p>Enforces governance gates before new model deployment</p>
+<p><strong>Shorter justifications</strong> (iter 52): ~20-30 words instead of ~40-80.
+   Fixed llama3.1 timeout, API models 55% shorter and 25% faster.</p>
 </li>
 </ol>
-<h2 id="architecture">Architecture</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────────────┐
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│ Matching &amp; Recommendation    │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│ - Plan↔Investor rankings     │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│ - Predicted ROI + risk       │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└──────────────┬───────────────┘
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>               │ emits events
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>               ▼
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>┌──────────────────────────────┐
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│ Outcome Event Store          │
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│ - Funding events             │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│ - Milestone outcomes         │
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│ - Valuation updates          │
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>└──────────────┬───────────────┘
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>               │
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>               ▼
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>┌──────────────────────────────┐
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│ Evaluation &amp; Drift Monitor   │
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│ - Calibration                │
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│ - Bias / fairness checks     │
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│ - Segment error analysis     │
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>└──────────────┬───────────────┘
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>               │
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>               ▼
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>┌──────────────────────────────┐
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│ MLOps Governance Pipeline    │
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│ - Candidate model testing    │
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│ - Human approval gates       │
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│ - Versioned rollout/rollback │
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>└──────────────────────────────┘
-</code></pre></div>
-<h2 id="implementation">Implementation</h2>
-<h3 id="phase-1-outcome-telemetry">Phase 1: Outcome Telemetry</h3>
+<h3 id="what-didnt-move-the-needle">What didn't move the needle</h3>
 <ul>
-<li>
-<p>Add immutable event log keyed by recommendation ID.</p>
-</li>
-<li>
-<p>Define canonical outcome windows (3/6/12/24/36 months).</p>
-</li>
-<li>
-<p>Attach confidence bands at recommendation time for later calibration checks.</p>
-</li>
+<li><strong>Taxonomy label changes</strong>: Renaming keep→primary, absorb→remove produced
+  nearly identical results. Labels are interchangeable.</li>
+<li><strong>Anti-template-lock instructions</strong>: Not needed with short categorical labels.</li>
+<li><strong>Calibration hints</strong>: Models that remove aggressively do so regardless.
+  Conservative models ignore calibration guidance.</li>
 </ul>
-<h3 id="phase-2-evaluation-framework">Phase 2: Evaluation Framework</h3>
-<ul>
-<li>
-<p>Track metrics by cohort:</p>
-</li>
-<li>
-<p>calibration error, rank correlation with realized returns, false-positive funding recommendations.</p>
-</li>
-<li>
-<p>Detect drift in market regime and feature distributions.</p>
-</li>
-<li>
-<p>Run shadow-mode candidate models continuously.</p>
-</li>
-</ul>
-<h3 id="phase-3-governance-transparency">Phase 3: Governance + Transparency</h3>
-<ul>
-<li>
-<p>Require deployment gates:</p>
-</li>
-<li>
-<p>minimum calibration improvement, no fairness regression, reproducible training artifact.</p>
-</li>
-<li>
-<p>Publish model cards and changelogs.</p>
-</li>
-<li>
-<p>Support one-click rollback to previous stable model.</p>
-</li>
-</ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>
-<p><strong>Calibration Error:</strong> -25% within 2 quarters.</p>
-</li>
-<li>
-<p><strong>Ranking Quality:</strong> Higher Spearman correlation between predicted and realized ROI.</p>
-</li>
-<li>
-<p><strong>Fairness Stability:</strong> No significant degradation across geography/sector/founder-background slices.</p>
-</li>
-<li>
-<p><strong>Trust Metric:</strong> Increased investor acceptance of top recommendations.</p>
-</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>
-<p><strong>Long feedback cycles in venture outcomes</strong> → Use intermediate leading indicators and survival analysis.</p>
-</li>
-<li>
-<p><strong>Attribution ambiguity</strong> → Separate model recommendation quality from post-investment support effects.</p>
-</li>
-<li>
-<p><strong>Privacy and compliance</strong> → Differential access control and auditable data lineage.</p>
-</li>
-<li>
-<p><strong>Operational overhead</strong> → Automate evaluation and gating workflows.</p>
-</li>
-</ul>
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>A matching engine is only valuable if it stays correct over time. Governance plus feedback transforms it from a static ranking tool into a reliable capital allocation system that compounds ROI advantage.</p>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-outcome-telemetry-contract">Phase A — Outcome Telemetry Contract</h3>
+<h3 id="current-metrics-iter-52-vs-baseline">Current metrics (iter 52 vs baseline)</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Baseline (iter 48)</th>
+<th>Current (iter 52)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Architecture</td>
+<td>18 sequential calls</td>
+<td>1 batch call</td>
+</tr>
+<tr>
+<td>Taxonomy</td>
+<td>keep/absorb/remove</td>
+<td>primary/secondary/remove</td>
+</tr>
+<tr>
+<td>Triage signal</td>
+<td>None</td>
+<td>primary 54% / secondary 31%</td>
+</tr>
+<tr>
+<td>Avg kept</td>
+<td>13.9 / 18</td>
+<td>15.6 / 18</td>
+</tr>
+<tr>
+<td>Avg removed</td>
+<td>4.1 / 18 (23%)</td>
+<td>2.4 / 18 (15%)</td>
+</tr>
+<tr>
+<td>Avg duration</td>
+<td>120.5s</td>
+<td>40.3s</td>
+</tr>
+<tr>
+<td>llama3.1 failures</td>
+<td>Collapse into "Risk Framing"</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="known-issues">Known Issues</h2>
+<h3 id="structural-issues">Structural issues</h3>
+<h4 id="1-the-step-conflates-deduplication-with-prioritization">1. The step conflates deduplication with prioritization</h4>
+<p>The current schema asks the LLM to make two decisions at once:
+- Whether a lever survives deduplication (keep vs remove)
+- Whether a surviving lever is strategically important (primary vs secondary)</p>
+<p>A lever can be clearly distinct but low priority, or highly important but
+partly redundant with another broader lever. By fusing these decisions,
+the step creates a bias toward keeping anything that seems important, even
+if it overlaps heavily with another lever.</p>
+<p>The step drifts toward "strategic triage" rather than real overlap reduction.</p>
+<h4 id="2-no-explicit-absorption-structure">2. No explicit absorption structure</h4>
+<p>When a lever is removed, only a freeform justification is stored. There is
+no structured <code>absorbed_into</code> field. The pipeline loses information about
+which surviving lever subsumed the removed one.</p>
+<p>Without absorption links:
+- You cannot audit whether removal was correct
+- You cannot detect hierarchy reversals (narrow lever kept, general removed)
+- You cannot detect chain absorptions (A→B→C where B is also removed)
+- Later stages cannot recover wording or evidence from removed items</p>
+<h4 id="3-the-retention-bias-is-strong">3. The retention bias is strong</h4>
+<p>The uncertainty rules produce predictable skew:
+- Uncertain between primary and secondary → primary (promotes)
+- Uncertain between keep and remove → secondary (keeps)
+- Missing decisions → secondary (keeps)</p>
+<p>The model is rewarded for being vague. The step becomes a low-risk
+classifier instead of a real deduplicator.</p>
+<h4 id="4-no-survivor-overlap-validation">4. No survivor-overlap validation</h4>
+<p>No post-check asks whether surviving items still overlap heavily. Two
+survivors might be different phrasings of the same lever, or policy,
+procurement, and standards variants of one underlying mechanism.</p>
+<h4 id="5-no-category-balance-awareness">5. No category balance awareness</h4>
+<p>The flat comparison setup encourages the model to favor narratively vivid
+levers (creative, character, thematic) over less glamorous but equally
+critical ones (financing, legal, operations, distribution).</p>
+<h4 id="6-single-batch-reasoning-is-useful-but-brittle">6. Single-batch reasoning is useful but brittle</h4>
+<p>One batch call gives global context, but one bad completion corrupts the
+whole output. There is no repair pass for missing IDs, suspicious
+distributions, or ambiguous overlap clusters.</p>
+<h3 id="implementation-issues">Implementation issues</h3>
+<h4 id="7-silent-failure-masking">7. Silent failure masking</h4>
+<p>When the LLM call times out, <code>batch_result</code> stays <code>None</code>, all levers
+default to secondary, and <code>outputs.jsonl</code> records <code>status=ok</code> with
+<code>calls_succeeded=1</code>. Monitoring pipelines cannot detect these failures.</p>
+<h4 id="8-user_prompt-field-stores-wrong-value">8. <code>user_prompt</code> field stores wrong value</h4>
+<p><code>user_prompt=project_context</code> at line 272 stores the plan description, not
+the full assembled prompt including the levers JSON. The saved artifact
+cannot reconstruct the exact LLM input.</p>
+<h4 id="9-calls_succeeded-hardcoded">9. <code>calls_succeeded</code> hardcoded</h4>
+<p><code>runner.py</code> returns <code>calls_succeeded=1</code> regardless of whether the LLM call
+succeeded or the fallback fired.</p>
+<h4 id="10-minimum-count-threshold-is-too-low">10. Minimum count threshold is too low</h4>
+<p><code>max(3, len(input_levers) // 4)</code> = 4 for 18 levers. A model removing 14/18
+still clears the warning. Consider <code>max(5, len(input_levers) // 3)</code>.</p>
+<hr />
+<h2 id="improvement-proposals">Improvement Proposals</h2>
+<h3 id="option-a-incremental-improvements-low-risk">Option A: Incremental improvements (low risk)</h3>
+<p>Keep the current single-call architecture and taxonomy. Fix implementation
+issues and add validation.</p>
+<p><strong>Changes:</strong>
+1. Add <code>absorbed_into: str | None</code> field to <code>LeverClassificationDecision</code>.
+   Required when classification is <code>remove</code> and the lever overlaps another.
+   Enables merge-graph validation.</p>
 <ol>
-<li>Define standardized outcome schema (win/loss, cost variance, schedule variance, quality outcome).</li>
-<li>Build ingestion endpoints and integrity checks.</li>
-<li>Add outcome confidence and source provenance fields.</li>
+<li>
+<p>Add <code>remove_reason: Literal["duplicate", "subset", "irrelevant", "too_narrow"]</code>
+   to make removals auditable and categorized.</p>
+</li>
+<li>
+<p>Add a survivor-overlap validation pass. After the main classification,
+   compute similarity between surviving levers (by name/consequences overlap).
+   If two survivors are suspiciously similar, log a warning or trigger a
+   focused comparison.</p>
+</li>
+<li>
+<p>Replace <code>missing → secondary</code> with <code>missing → unresolved</code>. Send unresolved
+   items through a focused repair call rather than silently keeping them.</p>
+</li>
+<li>
+<p>Fix observability: expose <code>llm_call_succeeded</code> from <code>DeduplicateLevers</code>,
+   emit <code>classification_fallback</code> events in <code>events.jsonl</code>, fix <code>user_prompt</code>
+   field, make <code>calls_succeeded</code> reflect reality.</p>
+</li>
+<li>
+<p>Add calibration checks: warn if &gt;70% survive (likely under-dedup) or
+   &lt;35% survive (likely over-removal). Optionally trigger a repair pass.</p>
+</li>
 </ol>
-<h3 id="phase-b-governance-evaluation-loop">Phase B — Governance Evaluation Loop</h3>
-<ol>
-<li>Compare model predictions vs realized outcomes.</li>
-<li>Flag drift and underperforming model components.</li>
-<li>Trigger review workflows for retraining or policy changes.</li>
-</ol>
-<h3 id="phase-c-governance-board-outputs">Phase C — Governance Board Outputs</h3>
-<ol>
-<li>Generate periodic model health reports.</li>
-<li>Maintain change logs for model updates and rationale.</li>
-<li>Require signoff on high-impact model policy changes.</li>
-</ol>
-<h3 id="validation-checklist">Validation Checklist</h3>
+<p><strong>Effort</strong>: Medium. Each change is independent and can be shipped separately.</p>
+<h3 id="option-b-two-pass-architecture-medium-risk">Option B: Two-pass architecture (medium risk)</h3>
+<p>Separate deduplication from prioritization into distinct passes.</p>
+<p><strong>Pass 1 — Overlap resolution:</strong>
+- Decisions: <code>keep</code> / <code>absorb</code> / <code>remove</code>
+- Only answers: does this lever survive as a distinct concept?
+- Requires <code>absorbed_into</code> for absorb decisions</p>
+<p><strong>Pass 2 — Prioritization of survivors:</strong>
+- Decisions: <code>primary</code> / <code>secondary</code>
+- Only answers: among surviving levers, which are top-level strategic?</p>
+<p><strong>Benefits:</strong>
+- Cleaner separation of concerns
+- Deduplication quality not contaminated by importance assessment
+- Each pass is simpler for the LLM</p>
+<p><strong>Risks:</strong>
+- Two LLM calls instead of one (cost, latency)
+- More complex orchestration
+- Pass 2 may disagree with pass 1's keep decisions</p>
+<p><strong>Effort</strong>: High. New schemas, two-call orchestration, compatibility with
+existing runner and analysis pipeline.</p>
+<h3 id="option-c-cluster-based-deduplication-higher-risk">Option C: Cluster-based deduplication (higher risk)</h3>
+<p>Instead of item-level labels, first cluster semantically similar levers,
+then pick representatives within each cluster.</p>
+<p><strong>Step 1</strong>: Group all levers into semantic clusters in one call.
+<strong>Step 2</strong>: For each cluster with &gt;1 lever, pick the canonical representative.
+Tag as primary/secondary. Mark others as absorbed.</p>
+<p><strong>Output shape:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;cluster_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;procurement-conditions&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;canonical&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Procurement Conditionality&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;absorbed&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">&quot;lever_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">&quot;reason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;near_duplicate&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">&quot;absorbed_into&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Procurement Conditionality&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Benefits:</strong>
+- Most interpretable output
+- Natural absorption structure
+- Explicit nearest-neighbor reasoning within clusters</p>
+<p><strong>Risks:</strong>
+- Most implementation work
+- Clustering quality depends on model capability
+- Output schema change affects downstream consumers</p>
+<p><strong>Effort</strong>: High. New clustering schema, new orchestration, downstream
+consumer updates.</p>
+<h3 id="option-d-mechanism-based-deduplication-research">Option D: Mechanism-based deduplication (research)</h3>
+<p>Force the model to decompose each lever into structured fields before
+deduplicating:</p>
 <ul>
-<li>Outcome ingestion completeness</li>
-<li>Drift detection sensitivity/specificity</li>
-<li>Governance decision turnaround SLAs</li>
+<li>Target actor</li>
+<li>Intervention mechanism</li>
+<li>Expected effect</li>
+<li>Time horizon</li>
+<li>Implementation domain</li>
 </ul>
+<p>Then deduplicate primarily on mechanism + actor + effect, not just
+semantic similarity. This would reduce both false merges (same topic,
+different mechanism) and false splits (different wording, same mechanism).</p>
+<p><strong>Benefits:</strong>
+- Most principled approach to deduplication
+- Catches "sounds similar but different mechanism" false merges</p>
+<p><strong>Risks:</strong>
+- Significantly more output per lever (structured decomposition)
+- May exceed token budgets for weak models
+- Research-grade — untested in this pipeline</p>
+<p><strong>Effort</strong>: Very high. New decomposition schema, new comparison logic,
+likely two calls minimum.</p>
+<hr />
+<h2 id="recommendation">Recommendation</h2>
+<h3 id="near-term-next-1-2-iterations">Near-term (next 1-2 iterations)</h3>
+<p>Implement Option A items 1-2 and 5:
+- Add <code>absorbed_into</code> field for auditable removal
+- Add <code>remove_reason</code> categorization
+- Fix observability (silent failure masking, <code>user_prompt</code>, <code>calls_succeeded</code>)</p>
+<p>These are low-risk, independent changes that make the step more inspectable
+without changing its behavior.</p>
+<h3 id="medium-term-next-3-5-iterations">Medium-term (next 3-5 iterations)</h3>
+<p>Implement Option A items 3-4 and 6:
+- Survivor-overlap validation pass
+- Replace <code>missing → secondary</code> with <code>missing → unresolved</code> + repair
+- Calibration checks with optional second pass</p>
+<h3 id="long-term-future-consideration">Long-term (future consideration)</h3>
+<p>Evaluate Option B (two-pass) or Option C (cluster-based) based on whether
+the incremental improvements are sufficient. The current single-call
+architecture may hit a quality ceiling where one LLM call cannot reliably
+do both overlap detection and prioritization well. If that happens, Option B
+is the natural next step.</p>
+<p>Option D (mechanism-based) is interesting but too expensive for the current
+model roster. Worth revisiting when cheaper structured-output models become
+available.</p>
+<hr />
+<h2 id="lessons-learned">Lessons Learned</h2>
+<h3 id="from-9-iterations-of-optimization">From 9 iterations of optimization</h3>
+<ol>
+<li>
+<p><strong>Architecture matters more than taxonomy.</strong> Changing labels (keep vs
+   primary, absorb vs remove) across 5 iterations produced nearly identical
+   results. Changing from 18 sequential calls to 1 batch call produced a
+   3x speedup and eliminated position bias.</p>
+</li>
+<li>
+<p><strong>Relevance and deduplication are different questions.</strong> A lever can be
+   highly relevant to the plan AND fully redundant with another lever.
+   Asking "how relevant?" (iter 50, Likert scoring) produced 0% removal
+   for capable models. Asking "is this redundant?" (iter 51-52, categorical)
+   restored deduplication.</p>
+</li>
+<li>
+<p><strong>Integer scales can be inverted; categorical labels cannot.</strong> llama3.1
+   scored 17/18 levers as -2 while writing "highly relevant" in
+   justifications. This failure mode is structurally impossible with
+   categorical labels.</p>
+</li>
+<li>
+<p><strong>Output length directly affects model completion.</strong> Shortening
+   justifications from ~40-80 words to ~20-30 words let llama3.1 finish
+   within timeout on all plans. Advisory length constraints work for API
+   models but are fragile for local models.</p>
+</li>
+<li>
+<p><strong>The step currently mixes two goals.</strong> Deduplication (overlap reduction)
+   and prioritization (primary vs secondary) are fused into one decision.
+   This creates a retention bias — anything that seems important survives,
+   even if it overlaps. Separating these concerns is the most promising
+   architectural improvement.</p>
+</li>
+<li>
+<p><strong>Conservative retention is a valid design choice</strong> for an intermediate
+   pipeline stage, but it has consequences: the output is noisier, later
+   stages inherit ambiguity, and the step no longer provides a clear
+   compression boundary. The current design accepts this tradeoff because
+   step 4 (FocusOnVitalFewLevers) handles further filtering.</p>
+</li>
+<li>
+<p><strong>Single-batch reasoning is powerful but brittle.</strong> The model sees all
+   levers at once (good for global consistency) but one bad completion
+   corrupts everything (no repair mechanism). Adding a validation pass
+   over survivors would catch the most common failure modes without
+   requiring a full architectural change.</p>
+</li>
+</ol>
 
 
 
 
 
 
-
-  
-  
 
 
 
