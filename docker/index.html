@@ -6127,7 +6127,7 @@ This page covers common Docker workflows and troubleshooting.</p>
 </ul>
 <h2 id="while-developing">While developing</h2>
 <p>Simons typical workflow.</p>
-<p>While making code changes, I do this.</p>
+<p>While making code changes, I use <code>./rebuild.sh</code>, that does this:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>--remove-orphans
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>build<span class="w"> </span>--no-cache
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
