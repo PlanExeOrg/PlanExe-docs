@@ -3207,6 +3207,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#original-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original Proposal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Original Proposal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3216,8 +3239,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#tool-name" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3225,6 +3248,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6355,6 +6383,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#original-proposal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original Proposal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Original Proposal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6364,8 +6415,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#tool-name" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6373,6 +6424,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6624,9 +6680,26 @@
 
 
 <h1 id="planexe-mcp-feedback-tool-specification">PlanExe MCP Feedback Tool — Specification</h1>
-<h2 id="overview">Overview</h2>
+<h2 id="status">Status</h2>
+<p><strong>Implemented</strong> as <code>send_feedback</code> (renamed from <code>plan_feedback</code> during implementation).</p>
+<ul>
+<li>PR #401: initial implementation</li>
+<li>PR #402: rename to <code>send_feedback</code>, add auth, simplify categories (mcp/plan/code/docs/other), remove severity, update descriptions</li>
+<li>PR #403: docs fix (auth via header, not parameter)</li>
+<li>PR #404: update llms.txt, planexe_mcp_interface.md, plan.md</li>
+</ul>
+<p>Key differences from original proposal:
+- Tool name: <code>send_feedback</code> (not <code>plan_feedback</code>)
+- Categories simplified to 5: <code>mcp</code>, <code>plan</code>, <code>code</code>, <code>docs</code>, <code>other</code>
+- <code>severity</code> parameter removed — callers express severity in the message
+- <code>rating</code> renamed to sentiment: 1=strong negative, 2=weak negative, 3=neutral, 4=weak positive, 5=strong positive
+- Auth uses same pattern as <code>plan_create</code> (X-API-Key header)
+- Visible in Flask admin UI as "Feedback"</p>
+<hr />
+<h2 id="original-proposal">Original Proposal</h2>
+<h3 id="overview">Overview</h3>
 <p>A new MCP tool (<code>plan_feedback</code>) that allows LLM consumers to submit structured feedback about the PlanExe MCP interface. Feedback can be tied to a specific plan or be general. The tool is non-blocking, fire-and-forget, and never gates the workflow.</p>
-<h2 id="tool-name">Tool Name</h2>
+<h3 id="tool-name">Tool Name</h3>
 <p><code>plan_feedback</code></p>
 <h2 id="parameters">Parameters</h2>
 <table>
