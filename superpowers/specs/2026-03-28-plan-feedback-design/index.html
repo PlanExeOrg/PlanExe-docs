@@ -23,7 +23,7 @@
     
     
       
-        <title>Design: plan_feedback MCP Tool - PlanExe Documentation</title>
+        <title>Design: send_feedback MCP Tool - PlanExe Documentation</title>
       
     
     
@@ -71,7 +71,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Design: plan_feedback MCP Tool - PlanExe Documentation" />
+<meta property="og:title" content="Design: send_feedback MCP Tool - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/superpowers/specs/2026-03-28-plan-feedback-design.png" />
 <meta property="og:image:type" content="image/png" />
@@ -79,7 +79,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/superpowers/specs/2026-03-28-plan-feedback-design/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Design: plan_feedback MCP Tool - PlanExe Documentation" />
+<meta property="twitter:title" content="Design: send_feedback MCP Tool - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/superpowers/specs/2026-03-28-plan-feedback-design.png" />
 </head>
@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#design-plan_feedback-mcp-tool" class="md-skip">
+        <a href="#design-send_feedback-mcp-tool" class="md-skip">
           Skip to content
         </a>
       
@@ -136,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Design: plan_feedback MCP Tool
+              Design: send_feedback MCP Tool
             
           </span>
         </div>
@@ -6231,11 +6231,11 @@
   
 
 
-<h1 id="design-plan_feedback-mcp-tool">Design: <code>plan_feedback</code> MCP Tool</h1>
+<h1 id="design-send_feedback-mcp-tool">Design: <code>send_feedback</code> MCP Tool</h1>
 <p><strong>Date:</strong> 2026-03-28
 <strong>Proposal:</strong> <a href="../../../proposals/127-mcp-feedback/">127-mcp-feedback.md</a></p>
 <h2 id="summary">Summary</h2>
-<p>Add a <code>plan_feedback</code> MCP tool that allows LLM consumers to submit structured feedback about the PlanExe MCP interface, plan quality, and workflow experiences. Feedback is stored in PostgreSQL for later analysis. The tool is non-blocking and fire-and-forget: it always returns success to the caller even if storage fails internally.</p>
+<p>Add a <code>send_feedback</code> MCP tool that allows LLM consumers to submit structured feedback about the PlanExe MCP interface, plan quality, and workflow experiences. Feedback is stored in PostgreSQL for later analysis. The tool is non-blocking and fire-and-forget: it always returns success to the caller even if storage fails internally.</p>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -6251,13 +6251,13 @@
 <td><code>category</code></td>
 <td>enum</td>
 <td>yes</td>
-<td>One of: <code>sse_issue</code>, <code>status_staleness</code>, <code>queue_delay</code>, <code>file_visibility</code>, <code>plan_quality</code>, <code>tool_description</code>, <code>workflow</code>, <code>performance</code>, <code>error_handling</code>, <code>suggestion</code>, <code>compliment</code>, <code>other</code></td>
+<td>One of: <code>mcp</code> (MCP tools), <code>plan</code> (generated plan), <code>code</code> (PlanExe source code), <code>docs</code> (documentation), <code>other</code></td>
 </tr>
 <tr>
 <td><code>message</code></td>
 <td>string</td>
 <td>yes</td>
-<td>Free-text feedback (concise, actionable)</td>
+<td>Free-text feedback. Include environment context if reporting an issue.</td>
 </tr>
 <tr>
 <td><code>plan_id</code></td>
@@ -6269,13 +6269,7 @@
 <td><code>rating</code></td>
 <td>integer 1-5|null</td>
 <td>no</td>
-<td>Satisfaction score</td>
-</tr>
-<tr>
-<td><code>severity</code></td>
-<td>enum|null</td>
-<td>no</td>
-<td><code>low</code>, <code>medium</code>, or <code>high</code> (for issue reports)</td>
+<td>Sentiment: 1=strong negative, 2=weak negative, 3=neutral, 4=weak positive, 5=strong positive</td>
 </tr>
 </tbody>
 </table>
@@ -6343,11 +6337,6 @@
 <td>Nullable, 1-5</td>
 </tr>
 <tr>
-<td><code>severity</code></td>
-<td>VARCHAR(8)</td>
-<td>Nullable: low/medium/high</td>
-</tr>
-<tr>
 <td><code>user_id</code></td>
 <td>VARCHAR(36)</td>
 <td>Nullable, resolved from auth context</td>
@@ -6377,15 +6366,15 @@
 </ul>
 <h3 id="modified-files">Modified Files</h3>
 <ul>
-<li><code>mcp_cloud/tool_models.py</code> — Add <code>PlanFeedbackInput</code>, <code>PlanFeedbackOutput</code> Pydantic models</li>
+<li><code>mcp_cloud/tool_models.py</code> — Add <code>SendFeedbackInput</code>, <code>SendFeedbackOutput</code> Pydantic models</li>
 <li><code>mcp_cloud/schemas.py</code> — Add schema constants and <code>ToolDefinition</code> entry</li>
-<li><code>mcp_cloud/handlers.py</code> — Add <code>handle_plan_feedback()</code>, register in <code>TOOL_HANDLERS</code></li>
-<li><code>mcp_cloud/db_setup.py</code> — Import model, add <code>PlanFeedbackRequest</code>, update <code>PLANEXE_SERVER_INSTRUCTIONS</code></li>
+<li><code>mcp_cloud/handlers.py</code> — Add <code>handle_send_feedback()</code>, register in <code>TOOL_HANDLERS</code></li>
+<li><code>mcp_cloud/db_setup.py</code> — Import model, add <code>SendFeedbackRequest</code>, update <code>PLANEXE_SERVER_INSTRUCTIONS</code></li>
 <li><code>mcp_cloud/db_queries.py</code> — Add <code>_create_feedback_sync()</code> and <code>_get_plan_snapshot_for_feedback_sync()</code></li>
 </ul>
 <h2 id="handler-logic">Handler Logic</h2>
 <ol>
-<li>Parse and validate input via <code>PlanFeedbackRequest</code> (Pydantic BaseModel)</li>
+<li>Parse and validate input via <code>SendFeedbackRequest</code> (Pydantic BaseModel)</li>
 <li>If <code>plan_id</code> provided:</li>
 <li>Look up plan via <code>_get_plan_snapshot_for_feedback_sync()</code></li>
 <li>If not found, return <code>PLAN_NOT_FOUND</code> error (this is the only error visible to caller)</li>
@@ -6407,7 +6396,7 @@
 <h2 id="server-instructions-update">Server Instructions Update</h2>
 <p>Add to <code>PLANEXE_SERVER_INSTRUCTIONS</code>:</p>
 <blockquote>
-<p>"Use plan_feedback to report issues or share observations about plan quality, workflow friction, or the MCP interface. Feedback is fire-and-forget and never blocks the workflow."</p>
+<p>"Use send_feedback to report issues or share observations about plan quality, workflow friction, or the MCP interface. Feedback is fire-and-forget and never blocks the workflow."</p>
 </blockquote>
 <h2 id="behavioral-guarantees">Behavioral Guarantees</h2>
 <ul>
@@ -6424,7 +6413,6 @@
 - Invalid category returns INVALID_FEEDBACK
 - Invalid plan_id returns PLAN_NOT_FOUND
 - Rating out of range returns INVALID_FEEDBACK
-- Invalid severity returns INVALID_FEEDBACK
 - DB write failure still returns success (fire-and-forget)</p>
 
 

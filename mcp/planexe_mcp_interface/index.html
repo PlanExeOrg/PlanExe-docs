@@ -1451,6 +1451,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#68-send_feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8 send_feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7254,6 +7265,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#68-send_feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8 send_feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7762,7 +7784,7 @@
 <h3 id="31-mcp-tools-vs-mcp-tasks-run-as-task">3.1 MCP tools vs MCP tasks ("Run as task")</h3>
 <p>The MCP specification defines two different mechanisms:</p>
 <ul>
-<li><strong>MCP tools</strong> (e.g. plan_create, plan_status, plan_stop, plan_retry, plan_resume): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls plan_create → receives plan_id → polls plan_status → optionally calls plan_resume or plan_retry on failed/stopped → uses plan_file_info (and optionally plan_download via mcp_local). This document specifies those tools.</li>
+<li><strong>MCP tools</strong> (e.g. plan_create, plan_status, plan_stop, plan_retry, plan_resume, send_feedback): the server exposes named tools; the client calls them and receives a response. PlanExe's interface is <strong>tool-based</strong>: the agent calls plan_create → receives plan_id → polls plan_status → optionally calls plan_resume or plan_retry on failed/stopped → uses plan_file_info (and optionally plan_download via mcp_local). Agents can call send_feedback at any time to report issues or share observations. This document specifies those tools.</li>
 <li><strong>MCP tasks protocol</strong> ("Run as task" in some UIs): a separate mechanism where the client can run a tool "as a task" using RPC methods such as tasks/run, tasks/get, tasks/result, tasks/cancel, tasks/list, so the tool runs in the background and the client polls for results.</li>
 </ul>
 <p>PlanExe <strong>does not</strong> use or advertise the MCP tasks protocol. Implementors and clients should use the <strong>tools only</strong>. Do not enable "Run as task" for PlanExe; many clients (e.g. Cursor) and the Python MCP SDK do not support the tasks protocol properly. Intended flow: optionally call <code>example_plans</code>; call <code>example_prompts</code>; optionally call <code>model_profiles</code>; perform the non-tool prompt drafting/approval step; call <code>plan_create</code>; poll <code>plan_status</code>; if failed or stopped call <code>plan_resume</code> to continue or <code>plan_retry</code> for a full restart (optional); then call <code>plan_file_info</code> (or <code>plan_download</code> via mcp_local) when completed.</p>
@@ -8225,6 +8247,84 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <li><code>download_url</code> is an absolute URL where the requested artifact can be downloaded.</li>
 </ul>
 <hr />
+<h3 id="68-send_feedback">6.8 send_feedback</h3>
+<p>Submit structured feedback about the PlanExe MCP interface, plan quality, or workflow experience. Callable at any point — before, during, or after plan creation. Feedback is fire-and-forget: it never blocks the workflow and always returns quickly.</p>
+<p><strong>Request</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;plan&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The SWOT section felt too generic for my industry.&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span><span class="nt">&quot;user_api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pex_...&quot;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Input</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category</code></td>
+<td>enum</td>
+<td>yes</td>
+<td>One of: <code>mcp</code> (MCP tools), <code>plan</code> (generated plan), <code>code</code> (PlanExe source code), <code>docs</code> (documentation), <code>other</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>yes</td>
+<td>Free-text feedback. Be concise and actionable. If reporting an issue, include relevant context about your environment (e.g. client name, OS, connection method).</td>
+</tr>
+<tr>
+<td><code>plan_id</code></td>
+<td>string</td>
+<td>no</td>
+<td>UUID to attach feedback to a specific plan</td>
+</tr>
+<tr>
+<td><code>rating</code></td>
+<td>integer 1-5</td>
+<td>no</td>
+<td>Sentiment: 1=strong negative, 2=weak negative, 3=neutral, 4=weak positive, 5=strong positive</td>
+</tr>
+<tr>
+<td><code>user_api_key</code></td>
+<td>string</td>
+<td>no</td>
+<td>User API key for authentication and attribution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&quot;feedback_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a1b2c3d4-...&quot;</span><span class="p">,</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;received_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-28T14:30:00Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Feedback received. Thank you.&quot;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Authentication</strong></p>
+<p>Same as <code>plan_create</code>: when <code>PLANEXE_MCP_REQUIRE_USER_KEY</code> is set, a valid <code>user_api_key</code> is required. On developer servers without the env var, feedback works without a key.</p>
+<p><strong>Behavioral guarantees</strong></p>
+<ul>
+<li>Non-blocking: handler returns in &lt;1 second.</li>
+<li>Fire-and-forget: never gates workflow. Always returns success to the caller even if internal storage fails.</li>
+<li>If <code>plan_id</code> is provided but not found, returns <code>PLAN_NOT_FOUND</code> error.</li>
+<li>If category or other fields are invalid, returns <code>INVALID_FEEDBACK</code> error.</li>
+</ul>
+<p><strong>Error behavior</strong></p>
+<ul>
+<li>Invalid fields: <code>INVALID_FEEDBACK</code> (<code>isError=true</code>).</li>
+<li>Unknown plan_id: <code>PLAN_NOT_FOUND</code> (<code>isError=true</code>).</li>
+<li>Invalid user_api_key: <code>INVALID_USER_API_KEY</code> (<code>isError=true</code>).</li>
+<li>Key required but missing: <code>USER_API_KEY_REQUIRED</code> (<code>isError=true</code>).</li>
+</ul>
+<hr />
 <h2 id="7-targets">7. Targets</h2>
 <h3 id="71-standard-targets">7.1 Standard targets</h3>
 <p>The following targets MUST be supported:</p>
@@ -8262,16 +8362,16 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>error.details</code>: optional object</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLAN_NOT_FOUND&quot;</span><span class="p">,</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan not found: &lt;plan_id&gt;&quot;</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PLAN_NOT_FOUND&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan not found: &lt;plan_id&gt;&quot;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="92-iserror-behavior">9.2 isError behavior</h3>
 <ul>
-<li><code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_resume</code>: unknown/invalid requests return <code>isError=true</code> with <code>error</code>.</li>
+<li><code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_resume</code>, <code>send_feedback</code>: unknown/invalid requests return <code>isError=true</code> with <code>error</code>.</li>
 <li><code>model_profiles</code>: returns <code>isError=true</code> with <code>MODEL_PROFILES_UNAVAILABLE</code> when no models are available in any profile.</li>
 <li><code>plan_file_info</code>: uses mixed behavior:</li>
 <li>returns <code>{}</code> (not an error) while artifacts are not ready.</li>
@@ -8292,6 +8392,7 @@ Concurrency is a client-side coordination concern.</p>
 <li><code>USER_API_KEY_REQUIRED</code>: deployment requires user_api_key for plan_create.</li>
 <li><code>INSUFFICIENT_CREDITS</code>: caller account has no credits for plan_create.</li>
 <li><code>MODEL_PROFILES_UNAVAILABLE</code>: model_profiles found zero available models across all profiles.</li>
+<li><code>INVALID_FEEDBACK</code>: send_feedback received invalid input (bad category, missing message, etc.).</li>
 <li><code>generation_failed</code>: plan_file_info report path when plan ended in failed.</li>
 <li><code>content_unavailable</code>: plan_file_info cannot read requested artifact bytes.</li>
 </ul>
@@ -8445,13 +8546,13 @@ Concurrency is a client-side coordination concern.</p>
 <hr />
 <h2 id="appendix-a-example-end-to-end-flow">Appendix A — Example End-to-End Flow</h2>
 <p><strong>Create plan</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p><strong>Start run</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p><strong>Stop</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5e2b2a7c-8b49-4d2f-9b8f-6a3c1f05b9a1&quot;</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="appendix-b-optional-v11-extensions">Appendix B — Optional v1.1 Extensions</h2>
