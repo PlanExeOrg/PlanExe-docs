@@ -2,3 +2,9 @@
 # Pinned to specific versions to prevent breaking changes
 mkdocs-material[imaging]==9.7.1
 mkdocs-git-revision-date-localized-plugin>=1.2.0
+# Pin Pygments and pymdown-extensions to avoid regressions
+# Pygments 2.20.0 and pymdown-extensions 10.21.2 (both 2026-03-29)
+# introduced a crash: 'NoneType' object has no attribute 'replace'
+# in html.escape() when processing code blocks with no filename
+Pygments>=2.19.0,<2.20
+pymdown-extensions>=10.14,<10.21
