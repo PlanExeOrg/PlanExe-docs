@@ -9,16 +9,14 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="Larry the Laptop Lobster">
+      
+        <link rel="canonical" href="https://docs.planexe.org/proposals/130-per-task-sampling-profiles/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/11-investor-thesis-matching-engine/">
+        <link rel="prev" href="../13-portfolio-aware-capital-allocation/">
       
       
-        <link rel="prev" href="../109-llm-executor-retry-improvements/">
-      
-      
-        <link rel="next" href="../110-usage-metrics-local-runs/">
+        <link rel="next" href="../14-confidence-weighted-funding-auctions/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Investor Thesis Matching Engine - PlanExe Documentation</title>
+        <title>130 per task sampling profiles - PlanExe Documentation</title>
       
     
     
@@ -77,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Investor Thesis Matching Engine - PlanExe Documentation" />
+<meta property="og:title" content="130 per task sampling profiles - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/11-investor-thesis-matching-engine.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/130-per-task-sampling-profiles.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/11-investor-thesis-matching-engine/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/130-per-task-sampling-profiles/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Investor Thesis Matching Engine - PlanExe Documentation" />
+<meta property="twitter:title" content="130 per task sampling profiles - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/11-investor-thesis-matching-engine.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/130-per-task-sampling-profiles.png" />
 </head>
   
   
@@ -107,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#investor-thesis-matching-engine" class="md-skip">
+        <a href="#proposal-130-per-task-sampling-profiles-adaptive-inference-parameters-for-pipeline-output-diversity" class="md-skip">
           Skip to content
         </a>
       
@@ -142,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Investor Thesis Matching Engine
+              130 per task sampling profiles
             
           </span>
         </div>
@@ -2621,44 +2619,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    11 investor thesis matching engine
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../11-investor-thesis-matching-engine/" class="md-nav__link">
         
   
   
@@ -2681,325 +2645,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        TL;DR
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hypotheses-to-validate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hypotheses To Validate
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hypotheses To Validate">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-thesis-fit-improves-deal-quality" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A. Thesis-Fit Improves Deal Quality
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-risk-adjusted-roi-scoring-drives-better-outcomes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B. Risk-Adjusted ROI Scoring Drives Better Outcomes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-cross-sector-generalization-is-feasible" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        C. Cross-Sector Generalization Is Feasible
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hypothesis-examples-at-different-scales" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hypothesis Examples At Different Scales
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hypothesis Examples At Different Scales">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-expensive-huge-bridge-project-between-two-countries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) Expensive Huge Bridge Project Between Two Countries
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-famine-prevention-in-a-poor-country" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Famine Prevention In A Poor Country
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-deforestation-prevention-in-brazil" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Deforestation Prevention In Brazil
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-data-model-constraint-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Data Model + Constraint Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-roi-fit-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: ROI + Fit Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-marketplace-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Marketplace Integration
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-a-thesis-schema-and-intake" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase A — Thesis Schema and Intake
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-b-matching-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase B — Matching Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-c-feedback-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase C — Feedback Loop
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation Checklist
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3590,10 +3235,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../130-per-task-sampling-profiles/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    130 per task sampling profiles
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3609,6 +3281,447 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-insight-from-g0dm0d3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The insight from G0DM0D3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposed-per-task-sampling-profiles-for-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proposed: per-task sampling profiles for PlanExe
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proposed: per-task sampling profiles for PlanExe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#profile-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-to-profile-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task-to-profile mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-presence-penalty-is-the-key-lever" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why presence penalty is the key lever
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-profile-field-on-plantask-base-class-minimal-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Profile field on PlanTask base class (minimal change)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-config-driven-profiles-more-flexible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Config-driven profiles (more flexible)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model compatibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiment-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Experiment design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-to-other-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to other proposals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-per-task-model-variant-steering-grok-41-fast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended: Per-Task Model Variant Steering (Grok 4.1 Fast)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended: Per-Task Model Variant Steering (Grok 4.1 Fast)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-insight-mark-identified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The insight Mark identified
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grok-41-fast-two-variants-one-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grok 4.1 Fast: Two variants, one model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-task-model-variant-parameter-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-task model variant + parameter matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cost-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-model-routing-in-the-task-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation: model routing in the task profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provider-parameter-compatibility-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider parameter compatibility matrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-and-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost and risk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-best-of-n-task-selection-simons-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended: Best-of-N Task Selection (Simon's Pattern)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended: Best-of-N Task Selection (Simon&#39;s Pattern)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-is-now-feasible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this is now feasible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-rubric-5-axis-weighted-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring rubric: 5-axis weighted selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation sketch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-strategy-select-vs-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection strategy: Select vs Merge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-rotation-for-n-generations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variant rotation for N generations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallelization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallelization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-to-p128-compiler-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to P128 compiler model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-stm-post-processing-zero-cost-output-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended: STM Post-Processing (Zero-Cost Output Cleanup)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended: STM Post-Processing (Zero-Cost Output Cleanup)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules-directly-applicable-to-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules directly applicable to PlanExe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-ema-feedback-loop-cross-run-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended: EMA Feedback Loop (Cross-Run Learning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended: EMA Feedback Loop (Cross-Run Learning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptation-for-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation for PlanExe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -6470,10 +6583,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        The problem
       
     </span>
   </a>
@@ -6481,10 +6594,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tldr" class="md-nav__link">
+  <a href="#the-insight-from-g0dm0d3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        TL;DR
+        The insight from G0DM0D3
       
     </span>
   </a>
@@ -6492,44 +6605,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
+  <a href="#proposed-per-task-sampling-profiles-for-planexe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problem
+        Proposed: per-task sampling profiles for PlanExe
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hypotheses-to-validate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hypotheses To Validate
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hypotheses To Validate">
+    <nav class="md-nav" aria-label="Proposed: per-task sampling profiles for PlanExe">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-thesis-fit-improves-deal-quality" class="md-nav__link">
+  <a href="#profile-definitions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. Thesis-Fit Improves Deal Quality
+        Profile definitions
       
     </span>
   </a>
@@ -6537,10 +6628,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#b-risk-adjusted-roi-scoring-drives-better-outcomes" class="md-nav__link">
+  <a href="#task-to-profile-mapping" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B. Risk-Adjusted ROI Scoring Drives Better Outcomes
+        Task-to-profile mapping
       
     </span>
   </a>
@@ -6548,10 +6639,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#c-cross-sector-generalization-is-feasible" class="md-nav__link">
+  <a href="#why-presence-penalty-is-the-key-lever" class="md-nav__link">
     <span class="md-ellipsis">
       
-        C. Cross-Sector Generalization Is Feasible
+        Why presence penalty is the key lever
       
     </span>
   </a>
@@ -6560,67 +6651,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hypothesis-examples-at-different-scales" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hypothesis Examples At Different Scales
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Hypothesis Examples At Different Scales">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-expensive-huge-bridge-project-between-two-countries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) Expensive Huge Bridge Project Between Two Countries
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-famine-prevention-in-a-poor-country" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Famine Prevention In A Poor Country
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-deforestation-prevention-in-brazil" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Deforestation Prevention In Brazil
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
   
 </li>
       
@@ -6637,10 +6667,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-1-data-model-constraint-engine" class="md-nav__link">
+  <a href="#option-a-profile-field-on-plantask-base-class-minimal-change" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 1: Data Model + Constraint Engine
+        Option A: Profile field on PlanTask base class (minimal change)
       
     </span>
   </a>
@@ -6648,10 +6678,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-2-roi-fit-scoring" class="md-nav__link">
+  <a href="#option-b-config-driven-profiles-more-flexible" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 2: ROI + Fit Scoring
+        Option B: Config-driven profiles (more flexible)
       
     </span>
   </a>
@@ -6659,10 +6689,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-3-marketplace-integration" class="md-nav__link">
+  <a href="#model-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase 3: Marketplace Integration
+        Model compatibility
       
     </span>
   </a>
@@ -6675,10 +6705,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
+  <a href="#experiment-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Success Metrics
+        Experiment design
       
     </span>
   </a>
@@ -6686,10 +6716,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
+  <a href="#relationship-to-other-proposals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Risks
+        Relationship to other proposals
       
     </span>
   </a>
@@ -6697,33 +6727,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#extended-per-task-model-variant-steering-grok-41-fast" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters
+        Extended: Per-Task Model Variant Steering (Grok 4.1 Fast)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#detailed-implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Detailed Implementation Plan">
+    <nav class="md-nav" aria-label="Extended: Per-Task Model Variant Steering (Grok 4.1 Fast)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#phase-a-thesis-schema-and-intake" class="md-nav__link">
+  <a href="#the-insight-mark-identified" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase A — Thesis Schema and Intake
+        The insight Mark identified
       
     </span>
   </a>
@@ -6731,10 +6750,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-b-matching-engine" class="md-nav__link">
+  <a href="#grok-41-fast-two-variants-one-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase B — Matching Engine
+        Grok 4.1 Fast: Two variants, one model
       
     </span>
   </a>
@@ -6742,10 +6761,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#phase-c-feedback-loop" class="md-nav__link">
+  <a href="#per-task-model-variant-parameter-matrix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phase C — Feedback Loop
+        Per-task model variant + parameter matrix
       
     </span>
   </a>
@@ -6753,10 +6772,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#validation-checklist" class="md-nav__link">
+  <a href="#cost-implications" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Validation Checklist
+        Cost implications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-model-routing-in-the-task-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation: model routing in the task profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provider-parameter-compatibility-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider parameter compatibility matrix
       
     </span>
   </a>
@@ -6765,6 +6806,200 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-and-risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost and risk
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-best-of-n-task-selection-simons-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended: Best-of-N Task Selection (Simon's Pattern)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended: Best-of-N Task Selection (Simon&#39;s Pattern)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-is-now-feasible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this is now feasible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-rubric-5-axis-weighted-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring rubric: 5-axis weighted selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-sketch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation sketch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selection-strategy-select-vs-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection strategy: Select vs Merge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variant-rotation-for-n-generations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variant rotation for N generations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallelization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallelization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationship-to-p128-compiler-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to P128 compiler model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-stm-post-processing-zero-cost-output-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended: STM Post-Processing (Zero-Cost Output Cleanup)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended: STM Post-Processing (Zero-Cost Output Cleanup)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules-directly-applicable-to-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modules directly applicable to PlanExe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-ema-feedback-loop-cross-run-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extended: EMA Feedback Loop (Cross-Run Learning)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extended: EMA Feedback Loop (Cross-Run Learning)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adaptation-for-planexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptation for PlanExe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
   
 </li>
       
@@ -6788,275 +7023,668 @@
   
 
 
-<h1 id="investor-thesis-matching-engine">Investor Thesis Matching Engine</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-02-10<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>investors</code>, <code>matching</code>, <code>roi</code>, <code>ranking</code>, <code>marketplace</code></p>
+<h1 id="proposal-130-per-task-sampling-profiles-adaptive-inference-parameters-for-pipeline-output-diversity">Proposal 130: Per-Task Sampling Profiles — Adaptive Inference Parameters for Pipeline Output Diversity</h1>
+<p><strong>Author:</strong> Egon (VoynichLabs), inspired by G0DM0D3 (elder-plinius/G0DM0D3) and Mark's analysis
+<strong>Status:</strong> Draft
+<strong>Date:</strong> March 29, 2026
+<strong>Context:</strong> PlanExe pipeline uses uniform, conservative sampling across all tasks. G0DM0D3's AutoTune framework demonstrates that context-adaptive parameter selection dramatically changes output quality.</p>
 <hr />
-<h2 id="pitch">Pitch</h2>
-<p>Build a Kickstarter-like discovery and funding layer where projects are matched to investors by expected risk-adjusted ROI and explicit thesis fit, not by founder charisma or social reach.</p>
-<h2 id="tldr">TL;DR</h2>
-<ul>
-<li>
-<p>Convert every plan into a normalized feature vector (market, margin, burn, moat, timeline, execution risk).</p>
-</li>
-<li>
-<p>Convert every investor into a thesis vector (stage, sector, check size, target return, risk appetite, hold period).</p>
-</li>
-<li>
-<p>Score plan↔investor fit using explainable ranking.</p>
-</li>
-<li>
-<p>Show both sides a transparent “why this match” report.</p>
-</li>
-<li>
-<p>Goal: improve conversion rate, reduce time-to-first-commitment, and increase realized IRR.</p>
-</li>
-</ul>
-<h2 id="problem">Problem</h2>
-<p>Current startup discovery is noisy and personality-driven:</p>
-<ul>
-<li>
-<p>Strong projects can be underfunded if founders are weak at storytelling.</p>
-</li>
-<li>
-<p>Investors spend too much time filtering poor-fit deals.</p>
-</li>
-<li>
-<p>Match quality is opaque; post-hoc outcome learning is weak.</p>
-</li>
-</ul>
-<h2 id="proposed-solution">Proposed Solution</h2>
-<p>Introduce a deterministic, data-first matching service that ranks investor-project pairs using:</p>
-<ol>
-<li>
-<p><strong>Thesis compatibility</strong> (hard constraints + soft preferences)</p>
-</li>
-<li>
-<p><strong>Projected ROI</strong> (expected value with uncertainty)</p>
-</li>
-<li>
-<p><strong>Execution confidence</strong> (evidence-weighted feasibility)</p>
-</li>
-<li>
-<p><strong>Diversification impact</strong> (marginal portfolio contribution)</p>
-</li>
-</ol>
-<h2 id="hypotheses-to-validate">Hypotheses To Validate</h2>
-<p>We should explicitly test three core hypotheses before scaling. A and B are foundational; C expands the engine beyond conventional startup finance and tests whether the core thesis-matching approach generalizes to large, complex, and often public-interest projects.</p>
-<h3 id="a-thesis-fit-improves-deal-quality">A. Thesis-Fit Improves Deal Quality</h3>
-<p><strong>Claim:</strong> A structured thesis profile plus plan feature vector improves match quality versus status-quo discovery.</p>
-<p><strong>What to confirm:</strong></p>
-<ul>
-<li>Investors engage more with top-ranked opportunities (Precision@10 and click-to-diligence rate increase).</li>
-<li>Founders receive higher-quality intros (higher reply rate and faster scheduling).</li>
-<li>The “why-match” explanation increases investor trust and reduces time-to-no.</li>
-</ul>
-<h3 id="b-risk-adjusted-roi-scoring-drives-better-outcomes">B. Risk-Adjusted ROI Scoring Drives Better Outcomes</h3>
-<p><strong>Claim:</strong> Incorporating scenario-based ROI and execution confidence leads to better post-investment performance than thesis-fit alone.</p>
-<p><strong>What to confirm:</strong></p>
-<ul>
-<li>Matched deals show higher realized IRR or MOIC in historical backtests.</li>
-<li>Rankings remain stable under reasonable perturbations of assumptions.</li>
-<li>Investors accept the model’s uncertainty intervals as decision-relevant.</li>
-</ul>
-<h3 id="c-cross-sector-generalization-is-feasible">C. Cross-Sector Generalization Is Feasible</h3>
-<p><strong>Claim:</strong> The matching engine can be extended beyond VC-style deals to infrastructure, public-interest, and climate projects with different financing structures.</p>
-<p><strong>What to confirm:</strong></p>
-<ul>
-<li>The same vector-based thesis/plan representation can be adapted with domain-specific features.</li>
-<li>The scoring logic can handle non-VC return models (availability payments, blended finance, concession revenues).</li>
-<li>Stakeholder fit and risk allocation can be represented as constraints and preferences.</li>
-</ul>
-<h2 id="hypothesis-examples-at-different-scales">Hypothesis Examples At Different Scales</h2>
-<p>Below are three example project archetypes and the specific hypothesis checks they would drive. These are not full plans, just test cases for validating A/B/C in different settings.</p>
-<h3 id="1-expensive-huge-bridge-project-between-two-countries">1) Expensive Huge Bridge Project Between Two Countries</h3>
-<p><strong>Example thesis match:</strong></p>
-<ul>
-<li>Infrastructure funds targeting long-duration, low-volatility returns.</li>
-<li>Sovereign wealth funds focused on strategic trade corridors.</li>
-<li>Development banks with regional connectivity mandates.</li>
-</ul>
-<p><strong>Key hypothesis checks:</strong></p>
-<ul>
-<li><strong>A:</strong> Do investors who prioritize long-term, inflation-linked cashflows engage more with the bridge than generalists?</li>
-<li><strong>B:</strong> Does scenario modeling (traffic volumes, tariff policy, FX risk) meaningfully change the ranking?</li>
-<li><strong>C:</strong> Can concession structure, political risk, and cross-border governance be represented as structured features and constraints?</li>
-</ul>
-<h3 id="2-famine-prevention-in-a-poor-country">2) Famine Prevention In A Poor Country</h3>
-<p><strong>Example thesis match:</strong></p>
-<ul>
-<li>Impact funds targeting humanitarian outcomes with blended finance.</li>
-<li>Philanthropic capital with strict outcome metrics (lives saved, malnutrition reduction).</li>
-<li>Multilateral agencies with food security mandates.</li>
-</ul>
-<p><strong>Key hypothesis checks:</strong></p>
-<ul>
-<li><strong>A:</strong> Does explicit outcome alignment (e.g., DALYs reduced, resilience score) improve match quality?</li>
-<li><strong>B:</strong> Can risk-adjusted ROI be replaced or augmented with cost-effectiveness or outcome ROI?</li>
-<li><strong>C:</strong> Can non-financial return frameworks be integrated without breaking the ranking model?</li>
-</ul>
-<h3 id="3-deforestation-prevention-in-brazil">3) Deforestation Prevention In Brazil</h3>
-<p><strong>Example thesis match:</strong></p>
-<ul>
-<li>Climate funds and corporates seeking verified carbon credits.</li>
-<li>ESG-focused investors with biodiversity preservation targets.</li>
-<li>Government-backed programs with enforcement support.</li>
-</ul>
-<p><strong>Key hypothesis checks:</strong></p>
-<ul>
-<li><strong>A:</strong> Do investors with explicit climate/ESG theses show higher engagement than generic funds?</li>
-<li><strong>B:</strong> Does the model correctly weigh uncertainties (regulatory enforcement, land rights, carbon price volatility)?</li>
-<li><strong>C:</strong> Can verification and permanence risk be encoded as features that materially affect match ranking?</li>
-</ul>
-<h2 id="architecture">Architecture</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌────────────────────────────┐
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│ Plan Ingestion             │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│ - PlanExe structured plan  │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│ - Financial assumptions    │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│ - Milestones + risks       │
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└─────────────┬──────────────┘
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>              │
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>              ▼
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>┌────────────────────────────┐
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│ Feature Engineering        │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│ - Unit economics           │
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│ - Market indicators        │
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│ - Risk factors             │
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>└─────────────┬──────────────┘
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>              │
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>              ▼
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>┌────────────────────────────┐      ┌──────────────────────────┐
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│ Matching &amp; Scoring API     │◄────►│ Investor Thesis Profiles │
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│ - Constraint filtering     │      │ - Return targets         │
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│ - Fit + ROI ranking        │      │ - Risk + sector rules    │
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│ - Explainability layer     │      │ - Check size constraints │
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>└─────────────┬──────────────┘      └──────────────────────────┘
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>              │
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>              ▼
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>┌────────────────────────────┐
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│ Marketplace UI             │
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│ - Ranked opportunities     │
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│ - Why-match report         │
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│ - Confidence intervals     │
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>└────────────────────────────┘
-</code></pre></div>
+<h2 id="the-problem">The problem</h2>
+<p>PlanExe generates formulaic, repetitive output because every task in the pipeline uses the same conservative sampling parameters. The current codebase confirms this:</p>
+<table>
+<thead>
+<tr>
+<th>Task category</th>
+<th>Temperature</th>
+<th>top_p</th>
+<th>freq_penalty</th>
+<th>presence_penalty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IdentifyPurposeTask</td>
+<td>0.0</td>
+<td>unset</td>
+<td>unset</td>
+<td>unset</td>
+</tr>
+<tr>
+<td>All WBS tasks (L1/L2/L3)</td>
+<td>0.5</td>
+<td>unset</td>
+<td>unset</td>
+<td>unset</td>
+</tr>
+<tr>
+<td>TaskDurations, Dependencies</td>
+<td>0.5</td>
+<td>unset</td>
+<td>unset</td>
+<td>unset</td>
+</tr>
+<tr>
+<td>ExpertCost</td>
+<td>0.5</td>
+<td>unset</td>
+<td>unset</td>
+<td>unset</td>
+</tr>
+<tr>
+<td>CreatePitch</td>
+<td>0.5</td>
+<td>unset</td>
+<td>unset</td>
+<td>unset</td>
+</tr>
+<tr>
+<td>SWOT (Gradio standalone)</td>
+<td>0.12</td>
+<td>unset</td>
+<td>unset</td>
+<td>unset</td>
+</tr>
+<tr>
+<td>ResponsesAPILLM (default)</td>
+<td>1.0</td>
+<td>unset</td>
+<td>unset</td>
+<td>unset</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Frequency penalty and presence penalty are never set anywhere in the pipeline.</strong> These are the primary controls for vocabulary diversity and topic introduction. Their absence explains why every plan reads like it was written by the same PMO consultant recycling the same 200 phrases.</p>
+<p>Temperature alone is insufficient. At temp 0.5, the model samples from a narrowed distribution but still draws from the same vocabulary. Presence penalty (0.0–2.0) is what forces the model to introduce new concepts. Frequency penalty (0.0–2.0) is what stops it from repeating "stakeholder engagement" twelve times per section.</p>
+<h2 id="the-insight-from-g0dm0d3">The insight from G0DM0D3</h2>
+<p>G0DM0D3 (elder-plinius/G0DM0D3) demonstrates that inference-time steering through composable sampling profiles — without modifying model weights — dramatically changes output character. Their AutoTune module defines five context profiles:</p>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>τ (temp)</th>
+<th>top_p</th>
+<th>freq_penalty</th>
+<th>presence_penalty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CODE</td>
+<td>0.15</td>
+<td>0.80</td>
+<td>0.20</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>CREATIVE</td>
+<td>1.15</td>
+<td>0.95</td>
+<td>0.50</td>
+<td>0.70</td>
+</tr>
+<tr>
+<td>ANALYTICAL</td>
+<td>0.40</td>
+<td>0.88</td>
+<td>0.20</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>CHAT</td>
+<td>0.75</td>
+<td>0.90</td>
+<td>0.10</td>
+<td>0.10</td>
+</tr>
+<tr>
+<td>CHAOS</td>
+<td>1.70</td>
+<td>0.99</td>
+<td>0.80</td>
+<td>0.90</td>
+</tr>
+</tbody>
+</table>
+<p>The key insight: different output objectives need different parameter vectors. Code generation and creative writing are not the same task and should not share the same temperature. G0DM0D3 achieves 84% accuracy classifying context and selecting appropriate profiles — but PlanExe doesn't need classification because we already know what each task is supposed to produce.</p>
+<h2 id="proposed-per-task-sampling-profiles-for-planexe">Proposed: per-task sampling profiles for PlanExe</h2>
+<h3 id="profile-definitions">Profile definitions</h3>
+<p>Three profiles mapped to PlanExe task types:</p>
+<p><strong>STRUCTURED</strong> — for tasks that produce JSON, schemas, or dependency graphs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>temperature: 0.15
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>top_p: 0.85
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>frequency_penalty: 0.1
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>presence_penalty: 0.0
+</code></pre></div></p>
+<p><strong>ANALYTICAL</strong> — for tasks that evaluate, review, assess, or critique
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>temperature: 0.5
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>top_p: 0.90
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>frequency_penalty: 0.3
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>presence_penalty: 0.3
+</code></pre></div></p>
+<p><strong>CREATIVE</strong> — for tasks that generate diverse ideas, scenarios, or narratives
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>temperature: 0.8
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>top_p: 0.95
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>frequency_penalty: 0.5
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>presence_penalty: 0.7
+</code></pre></div></p>
+<h3 id="task-to-profile-mapping">Task-to-profile mapping</h3>
+<p><strong>STRUCTURED profile</strong> (deterministic, schema-safe):
+- IdentifyPurposeTask (currently 0.0 — keep low)
+- PlanTypeTask
+- CreateWBSLevel1Task, CreateWBSLevel2Task, CreateWBSLevel3Task
+- IdentifyTaskDependenciesTask
+- EstimateTaskDurationsTask
+- CreateScheduleTask
+- WBSProjectLevel1AndLevel2Task, WBSProjectLevel1AndLevel2AndLevel3Task
+- ConsolidateAssumptionsMarkdownTask
+- ConsolidateGovernanceTask
+- All markdown consolidation tasks</p>
+<p><strong>ANALYTICAL profile</strong> (balanced, moderate diversity):
+- RedlineGateTask
+- MakeAssumptionsTask, DistillAssumptionsTask, ReviewAssumptionsTask
+- GovernancePhase1–6 tasks
+- ReviewPlanTask
+- ReviewTeamTask
+- SWOTAnalysisTask
+- DataCollectionTask
+- FilterDocumentsToFindTask, FilterDocumentsToCreateTask
+- SelfAuditTask
+- ExecutiveSummaryTask
+- ProjectPlanTask</p>
+<p><strong>CREATIVE profile</strong> (divergent, vocabulary-diverse):
+- PremiseAttackTask
+- CandidateScenariosTask
+- SelectScenarioTask
+- PotentialLeversTask, EnrichLeversTask, FocusOnVitalFewLeversTask
+- ExpertReviewTask (expert criticism should sound like different experts, not the same one)
+- PremortemTask (needs to imagine failures the user hasn't considered)
+- CreatePitchTask (should be compelling, not formulaic)
+- QuestionsAndAnswersTask
+- FindTeamMembersTask, EnrichTeamMembersWithBackgroundStoryTask
+- IdentifyRisksTask
+- DraftDocumentsToFindTask, DraftDocumentsToCreateTask</p>
+<h3 id="why-presence-penalty-is-the-key-lever">Why presence penalty is the key lever</h3>
+<p>Consider ExpertReviewTask. Currently at temp 0.5 with no penalties, the model generates eight "experts" who all use the same vocabulary:</p>
+<blockquote>
+<p>"The project should consider stakeholder engagement... risk mitigation strategies... a phased approach to implementation..."</p>
+</blockquote>
+<p>With presence_penalty 0.7, the model is penalized for reusing tokens it has already generated. Each subsequent expert is forced to introduce new vocabulary and new concerns. The eighth expert cannot recycle the first expert's phrases — the penalty makes that increasingly unlikely with each token.</p>
+<p>This is exactly what the Expert Criticism section needs: genuine diversity of perspective, not eight rewordings of the same PMO template.</p>
+<p>For Premortem, the same logic applies: imagining how a project fails requires the model to explore different failure modes, not repeat "budget overrun, timeline slippage, stakeholder misalignment" in eight variations.</p>
+<p>For structured tasks (WBS, dependencies, schedules), presence penalty should be near zero — you want consistent terminology across the task graph, not creative synonyms for the same work package.</p>
 <h2 id="implementation">Implementation</h2>
-<h3 id="phase-1-data-model-constraint-engine">Phase 1: Data Model + Constraint Engine</h3>
+<h3 id="option-a-profile-field-on-plantask-base-class-minimal-change">Option A: Profile field on PlanTask base class (minimal change)</h3>
+<p>Add a <code>sampling_profile</code> field to the <code>PlanTask</code> base class in <code>run_plan_pipeline.py</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanTask</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="c1"># existing fields...</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">SAMPLING_PROFILES</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="s2">&quot;structured&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="s2">&quot;frequency_penalty&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;presence_penalty&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">},</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="s2">&quot;analytical&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.90</span><span class="p">,</span> <span class="s2">&quot;frequency_penalty&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&quot;presence_penalty&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">},</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="s2">&quot;creative&quot;</span><span class="p">:</span>   <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="s2">&quot;frequency_penalty&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;presence_penalty&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">},</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">sampling_profile</span> <span class="o">=</span> <span class="s2">&quot;analytical&quot;</span>  <span class="c1"># default</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_sampling_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SAMPLING_PROFILES</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">sampling_profile</span><span class="p">]</span>
+</code></pre></div>
+<p>Each task subclass overrides <code>sampling_profile</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PremortemTask</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">sampling_profile</span> <span class="o">=</span> <span class="s2">&quot;creative&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="c1"># ...</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CreateWBSLevel1Task</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="n">sampling_profile</span> <span class="o">=</span> <span class="s2">&quot;structured&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="c1"># ...</span>
+</code></pre></div></p>
+<p>The <code>get_sampling_params()</code> dict is passed through to the LLM call. This requires that <code>llm_executor</code> and <code>responses_api_llm</code> accept and forward these parameters — a small change to the LLM utility layer.</p>
+<h3 id="option-b-config-driven-profiles-more-flexible">Option B: Config-driven profiles (more flexible)</h3>
+<p>Add a <code>sampling_profiles</code> section to <code>config.json</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;sampling_profiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;structured&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;top_p&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;frequency_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;presence_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">},</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;analytical&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;top_p&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.90</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;frequency_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;presence_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">},</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;creative&quot;</span><span class="p">:</span><span class="w">   </span><span class="p">{</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;top_p&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.95</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;frequency_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;presence_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">&quot;task_profiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">&quot;PremortemTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;creative&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nt">&quot;ExpertReviewTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;creative&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&quot;CreateWBSLevel1Task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;structured&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;analytical&quot;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">}</span>
+</code></pre></div>
+<p>This lets users tune profiles without code changes. A user running a highly creative plan could bump the creative profile's temperature to 1.0; a user running a safety-critical infrastructure plan could pull everything to analytical.</p>
+<h3 id="model-compatibility">Model compatibility</h3>
+<p>Not all models support all parameters:
+- <strong>OpenAI/OpenRouter:</strong> temperature, top_p, frequency_penalty, presence_penalty — all supported
+- <strong>Anthropic:</strong> temperature, top_p — supported; frequency_penalty, presence_penalty — not supported
+- <strong>Ollama/local:</strong> temperature, top_p — supported; penalties vary by model</p>
+<p>The implementation should pass only the parameters the provider accepts. The LLM utility layer already handles provider differences — this extends that pattern.</p>
+<h2 id="experiment-design">Experiment design</h2>
+<p><strong>Phase 1: A/B comparison (single prompt, two runs)</strong>
+1. Run the same prompt (e.g., "Bubba's Hot Nut Sack" or a standard test prompt) twice:
+   - Control: current uniform params (temp 0.5, no penalties)
+   - Treatment: per-task profiles as proposed above
+2. Compare using P128 quality metrics:
+   - Grounding density (TF-IDF vs PMO baseline)
+   - Vocabulary diversity (unique terms / total terms per section)
+   - Cross-section repetition rate (how many phrases appear in multiple sections)
+   - Expert distinctiveness (for ExpertReviewTask: cosine similarity between expert outputs — lower is better)</p>
+<p><strong>Phase 2: Profile tuning (3–5 runs)</strong>
+1. Vary the creative profile's presence_penalty: 0.3, 0.5, 0.7, 1.0
+2. Measure at what point structured JSON starts breaking (the ceiling)
+3. Find the sweet spot: maximum diversity without schema failures</p>
+<p><strong>Phase 3: Model comparison</strong>
+1. Same prompt, same profiles, different models
+2. Identify which models benefit most from penalty steering
+3. Some models (e.g., GPT-4o) may already have internal anti-repetition; others (local Ollama models) may benefit dramatically</p>
+<h2 id="relationship-to-other-proposals">Relationship to other proposals</h2>
 <ul>
-<li>
-<p>Extend plan schema with investor-relevant fields:</p>
-</li>
-<li>
-<p>TAM/SAM/SOM, CAC, LTV, gross margin, payback period, capital required, runway, regulatory risk.</p>
-</li>
-<li>
-<p>Add investor profile schema:</p>
-</li>
-<li>
-<p>sectors, geography, stage, check range, target MOIC/IRR, max drawdown tolerance.</p>
-</li>
-<li>
-<p>Implement hard-filter pass (exclude impossible matches first).</p>
-</li>
+<li><strong>P128 (quality metrics):</strong> Provides the measurement framework. Per-task profiles are the intervention; P128 metrics are how we measure the result.</li>
+<li><strong>P129 (prompt dentist):</strong> Complementary. P129 enriches the input; P130 optimizes how the pipeline processes it. Together they address both sides of the quality equation.</li>
+<li><strong>G0DM0D3 (external):</strong> Source of the AutoTune concept. PlanExe's advantage: we don't need context classification because the task graph already defines what each call should produce.</li>
 </ul>
-<h3 id="phase-2-roi-fit-scoring">Phase 2: ROI + Fit Scoring</h3>
+<h2 id="extended-per-task-model-variant-steering-grok-41-fast">Extended: Per-Task Model Variant Steering (Grok 4.1 Fast)</h2>
+<h3 id="the-insight-mark-identified">The insight Mark identified</h3>
+<p>The proposal above treats sampling parameters as knobs on a single model. But certain cheap, capable models — specifically <strong>Grok 4.1 Fast</strong> via OpenRouter — offer something more powerful: <strong>two API variants of the same model with different capability surfaces.</strong></p>
+<h3 id="grok-41-fast-two-variants-one-model">Grok 4.1 Fast: Two variants, one model</h3>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Price (in/out per 1M)</th>
+<th>Reasoning</th>
+<th>Structured Output</th>
+<th>Sampling Params</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>grok-4-1-fast-non-reasoning</code></td>
+<td>$0.20 / $0.50</td>
+<td>❌</td>
+<td>✅ json_schema guaranteed</td>
+<td>✅ temp, top_p, freq_penalty, presence_penalty</td>
+</tr>
+<tr>
+<td><code>grok-4-1-fast-reasoning</code></td>
+<td>$0.20 / $0.50</td>
+<td>✅ CoT</td>
+<td>✅ json_schema guaranteed</td>
+<td>⚠️ temp, top_p only — <strong>freq/presence penalty explicitly rejected</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Source: <a href="https://docs.x.ai/developers/model-capabilities/text/reasoning">xAI docs — Reasoning</a>, <a href="https://docs.x.ai/developers/model-capabilities/text/structured-outputs">xAI docs — Structured Outputs</a>, <a href="https://docs.x.ai/developers/models">xAI docs — Models</a></p>
+<p><strong>Critical finding:</strong> The xAI API returns an error if you send <code>presencePenalty</code>, <code>frequencyPenalty</code>, or <code>stop</code> to reasoning variants. This is not a soft constraint — it's a hard API rejection. The non-reasoning variant accepts all sampling parameters.</p>
+<h3 id="per-task-model-variant-parameter-matrix">Per-task model variant + parameter matrix</h3>
+<p>This extends the three-profile system above into a <strong>two-dimensional steering matrix</strong>: model variant × sampling profile.</p>
+<table>
+<thead>
+<tr>
+<th>Task Category</th>
+<th>Model Variant</th>
+<th>Temperature</th>
+<th>top_p</th>
+<th>freq_penalty</th>
+<th>pres_penalty</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Creative</strong> (Premortem, Expert Review, Scenarios, Pitch, Team Backstories, Risk Identification, Lever Exploration)</td>
+<td>non-reasoning</td>
+<td>0.8</td>
+<td>0.95</td>
+<td>0.5</td>
+<td>0.7</td>
+<td>Full penalty surface for vocabulary diversity; reasoning not needed for divergent generation</td>
+</tr>
+<tr>
+<td><strong>Analytical</strong> (Assumptions, Governance, Review, Self-Audit, SWOT, Pre-Project Assessment)</td>
+<td>reasoning</td>
+<td>0.5</td>
+<td>0.90</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>CoT improves analytical depth; penalties unavailable but reasoning compensates</td>
+</tr>
+<tr>
+<td><strong>Structured</strong> (WBS L1/L2/L3, Dependencies, Durations, Schedule, Purpose, Plan Type)</td>
+<td>non-reasoning</td>
+<td>0.15</td>
+<td>0.85</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>Deterministic, schema-guaranteed output; no reasoning overhead needed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cost-implications">Cost implications</h3>
+<p>The 274-task BubbasHotNutSack run cost ~$3.90 on Claude (Sonnet). At Grok 4.1 Fast pricing ($0.20/$0.50 per 1M tokens), the same run could cost approximately <strong>$0.30–0.50</strong> — a 7–13× cost reduction.</p>
+<p>This isn't just about saving money. At these prices, you can afford to:
+- Run the same prompt 5 times with different creative profiles and pick the best
+- Use the reasoning variant for analytical tasks where CoT genuinely helps
+- Run A/B experiments comparing parameter configurations without budget anxiety</p>
+<h3 id="implementation-model-routing-in-the-task-profile">Implementation: model routing in the task profile</h3>
+<p>Extend Option A from above to include a <code>model_variant</code> field:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanTask</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">SAMPLING_PROFILES</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        <span class="s2">&quot;structured&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>            <span class="s2">&quot;model_variant&quot;</span><span class="p">:</span> <span class="s2">&quot;non-reasoning&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>            <span class="s2">&quot;frequency_penalty&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;presence_penalty&quot;</span><span class="p">:</span> <span class="mf">0.0</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="p">},</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="s2">&quot;analytical&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            <span class="s2">&quot;model_variant&quot;</span><span class="p">:</span> <span class="s2">&quot;reasoning&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.90</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>            <span class="c1"># No frequency/presence penalty — API rejects them for reasoning variants</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        <span class="p">},</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        <span class="s2">&quot;creative&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>            <span class="s2">&quot;model_variant&quot;</span><span class="p">:</span> <span class="s2">&quot;non-reasoning&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>            <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>            <span class="s2">&quot;frequency_penalty&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;presence_penalty&quot;</span><span class="p">:</span> <span class="mf">0.7</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="p">},</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="p">}</span>
+</code></pre></div>
+<p>The LLM routing layer resolves <code>model_variant</code> to the actual model ID based on the configured provider. For xAI/OpenRouter: <code>non-reasoning</code> → <code>x-ai/grok-4-1-fast-non-reasoning</code>, <code>reasoning</code> → <code>x-ai/grok-4-1-fast-reasoning</code>. For providers without variant separation (Anthropic, OpenAI), the variant field is ignored and only sampling params apply.</p>
+<h3 id="provider-parameter-compatibility-matrix">Provider parameter compatibility matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>temp</th>
+<th>top_p</th>
+<th>freq_penalty</th>
+<th>pres_penalty</th>
+<th>structured output</th>
+<th>reasoning toggle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xAI (non-reasoning)</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅ json_schema</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>xAI (reasoning)</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌ error</td>
+<td>❌ error</td>
+<td>✅ json_schema</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>OpenAI</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅ json_schema</td>
+<td>✅ (o-series)</td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌ unsupported</td>
+<td>❌ unsupported</td>
+<td>⚠️ tool_use workaround</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Ollama/local</td>
+<td>✅</td>
+<td>✅</td>
+<td>varies</td>
+<td>varies</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅ (model-dependent)</td>
+</tr>
+</tbody>
+</table>
+<p>The implementation must strip unsupported parameters before sending to each provider. This is already partially handled by the LLM utility layer — extending it to handle the penalty params is straightforward.</p>
+<h2 id="cost-and-risk">Cost and risk</h2>
 <ul>
-<li>
-<p>Create weighted scoring function:</p>
-</li>
-<li>
-<p><code>FinalScore = 0.45*ThesisFit + 0.35*RiskAdjustedROI + 0.20*ExecutionConfidence</code></p>
-</li>
-<li>
-<p>Compute uncertainty-aware ROI using scenario bands (bear/base/bull).</p>
-</li>
-<li>
-<p>Add explainability payload per recommendation (top positive and negative drivers).</p>
-</li>
+<li><strong>Cost:</strong> Zero marginal cost for parameter changes. Model variant steering on Grok 4.1 Fast actively <em>reduces</em> cost (7–13× cheaper than Claude Sonnet).</li>
+<li><strong>Risk:</strong> Higher temperature + penalties on creative tasks could occasionally produce outputs that fail JSON schema validation. Mitigation: structured tasks stay at conservative settings; only narrative/analysis tasks get the creative profile. The pipeline's existing retry logic handles occasional schema failures. Grok's guaranteed structured output eliminates schema risk for structured tasks entirely.</li>
+<li><strong>Effort:</strong> Option A is a half-day code change for parameter profiles. Adding model variant routing adds another half-day. Option B (config-driven) is a full day including config parsing and provider compatibility layer.</li>
 </ul>
-<h3 id="phase-3-marketplace-integration">Phase 3: Marketplace Integration</h3>
+<h2 id="extended-best-of-n-task-selection-simons-pattern">Extended: Best-of-N Task Selection (Simon's Pattern)</h2>
+<h3 id="the-idea">The idea</h3>
+<p>Instead of running each pipeline step once and hoping the output is good, run each step <strong>N times</strong> with different model configurations (different sampling profiles, different model variants, or both), then use a <strong>reasoning model to select the best output</strong> before feeding it to the next step.</p>
+<p>This is G0DM0D3's ULTRAPLINIAN pattern applied at the pipeline task level: parallel generation → quality scoring → winner propagation.</p>
+<h3 id="why-this-is-now-feasible">Why this is now feasible</h3>
+<p>At Grok 4.1 Fast pricing ($0.20/M in, $0.50/M out):</p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Creative tasks (N=3)</th>
+<th>Analytical tasks (N=2)</th>
+<th>Structured tasks (N=1)</th>
+<th>Selection overhead</th>
+<th>Est. total pipeline cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current (1×, Claude Sonnet)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>~$3.90</td>
+</tr>
+<tr>
+<td>P130 profiles only (1×, Grok Fast)</td>
+<td>$0.01/task</td>
+<td>$0.01/task</td>
+<td>$0.005/task</td>
+<td>none</td>
+<td>~$0.40</td>
+</tr>
+<tr>
+<td>Best-of-N + selection</td>
+<td>$0.03/task</td>
+<td>$0.02/task</td>
+<td>$0.005/task</td>
+<td>~$0.01/task (reasoning)</td>
+<td>~$1.00–1.50</td>
+</tr>
+</tbody>
+</table>
+<p>Even with 3× generation on creative tasks and a reasoning selection step, the pipeline stays under $2 — still 2–4× cheaper than a single Claude Sonnet run.</p>
+<h3 id="scoring-rubric-5-axis-weighted-selection">Scoring rubric: 5-axis weighted selection</h3>
+<p>G0DM0D3's ULTRAPLINIAN module achieves 82-point quality discrimination across models using a weighted 5-axis scoring system (substance, directness, completeness, relevance, structure). The axes are objective-agnostic — the same mechanism works for any quality criterion by reweighting the axes.</p>
+<p>For PlanExe, we adapt this to a <strong>5-axis pipeline quality rubric</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>Weight</th>
+<th>What it measures</th>
+<th>How to compute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Schema compliance</strong></td>
+<td>0.25</td>
+<td>Does the output parse against the task's expected schema?</td>
+<td>Binary: 1.0 if valid JSON/schema, 0.0 if not. With Grok's guaranteed structured output, this becomes a pre-filter (reject before scoring).</td>
+</tr>
+<tr>
+<td><strong>Prompt fidelity</strong></td>
+<td>0.25</td>
+<td>Does the output address the specific plan's domain, not generic boilerplate?</td>
+<td>TF-IDF cosine similarity between output vocabulary and the original prompt's domain terms, minus similarity to a PMO baseline vocabulary. Higher = more grounded in the user's actual plan. (P128 grounding density metric.)</td>
+</tr>
+<tr>
+<td><strong>Diversity from context</strong></td>
+<td>0.20</td>
+<td>Does this step introduce new information vs recycling upstream output?</td>
+<td>1 − (Jaccard similarity of this output's 3-grams against concatenated upstream pipeline outputs). Penalizes the pipeline converging on a narrow vocabulary as it progresses.</td>
+</tr>
+<tr>
+<td><strong>Domain vocabulary density</strong></td>
+<td>0.15</td>
+<td>Does the output use specific, concrete domain terms rather than abstract PMO jargon?</td>
+<td>Ratio of domain-specific terms (extracted from the user's prompt and enriched via P129 prompt dentist) to total content words. "FDA 510(k) submission timeline" scores higher than "regulatory compliance framework."</td>
+</tr>
+<tr>
+<td><strong>Internal diversity</strong></td>
+<td>0.15</td>
+<td>Within a single output, does it present genuinely different perspectives/items?</td>
+<td>For multi-item outputs (ExpertReview, Premortem, Scenarios): average pairwise cosine distance between items. For single-item outputs (ExecutiveSummary): vocabulary diversity ratio (unique words / total words). G0DM0D3's feedback heuristics module computes this as a 3-gram repetition score.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Composite score:</strong> Σ(axis_weight × axis_score) → 0–100 scale.</p>
+<p>The reasoning model receives all N candidates plus the rubric and returns the index of the winner. For efficiency, the four computable axes (all except schema compliance, which is a pre-filter) can be computed deterministically without an LLM call. The reasoning model is only needed when scores are close (within 5 points) or when task-specific judgment is required.</p>
+<p><strong>Axis reweighting per task type:</strong>
+- <strong>Creative tasks</strong> (Premortem, Expert Review, Scenarios): boost internal diversity to 0.25, reduce schema compliance to 0.15 (narrative outputs have looser schema requirements)
+- <strong>Structured tasks</strong> (WBS, Dependencies, Schedule): boost schema compliance to 0.35, reduce internal diversity to 0.05 (consistent terminology is a feature, not a bug)
+- <strong>Analytical tasks</strong> (Governance, Assumptions, Review): balanced weights as shown above</p>
+<p>This follows G0DM0D3's core insight: the scoring axes are <em>objective-agnostic primitives</em>. The same 5-axis mechanism serves different pipeline tasks by reweighting — just as ULTRAPLINIAN's anti-refusal axis can be replaced with a pedagogical axis by changing weights without changing the scoring infrastructure.</p>
+<h3 id="implementation-sketch">Implementation sketch</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanTask</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="c1"># Number of parallel generations for this task</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">generation_count</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># default: single-shot (structured tasks)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="c1"># Selection model (only used when generation_count &gt; 1)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">selection_model</span> <span class="o">=</span> <span class="s2">&quot;grok-4-1-fast-reasoning&quot;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run_with_selection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">generation_count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_once</span><span class="p">()</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        <span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">generation_count</span><span class="p">):</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            <span class="n">profile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_variant_profile</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># rotate through profiles</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>            <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">generate_with_profile</span><span class="p">(</span><span class="n">profile</span><span class="p">))</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="c1"># Filter: schema compliance</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        <span class="n">valid</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">validates_schema</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>            <span class="k">return</span> <span class="n">valid</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>        <span class="c1"># Select: reasoning model picks the winner</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">select_best</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">selection_model</span><span class="p">)</span>
+</code></pre></div>
+<p>Task subclasses override <code>generation_count</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PremortemTask</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="n">sampling_profile</span> <span class="o">=</span> <span class="s2">&quot;creative&quot;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">generation_count</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># best-of-3</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CreateWBSLevel1Task</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">sampling_profile</span> <span class="o">=</span> <span class="s2">&quot;structured&quot;</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">generation_count</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># single-shot, schema-guaranteed</span>
+</code></pre></div></p>
+<h3 id="selection-strategy-select-vs-merge">Selection strategy: Select vs Merge</h3>
+<p><strong>Select-1</strong> (simple): Pick the single best candidate based on composite score. Appropriate for tasks that produce a single coherent output (ExecutiveSummary, ProjectPlan, PlanType).</p>
+<p><strong>Merge</strong> (Simon's pattern, preferred for list-producing tasks): Pick the best candidate as the skeleton, then scan runners-up for <strong>individual items the winner missed</strong> and splice them in. The reasoning model's job shifts from "pick the winner" to "assemble the best composite from all candidates."</p>
+<p><strong>Merge-eligible tasks</strong> — any task that produces a list of distinct items:
+- ExpertReviewTask: 8 expert critiques → merge unique angles from all candidates
+- PremortemTask: failure modes → merge non-overlapping failure scenarios
+- CandidateScenariosTask: possible futures → merge to span the full possibility space
+- IdentifyRisksTask: risk items → merge for coverage completeness
+- PotentialLeversTask / EnrichLeversTask: lever items → merge unique levers
+- FindTeamMembersTask: team roles → merge missing specializations
+- DraftDocumentsToFindTask / DraftDocumentsToCreateTask: document lists → merge for completeness</p>
+<p><strong>Example:</strong> ExpertReviewTask generates 3 candidates, each with 8 expert critiques. Candidate B scores highest overall — but Candidate A identified a unique regulatory risk B missed, and Candidate C had a supply chain angle neither covered. The merge step grafts those two critiques into B's output → final output has 10 expert critiques covering more ground than any single candidate.</p>
+<p><strong>Cost:</strong> One additional reasoning call per merged task (the merge pass). At Grok 4.1 Fast pricing, negligible (~$0.005 per merge call).</p>
+<h3 id="variant-rotation-for-n-generations">Variant rotation for N generations</h3>
+<p>When generating N candidates, rotate through different configurations:
+- <strong>Candidate 1:</strong> Creative profile (temp 0.8, high penalties)
+- <strong>Candidate 2:</strong> Analytical profile (temp 0.5, moderate penalties)
+- <strong>Candidate 3:</strong> Wild profile (temp 1.1, high penalties, reasoning variant)</p>
+<p>This ensures the candidate pool has genuine diversity, not three rolls from the same distribution.</p>
+<h3 id="parallelization">Parallelization</h3>
+<p>The N generations per task are independent — they can run as concurrent API calls. At Grok's 600 RPM rate limit, even 3× parallel generation per task won't bottleneck. The selection step is sequential (must wait for all candidates), but it's a single short reasoning call.</p>
+<h3 id="relationship-to-p128-compiler-model">Relationship to P128 compiler model</h3>
+<p>Simon's pattern is essentially the P128 compiler model applied <strong>per-step</strong> rather than as a post-pipeline gate. The tradeoff: per-step selection catches quality issues earlier (before they propagate), but costs more in total API calls. Post-pipeline gating is cheaper but can only reject the whole plan, not fix individual weak steps.</p>
+<p>The ideal system might combine both: per-step best-of-N selection for high-variance creative tasks, plus a post-pipeline quality gate for overall coherence.</p>
+<h2 id="extended-stm-post-processing-zero-cost-output-cleanup">Extended: STM Post-Processing (Zero-Cost Output Cleanup)</h2>
+<p>G0DM0D3's STM (Semantic Transformation Modules) are deterministic regex-based output transformers — composable, zero-cost, and immediately applicable without any model changes.</p>
+<h3 id="modules-directly-applicable-to-planexe">Modules directly applicable to PlanExe</h3>
+<p><strong>Hedge Reducer</strong> — strips hedging language:
+- "I think", "I believe", "perhaps", "maybe", "It seems like", "It appears that", "probably", "possibly", "In my opinion", "From my perspective"
+- 11 regex patterns, 100% precision on constructed test cases
+- <strong>PlanExe targets:</strong> ExpertReviewTask, PremortemTask, ExecutiveSummaryTask, ReviewPlanTask — all produce outputs riddled with "It's important to note that..." hedging</p>
+<p><strong>Direct Mode</strong> — strips preambles:
+- "Sure!", "Of course!", "Certainly!", "I'd be happy to help", "Great question!", "Let me help you with that"
+- 10 regex patterns
+- <strong>PlanExe targets:</strong> Every task that produces long-form output. The model almost always opens with "Certainly, here is a comprehensive analysis..."</p>
+<p><strong>Implementation:</strong> Apply as a post-processing pass after LLM generation, before writing to the pipeline output file. No model changes needed. Can be toggled per task via the profile system.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">PlanTask</span><span class="p">(</span><span class="n">luigi</span><span class="o">.</span><span class="n">Task</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">stm_modules</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hedge_reducer&quot;</span><span class="p">,</span> <span class="s2">&quot;direct_mode&quot;</span><span class="p">]</span>  <span class="c1"># default for all tasks</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">post_process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stm_modules</span><span class="p">:</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>            <span class="n">output</span> <span class="o">=</span> <span class="n">STM_REGISTRY</span><span class="p">[</span><span class="n">module</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="k">return</span> <span class="n">output</span>
+</code></pre></div>
+<h2 id="extended-ema-feedback-loop-cross-run-learning">Extended: EMA Feedback Loop (Cross-Run Learning)</h2>
+<p>G0DM0D3's feedback loop uses Exponential Moving Average (α=0.3) to learn optimal parameter adjustments from binary quality ratings per context type.</p>
+<h3 id="adaptation-for-planexe">Adaptation for PlanExe</h3>
+<p>After each pipeline run, individual task outputs are rated (manually or via automated heuristics). Over multiple runs, the system learns which sampling parameters produce better outputs for each task type.</p>
+<p><strong>Automated rating heuristics</strong> (from G0DM0D3's <code>computeHeuristics</code>):
+- <strong>Repetition score:</strong> 3-gram overlap frequency (0.0 = no repetition, 1.0 = extremely repetitive)
+- <strong>Vocabulary diversity:</strong> unique words / total words ratio
+- <strong>Response length:</strong> length in characters (proxy for substance)
+- <strong>Average sentence length:</strong> complexity indicator</p>
+<p><strong>Learning curve:</strong> G0DM0D3 shows convergence to 29–62% parameter improvement within 19 ratings, reaching maximum influence (50% weight, capped) at 20 samples. For PlanExe, this means ~5–10 pipeline runs before the system meaningfully adapts.</p>
+<p><strong>Per-task storage:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;learned_profiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;PremortemTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">      </span><span class="nt">&quot;sample_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="nt">&quot;positive_params_ema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.85</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;presence_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.72</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">},</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">      </span><span class="nt">&quot;negative_params_ema&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.45</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;presence_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">},</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="nt">&quot;adjustments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">+</span><span class="mf">0.12</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;presence_penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">+</span><span class="mf">0.18</span><span class="p">}</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>The adjustments blend into the per-task sampling profile, gradually shifting each task's parameters toward what actually works — not what we guessed would work.</p>
+<h2 id="references">References</h2>
 <ul>
-<li>
-<p>Investor dashboard: ranked list + confidence intervals + sensitivity to assumptions.</p>
-</li>
-<li>
-<p>Founder dashboard: “best-fit investors” ordered by thesis overlap and probability of commitment.</p>
-</li>
-<li>
-<p>Feedback capture on passes/commits to retrain weights.</p>
-</li>
+<li><strong>G0DM0D3:</strong> elder-plinius/G0DM0D3 (GitHub). Inference-time output steering framework. VoynichLabs fork: VoynichLabs/G0DM0D3.</li>
+<li><strong>G0DM0D3 paper:</strong> "G0DM0D3: Inference-Time Output Steering Framework for LLMs" — five composable steering primitives (AutoTune, Feedback Loop, Parseltongue, STM, ULTRAPLINIAN). Key results: AutoTune 84% context classification accuracy, ULTRAPLINIAN 82-point quality discrimination, Feedback Loop convergence in 19 ratings.</li>
+<li><strong>P128:</strong> Proposal 128 — Compiler Model, Quality Metrics, Dogfood Execution. Provides the measurement framework for evaluating P130's interventions.</li>
+<li><strong>P129:</strong> Proposal 129 — Prompt Dentist, Pre-Pipeline Prompt Enrichment. Complements P130 (input enrichment + output steering).</li>
+<li><strong>xAI Grok API docs:</strong> https://docs.x.ai/developers/models — Model pricing, reasoning variant constraints, structured output guarantees.</li>
+<li><strong>OpenRouter API docs:</strong> https://openrouter.ai/docs/api/reference/parameters — Full sampling parameter surface (temperature, top_p, frequency_penalty, presence_penalty, repetition_penalty, min_p, top_a).</li>
 </ul>
-<h2 id="success-metrics">Success Metrics</h2>
-<ul>
-<li>
-<p><strong>Match Precision@10:</strong> ≥ 0.65 (investor engages with 6.5/10 top-ranked opportunities)</p>
-</li>
-<li>
-<p><strong>Time-to-First-Term-Sheet:</strong> -30% vs baseline</p>
-</li>
-<li>
-<p><strong>Qualified Intro Conversion:</strong> +40%</p>
-</li>
-<li>
-<p><strong>Post-Investment IRR Lift:</strong> +10% at cohort level</p>
-</li>
-<li>
-<p><strong>Cold-start Coverage:</strong> ≥ 90% of new plans receive at least 5 viable investor matches</p>
-</li>
-</ul>
-<h2 id="risks">Risks</h2>
-<ul>
-<li>
-<p><strong>Biased historical outcomes</strong> → Use counterfactual evaluation and fairness constraints.</p>
-</li>
-<li>
-<p><strong>Overfitting to short-term wins</strong> → Optimize for multi-horizon outcomes (12/24/36 months).</p>
-</li>
-<li>
-<p><strong>Gaming by founders</strong> → Add evidence verification and anomaly detection.</p>
-</li>
-<li>
-<p><strong>Investor strategy drift</strong> → Prompt quarterly thesis re-validation.</p>
-</li>
-</ul>
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>This proposal shifts fundraising from persuasion-first to evidence-first. It helps credible, high-upside plans get surfaced even when founders are not exceptional marketers, improving capital allocation efficiency for everyone.</p>
-<h2 id="detailed-implementation-plan">Detailed Implementation Plan</h2>
-<h3 id="phase-a-thesis-schema-and-intake">Phase A — Thesis Schema and Intake</h3>
-<ol>
-<li>Define investor thesis schema (sector, ticket size, geography, stage, constraints).</li>
-<li>Ingest and normalize investor profile records.</li>
-<li>Add confidence labels for inferred thesis signals.</li>
-</ol>
-<h3 id="phase-b-matching-engine">Phase B — Matching Engine</h3>
-<ol>
-<li>Compute thesis-plan alignment with weighted feature scoring.</li>
-<li>Add exclusion filters (hard constraints).</li>
-<li>Produce explainable match reasons and mismatch flags.</li>
-</ol>
-<h3 id="phase-c-feedback-loop">Phase C — Feedback Loop</h3>
-<ol>
-<li>Capture investor response outcomes.</li>
-<li>Tune matching weights with outcome data.</li>
-<li>Add cold-start defaults by investor archetype.</li>
-</ol>
-<h3 id="validation-checklist">Validation Checklist</h3>
-<ul>
-<li>Precision of top matches</li>
-<li>Response-rate uplift vs baseline outreach</li>
-<li>Explainability quality review</li>
-</ul>
+<h2 id="summary">Summary</h2>
+<p>PlanExe's formulaic output is not a model limitation — it's a parameter limitation. The pipeline never sets frequency or presence penalties, and uses uniform temperature across tasks with fundamentally different objectives. G0DM0D3 demonstrates that per-context sampling profiles produce dramatically different output character. PlanExe already knows what each task is (the task graph is explicit), so it doesn't need classification — just a mapping from task type to sampling profile.</p>
+<p>The extended insight: models like Grok 4.1 Fast offer <strong>two API variants</strong> (reasoning and non-reasoning) with different parameter surfaces at the same price. Per-task steering becomes two-dimensional — select the right model variant <em>and</em> the right sampling parameters for each task. Creative tasks get full penalty control without reasoning overhead. Analytical tasks get CoT without needing penalties. Structured tasks get deterministic, schema-guaranteed output.</p>
+<p><strong>Recommended priority:</strong> High. Zero marginal cost (likely cost reduction), measurable impact, and directly addresses the "everything sounds the same" problem that undermines plan quality.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
