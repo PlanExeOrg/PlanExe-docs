@@ -12,7 +12,7 @@
         <meta name="author" content="PlanExe Team">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/131-some-title/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/131-codebase-cleanliness-remediation-roadmap/">
       
       
         <link rel="prev" href="../130-per-task-sampling-profiles/">
@@ -79,15 +79,15 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Codebase Cleanliness Remediation Roadmap - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/131-some-title.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/131-codebase-cleanliness-remediation-roadmap.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/131-some-title/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/131-codebase-cleanliness-remediation-roadmap/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Codebase Cleanliness Remediation Roadmap - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/131-some-title.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/131-codebase-cleanliness-remediation-roadmap.png" />
 </head>
   
   
@@ -3312,7 +3312,7 @@
   <span class="md-ellipsis">
     
   
-    131 some title
+    131 codebase cleanliness remediation roadmap
   
 
     
@@ -3337,7 +3337,7 @@
   <span class="md-ellipsis">
     
   
-    131 some title
+    131 codebase cleanliness remediation roadmap
   
 
     
@@ -7217,8 +7217,8 @@
 <p>Direct prints are sometimes useful during incident response, but they are not a coherent observability strategy. They create inconsistent runtime output, complicate log filtering, and encourage one-off diagnostics instead of structured instrumentation.</p>
 <h3 id="fix-steps_1">Fix steps</h3>
 <ol>
-<li>Replace entrypoint <code>print()</code> startup breadcrumbs with structured <code>logging</code> calls at <code>INFO</code> or <code>DEBUG</code>.</li>
-<li>Gate verbose diagnostics behind explicit env vars such as <code>PLANEXE_DEBUG_STARTUP</code> or module-specific debug flags.</li>
+<li>~~Replace entrypoint <code>print()</code> startup breadcrumbs with structured <code>logging</code> calls at <code>INFO</code> or <code>DEBUG</code>.~~ <strong>Done</strong> (PR #474): Converted 22 <code>[startup]</code> prints in <code>mcp_cloud/http_server.py</code> and <code>mcp_cloud/db_setup.py</code> to <code>_startup_log()</code> helper.</li>
+<li>~~Gate verbose diagnostics behind explicit env vars such as <code>PLANEXE_DEBUG_STARTUP</code> or module-specific debug flags.~~ <strong>Done</strong> (PR #474): Startup breadcrumbs now gated behind <code>PLANEXE_DEBUG_STARTUP=1</code>.</li>
 <li>Move sample-driver code and debugging helpers into <code>if __name__ == "__main__":</code> blocks or dedicated scripts.</li>
 <li>Add a lightweight test or lint-like assertion that production modules do not contain uncategorized top-level <code>print()</code> calls.</li>
 </ol>
@@ -7229,9 +7229,9 @@
 <p>Experimental work is good. Leaving it in production-adjacent trees without strong boundaries makes discovery noisier, encourages accidental coupling, and makes the production surface look less intentional than it is.</p>
 <h3 id="fix-steps_2">Fix steps</h3>
 <ol>
-<li>Move proof-of-concept code into a clearly isolated top-level <code>experiments/</code> or <code>research/</code> area, or explicitly mark it as non-production in module names and docs.</li>
-<li>Move experimental diagnostics variants out of the default runtime namespace unless they are active candidates for shipping.</li>
-<li>Add a short README in each experimental area defining its status, owner, and graduation criteria.</li>
+<li>~~Move proof-of-concept code into a clearly isolated top-level <code>experiments/</code> or <code>research/</code> area, or explicitly mark it as non-production in module names and docs.~~ <strong>Done</strong> (PR #474): Moved 18 PoC scripts to top-level <code>experiments/</code>.</li>
+<li>~~Move experimental diagnostics variants out of the default runtime namespace unless they are active candidates for shipping.~~ <strong>Done</strong> (PR #474): Deleted 6 <code>experimental_premise_attack{1-6}.py</code> files superseded by production <code>premise_attack.py</code>.</li>
+<li>~~Add a short README in each experimental area defining its status, owner, and graduation criteria.~~ <strong>Done</strong> (PR #474): Added <code>experiments/README.md</code>.</li>
 <li>Ensure production imports never depend on experimental modules.</li>
 </ol>
 <h2 id="issue-4-broad-exception-handling">Issue 4: Broad Exception Handling</h2>
