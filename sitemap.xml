@@ -749,11 +749,19 @@
          <lastmod>2026-04-02</lastmod>
     </url>
     <url>
+         <loc>https://docs.planexe.org/superpowers/plans/2026-04-02-split-mcp-cloud-http-server/</loc>
+         <lastmod>2026-04-02</lastmod>
+    </url>
+    <url>
          <loc>https://docs.planexe.org/superpowers/specs/2026-03-28-plan-feedback-design/</loc>
          <lastmod>2026-04-02</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/superpowers/specs/2026-03-31-split-frontend-multi-user-app-design/</loc>
+         <lastmod>2026-04-02</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/superpowers/specs/2026-04-02-split-mcp-cloud-http-server-design/</loc>
          <lastmod>2026-04-02</lastmod>
     </url>
 </urlset>
