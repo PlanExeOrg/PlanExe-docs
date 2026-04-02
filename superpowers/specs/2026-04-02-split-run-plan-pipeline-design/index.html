@@ -9,34 +9,28 @@
         <meta name="description" content="From a single goal statement to a full strategic plan. Free and open source.">
       
       
-        <meta name="author" content="PlanExe Team">
+      
+        <link rel="canonical" href="https://docs.planexe.org/superpowers/specs/2026-04-02-split-run-plan-pipeline-design/">
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/131-codebase-cleanliness-remediation-roadmap/">
-      
-      
-        <link rel="prev" href="../130-per-task-sampling-profiles/">
-      
-      
-        <link rel="next" href="../14-confidence-weighted-funding-auctions/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/favicon.png">
+      <link rel="icon" href="../../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Codebase Cleanliness Remediation Roadmap - PlanExe Documentation</title>
+        <title>Split run_plan_pipeline.py — Design Spec - PlanExe Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,11 +49,11 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/copy-all.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/copy-all.css">
     
-      <link rel="stylesheet" href="../../assets/stylesheets/nav-status.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/nav-status.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -77,17 +71,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Codebase Cleanliness Remediation Roadmap - PlanExe Documentation" />
+<meta property="og:title" content="Split run_plan_pipeline.py — Design Spec - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/131-codebase-cleanliness-remediation-roadmap.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/superpowers/specs/2026-04-02-split-run-plan-pipeline-design.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/131-codebase-cleanliness-remediation-roadmap/" />
+<meta property="og:url" content="https://docs.planexe.org/superpowers/specs/2026-04-02-split-run-plan-pipeline-design/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Codebase Cleanliness Remediation Roadmap - PlanExe Documentation" />
+<meta property="twitter:title" content="Split run_plan_pipeline.py — Design Spec - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/131-codebase-cleanliness-remediation-roadmap.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/superpowers/specs/2026-04-02-split-run-plan-pipeline-design.png" />
 </head>
   
   
@@ -107,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#codebase-cleanliness-remediation-roadmap" class="md-skip">
+        <a href="#split-run_plan_pipelinepy-design-spec" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +119,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://planexe.org" title="PlanExe Documentation" class="md-header__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -142,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Codebase Cleanliness Remediation Roadmap
+              Split run_plan_pipeline.py — Design Spec
             
           </span>
         </div>
@@ -249,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -269,7 +263,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../mcp/mcp_welcome/" class="md-tabs__link">
+        <a href="../../../mcp/mcp_welcome/" class="md-tabs__link">
           
   
   
@@ -285,13 +279,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../plan/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../plan/" class="md-tabs__link">
           
   
   
@@ -333,7 +325,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://planexe.org" title="PlanExe Documentation" class="md-nav__button md-logo" aria-label="PlanExe Documentation" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
     PlanExe Documentation
@@ -410,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -438,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../start_here/" class="md-nav__link">
+      <a href="../../../start_here/" class="md-nav__link">
         
   
   
@@ -466,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/" class="md-nav__link">
+      <a href="../../../getting_started/" class="md-nav__link">
         
   
   
@@ -494,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prompt_writing_guide/" class="md-nav__link">
+      <a href="../../../prompt_writing_guide/" class="md-nav__link">
         
   
   
@@ -522,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plan_output_anatomy/" class="md-nav__link">
+      <a href="../../../plan_output_anatomy/" class="md-nav__link">
         
   
   
@@ -550,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../costs_and_models/" class="md-nav__link">
+      <a href="../../../costs_and_models/" class="md-nav__link">
         
   
   
@@ -578,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../../../faq/" class="md-nav__link">
         
   
   
@@ -606,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../statistics/" class="md-nav__link">
+      <a href="../../../statistics/" class="md-nav__link">
         
   
   
@@ -691,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/mcp_welcome/" class="md-nav__link">
+      <a href="../../../mcp/mcp_welcome/" class="md-nav__link">
         
   
   
@@ -719,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/mcp_setup/" class="md-nav__link">
+      <a href="../../../mcp/mcp_setup/" class="md-nav__link">
         
   
   
@@ -747,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/mcp_registry/" class="md-nav__link">
+      <a href="../../../mcp/mcp_registry/" class="md-nav__link">
         
   
   
@@ -775,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/inspector/" class="md-nav__link">
+      <a href="../../../mcp/inspector/" class="md-nav__link">
         
   
   
@@ -803,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/claude/" class="md-nav__link">
+      <a href="../../../mcp/claude/" class="md-nav__link">
         
   
   
@@ -831,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/cursor/" class="md-nav__link">
+      <a href="../../../mcp/cursor/" class="md-nav__link">
         
   
   
@@ -859,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/codex/" class="md-nav__link">
+      <a href="../../../mcp/codex/" class="md-nav__link">
         
   
   
@@ -887,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/antigravity/" class="md-nav__link">
+      <a href="../../../mcp/antigravity/" class="md-nav__link">
         
   
   
@@ -915,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/windsurf/" class="md-nav__link">
+      <a href="../../../mcp/windsurf/" class="md-nav__link">
         
   
   
@@ -943,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/lm_studio/" class="md-nav__link">
+      <a href="../../../mcp/lm_studio/" class="md-nav__link">
         
   
   
@@ -971,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/mcp_details/" class="md-nav__link">
+      <a href="../../../mcp/mcp_details/" class="md-nav__link">
         
   
   
@@ -999,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/mcp_troubleshooting/" class="md-nav__link">
+      <a href="../../../mcp/mcp_troubleshooting/" class="md-nav__link">
         
   
   
@@ -1027,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/planexe_mcp_interface/" class="md-nav__link">
+      <a href="../../../mcp/planexe_mcp_interface/" class="md-nav__link">
         
   
   
@@ -1055,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/autonomous_agent_guide/" class="md-nav__link">
+      <a href="../../../mcp/autonomous_agent_guide/" class="md-nav__link">
         
   
   
@@ -1087,29 +1079,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -1127,7 +1114,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1145,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plan/" class="md-nav__link">
+      <a href="../../../plan/" class="md-nav__link">
         
   
   
@@ -1173,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/" class="md-nav__link">
+      <a href="../../../docker/" class="md-nav__link">
         
   
   
@@ -1201,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install_developer/" class="md-nav__link">
+      <a href="../../../install_developer/" class="md-nav__link">
         
   
   
@@ -1229,7 +1216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../oauth/" class="md-nav__link">
+      <a href="../../../oauth/" class="md-nav__link">
         
   
   
@@ -1257,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../llm_config/" class="md-nav__link">
+      <a href="../../../llm_config/" class="md-nav__link">
         
   
   
@@ -1285,7 +1272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../token_counting/" class="md-nav__link">
+      <a href="../../../token_counting/" class="md-nav__link">
         
   
   
@@ -1363,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/open_dir_server/" class="md-nav__link">
+      <a href="../../../developer/open_dir_server/" class="md-nav__link">
         
   
   
@@ -1391,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/worker_plan/" class="md-nav__link">
+      <a href="../../../developer/worker_plan/" class="md-nav__link">
         
   
   
@@ -1419,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/frontend_single_user/" class="md-nav__link">
+      <a href="../../../developer/frontend_single_user/" class="md-nav__link">
         
   
   
@@ -1447,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/database_postgres/" class="md-nav__link">
+      <a href="../../../developer/database_postgres/" class="md-nav__link">
         
   
   
@@ -1475,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/worker_plan_database/" class="md-nav__link">
+      <a href="../../../developer/worker_plan_database/" class="md-nav__link">
         
   
   
@@ -1503,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/frontend_multi_user/" class="md-nav__link">
+      <a href="../../../developer/frontend_multi_user/" class="md-nav__link">
         
   
   
@@ -1531,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../../developer/mcp_local/" class="md-nav__link">
         
   
   
@@ -1559,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_cloud/" class="md-nav__link">
+      <a href="../../../developer/mcp_cloud/" class="md-nav__link">
         
   
   
@@ -1645,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai_providers/openrouter/" class="md-nav__link">
+      <a href="../../../ai_providers/openrouter/" class="md-nav__link">
         
   
   
@@ -1673,7 +1660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai_providers/anthropic/" class="md-nav__link">
+      <a href="../../../ai_providers/anthropic/" class="md-nav__link">
         
   
   
@@ -1701,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai_providers/ollama/" class="md-nav__link">
+      <a href="../../../ai_providers/ollama/" class="md-nav__link">
         
   
   
@@ -1729,7 +1716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai_providers/lm_studio/" class="md-nav__link">
+      <a href="../../../ai_providers/lm_studio/" class="md-nav__link">
         
   
   
@@ -1757,7 +1744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai_providers/mistral/" class="md-nav__link">
+      <a href="../../../ai_providers/mistral/" class="md-nav__link">
         
   
   
@@ -1793,7 +1780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../status/" class="md-nav__link">
+      <a href="../../../status/" class="md-nav__link">
         
   
   
@@ -1821,7 +1808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../railway/" class="md-nav__link">
+      <a href="../../../railway/" class="md-nav__link">
         
   
   
@@ -1849,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deployment_hosting/" class="md-nav__link">
+      <a href="../../../deployment_hosting/" class="md-nav__link">
         
   
   
@@ -1877,7 +1864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docs_style_guide/" class="md-nav__link">
+      <a href="../../../docs_style_guide/" class="md-nav__link">
         
   
   
@@ -1955,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting_stuck_pipeline/" class="md-nav__link">
+      <a href="../../../troubleshooting_stuck_pipeline/" class="md-nav__link">
         
   
   
@@ -1988,8 +1975,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2000,11 +1985,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
         
           
           <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
@@ -2025,7 +2010,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_14">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2043,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-triage/" class="md-nav__link">
+      <a href="../../../proposals/00-triage/" class="md-nav__link">
         
   
   
@@ -2071,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-agent-smart-routing/" class="md-nav__link">
+      <a href="../../../proposals/01-agent-smart-routing/" class="md-nav__link">
         
   
   
@@ -2106,7 +2091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-plans-as-LLM-templates/" class="md-nav__link">
+      <a href="../../../proposals/02-plans-as-LLM-templates/" class="md-nav__link">
         
   
   
@@ -2141,7 +2126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-distributed-plan-execution/" class="md-nav__link">
+      <a href="../../../proposals/03-distributed-plan-execution/" class="md-nav__link">
         
   
   
@@ -2176,7 +2161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-plan-explain-as-API-service/" class="md-nav__link">
+      <a href="../../../proposals/04-plan-explain-as-API-service/" class="md-nav__link">
         
   
   
@@ -2211,7 +2196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-semantic-plan-search-graph/" class="md-nav__link">
+      <a href="../../../proposals/05-semantic-plan-search-graph/" class="md-nav__link">
         
   
   
@@ -2246,7 +2231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-adopt-on-the-fly/" class="md-nav__link">
+      <a href="../../../proposals/06-adopt-on-the-fly/" class="md-nav__link">
         
   
   
@@ -2274,7 +2259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-elo-ranking/" class="md-nav__link">
+      <a href="../../../proposals/07-elo-ranking/" class="md-nav__link">
         
   
   
@@ -2309,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-ui-for-editing-plan/" class="md-nav__link">
+      <a href="../../../proposals/08-ui-for-editing-plan/" class="md-nav__link">
         
   
   
@@ -2344,7 +2329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../100-lobster-museum-donation-routing/" class="md-nav__link">
+      <a href="../../../proposals/100-lobster-museum-donation-routing/" class="md-nav__link">
         
   
   
@@ -2372,7 +2357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../101-luigi-resume-enhancements/" class="md-nav__link">
+      <a href="../../../proposals/101-luigi-resume-enhancements/" class="md-nav__link">
         
   
   
@@ -2400,7 +2385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../102-pipeline-intelligence-layer/" class="md-nav__link">
+      <a href="../../../proposals/102-pipeline-intelligence-layer/" class="md-nav__link">
         
   
   
@@ -2428,7 +2413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../103-pipeline-hardening-roadmap-local-model-reliability/" class="md-nav__link">
+      <a href="../../../proposals/103-pipeline-hardening-roadmap-local-model-reliability/" class="md-nav__link">
         
   
   
@@ -2456,7 +2441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../104-llm-config-thinking-control/" class="md-nav__link">
+      <a href="../../../proposals/104-llm-config-thinking-control/" class="md-nav__link">
         
   
   
@@ -2484,7 +2469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../105-currency-service/" class="md-nav__link">
+      <a href="../../../proposals/105-currency-service/" class="md-nav__link">
         
   
   
@@ -2512,7 +2497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../106-resource-cost-data/" class="md-nav__link">
+      <a href="../../../proposals/106-resource-cost-data/" class="md-nav__link">
         
   
   
@@ -2540,7 +2525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../107-domain-aware-normalizer/" class="md-nav__link">
+      <a href="../../../proposals/107-domain-aware-normalizer/" class="md-nav__link">
         
   
   
@@ -2568,7 +2553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../108-llm-thinking-mode-middleware/" class="md-nav__link">
+      <a href="../../../proposals/108-llm-thinking-mode-middleware/" class="md-nav__link">
         
   
   
@@ -2596,7 +2581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../109-llm-executor-retry-improvements/" class="md-nav__link">
+      <a href="../../../proposals/109-llm-executor-retry-improvements/" class="md-nav__link">
         
   
   
@@ -2624,7 +2609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-investor-thesis-matching-engine/" class="md-nav__link">
+      <a href="../../../proposals/11-investor-thesis-matching-engine/" class="md-nav__link">
         
   
   
@@ -2659,7 +2644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../110-usage-metrics-local-runs/" class="md-nav__link">
+      <a href="../../../proposals/110-usage-metrics-local-runs/" class="md-nav__link">
         
   
   
@@ -2687,7 +2672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../111-promising-directions/" class="md-nav__link">
+      <a href="../../../proposals/111-promising-directions/" class="md-nav__link">
         
   
   
@@ -2715,7 +2700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../112-end-to-end-test-plan/" class="md-nav__link">
+      <a href="../../../proposals/112-end-to-end-test-plan/" class="md-nav__link">
         
   
   
@@ -2743,7 +2728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../113-llm-error-traceability/" class="md-nav__link">
+      <a href="../../../proposals/113-llm-error-traceability/" class="md-nav__link">
         
   
   
@@ -2771,7 +2756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../114-mcp-interface-feedback-stress-test/" class="md-nav__link">
+      <a href="../../../proposals/114-mcp-interface-feedback-stress-test/" class="md-nav__link">
         
   
   
@@ -2799,7 +2784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../115-mcp-roadmap/" class="md-nav__link">
+      <a href="../../../proposals/115-mcp-roadmap/" class="md-nav__link">
         
   
   
@@ -2827,7 +2812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../116-home-roadmap/" class="md-nav__link">
+      <a href="../../../proposals/116-home-roadmap/" class="md-nav__link">
         
   
   
@@ -2855,7 +2840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../117-system-prompt-optimizer/" class="md-nav__link">
+      <a href="../../../proposals/117-system-prompt-optimizer/" class="md-nav__link">
         
   
   
@@ -2883,7 +2868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../118-two-pass-pipeline/" class="md-nav__link">
+      <a href="../../../proposals/118-two-pass-pipeline/" class="md-nav__link">
         
   
   
@@ -2911,7 +2896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../119-lever-pipeline-impl/" class="md-nav__link">
+      <a href="../../../proposals/119-lever-pipeline-impl/" class="md-nav__link">
         
   
   
@@ -2939,7 +2924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../12-evidence-based-founder-execution-index/" class="md-nav__link">
+      <a href="../../../proposals/12-evidence-based-founder-execution-index/" class="md-nav__link">
         
   
   
@@ -2974,7 +2959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../120-agent-spawning-execution/" class="md-nav__link">
+      <a href="../../../proposals/120-agent-spawning-execution/" class="md-nav__link">
         
   
   
@@ -3002,7 +2987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../121-plan-spawns-agents/" class="md-nav__link">
+      <a href="../../../proposals/121-plan-spawns-agents/" class="md-nav__link">
         
   
   
@@ -3030,7 +3015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../122-deduplicate-levers/" class="md-nav__link">
+      <a href="../../../proposals/122-deduplicate-levers/" class="md-nav__link">
         
   
   
@@ -3058,7 +3043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../123-evidence_discipline_anti_handwave_claim_calibration/" class="md-nav__link">
+      <a href="../../../proposals/123-evidence_discipline_anti_handwave_claim_calibration/" class="md-nav__link">
         
   
   
@@ -3086,7 +3071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../125-planexe-as-reasoning-probe/" class="md-nav__link">
+      <a href="../../../proposals/125-planexe-as-reasoning-probe/" class="md-nav__link">
         
   
   
@@ -3121,7 +3106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../126-arc-agi3-structured-exploration/" class="md-nav__link">
+      <a href="../../../proposals/126-arc-agi3-structured-exploration/" class="md-nav__link">
         
   
   
@@ -3149,7 +3134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../127-mcp-feedback/" class="md-nav__link">
+      <a href="../../../proposals/127-mcp-feedback/" class="md-nav__link">
         
   
   
@@ -3177,7 +3162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../128-compiler-model-quality-metrics-dogfood-execution/" class="md-nav__link">
+      <a href="../../../proposals/128-compiler-model-quality-metrics-dogfood-execution/" class="md-nav__link">
         
   
   
@@ -3205,7 +3190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../129-prompt-dentist-pre-pipeline-enrichment/" class="md-nav__link">
+      <a href="../../../proposals/129-prompt-dentist-pre-pipeline-enrichment/" class="md-nav__link">
         
   
   
@@ -3233,7 +3218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../13-portfolio-aware-capital-allocation/" class="md-nav__link">
+      <a href="../../../proposals/13-portfolio-aware-capital-allocation/" class="md-nav__link">
         
   
   
@@ -3268,7 +3253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../130-per-task-sampling-profiles/" class="md-nav__link">
+      <a href="../../../proposals/130-per-task-sampling-profiles/" class="md-nav__link">
         
   
   
@@ -3293,44 +3278,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    131 codebase cleanliness remediation roadmap
-  
-
-    
-  </span>
-  
-  
-    
-  
-  
-    <span class="md-status md-status--Proposal"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../proposals/131-codebase-cleanliness-remediation-roadmap/" class="md-nav__link">
         
   
   
@@ -3353,475 +3304,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pitch
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#feasibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Feasibility
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proposal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-1-giant-load-bearing-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 1: Giant Load-Bearing Modules
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 1: Giant Load-Bearing Modules">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-2-debug-scaffolding-in-production-entrypoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 2: Debug Scaffolding in Production Entrypoints
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 2: Debug Scaffolding in Production Entrypoints">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-3-experimental-code-mixed-with-production-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 3: Experimental Code Mixed with Production Code
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 3: Experimental Code Mixed with Production Code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-4-broad-exception-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 4: Broad Exception Handling
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 4: Broad Exception Handling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-5-uneven-logging-and-runtime-hygiene" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 5: Uneven Logging and Runtime Hygiene
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 5: Uneven Logging and Runtime Hygiene">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-6-test-gaps-in-high-risk-service-areas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 6: Test Gaps in High-Risk Service Areas
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 6: Test Gaps in High-Risk Service Areas">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-inventory-and-safety-rails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Inventory and Safety Rails
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-split-the-worst-offenders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Split the Worst Offenders
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-remove-operational-noise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Remove Operational Noise
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-exception-and-test-cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Exception and Test Cleanup
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Success Metrics
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-now" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Now
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3834,7 +3316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../14-confidence-weighted-funding-auctions/" class="md-nav__link">
+      <a href="../../../proposals/14-confidence-weighted-funding-auctions/" class="md-nav__link">
         
   
   
@@ -3869,7 +3351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
+      <a href="../../../proposals/15-outcome-feedback-and-model-governance/" class="md-nav__link">
         
   
   
@@ -3904,7 +3386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
+      <a href="../../../proposals/16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
         
   
   
@@ -3939,7 +3421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../17-plugin-adaptation-lifecycle/" class="md-nav__link">
+      <a href="../../../proposals/17-plugin-adaptation-lifecycle/" class="md-nav__link">
         
   
   
@@ -3974,7 +3456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
+      <a href="../../../proposals/18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
         
   
   
@@ -4009,7 +3491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
+      <a href="../../../proposals/19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
         
   
   
@@ -4044,7 +3526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
+      <a href="../../../proposals/20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
         
   
   
@@ -4079,7 +3561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../21-expert-discovery-and-fit-scoring/" class="md-nav__link">
+      <a href="../../../proposals/21-expert-discovery-and-fit-scoring/" class="md-nav__link">
         
   
   
@@ -4114,7 +3596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../22-multi-stage-verification-workflow/" class="md-nav__link">
+      <a href="../../../proposals/22-multi-stage-verification-workflow/" class="md-nav__link">
         
   
   
@@ -4149,7 +3631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
+      <a href="../../../proposals/23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
         
   
   
@@ -4184,7 +3666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../24-cross-border-project-verification-framework/" class="md-nav__link">
+      <a href="../../../proposals/24-cross-border-project-verification-framework/" class="md-nav__link">
         
   
   
@@ -4219,7 +3701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../25-verification-incentives-governance-and-liability/" class="md-nav__link">
+      <a href="../../../proposals/25-verification-incentives-governance-and-liability/" class="md-nav__link">
         
   
   
@@ -4254,7 +3736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
+      <a href="../../../proposals/26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
         
   
   
@@ -4289,7 +3771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../27-multi-angle-topic-verification-engine/" class="md-nav__link">
+      <a href="../../../proposals/27-multi-angle-topic-verification-engine/" class="md-nav__link">
         
   
   
@@ -4324,7 +3806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../28-autonomous-bid-factory-orchestration/" class="md-nav__link">
+      <a href="../../../proposals/28-autonomous-bid-factory-orchestration/" class="md-nav__link">
         
   
   
@@ -4359,7 +3841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
+      <a href="../../../proposals/29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
         
   
   
@@ -4394,7 +3876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
+      <a href="../../../proposals/30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
         
   
   
@@ -4429,7 +3911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../31-token-counting-and-cost-transparency/" class="md-nav__link">
+      <a href="../../../proposals/31-token-counting-and-cost-transparency/" class="md-nav__link">
         
   
   
@@ -4464,7 +3946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
+      <a href="../../../proposals/32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
         
   
   
@@ -4499,7 +3981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../33-cost-breakdown-structure-cbs/" class="md-nav__link">
+      <a href="../../../proposals/33-cost-breakdown-structure-cbs/" class="md-nav__link">
         
   
   
@@ -4534,7 +4016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../34-finance-top-down-estimation/" class="md-nav__link">
+      <a href="../../../proposals/34-finance-top-down-estimation/" class="md-nav__link">
         
   
   
@@ -4569,7 +4051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
+      <a href="../../../proposals/35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
         
   
   
@@ -4604,7 +4086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
+      <a href="../../../proposals/36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
         
   
   
@@ -4639,7 +4121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
+      <a href="../../../proposals/37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
         
   
   
@@ -4674,7 +4156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
+      <a href="../../../proposals/38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
         
   
   
@@ -4709,7 +4191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
+      <a href="../../../proposals/39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
         
   
   
@@ -4744,7 +4226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
+      <a href="../../../proposals/40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
         
   
   
@@ -4779,7 +4261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../41-autonomous-execution-of-plan/" class="md-nav__link">
+      <a href="../../../proposals/41-autonomous-execution-of-plan/" class="md-nav__link">
         
   
   
@@ -4814,7 +4296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
+      <a href="../../../proposals/42-evidence-traceability-ledger/" class="md-nav__link">
         
   
   
@@ -4849,7 +4331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../43-assumption-drift-monitor/" class="md-nav__link">
+      <a href="../../../proposals/43-assumption-drift-monitor/" class="md-nav__link">
         
   
   
@@ -4884,7 +4366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../44-investor-grade-audit-pack-generator/" class="md-nav__link">
+      <a href="../../../proposals/44-investor-grade-audit-pack-generator/" class="md-nav__link">
         
   
   
@@ -4919,7 +4401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../45-counterfactual-scenario-explorer/" class="md-nav__link">
+      <a href="../../../proposals/45-counterfactual-scenario-explorer/" class="md-nav__link">
         
   
   
@@ -4954,7 +4436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../46-execution-readiness-scoring/" class="md-nav__link">
+      <a href="../../../proposals/46-execution-readiness-scoring/" class="md-nav__link">
         
   
   
@@ -4989,7 +4471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../47-openclaw-agent-skill-integration/" class="md-nav__link">
+      <a href="../../../proposals/47-openclaw-agent-skill-integration/" class="md-nav__link">
         
   
   
@@ -5024,7 +4506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../48-moltbook-reputation-bridge/" class="md-nav__link">
+      <a href="../../../proposals/48-moltbook-reputation-bridge/" class="md-nav__link">
         
   
   
@@ -5059,7 +4541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
+      <a href="../../../proposals/49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
         
   
   
@@ -5094,7 +4576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../50-agent-to-agent-payment-gateway/" class="md-nav__link">
+      <a href="../../../proposals/50-agent-to-agent-payment-gateway/" class="md-nav__link">
         
   
   
@@ -5129,7 +4611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../51-decentralized-planexe-survivability/" class="md-nav__link">
+      <a href="../../../proposals/51-decentralized-planexe-survivability/" class="md-nav__link">
         
   
   
@@ -5164,7 +4646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../52-mcp-oauth/" class="md-nav__link">
+      <a href="../../../proposals/52-mcp-oauth/" class="md-nav__link">
         
   
   
@@ -5199,7 +4681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../53-uuid-only-task-id/" class="md-nav__link">
+      <a href="../../../proposals/53-uuid-only-task-id/" class="md-nav__link">
         
   
   
@@ -5234,7 +4716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../54-agent-safety-trusted-information/" class="md-nav__link">
+      <a href="../../../proposals/54-agent-safety-trusted-information/" class="md-nav__link">
         
   
   
@@ -5262,7 +4744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
+      <a href="../../../proposals/55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
         
   
   
@@ -5297,7 +4779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
+      <a href="../../../proposals/56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
         
   
   
@@ -5332,7 +4814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
+      <a href="../../../proposals/57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
         
   
   
@@ -5367,7 +4849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../58-boost-initial-prompt/" class="md-nav__link">
+      <a href="../../../proposals/58-boost-initial-prompt/" class="md-nav__link">
         
   
   
@@ -5402,7 +4884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
+      <a href="../../../proposals/59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
         
   
   
@@ -5437,7 +4919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../60-plan-to-repo/" class="md-nav__link">
+      <a href="../../../proposals/60-plan-to-repo/" class="md-nav__link">
         
   
   
@@ -5472,7 +4954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../61-post-plan-agent-swarm/" class="md-nav__link">
+      <a href="../../../proposals/61-post-plan-agent-swarm/" class="md-nav__link">
         
   
   
@@ -5500,7 +4982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../62-agent-first-frontend-discoverability/" class="md-nav__link">
+      <a href="../../../proposals/62-agent-first-frontend-discoverability/" class="md-nav__link">
         
   
   
@@ -5528,7 +5010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../63-luigi-agent-integration/" class="md-nav__link">
+      <a href="../../../proposals/63-luigi-agent-integration/" class="md-nav__link">
         
   
   
@@ -5556,7 +5038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../64-post-plan-orchestration-layer/" class="md-nav__link">
+      <a href="../../../proposals/64-post-plan-orchestration-layer/" class="md-nav__link">
         
   
   
@@ -5584,7 +5066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../65-git-state-machine-enrichment/" class="md-nav__link">
+      <a href="../../../proposals/65-git-state-machine-enrichment/" class="md-nav__link">
         
   
   
@@ -5612,7 +5094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../66-post-plan-enrichment-swarm/" class="md-nav__link">
+      <a href="../../../proposals/66-post-plan-enrichment-swarm/" class="md-nav__link">
         
   
   
@@ -5647,7 +5129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../67-buildinpublic-twitter-automation/" class="md-nav__link">
+      <a href="../../../proposals/67-buildinpublic-twitter-automation/" class="md-nav__link">
         
   
   
@@ -5675,7 +5157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../68-domain-aware-plan-ranking-engine/" class="md-nav__link">
+      <a href="../../../proposals/68-domain-aware-plan-ranking-engine/" class="md-nav__link">
         
   
   
@@ -5710,7 +5192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../69-arcgentica-agent-patterns/" class="md-nav__link">
+      <a href="../../../proposals/69-arcgentica-agent-patterns/" class="md-nav__link">
         
   
   
@@ -5745,7 +5227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
+      <a href="../../../proposals/70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
         
   
   
@@ -5773,7 +5255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../71-strategy-auditor/" class="md-nav__link">
+      <a href="../../../proposals/71-strategy-auditor/" class="md-nav__link">
         
   
   
@@ -5801,7 +5283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../72-ai-replacing-c-level-roles/" class="md-nav__link">
+      <a href="../../../proposals/72-ai-replacing-c-level-roles/" class="md-nav__link">
         
   
   
@@ -5829,7 +5311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
+      <a href="../../../proposals/73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
         
   
   
@@ -5857,7 +5339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../74-rename-taskitem-to-planitem/" class="md-nav__link">
+      <a href="../../../proposals/74-rename-taskitem-to-planitem/" class="md-nav__link">
         
   
   
@@ -5885,7 +5367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../75-post-rename-cleanup-issues/" class="md-nav__link">
+      <a href="../../../proposals/75-post-rename-cleanup-issues/" class="md-nav__link">
         
   
   
@@ -5913,7 +5395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../76-x402-a2a-payment-roadmap/" class="md-nav__link">
+      <a href="../../../proposals/76-x402-a2a-payment-roadmap/" class="md-nav__link">
         
   
   
@@ -5941,7 +5423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../77-ccusage-real-data-analysis/" class="md-nav__link">
+      <a href="../../../proposals/77-ccusage-real-data-analysis/" class="md-nav__link">
         
   
   
@@ -5969,7 +5451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../78-planexe-growth-awareness-strategy/" class="md-nav__link">
+      <a href="../../../proposals/78-planexe-growth-awareness-strategy/" class="md-nav__link">
         
   
   
@@ -5997,7 +5479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../79-multiple-api-keys/" class="md-nav__link">
+      <a href="../../../proposals/79-multiple-api-keys/" class="md-nav__link">
         
   
   
@@ -6025,7 +5507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../80-zero-downtime-railway-deployment/" class="md-nav__link">
+      <a href="../../../proposals/80-zero-downtime-railway-deployment/" class="md-nav__link">
         
   
   
@@ -6053,7 +5535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../81-mcp-api-key-validation/" class="md-nav__link">
+      <a href="../../../proposals/81-mcp-api-key-validation/" class="md-nav__link">
         
   
   
@@ -6081,7 +5563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../82-measure-drift-proposal/" class="md-nav__link">
+      <a href="../../../proposals/82-measure-drift-proposal/" class="md-nav__link">
         
   
   
@@ -6109,7 +5591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../83-measure-drift-specification/" class="md-nav__link">
+      <a href="../../../proposals/83-measure-drift-specification/" class="md-nav__link">
         
   
   
@@ -6137,7 +5619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../84-business-idea-proposal/" class="md-nav__link">
+      <a href="../../../proposals/84-business-idea-proposal/" class="md-nav__link">
         
   
   
@@ -6165,7 +5647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../85-business-idea-specification/" class="md-nav__link">
+      <a href="../../../proposals/85-business-idea-specification/" class="md-nav__link">
         
   
   
@@ -6193,7 +5675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../86-agent-optimized-pipeline/" class="md-nav__link">
+      <a href="../../../proposals/86-agent-optimized-pipeline/" class="md-nav__link">
         
   
   
@@ -6221,7 +5703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../87-plan-resume-mcp-tool/" class="md-nav__link">
+      <a href="../../../proposals/87-plan-resume-mcp-tool/" class="md-nav__link">
         
   
   
@@ -6249,7 +5731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../88-fermi-sanity-check-validation-gate/" class="md-nav__link">
+      <a href="../../../proposals/88-fermi-sanity-check-validation-gate/" class="md-nav__link">
         
   
   
@@ -6277,7 +5759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../89-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
+      <a href="../../../proposals/89-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
         
   
   
@@ -6305,7 +5787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../90-complexity-assessment-bubba-haiku/" class="md-nav__link">
+      <a href="../../../proposals/90-complexity-assessment-bubba-haiku/" class="md-nav__link">
         
   
   
@@ -6333,7 +5815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../91-complexity-assessment-larry-sonnet/" class="md-nav__link">
+      <a href="../../../proposals/91-complexity-assessment-larry-sonnet/" class="md-nav__link">
         
   
   
@@ -6361,7 +5843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../92-task-complexity-routing/" class="md-nav__link">
+      <a href="../../../proposals/92-task-complexity-routing/" class="md-nav__link">
         
   
   
@@ -6389,7 +5871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../93-local-model-roadmap/" class="md-nav__link">
+      <a href="../../../proposals/93-local-model-roadmap/" class="md-nav__link">
         
   
   
@@ -6417,7 +5899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../94-autoresearch-style-prompt-optimization/" class="md-nav__link">
+      <a href="../../../proposals/94-autoresearch-style-prompt-optimization/" class="md-nav__link">
         
   
   
@@ -6452,7 +5934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../95-model-routing-ux-modes/" class="md-nav__link">
+      <a href="../../../proposals/95-model-routing-ux-modes/" class="md-nav__link">
         
   
   
@@ -6480,7 +5962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../96-cache-aware-model-handoff/" class="md-nav__link">
+      <a href="../../../proposals/96-cache-aware-model-handoff/" class="md-nav__link">
         
   
   
@@ -6508,7 +5990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../97-drift-measurement-pseudocode-impl/" class="md-nav__link">
+      <a href="../../../proposals/97-drift-measurement-pseudocode-impl/" class="md-nav__link">
         
   
   
@@ -6536,7 +6018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../98-pipeline-benchmark-prompts/" class="md-nav__link">
+      <a href="../../../proposals/98-pipeline-benchmark-prompts/" class="md-nav__link">
         
   
   
@@ -6564,7 +6046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../99-human-utility-show-pedigree/" class="md-nav__link">
+      <a href="../../../proposals/99-human-utility-show-pedigree/" class="md-nav__link">
         
   
   
@@ -6592,7 +6074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ensemble-judge-refinement/" class="md-nav__link">
+      <a href="../../../proposals/ensemble-judge-refinement/" class="md-nav__link">
         
   
   
@@ -6620,7 +6102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../parallel-racing-robustness/" class="md-nav__link">
+      <a href="../../../proposals/parallel-racing-robustness/" class="md-nav__link">
         
   
   
@@ -6683,10 +6165,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pitch" class="md-nav__link">
+  <a href="#goal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pitch
+        Goal
       
     </span>
   </a>
@@ -6705,10 +6187,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#feasibility" class="md-nav__link">
+  <a href="#design-priorities" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feasibility
+        Design Priorities
       
     </span>
   </a>
@@ -6716,10 +6198,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#proposal" class="md-nav__link">
+  <a href="#approach" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposal
+        Approach
       
     </span>
   </a>
@@ -6727,22 +6209,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#issue-1-giant-load-bearing-modules" class="md-nav__link">
+  <a href="#new-module-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issue 1: Giant Load-Bearing Modules
+        New Module Layout
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Issue 1: Giant Load-Bearing Modules">
+    <nav class="md-nav" aria-label="New Module Layout">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#evidence" class="md-nav__link">
+  <a href="#run_plan_pipelinepy-280-lines-slimmed-core" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Evidence
+        run_plan_pipeline.py (~280 lines, slimmed core)
       
     </span>
   </a>
@@ -6750,10 +6232,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-it-is-a-problem" class="md-nav__link">
+  <a href="#stages-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why it is a problem
+        stages/ directory
       
     </span>
   </a>
@@ -6761,10 +6243,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fix-steps" class="md-nav__link">
+  <a href="#stages__init__py" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fix steps
+        stages/__init__.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stagesfull_plan_pipelinepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stages/full_plan_pipeline.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-file-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete file list
       
     </span>
   </a>
@@ -6777,321 +6281,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#issue-2-debug-scaffolding-in-production-entrypoints" class="md-nav__link">
+  <a href="#dag-insertion-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issue 2: Debug Scaffolding in Production Entrypoints
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 2: Debug Scaffolding in Production Entrypoints">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-3-experimental-code-mixed-with-production-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 3: Experimental Code Mixed with Production Code
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 3: Experimental Code Mixed with Production Code">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-4-broad-exception-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 4: Broad Exception Handling
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 4: Broad Exception Handling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-5-uneven-logging-and-runtime-hygiene" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 5: Uneven Logging and Runtime Hygiene
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 5: Uneven Logging and Runtime Hygiene">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#issue-6-test-gaps-in-high-risk-service-areas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue 6: Test Gaps in High-Risk Service Areas
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Issue 6: Test Gaps in High-Risk Service Areas">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#evidence_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Evidence
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-is-a-problem_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is a problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fix-steps_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Plan
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Plan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#phase-1-inventory-and-safety-rails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 1: Inventory and Safety Rails
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-2-split-the-worst-offenders" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 2: Split the Worst Offenders
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-3-remove-operational-noise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 3: Remove Operational Noise
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#phase-4-exception-and-test-cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Phase 4: Exception and Test Cleanup
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Points
+        DAG Insertion Example
       
     </span>
   </a>
@@ -7099,10 +6292,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#success-metrics" class="md-nav__link">
+  <a href="#what-does-not-change" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Success Metrics
+        What Does NOT Change
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-movement-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Movement Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agentsmd-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGENTS.md Update
       
     </span>
   </a>
@@ -7114,17 +6329,6 @@
     <span class="md-ellipsis">
       
         Risks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-now" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Now
       
     </span>
   </a>
@@ -7151,195 +6355,224 @@
   
 
 
-<h1 id="codebase-cleanliness-remediation-roadmap">Codebase Cleanliness Remediation Roadmap</h1>
-<p><strong>Author:</strong> PlanExe Team<br />
-<strong>Date:</strong> 2026-03-31<br />
-<strong>Status:</strong> Proposal<br />
-<strong>Tags:</strong> <code>codebase</code>, <code>refactor</code>, <code>maintainability</code>, <code>testing</code>, <code>architecture</code></p>
+<h1 id="split-run_plan_pipelinepy-design-spec">Split run_plan_pipeline.py — Design Spec</h1>
+<p><strong>Date:</strong> 2026-04-02
+<strong>Status:</strong> Approved
+<strong>Tags:</strong> <code>worker_plan</code>, <code>refactor</code>, <code>maintainability</code>, <code>agent-isolation</code></p>
 <hr />
-<h2 id="pitch">Pitch</h2>
-<p>PlanExe has strong architectural intent, good repo-level guardrails, and a meaningful test footprint, but several core services have accumulated large load-bearing modules, mixed production and experimental code, and uneven operational hygiene. This proposal defines a cleanup program that improves maintainability without breaking service contracts or slowing ongoing product work.</p>
+<h2 id="goal">Goal</h2>
+<p>Split <code>worker_plan/worker_plan_internal/plan/run_plan_pipeline.py</code> (4,257 lines) into ~66 individual stage files plus a slim core module, optimizing for parallel agent work, <code>self_improve/</code> integration, and conflict-free DAG insertion.</p>
 <h2 id="problem">Problem</h2>
-<p>The codebase is not chaotic, but it is carrying too much complexity in too few files. The main issues found during inspection were:</p>
+<p><code>run_plan_pipeline.py</code> contains ~66 Luigi task classes, the <code>PlanTask</code> base class, <code>ExecutePipeline</code>, <code>FullPlanPipeline</code>, and supporting utilities — all in one file. This means:</p>
 <ol>
-<li>Giant modules that concentrate unrelated responsibilities.</li>
-<li>Debug and operational scaffolding mixed into production entrypoints.</li>
-<li>Experimental and proof-of-concept code living too close to production paths.</li>
-<li>Broad exception handling that weakens failure diagnosis.</li>
-<li>Uneven logging and runtime hygiene across services.</li>
-<li>Incomplete test coverage in some high-risk areas, especially the multi-user frontend.</li>
+<li>Two agents working on different pipeline steps must edit the same file, causing merge conflicts.</li>
+<li><code>self_improve/</code> cannot target an individual step file — it must reason about a 4,257-line module.</li>
+<li>Inserting a new task in the DAG requires editing the giant file, risking unrelated merge conflicts with other in-flight work.</li>
 </ol>
-<p>This matters because PlanExe is evolving into a multi-service execution engine. Large files and mixed concerns slow down review, increase regression risk, and make it harder for both humans and autonomous agents to safely change the system.</p>
-<h2 id="feasibility">Feasibility</h2>
-<p>This cleanup is feasible now because the repo already has several advantages:</p>
+<h2 id="design-priorities">Design Priorities</h2>
+<p>These priorities (from the user) override backward-compatibility concerns:</p>
 <ol>
-<li>Service boundaries are documented in package-level <code>AGENTS.md</code> files.</li>
-<li>Shared contracts are called out explicitly for <code>worker_plan</code>, <code>database_api</code>, <code>worker_plan_api</code>, <code>mcp_cloud</code>, and the frontends.</li>
-<li>There is already a meaningful unit-test base across <code>worker_plan</code>, <code>mcp_cloud</code>, <code>mcp_local</code>, and shared utilities.</li>
+<li><strong>Agent isolation</strong> — each pipeline step in its own file so agents never conflict.</li>
+<li><strong>Easy DAG insertion</strong> — adding a new task between two existing tasks touches only 2 files (the new file and the downstream file's <code>requires()</code>), never a central registry.</li>
+<li><strong><code>self_improve/</code> addressability</strong> — each step is an individually importable module.</li>
 </ol>
-<p>The main constraint is backward compatibility. We should not redesign public APIs while cleaning internals. The cleanup must preserve:</p>
+<h2 id="approach">Approach</h2>
+<p>Extract each task class into its own file under a new <code>stages/</code> directory. Each file declares its own Luigi <code>requires()</code> dependencies by importing its upstream task(s). <code>run_plan_pipeline.py</code> keeps only the shared framework (<code>PlanTask</code>, <code>ExecutePipeline</code>, etc.).</p>
+<h2 id="new-module-layout">New Module Layout</h2>
+<h3 id="run_plan_pipelinepy-280-lines-slimmed-core"><code>run_plan_pipeline.py</code> (~280 lines, slimmed core)</h3>
+<p>Keeps:
+- All imports needed by the framework classes
+- <code>PlanTask</code> base class (lines 105–215)
+- <code>_task_class_to_step_label</code> utility (lines 3851–3862)
+- <code>PipelineProgress</code> dataclass (lines 3866–3871)
+- <code>HandleTaskCompletionParameters</code> dataclass (lines 3875–3878)
+- <code>ExecutePipeline</code> dataclass (lines 3882–4107)
+- <code>DemoStoppingExecutePipeline</code> (lines 4109–4116)
+- <code>configure_logging</code> (lines 4119–4148)
+- <code>__main__</code> block (lines 4152–4258)
+- Module-level constants: <code>logger</code>, <code>DEFAULT_LLM_MODEL</code>, <code>REPORT_EXECUTE_PLAN_SECTION_HIDDEN</code></p>
+<p>Changes:
+- <code>ExecutePipeline.setup()</code> imports <code>FullPlanPipeline</code> from <code>stages.full_plan_pipeline</code> instead of referencing it as a module-level class.
+- The <code>__main__</code> block's <code>DemoStoppingExecutePipeline</code> reference stays (it's in the same file).
+- All ~66 task class definitions and their imports are removed.</p>
+<h3 id="stages-directory"><code>stages/</code> directory</h3>
+<p>Each file contains exactly one task class (except where noted). Files follow this pattern:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="sd">&quot;&quot;&quot;Pipeline stage: &lt;one-line description&gt;.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.run_plan_pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlanTask</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_api.filenames</span><span class="w"> </span><span class="kn">import</span> <span class="n">FilenameEnum</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># ... executor imports specific to this stage</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># ... upstream task imports from sibling stage files</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">FooTask</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">UpstreamTask</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">local_target</span><span class="p">(</span><span class="n">FilenameEnum</span><span class="o">.</span><span class="n">FOO</span><span class="p">)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">run_with_llm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">llm</span><span class="p">):</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="c1"># ... verbatim from current code</span>
+</code></pre></div>
+<h3 id="stages__init__py"><code>stages/__init__.py</code></h3>
+<p>Empty file. Stage files are imported directly by whoever needs them (other stages, <code>FullPlanPipeline</code>).</p>
+<h3 id="stagesfull_plan_pipelinepy"><code>stages/full_plan_pipeline.py</code></h3>
+<p>Contains <code>FullPlanPipeline</code> which imports all task classes and lists them in <code>requires()</code>. This is the only file that imports every stage — it's the DAG root.</p>
+<p><strong>Note:</strong> <code>FullPlanPipeline.requires()</code> currently lists ALL tasks explicitly (not just leaves). This is preserved verbatim to maintain identical Luigi behavior. Optimizing to leaf-only listing is a separate future change.</p>
+<h3 id="complete-file-list">Complete file list</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>stages/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── __init__.py
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── full_plan_pipeline.py
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│  # Phase 1: Input &amp; Validation
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── start_time.py                              (StartTimeTask)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>├── setup.py                                   (SetupTask)
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>├── redline_gate.py                            (RedlineGateTask)
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├── premise_attack.py                          (PremiseAttackTask)
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│  # Phase 2: Purpose &amp; Classification
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>├── identify_purpose.py                        (IdentifyPurposeTask)
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>├── plan_type.py                               (PlanTypeTask)
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│  # Phase 3: Strategic Options &amp; Scenarios
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>├── potential_levers.py                        (PotentialLeversTask)
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>├── deduplicate_levers.py                      (DeduplicateLeversTask)
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>├── enrich_levers.py                           (EnrichLeversTask)
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>├── focus_on_vital_few_levers.py               (FocusOnVitalFewLeversTask)
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>├── strategic_decisions_markdown.py            (StrategicDecisionsMarkdownTask)
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>├── candidate_scenarios.py                     (CandidateScenariosTask)
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>├── select_scenario.py                         (SelectScenarioTask)
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>├── scenarios_markdown.py                      (ScenariosMarkdownTask)
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>│
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>│  # Phase 4: Context
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>├── physical_locations.py                      (PhysicalLocationsTask)
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>├── currency_strategy.py                       (CurrencyStrategyTask)
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>├── identify_risks.py                          (IdentifyRisksTask)
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>│
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>│  # Phase 5: Assumptions
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>├── make_assumptions.py                        (MakeAssumptionsTask)
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>├── distill_assumptions.py                     (DistillAssumptionsTask)
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>├── review_assumptions.py                      (ReviewAssumptionsTask)
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>├── consolidate_assumptions_markdown.py        (ConsolidateAssumptionsMarkdownTask)
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>│
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>│  # Phase 6: Plan Foundation
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>├── pre_project_assessment.py                  (PreProjectAssessmentTask)
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>├── project_plan.py                            (ProjectPlanTask)
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>│
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>│  # Phase 7: Governance
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>├── governance_phase1_audit.py                 (GovernancePhase1AuditTask)
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>├── governance_phase2_bodies.py                (GovernancePhase2BodiesTask)
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>├── governance_phase3_impl_plan.py             (GovernancePhase3ImplPlanTask)
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>├── governance_phase4_decision_escalation_matrix.py (GovernancePhase4DecisionEscalationMatrixTask)
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>├── governance_phase5_monitoring_progress.py   (GovernancePhase5MonitoringProgressTask)
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>├── governance_phase6_extra.py                 (GovernancePhase6ExtraTask)
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>├── consolidate_governance.py                  (ConsolidateGovernanceTask)
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>│
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>│  # Phase 8: Team
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>├── related_resources.py                       (RelatedResourcesTask)
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>├── find_team_members.py                       (FindTeamMembersTask)
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>├── enrich_team_contract_type.py               (EnrichTeamMembersWithContractTypeTask)
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>├── enrich_team_background_story.py            (EnrichTeamMembersWithBackgroundStoryTask)
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>├── enrich_team_environment_info.py            (EnrichTeamMembersWithEnvironmentInfoTask)
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>├── review_team.py                             (ReviewTeamTask)
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>├── team_markdown.py                           (TeamMarkdownTask)
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>│
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>│  # Phase 9: Analysis
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>├── swot_analysis.py                           (SWOTAnalysisTask)
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>├── expert_review.py                           (ExpertReviewTask)
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>│
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>│  # Phase 10: Documents
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>├── data_collection.py                         (DataCollectionTask)
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>├── identify_documents.py                      (IdentifyDocumentsTask)
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>├── filter_documents_to_find.py                (FilterDocumentsToFindTask)
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>├── filter_documents_to_create.py              (FilterDocumentsToCreateTask)
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>├── draft_documents_to_find.py                 (DraftDocumentsToFindTask)
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>├── draft_documents_to_create.py               (DraftDocumentsToCreateTask)
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>├── markdown_documents.py                      (MarkdownWithDocumentsToCreateAndFindTask)
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>│
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>│  # Phase 11: WBS &amp; Pitch
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>├── create_wbs_level1.py                       (CreateWBSLevel1Task)
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>├── create_wbs_level2.py                       (CreateWBSLevel2Task)
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>├── wbs_project_level1_and_level2.py           (WBSProjectLevel1AndLevel2Task)
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>├── create_pitch.py                            (CreatePitchTask)
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>├── convert_pitch_to_markdown.py               (ConvertPitchToMarkdownTask)
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>├── identify_task_dependencies.py              (IdentifyTaskDependenciesTask)
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>├── estimate_task_durations.py                 (EstimateTaskDurationsTask)
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>├── create_wbs_level3.py                       (CreateWBSLevel3Task)
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>├── wbs_project_level1_level2_level3.py        (WBSProjectLevel1AndLevel2AndLevel3Task)
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>│
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>│  # Phase 12: Schedule &amp; Final Review
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>├── create_schedule.py                         (CreateScheduleTask)
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>├── review_plan.py                             (ReviewPlanTask)
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>├── executive_summary.py                       (ExecutiveSummaryTask)
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>├── questions_and_answers.py                   (QuestionsAndAnswersTask)
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>├── premortem.py                               (PremortemTask)
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>├── self_audit.py                              (SelfAuditTask)
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>│
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>│  # Phase 13: Report
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>└── report.py                                  (ReportTask)
+</code></pre></div>
+<h2 id="dag-insertion-example">DAG Insertion Example</h2>
+<p>To insert a new <code>ValidateBudgetTask</code> between <code>CurrencyStrategyTask</code> and <code>IdentifyRisksTask</code>:</p>
 <ol>
-<li><code>worker_plan</code> request and response shapes.</li>
-<li><code>mcp_cloud</code> and <code>mcp_local</code> tool contracts.</li>
-<li>Shared DB models and legacy compatibility behavior.</li>
+<li>
+<p>Create <code>stages/validate_budget.py</code>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.stages.currency_strategy</span><span class="w"> </span><span class="kn">import</span> <span class="n">CurrencyStrategyTask</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">ValidateBudgetTask</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">CurrencyStrategyTask</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="c1"># ...</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Edit <code>stages/identify_risks.py</code> — change its <code>requires()</code> to depend on <code>ValidateBudgetTask</code> instead of <code>CurrencyStrategyTask</code>.</p>
+</li>
+<li>
+<p>Add one line to <code>stages/full_plan_pipeline.py</code>'s <code>requires()</code> dict.</p>
+</li>
 </ol>
-<h2 id="proposal">Proposal</h2>
-<p>Define a staged remediation program focused on six concrete hygiene issues.</p>
-<h2 id="issue-1-giant-load-bearing-modules">Issue 1: Giant Load-Bearing Modules</h2>
-<h3 id="evidence">Evidence</h3>
-<p>Several files are too large and own too many responsibilities:</p>
+<p>Only 3 files touched. No other stage files are affected.</p>
+<h2 id="what-does-not-change">What Does NOT Change</h2>
+<ul>
+<li>No behavioral changes — identical DAG, identical task execution, identical output files</li>
+<li>No new dependencies</li>
+<li>No changes to Luigi task parameters, output filenames, or callback mechanisms</li>
+<li>No changes to <code>worker_plan_database/app.py</code> (imports <code>ExecutePipeline</code> from <code>run_plan_pipeline</code>, which stays)</li>
+<li>No changes to <code>test_step_label.py</code> (imports <code>_task_class_to_step_label</code> from <code>run_plan_pipeline</code>, which stays)</li>
+<li>The <code>__main__</code> entry point still works: <code>python -m worker_plan_internal.plan.run_plan_pipeline</code></li>
+</ul>
+<h2 id="code-movement-rules">Code Movement Rules</h2>
 <ol>
-<li><code>worker_plan/worker_plan_internal/plan/run_plan_pipeline.py</code> at 4,288 lines.</li>
-<li><code>frontend_multi_user/src/app.py</code> at 3,857 lines.</li>
-<li><code>worker_plan_database/app.py</code> at 1,520 lines.</li>
-<li><code>mcp_cloud/http_server.py</code> at 1,431 lines.</li>
+<li><strong>Verbatim extraction</strong> — task class bodies are moved exactly as-is, no logic changes.</li>
+<li><strong>Each file gets only the imports it needs</strong> — no bulk import block copied to every file.</li>
+<li><strong>The <code>REPORT_EXECUTE_PLAN_SECTION_HIDDEN</code> constant</strong> stays in <code>run_plan_pipeline.py</code> since it's used by <code>ReportTask</code>. <code>stages/report.py</code> imports it from there.</li>
 </ol>
-<p>These files are not just large. They mix routing, orchestration, validation, operational policy, artifact handling, billing, auth, or workflow logic in the same module.</p>
-<h3 id="why-it-is-a-problem">Why it is a problem</h3>
-<p>Large modules make the code harder to reason about, harder to test in isolation, and easier to break when adding unrelated features. They also push reviewers toward shallow approval because a single diff can span too many concerns.</p>
-<h3 id="fix-steps">Fix steps</h3>
-<ol>
-<li>~~Split <code>frontend_multi_user/src/app.py</code> by concern into <code>auth</code>, <code>billing</code>, <code>admin</code>, <code>downloads</code>, <code>account</code>, and <code>plan_routes</code>.~~ <strong>Done</strong> (PR #476): Split 3,857-line monolith into 6 Flask Blueprint modules + utils (app.py reduced to 1,441 lines). Follow-up fix: updated all <code>url_for()</code> calls in templates to use blueprint-prefixed endpoint names (<code>plan_routes.*</code>, <code>auth.*</code>, <code>downloads.*</code>).</li>
-<li>~~Split <code>mcp_cloud/http_server.py</code> into <code>middleware</code>, <code>route_registration</code>, <code>tool_http_bridge</code>, and <code>server_boot</code>.~~ <strong>Done</strong>: Split 1,439-line monolith into 4 focused modules + re-export shim.</li>
-<li>~~Convert <code>worker_plan/worker_plan_internal/plan/run_plan_pipeline.py</code> from a giant task registry file into a thin pipeline assembly module plus task-specific modules grouped by stage.~~ <strong>Done</strong>: Split 4,257-line monolith into ~66 individual stage files under <code>stages/</code> + framework-only core module (563 lines).</li>
-<li>Extract reusable orchestration helpers from <code>worker_plan_database/app.py</code> into focused worker, billing, and queue modules.</li>
-<li>Set an internal size target for service modules. As a starting rule, new files should stay below roughly 500 lines unless there is a strong reason not to.</li>
-</ol>
-<h2 id="issue-2-debug-scaffolding-in-production-entrypoints">Issue 2: Debug Scaffolding in Production Entrypoints</h2>
-<h3 id="evidence_1">Evidence</h3>
-<p>Production-facing files still contain direct startup <code>print()</code> diagnostics or ad hoc debugging traces, for example in:</p>
-<ol>
-<li><code>mcp_cloud/http_server.py</code></li>
-<li><code>worker_plan/worker_plan_internal/llm_factory.py</code></li>
-<li>Several task modules that print query and response payloads in executable paths</li>
-</ol>
-<h3 id="why-it-is-a-problem_1">Why it is a problem</h3>
-<p>Direct prints are sometimes useful during incident response, but they are not a coherent observability strategy. They create inconsistent runtime output, complicate log filtering, and encourage one-off diagnostics instead of structured instrumentation.</p>
-<h3 id="fix-steps_1">Fix steps</h3>
-<ol>
-<li>~~Replace entrypoint <code>print()</code> startup breadcrumbs with structured <code>logging</code> calls at <code>INFO</code> or <code>DEBUG</code>.~~ <strong>Done</strong> (PR #474): Converted 22 <code>[startup]</code> prints in <code>mcp_cloud/http_server.py</code> and <code>mcp_cloud/db_setup.py</code> to <code>_startup_log()</code> helper.</li>
-<li>~~Gate verbose diagnostics behind explicit env vars such as <code>PLANEXE_DEBUG_STARTUP</code> or module-specific debug flags.~~ <strong>Done</strong> (PR #474): Startup breadcrumbs now gated behind <code>PLANEXE_DEBUG_STARTUP=1</code>.</li>
-<li>Move sample-driver code and debugging helpers into <code>if __name__ == "__main__":</code> blocks or dedicated scripts.</li>
-<li>Add a lightweight test or lint-like assertion that production modules do not contain uncategorized top-level <code>print()</code> calls.</li>
-</ol>
-<h2 id="issue-3-experimental-code-mixed-with-production-code">Issue 3: Experimental Code Mixed with Production Code</h2>
-<h3 id="evidence_2">Evidence</h3>
-<p>The repo contains <code>worker_plan/worker_plan_internal/proof_of_concepts/</code> with 19 Python files plus several <code>experimental_premise_attack*.py</code> modules under production-adjacent diagnostics paths.</p>
-<h3 id="why-it-is-a-problem_2">Why it is a problem</h3>
-<p>Experimental work is good. Leaving it in production-adjacent trees without strong boundaries makes discovery noisier, encourages accidental coupling, and makes the production surface look less intentional than it is.</p>
-<h3 id="fix-steps_2">Fix steps</h3>
-<ol>
-<li>~~Move proof-of-concept code into a clearly isolated top-level <code>experiments/</code> or <code>research/</code> area, or explicitly mark it as non-production in module names and docs.~~ <strong>Done</strong> (PR #474): Moved 18 PoC scripts to top-level <code>experiments/</code>.</li>
-<li>~~Move experimental diagnostics variants out of the default runtime namespace unless they are active candidates for shipping.~~ <strong>Done</strong> (PR #474): Deleted 6 <code>experimental_premise_attack{1-6}.py</code> files superseded by production <code>premise_attack.py</code>.</li>
-<li>~~Add a short README in each experimental area defining its status, owner, and graduation criteria.~~ <strong>Done</strong> (PR #474): Added <code>experiments/README.md</code>.</li>
-<li>Ensure production imports never depend on experimental modules.</li>
-</ol>
-<h2 id="issue-4-broad-exception-handling">Issue 4: Broad Exception Handling</h2>
-<h3 id="evidence_3">Evidence</h3>
-<p>The repo contains many <code>except Exception:</code> blocks across service and runtime code, including in:</p>
-<ol>
-<li><code>frontend_multi_user/src/app.py</code></li>
-<li><code>worker_plan_database/app.py</code></li>
-<li><code>mcp_cloud/http_server.py</code></li>
-<li><code>worker_plan/app.py</code></li>
-<li><code>worker_plan_internal/llm_util/*</code></li>
-</ol>
-<p>Some are reasonable containment boundaries, but many are too broad to preserve actionable failure context.</p>
-<h3 id="why-it-is-a-problem_3">Why it is a problem</h3>
-<p>Broad exception handling hides root causes, weakens retry logic, and makes it easier for bugs to silently degrade behavior rather than fail in a controlled and visible way.</p>
-<h3 id="fix-steps_3">Fix steps</h3>
-<ol>
-<li>Audit all <code>except Exception:</code> blocks and classify them as <code>intentional boundary</code>, <code>temporary workaround</code>, or <code>should narrow</code>.</li>
-<li>Narrow handlers to specific exception classes where possible.</li>
-<li>Where a broad boundary is required, log structured context and re-raise domain-specific exceptions rather than generic failures.</li>
-<li>Add tests for failure classification in critical paths such as MCP request handling, billing, downloads, and pipeline stop/retry logic.</li>
-</ol>
-<h2 id="issue-5-uneven-logging-and-runtime-hygiene">Issue 5: Uneven Logging and Runtime Hygiene</h2>
-<h3 id="evidence_4">Evidence</h3>
-<p>The codebase contains many local <code>logging.basicConfig(...)</code> calls spread across services and executable modules, plus a mix of logging styles and one-off debug behavior.</p>
-<h3 id="why-it-is-a-problem_4">Why it is a problem</h3>
-<p>Distributed <code>basicConfig</code> calls make runtime behavior inconsistent and harder to control. They also blur the line between library code, service entrypoints, and local scripts.</p>
-<h3 id="fix-steps_4">Fix steps</h3>
-<ol>
-<li>Restrict <code>logging.basicConfig(...)</code> to service entrypoints and dedicated CLI scripts.</li>
-<li>Remove logging configuration from reusable library modules.</li>
-<li>Define a small shared logging helper for PlanExe service startup so format and level handling are consistent.</li>
-<li>Standardize logger naming and expected levels for normal operation, diagnostics, and failure cases.</li>
-</ol>
-<h2 id="issue-6-test-gaps-in-high-risk-service-areas">Issue 6: Test Gaps in High-Risk Service Areas</h2>
-<h3 id="evidence_5">Evidence</h3>
-<p>The overall repo has a respectable test footprint, but <code>frontend_multi_user</code> explicitly notes that no automated tests currently exist for many UI or DB flows.</p>
-<h3 id="why-it-is-a-problem_5">Why it is a problem</h3>
-<p>The multi-user frontend handles auth, admin flows, billing, downloads, and user account state. That is too much business risk to leave mostly protected by manual confidence and good intentions.</p>
-<h3 id="fix-steps_5">Fix steps</h3>
-<ol>
-<li>Add focused unit tests around billing, account state, admin user resolution, plan retry, and artifact download behavior.</li>
-<li>Add tests for helpers extracted from <code>frontend_multi_user/src/app.py</code> as part of the module split.</li>
-<li>Prioritize tests for failure paths, not just success paths.</li>
-<li>Keep tests close to the logic they protect so refactors remain cheap.</li>
-</ol>
-<h2 id="implementation-plan">Implementation Plan</h2>
-<h3 id="phase-1-inventory-and-safety-rails">Phase 1: Inventory and Safety Rails</h3>
-<ol>
-<li>Create an inventory of oversized modules, broad exception handlers, and top-level print/debug usage.</li>
-<li>Tag each item as <code>refactor now</code>, <code>refactor when touched</code>, or <code>leave as boundary</code>.</li>
-<li>Add lightweight tests around current behavior before moving code in the largest modules.</li>
-</ol>
-<h3 id="phase-2-split-the-worst-offenders">Phase 2: Split the Worst Offenders</h3>
-<ol>
-<li>~~Refactor <code>frontend_multi_user/src/app.py</code> first because it mixes the most distinct business concerns.~~ <strong>Done</strong> (PR #476). Template <code>url_for()</code> references fixed to match new blueprint endpoints.</li>
-<li>~~Refactor <code>mcp_cloud/http_server.py</code> second because it sits on a public protocol boundary.~~ <strong>Done</strong>.</li>
-<li>Refactor <code>worker_plan_database/app.py</code> and <code>run_plan_pipeline.py</code> in smaller slices to avoid destabilizing the execution engine.</li>
-</ol>
-<h3 id="phase-3-remove-operational-noise">Phase 3: Remove Operational Noise</h3>
-<ol>
-<li>Replace production <code>print()</code> usage with structured logging.</li>
-<li>Centralize startup logging setup per service.</li>
-<li>Move or label experimental modules so the production tree is easier to navigate.</li>
-</ol>
-<h3 id="phase-4-exception-and-test-cleanup">Phase 4: Exception and Test Cleanup</h3>
-<ol>
-<li>Narrow broad exception handlers in the services touched during earlier phases.</li>
-<li>Add targeted regression tests for every cleanup area.</li>
-<li>Update docs where module entrypoints or development workflows change.</li>
-</ol>
-<h2 id="integration-points">Integration Points</h2>
-<p>This proposal integrates with existing PlanExe boundaries rather than fighting them:</p>
-<ol>
-<li><code>worker_plan/AGENTS.md</code> already defines the public worker API and internal separation rules.</li>
-<li><code>mcp_cloud/AGENTS.md</code> already documents the internal split that <code>http_server.py</code> should better reflect in code.</li>
-<li><code>frontend_multi_user/AGENTS.md</code> already calls out DB and artifact invariants that should survive route extraction.</li>
-<li>The existing <code>python test.py</code> convention can remain the top-level test entrypoint while coverage expands.</li>
-</ol>
-<h2 id="success-metrics">Success Metrics</h2>
-<ol>
-<li>No production-facing Python module above 1,500 lines after the first cleanup wave.</li>
-<li>~~<code>frontend_multi_user/src/app.py</code> reduced by at least 50% through route and helper extraction.~~ <strong>Done</strong> (PR #476): Reduced by 63% (3,857 → 1,441 lines).</li>
-<li>~~<code>mcp_cloud/http_server.py</code> reduced to a focused HTTP assembly module rather than a mixed implementation file.~~ <strong>Done</strong>: Split into <code>server_boot.py</code>, <code>middleware.py</code>, <code>tool_http_bridge.py</code>, <code>route_registration.py</code> + re-export shim.</li>
-<li>Zero uncategorized top-level <code>print()</code> statements in production service modules.</li>
-<li>Documented justification for all remaining <code>except Exception:</code> boundaries in service code.</li>
-<li>New automated tests covering multi-user billing, retry, and download flows.</li>
-</ol>
+<h2 id="agentsmd-update">AGENTS.md Update</h2>
+<p><code>worker_plan/AGENTS.md</code> will be updated to document:
+- The <code>stages/</code> directory and the one-file-per-task convention
+- How to add a new pipeline stage (create file, wire <code>requires()</code>, add to <code>FullPlanPipeline</code>)
+- That <code>run_plan_pipeline.py</code> contains only shared framework, not task implementations</p>
 <h2 id="risks">Risks</h2>
 <ol>
-<li>Refactors may accidentally break backward compatibility across services.
-   Mitigation: keep public contracts frozen and add regression tests before moving code.</li>
-<li>Cleanup work may turn into an endless style exercise with no shipping value.
-   Mitigation: prioritize only high-leverage areas with operational or review cost.</li>
-<li>Pipeline refactors may destabilize long-running plan generation.
-   Mitigation: split orchestration carefully and preserve task behavior while moving code.</li>
+<li>
+<p><strong>Circular imports</strong>: <code>stages/*.py</code> files import <code>PlanTask</code> from <code>run_plan_pipeline.py</code>. <code>run_plan_pipeline.py</code> imports <code>FullPlanPipeline</code> from <code>stages/full_plan_pipeline.py</code> (only inside <code>ExecutePipeline.setup()</code>, not at module level). No circularity because the cross-import is deferred to method call time.</p>
+</li>
+<li>
+<p><strong>Luigi task discovery</strong>: Luigi resolves tasks via <code>requires()</code> chains starting from <code>FullPlanPipeline</code>. Since each stage file imports its upstream tasks, all task classes are loaded when <code>FullPlanPipeline</code> is imported. No registration mechanism needed.</p>
+</li>
+<li>
+<p><strong><code>self_improve/</code> runner compatibility</strong>: The runner imports and executes step source files directly. After the split, individual step executor classes (like <code>IdentifyPotentialLevers</code>) still live in their original locations (<code>worker_plan_internal/lever/</code>). The Luigi task wrappers move to <code>stages/</code>, but <code>self_improve/</code> doesn't import those — it imports the executor classes directly. No changes needed.</p>
+</li>
 </ol>
-<h2 id="why-now">Why Now</h2>
-<p>PlanExe is already at the point where architectural cleanliness affects product velocity. The codebase has enough quality and enough structure to justify a cleanup pass, but it also has enough scale that delaying the work will make later changes slower, riskier, and more expensive. This is the right time to pay down the structural debt while the service boundaries are still understandable and before more execution-engine features pile on top.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -7391,12 +6624,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../assets/javascripts/copy-all.js"></script>
+        <script src="../../../assets/javascripts/copy-all.js"></script>
       
     
   </body>
