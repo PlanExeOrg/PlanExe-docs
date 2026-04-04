@@ -6437,6 +6437,11 @@ For a team with several people it's possible to do tasks in parallel.
 Obtain info about what resources the user has available, and if they are willing to do tasks in parallel.</p>
 <hr />
 <h1 id="secondary-issues">Secondary issues</h1>
+<h2 id="negative-constraints">Negative constraints</h2>
+<p>Prompts that have specifies <code>banned words: VR, crypto</code>, have a strong preference to pick related words.
+I have added a <code>extract_constraints.py</code> and <code>constraint_checker.py</code>, for addressing this.
+I will have to see several plans generated to assess if I have solved it or not.
+If I deem it solved, then inside <code>filenames.py</code> I can remove the files with suffix <code>_constraint.json</code> and remove the LLM call that does the constraint checking.</p>
 <h2 id="mcp-polishing-of-mcp-flow-via-planexeorg">MCP - Polishing of MCP flow via planexe.org</h2>
 <p>As of 2026-mar-27, I'm focusing on improving MCP. It is not as smooth as I would like.</p>
 <p>The user adds credits here. Start with 5 USD, so you can create around 3 plans.
