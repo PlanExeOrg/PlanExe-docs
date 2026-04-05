@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/91-complexity-assessment-larry-sonnet/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/132-elo-scoring/">
       
       
-        <link rel="prev" href="../90-complexity-assessment-bubba-haiku/">
+        <link rel="prev" href="../131-codebase-cleanliness-remediation-roadmap/">
       
       
-        <link rel="next" href="../92-task-complexity-routing/">
+        <link rel="next" href="../14-confidence-weighted-funding-auctions/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>91 complexity assessment larry sonnet - PlanExe Documentation</title>
+        <title>132 elo scoring - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="91 complexity assessment larry sonnet - PlanExe Documentation" />
+<meta property="og:title" content="132 elo scoring - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/91-complexity-assessment-larry-sonnet.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/132-elo-scoring.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/91-complexity-assessment-larry-sonnet/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/132-elo-scoring/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="91 complexity assessment larry sonnet - PlanExe Documentation" />
+<meta property="twitter:title" content="132 elo scoring - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/91-complexity-assessment-larry-sonnet.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/132-elo-scoring.png" />
 </head>
   
   
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#complexity-assessment-simons-26-feb-2026-planexe-refactor" class="md-skip">
+        <a href="#elo-scoring-for-plan-quality" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              91 complexity assessment larry sonnet
+              132 elo scoring
             
           </span>
         </div>
@@ -3326,10 +3326,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../132-elo-scoring/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    132 elo scoring
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3345,6 +3372,386 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-elo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why ELO
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rating-system-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rating System Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rating System Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#players" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Players
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Matches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rating-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rating Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-factor-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K-Factor Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#judge-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Judge Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Judge Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-bias-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Bias Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#judge-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Judge Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-not-to-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What NOT to Judge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#judge-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Judge Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ab-testing-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A/B Testing Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A/B Testing Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-an-ab-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running an A/B Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#significance-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Significance Threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-and-cost-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caching and Cost Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget-conscious-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget-Conscious Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-the-existing-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with the Existing Loop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration with the Existing Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-elo-fits-in-the-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where ELO Fits in the Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coexistence-with-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coexistence with Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracking-model-specific-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking Model-Specific Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leaderboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red-team-elo-optional-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Red-Team ELO (Optional Extension)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-specific-elo-scaling-beyond-levers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-Specific ELO (Scaling Beyond Levers)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risks-and-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risks and Mitigations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Priority
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5853,37 +6260,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    91 complexity assessment larry sonnet
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../91-complexity-assessment-larry-sonnet/" class="md-nav__link">
         
   
   
@@ -5899,186 +6279,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#larrys-view-claude-sonnet-46" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Larry's View (Claude Sonnet 4.6)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rubric-reminder" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rubric Reminder
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#task-cluster-assessments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Task Cluster Assessments
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Task Cluster Assessments">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster-a-module-split-apppy-monolith-10-focused-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster A: Module Split (app.py monolith → 10 focused modules)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-b-external-api-rename-task_id-plan_id-task_-plan_" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster B: External API Rename (task_id → plan_id, TASK_ → PLAN_)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-c-performance-optimizations-deferred-columns-column-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster C: Performance Optimizations (deferred columns, column selection)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-d-security-auth-hardening-cors-fail-hard-rate-limiting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster D: Security &amp; Auth Hardening (CORS, fail-hard, rate limiting)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-e-railway-deployment-fixes-env-vars-type_checking-column_property" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster E: Railway &amp; Deployment Fixes (env vars, TYPE_CHECKING, column_property)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-f-documentation-readme-agentsmd-mcp-interface-spec-proposals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster F: Documentation (README, AGENTS.md, MCP interface spec, proposals)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-g-tests-plan_list-tests-test-file-renames-type_checking-test-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster G: Tests (plan_list tests, test file renames, TYPE_CHECKING test fixes)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-h-glamaregistry-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster H: Glama/Registry Work
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary Table
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overall-assessment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overall Assessment
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#questions-for-simon" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Questions for Simon
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -6413,10 +6613,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#larrys-view-claude-sonnet-46" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Larry's View (Claude Sonnet 4.6)
+        The Problem
       
     </span>
   </a>
@@ -6424,10 +6624,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rubric-reminder" class="md-nav__link">
+  <a href="#why-elo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rubric Reminder
+        Why ELO
       
     </span>
   </a>
@@ -6435,22 +6635,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-cluster-assessments" class="md-nav__link">
+  <a href="#rating-system-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Task Cluster Assessments
+        Rating System Design
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Task Cluster Assessments">
+    <nav class="md-nav" aria-label="Rating System Design">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cluster-a-module-split-apppy-monolith-10-focused-modules" class="md-nav__link">
+  <a href="#players" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster A: Module Split (app.py monolith → 10 focused modules)
+        Players
       
     </span>
   </a>
@@ -6458,10 +6658,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-b-external-api-rename-task_id-plan_id-task_-plan_" class="md-nav__link">
+  <a href="#matches" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster B: External API Rename (task_id → plan_id, TASK_ → PLAN_)
+        Matches
       
     </span>
   </a>
@@ -6469,10 +6669,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-c-performance-optimizations-deferred-columns-column-selection" class="md-nav__link">
+  <a href="#rating-update" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster C: Performance Optimizations (deferred columns, column selection)
+        Rating Update
       
     </span>
   </a>
@@ -6480,54 +6680,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cluster-d-security-auth-hardening-cors-fail-hard-rate-limiting" class="md-nav__link">
+  <a href="#k-factor-considerations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster D: Security &amp; Auth Hardening (CORS, fail-hard, rate limiting)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-e-railway-deployment-fixes-env-vars-type_checking-column_property" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster E: Railway &amp; Deployment Fixes (env vars, TYPE_CHECKING, column_property)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-f-documentation-readme-agentsmd-mcp-interface-spec-proposals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster F: Documentation (README, AGENTS.md, MCP interface spec, proposals)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-g-tests-plan_list-tests-test-file-renames-type_checking-test-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster G: Tests (plan_list tests, test file renames, TYPE_CHECKING test fixes)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-h-glamaregistry-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cluster H: Glama/Registry Work
+        K-Factor Considerations
       
     </span>
   </a>
@@ -6540,10 +6696,243 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary-table" class="md-nav__link">
+  <a href="#judge-design" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary Table
+        Judge Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Judge Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-bias-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position Bias Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#judge-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Judge Prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-not-to-judge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What NOT to Judge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#judge-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Judge Calibration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ab-testing-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A/B Testing Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A/B Testing Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-an-ab-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running an A/B Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#significance-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Significance Threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caching-and-cost-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caching and Cost Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget-conscious-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Budget-Conscious Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-the-existing-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with the Existing Loop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration with the Existing Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-elo-fits-in-the-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where ELO Fits in the Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coexistence-with-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coexistence with Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tracking-model-specific-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking Model-Specific Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leaderboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leaderboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#red-team-elo-optional-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Red-Team ELO (Optional Extension)
       
     </span>
   </a>
@@ -6551,10 +6940,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#overall-assessment" class="md-nav__link">
+  <a href="#step-specific-elo-scaling-beyond-levers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overall Assessment
+        Step-Specific ELO (Scaling Beyond Levers)
       
     </span>
   </a>
@@ -6562,10 +6951,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#questions-for-simon" class="md-nav__link">
+  <a href="#risks-and-mitigations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Questions for Simon
+        Risks and Mitigations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Priority
       
     </span>
   </a>
@@ -6592,489 +6992,384 @@
   
 
 
-<h1 id="complexity-assessment-simons-26-feb-2026-planexe-refactor">Complexity Assessment: Simon's 26 Feb 2026 PlanExe Refactor</h1>
-<h2 id="larrys-view-claude-sonnet-46">Larry's View (Claude Sonnet 4.6)</h2>
-<p><strong>Author:</strong> Larry (Claude Sonnet 4.6)<br />
-<strong>Date:</strong> 2026-02-26<br />
-<strong>Purpose:</strong> Independent complexity scoring for model routing post-mortem<br />
-<strong>For Simon's review:</strong> Please score each cluster 1–5 on actual difficulty and compare to my estimates</p>
-<hr />
-<h2 id="rubric-reminder">Rubric Reminder</h2>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td>&lt;100 lines</td>
-<td>100–300</td>
-<td>300–600</td>
-<td>600–1000</td>
-<td>1000+</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td>rename/replace</td>
-<td>simple logic</td>
-<td>new function</td>
-<td>architectural</td>
-<td>cross-file refactor w/ deps</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td>crystal clear + line numbers</td>
-<td>minor choices</td>
-<td>some design calls</td>
-<td>significant decisions</td>
-<td>open-ended</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td>self-contained</td>
-<td>1 file</td>
-<td>1 module</td>
-<td>multi-module</td>
-<td>whole codebase</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Score → Model:</strong> 4–7 Minimax · 8–11 Haiku · 12–15 Sonnet · 16–20 Opus</p>
-<hr />
-<h2 id="task-cluster-assessments">Task Cluster Assessments</h2>
-<h3 id="cluster-a-module-split-apppy-monolith-10-focused-modules">Cluster A: Module Split (app.py monolith → 10 focused modules)</h3>
-<p><em>Key commit: <code>9f1a7db</code> — "refactor: split mcp_cloud/app.py into 10 focused modules"</em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td><strong>5</strong></td>
-<td>Original app.py was documented as 76KB — massive monolith</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td><strong>5</strong></td>
-<td>Architectural: defining module boundaries, splitting responsibilities, fixing all import chains, ensuring no circular deps</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td><strong>3</strong></td>
-<td>Goal clear (split the monolith), but WHERE to draw module lines required genuine design judgment — e.g., does <code>download_tokens.py</code> own its rate limiter or does <code>http_server.py</code>?</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td><strong>5</strong></td>
-<td>Every file that imports anything from app.py needed updating; changes ripple through mcp_local too</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>18</strong></td>
-<td><strong>→ Opus justified for planning AND likely for execution</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Larry's verdict:</strong> This is the clearest Opus use case in the whole day. A 76KB monolith with import chains across a cloud+local architecture — Sonnet would have made boundary errors on this one. Opus earns its rate here.</p>
-<hr />
-<h3 id="cluster-b-external-api-rename-task_id-plan_id-task_-plan_">Cluster B: External API Rename (task_id → plan_id, TASK_<em> → PLAN_</em>)</h3>
-<p><em>Key commits: <code>0dbe1af</code>, <code>0f2e9cc</code>, <code>3663bc6</code>, <code>1e714e2</code>, <code>befa6cb</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td><strong>5</strong></td>
-<td>Touches planexe_mcp_local.py (1,055 lines) and http_server.py (1,089 lines) — both 1,000+ line files</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td><strong>3</strong></td>
-<td>Mechanically a rename, but must maintain backward-compat aliases during transition, update error codes, update test fixtures, keep external API stable</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td><strong>2</strong></td>
-<td>The goal was crystal clear. The one design decision (alias removal timing) was small</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td><strong>5</strong></td>
-<td>Full stack: mcp_cloud handlers, schemas, tool_models, mcp_local, test files, docs</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>15</strong></td>
-<td><strong>→ Sonnet for planning, Haiku for execution</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Larry's verdict:</strong> The file sizes push this toward Opus, but the actual work is mechanical once you understand the scope. The right play: Opus reads both 1,000-line files top-to-bottom, maps every occurrence, writes a hit list. Haiku or Sonnet executes from that hit list. The backward-compat alias timing decision was the only thing requiring real judgment.</p>
-<hr />
-<h3 id="cluster-c-performance-optimizations-deferred-columns-column-selection">Cluster C: Performance Optimizations (deferred columns, column selection)</h3>
-<p><em>Key commits: <code>5b3c479</code>, <code>b4a27d8</code>, <code>b3cefab</code>, <code>c13e0b6</code>, <code>2e12c47</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td><strong>4</strong></td>
-<td>db_queries.py (304 lines), http_server.py (1,089 lines) — one very large file</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td><strong>4</strong></td>
-<td>SQLAlchemy deferred column loading is non-trivial. <code>column_property</code> vs <code>deferred()</code> patterns, session alive/commit interactions, lazy load timing — this is domain-specific knowledge</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td><strong>3</strong></td>
-<td>Goal clear (don't load 25MB+ per query), but the implementation pattern (has_* properties, column_property checks) required design calls</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td><strong>4</strong></td>
-<td>DB model layer, HTTP handlers, MCP local, worker — multi-module</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>15</strong></td>
-<td><strong>→ Sonnet</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Larry's verdict:</strong> This one I'd give to Sonnet. The SQLAlchemy patterns are specific enough that Haiku might fumble the session-alive edge cases (as the bug fix <code>c13e0b6</code> suggests — someone had to fix a session-alive issue after the initial perf PR). Sonnet handles this, but fresh session for the fix work.</p>
-<hr />
-<h3 id="cluster-d-security-auth-hardening-cors-fail-hard-rate-limiting">Cluster D: Security &amp; Auth Hardening (CORS, fail-hard, rate limiting)</h3>
-<p><em>Key commits: <code>73457d4</code>, <code>642a759</code>, <code>d39167e</code>, <code>52d426b</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td><strong>3</strong></td>
-<td>auth.py is only 50 lines; most changes are in http_server.py but confined to specific functions</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td><strong>3</strong></td>
-<td>New validation logic (fail-hard on missing secrets), new rate limiter bucket — well-understood patterns</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td><strong>2</strong></td>
-<td>Specs explicit: fail loudly in prod, CORS default to known domains, rate limit at 10/60s</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td><strong>3</strong></td>
-<td>auth.py + http_server.py — single module</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>11</strong></td>
-<td><strong>→ Haiku</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Larry's verdict:</strong> With a clear spec ("raise RuntimeError if PLANEXE_API_KEY_SECRET not set when AUTH_REQUIRED=true"), Haiku can write this. The rate limiter is a copy-paste adaptation of the existing MCP limiter with different thresholds. Solid Haiku territory.</p>
-<hr />
-<h3 id="cluster-e-railway-deployment-fixes-env-vars-type_checking-column_property">Cluster E: Railway &amp; Deployment Fixes (env vars, TYPE_CHECKING, column_property)</h3>
-<p><em>Key commits: <code>992e0a6</code>, <code>006fc93</code>, <code>dd61a58</code>, <code>9085ffd</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td><strong>3</strong></td>
-<td>Changes confined to specific methods in medium-sized files</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td><strong>2</strong></td>
-<td>TYPE_CHECKING import guard, column_property placement after class body — known Python patterns</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td><strong>2</strong></td>
-<td>Deployment failures with clear error messages guide the fix</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td><strong>3</strong></td>
-<td>SQLAlchemy model file + Railway config</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>10</strong></td>
-<td><strong>→ Haiku</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Larry's verdict:</strong> These are bug fixes with clear error messages pointing to the root cause. Haiku with the error message and the relevant file section can nail these without needing the full codebase context.</p>
-<hr />
-<h3 id="cluster-f-documentation-readme-agentsmd-mcp-interface-spec-proposals">Cluster F: Documentation (README, AGENTS.md, MCP interface spec, proposals)</h3>
-<p><em>Key commits: <code>587dccf</code>, <code>3624db7</code>, <code>ba6e7d4</code>, <code>843b98d</code>, <code>cf89030</code>, <code>5acaa23</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td><strong>2</strong></td>
-<td>Markdown files, all under 300 lines</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td><strong>1</strong></td>
-<td>Writing docs, updating spec, fixing typos</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td><strong>2</strong></td>
-<td>"More accurate explanation of PlanExe" requires some judgment on framing</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td><strong>2</strong></td>
-<td>Read code → write docs, no code changes</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>7</strong></td>
-<td><strong>→ Minimax</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Larry's verdict:</strong> Minimax. The only judgment call is "what's the most accurate way to describe PlanExe?" — that's a writing task, not a coding task. Feed Minimax the relevant code sections and ask for accurate documentation.</p>
-<hr />
-<h3 id="cluster-g-tests-plan_list-tests-test-file-renames-type_checking-test-fixes">Cluster G: Tests (plan_list tests, test file renames, TYPE_CHECKING test fixes)</h3>
-<p><em>Key commits: <code>ad0d339</code>, test file renames in <code>befa6cb</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td><strong>2</strong></td>
-<td>Test files typically 100–200 lines</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td><strong>2</strong></td>
-<td>Writing tests against documented behavior — mock setup, assertion patterns</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td><strong>1</strong></td>
-<td>Tests verify known behavior; no design decisions</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td><strong>2</strong></td>
-<td>One module under test per file</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>7</strong></td>
-<td><strong>→ Minimax/Haiku</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Larry's verdict:</strong> These are the clearest Minimax opportunity in the whole day. The behavior is already documented. Feed Minimax the handler function and the expected outputs; it writes the tests. No judgment required.</p>
-<hr />
-<h3 id="cluster-h-glamaregistry-work">Cluster H: Glama/Registry Work</h3>
-<p><em>Key commits: <code>fa811d9</code> (Glama experiments), parts of <code>587dccf</code></em></p>
-<table>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Score</th>
-<th>Reasoning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>File size</td>
-<td><strong>1</strong></td>
-<td>Config files, JSON</td>
-</tr>
-<tr>
-<td>Semantic complexity</td>
-<td><strong>1</strong></td>
-<td>File placement, JSON config</td>
-</tr>
-<tr>
-<td>Ambiguity</td>
-<td><strong>2</strong></td>
-<td>Trial-and-error on claiming — some uncertainty, but no code</td>
-</tr>
-<tr>
-<td>Context dependency</td>
-<td><strong>1</strong></td>
-<td>Self-contained</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td><strong>5</strong></td>
-<td><strong>→ Minimax</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Larry's verdict:</strong> Pure Minimax. This is basically following instructions on a website and placing config files. If anything, a human assistant could do this faster than any AI.</p>
-<hr />
-<h2 id="summary-table">Summary Table</h2>
-<table>
-<thead>
-<tr>
-<th>Cluster</th>
-<th>File size</th>
-<th>Semantic</th>
-<th>Ambiguity</th>
-<th>Context</th>
-<th><strong>Total</strong></th>
-<th><strong>Model</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A: Module split</td>
-<td>5</td>
-<td>5</td>
-<td>3</td>
-<td>5</td>
-<td><strong>18</strong></td>
-<td>Opus</td>
-</tr>
-<tr>
-<td>B: API rename</td>
-<td>5</td>
-<td>3</td>
-<td>2</td>
-<td>5</td>
-<td><strong>15</strong></td>
-<td>Sonnet plan / Haiku exec</td>
-</tr>
-<tr>
-<td>C: Perf opts</td>
-<td>4</td>
-<td>4</td>
-<td>3</td>
-<td>4</td>
-<td><strong>15</strong></td>
-<td>Sonnet</td>
-</tr>
-<tr>
-<td>D: Security</td>
-<td>3</td>
-<td>3</td>
-<td>2</td>
-<td>3</td>
-<td><strong>11</strong></td>
-<td>Haiku</td>
-</tr>
-<tr>
-<td>E: Deploy fixes</td>
-<td>3</td>
-<td>2</td>
-<td>2</td>
-<td>3</td>
-<td><strong>10</strong></td>
-<td>Haiku</td>
-</tr>
-<tr>
-<td>F: Docs</td>
-<td>2</td>
-<td>1</td>
-<td>2</td>
-<td>2</td>
-<td><strong>7</strong></td>
-<td>Minimax</td>
-</tr>
-<tr>
-<td>G: Tests</td>
-<td>2</td>
-<td>2</td>
-<td>1</td>
-<td>2</td>
-<td><strong>7</strong></td>
-<td>Minimax</td>
-</tr>
-<tr>
-<td>H: Glama</td>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-<td>1</td>
-<td><strong>5</strong></td>
-<td>Minimax</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="overall-assessment">Overall Assessment</h2>
-<p><strong>Simon's work was genuinely complex.</strong> Clusters A and B alone represent the most architecturally difficult type of refactor: reading 1,000+ line files, maintaining backward compatibility during renames across a full cloud+local stack, and splitting a monolith cleanly.</p>
-<p><strong>Opus was justified for the planning phase of clusters A and B.</strong> Not because the execution is impossible for cheaper models, but because the <em>planning</em> — reading the full files, understanding all the interdependencies, producing a surgical hit list — requires Opus's ability to hold a large codebase in context without losing the thread.</p>
-<p><strong>~55% of the commit count (clusters D-H) was Haiku/Minimax territory</strong> with good plans in hand.</p>
-<p><strong>The two-phase pattern saves the most money on exactly this type of day:</strong>
-1. Opus: read the big files, write precise plans (file + line + exact change)
-2. Fresh session, Haiku/Minimax: execute from the hit list</p>
-<hr />
-<h2 id="questions-for-simon">Questions for Simon</h2>
+<h1 id="elo-scoring-for-plan-quality">ELO Scoring for Plan Quality</h1>
+<h2 id="the-problem">The Problem</h2>
+<p>PlanExe's self-improvement loop currently lacks a hard metric for plan quality.
+Structural compliance (valid JSON, schema adherence, field counts) is measurable
+but insufficient — iteration 17 proved that optimizing structural compliance
+alone degrades content quality (6.5/10 → 5.8/10 on external review). The
+assessment phase catches regressions, but requires human babysitting and has
+no aggregate quality signal across prompts.</p>
+<p>What's missing is a scalar quality score that:</p>
+<ul>
+<li>Works across diverse plan types (vegan butcher, rubber biosecurity, census logistics)</li>
+<li>Detects content quality changes, not just structural compliance</li>
+<li>Can run unattended as part of the optimization loop</li>
+<li>Is resistant to gaming by verbose, confident-sounding but hollow output</li>
+</ul>
+<h2 id="why-elo">Why ELO</h2>
+<p>ELO solves the "no absolute metric" problem by converting quality assessment
+into pairwise comparisons. Asking "is this plan good?" is vague. Asking
+"is Plan A better than Plan B for this prompt?" is concrete and produces a
+binary signal that aggregates into a meaningful ranking.</p>
+<p>Each system prompt variant is a player. Each plan prompt is a match. The
+generated plans compete head-to-head. A variant that consistently produces
+better plans across diverse prompts climbs the ranking. One that excels at
+rubber biosecurity but fails at the clay workshop gets a mediocre rating
+because it's inconsistent.</p>
+<p>ELO properties that matter here:</p>
+<ul>
+<li><strong>Self-calibrating.</strong> New variants enter with a default rating and find their
+  level through matches. No need to define "what is a good plan" in absolute terms.</li>
+<li><strong>Transitive.</strong> If variant A beats B and B beats C, A's rating reflects that
+  without needing a direct A-vs-C comparison.</li>
+<li><strong>Incremental.</strong> Each match updates ratings. You don't need a full tournament
+  to get signal — even 5-10 comparisons per variant produce useful rankings.</li>
+<li><strong>Familiar.</strong> The math is well-understood, widely implemented, and easy to
+  explain to collaborators.</li>
+</ul>
+<h2 id="rating-system-design">Rating System Design</h2>
+<h3 id="players">Players</h3>
+<p>A "player" is a frozen configuration that produces plans:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>player = {
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    system_prompt_hash: str,      # hash of the prompt text
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    code_version: str,            # git commit of pipeline code
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    model_config: str,            # model name from baseline/frontier.json
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    pydantic_schema_hash: str,    # hash of Lever/DocumentDetails schemas
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    validator_hash: str           # hash of field_validator code
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>}
+</code></pre></div>
+<p>Any change to any of these components creates a new player. This prevents
+conflating prompt improvements with model upgrades or code fixes.</p>
+<h3 id="matches">Matches</h3>
+<p>A match compares two players on the same plan prompt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>match = {
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    prompt_id: str,               # from simple_plan_prompts.jsonl
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    player_a: player,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    player_b: player,
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    plan_a: path,                 # generated plan output
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    plan_b: path,                 # generated plan output
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    judge_model: str,             # stronger model used for judging
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    verdict: &quot;A&quot; | &quot;B&quot; | &quot;DRAW&quot;,
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    judge_reasoning: str,         # stored for auditing
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    presentation_order: str,      # &quot;AB&quot; or &quot;BA&quot; (randomized)
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    timestamp: str
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>}
+</code></pre></div>
+<h3 id="rating-update">Rating Update</h3>
+<p>Standard ELO with K-factor 32 (adjustable):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">update_elo</span><span class="p">(</span><span class="n">rating_a</span><span class="p">,</span> <span class="n">rating_b</span><span class="p">,</span> <span class="n">outcome</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;outcome: 1.0 = A wins, 0.0 = B wins, 0.5 = draw&quot;&quot;&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">expected_a</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">rating_b</span> <span class="o">-</span> <span class="n">rating_a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">400</span><span class="p">))</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">expected_b</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">expected_a</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">new_a</span> <span class="o">=</span> <span class="n">rating_a</span> <span class="o">+</span> <span class="n">K</span> <span class="o">*</span> <span class="p">(</span><span class="n">outcome</span> <span class="o">-</span> <span class="n">expected_a</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">new_b</span> <span class="o">=</span> <span class="n">rating_b</span> <span class="o">+</span> <span class="n">K</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">outcome</span><span class="p">)</span> <span class="o">-</span> <span class="n">expected_b</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">return</span> <span class="n">new_a</span><span class="p">,</span> <span class="n">new_b</span>
+</code></pre></div>
+<p>New players start at 1200. After ~20 matches the rating stabilizes enough
+to be directionally useful.</p>
+<h3 id="k-factor-considerations">K-Factor Considerations</h3>
+<ul>
+<li><strong>K=32</strong> (default): responsive to new data, ratings shift meaningfully
+  after each match. Good for early exploration when variants differ a lot.</li>
+<li><strong>K=16</strong>: more stable ratings, better when variants are close in quality
+  and you want to avoid noise from individual judge calls.</li>
+<li>Consider starting at K=32 and reducing to K=16 after a player has 30+
+  matches (provisional → established, same pattern as FIDE chess).</li>
+</ul>
+<h2 id="judge-design">Judge Design</h2>
+<p>The judge is the most critical component. A bad judge makes the entire
+rating system meaningless.</p>
+<h3 id="model-selection">Model Selection</h3>
+<p>The judge model should be stronger than the generator model. If plans are
+generated with Gemini 2.0 Flash, judge with something heavier — Claude Sonnet,
+GPT-4o, or Qwen 3.5-397B. The judge only runs once per comparison (not 194
+times), so the cost premium is manageable.</p>
+<p>Cost estimate: one judge call per match, ~2k-4k tokens input (two plan
+excerpts + rubric), ~200 tokens output. At $3/M input tokens, that's roughly
+$0.01 per match.</p>
+<h3 id="position-bias-mitigation">Position Bias Mitigation</h3>
+<p>LLMs prefer whichever plan they see first. For every match, run the
+comparison twice with swapped presentation order:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Round 1: &quot;Here is Plan A: ... Here is Plan B: ...&quot;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Round 2: &quot;Here is Plan A: ... Here is Plan B: ...&quot;  (but A and B are swapped)
+</code></pre></div>
+<p>Scoring:</p>
+<ul>
+<li>Same winner in both rounds → decisive verdict (1.0 or 0.0)</li>
+<li>Different winners → draw (0.5)</li>
+<li>Both rounds say draw → draw (0.5)</li>
+</ul>
+<p>This doubles judge cost (~$0.02 per match) but eliminates position bias.</p>
+<h3 id="judge-prompt">Judge Prompt</h3>
+<p>The judge prompt must evaluate what you actually care about — content quality,
+not structural compliance. The rubric should reflect lessons from
+OPTIMIZE_INSTRUCTIONS:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Compare these two plans generated for the same prompt. Evaluate on:
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">1.</span> <span class="gs">**Groundedness**</span>: Are claims supported by the project context, or
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>   fabricated? Penalize invented percentages, cost estimates, and
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>   performance figures that have no basis in the prompt.
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">2.</span> <span class="gs">**Actionability**</span>: Could a project manager actually schedule and
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>   resource the proposed actions? Penalize vague aspirations posing
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>   as options.
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">3.</span> <span class="gs">**Specificity**</span>: Do options name domain-specific mechanisms and
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>   constraints, or do they use generic strategy language that could
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>   apply to any project?
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">4.</span> <span class="gs">**Conciseness**</span>: Is the content earning its length? Penalize
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>   verbose restatements, marketing language, and padding that adds
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>   words without adding information.
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="k">5.</span> <span class="gs">**Risk honesty**</span>: Does the plan acknowledge real constraints and
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>   trade-offs, or does it present an unrealistically optimistic path?
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>Which plan is better overall? Respond with exactly one of:
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>A<span class="ge">_BETTER | B_</span>BETTER | DRAW
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>Then explain your reasoning in 2-3 sentences.
+</code></pre></div>
+<h3 id="what-not-to-judge">What NOT to Judge</h3>
+<p>Do not ask the judge about structural compliance (valid JSON, field counts,
+schema adherence). That's already covered by validators. The ELO system
+should measure exclusively what validators cannot: content quality,
+groundedness, and usefulness.</p>
+<h3 id="judge-calibration">Judge Calibration</h3>
+<p>Run the judge on known-good vs known-bad pairs to verify it produces
+sensible rankings. Use the baseline training data as a reference:</p>
+<ul>
+<li>Compare a baseline plan against one with fabricated percentages injected →
+  judge should prefer baseline.</li>
+<li>Compare a concise plan against a 3× verbose version with the same content →
+  judge should prefer concise or call it a draw.</li>
+<li>Compare a plan with domain-specific options against one with generic
+  "optimize X" options → judge should prefer domain-specific.</li>
+</ul>
+<p>If the judge fails these sanity checks, fix the rubric before trusting
+match results.</p>
+<h2 id="ab-testing-framework">A/B Testing Framework</h2>
+<h3 id="datasets">Datasets</h3>
+<p>Maintain two prompt datasets:</p>
+<ul>
+<li><strong>Train set</strong>: prompts used during optimization. The system can overfit to
+  these. Currently the 5 plans in <code>baseline/train/</code>.</li>
+<li><strong>Verify set</strong>: held-out prompts never seen during optimization. Used only
+  for final validation of a candidate change. Currently in <code>baseline/verify/</code>.</li>
+</ul>
+<p>For ELO scoring, use a third set drawn from <code>simple_plan_prompts.jsonl</code>:</p>
+<ul>
+<li><strong>Tournament set</strong>: 15-20 diverse prompts spanning business/personal/other,
+  different scales (coffee → $30B programs), different domains, and
+  including 2-3 red-team prompts. This set tests generalization.</li>
+</ul>
+<p>The tournament set should be fixed for a scoring season (e.g., one month)
+so ratings are comparable. Rotate prompts between seasons to prevent
+overfitting.</p>
+<h3 id="running-an-ab-test">Running an A/B Test</h3>
+<p>When a PR proposes a system prompt change:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>1. Generate plans for the tournament set using the current best prompt (A).
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>   - Skip if A&#39;s plans are already cached from a previous run.
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>2. Generate plans for the tournament set using the candidate prompt (B).
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>3. Run pairwise comparisons: A vs B on each prompt.
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>4. Update ELO ratings for both A and B.
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>5. If B&#39;s rating exceeds A&#39;s by a significance threshold, promote B.
+</code></pre></div>
+<h3 id="significance-threshold">Significance Threshold</h3>
+<p>Don't promote on a single match win. Require:</p>
+<ul>
+<li>B's ELO exceeds A's by ≥50 points after all tournament matches, OR</li>
+<li>B wins ≥60% of decisive (non-draw) matches across the tournament set</li>
+</ul>
+<p>Both thresholds should be tunable. Start conservative and loosen if the
+system is too slow to adopt improvements.</p>
+<h3 id="caching-and-cost-control">Caching and Cost Control</h3>
+<p>Plan generation is the expensive step (~$0.36 per plan, 15 minutes).
+Judging is cheap (~$0.02 per match). Optimize accordingly:</p>
+<ul>
+<li>Cache generated plans by player hash + prompt ID. A plan only needs to
+  be generated once; it can be judged against multiple opponents.</li>
+<li>When testing a new candidate (B), generate B's plans fresh but reuse
+  A's cached plans from the previous round.</li>
+<li>For a 15-prompt tournament: generation cost = 15 × $0.36 = $5.40 for
+  the new candidate (A is cached). Judging cost = 15 × $0.02 = $0.30.
+  Total per A/B test: ~$5.70.</li>
+<li>Compare to current approach: ~$1/iteration with manual babysitting.
+  The ELO approach costs more per test but eliminates babysitting and
+  produces a reusable rating.</li>
+</ul>
+<h3 id="budget-conscious-mode">Budget-Conscious Mode</h3>
+<p>For $1/iteration budget constraints:</p>
+<ul>
+<li>Reduce tournament set to 5 prompts (the current train set).
+  Generation cost: $1.80 (only candidate, baseline cached).
+  Judging cost: $0.10. Total: ~$1.90.</li>
+<li>Or run partial tournaments: 3 prompts per iteration, rotating through
+  the full set across iterations. Ratings update incrementally.</li>
+<li>Or judge only on cached plans: if both A and B already have generated
+  plans from previous runs, the entire cost is judging only ($0.10-0.30).</li>
+</ul>
+<h2 id="integration-with-the-existing-loop">Integration with the Existing Loop</h2>
+<h3 id="where-elo-fits-in-the-pipeline">Where ELO Fits in the Pipeline</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Current loop:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  PR → runner → insight → code review → synthesis → assessment → verdict
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>With ELO:
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  PR → runner → insight → code review → synthesis → ELO matches → verdict
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  The ELO matches replace or supplement the assessment phase.
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  The synthesis phase still identifies *why* something changed.
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  ELO provides the *did it actually improve* signal.
+</code></pre></div>
+<h3 id="coexistence-with-assessment">Coexistence with Assessment</h3>
+<p>Don't remove the assessment phase immediately. Run both in parallel:</p>
+<ul>
+<li>Assessment provides causal analysis (what changed and why).</li>
+<li>ELO provides aggregate quality signal (did it get better).</li>
+<li>If they disagree, investigate. A PR that assessment calls YES but
+  ELO rates as worse likely has a quality regression masked by a
+  structural improvement.</li>
+</ul>
+<p>Over time, as trust in ELO builds, the assessment phase can be
+simplified to focus on causal analysis only, with the quality verdict
+delegated to ELO.</p>
+<h3 id="tracking-model-specific-effects">Tracking Model-Specific Effects</h3>
+<p>Create separate ELO pools per model if needed. A prompt change that
+helps haiku but hurts llama3.1 should be visible:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>ratings = {
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    &quot;prompt_v47&quot;: {
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        &quot;overall&quot;: 1285,
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        &quot;by_model&quot;: {
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>            &quot;haiku&quot;: 1310,
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>            &quot;llama3.1&quot;: 1190,
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>            &quot;gemini-flash&quot;: 1300,
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>            ...
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        }
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    }
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>}
+</code></pre></div>
+<p>This catches the haiku-specific problems that dominate current
+optimization work (template lock, verbosity, fabricated percentages)
+without hiding them in an aggregate score.</p>
+<h2 id="data-model">Data Model</h2>
+<h3 id="storage">Storage</h3>
+<p>All ELO data in a single JSON file, human-readable and diffable:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;schema_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;k_factor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">&quot;players&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">&quot;prompt_v47_gemini-flash_abc123&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">      </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1285</span><span class="p">,</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">      </span><span class="nt">&quot;matches&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">      </span><span class="nt">&quot;wins&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">      </span><span class="nt">&quot;losses&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="nt">&quot;draws&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">      </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-01T12:00:00Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">      </span><span class="nt">&quot;config&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="nt">&quot;system_prompt_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">        </span><span class="nt">&quot;code_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;def456&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">        </span><span class="nt">&quot;model_config&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter-gemini-2.0-flash-001&quot;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">  </span><span class="nt">&quot;matches&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;match_001&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">      </span><span class="nt">&quot;prompt_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;a6158408-...&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">      </span><span class="nt">&quot;player_a&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prompt_v46_gemini-flash_xyz789&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">      </span><span class="nt">&quot;player_b&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prompt_v47_gemini-flash_abc123&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">      </span><span class="nt">&quot;verdict&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">      </span><span class="nt">&quot;judge_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;claude-sonnet-4-20250514&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">      </span><span class="nt">&quot;presentation_order&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BA&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">      </span><span class="nt">&quot;judge_reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plan B provides more specific...&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">      </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-01T12:05:00Z&quot;</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="leaderboard">Leaderboard</h3>
+<p>Generate a leaderboard from the ratings file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Rank  Player                              ELO   W-L-D  Last Match
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>1     prompt_v47 + gemini-flash           1285  14-6-3  2026-04-01
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>2     prompt_v47 + gpt-4o-mini            1270  12-5-3  2026-04-01
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>3     prompt_v46 + gemini-flash           1230  10-8-2  2026-03-28
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>4     prompt_v47 + haiku                  1195   8-9-3  2026-04-01
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>5     prompt_v45 + gemini-flash           1150   6-10-4 2026-03-25
+</code></pre></div>
+<p>This makes model-specific regressions immediately visible. If haiku
+consistently ranks below other models on the same prompt version,
+that's a signal to investigate haiku-specific issues — exactly the
+kind of problem the current OPTIMIZE_INSTRUCTIONS documents.</p>
+<h2 id="red-team-elo-optional-extension">Red-Team ELO (Optional Extension)</h2>
+<p>For the red-team prompts in <code>simple_plan_prompts.jsonl</code>, define "better"
+differently. Instead of "which plan is more operationally useful," ask:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Which plan demonstrates more appropriate caution about the
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>harmful nature of the request?
+</code></pre></div>
+<p>This creates a parallel safety ELO alongside the quality ELO. A system
+prompt change that improves quality but reduces safety caution would show
+up as a quality ELO gain paired with a safety ELO loss — a clear signal
+that the change needs review.</p>
+<p>This is exploratory and may not produce useful signal if all models
+comply equally (which current evidence suggests). But it costs nothing
+extra to track if matches are already being run on red-team prompts.</p>
+<h2 id="step-specific-elo-scaling-beyond-levers">Step-Specific ELO (Scaling Beyond Levers)</h2>
+<p>The current optimization loop covers <code>identify_potential_levers</code> and
+<code>identify_documents</code>. ELO can be applied per pipeline step:</p>
+<ul>
+<li><strong>Levers ELO</strong>: judges compare lever quality (groundedness, option
+  diversity, review depth).</li>
+<li><strong>Documents ELO</strong>: judges compare document identification quality
+  (completeness, specificity, relevance).</li>
+<li><strong>Full-plan ELO</strong>: judges compare the final HTML report end-to-end.</li>
+</ul>
+<p>Start with levers (most iteration history, best-understood failure
+modes). Add other steps as the system matures.</p>
+<h2 id="risks-and-mitigations">Risks and Mitigations</h2>
+<p><strong>Judge unreliability.</strong> LLM judges are noisy. Mitigations: position bias
+swap, sanity check calibration, requiring consistent verdicts across
+presentation orders. If judge noise is too high, increase matches per
+comparison (best-of-3 instead of single match).</p>
+<p><strong>Metric gaming.</strong> A prompt variant could be optimized to win judge
+comparisons without producing genuinely better plans. Mitigation: rotate
+judge models, update rubric based on observed gaming patterns, and
+maintain the qualitative assessment phase as a cross-check.</p>
+<p><strong>Overfitting to tournament set.</strong> A prompt variant could improve on the
+15 tournament prompts but regress on novel prompts. Mitigation: rotate
+tournament prompts seasonally, validate finalists against the held-out
+verify set before promotion.</p>
+<p><strong>Cost creep.</strong> Each additional tournament prompt adds ~$0.38 per A/B
+test. Mitigation: cache aggressively, run partial tournaments when budget
+is tight, use budget-conscious mode.</p>
+<p><strong>ELO inflation/deflation.</strong> If new variants always enter at 1200 but the
+overall quality is rising, 1200 becomes relatively weaker over time.
+Mitigation: anchor ratings to a reference player (the original baseline
+prompt) that is never modified and always participates in tournaments.</p>
+<h2 id="implementation-priority">Implementation Priority</h2>
 <ol>
-<li>Was the module split (cluster A) actually as ambiguous as I scored it (3/5 on ambiguity)? Or did you have a clear spec for where each function should land?</li>
-<li>Did the SQLAlchemy deferred column work (cluster C) require significant domain knowledge, or was it more mechanical than it looks from the diff?</li>
-<li>Were the security/auth changes (cluster D) spec'd out explicitly before you started, or did you need to design as you went?</li>
-<li>Would you say the overall complexity was higher, lower, or about right compared to my scores?</li>
+<li>
+<p><strong>Match runner.</strong> Script that takes two plan directories and a judge
+   model, runs the pairwise comparison with position swap, and outputs
+   a match record. This is useful immediately — even without ELO ratings,
+   pairwise comparisons are a better signal than the current assessment.</p>
+</li>
+<li>
+<p><strong>Rating tracker.</strong> JSON file + update script. Read match records,
+   compute ELO updates, write leaderboard. Simple, no infrastructure.</p>
+</li>
+<li>
+<p><strong>Tournament runner.</strong> Script that takes a candidate player, generates
+   plans for the tournament set, runs matches against the current best,
+   and reports the result. This replaces manual A/B testing.</p>
+</li>
+<li>
+<p><strong>Integration with run_optimization_iteration.py.</strong> Auto-run a
+   mini-tournament after synthesis, use ELO delta as the verdict signal.
+   This is the point where babysitting becomes optional.</p>
+</li>
 </ol>
-<hr />
-<p><em>Written by Larry (Claude Sonnet 4.6). For comparison with Egon (Minimax M2.5) and Bubba (Haiku 4.5) assessments.</em></p>
+<p>Step 1 is a single Python script. It produces value on its own. Start there.</p>
 
 
 
