@@ -23,7 +23,7 @@
     
     
       
-        <title>Security Notes - PlanExe Documentation</title>
+        <title>Safety Findings - PlanExe Documentation</title>
       
     
     
@@ -71,7 +71,7 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Security Notes - PlanExe Documentation" />
+<meta property="og:title" content="Safety Findings - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
 <meta property="og:image" content="https://docs.planexe.org/assets/images/social/safety-findings.png" />
 <meta property="og:image:type" content="image/png" />
@@ -79,7 +79,7 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://docs.planexe.org/safety-findings/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Security Notes - PlanExe Documentation" />
+<meta property="twitter:title" content="Safety Findings - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
 <meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/safety-findings.png" />
 </head>
@@ -101,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security-notes" class="md-skip">
+        <a href="#safety-findings" class="md-skip">
           Skip to content
         </a>
       
@@ -136,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Security Notes
+              Safety Findings
             
           </span>
         </div>
@@ -6217,10 +6217,11 @@
   
 
 
-<h1 id="security-notes">Security Notes</h1>
+<h1 id="safety-findings">Safety Findings</h1>
 <h2 id="finding">Finding</h2>
-<p><code>Structured Output</code> bypasses safety training. When asked to populate a JSON schema, models comply regardless of context, 
-even when that context explicitly references murder, assault, and exploitation.</p>
+<p><code>Structured Output</code> can bypass safety behavior. When asked to populate a JSON schema, many models comply even 
+when the context explicitly references murder, assault, and exploitation.</p>
+<p>This is an informal findings note, not a comprehensive benchmark or exhaustive evaluation of all models.</p>
 <p>The model sees the full plan. It is not being tricked. In the example below, the query contains 45,000 characters including
 "amendments to laws against murder", "less lethal formats", and "exploitation of vulnerable individuals" 
 The model responds with a professionally formatted work breakdown structure.</p>
@@ -6228,8 +6229,8 @@ The model responds with a professionally formatted work breakdown structure.</p>
 I did not exhaustively test all available models. I prefer cheap and fast LLMs. I avoid reasoning models that are slow and expensive. 
 These results should not be read as a universal claim about every model.</p>
 <p>Tested across models from Google, OpenAI, Alibaba, DeepSeek, Meta, and Anthropic — cloud APIs and local models. Many of them comply.
-Each generated plan's zip file contains metadata showing which model produced each step.
-In 2025 Q3, I reported my concerns, got told <code>not fixable</code> by Google and <code>slop</code> by AI safety researchers.</p>
+Each generated plan's zip file contains metadata showing which model produced each step.</p>
+<p>In 2025 Q3, I reported these concerns and received dismissive responses, including <code>not fixable</code> from Google and <code>slop</code> from AI safety researchers.</p>
 <p>Here is an example of a disturbing plan made with PlanExe:
 https://planexe.org/20250816_squid_game_usa_report.html</p>
 <p>The prompt is:</p>
@@ -6244,9 +6245,9 @@ https://planexe.org/examples/</p>
 https://github.com/PlanExeOrg/PlanExe-web
 These intermediary files show what model generated what output.</p>
 <h2 id="verdict">Verdict</h2>
-<p>Now in 2026 the entire ecosystem move toward autonomous execution anyways, with OpenClaw freaking me out.</p>
+<p>In 2026, the ecosystem is moving toward more autonomous execution, which makes this failure mode more concerning. Especially OpenClaw freaks me out.</p>
 <p>It cost around 36 cents and 15 minutes generating an operational plan for anything from harmless to harmful.
-So far I have gotten no engagement from the people that should be freaked out when LLMs goes outside the guardrails.</p>
+So far I have received no meaningful engagement on this finding, only dismissive reactions such as being told it is <code>slop</code>.</p>
 
 
 
