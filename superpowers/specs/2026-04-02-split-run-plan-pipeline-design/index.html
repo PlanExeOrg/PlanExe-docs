@@ -6547,7 +6547,7 @@
 <ol>
 <li>
 <p>Create <code>stages/validate_budget.py</code>:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.stages.currency_strategy</span><span class="w"> </span><span class="kn">import</span> <span class="n">CurrencyStrategyTask</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.nodes.currency_strategy</span><span class="w"> </span><span class="kn">import</span> <span class="n">CurrencyStrategyTask</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">ValidateBudgetTask</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

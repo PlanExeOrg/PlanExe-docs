@@ -6861,17 +6861,17 @@ Expected: <code>002-0-extract_constraints_raw.json</code></p>
 <hr />
 <h3 id="task-4-create-the-pipeline-stage-wrapper">Task 4: Create the pipeline stage wrapper</h3>
 <p><strong>Files:</strong>
-- Create: <code>worker_plan/worker_plan_internal/plan/stages/extract_constraints.py</code></p>
+- Create: <code>worker_plan/worker_plan_internal/plan/nodes/extract_constraints.py</code></p>
 <ul>
 <li>[ ] <strong>Step 1: Create the stage file</strong></li>
 </ul>
-<p>Create <code>worker_plan/worker_plan_internal/plan/stages/extract_constraints.py</code>:</p>
+<p>Create <code>worker_plan/worker_plan_internal/plan/nodes/extract_constraints.py</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="sd">&quot;&quot;&quot;Pipeline stage: extract constraints from user prompt.&quot;&quot;&quot;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">llama_index.core.llms.llm</span><span class="w"> </span><span class="kn">import</span> <span class="n">LLM</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.run_plan_pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlanTask</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.diagnostics.extract_constraints</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExtractConstraints</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_api.filenames</span><span class="w"> </span><span class="kn">import</span> <span class="n">FilenameEnum</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.stages.setup</span><span class="w"> </span><span class="kn">import</span> <span class="n">SetupTask</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.nodes.setup</span><span class="w"> </span><span class="kn">import</span> <span class="n">SetupTask</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">ExtractConstraintsTask</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
@@ -6902,24 +6902,24 @@ Expected: <code>002-0-extract_constraints_raw.json</code></p>
 <ul>
 <li>[ ] <strong>Step 2: Verify syntax</strong></li>
 </ul>
-<p>Run: <code>cd worker_plan &amp;&amp; /opt/homebrew/bin/python3.11 -c "import ast; ast.parse(open('worker_plan_internal/plan/stages/extract_constraints.py').read()); print('OK')"</code>
+<p>Run: <code>cd worker_plan &amp;&amp; /opt/homebrew/bin/python3.11 -c "import ast; ast.parse(open('worker_plan_internal/plan/nodes/extract_constraints.py').read()); print('OK')"</code>
 Expected: <code>OK</code></p>
 <ul>
 <li>[ ] <strong>Step 3: Commit</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>add<span class="w"> </span>worker_plan/worker_plan_internal/plan/stages/extract_constraints.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git<span class="w"> </span>add<span class="w"> </span>worker_plan/worker_plan_internal/plan/nodes/extract_constraints.py
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add ExtractConstraintsTask pipeline stage wrapper&quot;</span>
 </code></pre></div>
 <hr />
 <h3 id="task-5-wire-into-the-full-pipeline">Task 5: Wire into the full pipeline</h3>
 <p><strong>Files:</strong>
-- Modify: <code>worker_plan/worker_plan_internal/plan/stages/full_plan_pipeline.py:10</code> (add import)
-- Modify: <code>worker_plan/worker_plan_internal/plan/stages/full_plan_pipeline.py:90-91</code> (add to requires dict)</p>
+- Modify: <code>worker_plan/worker_plan_internal/plan/nodes/full_plan_pipeline.py:10</code> (add import)
+- Modify: <code>worker_plan/worker_plan_internal/plan/nodes/full_plan_pipeline.py:90-91</code> (add to requires dict)</p>
 <ul>
 <li>[ ] <strong>Step 1: Add the import</strong></li>
 </ul>
-<p>In <code>worker_plan/worker_plan_internal/plan/stages/full_plan_pipeline.py</code>, add after line 10 (<code>from ... import ScreenPlanningPromptTask</code>):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.stages.extract_constraints</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExtractConstraintsTask</span>
+<p>In <code>worker_plan/worker_plan_internal/plan/nodes/full_plan_pipeline.py</code>, add after line 10 (<code>from ... import ScreenPlanningPromptTask</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.nodes.extract_constraints</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExtractConstraintsTask</span>
 </code></pre></div>
 <ul>
 <li>[ ] <strong>Step 2: Add to the requires() dict</strong></li>
@@ -6930,25 +6930,25 @@ Expected: <code>OK</code></p>
 <ul>
 <li>[ ] <strong>Step 3: Verify syntax</strong></li>
 </ul>
-<p>Run: <code>cd worker_plan &amp;&amp; /opt/homebrew/bin/python3.11 -c "from worker_plan_internal.plan.stages.full_plan_pipeline import FullPlanPipeline; print('OK')"</code>
+<p>Run: <code>cd worker_plan &amp;&amp; /opt/homebrew/bin/python3.11 -c "from worker_plan_internal.plan.nodes.full_plan_pipeline import FullPlanPipeline; print('OK')"</code>
 Expected: <code>OK</code></p>
 <ul>
 <li>[ ] <strong>Step 4: Commit</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>add<span class="w"> </span>worker_plan/worker_plan_internal/plan/stages/full_plan_pipeline.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>add<span class="w"> </span>worker_plan/worker_plan_internal/plan/nodes/full_plan_pipeline.py
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Register extract_constraints in the full plan pipeline&quot;</span>
 </code></pre></div>
 <hr />
 <h3 id="task-6-add-to-the-report">Task 6: Add to the report</h3>
 <p><strong>Files:</strong>
-- Modify: <code>worker_plan/worker_plan_internal/plan/stages/report.py:28</code> (add import)
-- Modify: <code>worker_plan/worker_plan_internal/plan/stages/report.py:41-42</code> (add to requires dict)
-- Modify: <code>worker_plan/worker_plan_internal/plan/stages/report.py:90-91</code> (add append_markdown call)</p>
+- Modify: <code>worker_plan/worker_plan_internal/plan/nodes/report.py:28</code> (add import)
+- Modify: <code>worker_plan/worker_plan_internal/plan/nodes/report.py:41-42</code> (add to requires dict)
+- Modify: <code>worker_plan/worker_plan_internal/plan/nodes/report.py:90-91</code> (add append_markdown call)</p>
 <ul>
 <li>[ ] <strong>Step 1: Add the import</strong></li>
 </ul>
-<p>In <code>worker_plan/worker_plan_internal/plan/stages/report.py</code>, add after line 28 (<code>from ... import ScreenPlanningPromptTask</code>):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.stages.extract_constraints</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExtractConstraintsTask</span>
+<p>In <code>worker_plan/worker_plan_internal/plan/nodes/report.py</code>, add after line 28 (<code>from ... import ScreenPlanningPromptTask</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">worker_plan_internal.plan.nodes.extract_constraints</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExtractConstraintsTask</span>
 </code></pre></div>
 <ul>
 <li>[ ] <strong>Step 2: Add to the requires() dict</strong></li>
@@ -6965,12 +6965,12 @@ Expected: <code>OK</code></p>
 <ul>
 <li>[ ] <strong>Step 4: Verify syntax</strong></li>
 </ul>
-<p>Run: <code>cd worker_plan &amp;&amp; /opt/homebrew/bin/python3.11 -c "from worker_plan_internal.plan.stages.report import ReportTask; print('OK')"</code>
+<p>Run: <code>cd worker_plan &amp;&amp; /opt/homebrew/bin/python3.11 -c "from worker_plan_internal.plan.nodes.report import ReportTask; print('OK')"</code>
 Expected: <code>OK</code></p>
 <ul>
 <li>[ ] <strong>Step 5: Commit</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>add<span class="w"> </span>worker_plan/worker_plan_internal/plan/stages/report.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>git<span class="w"> </span>add<span class="w"> </span>worker_plan/worker_plan_internal/plan/nodes/report.py
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add extract_constraints to the HTML report&quot;</span>
 </code></pre></div>
 <hr />

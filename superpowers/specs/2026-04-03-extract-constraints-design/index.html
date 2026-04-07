@@ -6366,7 +6366,7 @@
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">]}</span>
 </code></pre></div></p>
 <h2 id="pipeline-stage">Pipeline Stage</h2>
-<p><strong>Stage file:</strong> <code>worker_plan_internal/plan/stages/extract_constraints.py</code></p>
+<p><strong>Stage file:</strong> <code>worker_plan_internal/plan/nodes/extract_constraints.py</code></p>
 <ul>
 <li><code>ExtractConstraintsTask</code> extends <code>PlanTask</code></li>
 <li><code>requires()</code> — depends on <code>SetupTask</code> only (reads the raw user prompt)</li>
@@ -6395,11 +6395,11 @@
 <h2 id="files-to-createmodify">Files to Create/Modify</h2>
 <p><strong>New files:</strong>
 - <code>worker_plan_internal/diagnostics/extract_constraints.py</code> — Pydantic models, dataclass, system prompt, execute()
-- <code>worker_plan_internal/plan/stages/extract_constraints.py</code> — PlanTask wrapper
+- <code>worker_plan_internal/plan/nodes/extract_constraints.py</code> — PlanTask wrapper
 - <code>worker_plan_internal/diagnostics/tests/test_extract_constraints.py</code> — unit + LLM integration tests</p>
 <p><strong>Modified files:</strong>
 - <code>worker_plan_api/filenames.py</code> — add FilenameEnum entries
-- <code>worker_plan_internal/plan/stages/full_plan_pipeline.py</code> — register stage
+- <code>worker_plan_internal/plan/nodes/full_plan_pipeline.py</code> — register stage
 - <code>worker_plan_internal/report/report_generator.py</code> — add to report</p>
 
 
