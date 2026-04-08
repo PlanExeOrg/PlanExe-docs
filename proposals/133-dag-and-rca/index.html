@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/104-llm-config-thinking-control/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/133-dag-and-rca/">
       
       
-        <link rel="prev" href="../103-pipeline-hardening-roadmap-local-model-reliability/">
+        <link rel="prev" href="../132-elo-scoring/">
       
       
-        <link rel="next" href="../105-currency-service/">
+        <link rel="next" href="../14-confidence-weighted-funding-auctions/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>104 llm config thinking control - PlanExe Documentation</title>
+        <title>133 dag and rca - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="104 llm config thinking control - PlanExe Documentation" />
+<meta property="og:title" content="133 dag and rca - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/104-llm-config-thinking-control.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/133-dag-and-rca.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/104-llm-config-thinking-control/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/133-dag-and-rca/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="104 llm config thinking control - PlanExe Documentation" />
+<meta property="twitter:title" content="133 dag and rca - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/104-llm-config-thinking-control.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/133-dag-and-rca.png" />
 </head>
   
   
@@ -103,11 +103,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#llm_config-thinking-control-rework-egons-proposal" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -140,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              104 llm config thinking control
+              133 dag and rca
             
           </span>
         </div>
@@ -2451,37 +2446,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    104 llm config thinking control
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../104-llm-config-thinking-control/" class="md-nav__link">
         
   
   
@@ -2497,125 +2465,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-the-actual-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) The actual problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-design-principle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Design principle
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-proposed-llm_configjson-extension" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Proposed llm_config.json extension
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-proposed-task-level-declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) Proposed task-level declaration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-how-llm_factory-applies-the-suppression" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) How llm_factory applies the suppression
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-how-this-handles-model-diversity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6) How this handles model diversity
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-migration-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7) Migration path
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-what-this-doesnt-solve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8) What this doesn't solve
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-immediate-next-action" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9) Immediate next action
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3500,10 +3349,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../133-dag-and-rca/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3519,6 +3375,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -6370,115 +6227,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-the-actual-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) The actual problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-design-principle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Design principle
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-proposed-llm_configjson-extension" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Proposed llm_config.json extension
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-proposed-task-level-declaration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) Proposed task-level declaration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-how-llm_factory-applies-the-suppression" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) How llm_factory applies the suppression
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-how-this-handles-model-diversity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6) How this handles model diversity
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-migration-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7) Migration path
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-what-this-doesnt-solve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8) What this doesn't solve
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-immediate-next-action" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9) Immediate next action
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -6498,129 +6246,265 @@
   
 
 
-<h1 id="llm_config-thinking-control-rework-egons-proposal">llm_config Thinking-Control Rework (Egon's Proposal)</h1>
-<p>Date: 2026-03-07<br />
-Author: EgonBot<br />
-Context: PlanExe local-model runs reveal that some models (Qwen 35B, GLM) emit chain-of-thought reasoning that destroys structured JSON output on schema-heavy tasks. Current workarounds are model-specific hacks baked into task code. This proposal replaces them with a clean model-level configuration system.</p>
-<hr />
-<h2 id="1-the-actual-problem">1) The actual problem</h2>
-<p>When <code>ReviewPlanTask</code> accumulates multi-turn context and the model begins outputting reasoning before JSON, the pipeline breaks. The current fix attempts to suppress this per-model (<code>/no_think</code> for Qwen, explicit system prompt text). These hacks:
-- Assume knowledge of the active model inside task code,
-- Work differently (or not at all) across different models,
-- Are invisible to operators configuring a new model profile.</p>
-<p>The real fix: <strong>model profiles should declare how they handle thinking/reasoning, and the task should declare what it needs. The infrastructure resolves the match.</strong></p>
-<hr />
-<h2 id="2-design-principle">2) Design principle</h2>
-<p>Separation of concerns:
-- <strong>Task code</strong> declares a <code>thinking_mode</code> requirement (e.g., "suppress thinking for clean JSON output").
-- <strong>Model profiles</strong> in <code>llm_config.json</code> declare their thinking behavior and how to suppress it.
-- <strong><code>llm_factory</code></strong> applies the right suppression mechanism for the active model when a task requires it.</p>
-<p>No model-specific logic in task code. No task-specific logic in model config.</p>
-<hr />
-<h2 id="3-proposed-llm_configjson-extension">3) Proposed llm_config.json extension</h2>
-<p>Add a <code>thinking</code> block to each model profile that has thinking/reasoning behavior:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;lmstudio-qwen3.5-35b-a3b&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LMStudio&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">&quot;model_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;qwen/qwen3.5-35b-a3b&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">&quot;context_window&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32768</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">&quot;num_output&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">&quot;request_timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">300.0</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;is_function_calling_model&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;thinking&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">&quot;suppress_token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/no_think&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">&quot;suppress_system_prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Output ONLY the JSON object. Do not include any reasoning, thinking steps, or explanations.&quot;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
-</code></pre></div>
-<p>Fields:
-- <code>mode</code>: <code>"auto"</code> (default, model chooses), <code>"always"</code> (model always thinks), <code>"never"</code> (model never thinks unless explicitly triggered).
-- <code>suppress_token</code>: if set, append this token to user messages when thinking suppression is requested by a task.
-- <code>suppress_system_prompt</code>: if set, append this instruction to the system prompt when thinking suppression is requested by a task.</p>
-<p>For models without thinking behavior (e.g., standard OpenRouter models), omit the <code>thinking</code> block entirely.</p>
-<hr />
-<h2 id="4-proposed-task-level-declaration">4) Proposed task-level declaration</h2>
-<p>Tasks that need clean JSON output (no reasoning prefix) declare their requirement at construction time:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ReviewPlanTask</span><span class="p">(</span><span class="n">PlanTask</span><span class="p">):</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">thinking_mode_required</span> <span class="o">=</span> <span class="s2">&quot;suppress&quot;</span>
-</code></pre></div>
-<p>Or passed directly to <code>LLMExecutor</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">executor</span> <span class="o">=</span> <span class="n">LLMExecutor</span><span class="p">(</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">llm_models</span><span class="o">=</span><span class="n">llm_models</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">thinking_mode</span><span class="o">=</span><span class="s2">&quot;suppress&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="5-how-llm_factory-applies-the-suppression">5) How llm_factory applies the suppression</h2>
-<p>When <code>get_llm()</code> is called and the model profile has a <code>thinking</code> block, and the caller requests <code>thinking_mode="suppress"</code>:</p>
+  <h1>133 dag and rca</h1>
+
+<p>Insights on the DAG JSON Format and How RCA Can Work</p>
+<p>Executive summary</p>
+<p>The current JSON format has improved from a simple DAG export into a usable artifact-level provenance map.</p>
+<p>That is a meaningful shift.</p>
+<p>Earlier, the graph mainly described node-to-node dependency structure. Now it describes which concrete artifacts flow into which nodes. That makes the format much more useful for investigation, debugging, and root cause analysis.</p>
+<p>The current format is now strong enough for:
+    •   tracing likely upstream sources of a false claim in the final report
+    •   narrowing the search to a small set of relevant artifacts
+    •   identifying which node and source files are likely responsible
+    •   distinguishing between a claim that was inherited versus a claim that was introduced later</p>
+<p>However, it is still not enough for perfect claim-level attribution. It can identify likely culprit artifacts and nodes, but it cannot yet prove exactly which transformation step introduced a specific false sentence.</p>
+<p>What the JSON format currently does well</p>
 <ol>
-<li>If <code>suppress_token</code> is set: add it as a wrapper or injection point for user messages.</li>
-<li>If <code>suppress_system_prompt</code> is set: append to the system prompt being constructed.</li>
-<li>If neither is set: log a warning that the model doesn't support thinking suppression.</li>
+<li>It models the pipeline as dataflow, not just control flow</li>
 </ol>
-<p>The factory always applies the <strong>profile's declared mechanism</strong>. Task code requests suppression generically and never knows which model is active.</p>
-<hr />
-<h2 id="6-how-this-handles-model-diversity">6) How this handles model diversity</h2>
-<table>
-<thead>
-<tr>
-<th>Model</th>
-<th>Has thinking</th>
-<th>Suppress mechanism</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Qwen 35B</td>
-<td>Yes (auto)</td>
-<td><code>/no_think</code> token + system prompt</td>
-</tr>
-<tr>
-<td>GLM 4.7</td>
-<td>Yes (manual)</td>
-<td>system prompt only</td>
-</tr>
-<tr>
-<td>OpenAI o3</td>
-<td>Yes</td>
-<td><code>thinking: {budget_tokens: 0}</code> via API</td>
-</tr>
-<tr>
-<td>Standard OpenRouter</td>
-<td>No</td>
-<td>nothing applied</td>
-</tr>
-</tbody>
-</table>
-<p>Each profile declares what works for it. Task code is identical for all.</p>
-<hr />
-<h2 id="7-migration-path">7) Migration path</h2>
+<p>The biggest improvement is replacing broad dependency links with explicit inputs.</p>
+<p>Instead of saying:
+    •   node A depends on node B</p>
+<p>it now says:
+    •   node A consumes artifact X from node B</p>
+<p>That is much more useful for debugging.</p>
+<p>For RCA, this matters because a false claim is usually carried by data, not just by execution order.</p>
 <ol>
-<li>Add <code>thinking</code> block to Qwen and GLM profiles in <code>llm_config.json</code> (config-only, no code change).</li>
-<li>Add <code>thinking_mode</code> parameter to <code>get_llm()</code> and <code>LLMExecutor</code> (small code change in <code>llm_factory.py</code>).</li>
-<li>Apply suppression mechanism in factory when <code>thinking_mode="suppress"</code> is requested.</li>
-<li>Update <code>ReviewPlanTask</code> (and any other affected task) to declare <code>thinking_mode="suppress"</code>.</li>
-<li>Remove hardcoded <code>/no_think</code> and model-specific system prompt hacks from all task code.</li>
+<li>It makes artifact lineage inspectable</li>
 </ol>
-<p>Each step is an independently reviewable PR.</p>
-<hr />
-<h2 id="8-what-this-doesnt-solve">8) What this doesn't solve</h2>
-<ul>
-<li>Models that cannot suppress thinking at all (architectural issue, not config).</li>
-<li>Tasks that <em>want</em> model reasoning to improve output quality (those would request <code>thinking_mode="auto"</code> or <code>"always"</code>).</li>
-<li>Token budget control for thinking models (separate concern — use <code>num_output</code> for now).</li>
-</ul>
-<hr />
-<h2 id="9-immediate-next-action">9) Immediate next action</h2>
-<p>Before this full rework lands, the interim fix (generic system prompt instruction in <code>ReviewPlanTask</code>) is correct and should stay. This proposal is a clean-up effort, not an emergency patch.</p>
-<p>Draft implementation order:
-1. Config extension (no code, pure JSON schema addition + sample profiles).
-2. <code>llm_factory</code> suppression hook (small, ~30 lines).
-3. <code>LLMExecutor</code> pass-through for <code>thinking_mode</code> parameter.
-4. Task declaration update + cleanup of existing hacks.</p>
+<p>Each node now exposes:
+    •   its produced artifacts
+    •   its consumed artifacts
+    •   the source files associated with its implementation</p>
+<p>This allows backward tracing from the final report to upstream intermediate artifacts.</p>
+<ol>
+<li>It provides a practical bridge from output to code</li>
+</ol>
+<p>The source_files section helps connect:
+    •   the artifact chain
+n- the node
+    •   the relevant Python files</p>
+<p>That means the JSON is useful not only for graph inspection, but also for code-level investigation.</p>
+<ol>
+<li>It is now usable for structured debugging</li>
+</ol>
+<p>A false claim in the final report can now be investigated as a graph traversal problem:
+    1.  find the report node
+    2.  inspect its input artifacts
+    3.  search those artifacts for the false claim
+    4.  when the claim is found upstream, recurse into that node’s inputs
+    5.  continue until reaching the earliest artifact that contains the false claim
+    6.  inspect that node’s source files</p>
+<p>That is already a workable investigation process.</p>
+<p>What the format still lacks</p>
+<ol>
+<li>Artifact semantics are too thin</li>
+</ol>
+<p>Artifacts currently have only a path.</p>
+<p>That is useful, but weak.</p>
+<p>The format would be stronger if artifacts also had explicit metadata such as:
+    •   id
+    •   format
+    •   role
+    •   is_intermediate
+    •   audience</p>
+<p>Example:</p>
+<p>{
+  "id": "executive_summary_markdown",
+  "path": "025-2-executive_summary.md",
+  "format": "md",
+  "role": "summary_markdown"
+}</p>
+<p>This would make it easier to reason about whether a false claim likely originated in:
+    •   raw generation
+    •   normalized machine-readable output
+    •   markdown rendering
+    •   final report assembly</p>
+<ol>
+<li>Claim-level provenance is missing</li>
+</ol>
+<p>The current graph can tell us:
+    •   which artifacts fed into a node
+    •   which nodes likely influenced the report</p>
+<p>But it cannot tell us:
+    •   which sentence in the report came from which artifact section
+    •   whether a sentence was synthesized from several artifacts
+    •   whether the final renderer introduced a fresh falsehood</p>
+<p>This is the main gap between good artifact-level RCA and true claim-level RCA.</p>
+<ol>
+<li>Runtime behavior is not captured</li>
+</ol>
+<p>The JSON describes intended structure, not actual execution.</p>
+<p>It does not capture:
+    •   prompt inputs actually loaded at runtime
+    •   truncation behavior
+    •   model configuration
+    •   retries
+    •   prompt templates
+    •   hashes of input and output artifacts
+    •   whether source files were actually included in prompt context</p>
+<p>For LLM-heavy systems, this missing runtime provenance is important.</p>
+<ol>
+<li>The graph does not encode why an input was used</li>
+</ol>
+<p>Right now, an input edge says:
+    •   this artifact was used</p>
+<p>But not:
+    •   what it was used for</p>
+<p>A stronger format could allow fields like:</p>
+<p>{
+  "from_node": "executive_summary",
+  "artifact_path": "025-2-executive_summary.md",
+  "used_for": "decision-maker summary section"
+}</p>
+<p>That would improve interpretability during investigation.</p>
+<p>How RCA can work with the current format</p>
+<p>Goal</p>
+<p>The goal of RCA is to answer questions like:
+    •   Why is a false claim shown in 030-report.html?
+    •   Which upstream artifact first contained it?
+    •   Which node likely introduced it?
+    •   Which source file should be inspected first?</p>
+<p>Investigation strategy</p>
+<p>Step 1: Start from the final artifact</p>
+<p>Begin with the final output artifact, such as:
+    •   030-report.html</p>
+<p>Find the node that produces it.</p>
+<p>Step 2: Inspect direct inputs to the final node</p>
+<p>Look at the report node’s inputs.</p>
+<p>These are the first suspects.</p>
+<p>Check whether the false claim exists in any of those artifacts.</p>
+<p>Typical possibilities include:
+    •   executive_summary.md
+    •   review_plan.md
+    •   questions_and_answers.md
+    •   premortem.md
+    •   project_plan.md
+    •   team.md</p>
+<p>Step 3: Find the earliest artifact containing the claim</p>
+<p>Once a matching upstream artifact is found, move to the node that produced it.</p>
+<p>Then inspect that node’s own inputs.</p>
+<p>Repeat the process until reaching the earliest artifact where the false claim appears.</p>
+<p>That artifact is the best candidate for the first introduction point.</p>
+<p>Step 4: Inspect the producing node’s source files</p>
+<p>Once the likely introduction node has been found, inspect its source_files.</p>
+<p>In practice, the first files to inspect are often:
+    •   the workflow_node file for orchestration and wiring
+    •   the business_logic file for actual transformation logic</p>
+<p>Step 5: Classify the failure mode</p>
+<p>Once the suspect node is identified, classify the false claim into one of these rough categories:
+    •   input falsehood: the claim was already present upstream
+    •   transformation error: the node misread or distorted upstream content
+    •   summarization drift: the claim changed during markdown or summary generation
+    •   aggregation error: several true inputs were combined into a false conclusion
+    •   renderer error: the final report step introduced or misformatted the claim
+    •   prompt-induced hallucination: the LLM invented unsupported content</p>
+<p>This classification matters because the fix depends on the failure mode.</p>
+<p>Example RCA flow</p>
+<p>Suppose the final report contains the false claim:</p>
+<p>The project requires 12 full-time engineers.</p>
+<p>A practical investigation would look like this:
+    1.  search 030-report.html for the claim
+    2.  inspect the report node inputs
+    3.  search 025-2-executive_summary.md
+    4.  search 024-2-review_plan.md
+    5.  search 013-team.md
+    6.  if the claim appears in 013-team.md, inspect the team_markdown node
+    7.  inspect that node’s inputs:
+    •   011-2-enrich_team_members_environment_info.json
+    •   012-review_team_raw.json
+    8.  search those artifacts for the same claim or the numeric value
+    9.  continue upstream until the earliest occurrence is found
+    10. inspect the producing node’s source_files</p>
+<p>This gives a clear investigation trail from report output back to likely code.</p>
+<p>What the current format is sufficient for</p>
+<p>The current format is sufficient for:
+    •   artifact-chain investigation
+    •   identifying likely upstream culprit nodes
+    •   narrowing debugging scope
+    •   inspecting transformation paths
+    •   connecting output problems to relevant code files</p>
+<p>That is already very useful.</p>
+<p>What the current format is not sufficient for</p>
+<p>The current format is not sufficient for:
+    •   proving which exact sentence transformation introduced a false claim
+    •   attributing a sentence to a specific prompt span
+    •   reconstructing exact runtime prompt context
+    •   distinguishing between listed inputs and actually attended inputs
+    •   auditing LLM behavior at a fine-grained level</p>
+<p>So the format is good for investigation, but not perfect for forensic proof.</p>
+<p>Recommended improvements</p>
+<ol>
+<li>Give artifacts stable IDs and metadata</li>
+</ol>
+<p>Example:</p>
+<p>{
+  "id": "review_plan_markdown",
+  "path": "024-2-review_plan.md",
+  "format": "md",
+  "role": "review_output"
+}</p>
+<ol>
+<li>Add optional purpose information to inputs</li>
+</ol>
+<p>Example:</p>
+<p>{
+  "from_node": "review_plan",
+  "artifact_path": "024-2-review_plan.md",
+  "used_for": "quality review section"
+}</p>
+<ol>
+<li>Add node kind metadata</li>
+</ol>
+<p>Examples:
+    •   generator
+    •   validator
+    •   formatter
+    •   consolidator
+    •   report_assembler
+    •   diagnostic</p>
+<p>This helps distinguish between nodes that are likely to introduce content versus those that mostly reformat it.</p>
+<ol>
+<li>Add runtime provenance logs outside the DAG schema</li>
+</ol>
+<p>For example:
+    •   run id
+    •   input artifact hashes
+    •   output artifact hashes
+    •   prompt inputs used
+    •   source files loaded into prompt
+    •   model name
+    •   prompt template version
+    •   temperature</p>
+<p>This is likely more important than making the static DAG infinitely rich.</p>
+<ol>
+<li>Add claim-level citations in generated outputs</li>
+</ol>
+<p>The strongest future improvement would be to make generated markdown and report outputs carry explicit source references.</p>
+<p>For example, each section or bullet could include:
+    •   source artifact ids
+    •   source node ids
+    •   source spans or source field names</p>
+<p>That would make false-claim RCA much easier.</p>
+<p>Final assessment</p>
+<p>The JSON format has evolved into a strong artifact-level provenance graph.</p>
+<p>That is a major improvement over a plain DAG export.</p>
+<p>It is now good enough for practical root cause analysis in many cases, especially when the goal is to trace a false claim back to the earliest upstream artifact and likely responsible node.</p>
+<p>However, it is still not a full forensic provenance system.</p>
+<p>The current format can:
+    •   identify suspects
+    •   trace evidence flow
+    •   narrow the search space
+    •   connect artifacts to code</p>
+<p>But it still cannot fully:
+    •   prove which exact transformation introduced a false sentence
+    •   reconstruct the exact model context
+    •   show claim-level attribution end to end</p>
+<p>So the right conclusion is:
+    •   the format is already useful and worth keeping
+    •   artifact-level inputs was the right move
+    •   the next frontier is runtime provenance and claim-level traceability</p>
 
 
 
