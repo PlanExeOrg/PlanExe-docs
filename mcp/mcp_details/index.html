@@ -7073,7 +7073,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/run.zip&quot;</span>
 </code></pre></div></p>
 <p>Download report:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/030-report.html&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/report.html&quot;</span>
 </code></pre></div></p>
 <h2 id="tool-catalog-mcp_local">Tool Catalog, <code>mcp_local</code></h2>
 <p>The local proxy exposes the same tools as the server, and adds:</p>
@@ -7089,7 +7089,7 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 - Save directory is <code>PLANEXE_PATH</code>, or current working directory if unset.
 - Non-existing directories are created automatically.
 - If <code>PLANEXE_PATH</code> points to a file, download fails.
-- Filename is prefixed with plan id (for example <code>&lt;plan_id&gt;-030-report.html</code>).
+- Filename is prefixed with plan id (for example <code>&lt;plan_id&gt;-report.html</code>).
 - Response includes <code>saved_path</code> with the exact local file location.</p>
 <h2 id="minimal-error-handling-contract">Minimal error-handling contract</h2>
 <p>Error payload shape:

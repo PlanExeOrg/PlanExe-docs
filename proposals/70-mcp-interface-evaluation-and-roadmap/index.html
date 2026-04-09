@@ -7533,7 +7533,7 @@
 <p><strong>Source:</strong> Claude Code agent feedback (2026-03-02).</p>
 <p><code>progress_percentage</code> jumps non-linearly (e.g. 80% → 83% over 4 minutes, then straight to 100%). The metric doesn't feel informative. Consider adding a <code>current_stage</code> field to <code>plan_status</code> (e.g. "generating SWOT analysis", "running premortem") so agents and users can see <em>what</em> is happening, not just a number.</p>
 <h3 id="57-complete-files-array-in-plan_status-for-completed-plans">5.7 Complete files array in <code>plan_status</code> for completed plans</h3>
-<p><strong>Status:</strong> Partially addressed. The <code>files</code> array now returns the <strong>most recent 10</strong> files instead of the first 10, so agents see what was just produced (e.g. <code>019-swot_analysis.md</code>) rather than always the same early pipeline files (<code>001-start_time.json</code>). <code>files_count</code> gives the total. Full manifest support for completed plans remains open.</p>
+<p><strong>Status:</strong> Partially addressed. The <code>files</code> array now returns the <strong>most recent 10</strong> files instead of the first 10, so agents see what was just produced (e.g. <code>swot_analysis.md</code>) rather than always the same early pipeline files (<code>start_time.json</code>). <code>files_count</code> gives the total. Full manifest support for completed plans remains open.</p>
 <p><strong>Source:</strong> Claude Code agent feedback (2026-03-02).</p>
 <h3 id="58-prompt-approval-skip-for-agent-provided-prompts">5.8 Prompt approval skip for agent-provided prompts</h3>
 <p><strong>Source:</strong> Claude Code agent feedback (2026-03-02).</p>

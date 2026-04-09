@@ -6872,14 +6872,14 @@ Expected: All LLM tests pass. If any fail, iterate on the system prompt in <code
 <li>[ ] <strong>Step 1: Add the two new enum entries</strong></li>
 </ul>
 <p>In <code>worker_plan/worker_plan_api/filenames.py</code>, insert after line 8 (<code>SCREEN_PLANNING_PROMPT_MARKDOWN</code>):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    <span class="n">EXTRACT_CONSTRAINTS_RAW</span> <span class="o">=</span> <span class="s2">&quot;002-0-extract_constraints_raw.json&quot;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">EXTRACT_CONSTRAINTS_MARKDOWN</span> <span class="o">=</span> <span class="s2">&quot;002-0-extract_constraints.md&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    <span class="n">EXTRACT_CONSTRAINTS_RAW</span> <span class="o">=</span> <span class="s2">&quot;extract_constraints_raw.json&quot;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">EXTRACT_CONSTRAINTS_MARKDOWN</span> <span class="o">=</span> <span class="s2">&quot;extract_constraints.md&quot;</span>
 </code></pre></div>
 <ul>
 <li>[ ] <strong>Step 2: Verify syntax</strong></li>
 </ul>
 <p>Run: <code>cd worker_plan &amp;&amp; /opt/homebrew/bin/python3.11 -c "from worker_plan_api.filenames import FilenameEnum; print(FilenameEnum.EXTRACT_CONSTRAINTS_RAW.value)"</code>
-Expected: <code>002-0-extract_constraints_raw.json</code></p>
+Expected: <code>extract_constraints_raw.json</code></p>
 <ul>
 <li>[ ] <strong>Step 3: Commit</strong></li>
 </ul>

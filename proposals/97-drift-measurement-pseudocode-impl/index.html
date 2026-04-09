@@ -6578,7 +6578,7 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[DriftEvaluationTask]  ← new, optional
 </code></pre></div>
 <p>Inputs required:
-- <code>001-2-initial_plan.txt</code> — the original user prompt (already exists)
+- <code>plan.txt</code> — the original user prompt (already exists)
 - <code>final-report.md</code> or equivalent final plan artifact (already exists)</p>
 <p>Output:
 - <code>drift-evaluation.json</code> — structured drift report
@@ -6742,7 +6742,7 @@
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">requires</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="k">return</span> <span class="p">{</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">SetupTask</span><span class="p">),</span>          <span class="c1"># 001-2-initial_plan.txt</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">SetupTask</span><span class="p">),</span>          <span class="c1"># plan.txt</span>
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            <span class="s1">&#39;report&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">FinalReportTask</span><span class="p">),</span>     <span class="c1"># or equivalent final artifact</span>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="p">}</span>
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>

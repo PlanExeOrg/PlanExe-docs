@@ -8349,7 +8349,7 @@ If no models are available in any profile, the tool returns <code>isError=true</
 </code></pre></div>
 <p><strong>Required semantics</strong></p>
 <ul>
-<li>The MCP tool only accepts plans in <code>failed</code> state. However, the underlying Luigi mechanism is more general: Luigi skips any task whose output file already exists and re-executes any task whose output file is missing. This means a completed plan can be partially re-run by deleting <code>999-pipeline_complete.txt</code> and the output files of the tasks you want to regenerate — Luigi will re-execute those tasks and all their downstream dependents. The MCP API does not yet expose this capability; it is available when running the pipeline locally via <code>run_plan_pipeline.py</code>.</li>
+<li>The MCP tool only accepts plans in <code>failed</code> state. However, the underlying Luigi mechanism is more general: Luigi skips any task whose output file already exists and re-executes any task whose output file is missing. This means a completed plan can be partially re-run by deleting <code>pipeline_complete.txt</code> and the output files of the tasks you want to regenerate — Luigi will re-execute those tasks and all their downstream dependents. The MCP API does not yet expose this capability; it is available when running the pipeline locally via <code>run_plan_pipeline.py</code>.</li>
 <li>On success, the same plan_id is reset to <code>pending</code> and requeued.</li>
 <li>Prior artifacts are <strong>preserved</strong> — the worker restores the output directory from the stored zip snapshot.</li>
 <li><code>resume_count</code> tracks how many times the plan has been resumed.</li>
@@ -8413,7 +8413,7 @@ If no models are available in any profile, the tool returns <code>isError=true</
 <li>Save directory is <code>PLANEXE_PATH</code>.</li>
 <li>If <code>PLANEXE_PATH</code> is unset, save to current working directory.</li>
 <li>If <code>PLANEXE_PATH</code> points to a file (not a directory), return an error.</li>
-<li>Filenames are <code>&lt;plan_id&gt;-030-report.html</code> or <code>&lt;plan_id&gt;-run.zip</code>.</li>
+<li>Filenames are <code>&lt;plan_id&gt;-report.html</code> or <code>&lt;plan_id&gt;-run.zip</code>.</li>
 <li>If a filename already exists, append <code>-1</code>, <code>-2</code>, ... before extension.</li>
 <li>Successful responses include <code>saved_path</code>.</li>
 </ul>

@@ -6382,7 +6382,7 @@ which introspects the Luigi task graph at import time.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@dataclass</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">NodeInfo</span><span class="p">:</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>                       <span class="c1"># e.g., &quot;potential_levers&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">output_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>         <span class="c1"># e.g., [&quot;002-9-potential_levers_raw.json&quot;, &quot;002-10-potential_levers.json&quot;]</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">output_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>         <span class="c1"># e.g., [&quot;potential_levers_raw.json&quot;, &quot;potential_levers.json&quot;]</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">inputs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>      <span class="c1"># e.g., [&quot;setup&quot;, &quot;identify_purpose&quot;, &quot;plan_type&quot;, &quot;extract_constraints&quot;]</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">source_code_files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>    <span class="c1"># Relative to worker_plan/, e.g., [&quot;worker_plan_internal/plan/stages/potential_levers.py&quot;, &quot;worker_plan_internal/lever/identify_potential_levers.py&quot;]</span>
 </code></pre></div>
@@ -6471,7 +6471,7 @@ When a problem is found in a node's output but not in any of its inputs, that no
 <p>Writes the full trace as JSON:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="nt">&quot;starting_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;030-report.html&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="nt">&quot;starting_file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report.html&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="nt">&quot;problem_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">&quot;output_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/path/to/output&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-04-05T14:30:00Z&quot;</span>
@@ -6485,20 +6485,20 @@ When a problem is found in a node's output but not in any of its inputs, that no
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">            </span><span class="nt">&quot;trace&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">                </span><span class="p">{</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">                    </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;executive_summary&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">                    </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;025-2-executive_summary.md&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">                    </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;executive_summary.md&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">                    </span><span class="nt">&quot;evidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">                    </span><span class="nt">&quot;is_origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">                </span><span class="p">},</span>
 <a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">                </span><span class="p">{</span>
 <a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">                    </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;make_assumptions&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">                    </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;003-5-make_assumptions.md&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">                    </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;make_assumptions.md&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">                    </span><span class="nt">&quot;evidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">                    </span><span class="nt">&quot;is_origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="w">                </span><span class="p">}</span>
 <a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="w">            </span><span class="p">],</span>
 <a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="w">            </span><span class="nt">&quot;origin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">                </span><span class="nt">&quot;node&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;make_assumptions&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">                </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;003-5-make_assumptions.md&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">                </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;make_assumptions.md&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a><span class="w">                </span><span class="nt">&quot;source_code_files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;stages/make_assumptions.py&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;assumption/make_assumptions.py&quot;</span><span class="p">],</span>
 <a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="w">                </span><span class="nt">&quot;likely_cause&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The prompt asks the LLM to...&quot;</span><span class="p">,</span>
 <a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a><span class="w">                </span><span class="nt">&quot;suggestion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Add a validation step that...&quot;</span>
@@ -6518,7 +6518,7 @@ When a problem is found in a node's output but not in any of its inputs, that no
 <p>Writes a human-readable report:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gh"># Root Cause Analysis Report</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="gs">**Input:**</span> 030-report.html
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="gs">**Input:**</span> report.html
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="gs">**Problems found:**</span> 3
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="gs">**Deepest origin:**</span> make_assumptions (depth 3)
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
@@ -6530,9 +6530,9 @@ When a problem is found in a node's output but not in any of its inputs, that no
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>| Node | File | Evidence |
 <a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>|------|------|----------|
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>| executive_summary | 025-2-executive_summary.md | &quot;The budget is CZK 500,000...&quot; |
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>| project_plan | 005-2-project_plan.md | &quot;Estimated budget: CZK 500,000...&quot; |
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>| <span class="gs">**make_assumptions**</span> | 003-5-make_assumptions.md | &quot;Assume total budget...&quot; |
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>| executive_summary | executive_summary.md | &quot;The budget is CZK 500,000...&quot; |
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>| project_plan | project_plan.md | &quot;Estimated budget: CZK 500,000...&quot; |
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>| <span class="gs">**make_assumptions**</span> | make_assumptions.md | &quot;Assume total budget...&quot; |
 <a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
 <a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="gs">**Root cause:**</span> The prompt asks the LLM to generate budget assumptions
 <a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>without requiring external data sources...
@@ -6543,7 +6543,7 @@ When a problem is found in a node's output but not in any of its inputs, that no
 <h3 id="__main__py-cli-entry-point"><code>__main__.py</code> — CLI Entry Point</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python -m worker_plan_internal.rca \
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    --dir /path/to/output \
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    --file 030-report.html \
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    --file report.html \
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    --problem &quot;The budget is CZK 500,000 but this number appears unvalidated...&quot; \
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    --output-dir /path/to/output \
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    --max-depth 15 \

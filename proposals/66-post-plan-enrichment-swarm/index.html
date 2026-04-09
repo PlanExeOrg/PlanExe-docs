@@ -7015,26 +7015,26 @@
 <h2 id="problem">Problem</h2>
 <p>A PlanExe run for even a simple plan (e.g. a small Connecticut egg farm) produces:</p>
 <ul>
-<li><code>017-5-identified_documents_to_find.json</code> — a structured list of real documents that need to be located (zoning ordinances, predator population data, health codes, etc.)</li>
-<li><code>017-6-identified_documents_to_create.json</code> — a structured list of internal documents to draft (Project Charter, Risk Register, Communication Plan, etc.)</li>
-<li><code>023-4-wbs_project_level1_and_level2_and_level3.csv</code> — a full Level 1–4 WBS with task UUIDs</li>
-<li><code>026-3-schedule_gantt_machai.csv</code> — project schedule with start/end dates per task</li>
-<li><code>021-task_dependencies_raw.json</code> — dependency graph</li>
-<li><code>003-11-consolidate_assumptions_short.md</code> — key assumptions in plain Markdown</li>
-<li><code>013-team.md</code> — role roster with contract types</li>
-<li><code>005-2-project_plan.md</code> — master plan with resources, permits, and budget narrative</li>
-<li><code>002-21-physical_locations.md</code> — jurisdiction(s) where the project will run</li>
+<li><code>identified_documents_to_find.json</code> — a structured list of real documents that need to be located (zoning ordinances, predator population data, health codes, etc.)</li>
+<li><code>identified_documents_to_create.json</code> — a structured list of internal documents to draft (Project Charter, Risk Register, Communication Plan, etc.)</li>
+<li><code>wbs_project_level1_and_level2_and_level3.csv</code> — a full Level 1–4 WBS with task UUIDs</li>
+<li><code>schedule_gantt_machai.csv</code> — project schedule with start/end dates per task</li>
+<li><code>task_dependencies_raw.json</code> — dependency graph</li>
+<li><code>consolidate_assumptions_short.md</code> — key assumptions in plain Markdown</li>
+<li><code>team.md</code> — role roster with contract types</li>
+<li><code>project_plan.md</code> — master plan with resources, permits, and budget narrative</li>
+<li><code>physical_locations.md</code> — jurisdiction(s) where the project will run</li>
 </ul>
 <p>All of these are machine-readable and semantically rich. Without enrichment they just sit in a folder.</p>
 <hr />
 <h2 id="solution-enrichment-swarm-architecture">Solution: Enrichment Swarm Architecture</h2>
 <h3 id="trigger">Trigger</h3>
-<p>PlanExe writes <code>999-pipeline_complete.txt</code> to the run directory when the pipeline finishes. This file is the trigger.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/run/29131a8e-95d1-4f43-9891-920fae2b90ef/999-pipeline_complete.txt
+<p>PlanExe writes <code>pipeline_complete.txt</code> to the run directory when the pipeline finishes. This file is the trigger.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/run/29131a8e-95d1-4f43-9891-920fae2b90ef/pipeline_complete.txt
 </code></pre></div>
 <p>An OpenClaw file-watch hook (or a simple <code>inotifywait</code> wrapper on the run root) detects the file and fires the enrichment swarm:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Example hook: watch for completion signal</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>inotifywait<span class="w"> </span>-m<span class="w"> </span>-r<span class="w"> </span>/run<span class="w"> </span>--include<span class="w"> </span><span class="s1">&#39;999-pipeline_complete\.txt&#39;</span><span class="w"> </span>-e<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>inotifywait<span class="w"> </span>-m<span class="w"> </span>-r<span class="w"> </span>/run<span class="w"> </span>--include<span class="w"> </span><span class="s1">&#39;pipeline_complete\.txt&#39;</span><span class="w"> </span>-e<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>dir<span class="w"> </span>event<span class="w"> </span>file<span class="p">;</span><span class="w"> </span><span class="k">do</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span>planexe-enrich<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$dir</span><span class="s2">&quot;</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">done</span>
@@ -7087,8 +7087,8 @@
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">      </span><span class="no">planexe-enrich-agent document-executor</span>
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="no">--run-dir &quot;$run_dir&quot;</span>
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="no">--plan-repo &quot;$plan_repo&quot;</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="no">--find-list &quot;017-5-identified_documents_to_find.json&quot;</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="no">--create-list &quot;017-6-identified_documents_to_create.json&quot;</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">        </span><span class="no">--find-list &quot;identified_documents_to_find.json&quot;</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="no">--create-list &quot;identified_documents_to_create.json&quot;</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">        </span><span class="no">--output-dir &quot;docs/&quot;</span>
 <a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">        </span><span class="no">--json</span>
 <a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;!</span><span class="nv"> </span><span class="s">git</span><span class="nv"> </span><span class="s">-C</span><span class="nv"> </span><span class="s">$plan_repo</span><span class="nv"> </span><span class="s">ls-files</span><span class="nv"> </span><span class="s">--error-unmatch</span><span class="nv"> </span><span class="s">docs/project-charter.md</span><span class="nv"> </span><span class="s">2&gt;/dev/null&quot;</span>
@@ -7115,9 +7115,9 @@
 <a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">      </span><span class="no">planexe-enrich-agent project-board</span>
 <a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">        </span><span class="no">--run-dir &quot;$run_dir&quot;</span>
 <a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">        </span><span class="no">--github-repo &quot;$github_repo&quot;</span>
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">        </span><span class="no">--wbs-csv &quot;023-4-wbs_project_level1_and_level2_and_level3.csv&quot;</span>
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">        </span><span class="no">--gantt-csv &quot;026-3-schedule_gantt_machai.csv&quot;</span>
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">        </span><span class="no">--deps-json &quot;021-task_dependencies_raw.json&quot;</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="w">        </span><span class="no">--wbs-csv &quot;wbs_project_level1_and_level2_and_level3.csv&quot;</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">        </span><span class="no">--gantt-csv &quot;schedule_gantt_machai.csv&quot;</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">        </span><span class="no">--deps-json &quot;task_dependencies_raw.json&quot;</span>
 <a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">        </span><span class="no">--json</span>
 <a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">    </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$commit_documents.exitcode == 0</span>
 <a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>
@@ -7136,9 +7136,9 @@
 <a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="w">      </span><span class="no">planexe-enrich-agent project-board</span>
 <a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="w">        </span><span class="no">--run-dir &quot;$run_dir&quot;</span>
 <a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="w">        </span><span class="no">--github-repo &quot;$github_repo&quot;</span>
-<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="w">        </span><span class="no">--wbs-csv &quot;023-4-wbs_project_level1_and_level2_and_level3.csv&quot;</span>
-<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a><span class="w">        </span><span class="no">--gantt-csv &quot;026-3-schedule_gantt_machai.csv&quot;</span>
-<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">        </span><span class="no">--deps-json &quot;021-task_dependencies_raw.json&quot;</span>
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="w">        </span><span class="no">--wbs-csv &quot;wbs_project_level1_and_level2_and_level3.csv&quot;</span>
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a><span class="w">        </span><span class="no">--gantt-csv &quot;schedule_gantt_machai.csv&quot;</span>
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">        </span><span class="no">--deps-json &quot;task_dependencies_raw.json&quot;</span>
 <a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a><span class="w">        </span><span class="no">--apply</span>
 <a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="w">        </span><span class="no">--json</span>
 <a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a><span class="w">    </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$approve_board.approved</span>
@@ -7149,7 +7149,7 @@
 <a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a><span class="w">      </span><span class="no">planexe-enrich-agent assumption-validator</span>
 <a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a><span class="w">        </span><span class="no">--run-dir &quot;$run_dir&quot;</span>
 <a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a><span class="w">        </span><span class="no">--plan-repo &quot;$plan_repo&quot;</span>
-<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a><span class="w">        </span><span class="no">--assumptions-md &quot;003-11-consolidate_assumptions_short.md&quot;</span>
+<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a><span class="w">        </span><span class="no">--assumptions-md &quot;consolidate_assumptions_short.md&quot;</span>
 <a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a><span class="w">        </span><span class="no">--output &quot;validation/assumptions-check.md&quot;</span>
 <a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a><span class="w">        </span><span class="no">--json</span>
 <a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a><span class="w">    </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;!</span><span class="nv"> </span><span class="s">git</span><span class="nv"> </span><span class="s">-C</span><span class="nv"> </span><span class="s">$plan_repo</span><span class="nv"> </span><span class="s">ls-files</span><span class="nv"> </span><span class="s">--error-unmatch</span><span class="nv"> </span><span class="s">validation/assumptions-check.md</span><span class="nv"> </span><span class="s">2&gt;/dev/null&quot;</span>
@@ -7176,8 +7176,8 @@
 <a id="__codelineno-3-106" name="__codelineno-3-106" href="#__codelineno-3-106"></a><span class="w">      </span><span class="no">planexe-enrich-agent team-sourcer</span>
 <a id="__codelineno-3-107" name="__codelineno-3-107" href="#__codelineno-3-107"></a><span class="w">        </span><span class="no">--run-dir &quot;$run_dir&quot;</span>
 <a id="__codelineno-3-108" name="__codelineno-3-108" href="#__codelineno-3-108"></a><span class="w">        </span><span class="no">--plan-repo &quot;$plan_repo&quot;</span>
-<a id="__codelineno-3-109" name="__codelineno-3-109" href="#__codelineno-3-109"></a><span class="w">        </span><span class="no">--team-md &quot;013-team.md&quot;</span>
-<a id="__codelineno-3-110" name="__codelineno-3-110" href="#__codelineno-3-110"></a><span class="w">        </span><span class="no">--project-plan-md &quot;005-2-project_plan.md&quot;</span>
+<a id="__codelineno-3-109" name="__codelineno-3-109" href="#__codelineno-3-109"></a><span class="w">        </span><span class="no">--team-md &quot;team.md&quot;</span>
+<a id="__codelineno-3-110" name="__codelineno-3-110" href="#__codelineno-3-110"></a><span class="w">        </span><span class="no">--project-plan-md &quot;project_plan.md&quot;</span>
 <a id="__codelineno-3-111" name="__codelineno-3-111" href="#__codelineno-3-111"></a><span class="w">        </span><span class="no">--output-dir &quot;sourcing/&quot;</span>
 <a id="__codelineno-3-112" name="__codelineno-3-112" href="#__codelineno-3-112"></a><span class="w">        </span><span class="no">--json</span>
 <a id="__codelineno-3-113" name="__codelineno-3-113" href="#__codelineno-3-113"></a><span class="w">    </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;!</span><span class="nv"> </span><span class="s">git</span><span class="nv"> </span><span class="s">-C</span><span class="nv"> </span><span class="s">$plan_repo</span><span class="nv"> </span><span class="s">ls-files</span><span class="nv"> </span><span class="s">--error-unmatch</span><span class="nv"> </span><span class="s">sourcing/team-leads.md</span><span class="nv"> </span><span class="s">2&gt;/dev/null&quot;</span>
@@ -7204,8 +7204,8 @@
 <a id="__codelineno-3-134" name="__codelineno-3-134" href="#__codelineno-3-134"></a><span class="w">      </span><span class="no">planexe-enrich-agent compliance-researcher</span>
 <a id="__codelineno-3-135" name="__codelineno-3-135" href="#__codelineno-3-135"></a><span class="w">        </span><span class="no">--run-dir &quot;$run_dir&quot;</span>
 <a id="__codelineno-3-136" name="__codelineno-3-136" href="#__codelineno-3-136"></a><span class="w">        </span><span class="no">--plan-repo &quot;$plan_repo&quot;</span>
-<a id="__codelineno-3-137" name="__codelineno-3-137" href="#__codelineno-3-137"></a><span class="w">        </span><span class="no">--project-plan-md &quot;005-2-project_plan.md&quot;</span>
-<a id="__codelineno-3-138" name="__codelineno-3-138" href="#__codelineno-3-138"></a><span class="w">        </span><span class="no">--locations-md &quot;002-21-physical_locations.md&quot;</span>
+<a id="__codelineno-3-137" name="__codelineno-3-137" href="#__codelineno-3-137"></a><span class="w">        </span><span class="no">--project-plan-md &quot;project_plan.md&quot;</span>
+<a id="__codelineno-3-138" name="__codelineno-3-138" href="#__codelineno-3-138"></a><span class="w">        </span><span class="no">--locations-md &quot;physical_locations.md&quot;</span>
 <a id="__codelineno-3-139" name="__codelineno-3-139" href="#__codelineno-3-139"></a><span class="w">        </span><span class="no">--output &quot;compliance/requirements.md&quot;</span>
 <a id="__codelineno-3-140" name="__codelineno-3-140" href="#__codelineno-3-140"></a><span class="w">        </span><span class="no">--json</span>
 <a id="__codelineno-3-141" name="__codelineno-3-141" href="#__codelineno-3-141"></a><span class="w">    </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;!</span><span class="nv"> </span><span class="s">git</span><span class="nv"> </span><span class="s">-C</span><span class="nv"> </span><span class="s">$plan_repo</span><span class="nv"> </span><span class="s">ls-files</span><span class="nv"> </span><span class="s">--error-unmatch</span><span class="nv"> </span><span class="s">compliance/requirements.md</span><span class="nv"> </span><span class="s">2&gt;/dev/null&quot;</span>
@@ -7241,8 +7241,8 @@
 <h3 id="agent-1-document-executor">Agent 1 — Document Executor</h3>
 <p><strong>Purpose:</strong> Turn PlanExe's document TODO lists into real artifacts.</p>
 <p><strong>Inputs:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{run_dir}/017-5-identified_documents_to_find.json
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{run_dir}/017-6-identified_documents_to_create.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{run_dir}/identified_documents_to_find.json
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{run_dir}/identified_documents_to_create.json
 </code></pre></div></p>
 <p><strong>Example input item (find-list):</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
@@ -7290,8 +7290,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>planexe-enrich-agent<span class="w"> </span>document-executor<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span>--run-dir<span class="w"> </span>/run/UUID<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span>--plan-repo<span class="w"> </span>/repos/my-plan<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span>--find-list<span class="w"> </span><span class="m">017</span>-5-identified_documents_to_find.json<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span>--create-list<span class="w"> </span><span class="m">017</span>-6-identified_documents_to_create.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span>--find-list<span class="w"> </span>identified_documents_to_find.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span>--create-list<span class="w"> </span>identified_documents_to_create.json<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span>--output-dir<span class="w"> </span>docs/<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span>--json
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1"># stdout: { &quot;created&quot;: 12, &quot;fetched&quot;: 8, &quot;skipped&quot;: 0, &quot;errors&quot;: [] }</span>
@@ -7300,9 +7300,9 @@
 <h3 id="agent-2-project-board-setup">Agent 2 — Project Board Setup</h3>
 <p><strong>Purpose:</strong> Populate a GitHub project board from the WBS and Gantt CSVs.</p>
 <p><strong>Inputs:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{run_dir}/023-4-wbs_project_level1_and_level2_and_level3.csv
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>{run_dir}/026-3-schedule_gantt_machai.csv
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>{run_dir}/021-task_dependencies_raw.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{run_dir}/wbs_project_level1_and_level2_and_level3.csv
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>{run_dir}/schedule_gantt_machai.csv
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>{run_dir}/task_dependencies_raw.json
 </code></pre></div></p>
 <p><strong>Example WBS row:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Level 1;     Level 2;                        Level 3;    Level 4;                         Task ID
@@ -7318,7 +7318,7 @@
 1. Parse WBS CSV: Level 2 rows → GitHub milestones (with start/end from Gantt CSV).
 2. Parse WBS CSV: Level 3 rows → GitHub issues (assigned to milestone, labelled with Level 1).
 3. Parse WBS CSV: Level 4 rows → GitHub sub-issues (linked to parent Level 3 issue).
-4. Parse <code>021-task_dependencies_raw.json</code> → add "Depends on: #N" lines to issue bodies.
+4. Parse <code>task_dependencies_raw.json</code> → add "Depends on: #N" lines to issue bodies.
 5. In dry-run mode (<code>--json</code> only): emit the plan as JSON without creating anything.
 6. In apply mode (<code>--apply</code>): call <code>gh api</code> to create milestones and issues.</p>
 <p><strong>Outputs:</strong>
@@ -7339,9 +7339,9 @@
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>planexe-enrich-agent<span class="w"> </span>project-board<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span>--run-dir<span class="w"> </span>/run/UUID<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span>--github-repo<span class="w"> </span>owner/repo<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span>--wbs-csv<span class="w"> </span><span class="m">023</span>-4-wbs_project_level1_and_level2_and_level3.csv<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span>--gantt-csv<span class="w"> </span><span class="m">026</span>-3-schedule_gantt_machai.csv<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span>--deps-json<span class="w"> </span><span class="m">021</span>-task_dependencies_raw.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span>--wbs-csv<span class="w"> </span>wbs_project_level1_and_level2_and_level3.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span>--gantt-csv<span class="w"> </span>schedule_gantt_machai.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span>--deps-json<span class="w"> </span>task_dependencies_raw.json<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span>--json
 <a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="c1"># stdout: { &quot;milestones&quot;: 6, &quot;issues&quot;: 42, &quot;sub_issues&quot;: 127, &quot;plan&quot;: [...] }</span>
 <a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
@@ -7353,7 +7353,7 @@
 <h3 id="agent-3-assumption-validator">Agent 3 — Assumption Validator</h3>
 <p><strong>Purpose:</strong> Check each plan assumption against current real-world data.</p>
 <p><strong>Input:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>{run_dir}/003-11-consolidate_assumptions_short.md
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>{run_dir}/consolidate_assumptions_short.md
 </code></pre></div></p>
 <p><strong>Example assumption (from actual egg-farm run):</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="gu">## Assumptions</span>
@@ -7392,7 +7392,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>planexe-enrich-agent<span class="w"> </span>assumption-validator<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span>--run-dir<span class="w"> </span>/run/UUID<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span>--plan-repo<span class="w"> </span>/repos/my-plan<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span>--assumptions-md<span class="w"> </span><span class="m">003</span>-11-consolidate_assumptions_short.md<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span>--assumptions-md<span class="w"> </span>consolidate_assumptions_short.md<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span>--output<span class="w"> </span>validation/assumptions-check.md<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span>--json
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1"># stdout: { &quot;confirmed&quot;: 1, &quot;uncertain&quot;: 1, &quot;contradicted&quot;: 0, &quot;unverifiable&quot;: 1 }</span>
@@ -7401,8 +7401,8 @@
 <h3 id="agent-4-team-resource-sourcer">Agent 4 — Team &amp; Resource Sourcer</h3>
 <p><strong>Purpose:</strong> Find real local candidates and vendors for each required role.</p>
 <p><strong>Inputs:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>{run_dir}/013-team.md         (role roster with contract types)
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>{run_dir}/005-2-project_plan.md  (resources section)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>{run_dir}/team.md         (role roster with contract types)
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>{run_dir}/project_plan.md  (resources section)
 </code></pre></div></p>
 <p><strong>Example input (from actual egg-farm run):</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="gh"># Roles</span>
@@ -7412,10 +7412,10 @@
 <a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>...
 </code></pre></div></p>
 <p><strong>Actions:</strong>
-1. Parse role names and contract types from <code>013-team.md</code>.
-2. Extract location from <code>002-21-physical_locations.md</code> (e.g. "Litchfield County, CT").
+1. Parse role names and contract types from <code>team.md</code>.
+2. Extract location from <code>physical_locations.md</code> (e.g. "Litchfield County, CT").
 3. For each role: run targeted web searches for real professionals/vendors in that location.
-4. For each resource mentioned in <code>005-2-project_plan.md</code>: find actual local suppliers.
+4. For each resource mentioned in <code>project_plan.md</code>: find actual local suppliers.
 5. Compile findings with names, contact info, and notes.</p>
 <p><strong>Outputs committed to plan repo:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sourcing/team-leads.md
@@ -7437,8 +7437,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>planexe-enrich-agent<span class="w"> </span>team-sourcer<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span>--run-dir<span class="w"> </span>/run/UUID<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span>--plan-repo<span class="w"> </span>/repos/my-plan<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">  </span>--team-md<span class="w"> </span><span class="m">013</span>-team.md<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">  </span>--project-plan-md<span class="w"> </span><span class="m">005</span>-2-project_plan.md<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">  </span>--team-md<span class="w"> </span>team.md<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">  </span>--project-plan-md<span class="w"> </span>project_plan.md<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">  </span>--output-dir<span class="w"> </span>sourcing/<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="w">  </span>--json
 <a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="c1"># stdout: { &quot;roles_sourced&quot;: 8, &quot;vendors_found&quot;: 5, &quot;errors&quot;: [] }</span>
@@ -7447,8 +7447,8 @@
 <h3 id="agent-5-compliance-researcher">Agent 5 — Compliance Researcher</h3>
 <p><strong>Purpose:</strong> Find real regulatory requirements for the plan's jurisdiction and domain.</p>
 <p><strong>Inputs:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>{run_dir}/005-2-project_plan.md      (permits mentioned)
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>{run_dir}/002-21-physical_locations.md  (jurisdiction)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>{run_dir}/project_plan.md      (permits mentioned)
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>{run_dir}/physical_locations.md  (jurisdiction)
 </code></pre></div></p>
 <p><strong>Example location (actual run):</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="gu">## Location 1</span>
@@ -7456,8 +7456,8 @@
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>A small farm in Litchfield County, CT
 </code></pre></div></p>
 <p><strong>Actions:</strong>
-1. Extract jurisdiction (state, county, municipality) from <code>002-21-physical_locations.md</code>.
-2. Extract permit types and regulatory domains mentioned in <code>005-2-project_plan.md</code>.
+1. Extract jurisdiction (state, county, municipality) from <code>physical_locations.md</code>.
+2. Extract permit types and regulatory domains mentioned in <code>project_plan.md</code>.
 3. For each regulatory requirement: search for actual permit names, forms, fees, and filing procedures.
 4. Compile into a structured compliance report.</p>
 <p><strong>Output committed to plan repo:</strong>
@@ -7489,8 +7489,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>planexe-enrich-agent<span class="w"> </span>compliance-researcher<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span>--run-dir<span class="w"> </span>/run/UUID<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">  </span>--plan-repo<span class="w"> </span>/repos/my-plan<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">  </span>--project-plan-md<span class="w"> </span><span class="m">005</span>-2-project_plan.md<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">  </span>--locations-md<span class="w"> </span><span class="m">002</span>-21-physical_locations.md<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">  </span>--project-plan-md<span class="w"> </span>project_plan.md<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">  </span>--locations-md<span class="w"> </span>physical_locations.md<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">  </span>--output<span class="w"> </span>compliance/requirements.md<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">  </span>--json
 <a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="c1"># stdout: { &quot;requirements_found&quot;: 8, &quot;jurisdictions_searched&quot;: 3, &quot;errors&quot;: [] }</span>
@@ -7525,8 +7525,8 @@
 <a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>      git_state.py                    # Shared: idempotency checks, commit helpers
 <a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>    tests/
 <a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>      fixtures/
-<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>        017-5-identified_documents_to_find.json   # Sample from real run
-<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>        023-4-wbs_project_level1_and_level2_and_level3.csv
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>        identified_documents_to_find.json   # Sample from real run
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>        wbs_project_level1_and_level2_and_level3.csv
 <a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>      test_document_executor.py
 <a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>      test_project_board_setup.py
 <a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a>      test_assumption_validator.py

@@ -7066,9 +7066,9 @@
 <h3 id="example">Example</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ planexe invalidate SelectScenarioTask --run-dir ./run/Qwen_Clean_v1
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Would delete:
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  run/Qwen_Clean_v1/002-17-selected_scenario_raw.json
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  run/Qwen_Clean_v1/002-18-selected_scenario.json
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  run/Qwen_Clean_v1/002-19-scenarios.md
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  run/Qwen_Clean_v1/selected_scenario_raw.json
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  run/Qwen_Clean_v1/selected_scenario.json
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  run/Qwen_Clean_v1/scenarios.md
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Proceed? [y/N]
 </code></pre></div>
 <h3 id="why-this-matters_1">Why this matters</h3>
@@ -7076,7 +7076,7 @@
 <hr />
 <h2 id="3-plan-file-hot-editing-with-downstream-invalidation">3. Plan File Hot-Editing with Downstream Invalidation</h2>
 <h3 id="the-problem_2">The problem</h3>
-<p>The input plan (<code>001-2-plan.txt</code>) is locked in at run start. If a user wants to refine the plan description mid-run — clarify scope, correct a factual error, tighten the framing — there is no supported path. The only option is start a new run from scratch.</p>
+<p>The input plan (<code>plan.txt</code>) is locked in at run start. If a user wants to refine the plan description mid-run — clarify scope, correct a factual error, tighten the framing — there is no supported path. The only option is start a new run from scratch.</p>
 <h3 id="what-we-want_2">What we want</h3>
 <p>A mechanism to edit the plan file and selectively invalidate downstream tasks:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>planexe<span class="w"> </span>edit-plan<span class="w"> </span>--run-dir<span class="w"> </span>./run/Qwen_Clean_v1

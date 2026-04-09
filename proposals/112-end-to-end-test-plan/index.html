@@ -6627,7 +6627,7 @@
 5. Assert: MCP returns <code>PIPELINE_VERSION_MISMATCH</code> error.</p>
 <p><strong>Variant — worker-side check:</strong>
 1. Bypass the MCP-layer check (e.g. manually set <code>parameters["pipeline_version"]</code> to match current).
-2. But ensure the <code>001-3-planexe_metadata.json</code> in the zip snapshot has a different version.
+2. But ensure the <code>planexe_metadata.json</code> in the zip snapshot has a different version.
 3. Let the worker pick up the resumed plan.
 4. Assert: worker sets plan to failed with progress_message containing "Not resumable".</p>
 <h3 id="2-pipeline-version-mismatch-on-resume-legacy-plan-no-version">2. Pipeline version mismatch on resume — legacy plan (no version)</h3>
@@ -6671,7 +6671,7 @@
 4. Call <code>plan_file_info</code> with <code>artifact: "report"</code> — assert <code>download_url</code> is present.
 5. Call <code>plan_file_info</code> with <code>artifact: "zip"</code> — assert <code>download_url</code> is present.
 6. Download the report and verify it is valid HTML containing expected sections.
-7. Download the zip and verify <code>001-3-planexe_metadata.json</code> is present with correct <code>pipeline_version</code>.</p>
+7. Download the zip and verify <code>planexe_metadata.json</code> is present with correct <code>pipeline_version</code>.</p>
 <h3 id="7-resume-after-mid-generation-failure">7. Resume after mid-generation failure</h3>
 <p><strong>Goal:</strong> Verify that resume actually skips completed steps and finishes the plan.</p>
 <p><strong>Steps:</strong>
