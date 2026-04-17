@@ -1302,17 +1302,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#host-opener-open-output-dir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Host opener (Open Output Dir)
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1491,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/open_dir_server/" class="md-nav__link">
+      <a href="../developer/open_dir_server.md" class="md-nav__link">
         
   
   
@@ -1547,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/frontend_single_user/" class="md-nav__link">
+      <a href="../developer/frontend_single_user.md" class="md-nav__link">
         
   
   
@@ -6461,17 +6450,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#host-opener-open-output-dir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Host opener (Open Output Dir)
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -6498,10 +6476,10 @@ This page covers common Docker workflows and troubleshooting.</p>
 <h2 id="basic-lifecycle">Basic lifecycle</h2>
 <ul>
 <li>Stop everything: <code>docker compose down</code></li>
-<li>Build fresh (no cache) after code moves: <code>docker compose build --no-cache database_postgres worker_plan frontend_single_user frontend_multi_user</code></li>
+<li>Build fresh (no cache) after code moves: <code>docker compose build --no-cache database_postgres worker_plan frontend_multi_user</code></li>
 <li>Start services: <code>docker compose up</code></li>
 <li>Stop services (leave images): <code>docker compose down</code></li>
-<li>Build fresh and start services: <code>docker compose build --no-cache database_postgres worker_plan frontend_single_user frontend_multi_user &amp;&amp; docker compose up</code></li>
+<li>Build fresh and start services: <code>docker compose build --no-cache database_postgres worker_plan frontend_multi_user &amp;&amp; docker compose up</code></li>
 </ul>
 <h2 id="while-developing">While developing</h2>
 <p>Simons typical workflow.</p>
@@ -6516,7 +6494,6 @@ This page covers common Docker workflows and troubleshooting.</p>
   If watch misses changes after file moves, rerun the no-cache build above.</li>
 <li>View logs: </li>
 <li><code>docker compose logs -f worker_plan</code></li>
-<li><code>docker compose logs -f frontend_single_user</code></li>
 <li><code>docker compose logs -f frontend_multi_user</code></li>
 </ul>
 <h2 id="run-individual-files">Run individual files</h2>
@@ -6565,21 +6542,6 @@ This page covers common Docker workflows and troubleshooting.</p>
 <li>Multiuser UI: binds to container port <code>5000</code>, exposed on host <code>${PLANEXE_FRONTEND_MULTIUSER_PORT:-5001}</code>.</li>
 <li>MCP server downloads: set <code>PLANEXE_MCP_PUBLIC_BASE_URL</code> so clients receive a reachable <code>/download/...</code> URL (defaults to <code>http://localhost:8001</code> in compose).</li>
 </ul>
-<h2 id="host-opener-open-output-dir">Host opener (Open Output Dir)</h2>
-<p>Because Docker containers cannot launch host apps, the <code>Open Output Dir</code> button needs a host-side service.</p>
-<p>Set these environment variables before starting:
-- <code>PLANEXE_OPEN_DIR_SERVER_URL</code> so the container can reach the host opener:
-  - macOS/Windows (Docker Desktop): <code>http://host.docker.internal:5100</code>
-  - Linux: <code>http://172.17.0.1:5100</code> (or add <code>host.docker.internal</code> pointing to the bridge IP).
-- <code>PLANEXE_HOST_RUN_DIR</code>: optional; defaults to <code>PlanExe/run</code> on the host. Set an absolute path if you relocate the run directory.</p>
-<p>1) Start host opener <strong>before</strong> Docker (on the host):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>open_dir_server
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">  </span><span class="c1"># Windows: venv\Scripts\activate</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>python<span class="w"> </span>app.py
-</code></pre></div>
-2) Provide <code>PLANEXE_OPEN_DIR_SERVER_URL</code> via your shell env, <code>.env</code>, or docker compose environment for <code>frontend_single_user</code>.</p>
 
 
 

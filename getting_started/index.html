@@ -562,10 +562,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-start-the-single-user-stack" class="md-nav__link">
+  <a href="#4-start-the-stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Start the single-user stack
+        4. Start the stack
       
     </span>
   </a>
@@ -1496,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/open_dir_server/" class="md-nav__link">
+      <a href="../developer/open_dir_server.md" class="md-nav__link">
         
   
   
@@ -1552,7 +1552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../developer/frontend_single_user/" class="md-nav__link">
+      <a href="../developer/frontend_single_user.md" class="md-nav__link">
         
   
   
@@ -6428,10 +6428,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-start-the-single-user-stack" class="md-nav__link">
+  <a href="#4-start-the-stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Start the single-user stack
+        4. Start the stack
       
     </span>
   </a>
@@ -6503,7 +6503,7 @@
 
 
 <h1 id="getting-started-with-planexe">Getting started with PlanExe</h1>
-<p>This guide shows new users how to launch the <code>frontend_single_user</code> UI with Docker using OpenRouter as the LLM provider. No local Python or pip setup is needed.</p>
+<p>This guide shows new users how to launch the <code>frontend_multi_user</code> UI with Docker using OpenRouter as the LLM provider. No local Python or pip setup is needed.</p>
 <h2 id="1-prerequisites">1. Prerequisites</h2>
 <p>Install <a href="https://www.docker.com/">Docker</a>.</p>
 <p>Create an account on <a href="https://openrouter.ai/">OpenRouter</a> and top up around 5 USD in credits (paid models works, the free models are unreliable).
@@ -6517,19 +6517,19 @@ It cost around 0.1 USD to generate a plan, when using PlanExe's default settings
 <p>Add your OpenRouter key:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">OPENROUTER_API_KEY</span><span class="o">=</span><span class="s1">&#39;sk-or-v1-your-key&#39;</span>
 </code></pre></div></p>
-<h2 id="4-start-the-single-user-stack">4. Start the single-user stack</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>worker_plan<span class="w"> </span>frontend_single_user
+<h2 id="4-start-the-stack">4. Start the stack</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>worker_plan<span class="w"> </span>frontend_multi_user
 </code></pre></div>
-<p>Wait for <a href="http://localhost:7860">http://localhost:7860</a> to become available.</p>
+<p>Wait for <a href="http://localhost:5001">http://localhost:5001</a> to become available.</p>
 <p>Stop with <code>Ctrl+C</code>.</p>
 <h2 id="5-use-the-ui">5. Use the UI</h2>
-<p>Open <a href="http://localhost:7860">http://localhost:7860</a> in your browser. </p>
+<p>Open <a href="http://localhost:5001">http://localhost:5001</a> in your browser and log in (or create an account).</p>
 <p>You can now submit your prompt.</p>
 <p>The generated plans are written to <code>run/&lt;timestamped-output-dir&gt;</code>.</p>
 <p><img alt="Screenshot of PlanExe" src="../planexe-humanoid-factory.jpg?raw=true" title="Screenshot of PlanExe" /></p>
 <h2 id="verification">Verification</h2>
 <ul>
-<li>You can open the UI at <a href="http://localhost:7860">http://localhost:7860</a>.</li>
+<li>You can open the UI at <a href="http://localhost:5001">http://localhost:5001</a>.</li>
 <li>A plan run creates a new folder in <code>run/</code>.</li>
 </ul>
 <h2 id="troubleshooting-and-next-steps">Troubleshooting and next steps</h2>

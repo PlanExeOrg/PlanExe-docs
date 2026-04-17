@@ -1363,7 +1363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/open_dir_server/" class="md-nav__link">
+      <a href="../../developer/open_dir_server.md" class="md-nav__link">
         
   
   
@@ -1419,7 +1419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/frontend_single_user/" class="md-nav__link">
+      <a href="../../developer/frontend_single_user.md" class="md-nav__link">
         
   
   
@@ -2410,17 +2410,6 @@
     <span class="md-ellipsis">
       
         MCP Interface
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gradio-ui-frontend_single_user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gradio UI (frontend_single_user)
       
     </span>
   </a>
@@ -6556,17 +6545,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#gradio-ui-frontend_single_user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gradio UI (frontend_single_user)
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -6750,18 +6728,18 @@
 <h1 id="ui-for-editing-plans">UI for Editing Plans</h1>
 <h2 id="status">Status</h2>
 <p>In progress</p>
-<p>Implementation update (2026-02-18):</p>
-<ul>
-<li><code>frontend_multi_user</code> (deployed at <a href="https://home.planexe.org/">home.planexe.org</a>) now has a user-facing <strong>Generate Plan</strong> flow.</li>
-<li>Users can now use <code>/plan</code> to:</li>
-<li>list their plans</li>
-<li>inspect an individual plan</li>
-<li>download report/zip artifacts</li>
-<li>End users no longer need to navigate Flask-Admin for normal plan creation and viewing.</li>
-</ul>
+<p>Implementation update (2026-04-17):</p>
+<p>The <code>frontend_multi_user</code> is deployed at <a href="https://home.planexe.org/">home.planexe.org</a>).
+Where users can:
+  - list their plans
+  - inspect an individual plan
+  - download report/zip artifacts
+  - Stop the creation of a plan
+  - Retry, that generates the plan from scratch
+  - Resume a plan from where it left off
+  - Resume from zip, where the user can upload their own edited plan, and have it generated.</p>
 <h2 id="context">Context</h2>
 <p>The production site at <a href="https://home.planexe.org/">home.planexe.org</a> now provides a user-facing UI for creating and viewing plans in the browser.</p>
-<p>Before this update, plan creation and inspection required either MCP usage or Flask-Admin. That limitation has been removed for the core create/view flow.</p>
 <h3 id="mcp-interface">MCP Interface</h3>
 <p>The MCP interface can create plans and store them in the database. It also uses <code>example_prompts</code>, which helps users land on a reasonable starting prompt instead of a blank textarea.</p>
 <p>Limitations:</p>
@@ -6771,21 +6749,6 @@
 </li>
 <li>
 <p>There is no editing workflow for existing plans.</p>
-</li>
-</ul>
-<h3 id="gradio-ui-frontend_single_user">Gradio UI (<code>frontend_single_user</code>)</h3>
-<p>The <code>frontend_single_user</code> UI is a Gradio interface intended for local or developer use, not for end users.</p>
-<p>What works well:</p>
-<ul>
-<li>It supports <code>Retry</code>, which re-runs the Luigi pipeline where it left off. This allows manual plan editing by deleting files and regenerating downstream content.</li>
-</ul>
-<p>Limitations:</p>
-<ul>
-<li>
-<p>It does not use the database, so created plans are not persisted and users cannot browse past plans.</p>
-</li>
-<li>
-<p>It does not know credit balances. Creating a plan costs tokens, and if the user has insufficient funds, the UI should refuse creation.</p>
 </li>
 <li>
 <p>The prompt input is a plain textarea. Users often omit critical constraints (for example, no location or unrealistic budgets). This leads to weak plans or incorrect assumptions, such as the system guessing locations when the user intended a specific geography.</p>

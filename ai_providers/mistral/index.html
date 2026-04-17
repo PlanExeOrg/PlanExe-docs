@@ -1361,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/open_dir_server/" class="md-nav__link">
+      <a href="../../developer/open_dir_server.md" class="md-nav__link">
         
   
   
@@ -1417,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/frontend_single_user/" class="md-nav__link">
+      <a href="../../developer/frontend_single_user.md" class="md-nav__link">
         
   
   
@@ -6480,12 +6480,12 @@
 </code></pre></div></li>
 <li>Add (or keep) a Mistral entry in <code>llm_config/&lt;profile&gt;.json</code> (example below).</li>
 <li>Rebuild the images so the new dependencies are baked in:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose build --no-cache worker_plan frontend_single_user
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker compose build --no-cache worker_plan frontend_multi_user
 </code></pre></div></li>
 <li>Start PlanExe:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker compose up worker_plan frontend_single_user
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker compose up worker_plan frontend_multi_user
 </code></pre></div>
-7) Open http://localhost:7860, go to <strong>Settings</strong>, and pick your Mistral model (e.g., <code>mistral-paid-large</code>). If you later tweak only <code>llm_config/&lt;profile&gt;.json</code>, just restart the containers (<code>docker compose restart worker_plan frontend_single_user</code>); rebuilds are only needed when dependencies change.</li>
+7) Open http://localhost:5001, go to <strong>Settings</strong>, and pick your Mistral model (e.g., <code>mistral-paid-large</code>). If you later tweak only <code>llm_config/&lt;profile&gt;.json</code>, just restart the containers (<code>docker compose restart worker_plan frontend_multi_user</code>); rebuilds are only needed when dependencies change.</li>
 </ol>
 <h2 id="why-use-mistral">Why use Mistral?</h2>
 <p>Mistral can have run your own fine tuned model in the cloud. If you have sensitive business data that you don't want to share with the world, then this is one way to do it.</p>

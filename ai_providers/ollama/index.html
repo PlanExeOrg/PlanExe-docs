@@ -1361,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/open_dir_server/" class="md-nav__link">
+      <a href="../../developer/open_dir_server.md" class="md-nav__link">
         
   
   
@@ -1417,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/frontend_single_user/" class="md-nav__link">
+      <a href="../../developer/frontend_single_user.md" class="md-nav__link">
         
   
   
@@ -6558,7 +6558,7 @@
 <ol>
 <li>Install Ollama on your host and pull a small model: <code>ollama run llama3.1</code> (downloads ~4.9 GB and proves the host service works).  </li>
 <li>Copy <code>.env.docker-example</code> to <code>.env</code> (even if you leave keys empty for Ollama) and pick the Docker entry in <code>llm_config/&lt;profile&gt;.json</code> (snippet below) so <code>base_url</code> points to <code>http://host.docker.internal:11434</code> (Docker Desktop) or your Linux bridge IP.  </li>
-<li>Start PlanExe: <code>docker compose up worker_plan frontend_single_user</code>. Open http://localhost:7860, submit a prompt, and watch <code>docker compose logs -f worker_plan</code> for progress.</li>
+<li>Start PlanExe: <code>docker compose up worker_plan frontend_multi_user</code>. Open http://localhost:5001, submit a prompt, and watch <code>docker compose logs -f worker_plan</code> for progress.</li>
 </ol>
 <h3 id="host-only-no-docker-for-advanced-users">Host-only (no Docker) — for advanced users</h3>
 <ul>
@@ -6602,7 +6602,7 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>Restart or rebuild the worker/frontends after updating <code>llm_config/&lt;profile&gt;.json</code>: <code>docker compose up worker_plan frontend_single_user</code> (add <code>--build</code> or run <code>docker compose build worker_plan frontend_single_user</code> if the image needs the new config baked in).</li>
+<li>Restart or rebuild the worker/frontends after updating <code>llm_config/&lt;profile&gt;.json</code>: <code>docker compose up worker_plan frontend_multi_user</code> (add <code>--build</code> or run <code>docker compose build worker_plan frontend_multi_user</code> if the image needs the new config baked in).</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>Use the command line to compare Ollama's list of installed models with the configurations in your <code>llm_config/&lt;profile&gt;.json</code> file. Run:</p>

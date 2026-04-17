@@ -1361,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/open_dir_server/" class="md-nav__link">
+      <a href="../../developer/open_dir_server.md" class="md-nav__link">
         
   
   
@@ -1417,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/frontend_single_user/" class="md-nav__link">
+      <a href="../../developer/frontend_single_user.md" class="md-nav__link">
         
   
   
@@ -6457,11 +6457,11 @@
 </code></pre></div>
    The containers mount <code>.env</code> and <code>llm_config/&lt;profile&gt;.json</code> automatically.</li>
 <li>Start PlanExe:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker compose up worker_plan frontend_single_user
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker compose up worker_plan frontend_multi_user
 </code></pre></div></li>
-<li>Wait for http://localhost:7860 to come up, submit a prompt, and watch progress with <code>docker compose logs -f worker_plan</code>.</li>
+<li>Wait for http://localhost:5001 to come up, submit a prompt, and watch progress with <code>docker compose logs -f worker_plan</code>.</li>
 <li>Outputs are written to <code>run/&lt;timestamped-output-dir&gt;</code> on the host (mounted from the containers).</li>
-<li>Stop with <code>Ctrl+C</code> (or <code>docker compose down</code>). If you change <code>llm_config/&lt;profile&gt;.json</code>, restart the containers so they reload it: <code>docker compose restart worker_plan frontend_single_user</code> (or <code>docker compose down &amp;&amp; docker compose up</code>). No rebuild is needed for config-only edits.</li>
+<li>Stop with <code>Ctrl+C</code> (or <code>docker compose down</code>). If you change <code>llm_config/&lt;profile&gt;.json</code>, restart the containers so they reload it: <code>docker compose restart worker_plan frontend_multi_user</code> (or <code>docker compose down &amp;&amp; docker compose up</code>). No rebuild is needed for config-only edits.</li>
 </ol>
 <h2 id="configuration">Configuration</h2>
 <p>Visit <a href="https://openrouter.ai/">OpenRouter</a>, create an account, purchase 5 USD in credits (plenty for making a several plans), and generate an API key.</p>
@@ -6469,7 +6469,7 @@
 <p>Open the <code>.env</code> file in a text editor and insert your OpenRouter API key. Like this:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>OPENROUTER_API_KEY=&#39;INSERT YOUR KEY HERE&#39;
 </code></pre></div>
-<p>If you edit <code>llm_config/&lt;profile&gt;.json</code> later, restart the worker/frontend containers to pick up the changes: <code>docker compose restart worker_plan frontend_single_user</code> (or stop/start). Rebuilds are only needed when dependencies change.</p>
+<p>If you edit <code>llm_config/&lt;profile&gt;.json</code> later, restart the worker/frontend containers to pick up the changes: <code>docker compose restart worker_plan frontend_multi_user</code> (or stop/start). Rebuilds are only needed when dependencies change.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>Inside PlanExe, when clicking <code>Submit</code>, a new <code>Output Dir</code> should be created containing a <code>log.txt</code>. Open that file and scroll to the bottom, see if there are any error messages about what is wrong.</p>
 <p>When running in Docker, also check the worker logs for 401/429 or connectivity errors:</p>
