@@ -1529,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -5569,10 +5569,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-mcp_local-user-facing-text-still-uses-old-names" class="md-nav__link">
+  <a href="#2-agents-ops-docs-still-use-taskitem-taskstate-wording" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) mcp_local user-facing text still uses old names
+        2) AGENTS / ops docs still use TaskItem / TaskState wording
       
     </span>
   </a>
@@ -5580,10 +5580,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-agents-ops-docs-still-use-taskitem-taskstate-wording" class="md-nav__link">
+  <a href="#3-compatibility-aliases-still-expose-legacy-task_-internals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) AGENTS / ops docs still use TaskItem / TaskState wording
+        3) Compatibility aliases still expose legacy task_* internals
       
     </span>
   </a>
@@ -5591,21 +5591,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-compatibility-aliases-still-expose-legacy-task_-internals" class="md-nav__link">
+  <a href="#4-mcp-cloud-tests-still-use-task_-naming-conventions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) Compatibility aliases still expose legacy task_* internals
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-mcp-cloud-tests-still-use-task_-naming-conventions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) MCP cloud tests still use task_* naming conventions
+        4) MCP cloud tests still use task_* naming conventions
       
     </span>
   </a>
@@ -6481,10 +6470,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-mcp_local-user-facing-text-still-uses-old-names" class="md-nav__link">
+  <a href="#2-agents-ops-docs-still-use-taskitem-taskstate-wording" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) mcp_local user-facing text still uses old names
+        2) AGENTS / ops docs still use TaskItem / TaskState wording
       
     </span>
   </a>
@@ -6492,10 +6481,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-agents-ops-docs-still-use-taskitem-taskstate-wording" class="md-nav__link">
+  <a href="#3-compatibility-aliases-still-expose-legacy-task_-internals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) AGENTS / ops docs still use TaskItem / TaskState wording
+        3) Compatibility aliases still expose legacy task_* internals
       
     </span>
   </a>
@@ -6503,21 +6492,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-compatibility-aliases-still-expose-legacy-task_-internals" class="md-nav__link">
+  <a href="#4-mcp-cloud-tests-still-use-task_-naming-conventions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) Compatibility aliases still expose legacy task_* internals
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-mcp-cloud-tests-still-use-task_-naming-conventions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) MCP cloud tests still use task_* naming conventions
+        4) MCP cloud tests still use task_* naming conventions
       
     </span>
   </a>
@@ -6602,20 +6580,7 @@ Proposal 74 renamed the internal model class from <code>TaskItem</code> to <code
 <li>Impact: user confusion; wrong tool name in current interface docs.</li>
 <li>Fix: replace <code>task_status</code> with <code>plan_status</code>.</li>
 </ul>
-<h3 id="2-mcp_local-user-facing-text-still-uses-old-names">2) <code>mcp_local</code> user-facing text still uses old names</h3>
-<p>Two descriptions still reference legacy names.</p>
-<ul>
-<li>File: <code>mcp_local/planexe_mcp_local.py</code></li>
-<li>Lines: 6, 439</li>
-<li>Current text:</li>
-<li>"Downloads artifacts to disk for task_download."</li>
-<li>"Example prompts to copy or adapt when calling task_create."</li>
-<li>Impact: stale wording in tool metadata/documentation text.</li>
-<li>Fix:</li>
-<li><code>task_download</code> -&gt; <code>plan_download</code></li>
-<li><code>task_create</code> -&gt; <code>plan_create</code></li>
-</ul>
-<h3 id="3-agents-ops-docs-still-use-taskitem-taskstate-wording">3) AGENTS / ops docs still use <code>TaskItem</code> / <code>TaskState</code> wording</h3>
+<h3 id="2-agents-ops-docs-still-use-taskitem-taskstate-wording">2) AGENTS / ops docs still use <code>TaskItem</code> / <code>TaskState</code> wording</h3>
 <p>These docs still mention pre-rename class names.</p>
 <ul>
 <li>File: <code>AGENTS.md</code></li>
@@ -6631,31 +6596,18 @@ Proposal 74 renamed the internal model class from <code>TaskItem</code> to <code
 <p>Current text: worker polls <code>TaskItem</code> rows</p>
 </li>
 <li>
-<p>File: <code>mcp_local/AGENTS.md</code></p>
-</li>
-<li>Line: 24</li>
-<li>
-<p>Current text: example <code>TaskState.pending</code></p>
-</li>
-<li>
 <p>Impact: contributor-facing documentation drift.</p>
 </li>
 <li>Fix:</li>
 <li><code>TaskItem</code> -&gt; <code>PlanItem</code></li>
 <li><code>TaskState.pending</code> example -&gt; <code>PlanState.pending</code> (or plain public state strings).</li>
 </ul>
-<h3 id="4-compatibility-aliases-still-expose-legacy-task_-internals">4) Compatibility aliases still expose legacy <code>task_*</code> internals</h3>
+<h3 id="3-compatibility-aliases-still-expose-legacy-task_-internals">3) Compatibility aliases still expose legacy <code>task_*</code> internals</h3>
 <p>Legacy alias support still exists in MCP server internals.</p>
 <ul>
 <li>File: <code>mcp_cloud/app.py</code></li>
 <li>
 <p>Lines: 777, 791, 1820-1825</p>
-</li>
-<li>
-<p>File: <code>mcp_local/planexe_mcp_local.py</code></p>
-</li>
-<li>
-<p>Lines: 1055-1060</p>
 </li>
 <li>
 <p>Impact: not incorrect if backward compatibility is intentional, but rename is not fully clean.</p>
@@ -6664,7 +6616,7 @@ Proposal 74 renamed the internal model class from <code>TaskItem</code> to <code
 <li>Keep aliases for compatibility window, or</li>
 <li>Remove aliases for strict post-rename surface.</li>
 </ul>
-<h3 id="5-mcp-cloud-tests-still-use-task_-naming-conventions">5) MCP cloud tests still use <code>task_*</code> naming conventions</h3>
+<h3 id="4-mcp-cloud-tests-still-use-task_-naming-conventions">4) MCP cloud tests still use <code>task_*</code> naming conventions</h3>
 <p>Test file names/classes/helpers still use old naming (while calling new handlers).</p>
 <ul>
 <li>Files:</li>
@@ -6699,15 +6651,15 @@ Proposal 74 renamed the internal model class from <code>TaskItem</code> to <code
 <hr />
 <h2 id="suggested-cleanup-order">Suggested cleanup order</h2>
 <ol>
-<li>Fix user-facing docs/tool descriptions (Findings 1-2).</li>
-<li>Fix AGENTS/docs wording (Finding 3).</li>
-<li>Decide alias policy, then keep/remove legacy aliases (Finding 4).</li>
-<li>Normalize test naming and assertion strings (Finding 5).</li>
+<li>Fix user-facing docs/tool descriptions (Finding 1).</li>
+<li>Fix AGENTS/docs wording (Finding 2).</li>
+<li>Decide alias policy, then keep/remove legacy aliases (Finding 3).</li>
+<li>Normalize test naming and assertion strings (Finding 4).</li>
 </ol>
 <hr />
 <h2 id="re-scan-command">Re-scan command</h2>
 <p>Use this after fixes (excluding historical proposals):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rg<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;task_create|task_status|task_stop|task_retry|task_list|task_file_info|task_download|TaskItem|TaskState|model_taskitem|test_taskitem&quot;</span><span class="w"> </span>PlanExe<span class="w"> </span>--glob<span class="w"> </span><span class="s1">&#39;!PlanExe/docs/proposals/**&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rg<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;task_create|task_status|task_stop|task_retry|task_list|task_file_info|TaskItem|TaskState|model_taskitem|test_taskitem&quot;</span><span class="w"> </span>PlanExe<span class="w"> </span>--glob<span class="w"> </span><span class="s1">&#39;!PlanExe/docs/proposals/**&#39;</span>
 </code></pre></div>
 
 

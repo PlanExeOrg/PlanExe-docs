@@ -1189,34 +1189,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tool-catalog-mcp_local" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tool Catalog, mcp_local
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tool Catalog, mcp_local">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#plan_download" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        plan_download
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#minimal-error-handling-contract" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1875,7 +1847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -6761,34 +6733,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tool-catalog-mcp_local" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tool Catalog, mcp_local
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tool Catalog, mcp_local">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#plan_download" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        plan_download
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#minimal-error-handling-contract" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6931,7 +6875,6 @@ If there is a particular tool you want. Write to me on the <a href="https://plan
 <h2 id="overview">Overview</h2>
 <ul>
 <li>The primary MCP server runs in the cloud (see <code>mcp_cloud</code>).</li>
-<li>The local MCP proxy (<code>mcp_local</code>) forwards calls to the server and adds a local download helper.</li>
 <li>Tool responses return JSON in both <code>content.text</code> and <code>structuredContent</code>.</li>
 <li>Workflow note: drafting and user approval of the prompt is a non-tool step between setup tools and <code>plan_create</code>.</li>
 </ul>
@@ -7103,25 +7046,9 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <p>Download report:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: pex_0123456789abcdef&quot;</span><span class="w"> </span>-O<span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/download/2d57a448-1b09-45aa-ad37-e69891ff6ec7/report.html&quot;</span>
 </code></pre></div></p>
-<h2 id="tool-catalog-mcp_local">Tool Catalog, <code>mcp_local</code></h2>
-<p>The local proxy exposes the same tools as the server, and adds:</p>
-<h3 id="plan_download">plan_download</h3>
-<p>Download report or zip to a local path.</p>
-<p>Example prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Download the report for plan 2d57a448-1b09-45aa-ad37-e69891ff6ec7.
-</code></pre></div></p>
-<p>Example call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2d57a448-1b09-45aa-ad37-e69891ff6ec7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
-</code></pre></div></p>
-<p><code>PLANEXE_PATH</code> behavior for <code>plan_download</code>:
-- Save directory is <code>PLANEXE_PATH</code>, or current working directory if unset.
-- Non-existing directories are created automatically.
-- If <code>PLANEXE_PATH</code> points to a file, download fails.
-- Filename is prefixed with plan id (for example <code>&lt;plan_id&gt;-report.html</code>).
-- Response includes <code>saved_path</code> with the exact local file location.</p>
 <h2 id="minimal-error-handling-contract">Minimal error-handling contract</h2>
 <p>Error payload shape:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SOME_CODE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Human readable message&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SOME_CODE&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Human readable message&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}}}</span>
 </code></pre></div></p>
 <p>Common cloud/core error codes:
 - <code>PLAN_NOT_FOUND</code>
@@ -7133,9 +7060,6 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 - <code>MODEL_PROFILES_UNAVAILABLE</code>
 - <code>generation_failed</code>
 - <code>content_unavailable</code></p>
-<p>Common local proxy error codes:
-- <code>REMOTE_ERROR</code>
-- <code>DOWNLOAD_FAILED</code></p>
 <p>Special case:
 - <code>plan_file_info</code> may return <code>{}</code> while the artifact is not ready yet (not an error).</p>
 <h2 id="concurrency-semantics-practical">Concurrency semantics (practical)</h2>
@@ -7151,50 +7075,50 @@ If no models are available in any profile, <code>model_profiles</code> returns <
 <h3 id="1-preview-example-plans-optional">1. Preview example plans (optional)</h3>
 <p>Call <code>example_plans</code> to see curated example plans with download links, so you can preview what PlanExe output looks like before creating your own plan.</p>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Show me example plans.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Show me example plans.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{}</span>
 </code></pre></div></p>
 <h3 id="2-get-example-prompts">2. Get example prompts</h3>
 <p>The user often starts with a vague idea. The AI calls <code>example_prompts</code> first to see what good prompts look like (around five samples, typically 300-800 words each), then expands the user’s idea into a high-quality prompt using this compact shape: objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria.</p>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Get example prompts for creating a plan.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Get example prompts for creating a plan.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">{}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">{}</span>
 </code></pre></div></p>
 <h3 id="3-inspect-model-profiles-optional-but-recommended">3. Inspect model profiles (optional but recommended)</h3>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Show model profile options and available models.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Show model profile options and available models.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">{}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">{}</span>
 </code></pre></div></p>
 <h3 id="4-draft-and-approve-the-prompt-non-tool-step">4. Draft and approve the prompt (non-tool step)</h3>
 <p>At this step, the agent writes a high-quality prompt draft (typically 300-800 words, with objective, scope, constraints, timeline, stakeholders, budget/resources, and success criteria), shows it to the user, and waits for approval.</p>
 <h3 id="5-create-a-plan">5. Create a plan</h3>
 <p>The user reviews the prompt and either asks for further changes or confirms it’s good to go. When the user confirms, the agent calls <code>plan_create</code> with that prompt.</p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">{</span><span class="nt">&quot;prompt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="6-get-status">6. Get status</h3>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Get status for my latest plan.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>Get status for my latest plan.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <p>If state is <code>failed</code>, optional retry:</p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;model_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;baseline&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 <h3 id="7-download-the-report">7. Download the report</h3>
 <p>Prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Download the report for my plan.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>Download the report for my plan.
 </code></pre></div></p>
 <p>Tool call:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">{</span><span class="nt">&quot;plan_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;plan_id_from_plan_create&gt;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;artifact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;report&quot;</span><span class="p">}</span>
 </code></pre></div></p>
 
 

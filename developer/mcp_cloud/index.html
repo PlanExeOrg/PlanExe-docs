@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.planexe.org/developer/mcp_cloud/">
       
       
-        <link rel="prev" href="../mcp_local/">
+        <link rel="prev" href="../frontend_multi_user/">
       
       
         <link rel="next" href="../../ai_providers/openrouter/">
@@ -1531,7 +1531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp_local/" class="md-nav__link">
+      <a href="../mcp_local.md" class="md-nav__link">
         
   
   
@@ -1645,17 +1645,6 @@
     <span class="md-ellipsis">
       
         Run as task (MCP tasks protocol)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#client-choice-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Choice Guide
       
     </span>
   </a>
@@ -6763,17 +6752,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#client-choice-guide" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Choice Guide
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#docker-usage-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -7183,17 +7161,8 @@
 <li><strong>Signed Download Tokens</strong>: Time-limited, artifact-scoped HMAC tokens for secure file delivery</li>
 </ul>
 <h2 id="run-as-task-mcp-tasks-protocol">Run as task (MCP tasks protocol)</h2>
-<p>MCP has two ways to run long-running work: <strong>tools</strong> (what we use) and the <strong>tasks</strong> protocol ("Run as task" in some UIs). PlanExe uses <strong>tools only</strong>: <code>example_plans</code>, <code>example_prompts</code>, <code>model_profiles</code>, <code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_file_info</code> (or <code>plan_download</code> via <code>mcp_local</code>). The agent creates a task, polls status, retries on failed when needed, then downloads; that is the intended flow per <code>docs/mcp/planexe_mcp_interface.md</code>. We do not advertise or implement the MCP tasks protocol (tasks/get, tasks/result, etc.). Clients like Cursor do not support it properly—use the tools directly.
+<p>MCP has two ways to run long-running work: <strong>tools</strong> (what we use) and the <strong>tasks</strong> protocol ("Run as task" in some UIs). PlanExe uses <strong>tools only</strong>: <code>example_plans</code>, <code>example_prompts</code>, <code>model_profiles</code>, <code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_file_info</code>. The agent creates a task, polls status, retries on failed when needed, then downloads; that is the intended flow per <code>docs/mcp/planexe_mcp_interface.md</code>. We do not advertise or implement the MCP tasks protocol (tasks/get, tasks/result, etc.). Clients like Cursor do not support it properly—use the tools directly.
 Workflow clarity: prompt drafting + user approval is a non-tool step between setup tools and <code>plan_create</code>.</p>
-<h2 id="client-choice-guide">Client Choice Guide</h2>
-<ul>
-<li><strong>Use <code>mcp_cloud</code> directly (HTTP)</strong>: If you are running in the cloud or you do
-  not need files saved to the local filesystem.</li>
-<li><strong>Use <code>mcp_local</code> (proxy)</strong>: Recommended when you want artifacts downloaded to
-  your local disk (<code>PLANEXE_PATH</code>). The proxy forwards MCP calls to this server
-  and handles file downloads locally.</li>
-<li><strong>Recommended flow</strong>: Docker (<code>mcp_cloud</code>) → <code>mcp_local</code> → MCP client (LM Studio/Claude).</li>
-</ul>
 <h2 id="docker-usage-recommended">Docker Usage (Recommended)</h2>
 <p>Build and run mcp_cloud with HTTP endpoints:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
@@ -7320,7 +7289,6 @@ When auth is enabled, MCP handshake/discovery calls (<code>initialize</code>, <c
 - Tool errors use <code>{"error":{"code","message","details?"}}</code>.
 - Common codes: <code>PLAN_NOT_FOUND</code>, <code>PLAN_NOT_FAILED</code>, <code>INVALID_USER_API_KEY</code>, <code>USER_API_KEY_REQUIRED</code>, <code>INSUFFICIENT_CREDITS</code>, <code>INTERNAL_ERROR</code>, <code>generation_failed</code>, <code>content_unavailable</code>.
 - <code>plan_file_info</code> may return <code>{}</code> while output is not ready (not an error payload).</p>
-<p>Note: <code>plan_download</code> is a synthetic tool provided by <code>mcp_local</code>, not by this server. If your client exposes <code>plan_download</code>, use it to save the report or zip locally; otherwise use <code>plan_file_info</code> to get <code>download_url</code> and fetch the file yourself.</p>
 <blockquote>
 <p><strong>Breaking change (v2026-02-26):</strong> External-facing field names were renamed from <code>task_id</code> → <code>plan_id</code>, <code>tasks</code> → <code>plans</code>, and error codes from <code>TASK_NOT_FOUND</code> → <code>PLAN_NOT_FOUND</code>, <code>TASK_NOT_FAILED</code> → <code>PLAN_NOT_FAILED</code>.</p>
 </blockquote>
@@ -7603,7 +7571,7 @@ still requires API key authentication when <code>PLANEXE_MCP_REQUIRE_AUTH=true</
 <h2 id="connecting-via-stdio-advanced-contributor-mode">Connecting via stdio (Advanced / Contributor Mode)</h2>
 <p>For local development, you can run mcp_cloud over stdio instead of HTTP. This is
 useful for testing but requires local Python + Postgres setup. For most users, the
-recommended flow is Docker (server) + <code>mcp_local</code> (client).</p>
+recommended flow is Docker (server) + an MCP client that speaks HTTP.</p>
 <h3 id="setup">Setup</h3>
 <ol>
 <li>Install dependencies in a virtual environment:</li>

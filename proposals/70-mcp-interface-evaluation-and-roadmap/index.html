@@ -1529,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -7388,25 +7388,23 @@
 <h2 id="title-mcp-interface-evaluation-and-roadmap">title: MCP Interface — Evaluation and Roadmap</h2>
 <p>date: 2026-02-26</p>
 <h1 id="mcp-interface-evaluation-and-roadmap">MCP Interface — Evaluation and Roadmap</h1>
-<p>An honest audit of the current MCP surface (<code>mcp_cloud</code> + <code>mcp_local</code>), followed by concrete improvements and promotion ideas.</p>
+<p>An honest audit of the current MCP surface (<code>mcp_cloud</code>), followed by concrete improvements and promotion ideas.</p>
 <p><strong>Revision history:</strong></p>
 <ul>
 <li><strong>2026-02-26 (rev 1):</strong> Initial version after <code>task_</code>* → <code>plan_*</code> rename.</li>
 <li><strong>2026-02-26 (rev 2):</strong> Updated after <code>app.py</code> refactor into modules, <code>plan_list</code> <code>user_api_key</code> made optional in schema (auto-injected by HTTP layer), and re-evaluation of all open issues.</li>
-<li><strong>2026-02-26 (rev 3):</strong> Updated after completing 4.9 — all stale <code>task</code> variable names, request classes, helper functions, and backward-compat aliases renamed/removed across <code>mcp_cloud</code> and <code>mcp_local</code>. Test files renamed from <code>test_task_</code>* to <code>test_plan_*</code>.</li>
+<li><strong>2026-02-26 (rev 3):</strong> Updated after completing 4.9 — all stale <code>task</code> variable names, request classes, helper functions, and backward-compat aliases renamed/removed in <code>mcp_cloud</code>. Test files renamed from <code>test_task_</code>* to <code>test_plan_*</code>.</li>
 <li><strong>2026-02-26 (rev 4):</strong> Updated after completing 4.2 — added separate download rate limiter with configurable limits (default 10 req/60s).</li>
 <li><strong>2026-02-26 (rev 5):</strong> Renamed external-facing fields: <code>task_id</code> → <code>plan_id</code>, <code>tasks</code> → <code>plans</code>, error codes <code>TASK_NOT_FOUND</code> → <code>PLAN_NOT_FOUND</code>, <code>TASK_NOT_FAILED</code> → <code>PLAN_NOT_FAILED</code>. Internal function names and download URL paths unchanged.</li>
 <li><strong>2026-03-02 (rev 6):</strong> SSE progress streaming implemented (<code>mcp_cloud/sse.py</code>, <code>GET /sse/plan/{plan_id}</code>). Incorporated feedback from Claude Code agent evaluation of the MCP interface: improved SSE documentation across server instructions, tool descriptions, and field descriptions to be actionable for agents; added new proposed improvements for credit feedback, pipeline stage names, and files array completeness. Discovered and fixed BaseHTTPMiddleware blocking issue with SSE streams.</li>
 </ul>
 <hr />
 <h2 id="1-current-tool-surface">1. Current Tool Surface</h2>
-<p>Nine tools, split across two transports:</p>
+<p>Eight tools exposed by <code>mcp_cloud</code>:</p>
 <table>
 <thead>
 <tr>
 <th>Tool</th>
-<th>Cloud (<code>mcp_cloud</code>)</th>
-<th>Local (<code>mcp_local</code>)</th>
 <th>Auth</th>
 <th>Annotations</th>
 </tr>
@@ -7414,74 +7412,50 @@
 <tbody>
 <tr>
 <td><code>example_prompts</code></td>
-<td>yes</td>
-<td>yes</td>
 <td>Public</td>
 <td>readOnly, idempotent</td>
 </tr>
 <tr>
 <td><code>model_profiles</code></td>
-<td>yes</td>
-<td>yes</td>
 <td>Public</td>
 <td>readOnly, idempotent</td>
 </tr>
 <tr>
 <td><code>plan_create</code></td>
-<td>yes</td>
-<td>yes</td>
 <td>Required</td>
 <td>openWorld</td>
 </tr>
 <tr>
 <td><code>plan_status</code></td>
-<td>yes</td>
-<td>yes</td>
 <td>Required</td>
 <td>readOnly, idempotent</td>
 </tr>
 <tr>
 <td><code>plan_stop</code></td>
-<td>yes</td>
-<td>yes</td>
 <td>Required</td>
 <td>destructive, idempotent</td>
 </tr>
 <tr>
 <td><code>plan_retry</code></td>
-<td>yes</td>
-<td>yes</td>
 <td>Required</td>
 <td>openWorld</td>
 </tr>
 <tr>
 <td><code>plan_file_info</code></td>
-<td>yes</td>
-<td>—</td>
 <td>Required</td>
 <td>readOnly, idempotent</td>
 </tr>
 <tr>
-<td><code>plan_download</code></td>
-<td>—</td>
-<td>yes</td>
-<td>Required</td>
-<td>openWorld</td>
-</tr>
-<tr>
 <td><code>plan_list</code></td>
-<td>yes</td>
-<td>yes</td>
 <td>Required</td>
 <td>readOnly, idempotent</td>
 </tr>
 </tbody>
 </table>
-<p><code>plan_download</code> is a local-only synthetic tool that internally proxies to <code>plan_file_info</code> on the cloud, then downloads and saves the artifact to the user's filesystem. This intentional asymmetry is tested in <code>test_tool_surface_consistency.py</code>.</p>
 <p><strong>Auth model for <code>plan_create</code> and <code>plan_list</code>:</strong> Both tools accept an optional <code>user_api_key</code> in the visible MCP input schema. When called over HTTP, the middleware authenticates the caller via the <code>X-API-Key</code> header and auto-injects <code>user_api_key</code> into handler arguments. This means MCP clients never need to pass <code>user_api_key</code> explicitly — the key is invisible in the tool's published schema but enforced at runtime. Both handlers return <code>USER_API_KEY_REQUIRED</code> if no key arrives by either path.</p>
 <hr />
 <h2 id="2-whats-working-well">2. What's Working Well</h2>
-<p><strong>Dual transport.</strong> <code>mcp_cloud</code> (stateless HTTP / Railway) and <code>mcp_local</code> (stdio proxy) cover the two major deployment patterns. Most users can pick one without reading source code.</p>
+<p><strong>Cloud HTTP transport.</strong> <code>mcp_cloud</code> is a stateless HTTP service on Railway. Clients connect directly over HTTP — no local proxy required.</p>
 <p><strong>Clean module structure.</strong> <code>mcp_cloud/app.py</code> is now a thin re-export facade (~195 lines). Logic lives in focused modules: <code>handlers.py</code> (tool handlers), <code>schemas.py</code> (tool definitions), <code>tool_models.py</code> (Pydantic models), <code>db_queries.py</code> (DB operations), <code>auth.py</code> (key hashing/user resolution), <code>download_tokens.py</code> (signed tokens), <code>model_profiles.py</code>, <code>worker_fetchers.py</code>, <code>zip_utils.py</code>, <code>example_prompts.py</code>. This makes PRs reviewable and bugs easy to isolate.</p>
 <p><strong>Consistent <code>plan_</code>* naming throughout.</strong> The rename from <code>task_</code>* to <code>plan_*</code> covers the full stack: external tool names, handler functions, request classes (<code>PlanCreateRequest</code>, etc.), DB query helpers (<code>_create_plan_sync</code>, <code>get_plan_by_id</code>, etc.), local variable names, and test file names. No backward-compat aliases remain.</p>
 <p><strong>Layered authentication.</strong> Two distinct auth paths — a server-wide <code>PLANEXE_MCP_API_KEY</code> for self-hosters, and per-user <code>pex_…</code> keys issued by home.planexe.org — are a good design. The key-normalisation helper (<code>_normalize_api_key_value</code> in <code>http_server.py</code>) handles common copy-paste artefacts (Bearer prefix, surrounding quotes, full header line pasted as value).</p>
@@ -7511,7 +7485,7 @@
 <h3 id="35-rate-limiting-covers-rest-but-not-streamable-http-mcp-fixed">3.5 ~~Rate limiting covers REST but not Streamable HTTP <code>/mcp~~</code> (FIXED)</h3>
 <p><code>_enforce_rate_limit</code> now covers <code>/mcp</code>, <code>/mcp/</code>, and <code>/mcp/tools/call</code>.</p>
 <h3 id="36-no-plan_list-tool-lost-task_id-lost-task-fixed">3.6 ~~No <code>plan_list</code> tool — lost <code>task_id</code> = lost task~~ (FIXED)</h3>
-<p>Added <code>plan_list</code> to both <code>mcp_cloud</code> and <code>mcp_local</code>. Returns up to 50 tasks newest-first.</p>
+<p>Added <code>plan_list</code> to <code>mcp_cloud</code>. Returns up to 50 tasks newest-first.</p>
 <h3 id="37-signed-expiring-download-tokens-fixed">3.7 ~~Signed, expiring download tokens~~ (FIXED)</h3>
 <p>HMAC-SHA256 tokens, 15-minute default TTL, scoped per-artifact.</p>
 <h3 id="38-tools-used-task_-prefix-instead-of-plan_-fixed">3.8 ~~Tools used <code>task_</code>* prefix instead of <code>plan_*~~</code> (FIXED)</h3>
@@ -7529,7 +7503,7 @@
 <h3 id="43-body-size-validation-only-on-rest-endpoint-fixed">~~4.3 Body size validation only on REST endpoint~~ (FIXED)</h3>
 <p><code>_enforce_body_size</code> now checks both <code>/mcp/tools/call</code> and <code>/mcp/</code> POST requests. The <code>Content-Length</code> requirement (411) is only enforced on the REST endpoint since Streamable HTTP may use chunked encoding without <code>Content-Length</code>; however, when <code>Content-Length</code> is present on either endpoint it is validated against <code>MAX_BODY_BYTES</code>.</p>
 <h3 id="44-plan_file_info-silently-defaults-invalid-artifact-to-report-fixed">~~4.4 <code>plan_file_info</code> silently defaults invalid artifact to <code>"report"</code>~~ (FIXED)</h3>
-<p>Both <code>handle_plan_file_info</code> (cloud) and <code>handle_plan_download</code> (local) now return <code>INVALID_ARGUMENT</code> with a descriptive message when the artifact value is not <code>"report"</code> or <code>"zip"</code>.</p>
+<p><code>handle_plan_file_info</code> now returns <code>INVALID_ARGUMENT</code> with a descriptive message when the artifact value is not <code>"report"</code> or <code>"zip"</code>.</p>
 <h3 id="45-no-dedicated-plan_list-test-fixed">~~4.5 No dedicated <code>plan_list</code> test~~ (FIXED)</h3>
 <p>Added <code>mcp_cloud/tests/test_plan_list_tool.py</code> with 8 tests covering: tool listed, returns tasks, empty result, limit clamping (both directions), invalid API key, <code>USER_API_KEY_REQUIRED</code> when env requires key, no-key passthrough when not required (user_id=None), and default limit.</p>
 <h3 id="46-cors-default-is-wildcard-fixed">~~4.6 CORS default is wildcard~~ (FIXED)</h3>
@@ -7539,7 +7513,7 @@
 <h3 id="48-prompt-excerpt-length-hardcoded-fixed">~~4.8 Prompt excerpt length hardcoded~~ (FIXED)</h3>
 <p>Extracted to <code>PROMPT_EXCERPT_MAX_LENGTH = 100</code> at module level in <code>db_queries.py</code>.</p>
 <h3 id="49-stale-task-variable-names-and-backward-compat-aliases-fixed">~~4.9 Stale <code>task</code> variable names and backward-compat aliases~~ (FIXED)</h3>
-<p>All internal naming now uses <code>plan</code> consistently. Request classes renamed (<code>TaskCreateRequest</code> → <code>PlanCreateRequest</code>, etc.), DB query helpers renamed (<code>_create_task_sync</code> → <code>_create_plan_sync</code>, <code>get_task_by_id</code> → <code>get_plan_by_id</code>, etc.), local variables renamed (<code>task_snapshot</code> → <code>plan_snapshot</code>, etc.), all backward-compat aliases removed from <code>tool_models.py</code>, <code>schemas.py</code>, <code>handlers.py</code>, <code>app.py</code>, and <code>mcp_local/planexe_mcp_local.py</code> (~86 lines deleted). Test files renamed from <code>test_task_*.py</code> to <code>test_plan_*.py</code> with patch targets updated.</p>
+<p>All internal naming now uses <code>plan</code> consistently. Request classes renamed (<code>TaskCreateRequest</code> → <code>PlanCreateRequest</code>, etc.), DB query helpers renamed (<code>_create_task_sync</code> → <code>_create_plan_sync</code>, <code>get_task_by_id</code> → <code>get_plan_by_id</code>, etc.), local variables renamed (<code>task_snapshot</code> → <code>plan_snapshot</code>, etc.), all backward-compat aliases removed from <code>tool_models.py</code>, <code>schemas.py</code>, <code>handlers.py</code>, and <code>app.py</code> (~86 lines deleted). Test files renamed from <code>test_task_*.py</code> to <code>test_plan_*.py</code> with patch targets updated.</p>
 <h3 id="410-plan_list-auth-differs-from-plan_create-fixed">~~4.10 <code>plan_list</code> auth differs from <code>plan_create</code>~~ (FIXED)</h3>
 <p><code>plan_list</code> now uses the same <code>PLANEXE_MCP_REQUIRE_USER_KEY</code> check as <code>plan_create</code>. When the key is not required and not provided, <code>plan_list</code> returns all tasks (no user scoping). <code>_list_tasks_sync</code> accepts <code>user_id=None</code> to support this.</p>
 <hr />

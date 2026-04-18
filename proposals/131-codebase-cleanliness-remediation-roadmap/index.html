@@ -1531,7 +1531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -7259,12 +7259,12 @@
 <ol>
 <li>Service boundaries are documented in package-level <code>AGENTS.md</code> files.</li>
 <li>Shared contracts are called out explicitly for <code>worker_plan</code>, <code>database_api</code>, <code>worker_plan_api</code>, <code>mcp_cloud</code>, and the frontends.</li>
-<li>There is already a meaningful unit-test base across <code>worker_plan</code>, <code>mcp_cloud</code>, <code>mcp_local</code>, and shared utilities.</li>
+<li>There is already a meaningful unit-test base across <code>worker_plan</code>, <code>mcp_cloud</code>, and shared utilities.</li>
 </ol>
 <p>The main constraint is backward compatibility. We should not redesign public APIs while cleaning internals. The cleanup must preserve:</p>
 <ol>
 <li><code>worker_plan</code> request and response shapes.</li>
-<li><code>mcp_cloud</code> and <code>mcp_local</code> tool contracts.</li>
+<li><code>mcp_cloud</code> tool contracts.</li>
 <li>Shared DB models and legacy compatibility behavior.</li>
 </ol>
 <h2 id="proposal">Proposal</h2>

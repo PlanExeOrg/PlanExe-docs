@@ -1620,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -6416,6 +6416,7 @@
 
 <h1 id="mcp-setup">MCP setup</h1>
 <p>This is the shortest path to a working PlanExe MCP integration.</p>
+<p>Recommended: point your MCP client at the hosted server <code>https://mcp.planexe.org/mcp</code> using a <code>pex_...</code> key from <a href="https://home.planexe.org/">home.planexe.org</a>. Only fall back to local Docker (<code>http://localhost:8001/mcp</code>) if you need to run the stack yourself. Grab the JSON/CLI snippet from <a href="../mcp_client_config/">MCP client config snippets</a> or the per-client guide below.</p>
 <hr />
 <h2 id="1-understand-the-flow">1. Understand the flow</h2>
 <ol>
@@ -6426,7 +6427,7 @@
 <li>Create the plan.</li>
 <li>Poll for status (about every 5 minutes).</li>
 <li>If status is <code>failed</code>, optionally call <code>plan_retry</code> (defaults to <code>model_profile=baseline</code>).</li>
-<li>Download artifacts via <code>plan_file_info</code> (cloud) or <code>plan_download</code> (mcp_local helper).</li>
+<li>Download artifacts via <code>plan_file_info</code>.</li>
 </ol>
 <hr />
 <h2 id="2-minimal-tool-usage">2. Minimal tool usage</h2>
@@ -6439,8 +6440,6 @@
 <li><code>plan_retry</code> (optional, only for failed plans)</li>
 <li><code>plan_file_info</code></li>
 </ol>
-<p>Optional local helper:
-- <code>plan_download</code> (provided by <code>mcp_local</code>, not <code>mcp_cloud</code>)</p>
 <p>For <code>plan_create</code>:</p>
 <ul>
 <li>Visible arguments: <code>prompt</code> (required), <code>model_profile</code> (optional).</li>
@@ -6451,7 +6450,7 @@
 <ul>
 <li>You can fetch example prompts.</li>
 <li>You can create a plan.</li>
-<li>You can fetch artifact metadata/URLs with <code>plan_file_info</code> (and optionally save locally via <code>plan_download</code> when using <code>mcp_local</code>).</li>
+<li>You can fetch artifact metadata/URLs with <code>plan_file_info</code>.</li>
 <li>Your client can parse <code>error.code</code> and <code>error.message</code> and handle <code>{}</code> from <code>plan_file_info</code> as "not ready yet".</li>
 <li>If running parallel work, your client tracks multiple <code>plan_id</code>s explicitly (server-side global cap is not enforced).</li>
 </ul>

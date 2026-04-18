@@ -1529,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -2505,10 +2505,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#71-mcp_cloud-mcp_local" class="md-nav__link">
+  <a href="#71-mcp_cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.1 mcp_cloud / mcp_local
+        7.1 mcp_cloud
       
     </span>
   </a>
@@ -6832,10 +6832,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#71-mcp_cloud-mcp_local" class="md-nav__link">
+  <a href="#71-mcp_cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.1 mcp_cloud / mcp_local
+        7.1 mcp_cloud
       
     </span>
   </a>
@@ -6996,7 +6996,7 @@
 <p>Self-audit checklist includes "Lacks Technical Depth", "Legal Minefield", "External Dependencies", etc.: <code>worker_plan/worker_plan_internal/self_audit/self_audit.py</code></p>
 </li>
 <li>
-<p><strong>MCP interface is tools-only</strong> and supports <code>task_create -&gt; task_status -&gt; task_file_info/task_download</code>: <code>mcp_cloud/app.py</code>, <code>mcp_local/planexe_mcp_local.py</code>, and <code>docs/planexe_mcp_interface.md</code>.</p>
+<p><strong>MCP interface is tools-only</strong> and supports <code>plan_create -&gt; plan_status -&gt; plan_file_info</code>: <code>mcp_cloud/app.py</code> and <code>docs/mcp/planexe_mcp_interface.md</code>.</p>
 </li>
 <li>
 <p><strong>LLM configuration is externalized</strong> (profiles in <code>llm_config/&lt;profile&gt;.json</code>, default via <code>DEFAULT_LLM</code> env var; keys from <code>.env</code>): <code>worker_plan/worker_plan_internal/llm_factory.py</code>, <code>worker_plan/worker_plan_internal/utils/planexe_llmconfig.py</code>, <code>worker_plan/worker_plan_api/planexe_dotenv.py</code>.</p>
@@ -7184,7 +7184,7 @@
 </ul>
 <p>No MCP interface changes are required: the client still sends one prompt to <code>task_create</code>.</p>
 <h2 id="7-mcpclient-ux-smart-on-the-fly-for-agents">7) MCP/Client UX ("Smart On The Fly" for Agents)</h2>
-<h3 id="71-mcp_cloud-mcp_local">7.1 mcp_cloud / mcp_local</h3>
+<h3 id="71-mcp_cloud">7.1 mcp_cloud</h3>
 <p>Keep tools-only behavior. "Smartness" lives in PlanExe's pipeline and in how prompts are structured.</p>
 <h3 id="72-prompt-examples">7.2 Prompt examples</h3>
 <p>Add/curate prompt examples that clearly represent:</p>

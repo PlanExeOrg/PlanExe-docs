@@ -959,67 +959,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#approach-3-mcp-server-as-a-python-program" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach 3. MCP server as a python program
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Approach 3. MCP server as a python program">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-docker_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start docker
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-inspector_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start inspector
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-connected_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When connected
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1759,7 +1698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -6611,67 +6550,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#approach-3-mcp-server-as-a-python-program" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Approach 3. MCP server as a python program
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Approach 3. MCP server as a python program">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-docker_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start docker
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-inspector_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start inspector
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#when-connected_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When connected
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -6697,7 +6575,7 @@
 <p>This is my (Simon Strandgaard) preferred way to troubleshoot MCP. Whenever there is a problem, the <strong>MCP Inspector</strong> is the <strong>HAMMER</strong>.</p>
 <p>Locations: <a href="https://github.com/modelcontextprotocol/inspector">Github</a>, <a href="https://modelcontextprotocol.io/docs/tools/inspector">Documentation</a></p>
 <h2 id="overview-of-planexes-mcp-servers">Overview of PlanExe's MCP servers</h2>
-<p>PlanExe has multiple MCP servers that can be connected to.</p>
+<p>PlanExe has two MCP servers that can be connected to.</p>
 <table>
 <thead>
 <tr>
@@ -6716,11 +6594,6 @@
 <td>2</td>
 <td>Medium</td>
 <td>MCP server inside docker on your own computer. I recommend using OpenRouter for inference, which cost money. You can be lucky finding a free model on OpenRouter, but this requires developer skills and several attempts. You can also run models on your own computer.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Expert</td>
-<td>MCP server as a python program on your own computer.</td>
 </tr>
 </tbody>
 </table>
@@ -6799,34 +6672,6 @@
 <p><img alt="Screenshot list tools" src="../inspector_step3_docker.webp" /></p>
 <p>Click <code>example_prompts</code>, click <code>Run Tool</code>.</p>
 <p><img alt="Screenshot example prompts" src="../inspector_step4_docker.webp" /></p>
-<h2 id="approach-3-mcp-server-as-a-python-program">Approach 3. MCP server as a python program</h2>
-<p>If MCP had a built-in download mechanism, then there wouldn't be a need for this python program. As of 2026-Feb-12 MCP doesn't have such download mechanism, and developers make kludgy workarounds. The <code>mcp_local/planexe_mcp_local.py</code> proxy runs a tiny Python MCP server that forwards tool calls to the remote <code>mcp_cloud</code> while downloading reports into a local directory.</p>
-<h3 id="prerequisites_1">Prerequisites</h3>
-<p>I assume that you already have verified that things are working in "Approach 2. MCP server inside docker". If things are broken there, it makes no sense following the instructions here.</p>
-<h3 id="start-docker_1">Start docker</h3>
-<p>PlanExe's docker stack exposes the MCP endpoint on your loopback interface (default <code>127.0.0.1:8001/mcp/</code>). Start with <code>docker compose up</code> and wait until you see <code>mcp_cloud</code> and <code>/healthcheck</code> like this:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mcp_cloud | INFO: 127.0.0.1:43988 - &quot;GET /healthcheck HTTP/1.1&quot; 200 OK
-</code></pre></div></p>
-<h3 id="start-inspector_1">Start inspector</h3>
-<p>In a separate terminal; launch the inspector.</p>
-<p>On my computer, I launch the inspector like this:</p>
-<p><img alt="Screenshot example prompts" src="../inspector_step1_local.webp" /></p>
-<p>You have to make these adjustments for your computer.</p>
-<p>The <code>PLANEXE_PATH</code> is an absolute directory that PlanExe is allowed to write to. The downloaded files lands here.</p>
-<p>The <code>/absolute/path/to/PlanExe</code> is where you have cloned the PlanExe repo.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>npx<span class="w"> </span>@modelcontextprotocol/inspector<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;PLANEXE_URL=http://localhost:8001/mcp&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;PLANEXE_PATH=/absolute/path/for/downloads&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>--transport<span class="w"> </span>stdio<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>mcp<span class="w"> </span>/absolute/path/to/PlanExe/mcp_local/planexe_mcp_local.py
-</code></pre></div>
-<p>Once the UI opens in the browser, click <code>Connect</code>.</p>
-<p><img alt="Screenshot example prompts" src="../inspector_step2_local.webp" /></p>
-<h3 id="when-connected_2">When connected</h3>
-<p>Then open the <code>Tools</code> tab, click <code>List Tools</code>.</p>
-<p><img alt="Screenshot example prompts" src="../inspector_step3_local.webp" /></p>
-<p>Click <code>example_prompts</code>, click <code>Run Tool</code>.</p>
-<p><img alt="Screenshot example prompts" src="../inspector_step4_local.webp" /></p>
 
 
 

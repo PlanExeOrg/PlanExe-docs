@@ -1529,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -6885,10 +6885,6 @@
 </thead>
 <tbody>
 <tr>
-<td>mcp_local/planexe_mcp_local.py</td>
-<td>1,055</td>
-</tr>
-<tr>
 <td>mcp_cloud/http_server.py</td>
 <td>1,089</td>
 </tr>
@@ -6981,7 +6977,7 @@
 <tr>
 <td>File size</td>
 <td>5</td>
-<td>Hits planexe_mcp_local.py (1,055 lines) and http_server.py (1,089 lines)</td>
+<td>Hits http_server.py (1,089 lines)</td>
 </tr>
 <tr>
 <td>Semantic complexity</td>
@@ -6996,7 +6992,7 @@
 <tr>
 <td>Context dependency</td>
 <td>5</td>
-<td>Full stack: MCP cloud, MCP local, tool_models, schemas, test files</td>
+<td>Full stack: MCP cloud, tool_models, schemas, test files</td>
 </tr>
 <tr>
 <td><strong>Total</strong></td>
@@ -7310,7 +7306,7 @@
 <hr />
 <h2 id="key-findings">Key Findings</h2>
 <p><strong>1. Opus was fully justified for planning the module split and external rename.</strong><br />
-Both involved 1,000+ line files and cross-codebase changes. Opus needed to read <code>http_server.py</code> (1,089 lines) and <code>planexe_mcp_local.py</code> (1,055 lines) top-to-bottom to produce surgical plans. This is exactly the Opus use case.</p>
+Both involved 1,000+ line files and cross-codebase changes. Opus needed to read <code>http_server.py</code> (1,089 lines) top-to-bottom to produce surgical plans. This is exactly the Opus use case.</p>
 <p><strong>2. Execution of those plans could have shifted to Sonnet/Haiku in a fresh session.</strong><br />
 Once Opus produces a plan with exact file paths and line numbers, a cheaper model executes it without needing the full planning context. Fresh session = no context drag from prior planning work.</p>
 <p><strong>3. Docs, tests, small fixes, and Glama work are Minimax/Haiku territory.</strong><br />

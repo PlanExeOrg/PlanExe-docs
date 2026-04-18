@@ -754,6 +754,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#recommended-starting-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended starting point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#who-this-is-for" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1631,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -6362,6 +6373,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#recommended-starting-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended starting point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#who-this-is-for" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6440,6 +6462,9 @@
 <p>PlanExe MCP lets <a href="https://en.wikipedia.org/wiki/AI_agent">AI agents</a> (and the tools you build) create <a href="https://en.wikipedia.org/wiki/Strategic_planning">strategic project-plan drafts</a> from a plain-English prompt. You send a goal; PlanExe produces a draft plan with 20+ sections — including adversarial analysis that stress-tests whether the plan holds up. The MCP user then chooses whether to download the <strong>HTML report</strong> or a <strong>zip</strong> of intermediary files (JSON, MD, CSV) used to build that report.</p>
 <p>No MCP experience is required to get started.</p>
 <hr />
+<h2 id="recommended-starting-point">Recommended starting point</h2>
+<p>Start with the hosted server at <code>https://mcp.planexe.org/mcp</code> — it's the fastest path and needs nothing installed beyond your MCP client and a <code>pex_...</code> key from <a href="https://home.planexe.org/">home.planexe.org</a>. Only switch to local Docker if you need full control over the stack (models, privacy, or offline work).</p>
+<hr />
 <h2 id="who-this-is-for">Who this is for</h2>
 <ul>
 <li><strong>You’re an AI agent</strong> — You have access to PlanExe’s tools and want to create a plan for the user.</li>
@@ -6465,6 +6490,7 @@
 <h2 id="next-steps">Next steps</h2>
 <ul>
 <li><strong>Setup</strong> — <a href="../mcp_setup/">MCP setup</a>: recommended path to a working integration.</li>
+<li><strong>Client config snippets</strong> — <a href="../mcp_client_config/">MCP client config snippets</a>: canonical cloud + local-Docker JSON blocks for <code>mcpServers</code>-style clients.</li>
 <li><strong>Publish to MCP Registry</strong> — <a href="../mcp_registry/">MCP registry publishing</a>: publish <code>mcp.planexe.org</code> metadata so it appears in <code>github.com/mcp</code>.</li>
 <li><strong>See the tools and a typical flow</strong> — <a href="../mcp_details/">MCP details</a>: tool list, example prompts, and step-by-step flow without heavy protocol detail.</li>
 <li><strong>Set up in Claude</strong> — <a href="../claude/">Claude</a>: Claude desktop app and Claude Code, with cloud and local Docker options.</li>

@@ -1642,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -6477,9 +6477,9 @@
 <hr />
 <h2 id="download-fails">Download fails</h2>
 <ul>
-<li>Confirm the download URL is reachable from your network.</li>
-<li>If you run locally, make sure any proxy or base URL is correct.</li>
-<li>Ensure <code>PLANEXE_PATH</code> is a valid directory and that you have write permissions.</li>
+<li>Confirm the <code>download_url</code> returned by <code>plan_file_info</code> is reachable from your network.</li>
+<li>If you run locally, make sure the base URL (<code>http://localhost:8001/mcp</code>) is correct.</li>
+<li>If downloads 401/403, re-check the <code>X-API-Key</code> header (cloud) or <code>PLANEXE_MCP_REQUIRE_AUTH</code> (Docker).</li>
 </ul>
 <hr />
 <h2 id="lowquality-output">Low‑quality output</h2>

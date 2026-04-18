@@ -1010,67 +1010,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-c-run-docker-locally-use-the-mcp_local-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option C: Run Docker locally + use the mcp_local proxy
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Option C: Run Docker locally + use the mcp_local proxy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-start-planexe-locally_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Start PlanExe locally
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-add-the-mcp-server_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Add the MCP server
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-verify_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Verify
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-mcp_local-with-the-cloud-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using mcp_local with the cloud server
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#alternative-manual-json-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1825,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer/mcp_local/" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -6700,67 +6639,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-c-run-docker-locally-use-the-mcp_local-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option C: Run Docker locally + use the mcp_local proxy
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Option C: Run Docker locally + use the mcp_local proxy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-start-planexe-locally_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Start PlanExe locally
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-add-the-mcp-server_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Add the MCP server
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-verify_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Verify
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-mcp_local-with-the-cloud-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using mcp_local with the cloud server
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#alternative-manual-json-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6848,7 +6726,7 @@
 <li><code>/mcp</code> (Claude Code) or Settings &gt; MCP (desktop) shows <code>planexe</code> as connected.</li>
 <li>You can fetch prompt examples (<code>example_prompts</code>).</li>
 <li>You can create a plan (<code>plan_create</code>) and poll it to completion (<code>plan_status</code>).</li>
-<li>You can download the report (<code>plan_file_info</code> or <code>plan_download</code>).</li>
+<li>You can download the report (<code>plan_file_info</code>).</li>
 </ul>
 <hr />
 <h2 id="option-a-connect-to-the-cloud-server-mcpplanexeorg">Option A: Connect to the cloud server (mcp.planexe.org)</h2>
@@ -6869,7 +6747,7 @@ Your key will be prefixed with <code>pex_</code>.</p>
 <p>In Claude Code, type <code>/mcp</code> to see the server status. In the Claude desktop app, go to Settings and check the MCP section. You should see <code>planexe</code> listed with its tools (<code>example_plans</code>, <code>example_prompts</code>, <code>model_profiles</code>, <code>plan_create</code>, <code>plan_status</code>, <code>plan_stop</code>, <code>plan_retry</code>, <code>plan_file_info</code>, <code>plan_list</code>).</p>
 <hr />
 <h2 id="option-b-run-docker-locally-connect-directly-via-http">Option B: Run Docker locally + connect directly via HTTP</h2>
-<p>This connects Claude directly to the local MCP server over HTTP. No <code>mcp_local</code> proxy needed.</p>
+<p>This connects Claude directly to the local MCP server over HTTP.</p>
 <h3 id="1-start-planexe-locally">1. Start PlanExe locally</h3>
 <p>Follow the <a href="../../getting_started/">Getting Started</a> instructions to set up PlanExe, then start the services:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
@@ -6884,95 +6762,44 @@ Your key will be prefixed with <code>pex_</code>.</p>
 <h3 id="3-verify_1">3. Verify</h3>
 <p>In Claude Code, type <code>/mcp</code> to see the server status. In the Claude desktop app, check Settings &gt; MCP.</p>
 <blockquote>
-<p><strong>Note:</strong> With this option, <code>plan_file_info</code> returns a <code>download_url</code>. Ask Claude to fetch it, or open the URL in your browser. For local disk saves, use Option C instead (adds the <code>plan_download</code> tool).</p>
+<p><strong>Note:</strong> With this option, <code>plan_file_info</code> returns a <code>download_url</code>. Ask Claude to fetch it, or open the URL in your browser.</p>
 </blockquote>
-<hr />
-<h2 id="option-c-run-docker-locally-use-the-mcp_local-proxy">Option C: Run Docker locally + use the mcp_local proxy</h2>
-<p>The <code>mcp_local</code> proxy runs as a stdio process and forwards calls to the Docker MCP server. It adds the <code>plan_download</code> tool which saves artifacts directly to disk.</p>
-<h3 id="1-start-planexe-locally_1">1. Start PlanExe locally</h3>
-<p>Follow the <a href="../../getting_started/">Getting Started</a> instructions, then:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
-</code></pre></div>
-<h3 id="2-add-the-mcp-server_2">2. Add the MCP server</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--env<span class="w"> </span><span class="nv">PLANEXE_URL</span><span class="o">=</span><span class="s2">&quot;http://localhost:8001/mcp&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--env<span class="w"> </span><span class="nv">PLANEXE_PATH</span><span class="o">=</span><span class="s2">&quot;/Users/your-name/Desktop&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>planexe<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span>--<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>mcp<span class="w"> </span>/path/to/PlanExe/mcp_local/planexe_mcp_local.py
-</code></pre></div>
-<p>Make these adjustments:</p>
-<ul>
-<li>Replace <code>/path/to/PlanExe</code> with the actual path to your PlanExe clone.</li>
-<li>Replace <code>/Users/your-name/Desktop</code> with the directory where downloaded plans should be saved.</li>
-<li>Optional: Adjust <code>http://localhost:8001/mcp</code> if PlanExe is running on a different port.</li>
-</ul>
-<h3 id="3-verify_2">3. Verify</h3>
-<p>In Claude Code, type <code>/mcp</code> to see the server status. In the Claude desktop app, check Settings &gt; MCP.</p>
-<hr />
-<h2 id="using-mcp_local-with-the-cloud-server">Using mcp_local with the cloud server</h2>
-<p>You can also use the <code>mcp_local</code> proxy to connect to the cloud server. This gives you the <code>plan_download</code> tool while using the hosted service:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>stdio<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>--env<span class="w"> </span><span class="nv">PLANEXE_URL</span><span class="o">=</span><span class="s2">&quot;https://mcp.planexe.org/mcp&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>--env<span class="w"> </span><span class="nv">PLANEXE_MCP_API_KEY</span><span class="o">=</span><span class="s2">&quot;pex_YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>--env<span class="w"> </span><span class="nv">PLANEXE_PATH</span><span class="o">=</span><span class="s2">&quot;/Users/your-name/Desktop&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span>planexe<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span>--<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>mcp<span class="w"> </span>/path/to/PlanExe/mcp_local/planexe_mcp_local.py
-</code></pre></div>
 <hr />
 <h2 id="alternative-manual-json-configuration">Alternative: manual JSON configuration</h2>
 <p>Instead of using <code>claude mcp add</code>, you can create a <code>.mcp.json</code> file in your project root.</p>
 <p><strong>Cloud server (HTTP):</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/mcp&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="nt">&quot;X-API-Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pex_YOUR_API_KEY&quot;</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.planexe.org/mcp&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">&quot;headers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">&quot;X-API-Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pex_YOUR_API_KEY&quot;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Local Docker (HTTP):</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8001/mcp&quot;</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}</span>
-</code></pre></div>
-<p><strong>Local proxy (stdio):</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uv&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="s2">&quot;run&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">        </span><span class="s2">&quot;--with&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="s2">&quot;mcp&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">        </span><span class="s2">&quot;/path/to/PlanExe/mcp_local/planexe_mcp_local.py&quot;</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="p">],</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8001/mcp&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="nt">&quot;PLANEXE_PATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/your-name/Desktop&quot;</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:8001/mcp&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="managing-the-mcp-server">Managing the MCP server</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># List configured servers</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>claude<span class="w"> </span>mcp<span class="w"> </span>list
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Get details for the planexe server</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>claude<span class="w"> </span>mcp<span class="w"> </span>get<span class="w"> </span>planexe
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Remove the server</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>claude<span class="w"> </span>mcp<span class="w"> </span>remove<span class="w"> </span>planexe
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># List configured servers</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>claude<span class="w"> </span>mcp<span class="w"> </span>list
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Get details for the planexe server</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>claude<span class="w"> </span>mcp<span class="w"> </span>get<span class="w"> </span>planexe
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Remove the server</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>claude<span class="w"> </span>mcp<span class="w"> </span>remove<span class="w"> </span>planexe
 </code></pre></div>
 <hr />
 <h2 id="interaction">Interaction</h2>
@@ -6985,7 +6812,7 @@ Your key will be prefixed with <code>pex_</code>.</p>
 <li><strong>Approve and create</strong> — "Go ahead, create this plan."
    Claude calls <code>plan_create</code>, which returns a <code>plan_id</code>.</li>
 <li><strong>Wait</strong> — Plan generation takes ~10-20 minutes. Claude polls <code>plan_status</code> automatically every few minutes. Alternatively, <code>plan_create</code> returns an <code>sse_url</code> — a GET endpoint (text/event-stream) that streams real-time progress events until the plan completes. Claude Code agents can run <code>curl -N &lt;sse_url&gt;</code> in a background shell to monitor progress instead of polling.</li>
-<li><strong>Download</strong> — "Download the report." Claude fetches the HTML report via <code>plan_file_info</code> (cloud) or <code>plan_download</code> (local proxy).</li>
+<li><strong>Download</strong> — "Download the report." Claude fetches the HTML report via <code>plan_file_info</code>.</li>
 </ol>
 <p>If a plan fails, Claude can retry it with <code>plan_retry</code>. If a <code>plan_id</code> is lost, <code>plan_list</code> recovers recent plans.</p>
 <hr />
