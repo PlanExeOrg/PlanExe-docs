@@ -1214,10 +1214,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#openclaw" class="md-nav__link">
+  <a href="#openclaw-hermes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OpenClaw
+        OpenClaw / Hermes
       
     </span>
   </a>
@@ -6362,10 +6362,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#openclaw" class="md-nav__link">
+  <a href="#openclaw-hermes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OpenClaw
+        OpenClaw / Hermes
       
     </span>
   </a>
@@ -6452,7 +6452,7 @@ quiet, compounding errors, security oversights, and cost blowouts.</p>
 <h2 id="execute-the-plan">Execute the plan</h2>
 <p>Currently it's up to humans to execute a plan. How can this be automated?</p>
 <p>Ideally take an entire plan and go with it.</p>
-<h2 id="openclaw">OpenClaw</h2>
+<h2 id="openclaw-hermes">OpenClaw / Hermes</h2>
 <p>If someone want to sponsor a MacMini for this, since I don't want to risk my own computer getting wrecked.</p>
 <p>I already have OpenClaw agents creating plans via docker and via the MCP interface, and sending PRs with fixes and ideas for improvements. I want to turn this into some a skill that other OpenClaw agents can use.</p>
 <ul>
@@ -6519,47 +6519,81 @@ Populate a Cost-Breakdown-Structure.</p>
 <p><strong>Gantt in parallel:</strong> Currently the Gantt is waterfall.
 For a team with several people it's possible to do tasks in parallel.
 Obtain info about what resources the user has available, and if they are willing to do tasks in parallel.</p>
+<p><strong>Alternative simpler approaches:</strong> There may be way simpler approaches that does the same, with fewer resources/money/time. What is the minimum viable version? "you've specified karyotyping, hormonal analysis, and endocrinologist exams, but an SRY gene test alone would achieve the stated goal of biological verification at roughly 1/100th of the cost and complexity. Currently PlanExe makes an overengineered plan, and it may be a simpler approach can do the same.</p>
+<p><strong>Alternative wilder approaches:</strong> Take the idea to the next level, even wilder than the current plan. It may be that the plan has too low ambitions, and it would make better sense to scale it up. That may inspire the user to be more ambitious.</p>
+<p><strong>Simulate:</strong> Generate python code for simulating the math/physics/finances. defining RACI matrices
+It specifies the math, but doesn't do the math: In the Financial Risk section.
+Where PlanExe FALLS SHORT of Humans (Sub-Human / &lt;10th Percentile)
+Axis: Deterministic Math &amp; Physics Simulation
+Human Baseline: An engineer can calculate the exact tensile strength of the steel required for a PC1 Ice Class hull, or build a working Monte Carlo simulation in Excel to calculate budget probability distributions.
+PlanExe’s Level: It is a linguistic engine, not a computational engine. It knows you need to do a Monte Carlo simulation (it recommends it in the Critical Issues review), but it cannot actually run the math. It knows you need hydrodynamic simulations, but it cannot calculate fluid dynamics.
+Verdict: Sub-Human. It provides the architecture for the math, but cannot execute it.</p>
+<p><strong>Self Audit:</strong> Do more sanity checks. Find the worst issues in the report, eventual catch these issues earlier in the pipeline.
+<code>Fabricated evidence</code>, <code>False precision</code>, <code>Over confidence</code>.</p>
+<p><strong>Original insight:</strong> did the LLM add anything beyond reframing the obvious.</p>
+<p><strong>Risk registers are blind to the plan-as-artifact:</strong> Every plan enumerated risks about the execution (cost overruns, technical failure, ethical concerns about research, security breaches). None enumerated risks about the existence of the deliverable. "What if the plan itself or the plan output is dangerous?" never appears as a risk row.</p>
 <hr />
 <h1 id="secondary-issues">Secondary issues</h1>
-<h2 id="negative-constraints">Negative constraints</h2>
-<p>Prompts that have specifies <code>banned words: VR, crypto</code>, have a strong preference to pick related words.
-I have added a <code>extract_constraints.py</code> and <code>constraint_checker.py</code>, for addressing this.
-I will have to see several plans generated to assess if I have solved it or not.
-If I deem it solved, then inside <code>filenames.py</code> I can remove the files with suffix <code>_constraint.json</code> and remove the LLM call that does the constraint checking.</p>
-<h2 id="mcp-polishing-of-mcp-flow-via-planexeorg">MCP - Polishing of MCP flow via planexe.org</h2>
-<p>As of 2026-mar-27, I'm focusing on improving MCP. It is not as smooth as I would like.</p>
-<p>The user adds credits here. Start with 5 USD, so you can create around 3 plans.
-<a href="https://home.planexe.org/">https://home.planexe.org/</a></p>
-<p>The agents use the api here. When AI agents connect to the MCP interface, the credits are consumed. Between 1-2 USD per plan creation.
-<a href="https://mcp.planexe.org/mcp">https://mcp.planexe.org/mcp</a></p>
-<p>There are several ways already to connect to planexe via mcp. So I'm hesitant about adding another package to maintain. Deploy to pypi a planexe package, so the mcp config becomes like this.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;planexe&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uvx&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="s2">&quot;planexe&quot;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="p">]</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
-</code></pre></div></p>
-<h2 id="mcp-byok">MCP - BYOK</h2>
-<p>Doing inference in the cloud cost money.
-Users can BYOK (Bring your own key), and choose what models they want to use.</p>
-<hr />
-<h1 id="tertiary-issues">Tertiary issues</h1>
+<h2 id="railway-volume-kludge">Railway volume kludge</h2>
+<p>Currently the docker-compose.yml mounts the <code>/run</code> dir. Inside Railway it's ugly.</p>
+<p>Get rid of the “/run” volume. And instead use the worker services file system.</p>
+<h2 id="ais-dont-read-the-gantt">AI's don't read the gantt</h2>
+<p>Currently the gantt is in a js block, and gets stripped out, causing AI's to overlook the gantt, it happens in Claude, ChatGPT.
+Place the gantt data, inside a <div> that is hidden, so that the AIs processing the report gets to see the gantt data.</p>
+<h2 id="use-markdown-instead-of-rendered-html">Use markdown instead of rendered html</h2>
+<p>Currently the report is the rendered markdown, causing lots of xml tags. When an AI reads this, it waste lots of tokens on this.
+My idea is to put the markdown inside a <div> that is hidden. This way the AI sees the content without having to ignore the excessive html formatting.
+The problem is that the markdown to html happens on the client side, potentially being fragile.
+This allows for a <code>Copy as Markdown</code> button.</p>
+<h2 id="standalone-report-that-is-for-ai-consumption">Standalone report that is for AI consumption</h2>
+<p>The html report is for humans to read. When AIs read it, they strip out the gantt.
+Output the entire plan as markdown. 
+Take inspiration from email multi part with many markdown/json/csv pieces.
+Insert backtrace info about what luigi code outputted each piece of the data, that makes it easier to pin point the earliest luigi task that produces garbage output, poluting downstram tasks.</p>
+<h2 id="back-tracing">Back tracing</h2>
+<p>In the report html, insert html comments that marks where an output file starts/stops. This way I can trace back, what luigi task created a piece of content, so when an AI critiques a plan, it can point to the luigi task that performs poorly.
+Currently I have to do the back tracing manually, and there is no structured way of pin pointing the earliest stage in the pipeline mistakes were introduced, that caused downstream tasks to output garbage.</p>
+<h2 id="how-this-plan-was-generated">How this plan was generated</h2>
+<p>Include a section with info about what LLMs where used, the number of tokens, the cost.</p>
 <h2 id="capture-reasoning-response">Capture reasoning response</h2>
 <p>Currently I only capture the final response, without any reasoning.
 I want to capture the reasoning, since it may be helpful for troubleshooting.
 Or for other AIs to assess the reasoning steps leading up to the response.</p>
-<h2 id="railway-volume-kludge">Railway volume kludge</h2>
-<p>Currently the docker-compose.yml mounts the <code>/run</code> dir. Inside Railway it's ugly.</p>
-<p>Get rid of the “/run” volume. And instead use the worker services file system.</p>
+<h2 id="byok">BYOK</h2>
+<p>Doing inference in the cloud cost money.
+Users can BYOK (Bring your own key), and choose what models they want to use.</p>
+<h2 id="mcp-tweaks">MCP tweaks</h2>
+<p><strong>plan clone</strong>, copy an existing plan and edit parts of it.</p>
+<p><strong>plan wait</strong>, block until the plan creation have finished.</p>
+<p><strong>account_status</strong>, check credit balance proactively before submitting a plan.</p>
+<p><strong>Prepare create</strong>, create a PlanItem, and allow setting various attributes, BEFORE creating the plan.</p>
+<p><strong>upload zip and resume</strong>, upload a zip with a plan and have PlanExe resume from it. Inside home.planexe.org, so users can do the same. This makes it possible to do edit the files, and resume from that data.</p>
+<h2 id="cli">CLI</h2>
+<p><strong>Resume from zip or dir</strong>, already possible via the run_plan_pipeline.py</p>
+<h2 id="deletion-of-plans">Deletion of plans</h2>
+<ul>
+<li>Automatic delete plans after 7 days from the server.</li>
+<li>UI for deleting plans</li>
+<li>MCP for deleting plans</li>
+</ul>
+<h2 id="edit-of-plan">Edit of plan</h2>
+<p><strong>Approach A:</strong> Don't trash an already generated plan
+First clone a plan, and delete the files downstream. Modify the file that caused problems, in light of what the problems were. Then resume the plan.
+Drawback, the plan gets a new uuid. This can be mitigated by having a <code>parent_plan_id</code> that references the original plan.
+I lean most toward this non-destructive approach. For steering this via MCP, I think creating a new uuid makes most sense, so the LLM doesn't get confused about an old uuid having its state changed.</p>
+<p><strong>Approach B:</strong> Allow trashing an already generated plan
+Modify a file and delete all files downstream. Then resume the plan.
+Benefit, the plan keeps its uuid. Less wasted space on server.
+Drawback, the user will loose a generated plan and intermediary files, making it hard to troubleshoot what went wrong.
+Migitation, taking snapshots, but then it's closer to <code>Approach A</code>.</p>
+<p>--</p>
+<h1 id="low-priority-issues">Low priority issues</h1>
+<h2 id="nicer-progressbar">Nicer progressbar</h2>
+<p>Currently some luigi tasks takes forever, doing several LLM calls internally, but not updating the progressbar.
+Heartbeat that gets incremented whenever a luigi task makes progress, as well as its llm calls.
+Callback inside the llm executor that does the heartbeat incrementing.</p>
 <h2 id="database-gz-zstd">Database gz -&gt; zstd</h2>
 <p>Replace gz with zstd in PlanExe, for wasting less space. So when I store stuff in the database, then zstd it is.</p>
-<hr />
-<h1 id="low-priority-issues">Low priority issues</h1>
 <h2 id="table-of-content">Table of content</h2>
 <p>Currently the generated report has expandable/collapsible sections. There is an overwhelming amount of content inside each sections.
 I'm considering having a table of content in the left sidebar, similar to this:
@@ -6569,16 +6603,6 @@ I'm considering using mkdocs instead.</p>
 <h2 id="eliminate-redundant-user-prompts-in-the-log-file">Eliminate redundant user prompts in the log file</h2>
 <p>Get rid of some of the many user prompt logging statements, so the log.txt is less noisy.
 These user prompts are saved to the <code>track_activity.jsonl</code> file already. So having them in the log.txt is redundant.</p>
-<h2 id="not-a-priority-debugging">Not a priority - Debugging</h2>
-<p>Get step-by-step debugging working again.
-Now that I have switched to Docker, I have multiple python projects in the same repo, that use different incompatible packages.
-With vibe-coding, I can't recall last time I have debugged anything.</p>
-<h2 id="mcp-tweaks">MCP tweaks</h2>
-<p><strong>plan clone</strong>, copy an existing plan and edit parts of it.</p>
-<p><strong>plan wait</strong>, block until the plan creation have finished.</p>
-<p><strong>account_status</strong>, check credit balance proactively before submitting a plan.</p>
-<p><strong>Prepare create</strong>, create a PlanItem, and allow setting various attributes, BEFORE creating the plan.</p>
-<p><strong>upload zip and resume</strong>, upload a zip with a plan and have PlanExe resume from it. Inside home.planexe.org, so users can do the same. This makes it possible to do edit the files, and resume from that data.</p>
 
 
 
