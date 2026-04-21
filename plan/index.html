@@ -6534,9 +6534,12 @@ Verdict: Sub-Human. It provides the architecture for the math, but cannot execut
 <p><strong>Risk registers are blind to the plan-as-artifact:</strong> Every plan enumerated risks about the execution (cost overruns, technical failure, ethical concerns about research, security breaches). None enumerated risks about the existence of the deliverable. "What if the plan itself or the plan output is dangerous?" never appears as a risk row.</p>
 <hr />
 <h1 id="secondary-issues">Secondary issues</h1>
-<h2 id="railway-volume-kludge">Railway volume kludge</h2>
-<p>Currently the docker-compose.yml mounts the <code>/run</code> dir. Inside Railway it's ugly.</p>
-<p>Get rid of the “/run” volume. And instead use the worker services file system.</p>
+<h2 id="rename-table-name">Rename table name</h2>
+<p>rename PlanItem (task_items) to (plan_items)</p>
+<h2 id="show-commit-id">Show commit id</h2>
+<p>use the git commit + branch in the generated report, so I can troubleshoot what version of PlanExe was used.
+RAILWAY_GIT_BRANCH — branch that triggered the deploy
+RAILWAY_GIT_COMMIT_SHA — commit SHA that triggered the deploy</p>
 <h2 id="ais-dont-read-the-gantt">AI's don't read the gantt</h2>
 <p>Currently the gantt is in a js block, and gets stripped out, causing AI's to overlook the gantt, it happens in Claude, ChatGPT.
 Place the gantt data, inside a <div> that is hidden, so that the AIs processing the report gets to see the gantt data.</p>
