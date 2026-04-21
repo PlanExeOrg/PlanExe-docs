@@ -6537,7 +6537,7 @@ This page covers common Docker workflows and troubleshooting.</p>
 <h2 id="environment-notes">Environment notes</h2>
 <ul>
 <li>The worker exports logs to stdout when <code>PLANEXE_WORKER_RELAY_PROCESS_OUTPUT=true</code> (set in <code>docker-compose.yml</code>).</li>
-<li>Shared volumes: <code>./run</code> is mounted into both services; <code>.env</code> and <code>./llm_config/</code> are mounted read-only. Ensure they exist on the host before starting.***</li>
+<li>Shared volumes: <code>.env</code> and <code>./llm_config/</code> are mounted read-only. Ensure they exist on the host before starting.</li>
 <li>Database: Postgres runs in <code>database_postgres</code> and listens on host <code>${PLANEXE_POSTGRES_PORT:-5432}</code> mapped to container <code>5432</code>; data is persisted in the named volume <code>database_postgres_data</code>.</li>
 <li>Multiuser UI: binds to container port <code>5000</code>, exposed on host <code>${PLANEXE_FRONTEND_MULTIUSER_PORT:-5001}</code>.</li>
 <li>MCP server downloads: set <code>PLANEXE_MCP_PUBLIC_BASE_URL</code> so clients receive a reachable <code>/download/...</code> URL (defaults to <code>http://localhost:8001</code> in compose).</li>

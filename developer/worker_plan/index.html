@@ -6416,19 +6416,9 @@
 <td>Port the worker listens on (only when running via <code>python -m worker_plan.app</code>).</td>
 </tr>
 <tr>
-<td><code>PLANEXE_RUN_DIR</code></td>
-<td><code>run</code></td>
-<td>Directory under which run output folders are created.</td>
-</tr>
-<tr>
-<td><code>PLANEXE_HOST_RUN_DIR</code></td>
-<td><em>(unset)</em></td>
-<td>Optional host path base returned in <code>display_run_dir</code> to hint where runs live on the host.</td>
-</tr>
-<tr>
 <td><code>PLANEXE_CONFIG_PATH</code></td>
 <td><code>.</code></td>
-<td>Working directory for the pipeline; used as the <code>cwd</code> when spawning <code>worker_plan_internal.plan.run_plan_pipeline</code>.</td>
+<td>Working directory for the pipeline; used as the <code>cwd</code> when spawning <code>worker_plan_internal.plan.run_plan_pipeline</code>. Run outputs are written to <code>{PLANEXE_CONFIG_PATH}/run/</code>.</td>
 </tr>
 <tr>
 <td><code>PLANEXE_WORKER_RELAY_PROCESS_OUTPUT</code></td>

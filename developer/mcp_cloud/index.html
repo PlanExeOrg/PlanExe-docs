@@ -7562,10 +7562,9 @@ still requires API key authentication when <code>PLANEXE_MCP_REQUIRE_AUTH=true</
 <h3 id="artifact-resolution-order">Artifact resolution order</h3>
 <p>When fetching plan files (reports, zips), <code>worker_fetchers.py</code> tries sources in priority order:</p>
 <ol>
-<li><strong>DB</strong> (<code>PlanItem.generated_report_html</code> / <code>PlanItem.run_zip_snapshot</code>) — fastest, always available for completed plans</li>
-<li><strong>Zip snapshot extraction</strong> — extracts individual files from the DB zip snapshot</li>
-<li><strong>Local run directory</strong> (<code>PLANEXE_RUN_DIR/{run_id}/</code>) — low latency if co-located</li>
-<li><strong>Worker HTTP</strong> (<code>PLANEXE_WORKER_PLAN_URL/runs/{run_id}/...</code>) — last-resort fallback (10s timeout, 3s connect)</li>
+<li><strong>DB</strong> (<code>PlanItem.generated_report_html</code> / <code>PlanItem.run_zip_snapshot</code>) — served directly from Postgres; available once a plan has completed (or a snapshot has been persisted)</li>
+<li><strong>Zip snapshot extraction</strong> — pulls an individual file out of the DB-stored zip snapshot</li>
+<li><strong>Worker HTTP</strong> (<code>PLANEXE_WORKER_PLAN_URL/runs/{run_id}/...</code>) — the live source for in-flight plans and anything not yet persisted to the DB (10s timeout, 3s connect)</li>
 </ol>
 <p>This layered approach avoids blocking on the worker HTTP API when the data is already available locally or in the database.</p>
 <h2 id="connecting-via-stdio-advanced-contributor-mode">Connecting via stdio (Advanced / Contributor Mode)</h2>
