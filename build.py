@@ -128,17 +128,28 @@ def main():
             with open(mkdocs_temp_path, "r") as f:
                 mkdocs_config = yaml.load(f, Loader=_IgnoreUnknownTagLoader)
 
-            proposals = sorted(
-                [
-                    p for p in proposals_dir.glob("*.md")
-                    if p.name.lower() != "agents.md"
-                ],
-                key=lambda p: p.name.lower(),
-            )
-            proposals_nav = []
-            for proposal_path in proposals:
-                title = proposal_path.stem.replace("_", " ").replace("-", " ").strip()
-                proposals_nav.append({title: f"proposals/{proposal_path.name}"})
+            def _collect_proposals(directory: Path, url_prefix: str) -> list:
+                entries = []
+                files = sorted(
+                    [
+                        p for p in directory.glob("*.md")
+                        if p.name.lower() != "agents.md"
+                    ],
+                    key=lambda p: p.name.lower(),
+                )
+                for proposal_path in files:
+                    title = proposal_path.stem.replace("_", " ").replace("-", " ").strip()
+                    entries.append({title: f"{url_prefix}{proposal_path.name}"})
+                return entries
+
+            proposals_nav = _collect_proposals(proposals_dir, "proposals/")
+
+            for subdir_name, label in (("archive", "Archive"), ("done", "Done")):
+                subdir = proposals_dir / subdir_name
+                if subdir.exists():
+                    sub_entries = _collect_proposals(subdir, f"proposals/{subdir_name}/")
+                    if sub_entries:
+                        proposals_nav.append({label: sub_entries})
 
             nav = mkdocs_config.get("nav", [])
             for entry in nav:
