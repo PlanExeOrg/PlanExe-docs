@@ -217,10 +217,6 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/00-triage/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/01-agent-smart-routing/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
@@ -246,14 +242,6 @@
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/07-elo-ranking/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/08-ui-for-editing-plan/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/100-lobster-museum-donation-routing/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -289,27 +277,11 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/109-llm-executor-retry-improvements/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/11-investor-thesis-matching-engine/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/110-usage-metrics-local-runs/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/111-promising-directions/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/112-end-to-end-test-plan/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/113-llm-error-traceability/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -337,19 +309,11 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/12-evidence-based-founder-execution-index/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/120-agent-spawning-execution/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/121-plan-spawns-agents/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/122-deduplicate-levers/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -361,23 +325,11 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/126-arc-agi3-structured-exploration/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/127-mcp-feedback/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/128-compiler-model-quality-metrics-dogfood-execution/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/129-prompt-dentist-pre-pipeline-enrichment/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/13-portfolio-aware-capital-allocation/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -414,10 +366,6 @@
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/138-proposals/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/14-confidence-weighted-funding-auctions/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -470,18 +418,6 @@
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/27-multi-angle-topic-verification-engine/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/28-autonomous-bid-factory-orchestration/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/29-elo-ranked-bid-selection-and-escalation/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/30-autonomous-bid-governance-risk-and-ethics/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -553,19 +489,7 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/48-moltbook-reputation-bridge/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/49-distributed-physical-task-dispatch-protocol/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/50-agent-to-agent-payment-gateway/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/51-decentralized-planexe-survivability/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -578,10 +502,6 @@
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/54-agent-safety-trusted-information/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/55-taskitem-activity-log-decomposition-and-secure-downloads/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -629,10 +549,6 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/67-buildinpublic-twitter-automation/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/68-domain-aware-plan-ranking-engine/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
@@ -649,22 +565,6 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/72-ai-replacing-c-level-roles/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/73-rename-task-prefix-in-mcp-tools/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/74-rename-taskitem-to-planitem/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/75-post-rename-cleanup-issues/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/76-x402-a2a-payment-roadmap/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
@@ -677,15 +577,7 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/79-multiple-api-keys/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/80-zero-downtime-railway-deployment/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/81-mcp-api-key-validation/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -697,19 +589,7 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/84-business-idea-proposal/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/85-business-idea-specification/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/86-agent-optimized-pipeline/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.planexe.org/proposals/87-plan-resume-mcp-tool/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
@@ -733,10 +613,6 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/93-local-model-roadmap/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/94-autoresearch-style-prompt-optimization/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
@@ -757,10 +633,6 @@
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
-         <loc>https://docs.planexe.org/proposals/99-human-utility-show-pedigree/</loc>
-         <lastmod>2026-05-12</lastmod>
-    </url>
-    <url>
          <loc>https://docs.planexe.org/proposals/AGENTS/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
@@ -770,6 +642,134 @@
     </url>
     <url>
          <loc>https://docs.planexe.org/proposals/parallel-racing-robustness/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/100-lobster-museum-donation-routing/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/11-investor-thesis-matching-engine/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/12-evidence-based-founder-execution-index/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/126-arc-agi3-structured-exploration/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/13-portfolio-aware-capital-allocation/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/14-confidence-weighted-funding-auctions/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/28-autonomous-bid-factory-orchestration/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/29-elo-ranked-bid-selection-and-escalation/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/30-autonomous-bid-governance-risk-and-ethics/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/48-moltbook-reputation-bridge/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/49-distributed-physical-task-dispatch-protocol/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/51-decentralized-planexe-survivability/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/67-buildinpublic-twitter-automation/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/72-ai-replacing-c-level-roles/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/84-business-idea-proposal/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/85-business-idea-specification/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/archive/99-human-utility-show-pedigree/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/00-triage/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/08-ui-for-editing-plan/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/109-llm-executor-retry-improvements/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/110-usage-metrics-local-runs/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/113-llm-error-traceability/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/122-deduplicate-levers/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/127-mcp-feedback/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/55-taskitem-activity-log-decomposition-and-secure-downloads/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/73-rename-task-prefix-in-mcp-tools/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/74-rename-taskitem-to-planitem/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/75-post-rename-cleanup-issues/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/79-multiple-api-keys/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/81-mcp-api-key-validation/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/87-plan-resume-mcp-tool/</loc>
+         <lastmod>2026-05-12</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.planexe.org/proposals/done/93-local-model-roadmap/</loc>
          <lastmod>2026-05-12</lastmod>
     </url>
     <url>
