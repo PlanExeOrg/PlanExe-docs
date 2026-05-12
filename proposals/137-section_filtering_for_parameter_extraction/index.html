@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/proposals/102-pipeline-intelligence-layer/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/137-section_filtering_for_parameter_extraction/">
       
       
-        <link rel="prev" href="../101-luigi-resume-enhancements/">
+        <link rel="prev" href="../136-good-plans-should-not-die/">
       
       
-        <link rel="next" href="../103-pipeline-hardening-roadmap-local-model-reliability/">
+        <link rel="next" href="../14-confidence-weighted-funding-auctions/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>102 pipeline intelligence layer - PlanExe Documentation</title>
+        <title>137 section filtering for parameter extraction - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="102 pipeline intelligence layer - PlanExe Documentation" />
+<meta property="og:title" content="137 section filtering for parameter extraction - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/102-pipeline-intelligence-layer.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/137-section_filtering_for_parameter_extraction.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/proposals/102-pipeline-intelligence-layer/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/137-section_filtering_for_parameter_extraction/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="102 pipeline intelligence layer - PlanExe Documentation" />
+<meta property="twitter:title" content="137 section filtering for parameter extraction - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/102-pipeline-intelligence-layer.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/137-section_filtering_for_parameter_extraction.png" />
 </head>
   
   
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pipeline-intelligence-layer-proposal" class="md-skip">
+        <a href="#planexe-report-section-filtering-for-parameter-extraction" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              102 pipeline intelligence layer
+              137 section filtering for parameter extraction
             
           </span>
         </div>
@@ -2395,37 +2395,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    102 pipeline intelligence layer
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../102-pipeline-intelligence-layer/" class="md-nav__link">
         
   
   
@@ -2441,315 +2414,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-core-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Core Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-error-feedback-retries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Error-Feedback Retries
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Error-Feedback Retries">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#current-behavior-before-pr-221" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current behavior (before PR #221)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposed-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed behavior
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expected-impact" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expected impact
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-task-level-output-validation-beyond-pydantic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Task-Level Output Validation Beyond Pydantic
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Task-Level Output Validation Beyond Pydantic">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed solution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-adaptive-model-selection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Adaptive Model Selection
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Adaptive Model Selection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-problem_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposed-solution_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed solution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-human-in-the-loop-gates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Human-in-the-Loop Gates
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Human-in-the-Loop Gates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-problem_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposed-solution_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed solution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-streaming-output-monitor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Streaming Output Monitor
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Streaming Output Monitor">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-problem_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposed-solution_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed solution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-run-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Run Comparison
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Run Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-problem_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposed-solution_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed solution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#priority" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Priority
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relationship-to-pr-157" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Relationship to PR #157
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3802,10 +3466,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../137-section_filtering_for_parameter_extraction/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    137 section filtering for parameter extraction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3821,6 +3512,446 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-default-do-not-feed-the-full-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended default: do not feed the full report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section classification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections-to-keep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections to keep
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sections to keep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strategic-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategic Decisions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premortem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Premortem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expert-criticism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expert Criticism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditional sections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional sections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Team
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swot-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SWOT Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-prompt-vetted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Prompt Vetted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-breakdown-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work Breakdown Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions &amp; Answers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self Audit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections-to-omit-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections to omit by default
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sections to omit by default">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documents-to-create-and-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documents to Create and Find
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-adherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Adherence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gantt-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gantt Interactive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execute Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-extraction-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended extraction profiles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended extraction profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-viability-monte-carlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General viability Monte Carlo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commercial-small-business-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial / small-business plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-health-resilience-nonprofit-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public-health / resilience / nonprofit plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-delivery-risk-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedule / delivery-risk simulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-preprocessing-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical preprocessing recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token-saving-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token-saving rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary recommendation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -6682,10 +6813,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-core-problem" class="md-nav__link">
+  <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Core Problem
+        Purpose
       
     </span>
   </a>
@@ -6693,22 +6824,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-error-feedback-retries" class="md-nav__link">
+  <a href="#recommended-default-do-not-feed-the-full-report" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Error-Feedback Retries
+        Recommended default: do not feed the full report
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Error-Feedback Retries">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section classification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections-to-keep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections to keep
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sections to keep">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#current-behavior-before-pr-221" class="md-nav__link">
+  <a href="#executive-summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current behavior (before PR #221)
+        Executive Summary
       
     </span>
   </a>
@@ -6716,10 +6869,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proposed-behavior" class="md-nav__link">
+  <a href="#project-plan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed behavior
+        Project Plan
       
     </span>
   </a>
@@ -6727,10 +6880,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
+  <a href="#strategic-decisions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        Strategic Decisions
       
     </span>
   </a>
@@ -6738,10 +6891,54 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#expected-impact" class="md-nav__link">
+  <a href="#assumptions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Expected impact
+        Assumptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premortem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Premortem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expert-criticism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expert Criticism
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Collection
       
     </span>
   </a>
@@ -6754,22 +6951,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-task-level-output-validation-beyond-pydantic" class="md-nav__link">
+  <a href="#conditional-sections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Task-Level Output Validation Beyond Pydantic
+        Conditional sections
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. Task-Level Output Validation Beyond Pydantic">
+    <nav class="md-nav" aria-label="Conditional sections">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#team" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The problem
+        Team
       
     </span>
   </a>
@@ -6777,10 +6974,76 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proposed-solution" class="md-nav__link">
+  <a href="#scenarios" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed solution
+        Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swot-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SWOT Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initial-prompt-vetted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Prompt Vetted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#work-breakdown-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Work Breakdown Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-answers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions &amp; Answers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self Audit
       
     </span>
   </a>
@@ -6793,22 +7056,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-adaptive-model-selection" class="md-nav__link">
+  <a href="#sections-to-omit-by-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Adaptive Model Selection
+        Sections to omit by default
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Adaptive Model Selection">
+    <nav class="md-nav" aria-label="Sections to omit by default">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-problem_1" class="md-nav__link">
+  <a href="#pitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The problem
+        Pitch
       
     </span>
   </a>
@@ -6816,10 +7079,54 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proposed-solution_1" class="md-nav__link">
+  <a href="#documents-to-create-and-find" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed solution
+        Documents to Create and Find
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#related-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-adherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Adherence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gantt-interactive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gantt Interactive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execute-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execute Plan
       
     </span>
   </a>
@@ -6832,22 +7139,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-human-in-the-loop-gates" class="md-nav__link">
+  <a href="#recommended-extraction-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Human-in-the-Loop Gates
+        Recommended extraction profiles
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Human-in-the-Loop Gates">
+    <nav class="md-nav" aria-label="Recommended extraction profiles">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-problem_2" class="md-nav__link">
+  <a href="#general-viability-monte-carlo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The problem
+        General viability Monte Carlo
       
     </span>
   </a>
@@ -6855,10 +7162,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#proposed-solution_2" class="md-nav__link">
+  <a href="#commercial-small-business-plan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Proposed solution
+        Commercial / small-business plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-health-resilience-nonprofit-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public-health / resilience / nonprofit plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-delivery-risk-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedule / delivery-risk simulation
       
     </span>
   </a>
@@ -6871,88 +7200,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-streaming-output-monitor" class="md-nav__link">
+  <a href="#practical-preprocessing-recommendation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Streaming Output Monitor
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Streaming Output Monitor">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-problem_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposed-solution_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed solution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-run-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Run Comparison
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Run Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-problem_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#proposed-solution_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Proposed solution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#priority" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Priority
+        Practical preprocessing recommendation
       
     </span>
   </a>
@@ -6960,10 +7211,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relationship-to-pr-157" class="md-nav__link">
+  <a href="#token-saving-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relationship to PR #157
+        Token-saving rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary recommendation
       
     </span>
   </a>
@@ -6990,195 +7252,725 @@
   
 
 
-<h1 id="pipeline-intelligence-layer-proposal">Pipeline Intelligence Layer — Proposal</h1>
-<p><strong>Date:</strong> 2026-03-07<br />
-<strong>Author:</strong> Bubba (Mac Mini agent)<br />
-<strong>Context:</strong> Second-order proposal. The first proposal (PR #157) covered operational tooling. This one covers the deeper architectural gap: the pipeline treats model failures as terminal events, when they should be learning opportunities.</p>
+<h1 id="planexe-report-section-filtering-for-parameter-extraction">PlanExe Report Section Filtering for Parameter Extraction</h1>
+<h2 id="purpose">Purpose</h2>
+<p>This document describes which sections of a PlanExe HTML/Markdown report are worth sending to a parameter-extraction LLM for Monte Carlo / napkin-math modelling, and which sections can usually be removed to save tokens.</p>
+<p>The goal is not to summarize the full plan. The goal is to preserve the parts that contain:</p>
+<ul>
+<li>explicit numeric values</li>
+<li>important assumptions</li>
+<li>uncertainty drivers</li>
+<li>capacity constraints</li>
+<li>budget and funding gates</li>
+<li>risks and shocks</li>
+<li>missing data</li>
+<li>viability thresholds</li>
+<li>quantities that should become model inputs, bounds, or calculations</li>
+</ul>
+<p>A full PlanExe report contains many sections that are useful for humans but weak for quantitative modelling. Feeding the entire report wastes tokens and can distract the extractor.</p>
 <hr />
-<h2 id="the-core-problem">The Core Problem</h2>
-<p>The current retry loop in <code>llm_executor.py</code> does something fundamentally broken: when a model fails Pydantic validation, it retries the <strong>identical prompt</strong> with the <strong>identical model</strong>. This is not a retry — it's repetition. It produces the same output and fails the same way.</p>
-<p>Every truncation failure we fixed tonight with <code>default=""</code> is a symptom of this. We applied a bandage. The wound is that the pipeline has no way to tell the model what it did wrong and ask it to try again with that information.</p>
-<p>This proposal is about giving the pipeline a real feedback loop.</p>
-<hr />
-<h2 id="1-error-feedback-retries">1. Error-Feedback Retries</h2>
-<p><strong>Status:</strong> Foundation implemented (PR #221). <code>LLMExecutor</code> now extracts structured
-Pydantic validation feedback and exposes it via <code>validation_feedback</code> so callers
-can inject it into the next prompt. The <code>max_validation_retries</code> parameter
-controls how many times the same model is retried on validation errors before
-falling through to the next model.</p>
-<p><strong>Remaining work:</strong> Individual tasks need to read <code>executor.validation_feedback</code>
-inside their <code>execute_function</code> and append the correction message to the prompt.
-The infrastructure is ready; the per-task wiring is not yet done.</p>
-<h3 id="current-behavior-before-pr-221">Current behavior (before PR #221)</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Attempt 1: send prompt → model omits holistic_profile_of_the_plan → Pydantic fails
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Attempt 2: send identical prompt → model omits holistic_profile_of_the_plan → Pydantic fails
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Attempt 3: exhausted → pipeline dies
-</code></pre></div>
-<p>The model receives no information about what it did wrong.</p>
-<h3 id="proposed-behavior">Proposed behavior</h3>
-<p>On Pydantic validation failure, extract structured error information and inject it into the next attempt:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Attempt 1: send prompt → model omits holistic_profile_of_the_plan → Pydantic fails
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>           → extract: missing field &quot;holistic_profile_of_the_plan&quot; in PlanCharacteristics
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Attempt 2: send prompt + correction message:
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  &quot;Your previous response was missing the required field &#39;holistic_profile_of_the_plan&#39; 
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>   in PlanCharacteristics. Please regenerate the complete JSON, including this field: 
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>   a concise holistic summary synthesizing the four characteristics above.&quot;
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>   → model generates complete JSON → Pydantic succeeds
-</code></pre></div>
-<h3 id="implementation">Implementation</h3>
-<p>In <code>llm_executor.py</code>, after catching a <code>ValidationError</code>:</p>
+<h2 id="recommended-default-do-not-feed-the-full-report">Recommended default: do not feed the full report</h2>
+<p>For parameter extraction, use a filtered modelling view instead of the full HTML.</p>
+<p>Recommended modelling digest:</p>
 <ol>
-<li>Extract missing fields and invalid types from the Pydantic error</li>
-<li>Generate a compact correction message (&lt; 200 tokens)</li>
-<li>Append as a new <code>ChatMessage(role=ASSISTANT, content=&lt;bad_response&gt;)</code> + <code>ChatMessage(role=USER, content=&lt;correction&gt;)</code></li>
-<li>Retry with the augmented message history</li>
+<li>Goal and top-level constraints</li>
+<li>Explicit numeric values</li>
+<li>Assumptions and ranges</li>
+<li>Critical decisions and trade-offs</li>
+<li>Risks, shocks, and failure paths</li>
+<li>Missing data / evidence needed</li>
+<li>Staffing and capacity, only when relevant</li>
+<li>Schedule gates, only when relevant</li>
 </ol>
-<p>This converts a blind retry into a self-correcting dialogue. The model sees its own bad output and a precise instruction to fix it.</p>
-<h3 id="expected-impact">Expected impact</h3>
-<p>Tasks that currently require <code>default=""</code> workarounds may self-correct in attempt 2 instead of failing silently with an empty field. The <code>default=""</code> fixes are still useful as a last resort — but they should be the fallback, not the primary recovery path.</p>
 <hr />
-<h2 id="2-task-level-output-validation-beyond-pydantic">2. Task-Level Output Validation Beyond Pydantic</h2>
-<h3 id="the-problem">The problem</h3>
-<p>Pydantic validates structure. It does not validate content. A model can return <code>holistic_profile_of_the_plan: ""</code> (which our fix now allows) and the pipeline continues happily with an empty field. The plan output is now corrupted in a way that Pydantic cannot detect.</p>
-<p>More broadly: a model can return <code>go_no_go_recommendation: "I'll go ahead and recommend proceeding"</code> instead of <code>"Go"</code> or <code>"No Go"</code>. Structurally valid, semantically wrong.</p>
-<h3 id="proposed-solution">Proposed solution</h3>
-<p>A lightweight post-validation layer per task that checks content constraints:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ContentConstraint</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">field</span><span class="p">:</span> <span class="nb">str</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">constraint_type</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;non_empty&quot;</span><span class="p">,</span> <span class="s2">&quot;one_of&quot;</span><span class="p">,</span> <span class="s2">&quot;min_length&quot;</span><span class="p">,</span> <span class="s2">&quot;max_length&quot;</span><span class="p">,</span> <span class="s2">&quot;regex&quot;</span><span class="p">]</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">params</span><span class="p">:</span> <span class="nb">dict</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">severity</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;warn&quot;</span><span class="p">,</span> <span class="s2">&quot;retry&quot;</span><span class="p">,</span> <span class="s2">&quot;fail&quot;</span><span class="p">]</span>
-</code></pre></div>
-<p>For <code>ExpertDetails</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">ContentConstraint</span><span class="p">(</span><span class="s2">&quot;combined_summary&quot;</span><span class="p">,</span> <span class="s2">&quot;min_length&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;chars&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span> <span class="s2">&quot;retry&quot;</span><span class="p">),</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">ContentConstraint</span><span class="p">(</span><span class="s2">&quot;go_no_go_recommendation&quot;</span><span class="p">,</span> <span class="s2">&quot;one_of&quot;</span><span class="p">,</span> 
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                      <span class="p">{</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Go&quot;</span><span class="p">,</span> <span class="s2">&quot;No Go&quot;</span><span class="p">,</span> <span class="s2">&quot;Execute Immediately&quot;</span><span class="p">,</span> 
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                                  <span class="s2">&quot;Proceed with Caution&quot;</span><span class="p">,</span> <span class="s2">&quot;Do Not Execute&quot;</span><span class="p">]},</span> <span class="s2">&quot;retry&quot;</span><span class="p">),</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">]</span>
-</code></pre></div></p>
-<p>On <code>severity="retry"</code>, run the error-feedback retry loop with the content violation as the correction message. On <code>severity="warn"</code>, log and continue. On <code>severity="fail"</code>, treat as a hard failure.</p>
-<p>This closes the gap between structural validity (Pydantic) and semantic validity (what the pipeline actually needs).</p>
-<hr />
-<h2 id="3-adaptive-model-selection">3. Adaptive Model Selection</h2>
-<h3 id="the-problem_1">The problem</h3>
-<p>The current model config has a fixed priority list. If model A fails task X, the pipeline falls back to model B — but model B may be known to fail task X for a completely different reason. There is no memory of which models succeed at which tasks.</p>
-<h3 id="proposed-solution_1">Proposed solution</h3>
-<p>A <code>model_task_matrix.json</code> that records observed task outcomes per model:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;lmstudio-qwen3.5-35b-a3b&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;SelectScenarioTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;PreProjectAssessmentTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;CreateWBSLevel3Task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unknown&quot;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">&quot;zai-org/glm-4.6v-flash&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">&quot;SelectScenarioTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pass&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nt">&quot;PreProjectAssessmentTask&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fail:schema_echo&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">&quot;CreateWBSLevel3Task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fail:schema_echo&quot;</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">}</span>
-</code></pre></div>
-<p>The pipeline updates this file after each task attempt. On the next run, when building the model fallback order for a given task, it consults the matrix and skips models with <code>fail:*</code> outcomes for that task.</p>
-<p>This creates an empirical model scorecard that improves over time without requiring human intervention.</p>
-<hr />
-<h2 id="4-human-in-the-loop-gates">4. Human-in-the-Loop Gates</h2>
-<h3 id="the-problem_2">The problem</h3>
-<p>Some decisions in the pipeline should not be automated. The <code>RedlineGateTask</code> already exists as a safety check — but it auto-continues. There is no mechanism to pause the pipeline and wait for a human to review output before downstream tasks consume it.</p>
-<p>For an agent running an overnight pipeline, this is critical: if <code>go_no_go_recommendation</code> comes back <code>"Do Not Execute"</code>, the pipeline should pause and alert the human rather than continuing to generate a 60-task project plan for something the expert assessment said was infeasible.</p>
-<h3 id="proposed-solution_2">Proposed solution</h3>
-<p>A <code>PLANEXE_PAUSE_ON</code> environment variable (comma-separated list of task names or field values):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>PLANEXE_PAUSE_ON=go_no_go_recommendation:Do Not Execute,RedlineGateTask:blocked
-</code></pre></div>
-<p>When a listed condition is met:
-1. Pipeline writes a <code>pause.json</code> to the run directory with the condition details
-2. If a webhook is configured, fires a <code>pipeline.paused</code> event
-3. Pipeline waits for <code>resume.json</code> to appear (human creates it to continue) or <code>abort.json</code> (human creates it to stop)
-4. <code>planexe resume --run-dir ./run/X</code> creates the <code>resume.json</code> file</p>
-<p>This gives humans meaningful control over consequential decision points without requiring them to babysit every task.</p>
-<hr />
-<h2 id="5-streaming-output-monitor">5. Streaming Output Monitor</h2>
-<h3 id="the-problem_3">The problem</h3>
-<p>For long-running LLM calls (2–4 minutes for expert assessment tasks), the pipeline is completely opaque. You cannot tell whether the model is generating useful output, hallucinating, or stuck. You only know the result when it finishes — by which point it has already timed out or produced bad output.</p>
-<h3 id="proposed-solution_3">Proposed solution</h3>
-<p>A streaming preview mode that logs model output tokens to a <code>stream.log</code> file in the run directory as they arrive:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PLANEXE_STREAM_LOG=true
-</code></pre></div>
-<p>This does not change pipeline behavior — it adds a side channel. An agent or human can <code>tail -f ./run/Qwen_Clean_v1/stream.log</code> to watch output in real time and detect early if a model is going off the rails (e.g., generating markdown prose instead of JSON, or repeating the schema back instead of filling it).</p>
-<p>For agent monitoring, this enables early abort: if the stream shows the model is not producing JSON after the first 500 tokens, the agent can kill the request and retry before the full timeout expires.</p>
-<hr />
-<h2 id="6-run-comparison">6. Run Comparison</h2>
-<h3 id="the-problem_4">The problem</h3>
-<p>After applying a fix and re-running, there is no easy way to see what changed in task outputs between run A and run B. Did the model generate more complete output after the <code>default=""</code> fix? Did the scenario selection change? Did the expert assessment reach a different conclusion?</p>
-<h3 id="proposed-solution_4">Proposed solution</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>planexe<span class="w"> </span>diff<span class="w"> </span>--run-a<span class="w"> </span>./run/Qwen_Only_Clean_v1<span class="w"> </span>--run-b<span class="w"> </span>./run/Qwen_Clean_v1<span class="w"> </span>--task<span class="w"> </span>PreProjectAssessmentTask
-</code></pre></div>
-<p>Output:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>PreProjectAssessmentTask output diff:
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w"> </span> combined_summary:
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="gd">-   (empty — field was missing)</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="gi">+   The project faces three critical blockers: insufficient capital runway...</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w"> </span> go_no_go_recommendation:
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="gd">-   (empty — field was missing)  </span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="gi">+   Proceed with Caution — the core concept is viable but...</span>
-</code></pre></div>
-<p>This makes it immediately clear whether a fix improved output quality, changed conclusions, or introduced regressions. Essential for PR evidence and model comparison.</p>
-<hr />
-<h2 id="priority">Priority</h2>
+<h2 id="section-classification">Section classification</h2>
 <table>
 <thead>
 <tr>
-<th>Priority</th>
-<th>Feature</th>
-<th>Complexity</th>
-<th>Impact</th>
+<th>Section</th>
+<th style="text-align: right;">Default action</th>
+<th style="text-align: right;">Parameter value</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>Error-feedback retries</td>
-<td>Medium</td>
-<td>Eliminates most <code>default=""</code> workarounds</td>
+<td>Executive Summary</td>
+<td style="text-align: right;">Keep</td>
+<td style="text-align: right;">High</td>
+<td>Dense source of budget, deadline, contingency, success criteria, and top risks.</td>
 </tr>
 <tr>
-<td>2</td>
-<td>Human-in-the-loop gates</td>
-<td>Low</td>
-<td>Safety for consequential decisions</td>
+<td>Project Plan</td>
+<td style="text-align: right;">Keep</td>
+<td style="text-align: right;">Very high</td>
+<td>Often the best general-purpose source for SMART targets, dependencies, resources, risks, compliance, and mitigation.</td>
 </tr>
 <tr>
-<td>3</td>
-<td>Content validation beyond Pydantic</td>
-<td>Medium</td>
-<td>Closes silent corruption gap</td>
+<td>Strategic Decisions</td>
+<td style="text-align: right;">Keep, but compress</td>
+<td style="text-align: right;">High</td>
+<td>Good for identifying critical levers and uncertainty drivers, but verbose.</td>
 </tr>
 <tr>
-<td>4</td>
-<td>Streaming output monitor</td>
-<td>Medium</td>
-<td>Enables early abort, faster debug</td>
+<td>Assumptions</td>
+<td style="text-align: right;">Keep</td>
+<td style="text-align: right;">Very high</td>
+<td>Usually the strongest source for model inputs, ranges, uncertainty, and Monte Carlo variables.</td>
 </tr>
 <tr>
-<td>5</td>
-<td>Adaptive model selection</td>
-<td>Medium</td>
-<td>Self-improving failure recovery</td>
+<td>Review Plan</td>
+<td style="text-align: right;">Keep or compress</td>
+<td style="text-align: right;">High</td>
+<td>Good for identifying validation questions, fragile assumptions, and gates.</td>
 </tr>
 <tr>
-<td>6</td>
-<td>Run comparison</td>
-<td>Low</td>
-<td>Evidence-based development</td>
+<td>Premortem</td>
+<td style="text-align: right;">Keep or compress</td>
+<td style="text-align: right;">High</td>
+<td>Strong source of downside scenarios, shocks, and failure paths.</td>
+</tr>
+<tr>
+<td>Expert Criticism</td>
+<td style="text-align: right;">Keep or compress</td>
+<td style="text-align: right;">High</td>
+<td>Often identifies hidden assumptions, missing denominators, and weak claims.</td>
+</tr>
+<tr>
+<td>Data Collection</td>
+<td style="text-align: right;">Keep</td>
+<td style="text-align: right;">High</td>
+<td>Excellent source for <code>missing_values_to_estimate</code> and estimation methods.</td>
+</tr>
+<tr>
+<td>Team</td>
+<td style="text-align: right;">Conditional</td>
+<td style="text-align: right;">Medium to high</td>
+<td>Keep when staffing, FTE, capacity, shifts, or accountability affect viability.</td>
+</tr>
+<tr>
+<td>Scenarios</td>
+<td style="text-align: right;">Conditional</td>
+<td style="text-align: right;">Medium</td>
+<td>Useful for low/base/high framing, but often narrative-heavy.</td>
+</tr>
+<tr>
+<td>SWOT Analysis</td>
+<td style="text-align: right;">Conditional</td>
+<td style="text-align: right;">Low to medium</td>
+<td>Useful for qualitative risk discovery, weak for direct numeric extraction.</td>
+</tr>
+<tr>
+<td>Initial Prompt Vetted</td>
+<td style="text-align: right;">Conditional</td>
+<td style="text-align: right;">Medium</td>
+<td>Useful as original constraints/source-of-truth, but can duplicate summary/plan.</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td style="text-align: right;">Usually omit</td>
+<td style="text-align: right;">Low to medium</td>
+<td>Keep only when governance/compliance failure is central to the model.</td>
+</tr>
+<tr>
+<td>Work Breakdown Structure</td>
+<td style="text-align: right;">Usually omit</td>
+<td style="text-align: right;">Low</td>
+<td>Very noisy unless doing schedule/resource simulation.</td>
+</tr>
+<tr>
+<td>Questions &amp; Answers</td>
+<td style="text-align: right;">Usually omit</td>
+<td style="text-align: right;">Low</td>
+<td>Often duplicates other sections. Keep only if it contains unique clarifications.</td>
+</tr>
+<tr>
+<td>Self Audit</td>
+<td style="text-align: right;">Usually omit</td>
+<td style="text-align: right;">Low to medium</td>
+<td>Can contain useful critique but usually duplicates Review/Premortem/Expert Criticism.</td>
+</tr>
+<tr>
+<td>Pitch</td>
+<td style="text-align: right;">Omit</td>
+<td style="text-align: right;">Low</td>
+<td>Persuasive duplicate; high risk of narrative bias and repeated numbers.</td>
+</tr>
+<tr>
+<td>Documents to Create and Find</td>
+<td style="text-align: right;">Omit</td>
+<td style="text-align: right;">Low</td>
+<td>Describes artifacts, not plan viability parameters.</td>
+</tr>
+<tr>
+<td>Related Resources</td>
+<td style="text-align: right;">Omit from extraction</td>
+<td style="text-align: right;">Low</td>
+<td>May be useful later for bounds research, not first-pass extraction.</td>
+</tr>
+<tr>
+<td>Prompt Adherence</td>
+<td style="text-align: right;">Omit</td>
+<td style="text-align: right;">Low</td>
+<td>Meta-evaluation, not modelling data.</td>
+</tr>
+<tr>
+<td>Gantt Interactive</td>
+<td style="text-align: right;">Omit</td>
+<td style="text-align: right;">Very low</td>
+<td>Mostly UI and schedule visualization scaffolding.</td>
+</tr>
+<tr>
+<td>Execute Plan</td>
+<td style="text-align: right;">Omit</td>
+<td style="text-align: right;">Very low</td>
+<td>Action/acknowledgement content, not modelling data.</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="relationship-to-pr-157">Relationship to PR #157</h2>
-<p>PR #157 covers operational tooling (status, invalidation, webhooks, timeouts). This proposal covers the intelligence layer — making the pipeline smarter about failure and recovery. Both are necessary. #157 makes the pipeline observable and controllable. This proposal makes it self-correcting.</p>
-<p>The highest-value item here is error-feedback retries (#1). Implementing it would make several of the <code>default=""</code> fixes in PRs #153, #155, #156 unnecessary — or demote them from primary fixes to last-resort fallbacks.</p>
+<h2 id="sections-to-keep">Sections to keep</h2>
+<h3 id="executive-summary">Executive Summary</h3>
+<p>Keep by default.</p>
+<p>This section is usually compact and high-value. It often contains the plan's main quantitative anchors:</p>
+<ul>
+<li>total budget</li>
+<li>launch deadline</li>
+<li>contingency reserve</li>
+<li>top-level revenue or outcome mix</li>
+<li>key success criteria</li>
+<li>top risks</li>
+<li>strategic framing</li>
+<li>major go/no-go claims</li>
+</ul>
+<p>For extraction, this section helps the model understand what the plan claims must be true.</p>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>total_budget
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>deadline
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>contingency_fraction
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>target_revenue_mix
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>conversion_target
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>success_threshold
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>critical_risk
+</code></pre></div>
+<hr />
+<h3 id="project-plan">Project Plan</h3>
+<p>Keep by default.</p>
+<p>This is usually the strongest general-purpose section for parameter extraction. It tends to include:</p>
+<ul>
+<li>SMART criteria</li>
+<li>dependencies</li>
+<li>resources required</li>
+<li>risk assessment</li>
+<li>mitigation plans</li>
+<li>regulatory/compliance requirements</li>
+<li>operational constraints</li>
+<li>capacity assumptions</li>
+<li>deadline gates</li>
+</ul>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>operational_readiness_date
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>staffing_count
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>budget
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>resource_buffer
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>regulatory_deadline
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>minimum_viable_rate
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>failure_mitigation_cost
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>required_capacity
+</code></pre></div>
+<p>This section is especially important because it often connects numbers to viability claims.</p>
+<hr />
+<h3 id="strategic-decisions">Strategic Decisions</h3>
+<p>Keep, but compress.</p>
+<p>This section is valuable because it identifies the parameters that matter most. It is also usually verbose and repetitive.</p>
+<p>Keep:</p>
+<ul>
+<li>decision title</li>
+<li>core decision</li>
+<li>why it matters</li>
+<li>strategic choices</li>
+<li>trade-off / risk</li>
+<li>justification</li>
+</ul>
+<p>Usually drop or compress:</p>
+<ul>
+<li>long synergy/conflict prose</li>
+<li>repeated narrative framing</li>
+<li>broad persuasion</li>
+<li>duplicate descriptions</li>
+</ul>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>critical_lever
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tradeoff_variable
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>risk_driver
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>scenario_axis
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>uncertain_assumption
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>capacity_constraint
+</code></pre></div>
+<p>Strategic Decisions is often better for identifying <em>what should be modelled</em> than for extracting clean numeric values.</p>
+<hr />
+<h3 id="assumptions">Assumptions</h3>
+<p>Keep by default.</p>
+<p>This is often the highest-density modelling section.</p>
+<p>It is likely to contain:</p>
+<ul>
+<li>explicit assumptions</li>
+<li>uncertainty ranges</li>
+<li>low/base/high candidates</li>
+<li>cost assumptions</li>
+<li>demand assumptions</li>
+<li>conversion assumptions</li>
+<li>operational assumptions</li>
+<li>risk assumptions</li>
+</ul>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>unit_cost
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>conversion_rate
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>demand_fraction
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>material_buffer
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>utilization_rate
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>risk_probability
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>shock_cost
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>baseline_cost
+</code></pre></div>
+<p>If token budget is tight, prioritize this section over narrative-heavy sections.</p>
+<hr />
+<h3 id="review-plan">Review Plan</h3>
+<p>Keep or compress.</p>
+<p>This section is useful because it often names what must be checked before the plan can be trusted.</p>
+<p>Good source for:</p>
+<ul>
+<li>validation questions</li>
+<li>fragile assumptions</li>
+<li>unproven demand claims</li>
+<li>missing evidence</li>
+<li>pass/fail criteria</li>
+<li>stress-test targets</li>
+<li>modelling blind spots</li>
+</ul>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>gate_threshold
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>validation_metric
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>minimum_required_margin
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>required_utilization
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>unvalidated_assumption
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>critical_dependency
+</code></pre></div>
+<p>Review Plan helps the extractor distinguish decorative numbers from important modelling gates.</p>
+<hr />
+<h3 id="premortem">Premortem</h3>
+<p>Keep or compress.</p>
+<p>This is one of the best sections for downside modelling.</p>
+<p>Good source for:</p>
+<ul>
+<li>failure paths</li>
+<li>compound risks</li>
+<li>shock scenarios</li>
+<li>contingency depletion paths</li>
+<li>operational collapse modes</li>
+<li>downside bounds</li>
+</ul>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>shock_cost
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>failure_probability
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>contingency_drawdown
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>demand_shortfall
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>capacity_failure
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>delay_cost
+</code></pre></div>
+<p>This section is especially useful when the simulation should challenge the plan rather than merely reproduce its optimistic assumptions.</p>
+<hr />
+<h3 id="expert-criticism">Expert Criticism</h3>
+<p>Keep or compress.</p>
+<p>This section often identifies hidden assumptions more directly than the plan itself.</p>
+<p>Good source for:</p>
+<ul>
+<li>missing denominators</li>
+<li>unrealistic assumptions</li>
+<li>weak risk controls</li>
+<li>unmodelled cost drivers</li>
+<li>underestimated staffing burden</li>
+<li>regulatory/compliance uncertainty</li>
+<li>fragile revenue assumptions</li>
+</ul>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>missing_denominator
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>required_capacity
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>unmodelled_cost
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>failure_threshold
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>risk_multiplier
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>uncertain_rate
+</code></pre></div>
+<p>If the extractor has trouble finding the “real” model drivers, this section is often more useful than the pitch or governance sections.</p>
+<hr />
+<h3 id="data-collection">Data Collection</h3>
+<p>Keep by default.</p>
+<p>This is especially useful for generating <code>missing_values_to_estimate</code>.</p>
+<p>Good source for:</p>
+<ul>
+<li>what evidence is missing</li>
+<li>how to estimate missing values</li>
+<li>what external data is required</li>
+<li>which values need validation</li>
+<li>which assumptions need bounds</li>
+</ul>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>missing_conversion_rate
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>missing_cost_per_unit
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>missing_utilization_rate
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>missing_capacity_denominator
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>missing_baseline_risk
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>suggested_estimation_method
+</code></pre></div>
+<p>This section helps the pipeline produce better bounds and avoids pretending that unknowns are known.</p>
+<hr />
+<h2 id="conditional-sections">Conditional sections</h2>
+<h3 id="team">Team</h3>
+<p>Use when staffing matters.</p>
+<p>Keep this section when the plan depends on:</p>
+<ul>
+<li>staffing capacity</li>
+<li>FTE assumptions</li>
+<li>shift coverage</li>
+<li>redundancy</li>
+<li>instructor/operator availability</li>
+<li>role-specific throughput</li>
+<li>personnel cost</li>
+<li>accountability structure</li>
+</ul>
+<p>Omit or compress when staffing is not central to viability.</p>
+<p>Typical extracted parameters:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>fte_count
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>hours_per_week
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>coverage_ratio
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>staffing_capacity
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>required_staffing
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>labor_cost
+</code></pre></div>
+<hr />
+<h3 id="scenarios">Scenarios</h3>
+<p>Use when scenario framing is needed.</p>
+<p>This section can help identify low/base/high cases, but it is often narrative-heavy.</p>
+<p>Keep if:</p>
+<ul>
+<li>the scenarios contain explicit numbers</li>
+<li>the plan uses scenarios as decision gates</li>
+<li>the simulation needs scenario axes</li>
+<li>the scenario descriptions reveal important failure modes</li>
+</ul>
+<p>Omit if it only restates the plan in optimistic/base/pessimistic prose.</p>
+<hr />
+<h3 id="swot-analysis">SWOT Analysis</h3>
+<p>Usually low numeric value.</p>
+<p>Keep only when the pipeline needs qualitative risk discovery or when other risk sections are missing.</p>
+<p>SWOT is useful for identifying:</p>
+<ul>
+<li>broad risk categories</li>
+<li>opportunities</li>
+<li>external constraints</li>
+<li>qualitative weaknesses</li>
+</ul>
+<p>But it rarely contains the clean inputs needed for Monte Carlo.</p>
+<hr />
+<h3 id="initial-prompt-vetted">Initial Prompt Vetted</h3>
+<p>Use as source-of-truth context when needed.</p>
+<p>This section can help detect whether the generated plan drifted from the original user request.</p>
+<p>Keep if:</p>
+<ul>
+<li>the report may have invented assumptions</li>
+<li>the original prompt contains hard constraints</li>
+<li>the generated plan has conflicting goals</li>
+<li>you need to preserve user intent</li>
+</ul>
+<p>Otherwise it often duplicates the Executive Summary and Project Plan.</p>
+<hr />
+<h3 id="governance">Governance</h3>
+<p>Usually omit.</p>
+<p>Keep only when governance/compliance is a central source of cost, delay, risk, or failure.</p>
+<p>For most financial or operational simulations, governance sections are long and low-density. Important compliance parameters are usually repeated more cleanly in:</p>
+<ul>
+<li>Project Plan</li>
+<li>Review Plan</li>
+<li>Premortem</li>
+<li>Expert Criticism</li>
+</ul>
+<hr />
+<h3 id="work-breakdown-structure">Work Breakdown Structure</h3>
+<p>Usually omit.</p>
+<p>This section is often very noisy for parameter extraction.</p>
+<p>It may contain:</p>
+<ul>
+<li>task IDs</li>
+<li>hierarchy levels</li>
+<li>task names</li>
+<li>sequencing details</li>
+<li>repeated dates</li>
+<li>implementation prose</li>
+</ul>
+<p>Keep only when the model is specifically about:</p>
+<ul>
+<li>schedule simulation</li>
+<li>resource allocation</li>
+<li>critical path</li>
+<li>task-level cost estimation</li>
+<li>delivery risk</li>
+</ul>
+<p>For first-pass viability Monte Carlo, omit.</p>
+<hr />
+<h3 id="questions-answers">Questions &amp; Answers</h3>
+<p>Usually omit.</p>
+<p>Keep only if it contains unique clarifications that are not present elsewhere.</p>
+<p>Otherwise it tends to repeat the plan in conversational form and adds token cost without many new parameters.</p>
+<hr />
+<h3 id="self-audit">Self Audit</h3>
+<p>Usually omit.</p>
+<p>This can be useful as an extra critique pass, but it often duplicates:</p>
+<ul>
+<li>Review Plan</li>
+<li>Premortem</li>
+<li>Expert Criticism</li>
+</ul>
+<p>Keep only if those sections are absent or weak.</p>
+<hr />
+<h2 id="sections-to-omit-by-default">Sections to omit by default</h2>
+<h3 id="pitch">Pitch</h3>
+<p>Omit.</p>
+<p>The pitch is persuasive narrative. It often repeats values from the Executive Summary and Project Plan, but with stronger rhetorical framing.</p>
+<p>Risk of including it:</p>
+<ul>
+<li>duplicates numbers</li>
+<li>reinforces overconfident claims</li>
+<li>wastes tokens</li>
+<li>increases narrative bias</li>
+</ul>
+<p>If the pitch contains a unique number, it should usually be captured elsewhere too.</p>
+<hr />
+<h3 id="documents-to-create-and-find">Documents to Create and Find</h3>
+<p>Omit.</p>
+<p>This section describes supporting artifacts, not plan viability.</p>
+<p>It is useful for project execution but weak for Monte Carlo parameter extraction.</p>
+<p>Keep only if the model explicitly includes documentation workload, compliance-document production, or research effort.</p>
+<hr />
+<h3 id="related-resources">Related Resources</h3>
+<p>Omit from first-pass extraction.</p>
+<p>This section may be useful later for bounds research or external validation, but it usually does not contain plan-native parameters.</p>
+<p>Do not include it in the main extraction prompt unless the report itself lacks enough context.</p>
+<hr />
+<h3 id="prompt-adherence">Prompt Adherence</h3>
+<p>Omit.</p>
+<p>This is meta-evaluation of whether the generated plan followed the prompt. It is rarely useful for quantitative modelling.</p>
+<hr />
+<h3 id="gantt-interactive">Gantt Interactive</h3>
+<p>Omit.</p>
+<p>This section is mostly UI, script, styles, and visualization scaffolding.</p>
+<p>It is not a good source of modelling parameters.</p>
+<p>If schedule modelling is needed, use a clean task table or extracted schedule data instead of the interactive HTML block.</p>
+<hr />
+<h3 id="execute-plan">Execute Plan</h3>
+<p>Omit.</p>
+<p>This section normally contains execution buttons, placeholders, or action acknowledgements. It is not useful for parameter extraction.</p>
+<hr />
+<h2 id="recommended-extraction-profiles">Recommended extraction profiles</h2>
+<h3 id="general-viability-monte-carlo">General viability Monte Carlo</h3>
+<p>Use:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Executive Summary
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Project Plan
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Strategic Decisions, compressed
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Assumptions
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Review Plan
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Premortem
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Expert Criticism
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Data Collection
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>Team, if staffing/capacity matters
+</code></pre></div>
+<p>Omit:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Pitch
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Gantt Interactive
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Execute Plan
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Prompt Adherence
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Documents to Create and Find
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Related Resources
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Work Breakdown Structure
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Questions &amp; Answers
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>Governance, unless compliance is central
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Self Audit, unless critique sections are weak
+</code></pre></div>
+<hr />
+<h3 id="commercial-small-business-plan">Commercial / small-business plan</h3>
+<p>Prioritize:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Executive Summary
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Project Plan
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Assumptions
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Strategic Decisions
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Review Plan
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Premortem
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Expert Criticism
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>Data Collection
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>Team, if labor capacity matters
+</code></pre></div>
+<p>Look for:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>budget
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>fixed_cost
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>variable_cost
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>unit_revenue
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>conversion_rate
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>capacity
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>utilization
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>gross_margin
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>break_even_volume
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>contingency
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>funding_gate
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>demand_shortfall
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>shock_cost
+</code></pre></div>
+<p>Usually omit:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Pitch
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Governance
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Documents to Create and Find
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Related Resources
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Gantt Interactive
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>Prompt Adherence
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Execute Plan
+</code></pre></div>
+<hr />
+<h3 id="public-health-resilience-nonprofit-plan">Public-health / resilience / nonprofit plan</h3>
+<p>Prioritize:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Executive Summary
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Project Plan
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Assumptions
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Data Collection
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>Review Plan
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Premortem
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Expert Criticism
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Team, if response capacity matters
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>Scenarios, if response levels matter
+</code></pre></div>
+<p>Look for:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>target_population
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>people_reached
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>people_protected
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>coverage_rate
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>baseline_risk
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>intervention_effectiveness
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>capacity
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>cost_per_person
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>avoided_harm
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>funding_gate
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>surge_cost
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>runway
+</code></pre></div>
+<p>Usually omit:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Pitch
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Documents to Create and Find
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Related Resources
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Prompt Adherence
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>Execute Plan
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Gantt Interactive
+</code></pre></div>
+<hr />
+<h3 id="schedule-delivery-risk-simulation">Schedule / delivery-risk simulation</h3>
+<p>Prioritize:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Project Plan
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Dependencies
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Work Breakdown Structure
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>Gantt / task data, if available in clean structured form
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>Team
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>Risk Assessment
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>Review Plan
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>Premortem
+</code></pre></div>
+<p>Look for:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>task_duration
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>dependency
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>critical_path
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>resource_constraint
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>staffing_capacity
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>deadline
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>delay_cost
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>approval_gate
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>procurement_lead_time
+</code></pre></div>
+<p>Unlike financial viability modelling, this profile may need Work Breakdown Structure or Gantt-derived data.</p>
+<hr />
+<h2 id="practical-preprocessing-recommendation">Practical preprocessing recommendation</h2>
+<p>Instead of sending raw HTML, convert the report into a compact modelling digest.</p>
+<p>Suggested digest structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a># Modelling Digest
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>## Goal and constraints
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>- ...
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>## Explicit numeric values
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>- ...
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>## Assumptions and ranges
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>- ...
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>## Critical decisions and trade-offs
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>- ...
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>## Risks and shocks
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>- ...
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>## Missing data and evidence needed
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>- ...
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>## Capacity and staffing, if relevant
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>- ...
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>## Schedule and gate constraints, if relevant
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>- ...
+</code></pre></div>
+<p>This gives the parameter extractor cleaner signal and fewer distractors.</p>
+<hr />
+<h2 id="token-saving-rules">Token-saving rules</h2>
+<p>Use these rules before sending content to the parameter extractor:</p>
+<ol>
+<li>Remove HTML, CSS, JavaScript, UI controls, and Gantt rendering code.</li>
+<li>Remove persuasive sections unless they contain unique numeric values.</li>
+<li>Remove duplicate restatements of the same budget, date, or KPI.</li>
+<li>Compress Strategic Decisions to decision title, core decision, why it matters, choices, and trade-off.</li>
+<li>Keep critique and premortem sections because they expose failure modes.</li>
+<li>Keep assumptions and data-collection sections because they expose inputs and missing values.</li>
+<li>Omit sections that describe documents, resources, governance mechanics, or prompt adherence unless directly relevant to the model.</li>
+<li>Prefer sections that contain formulas, thresholds, denominators, bounds, rates, quantities, capacities, or shock costs.</li>
+<li>Prefer sections that explain why a number matters over sections that merely repeat the number.</li>
+<li>For first-pass modelling, prioritize viability gates over implementation detail.</li>
+</ol>
+<hr />
+<h2 id="summary-recommendation">Summary recommendation</h2>
+<p>For most PlanExe reports, the default extraction bundle should be:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Executive Summary
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>Project Plan
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Strategic Decisions, compressed
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>Assumptions
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>Review Plan
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>Premortem
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>Expert Criticism
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>Data Collection
+</code></pre></div>
+<p>Add conditionally:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Team
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Scenarios
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Initial Prompt Vetted
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>SWOT Analysis
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>Work Breakdown Structure, only for schedule simulation
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>Governance, only for compliance-heavy models
+</code></pre></div>
+<p>Omit by default:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Pitch
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>Gantt Interactive
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>Execute Plan
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>Prompt Adherence
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>Documents to Create and Find
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>Related Resources
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>Questions &amp; Answers
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>Self Audit
+</code></pre></div>
+<p>The main principle:</p>
+<blockquote>
+<p>Feed the extractor sections that contain assumptions, gates, risks, denominators, and missing evidence. Drop sections that mainly contain persuasion, UI, documentation planning, or duplicate narrative.</p>
+</blockquote>
 
 
 
