@@ -8317,7 +8317,7 @@
 <li>The four sections 137 marks "Keep or compress" (Selected Scenario, Review Plan, Premortem, Expert Criticism) are compressed via <code>compress_report_section</code>. Each bullet carries an inline epistemic tag of the form <code>[&lt;source_status&gt; | e=N r=N | quote: verified|unverified]</code>.</li>
 <li>The four sections marked plain "Keep" (Executive Summary, Project Plan, Assumptions, Data Collection) are passed through raw from the PlanExe sample. They are already short and primarily numeric; further compression risks dropping modelling primitives.</li>
 </ul>
-<p>The companion skill <code>experiments/napkin_math/.claude/skills/extract-parameters-from-digest/</code> consumes the assembled file and produces a JSON parameter set with the same schema as the <code>extract-parameters</code> skill that reads the full PlanExe HTML. The two skills are head-to-head comparable on the same source plan.</p>
+<p>The companion skill <code>experiments/napkin_math/.claude/skills/extract-parameters-from-digest/</code> consumes the assembled file and produces a JSON parameter set with the same schema as the <code>extract-parameters-from-full</code> skill that reads the full PlanExe HTML. The two skills are head-to-head comparable on the same source plan.</p>
 <hr />
 <h2 id="lessons-from-the-first-reference-implementation">Lessons from the first reference implementation</h2>
 <p>A handful of failure modes recurred during head-to-head testing against the full-HTML pipeline. Recording them so the next implementation does not re-discover them.</p>
