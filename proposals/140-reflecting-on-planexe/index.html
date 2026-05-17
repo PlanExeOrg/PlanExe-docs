@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.planexe.org/developer/database_postgres/">
+        <link rel="canonical" href="https://docs.planexe.org/proposals/140-reflecting-on-planexe/">
       
       
-        <link rel="prev" href="../worker_plan/">
+        <link rel="prev" href="../139-compress-for-monte-carlo/">
       
       
-        <link rel="next" href="../worker_plan_database/">
+        <link rel="next" href="../15-outcome-feedback-and-model-governance/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>database_postgres - PlanExe Documentation</title>
+        <title>140 reflecting on planexe - PlanExe Documentation</title>
       
     
     
@@ -75,17 +75,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="database_postgres - PlanExe Documentation" />
+<meta property="og:title" content="140 reflecting on planexe - PlanExe Documentation" />
 <meta property="og:description" content="From a single goal statement to a full strategic plan." />
-<meta property="og:image" content="https://docs.planexe.org/assets/images/social/developer/database_postgres.png" />
+<meta property="og:image" content="https://docs.planexe.org/assets/images/social/proposals/140-reflecting-on-planexe.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://docs.planexe.org/developer/database_postgres/" />
+<meta property="og:url" content="https://docs.planexe.org/proposals/140-reflecting-on-planexe/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="database_postgres - PlanExe Documentation" />
+<meta property="twitter:title" content="140 reflecting on planexe - PlanExe Documentation" />
 <meta property="twitter:description" content="From a single goal statement to a full strategic plan." />
-<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/developer/database_postgres.png" />
+<meta property="twitter:image" content="https://docs.planexe.org/assets/images/social/proposals/140-reflecting-on-planexe.png" />
 </head>
   
   
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#database-postgres" class="md-skip">
+        <a href="#reflecting-on-planexe" class="md-skip">
           Skip to content
         </a>
       
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              database_postgres
+              140 reflecting on planexe
             
           </span>
         </div>
@@ -1308,8 +1308,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1320,11 +1318,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
@@ -1345,7 +1343,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1363,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../open_dir_server.md" class="md-nav__link">
+      <a href="../../developer/open_dir_server.md" class="md-nav__link">
         
   
   
@@ -1391,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worker_plan/" class="md-nav__link">
+      <a href="../../developer/worker_plan/" class="md-nav__link">
         
   
   
@@ -1419,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../frontend_single_user.md" class="md-nav__link">
+      <a href="../../developer/frontend_single_user.md" class="md-nav__link">
         
   
   
@@ -1444,37 +1442,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    database_postgres
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../developer/database_postgres/" class="md-nav__link">
         
   
   
@@ -1490,243 +1461,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#choose-a-host-port" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choose a host port
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-the-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify the container
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dbeaver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DBeaver
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="DBeaver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#railway-dbeaver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Railway + DBeaver
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Railway + DBeaver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-enable-tcp-proxy-in-railway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Enable TCP Proxy in Railway
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-set-a-secure-password" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Set a secure password
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-connect-with-dbeaver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Connect with DBeaver
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-security-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Security check
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssl-future-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SSL (Future Plan)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SSL (Future Plan)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#whats-needed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What's needed
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What&#39;s needed">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-generate-ssl-certificates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Generate SSL certificates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-update-the-dockerfile" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Update the Dockerfile
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-configure-dbeaver-for-ssl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Configure DBeaver for SSL
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-enforce-ssl-on-the-server-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Enforce SSL on the server (optional)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resources
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#railway-backup-to-local-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Railway backup to local file
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Railway backup to local file">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#restore-a-backup-locally" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Restore a backup locally
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1739,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../worker_plan_database/" class="md-nav__link">
+      <a href="../../developer/worker_plan_database/" class="md-nav__link">
         
   
   
@@ -1767,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../frontend_multi_user/" class="md-nav__link">
+      <a href="../../developer/frontend_multi_user/" class="md-nav__link">
         
   
   
@@ -1795,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp_local.md" class="md-nav__link">
+      <a href="../../developer/mcp_local.md" class="md-nav__link">
         
   
   
@@ -1823,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp_cloud/" class="md-nav__link">
+      <a href="../../developer/mcp_cloud/" class="md-nav__link">
         
   
   
@@ -2252,6 +1986,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2262,11 +1998,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" checked>
         
           
           <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
@@ -2287,7 +2023,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_14">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2305,7 +2041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/01-agent-smart-routing/" class="md-nav__link">
+      <a href="../01-agent-smart-routing/" class="md-nav__link">
         
   
   
@@ -2340,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/02-plans-as-LLM-templates/" class="md-nav__link">
+      <a href="../02-plans-as-LLM-templates/" class="md-nav__link">
         
   
   
@@ -2375,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/03-distributed-plan-execution/" class="md-nav__link">
+      <a href="../03-distributed-plan-execution/" class="md-nav__link">
         
   
   
@@ -2410,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/04-plan-explain-as-API-service/" class="md-nav__link">
+      <a href="../04-plan-explain-as-API-service/" class="md-nav__link">
         
   
   
@@ -2445,7 +2181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/05-semantic-plan-search-graph/" class="md-nav__link">
+      <a href="../05-semantic-plan-search-graph/" class="md-nav__link">
         
   
   
@@ -2480,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/06-adopt-on-the-fly/" class="md-nav__link">
+      <a href="../06-adopt-on-the-fly/" class="md-nav__link">
         
   
   
@@ -2508,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/07-elo-ranking/" class="md-nav__link">
+      <a href="../07-elo-ranking/" class="md-nav__link">
         
   
   
@@ -2543,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/101-luigi-resume-enhancements/" class="md-nav__link">
+      <a href="../101-luigi-resume-enhancements/" class="md-nav__link">
         
   
   
@@ -2571,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/102-pipeline-intelligence-layer/" class="md-nav__link">
+      <a href="../102-pipeline-intelligence-layer/" class="md-nav__link">
         
   
   
@@ -2599,7 +2335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/103-pipeline-hardening-roadmap-local-model-reliability/" class="md-nav__link">
+      <a href="../103-pipeline-hardening-roadmap-local-model-reliability/" class="md-nav__link">
         
   
   
@@ -2627,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/104-llm-config-thinking-control/" class="md-nav__link">
+      <a href="../104-llm-config-thinking-control/" class="md-nav__link">
         
   
   
@@ -2655,7 +2391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/105-currency-service/" class="md-nav__link">
+      <a href="../105-currency-service/" class="md-nav__link">
         
   
   
@@ -2683,7 +2419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/106-resource-cost-data/" class="md-nav__link">
+      <a href="../106-resource-cost-data/" class="md-nav__link">
         
   
   
@@ -2711,7 +2447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/107-domain-aware-normalizer/" class="md-nav__link">
+      <a href="../107-domain-aware-normalizer/" class="md-nav__link">
         
   
   
@@ -2739,7 +2475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/108-llm-thinking-mode-middleware/" class="md-nav__link">
+      <a href="../108-llm-thinking-mode-middleware/" class="md-nav__link">
         
   
   
@@ -2767,7 +2503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/111-promising-directions/" class="md-nav__link">
+      <a href="../111-promising-directions/" class="md-nav__link">
         
   
   
@@ -2795,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/112-end-to-end-test-plan/" class="md-nav__link">
+      <a href="../112-end-to-end-test-plan/" class="md-nav__link">
         
   
   
@@ -2823,7 +2559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/114-mcp-interface-feedback-stress-test/" class="md-nav__link">
+      <a href="../114-mcp-interface-feedback-stress-test/" class="md-nav__link">
         
   
   
@@ -2851,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/115-mcp-roadmap/" class="md-nav__link">
+      <a href="../115-mcp-roadmap/" class="md-nav__link">
         
   
   
@@ -2879,7 +2615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/116-home-roadmap/" class="md-nav__link">
+      <a href="../116-home-roadmap/" class="md-nav__link">
         
   
   
@@ -2907,7 +2643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/117-system-prompt-optimizer/" class="md-nav__link">
+      <a href="../117-system-prompt-optimizer/" class="md-nav__link">
         
   
   
@@ -2935,7 +2671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/118-two-pass-pipeline/" class="md-nav__link">
+      <a href="../118-two-pass-pipeline/" class="md-nav__link">
         
   
   
@@ -2963,7 +2699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/119-lever-pipeline-impl/" class="md-nav__link">
+      <a href="../119-lever-pipeline-impl/" class="md-nav__link">
         
   
   
@@ -2991,7 +2727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/120-agent-spawning-execution/" class="md-nav__link">
+      <a href="../120-agent-spawning-execution/" class="md-nav__link">
         
   
   
@@ -3019,7 +2755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/121-plan-spawns-agents/" class="md-nav__link">
+      <a href="../121-plan-spawns-agents/" class="md-nav__link">
         
   
   
@@ -3047,7 +2783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/123-evidence_discipline_anti_handwave_claim_calibration/" class="md-nav__link">
+      <a href="../123-evidence_discipline_anti_handwave_claim_calibration/" class="md-nav__link">
         
   
   
@@ -3075,7 +2811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/125-planexe-as-reasoning-probe/" class="md-nav__link">
+      <a href="../125-planexe-as-reasoning-probe/" class="md-nav__link">
         
   
   
@@ -3110,7 +2846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/128-compiler-model-quality-metrics-dogfood-execution/" class="md-nav__link">
+      <a href="../128-compiler-model-quality-metrics-dogfood-execution/" class="md-nav__link">
         
   
   
@@ -3138,7 +2874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/129-prompt-dentist-pre-pipeline-enrichment/" class="md-nav__link">
+      <a href="../129-prompt-dentist-pre-pipeline-enrichment/" class="md-nav__link">
         
   
   
@@ -3166,7 +2902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/130-per-task-sampling-profiles/" class="md-nav__link">
+      <a href="../130-per-task-sampling-profiles/" class="md-nav__link">
         
   
   
@@ -3194,7 +2930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/131-codebase-cleanliness-remediation-roadmap/" class="md-nav__link">
+      <a href="../131-codebase-cleanliness-remediation-roadmap/" class="md-nav__link">
         
   
   
@@ -3229,7 +2965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/132-elo-scoring/" class="md-nav__link">
+      <a href="../132-elo-scoring/" class="md-nav__link">
         
   
   
@@ -3257,7 +2993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/133-dag-and-rca/" class="md-nav__link">
+      <a href="../133-dag-and-rca/" class="md-nav__link">
         
   
   
@@ -3285,7 +3021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/134-pgres-tuples-ok-connection-corruption/" class="md-nav__link">
+      <a href="../134-pgres-tuples-ok-connection-corruption/" class="md-nav__link">
         
   
   
@@ -3313,7 +3049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/135-critical-premises/" class="md-nav__link">
+      <a href="../135-critical-premises/" class="md-nav__link">
         
   
   
@@ -3341,7 +3077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/136-good-plans-should-not-die/" class="md-nav__link">
+      <a href="../136-good-plans-should-not-die/" class="md-nav__link">
         
   
   
@@ -3369,7 +3105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/137-section_filtering_for_parameter_extraction/" class="md-nav__link">
+      <a href="../137-section_filtering_for_parameter_extraction/" class="md-nav__link">
         
   
   
@@ -3397,7 +3133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/138-proposals/" class="md-nav__link">
+      <a href="../138-proposals/" class="md-nav__link">
         
   
   
@@ -3425,7 +3161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/139-compress-for-monte-carlo/" class="md-nav__link">
+      <a href="../139-compress-for-monte-carlo/" class="md-nav__link">
         
   
   
@@ -3450,10 +3186,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../proposals/140-reflecting-on-planexe/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3469,6 +3214,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -3481,7 +3227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/15-outcome-feedback-and-model-governance/" class="md-nav__link">
+      <a href="../15-outcome-feedback-and-model-governance/" class="md-nav__link">
         
   
   
@@ -3516,7 +3262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
+      <a href="../16-on-demand-plugin-synthesis-hub/" class="md-nav__link">
         
   
   
@@ -3551,7 +3297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/17-plugin-adaptation-lifecycle/" class="md-nav__link">
+      <a href="../17-plugin-adaptation-lifecycle/" class="md-nav__link">
         
   
   
@@ -3586,7 +3332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
+      <a href="../18-plugin-benchmarking-coverage-harness/" class="md-nav__link">
         
   
   
@@ -3621,7 +3367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
+      <a href="../19-plugin-safety-governance-for-runtime-loading/" class="md-nav__link">
         
   
   
@@ -3656,7 +3402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
+      <a href="../20-plugin-hub-discovery-ranking-and-reuse/" class="md-nav__link">
         
   
   
@@ -3691,7 +3437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/21-expert-discovery-and-fit-scoring/" class="md-nav__link">
+      <a href="../21-expert-discovery-and-fit-scoring/" class="md-nav__link">
         
   
   
@@ -3726,7 +3472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/22-multi-stage-verification-workflow/" class="md-nav__link">
+      <a href="../22-multi-stage-verification-workflow/" class="md-nav__link">
         
   
   
@@ -3761,7 +3507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
+      <a href="../23-expert-collaboration-marketplace-and-reputation/" class="md-nav__link">
         
   
   
@@ -3796,7 +3542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/24-cross-border-project-verification-framework/" class="md-nav__link">
+      <a href="../24-cross-border-project-verification-framework/" class="md-nav__link">
         
   
   
@@ -3831,7 +3577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/25-verification-incentives-governance-and-liability/" class="md-nav__link">
+      <a href="../25-verification-incentives-governance-and-liability/" class="md-nav__link">
         
   
   
@@ -3866,7 +3612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
+      <a href="../26-news-intake-and-opportunity-sensing-grid/" class="md-nav__link">
         
   
   
@@ -3901,7 +3647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/27-multi-angle-topic-verification-engine/" class="md-nav__link">
+      <a href="../27-multi-angle-topic-verification-engine/" class="md-nav__link">
         
   
   
@@ -3936,7 +3682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/31-token-counting-and-cost-transparency/" class="md-nav__link">
+      <a href="../31-token-counting-and-cost-transparency/" class="md-nav__link">
         
   
   
@@ -3971,7 +3717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
+      <a href="../32-gantt-parallelization-and-fast-tracking/" class="md-nav__link">
         
   
   
@@ -4006,7 +3752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/33-cost-breakdown-structure-cbs/" class="md-nav__link">
+      <a href="../33-cost-breakdown-structure-cbs/" class="md-nav__link">
         
   
   
@@ -4041,7 +3787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/34-finance-top-down-estimation/" class="md-nav__link">
+      <a href="../34-finance-top-down-estimation/" class="md-nav__link">
         
   
   
@@ -4076,7 +3822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
+      <a href="../35-finance-bottom-up-estimation-and-reconciliation/" class="md-nav__link">
         
   
   
@@ -4111,7 +3857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
+      <a href="../36-monte-carlo-plan-success-probability-engine/" class="md-nav__link">
         
   
   
@@ -4146,7 +3892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
+      <a href="../37-cashflow-and-funding-stress-monte-carlo/" class="md-nav__link">
         
   
   
@@ -4181,7 +3927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
+      <a href="../38-risk-propagation-network-and-failure-modes/" class="md-nav__link">
         
   
   
@@ -4216,7 +3962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
+      <a href="../39-frontier-research-gap-mapper-for-megaprojects/" class="md-nav__link">
         
   
   
@@ -4251,7 +3997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
+      <a href="../40-three-hypotheses-engine-for-unsolved-challenges/" class="md-nav__link">
         
   
   
@@ -4286,7 +4032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/41-autonomous-execution-of-plan/" class="md-nav__link">
+      <a href="../41-autonomous-execution-of-plan/" class="md-nav__link">
         
   
   
@@ -4321,7 +4067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/42-evidence-traceability-ledger/" class="md-nav__link">
+      <a href="../42-evidence-traceability-ledger/" class="md-nav__link">
         
   
   
@@ -4356,7 +4102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/43-assumption-drift-monitor/" class="md-nav__link">
+      <a href="../43-assumption-drift-monitor/" class="md-nav__link">
         
   
   
@@ -4391,7 +4137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/44-investor-grade-audit-pack-generator/" class="md-nav__link">
+      <a href="../44-investor-grade-audit-pack-generator/" class="md-nav__link">
         
   
   
@@ -4426,7 +4172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/45-counterfactual-scenario-explorer/" class="md-nav__link">
+      <a href="../45-counterfactual-scenario-explorer/" class="md-nav__link">
         
   
   
@@ -4461,7 +4207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/46-execution-readiness-scoring/" class="md-nav__link">
+      <a href="../46-execution-readiness-scoring/" class="md-nav__link">
         
   
   
@@ -4496,7 +4242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/47-openclaw-agent-skill-integration/" class="md-nav__link">
+      <a href="../47-openclaw-agent-skill-integration/" class="md-nav__link">
         
   
   
@@ -4531,7 +4277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/50-agent-to-agent-payment-gateway/" class="md-nav__link">
+      <a href="../50-agent-to-agent-payment-gateway/" class="md-nav__link">
         
   
   
@@ -4566,7 +4312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/52-mcp-oauth/" class="md-nav__link">
+      <a href="../52-mcp-oauth/" class="md-nav__link">
         
   
   
@@ -4601,7 +4347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/53-uuid-only-task-id/" class="md-nav__link">
+      <a href="../53-uuid-only-task-id/" class="md-nav__link">
         
   
   
@@ -4636,7 +4382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/54-agent-safety-trusted-information/" class="md-nav__link">
+      <a href="../54-agent-safety-trusted-information/" class="md-nav__link">
         
   
   
@@ -4664,7 +4410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
+      <a href="../56-adversarial-red-team-reality-check-for-plans/" class="md-nav__link">
         
   
   
@@ -4699,7 +4445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
+      <a href="../57-banned-words-and-lever-realism-guardrails/" class="md-nav__link">
         
   
   
@@ -4734,7 +4480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/58-boost-initial-prompt/" class="md-nav__link">
+      <a href="../58-boost-initial-prompt/" class="md-nav__link">
         
   
   
@@ -4769,7 +4515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
+      <a href="../59-prompt-optimizing-with-ab-testing/" class="md-nav__link">
         
   
   
@@ -4804,7 +4550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/60-plan-to-repo/" class="md-nav__link">
+      <a href="../60-plan-to-repo/" class="md-nav__link">
         
   
   
@@ -4839,7 +4585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/61-post-plan-agent-swarm/" class="md-nav__link">
+      <a href="../61-post-plan-agent-swarm/" class="md-nav__link">
         
   
   
@@ -4867,7 +4613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/62-agent-first-frontend-discoverability/" class="md-nav__link">
+      <a href="../62-agent-first-frontend-discoverability/" class="md-nav__link">
         
   
   
@@ -4895,7 +4641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/63-luigi-agent-integration/" class="md-nav__link">
+      <a href="../63-luigi-agent-integration/" class="md-nav__link">
         
   
   
@@ -4923,7 +4669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/64-post-plan-orchestration-layer/" class="md-nav__link">
+      <a href="../64-post-plan-orchestration-layer/" class="md-nav__link">
         
   
   
@@ -4951,7 +4697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/65-git-state-machine-enrichment/" class="md-nav__link">
+      <a href="../65-git-state-machine-enrichment/" class="md-nav__link">
         
   
   
@@ -4979,7 +4725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/66-post-plan-enrichment-swarm/" class="md-nav__link">
+      <a href="../66-post-plan-enrichment-swarm/" class="md-nav__link">
         
   
   
@@ -5014,7 +4760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/68-domain-aware-plan-ranking-engine/" class="md-nav__link">
+      <a href="../68-domain-aware-plan-ranking-engine/" class="md-nav__link">
         
   
   
@@ -5049,7 +4795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/69-arcgentica-agent-patterns/" class="md-nav__link">
+      <a href="../69-arcgentica-agent-patterns/" class="md-nav__link">
         
   
   
@@ -5084,7 +4830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
+      <a href="../70-mcp-interface-evaluation-and-roadmap/" class="md-nav__link">
         
   
   
@@ -5112,7 +4858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/71-strategy-auditor/" class="md-nav__link">
+      <a href="../71-strategy-auditor/" class="md-nav__link">
         
   
   
@@ -5140,7 +4886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/76-x402-a2a-payment-roadmap/" class="md-nav__link">
+      <a href="../76-x402-a2a-payment-roadmap/" class="md-nav__link">
         
   
   
@@ -5168,7 +4914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/77-ccusage-real-data-analysis/" class="md-nav__link">
+      <a href="../77-ccusage-real-data-analysis/" class="md-nav__link">
         
   
   
@@ -5196,7 +4942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/78-planexe-growth-awareness-strategy/" class="md-nav__link">
+      <a href="../78-planexe-growth-awareness-strategy/" class="md-nav__link">
         
   
   
@@ -5224,7 +4970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/80-zero-downtime-railway-deployment/" class="md-nav__link">
+      <a href="../80-zero-downtime-railway-deployment/" class="md-nav__link">
         
   
   
@@ -5252,7 +4998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/82-measure-drift-proposal/" class="md-nav__link">
+      <a href="../82-measure-drift-proposal/" class="md-nav__link">
         
   
   
@@ -5280,7 +5026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/83-measure-drift-specification/" class="md-nav__link">
+      <a href="../83-measure-drift-specification/" class="md-nav__link">
         
   
   
@@ -5308,7 +5054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/86-agent-optimized-pipeline/" class="md-nav__link">
+      <a href="../86-agent-optimized-pipeline/" class="md-nav__link">
         
   
   
@@ -5336,7 +5082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/88-fermi-sanity-check-validation-gate/" class="md-nav__link">
+      <a href="../88-fermi-sanity-check-validation-gate/" class="md-nav__link">
         
   
   
@@ -5364,7 +5110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/89-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
+      <a href="../89-model-routing-postmortem-simon-26feb2026/" class="md-nav__link">
         
   
   
@@ -5392,7 +5138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/90-complexity-assessment-bubba-haiku/" class="md-nav__link">
+      <a href="../90-complexity-assessment-bubba-haiku/" class="md-nav__link">
         
   
   
@@ -5420,7 +5166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/91-complexity-assessment-larry-sonnet/" class="md-nav__link">
+      <a href="../91-complexity-assessment-larry-sonnet/" class="md-nav__link">
         
   
   
@@ -5448,7 +5194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/92-task-complexity-routing/" class="md-nav__link">
+      <a href="../92-task-complexity-routing/" class="md-nav__link">
         
   
   
@@ -5476,7 +5222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/94-autoresearch-style-prompt-optimization/" class="md-nav__link">
+      <a href="../94-autoresearch-style-prompt-optimization/" class="md-nav__link">
         
   
   
@@ -5511,7 +5257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/95-model-routing-ux-modes/" class="md-nav__link">
+      <a href="../95-model-routing-ux-modes/" class="md-nav__link">
         
   
   
@@ -5539,7 +5285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/96-cache-aware-model-handoff/" class="md-nav__link">
+      <a href="../96-cache-aware-model-handoff/" class="md-nav__link">
         
   
   
@@ -5567,7 +5313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/97-drift-measurement-pseudocode-impl/" class="md-nav__link">
+      <a href="../97-drift-measurement-pseudocode-impl/" class="md-nav__link">
         
   
   
@@ -5595,7 +5341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/98-pipeline-benchmark-prompts/" class="md-nav__link">
+      <a href="../98-pipeline-benchmark-prompts/" class="md-nav__link">
         
   
   
@@ -5623,7 +5369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/ensemble-judge-refinement/" class="md-nav__link">
+      <a href="../ensemble-judge-refinement/" class="md-nav__link">
         
   
   
@@ -5651,7 +5397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/parallel-racing-robustness/" class="md-nav__link">
+      <a href="../parallel-racing-robustness/" class="md-nav__link">
         
   
   
@@ -5729,7 +5475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/100-lobster-museum-donation-routing/" class="md-nav__link">
+      <a href="../archive/100-lobster-museum-donation-routing/" class="md-nav__link">
         
   
   
@@ -5757,7 +5503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/11-investor-thesis-matching-engine/" class="md-nav__link">
+      <a href="../archive/11-investor-thesis-matching-engine/" class="md-nav__link">
         
   
   
@@ -5792,7 +5538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/12-evidence-based-founder-execution-index/" class="md-nav__link">
+      <a href="../archive/12-evidence-based-founder-execution-index/" class="md-nav__link">
         
   
   
@@ -5827,7 +5573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/126-arc-agi3-structured-exploration/" class="md-nav__link">
+      <a href="../archive/126-arc-agi3-structured-exploration/" class="md-nav__link">
         
   
   
@@ -5855,7 +5601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/13-portfolio-aware-capital-allocation/" class="md-nav__link">
+      <a href="../archive/13-portfolio-aware-capital-allocation/" class="md-nav__link">
         
   
   
@@ -5890,7 +5636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/14-confidence-weighted-funding-auctions/" class="md-nav__link">
+      <a href="../archive/14-confidence-weighted-funding-auctions/" class="md-nav__link">
         
   
   
@@ -5925,7 +5671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/28-autonomous-bid-factory-orchestration/" class="md-nav__link">
+      <a href="../archive/28-autonomous-bid-factory-orchestration/" class="md-nav__link">
         
   
   
@@ -5960,7 +5706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
+      <a href="../archive/29-elo-ranked-bid-selection-and-escalation/" class="md-nav__link">
         
   
   
@@ -5995,7 +5741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
+      <a href="../archive/30-autonomous-bid-governance-risk-and-ethics/" class="md-nav__link">
         
   
   
@@ -6030,7 +5776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/48-moltbook-reputation-bridge/" class="md-nav__link">
+      <a href="../archive/48-moltbook-reputation-bridge/" class="md-nav__link">
         
   
   
@@ -6065,7 +5811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
+      <a href="../archive/49-distributed-physical-task-dispatch-protocol/" class="md-nav__link">
         
   
   
@@ -6100,7 +5846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/51-decentralized-planexe-survivability/" class="md-nav__link">
+      <a href="../archive/51-decentralized-planexe-survivability/" class="md-nav__link">
         
   
   
@@ -6135,7 +5881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/67-buildinpublic-twitter-automation/" class="md-nav__link">
+      <a href="../archive/67-buildinpublic-twitter-automation/" class="md-nav__link">
         
   
   
@@ -6163,7 +5909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/72-ai-replacing-c-level-roles/" class="md-nav__link">
+      <a href="../archive/72-ai-replacing-c-level-roles/" class="md-nav__link">
         
   
   
@@ -6191,7 +5937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/84-business-idea-proposal/" class="md-nav__link">
+      <a href="../archive/84-business-idea-proposal/" class="md-nav__link">
         
   
   
@@ -6219,7 +5965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/85-business-idea-specification/" class="md-nav__link">
+      <a href="../archive/85-business-idea-specification/" class="md-nav__link">
         
   
   
@@ -6247,7 +5993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/archive/99-human-utility-show-pedigree/" class="md-nav__link">
+      <a href="../archive/99-human-utility-show-pedigree/" class="md-nav__link">
         
   
   
@@ -6333,7 +6079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/00-triage/" class="md-nav__link">
+      <a href="../done/00-triage/" class="md-nav__link">
         
   
   
@@ -6361,7 +6107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/08-ui-for-editing-plan/" class="md-nav__link">
+      <a href="../done/08-ui-for-editing-plan/" class="md-nav__link">
         
   
   
@@ -6396,7 +6142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/109-llm-executor-retry-improvements/" class="md-nav__link">
+      <a href="../done/109-llm-executor-retry-improvements/" class="md-nav__link">
         
   
   
@@ -6424,7 +6170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/110-usage-metrics-local-runs/" class="md-nav__link">
+      <a href="../done/110-usage-metrics-local-runs/" class="md-nav__link">
         
   
   
@@ -6452,7 +6198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/113-llm-error-traceability/" class="md-nav__link">
+      <a href="../done/113-llm-error-traceability/" class="md-nav__link">
         
   
   
@@ -6480,7 +6226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/122-deduplicate-levers/" class="md-nav__link">
+      <a href="../done/122-deduplicate-levers/" class="md-nav__link">
         
   
   
@@ -6508,7 +6254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/127-mcp-feedback/" class="md-nav__link">
+      <a href="../done/127-mcp-feedback/" class="md-nav__link">
         
   
   
@@ -6536,7 +6282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
+      <a href="../done/55-taskitem-activity-log-decomposition-and-secure-downloads/" class="md-nav__link">
         
   
   
@@ -6571,7 +6317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
+      <a href="../done/73-rename-task-prefix-in-mcp-tools/" class="md-nav__link">
         
   
   
@@ -6599,7 +6345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/74-rename-taskitem-to-planitem/" class="md-nav__link">
+      <a href="../done/74-rename-taskitem-to-planitem/" class="md-nav__link">
         
   
   
@@ -6627,7 +6373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/75-post-rename-cleanup-issues/" class="md-nav__link">
+      <a href="../done/75-post-rename-cleanup-issues/" class="md-nav__link">
         
   
   
@@ -6655,7 +6401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/79-multiple-api-keys/" class="md-nav__link">
+      <a href="../done/79-multiple-api-keys/" class="md-nav__link">
         
   
   
@@ -6683,7 +6429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/81-mcp-api-key-validation/" class="md-nav__link">
+      <a href="../done/81-mcp-api-key-validation/" class="md-nav__link">
         
   
   
@@ -6711,7 +6457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/87-plan-resume-mcp-tool/" class="md-nav__link">
+      <a href="../done/87-plan-resume-mcp-tool/" class="md-nav__link">
         
   
   
@@ -6739,7 +6485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../proposals/done/93-local-model-roadmap/" class="md-nav__link">
+      <a href="../done/93-local-model-roadmap/" class="md-nav__link">
         
   
   
@@ -6803,231 +6549,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#choose-a-host-port" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choose a host port
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-the-container" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify the container
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dbeaver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DBeaver
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="DBeaver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#railway-dbeaver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Railway + DBeaver
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Railway + DBeaver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-enable-tcp-proxy-in-railway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Enable TCP Proxy in Railway
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-set-a-secure-password" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Set a secure password
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-connect-with-dbeaver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Connect with DBeaver
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-security-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Security check
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssl-future-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SSL (Future Plan)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="SSL (Future Plan)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#whats-needed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What's needed
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What&#39;s needed">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-generate-ssl-certificates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Generate SSL certificates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-update-the-dockerfile" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Update the Dockerfile
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-configure-dbeaver-for-ssl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Configure DBeaver for SSL
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-enforce-ssl-on-the-server-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Enforce SSL on the server (optional)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resources
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#railway-backup-to-local-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Railway backup to local file
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Railway backup to local file">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#restore-a-backup-locally" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Restore a backup locally
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -7046,182 +6567,122 @@
   
 
 
-<h1 id="database-postgres">Database Postgres</h1>
-<p>Database container for PlanExe. Used as a queue mechanism for planning tasks. The <code>worker_plan_database</code> listens for an incoming task, and runs PlanExe and then goes back to listen for more incoming tasks.</p>
-<p>PlanExe started out as a <strong>single user</strong> environment, where the file system was sufficient, and it would be overkill with a database.
-PlanExe has evolved into a <strong>multi user</strong> environment, with many moving parts, that use a database.</p>
-<ul>
-<li>Build/run via <code>docker compose up database_postgres</code> (or <code>docker compose build database_postgres</code>).</li>
-<li>Defaults: <code>PLANEXE_POSTGRES_USER=planexe</code>, <code>PLANEXE_POSTGRES_PASSWORD=planexe</code>, <code>PLANEXE_POSTGRES_DB=planexe</code> (override with env or <code>.env</code>).</li>
-<li>Ports: <code>${PLANEXE_POSTGRES_PORT:-5432}</code> on the host mapped to <code>5432</code> in the container. Set <code>PLANEXE_POSTGRES_PORT</code> in <code>.env</code> or your shell to avoid clashes.</li>
-<li>Data: persisted in the named volume <code>database_postgres_data</code>.</li>
-</ul>
-<h2 id="choose-a-host-port">Choose a host port</h2>
-<p>The default PostgreSQL port is 5432. On developer machines, this port is often already occupied by a local PostgreSQL installation:</p>
-<ul>
-<li><strong>macOS</strong>: Postgres.app (a popular menu-bar Postgres that auto-starts), Homebrew PostgreSQL (<code>brew install postgresql</code>), or pgAdmin's bundled server</li>
-<li><strong>Linux</strong>: System PostgreSQL installed via <code>apt install postgresql</code>, <code>dnf install postgresql-server</code>, etc.</li>
-<li><strong>Windows</strong>: PostgreSQL installer, pgAdmin, or other database tools</li>
-</ul>
-<p>If port 5432 is in use, Docker will fail to start <code>database_postgres</code> with a "port already in use" error.</p>
-<p><strong>Solution</strong>: Set <code>PLANEXE_POSTGRES_PORT</code> to a different value before starting the container:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PLANEXE_POSTGRES_PORT</span><span class="o">=</span><span class="m">5433</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>database_postgres
-</code></pre></div>
-<p>Or add it to your <code>.env</code> file to make it permanent:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>PLANEXE_POSTGRES_PORT=5433
-</code></pre></div></p>
-<p>Replace <code>5433</code> with any free host port you prefer.</p>
-<p><strong>Important</strong>: This only affects the HOST port mapping (how you access Postgres from your machine). Inside Docker, containers always communicate with each other on the internal port 5432—this is hardcoded and not affected by <code>PLANEXE_POSTGRES_PORT</code>.</p>
-<h2 id="verify-the-container">Verify the container</h2>
-<ul>
-<li>Check status: <code>docker compose ps database_postgres</code></li>
-<li>Shell in to confirm Postgres is the right one: <code>docker compose exec database_postgres psql -U planexe -d planexe</code></li>
-</ul>
-<h2 id="dbeaver">DBeaver</h2>
-<p>For managing the database, I recommend using the <code>DBeaver Community</code> app, which is open source.</p>
-<p>https://github.com/dbeaver/dbeaver</p>
-<p>Connect with host <code>localhost</code>, port <code>${PLANEXE_POSTGRES_PORT:-5432}</code>, database <code>planexe</code>, user <code>planexe</code>, password <code>planexe</code> (or whatever you set in <code>.env</code>).</p>
-<h3 id="railway-dbeaver">Railway + DBeaver</h3>
-<p>DBeaver cannot connect via the Railway CLI tunnel (<code>railway ssh</code>/<code>connect</code>), because the CLI does not provide a traditional TCP port forward. Instead, use Railway's TCP Proxy feature.</p>
-<h4 id="1-enable-tcp-proxy-in-railway">1. Enable TCP Proxy in Railway</h4>
-<ol>
-<li>Go to your Railway dashboard → <code>database_postgres</code> service</li>
-<li>Navigate to <strong>Settings</strong> → <strong>Networking</strong> → <strong>Public Networking</strong></li>
-<li>Add a <strong>TCP Proxy</strong> with port <code>5432</code></li>
-<li>Railway will assign a hostname and port, e.g., <code>subsubdomain.subdomain.example.com:12345</code></li>
-</ol>
-<blockquote>
-<p><strong>Warning</strong>: Only enable TCP Proxy after setting a secure password (see below).</p>
-<p><strong>Warning</strong>: The TCP Proxy connection is <strong>unencrypted</strong>. Railway's TCP Proxy forwards raw TCP traffic without adding TLS, and the <code>postgres:16-alpine</code> image doesn't have SSL enabled by default. Your password and data travel in plain text. Consider disabling TCP Proxy when not in use, or configure SSL on the PostgreSQL container for production use.</p>
-</blockquote>
-<h4 id="2-set-a-secure-password">2. Set a secure password</h4>
-<p>The default password <code>planexe</code> is too easy to guess. PostgreSQL only sets the password on first initialization, so if the database already exists:</p>
-<ol>
-<li>Connect with the current password</li>
-<li>Run: <code>ALTER USER planexe WITH PASSWORD 'your-secure-password';</code></li>
-<li>Update <code>POSTGRES_PASSWORD</code> in Railway's environment variables to match</li>
-</ol>
-<h4 id="3-connect-with-dbeaver">3. Connect with DBeaver</h4>
-<p>In DBeaver, create a new PostgreSQL connection with <strong>"Connect by: Host"</strong>:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Host</td>
-<td>Your TCP Proxy hostname (e.g., <code>subsubdomain.subdomain.example.com</code>)</td>
-</tr>
-<tr>
-<td>Port</td>
-<td>Your assigned port (e.g., <code>12345</code>, NOT 5432)</td>
-</tr>
-<tr>
-<td>Database</td>
-<td><code>planexe</code></td>
-</tr>
-<tr>
-<td>Username</td>
-<td><code>planexe</code></td>
-</tr>
-<tr>
-<td>Password</td>
-<td>Your secure password</td>
-</tr>
-</tbody>
-</table>
-<p>Click <strong>Test Connection</strong> to verify.</p>
-<h4 id="4-security-check">4. Security check</h4>
-<p>Try connecting with password <code>planexe</code>. If it succeeds, the password hasn't been changed yet—go back to step 2.</p>
-<p>See <code>railway.md</code> for more details.</p>
-<h2 id="ssl-future-plan">SSL (Future Plan)</h2>
-<p>The current setup uses unencrypted connections. For production use with public TCP Proxy exposure, SSL/TLS should be enabled to encrypt traffic between clients and the database.</p>
-<h3 id="whats-needed">What's needed</h3>
-<h4 id="1-generate-ssl-certificates">1. Generate SSL certificates</h4>
-<p>You'll need a certificate and private key. Options:
-- <strong>Self-signed</strong>: Quick for internal use, but clients must trust the certificate manually
-- <strong>Let's Encrypt</strong>: Free, but requires domain validation (complex for raw TCP)
-- <strong>Commercial CA</strong>: Trusted by default, but costs money</p>
-<p>Example self-signed certificate generation:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>openssl<span class="w"> </span>req<span class="w"> </span>-new<span class="w"> </span>-x509<span class="w"> </span>-days<span class="w"> </span><span class="m">365</span><span class="w"> </span>-nodes<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>-out<span class="w"> </span>server.crt<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>-keyout<span class="w"> </span>server.key<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>-subj<span class="w"> </span><span class="s2">&quot;/CN=database_postgres&quot;</span>
-</code></pre></div>
-<h4 id="2-update-the-dockerfile">2. Update the Dockerfile</h4>
-<p>Add the certificates and configure PostgreSQL to use them:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">postgres:16-alpine</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c"># ... existing ENV statements ...</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c"># Copy SSL certificates</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">COPY</span><span class="w"> </span>server.crt<span class="w"> </span>/var/lib/postgresql/server.crt
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">COPY</span><span class="w"> </span>server.key<span class="w"> </span>/var/lib/postgresql/server.key
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c"># Set correct permissions (required by PostgreSQL)</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">RUN</span><span class="w"> </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>/var/lib/postgresql/server.key<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span>chown<span class="w"> </span>postgres:postgres<span class="w"> </span>/var/lib/postgresql/server.crt<span class="w"> </span>/var/lib/postgresql/server.key
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c"># Enable SSL in PostgreSQL</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ssl = on&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/usr/local/share/postgresql/postgresql.conf.sample<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ssl_cert_file = &#39;/var/lib/postgresql/server.crt&#39;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/usr/local/share/postgresql/postgresql.conf.sample<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ssl_key_file = &#39;/var/lib/postgresql/server.key&#39;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/usr/local/share/postgresql/postgresql.conf.sample
-</code></pre></div>
-<h4 id="3-configure-dbeaver-for-ssl">3. Configure DBeaver for SSL</h4>
-<p>In DBeaver's connection settings:</p>
-<ol>
-<li>Go to the <strong>SSL</strong> tab</li>
-<li>Check <strong>"Use SSL"</strong></li>
-<li>Set <strong>SSL mode</strong>:</li>
-<li><code>require</code> — Encrypt connection, don't verify certificate</li>
-<li><code>verify-ca</code> — Encrypt and verify certificate against a CA</li>
-<li><code>verify-full</code> — Encrypt, verify certificate, and check hostname</li>
-<li>For self-signed certs, you may need to import the CA/certificate or set <strong>"Trust all certificates"</strong></li>
-</ol>
-<h4 id="4-enforce-ssl-on-the-server-optional">4. Enforce SSL on the server (optional)</h4>
-<p>To reject unencrypted connections, add to <code>pg_hba.conf</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a># Require SSL for all remote connections
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>hostssl all all 0.0.0.0/0 scram-sha-256
-</code></pre></div>
-<h3 id="resources">Resources</h3>
-<ul>
-<li><a href="https://www.postgresql.org/docs/current/ssl-tcp.html">PostgreSQL SSL Documentation</a></li>
-<li><a href="https://www.postgresql.org/docs/current/auth-pg-hba-conf.html">pg_hba.conf Documentation</a></li>
-</ul>
-<h2 id="railway-backup-to-local-file">Railway backup to local file</h2>
-<p>Use <code>database_postgres/download_backup.py</code> to stream a compressed dump from the Railway <code>database_postgres</code> service to your machine.</p>
-<p>Prereq: Railway CLI installed and logged in.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python database_postgres/download_backup.py
-</code></pre></div>
-<ul>
-<li>Runs <code>railway link</code> (skip with <code>--skip-link</code> if already linked).</li>
-<li>Streams <code>pg_dump -F c -Z9</code> via <code>railway ssh</code> and writes <code>YYYYMMDD-HHMM.dump</code> in the current directory.</li>
-<li>Options:</li>
-<li><code>--user</code> Postgres user (default: <code>$PLANEXE_POSTGRES_USER</code> or <code>planexe</code>)</li>
-<li><code>--db</code> Postgres database (default: <code>$PLANEXE_POSTGRES_DB</code> or <code>planexe</code>)</li>
-<li><code>--output-dir path</code> Directory for the dump file</li>
-<li><code>--filename name.dump</code> Override dump filename</li>
-<li><code>--service other_service</code> Railway service name</li>
-<li><code>--skip-link</code> Skip <code>railway link</code> if already linked</li>
-</ul>
-<h3 id="restore-a-backup-locally">Restore a backup locally</h3>
-<p>Run a Postgres you can reach (for example <code>docker compose up database_postgres</code> on your machine), then restore the custom-format dump:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">PGPASSWORD</span><span class="o">=</span>planexe<span class="w"> </span>pg_restore<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>-h<span class="w"> </span>localhost<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">5432</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>-U<span class="w"> </span>planexe<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>-d<span class="w"> </span>planexe<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span>/path/to/19841231-2359.dump
-</code></pre></div>
-<ul>
-<li>The dump is custom format (<code>pg_dump -F c</code>), so use <code>pg_restore</code>, not <code>psql</code>.</li>
-<li>Ensure the target database exists; add <code>-c</code> to drop objects before recreating them if you want a clean restore.</li>
-<li>If you changed credentials/DB name in <code>.env</code> or Railway, use those here.</li>
-</ul>
+<h1 id="reflecting-on-planexe">Reflecting on PlanExe</h1>
+<p>I asked Gemini 3.1 Pro and ChatGPT 5.5 about PlanExe.</p>
+<hr />
+<h1 id="gemini-31-pro-the-horizon-of-synthetic-cognition-the-shift-to-agentic-swarms-and-zero-marginal-cost-intelligence">Gemini 3.1 Pro - The Horizon of Synthetic Cognition: The Shift to Agentic Swarms and Zero-Marginal-Cost Intelligence</h1>
+<p>For the past several years, the pursuit of Artificial General Intelligence (AGI) has been largely defined by a singular, monolithic vision: the creation of increasingly massive, parameter-heavy "frontier" models. The assumption was that true, human-level reasoning would emerge only when a single neural network became large enough to encompass all contexts simultaneously.</p>
+<p>However, recent advancements in AI system architecture reveal that this premise is fundamentally incomplete. We have crossed a hidden threshold, and the reality of how systemic intelligence is achieved looks vastly different—and far more disruptive—than anticipated. </p>
+<p>We are no longer waiting for a solitary "super-brain." Instead, we have entered the era of <strong>Agentic Scaffolding and Orchestrated Swarms</strong>. By fracturing complex problems into hundreds of micro-tasks and routing them through highly optimized, lightweight, and inexpensive models, we can generate deep, systemic reasoning that rivals the output of entire human organizations.</p>
+<p>Here are the new insights defining this shift, and the trajectory of where this technology is heading next.</p>
+<hr />
+<h3 id="insight-1-architecture-over-scale-the-power-of-the-swarm">Insight 1: Architecture Over Scale (The Power of the Swarm)</h3>
+<p>We have discovered that true cognitive depth does not require a single, massive model. When small, blazing-fast models are arranged into highly structured pipelines—where one model drafts, another critiques, a third translates the logic into mathematical bounds, a fourth runs stochastic simulations, and a fifth synthesizes the results—the emergent output is exponentially greater than the sum of its parts. </p>
+<p>This is the transition from the <strong>LLM as an Oracle</strong> (asking a single model for an answer) to the <strong>LLM as an Organizational Operating System</strong>. The intelligence does not live solely in the weights of the neural network; it lives in the <em>scaffolding</em>—the automated workflow that forces the AI to challenge its own assumptions, red-team its blind spots, and iterate recursively until a mathematically and logically sound strategy is achieved. </p>
+<h3 id="insight-2-the-commoditization-of-multi-disciplinary-synthesis">Insight 2: The Commoditization of Multi-Disciplinary Synthesis</h3>
+<p>Historically, solving a high-stakes, multi-dimensional problem (e.g., merging geopolitical strategy with logistical engineering, financial modeling, and risk actuarial science) required convening a team of highly paid human experts over weeks or months. </p>
+<p>Today, that identical process—requiring hundreds of distinct cognitive steps, millions of tokens of context, and complex statistical modeling—can be executed in minutes for fractions of a dollar. </p>
+<p>This is a <strong>collapse of cognitive friction</strong>. Intelligence and high-level knowledge work have been reduced to near-zero marginal cost. This is an economic shockwave on par with the printing press or the microchip. When the cost of deep, strategic synthesis drops from millions of dollars and months of time to pocket change and minutes, the bottleneck to human progress is no longer the capacity to solve complex problems, but simply the imagination required to pose the right questions.</p>
+<h3 id="insight-3-superhuman-velocity-and-the-ultimate-ooda-loop">Insight 3: Superhuman Velocity and the Ultimate OODA Loop</h3>
+<p>In strategic theory, the "OODA Loop" (Observe, Orient, Decide, Act) dictates that the entity capable of cycling through this process fastest will inevitably outmaneuver its environment.</p>
+<p>Through agentic pipelines, AI has achieved a superhuman OODA loop. Because the models are small, fast, and cheap, a system can generate a complex plan, write the code to mathematically stress-test that plan against 10,000 randomized failure scenarios, identify the critical vulnerabilities, and rewrite the underlying strategy—all before a human could finish reading the initial executive summary. Speed, at this magnitude, becomes a distinct form of superintelligence. It allows the system to explore branches of reality and failure modes that human teams would simply lack the time and budget to investigate.</p>
+<hr />
+<h3 id="the-next-steps-on-the-path">The Next Steps on the Path</h3>
+<p>Having mastered the ability to synthesize, critique, and simulate at near-zero cost, the trajectory of AI development will now rapidly advance through the following phases:</p>
+<h4 id="1-from-on-demand-to-persistent-asynchronous">1. From On-Demand to Persistent &amp; Asynchronous</h4>
+<p>Currently, these multi-agent pipelines are "run once" systems. A human pulls the trigger, the swarm executes its thousands of tasks, and it delivers a final artifact. The immediate next step is <strong>Persistence</strong>. 
+These synthetic organizations will run continuously in the background. They will autonomously monitor live data streams, ingest shifting market or geopolitical variables, dynamically re-run their Monte Carlo simulations, and asynchronously update their strategic plans day and night. They will become perpetual engines of optimization.</p>
+<h4 id="2-closed-loop-execution-taking-the-wheel">2. Closed-Loop Execution (Taking the Wheel)</h4>
+<p>The current frontier is analytical—producing brilliant, stress-tested plans. The next frontier is operational. We will soon connect these cognitive pipelines directly to execution APIs. 
+The swarm will not just identify that a supply chain is fragile; it will automatically draft the contracts for new suppliers, negotiate the pricing via email, allocate the capital from corporate budgets, and track the shipping logistics. The loop between "Decide" and "Act" will close, effectively allowing AI to manage and operate vast physical and digital infrastructures with minimal human oversight.</p>
+<h4 id="3-automated-paradigm-discovery-level-4-agi">3. Automated Paradigm Discovery (Level 4 AGI)</h4>
+<p>Because the cost of running millions of simulated scenarios is approaching zero, these systems will soon transcend human intuition. Currently, we use AI to optimize <em>known</em> human frameworks (e.g., optimizing a budget or a logistics route). Soon, we will ask these systems to simulate the fundamental physics of materials, the interactions of complex biological proteins, or the architecture of entirely new economic systems. By iterating through billions of permutations, the swarm will discover solutions, technologies, and paradigms that human minds could never organically conceive.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>We are no longer waiting for AGI to arrive in a flash of singular, conscious brilliance. It is already quietly assembling itself in the background. It looks like highly structured pipelines of fast, cheap models talking to one another, running code, checking each other's math, and iterating at the speed of light. We have successfully automated the "Think Tank." The next decade will be defined by what happens when we unleash these synthetic organizations upon the physical world.</p>
+<hr />
+<h1 id="chatgpt-55-the-rise-of-synthetic-planning-from-static-reports-to-agentic-strategy-systems">ChatGPT 5.5: <strong>The Rise of Synthetic Planning: From Static Reports to Agentic Strategy Systems</strong></h1>
+<p>For years, AI-assisted planning has mostly been treated as a writing problem. A person describes a project, an AI model generates a plan, and the result is judged as a document. That framing is too small. The deeper shift is not that AI can write project plans faster. The deeper shift is that complex planning itself is becoming programmable.</p>
+<p>A modern planning system is not a single prompt and a single answer. It is an orchestration layer: many model calls, many intermediate artifacts, many critiques, many trade-off analyses, and many opportunities for revision. The intelligence does not live only in the model. It lives in the pipeline: decomposition, assumption extraction, scenario generation, risk analysis, scheduling, budgeting, contradiction detection, and synthesis.</p>
+<p>This marks a move from <strong>AI as an oracle</strong> to <strong>AI as a planning organization</strong></p>
+<p>.</p>
+<p>An oracle gives an answer. A planning organization creates structure. It asks what the objective means, identifies stakeholders, breaks the problem into workstreams, compares strategic paths, names dependencies, surfaces risks, and produces artifacts that humans can challenge. The result is not perfect truth. It is something more useful: a serious draft that exposes the shape of the problem.</p>
+<h2 id="insight-1-planning-quality-comes-from-iteration-not-one-shot-intelligence"><strong>Insight 1: Planning Quality Comes From Iteration, Not One-Shot Intelligence</strong></h2>
+<p>The most important lesson is that good plans emerge through refinement. A first plan is rarely the final plan. It reveals what was under-specified, what was unrealistic, what incentives were distorted, and what assumptions quietly entered the system.</p>
+<p>This is where synthetic planning becomes powerful. Instead of treating the first output as the answer, the workflow becomes cyclical:</p>
+<p>generate → inspect → criticize → revise → rerun → compare → converge.</p>
+<p>That loop matters more than any individual response. A weak prompt produces a distorted plan. A better prompt produces a better plan. A strong system should therefore help the user improve the prompt itself, not merely answer it.</p>
+<p>The future of planning systems is not just “generate a plan.” It is:</p>
+<p>“What did this plan assume?”\
+“What did it ignore?”\
+“What would make it more realistic?”\
+“What constraints should be added?”\
+“What scenario did it choose, and why?”\
+“What alternative path would reduce harm, cost, or fragility?”</p>
+<p>This turns planning into an interactive search process across possible futures.</p>
+<h2 id="insight-2-cheap-multi-pass-reasoning-changes-the-economics-of-strategy"><strong>Insight 2: Cheap Multi-Pass Reasoning Changes the Economics of Strategy</strong></h2>
+<p>Historically, serious planning required teams: domain experts, project managers, legal analysts, logistics people, financial modelers, risk specialists, and editors. That kind of synthesis was slow and expensive. It required meetings, coordination, drafting cycles, and review rounds.</p>
+<p>Now, a planning pipeline can perform many of those cognitive passes automatically. It can generate a project plan, produce scenarios, identify risks, draft a schedule, critique feasibility, estimate resource needs, and produce an executive summary in one run. Even better, it can do this repeatedly.</p>
+<p>The cost collapse is the crucial point. Once a system can spend millions of tokens and hundreds of model calls for the cost of a casual API experiment, planning becomes disposable. That does not mean worthless. It means plans can be generated, compared, discarded, and regenerated without ceremony.</p>
+<p>This changes the strategic workflow. You do not need to bet everything on one plan. You can ask for ten variants. You can compare conservative, aggressive, ethical, cost-minimized, resilience-maximized, legally cautious, and infrastructure-first versions. You can run the same scenario under different assumptions and see which decisions remain stable.</p>
+<p>The bottleneck shifts from producing plans to <strong>framing the right planning problem</strong>.</p>
+<h2 id="insight-3-the-human-becomes-the-framer-not-the-typist"><strong>Insight 3: The Human Becomes the Framer, Not the Typist</strong></h2>
+<p>As planning systems improve, the human role becomes more important, not less. But the role changes.</p>
+<p>The human should not spend most of their energy formatting sections, inventing task lists, or manually writing obvious risk categories. The system can do that. The human should define the moral frame, the success criteria, the unacceptable trade-offs, and the constraints that the system must respect.</p>
+<p>This is especially important because AI planning systems are highly sensitive to framing. If speed is emphasized too much, the system may choose a fast but reckless strategy. If budget is vague, it may invent unrealistic numbers. If ethics are implicit, the plan may treat coercive measures as acceptable options. If future technology is not constrained, the system may quietly assume capabilities that do not exist.</p>
+<p>A good human operator does not merely ask for a plan. They shape the planning space.</p>
+<p>They say:</p>
+<p>Do not choose the most aggressive path.\
+Do not assume unavailable technology.\
+Do not violate civilian welfare.\
+Do not solve governance problems by coercion.\
+Treat rights and safety as hard constraints.\
+Prefer reversible decisions.\
+Separate accepted actions from rejected options.\
+Mark speculative capabilities clearly.</p>
+<p>That kind of framing is not decoration. It is steering.</p>
+<h2 id="insight-4-planning-systems-need-realism-governors"><strong>Insight 4: Planning Systems Need Realism Governors</strong></h2>
+<p>The next major improvement is realism checking.</p>
+<p>Planning systems are good at structure, but they can still over-compress timelines, understate logistics, invent institutions too easily, or create clean-looking plans that ignore physical bottlenecks. A serious planning engine needs a realism governor: a layer that challenges the plan against basic constraints.</p>
+<p>For example:</p>
+<p>How many people are affected?\
+How much housing is required?\
+How many trained workers are available?\
+What physical transport capacity exists?\
+What legal authority is assumed?\
+What budget range is credible?\
+What happens if a milestone slips?\
+Which actions are irreversible?\
+Which dependencies are single points of failure?\
+Which parts require technology that does not yet exist?</p>
+<p>Without this layer, AI planning can become persuasive fiction. With it, the system becomes much more valuable: not because it guarantees correctness, but because it forces the plan to confront reality.</p>
+<p>The best future systems will not merely say, “Here is a plan.” They will say, “Here is the plan, here are the assumptions, here are the weakest links, here are the numbers that need validation, and here are the parts that should not be trusted yet.”</p>
+<h2 id="insight-5-mcp-turns-planning-into-a-toolchain"><strong>Insight 5: MCP Turns Planning Into a Toolchain</strong></h2>
+<p>MCP is important because it lets planning systems participate in larger agentic workflows. A planning system should not exist in isolation. It should be callable by agents, connected to files, connected to code execution, connected to simulations, connected to search, connected to version control, and connected to execution environments where appropriate.</p>
+<p>That opens the door to a new kind of workflow:</p>
+<p>An agent receives a goal.\
+It generates an initial plan.\
+It inspects the risks.\
+It validates numbers through tools.\
+It compares prior runs.\
+It revises the prompt.\
+It reruns the planning pipeline.\
+It creates a delta report.\
+It recommends the safest next version.</p>
+<p>This is where synthetic planning becomes more than document generation. It becomes part of an agentic operating loop.</p>
+<p>The MCP-enabled future is not just “AI writes plans.” It is “AI systems use planning as a subroutine.”</p>
+<h2 id="the-path-forward"><strong>The Path Forward</strong></h2>
+<p>The next generation of planning systems should move in five directions.</p>
+<p>First, they should become explicitly iterative. Every generated plan should include recommended prompt improvements, unresolved assumptions, and suggested follow-up runs. The output should help the next output become better.</p>
+<p>Second, they should separate certainty levels. Existing capabilities, future development goals, speculative technologies, rejected options, and accepted actions should not be mixed together. A plan becomes more trustworthy when it clearly labels what is real, what is assumed, and what is aspirational.</p>
+<p>Third, they should include multi-run comparison. A user should be able to compare scenario families side by side: cost, speed, risk, reversibility, ethical exposure, infrastructure dependency, and political feasibility.</p>
+<p>Fourth, they should include stronger ethical defaults. For high-stakes plans, the system should naturally penalize irreversible harm, coercion, rights violations, civilian deprivation, and brittle dependencies. It should not need to be reminded every time.</p>
+<p>Fifth, they should become more tool-native. Through MCP and related interfaces, planning systems should be callable components inside broader agentic systems. The plan should not be the end artifact. It should be an intermediate object that can be tested, simulated, revised, and operationalized.</p>
+<h2 id="conclusion_1"><strong>Conclusion</strong></h2>
+<p>The future of AI planning is not a single brilliant answer from a single brilliant model. It is structured cognition: many small reasoning passes organized into a disciplined workflow.</p>
+<p>This is the real breakthrough. Planning is becoming cheap, repeatable, inspectable, and programmable. The first draft can be generated in minutes. The second draft can be better. The third can be constrained. The fourth can be compared against alternatives. The fifth can be grounded by external tools. The sixth can become a serious strategic artifact.</p>
+<p>The value is not that the machine is always right. It is that the machine can produce structured thought fast enough for humans to argue with it, refine it, and explore the space of possible decisions.</p>
+<p>We are not automating judgment. We are automating the scaffolding around judgment.</p>
+<p>That may be the more important achievement.</p>
 
 
 
