@@ -5,7 +5,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-  # Trigger on changes to PlanExe repo (requires repository_dispatch or manual trigger)
+  # Trigger on changes to the source repo (requires repository_dispatch or manual trigger)
   repository_dispatch:
     types: [docs-updated]
 
@@ -22,10 +22,10 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Checkout PlanExe (source)
+      - name: Checkout PlanExe2 (source)
         uses: actions/checkout@v4
         with:
-          repository: PlanExeOrg/PlanExe
+          repository: PlanExeOrg/PlanExe2
           path: planexe-source
           token: ${{ secrets.GITHUB_TOKEN }}
       
@@ -40,7 +40,7 @@ jobs:
       
       - name: Build documentation
         run: |
-          PLANEXE_REPO=planexe-source DOCS_SOURCE_DIR=docs python build.py
+          PLANEXE_REPO=planexe-source DOCS_SOURCE_DIR=docs/website python build.py
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -173,4 +173,5 @@ If you're unsure where to start or have questions:
 
 - **Tone**: keep docs factual and direct; avoid marketing language.
 - **Social cards**: configured in `mkdocs.yml` via the `social` plugin; titles come from page front matter (`title:`) when needed.
-- **Branding**: social cards use the PlanExe logo from `PlanExe/docs/assets/logo.svg` (copied during build).
+- **Source**: pages live in `PlanExe2/docs/website/`; only that directory is copied into the build.
+- **Branding**: social cards use the PlanExe logo from `PlanExe2/docs/website/assets/logo.svg` (copied during build).

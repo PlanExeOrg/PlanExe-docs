@@ -1,63 +1,16 @@
-site_name: PlanExe Documentation
+site_name: PlanExe2 Documentation
 site_description: From a single goal statement to a full strategic plan. Free and open source.
 site_url: https://docs.planexe.org
-repo_url: https://github.com/PlanExeOrg/PlanExe
-repo_name: PlanExeOrg/PlanExe
-edit_uri: edit/main/docs/
+repo_url: https://github.com/PlanExeOrg/PlanExe2
+repo_name: PlanExeOrg/PlanExe2
+edit_uri: edit/main/docs/website/
 
 nav:
-  - Getting started:
-    - Welcome: index.md
-    - Start here: start_here.md
-    - Getting started: getting_started.md
-    - Prompt writing guide: prompt_writing_guide.md
-    - Plan output anatomy: plan_output_anatomy.md
-    - Costs and models: costs_and_models.md
-    - FAQ: faq.md
-    - Statistics: statistics.md
-  - MCP:
-    - Welcome: mcp/mcp_welcome.md
-    - MCP setup: mcp/mcp_setup.md
-    - MCP registry publishing: mcp/mcp_registry.md
-    - MCP Inspector: mcp/inspector.md
-    - Claude: mcp/claude.md
-    - Cursor: mcp/cursor.md
-    - Codex: mcp/codex.md
-    - Antigravity: mcp/antigravity.md
-    - Windsurf: mcp/windsurf.md
-    - LM Studio: mcp/lm_studio.md
-    - MCP details: mcp/mcp_details.md
-    - MCP troubleshooting: mcp/mcp_troubleshooting.md
-    - PlanExe MCP interface: mcp/planexe_mcp_interface.md
-    - Autonomous agent guide: mcp/autonomous_agent_guide.md
-  - Development:
-    - Developer plan: plan.md
-    - Docker: docker.md
-    - Developer install: install_developer.md
-    - OAuth setup: oauth.md
-    - LLM config: llm_config.md
-    - Token counting: token_counting.md
-    - Components:
-      - open_dir_server: developer/open_dir_server.md
-      - worker_plan: developer/worker_plan.md
-      - frontend_single_user: developer/frontend_single_user.md
-      - database_postgres: developer/database_postgres.md
-      - worker_plan_database: developer/worker_plan_database.md
-      - frontend_multi_user: developer/frontend_multi_user.md
-      - mcp_local: developer/mcp_local.md
-      - mcp_cloud: developer/mcp_cloud.md
-    - AI providers:
-      - OpenRouter: ai_providers/openrouter.md
-      - Anthropic: ai_providers/anthropic.md
-      - Ollama: ai_providers/ollama.md
-      - LM Studio: ai_providers/lm_studio.md
-      - Mistral: ai_providers/mistral.md
-    - Status: status.md
-    - Railway: railway.md
-    - Deployment and hosting: deployment_hosting.md
-    - Docs style guide: docs_style_guide.md
-    - Troubleshooting:
-      - Stuck pipeline: troubleshooting_stuck_pipeline.md
+  - Welcome: index.md
+  - Getting started: getting_started.md
+  - The report: report.md
+  - Commands: commands.md
+  - How it works: how_it_works.md
 
 theme:
   name: material
@@ -114,7 +67,6 @@ extra_javascript:
 
 extra_css:
   - assets/stylesheets/copy-all.css
-  - assets/stylesheets/nav-status.css
 
 extra:
   analytics:

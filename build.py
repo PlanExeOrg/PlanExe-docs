@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Build script for PlanExe documentation.
-This script builds the docs from the PlanExe repo and outputs to this repo.
+This script builds the docs from the PlanExe2 repo (docs/website/) and outputs to this repo.
 """
 
 import os
@@ -10,7 +10,6 @@ import shutil
 import subprocess
 import tempfile
 from pathlib import Path
-import yaml
 
 # ANSI color codes
 GREEN = '\033[0;32m'
@@ -27,8 +26,8 @@ def print_colored(message: str, color: str = NC):
 def main():
     """Main build function."""
     # Configuration
-    planexe_repo = Path(os.environ.get("PLANEXE_REPO", "../PlanExe"))
-    docs_source_dir = os.environ.get("DOCS_SOURCE_DIR", "docs")
+    planexe_repo = Path(os.environ.get("PLANEXE_REPO", "../PlanExe2"))
+    docs_source_dir = os.environ.get("DOCS_SOURCE_DIR", "docs/website")
     output_dir = "site"
     
     print_colored("Building PlanExe documentation...", GREEN)
@@ -36,10 +35,10 @@ def main():
     # Check if PlanExe repo exists
     if not planexe_repo.exists() or not planexe_repo.is_dir():
         print_colored(
-            f"Error: PlanExe repo not found at {planexe_repo}",
+            f"Error: PlanExe2 repo not found at {planexe_repo}",
             RED
         )
-        print("Set PLANEXE_REPO environment variable to point to the PlanExe repository")
+        print("Set PLANEXE_REPO environment variable to point to the PlanExe2 repository")
         sys.exit(1)
     
     # Check if docs source directory exists
@@ -78,95 +77,9 @@ def main():
         )
         shutil.copytree(docs_source_path, docs_dir, dirs_exist_ok=True)
 
-        # Ensure custom CSS for nav status icons exists (PlanExe-docs override).
-        nav_css_path = docs_dir / "assets" / "stylesheets" / "nav-status.css"
-        nav_css_path.parent.mkdir(parents=True, exist_ok=True)
-        nav_css_path.write_text(
-            ".md-nav__link .md-status--proposal { display: none; }\n",
-            encoding="utf-8",
-        )
-        
-        # Copy component READMEs into docs/developer/ so they are part of the built docs
-        developer_dir = docs_dir / "developer"
-        developer_dir.mkdir(exist_ok=True)
-        component_readmes = [
-            ("open_dir_server", "README.md"),
-            ("worker_plan", "README.md"),
-            ("frontend_single_user", "README.md"),
-            ("database_postgres", "README.md"),
-            ("worker_plan_database", "README.md"),
-            ("frontend_multi_user", "README.md"),
-            ("mcp_local", "README.md"),
-            ("mcp_cloud", "README.md"),
-        ]
-        for component, readme_name in component_readmes:
-            src = planexe_repo / component / readme_name
-            dst = developer_dir / f"{component}.md"
-            if src.exists():
-                shutil.copy2(src, dst)
-            else:
-                print_colored(
-                    f"Warning: {src} not found, skipping for docs",
-                    YELLOW
-                )
-        
         # Copy mkdocs.yml to temp directory
         shutil.copy2(mkdocs_yml, temp_docs_path / "mkdocs.yml")
 
-        # Inject proposals into nav (alphabetical) if proposals dir exists.
-        proposals_dir = docs_dir / "proposals"
-        if proposals_dir.exists():
-            class _IgnoreUnknownTagLoader(yaml.SafeLoader):
-                pass
-
-            def _construct_undefined(loader, node):
-                return node.value
-
-            _IgnoreUnknownTagLoader.add_constructor(None, _construct_undefined)
-
-            mkdocs_temp_path = temp_docs_path / "mkdocs.yml"
-            with open(mkdocs_temp_path, "r") as f:
-                mkdocs_config = yaml.load(f, Loader=_IgnoreUnknownTagLoader)
-
-            def _collect_proposals(directory: Path, url_prefix: str) -> list:
-                entries = []
-                files = sorted(
-                    [
-                        p for p in directory.glob("*.md")
-                        if p.name.lower() != "agents.md"
-                    ],
-                    key=lambda p: p.name.lower(),
-                )
-                for proposal_path in files:
-                    title = proposal_path.stem.replace("_", " ").replace("-", " ").strip()
-                    entries.append({title: f"{url_prefix}{proposal_path.name}"})
-                return entries
-
-            proposals_nav = _collect_proposals(proposals_dir, "proposals/")
-
-            for subdir_name, label in (("archive", "Archive"), ("done", "Done")):
-                subdir = proposals_dir / subdir_name
-                if subdir.exists():
-                    sub_entries = _collect_proposals(subdir, f"proposals/{subdir_name}/")
-                    if sub_entries:
-                        proposals_nav.append({label: sub_entries})
-
-            nav = mkdocs_config.get("nav", [])
-            for entry in nav:
-                if isinstance(entry, dict) and "Development" in entry:
-                    dev_items = entry["Development"]
-                    if isinstance(dev_items, list):
-                        dev_items = [
-                            item for item in dev_items
-                            if not (isinstance(item, dict) and "Proposals" in item)
-                        ]
-                        dev_items.append({"Proposals": proposals_nav})
-                        entry["Development"] = dev_items
-                    break
-
-            with open(mkdocs_temp_path, "w") as f:
-                yaml.safe_dump(mkdocs_config, f, sort_keys=False)
-        
         # Build the documentation
         print_colored("Building with mkdocs...", YELLOW)
         
