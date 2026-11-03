@@ -11,6 +11,8 @@ nav:
   - The report: report.md
   - Commands: commands.md
   - How it works: how_it_works.md
+  - Essays:
+      - When planning becomes cheap: when_planning_becomes_cheap.md
 
 theme:
   name: material
