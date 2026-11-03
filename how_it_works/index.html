@@ -16,6 +16,8 @@
         <link rel="prev" href="../commands/">
       
       
+        <link rel="next" href="../when_planning_becomes_cheap/">
+      
       
         
       
@@ -332,6 +334,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../when_planning_becomes_cheap/" class="md-tabs__link">
+          
+  
+  
+  Essays
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -623,17 +645,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adopting-planexe-v1-runs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adopting PlanExe v1 runs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#stages-added-by-planexe2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -647,6 +658,91 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Essays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Essays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../when_planning_becomes_cheap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    When planning becomes cheap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -745,17 +841,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adopting-planexe-v1-runs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adopting PlanExe v1 runs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#stages-added-by-planexe2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -832,8 +917,8 @@ runner enforces this.</p>
 </table>
 <p>Override with <code>--model-high</code>, <code>--model-mid</code> and <code>--model-low</code> (see <a href="../commands/#options-for-run">Commands</a>).</p>
 <h2 id="intermediary-files">Intermediary files</h2>
-<p>Every stage writes the same intermediary files as PlanExe v1: same names, same JSON and markdown structure,
-all in the run directory. The report is assembled from them at the end.</p>
+<p>Every stage writes plain JSON and markdown files, all in the run directory. The report is assembled from
+them at the end.</p>
 <h2 id="dirtiness">Dirtiness</h2>
 <p><code>RUN_DIR/.planexe_skill/manifest.json</code> stores, for every stage, hashes of its skill folder, its input files
 and its output files. A stage is <strong>dirty</strong>, and re-runs, when:</p>
@@ -853,9 +938,6 @@ an assumption. On the next <code>run</code>:</p>
 <p>Hand-edited files are listed in the report's Metadata section.</p>
 <p>To regenerate a stage instead of editing it, use <code>run RUN_DIR --force STAGE</code>, or <code>--force-downstream STAGE</code>
 to also regenerate everything after it.</p>
-<h2 id="adopting-planexe-v1-runs">Adopting PlanExe v1 runs</h2>
-<p>Output files without a manifest record are adopted as clean. You can drop a PlanExe v1 run's files into a
-run directory and regenerate only selected stages.</p>
 <h2 id="stages-added-by-planexe2">Stages added by PlanExe2</h2>
 <p>These stages are not in PlanExe v1:</p>
 <table>
